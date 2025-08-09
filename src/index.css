@@ -199,3 +199,22 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] .prose pre {
   background-color: var(--neutral-800);
 }
+
+/* ---------- Utilitaires Tailwind personnalisés ---------- */
+@layer utilities {
+  /* Anneau de focus accessible et cohérent partout */
+  .focus-ring {
+    @apply focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-indigo-500
+           focus-visible:ring-offset-2 focus-visible:ring-offset-white
+           dark:focus-visible:ring-offset-neutral-900;
+  }
+
+  /* Variante si l’élément est posé sur une carte foncée */
+  .focus-ring-card {
+    @apply focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-indigo-400
+           focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100
+           dark:focus-visible:ring-offset-neutral-800;
+  }
+}
