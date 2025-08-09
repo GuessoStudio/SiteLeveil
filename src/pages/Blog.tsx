@@ -1,5 +1,7 @@
 import React from 'react'
 import { Search, Filter, Clock, User } from 'lucide-react'
+import SmartImg from '../components/SmartImg' // ou '@/components/SmartImg' si tu as cet alias
+import { Link } from 'react-router-dom'
 
 const Blog = () => {
   const articles = [
@@ -92,12 +94,14 @@ const Blog = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article) => (
             <article key={article.id} className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={article.image} 
-                  alt={article.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+             <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: '16/9' }}>
+  <SmartImg
+    src={article.image}
+    alt={article.title}
+    width={1600}   // proche du ratio 16:9
+    height={900}
+    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+  />
                 <div className="absolute top-4 left-4">
                   <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {article.category}
@@ -134,15 +138,19 @@ const Blog = () => {
                   <span>{new Date(article.date).toLocaleDateString('fr-FR')}</span>
                 </div>
                 
-                <a
-                  href={`/article/${article.slug}`}
-                  className="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium transition-colors"
-                >
-                  Lire l'article
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
+                <Link
+  to={`/article/${article.slug}`}
+  aria-label={`Lire l’article : ${article.title}`}
+  className="inline-flex items-center gap-1 font-semibold text-indigo-600 hover:text-indigo-500
+             dark:text-indigo-300 rounded-lg px-2 py-1 focus-ring"
+>
+  Lire l’article
+  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+       strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M5 12h14"></path>
+    <path d="M12 5l7 7-7 7"></path>
+  </svg>
+</Link>
               </div>
             </article>
           ))}
