@@ -5,6 +5,7 @@ import ResumeReading from '../components/ResumeReading'
 import Newsletter from '../components/Newsletter'
 import SmartImg from '../components/SmartImg'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
+import SEO from '../components/SEO' 
 
 const Home = () => {
   const featuredArticles = [
@@ -53,6 +54,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+      title="Psychologie, Neurosciences & Développement Personnel"
+      description="Articles quotidiens, outils et ressources pour comprendre l'esprit humain et transformer votre vie."
+      path="/"
+      isHome
+      image="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    />
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900">
         <div className="container mx-auto px-4">
