@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('theme');
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const hour = new Date().getHours();
+        const autoDark = (hour >= 18 || hour <= 6);
+        const theme = saved || (sysDark ? 'dark' : 'light') || (autoDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.backgroundColor =
+          theme === 'dark' ? '#0f0f23' : '#fafaf9';
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="color-scheme" content="dark light">
+  <!-- tes meta existantes viennent ensuite -->
+  <meta charset="UTF-8" />
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
