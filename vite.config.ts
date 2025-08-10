@@ -2,56 +2,82 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: "L'Éveil - Psychologie & Développement Personnel",
+        name: "L'Éveil – Psychologie & Développement Personnel",
         short_name: "L'Éveil",
-        description: "Articles, outils et ressources pour votre bien-être mental",
+        description:
+          "Articles, outils et ressources pour votre bien-être mental, basés sur la science.",
+        start_url: '/',
+        scope: '/',
+        display: 'standalone',
+        orientation: 'portrait',
         theme_color: '#6366f1',
         background_color: '#fafaf9',
-        display: 'standalone',
         icons: [
-          {
-            src: 'pwa-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
+          { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+        ],
       },
+
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
+
+        // SPA fallback
+        navigateFallback: 'index.html',
+        // Pas de fallback pour les fichiers “réels” (images, assets, robots/sitemap, etc.)
+        navigateFallbackDenylist: [
+          /\/assets\//,
+          /\/images\//,
+          /\/icons?\//,
+          /\/manifest\.json$/,
+          /\/robots\.txt$/,
+          /\/sitemap\.xml$/,
+          /\.[^/]+$/, // toute URL qui finit par une extension
+        ],
+
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+
+        // Caches runtime utiles
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'pexels-images',
-              expiration: {
-                maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
-              },
+              expiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 },
             },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'google-fonts-styles' },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-webfonts',
+              expiration: { maxEntries: 30, maxAgeSeconds: 365 * 24 * 60 * 60 },
+            },
+          },
+          {
+            urlPattern: ({ request, sameOrigin }) =>
+              sameOrigin && request.destination === 'image',
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'same-origin-images' },
           },
         ],
       },
+
+      // devOptions: { enabled: true }, // à activer seulement si tu veux tester le SW en dev
     }),
   ],
-  server: {
-    port: 3000,
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: true,
-  },
 })
