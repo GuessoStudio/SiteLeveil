@@ -2,6 +2,7 @@ import React from 'react'
 import { Search, Filter, Clock, User } from 'lucide-react'
 import SmartImg from '../components/SmartImg' // ou '@/components/SmartImg' si tu as cet alias
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const Blog = () => {
   const articles = [
@@ -42,6 +43,11 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen py-8">
+      <SEO
+      title="Blog"
+      description="Nos articles sur la psychologie, les neurosciences et le développement personnel."
+      path="/blog"
+    />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
