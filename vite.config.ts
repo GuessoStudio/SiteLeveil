@@ -36,9 +36,9 @@ export default defineConfig({
           /\/assets\//,
           /\/images\//,
           /\/icons?\//,
-          /\/manifest\.json$/,
-          /\/robots\.txt$/,
-          /\/sitemap\.xml$/,
+          /\/manifest\.json(?:\?.*)?$/,
+          /\/robots\.txt(?:\?.*)?$/,
+          /\/sitemap\.xml(?:\?.*)?$/,
           /\.[^/]+$/, // toute URL qui finit par une extension
         ],
 
