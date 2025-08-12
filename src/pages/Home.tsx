@@ -66,9 +66,16 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              <div className="w-20 h-20 mx-auto rounded-full shadow-lg mb-6 bg-indigo-600 flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">É</span>
-              </div>
+              <img
+    src="/images/og-default.jpg"
+    alt="L'Éveil – Psychologie & Neurosciences"
+    width={1200}
+    height={630}
+    className="mx-auto mb-6 w-full max-w-2xl rounded-2xl shadow-lg"
+    fetchPriority="high"
+    loading="eager"
+    decoding="async"
+  />
               <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
                 Éveillez votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">potentiel</span>
               </h1>
