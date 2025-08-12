@@ -17,22 +17,26 @@ const Footer = () => {
               />
               <span className="text-xl font-bold text-white">L'Éveil</span>
             </div>
-            <p className="text-neutral-400 mb-6 max-w-md">
+            <p className="text-neutral-300 mb-6 max-w-md">
               Votre guide vers une meilleure compréhension de l'esprit humain. 
               Psychologie, neurosciences et développement personnel fondés sur la science.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-neutral-400 hover:text-indigo-400 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-neutral-400 hover:text-indigo-400 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-neutral-400 hover:text-indigo-400 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-neutral-400 hover:text-indigo-400 transition-colors">
-                <Mail className="w-5 h-5" />
+              <a href="https://twitter.com/..." aria-label="Twitter" className="...">
+  <Twitter className="w-5 h-5" aria-hidden="true" />
+  <span className="sr-only">Twitter</span>
+</a>
+<a href="https://linkedin.com/..." aria-label="LinkedIn" className="...">
+  <Linkedin className="w-5 h-5" aria-hidden="true" />
+  <span className="sr-only">LinkedIn</span>
+</a>
+<a href="https://facebook.com/..." aria-label="Facebook" className="...">
+  <Facebook className="w-5 h-5" aria-hidden="true" />
+  <span className="sr-only">Facebook</span>
+</a>
+<a href="mailto:contact@..." aria-label="Email" className="...">
+  <Mail className="w-5 h-5" aria-hidden="true" />
+  <span className="sr-only">Email</span>
               </a>
             </div>
           </div>
@@ -41,11 +45,11 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-neutral-400 hover:text-white transition-colors">Accueil</Link></li>
-              <li><Link to="/blog" className="text-neutral-400 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to="/about" className="text-neutral-400 hover:text-white transition-colors">À propos</Link></li>
-              <li><Link to="/resources" className="text-neutral-400 hover:text-white transition-colors">Ressources</Link></li>
-              <li><Link to="/contact" className="text-neutral-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">Accueil</Link></li>
+              <li><Link to="/blog" className="text-neutral-300 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/about" className="text-neutral-300 hover:text-white transition-colors">À propos</Link></li>
+              <li><Link to="/resources" className="text-neutral-300 hover:text-white transition-colors">Ressources</Link></li>
+              <li><Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -53,19 +57,19 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Légal</h3>
             <ul className="space-y-2">
-              <li><Link to="/legal#mentions" className="text-neutral-400 hover:text-white transition-colors">Mentions légales</Link></li>
-              <li><Link to="/legal#privacy" className="text-neutral-400 hover:text-white transition-colors">Confidentialité</Link></li>
-              <li><Link to="/legal#cookies" className="text-neutral-400 hover:text-white transition-colors">Cookies</Link></li>
-              <li><Link to="/legal#terms" className="text-neutral-400 hover:text-white transition-colors">CGU</Link></li>
+              <li><Link to="/legal#mentions" className="text-neutral-300 hover:text-white transition-colors">Mentions légales</Link></li>
+              <li><Link to="/legal#privacy" className="text-neutral-300 hover:text-white transition-colors">Confidentialité</Link></li>
+              <li><Link to="/legal#cookies" className="text-neutral-300 hover:text-white transition-colors">Cookies</Link></li>
+              <li><Link to="/legal#terms" className="text-neutral-300 hover:text-white transition-colors">CGU</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-neutral-400 text-sm">
+          <p className="text-neutral-300 text-sm">
             © 2024 L'Éveil. Tous droits réservés.
           </p>
-          <p className="text-neutral-400 text-sm flex items-center gap-1 mt-4 md:mt-0">
+          <p className="text-neutral-300 text-sm flex items-center gap-1 mt-4 md:mt-0">
             Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
           </p>
         </div>
