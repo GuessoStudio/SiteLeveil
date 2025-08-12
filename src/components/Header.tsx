@@ -3,6 +3,15 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Sun, Moon, Search } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
+<a
+  href="#main"
+  className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50
+             px-3 py-2 bg-indigo-600 text-white rounded-md"
+>
+  Aller au contenu principal
+</a>
+
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
