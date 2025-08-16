@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { ReadingProvider } from './contexts/ReadingContext'
@@ -26,12 +26,13 @@ function App() {
                 <main>
                   <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/article/:slug" element={<Article />} />
+                    <Route path="/blog/:slug" element={<Article />} />
+                    <Route path="/blog" element={<Blog />} />                    
                     <Route path="/about" element={<About />} />
                     <Route path="/resources" element={<Resources />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/legal" element={<Legal />} />
+                    <Route path="/article/:slug" element={<Navigate to="/blog/:slug" replace />} />
                   </Routes>
                 </main>
                 <Footer />
