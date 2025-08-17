@@ -30,7 +30,6 @@ export default function NeuroDopamineRoutine() {
         description={meta.description}
         image={og}
         type="article"
-        url={url}
         datePublished={meta.datePublished}
         dateModified={meta.dateModified}
       />
@@ -49,7 +48,7 @@ export default function NeuroDopamineRoutine() {
           </p>
           <div className="mt-6">
             <SmartImg src={meta.cover} alt={`Image de couverture : ${meta.title}`} width={1200} height={630}
-              fetchPriority="high" loading="eager" decoding="sync" style={{ width:"100%", height:"auto", borderRadius:"1rem" }} />
+              priority style={{ width:"100%", height:"auto", borderRadius:"1rem" }} />
           </div>
         </header>
 
