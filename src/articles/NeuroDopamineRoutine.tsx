@@ -27,11 +27,14 @@ export default function NeuroDopamineRoutine() {
     <>
       <SEO
         title={meta.title}
-        description={meta.description}
-        image={og}
-        type="article"
-        datePublished={meta.datePublished}
-        dateModified={meta.dateModified}
+  description={meta.description}
+  image={og}
+  type="article"
+  path={`/blog/${meta.slug}`}          // ✅ important pour <link rel="canonical">
+  datePublished={meta.datePublished}
+  dateModified={meta.dateModified}
+  authorName={meta.author?.name}
+  tags={meta.tags}
       />
       <article id="contenu" className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="Fil d’Ariane" className="not-prose text-sm mb-4">

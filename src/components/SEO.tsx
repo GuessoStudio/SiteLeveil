@@ -6,8 +6,8 @@ type SEOProps = {
   path?: string
   image?: string
   type?: 'website' | 'article'
-  publishedTime?: string
-  modifiedTime?: string
+  datePublished?: string
+  dateModified?: string
   authorName?: string
   tags?: string[]
   isHome?: boolean
@@ -25,8 +25,8 @@ export default function SEO({
   path = '/',
   image = DEFAULT_IMAGE,
   type = 'website',
-  publishedTime,
-  modifiedTime,
+  datePublished,
+  dateModified,
   authorName,
   tags,
   isHome = false,
@@ -63,8 +63,8 @@ export default function SEO({
           description,
           image: [imgUrl],
           author: authorName ? [{ '@type': 'Person', name: authorName }] : undefined,
-          datePublished: publishedTime,
-          dateModified: modifiedTime || publishedTime,
+          datePublished: datePublished,
+          dateModified: dateModified || datePublished,
           mainEntityOfPage: { '@type': 'WebPage', '@id': url },
           keywords: tags?.join(', '),
         }
@@ -93,8 +93,8 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${imgUrl}?v=2`} />
       {/* Article meta */}
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {datePublished && <meta property="article:published_time" content={datePublished} />}
+      {dateModified && <meta property="article:modified_time" content={dateModified} />}
       {tags?.map((t) => <meta property="article:tag" content={t} key={t} />)}
 
       {/* JSON-LD */}

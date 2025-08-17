@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// Si tu as un composant SEO.tsx, décommente l'import et le bloc <SEO /> plus bas.
-// import SEO from "../components/SEO";
+import SEO from "../components/SEO";
 
 const meta = {
   slug: "surmonter-rejet-social",
@@ -52,9 +51,18 @@ export default function RejetSocial() {
 
   return (
     <>
-      {/* Si tu as un composant SEO, décommente et ajuste l'import */}
-      {/* <SEO title={meta.title} description={meta.excerpt} image={og} type="article" url={url} /> */}
-
+      <SEO
+        title={meta.title}
+        description={meta.excerpt}
+        image={og}
+        type="article"
+        path={`/blog/${meta.slug}`}           // canonical vers la bonne URL
+        datePublished={meta.date}             // ton champ 'date' sert de datePublished
+        dateModified={meta.date}              // même valeur pour l’instant
+        authorName={meta.author}
+        tags={meta.tags}
+      />
+      
       <div className="min-h-screen py-8">
         <div className="container mx-auto px-4">
           {/* Retour au blog */}
