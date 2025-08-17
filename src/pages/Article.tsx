@@ -1,7 +1,7 @@
 // src/pages/Article.tsx
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { articlesBySlug } from "../content";
+import { articlesBySlug } from "../content/index";
 
 export default function Article() {
   const { slug } = useParams();
@@ -17,6 +17,5 @@ export default function Article() {
       </main>
     );
   }
-
   return <Component />;
 }
