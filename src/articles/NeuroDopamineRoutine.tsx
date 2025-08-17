@@ -12,13 +12,14 @@ const meta = {
   dateModified: "2025-08-13",
   tags: ["neurosciences", "motivation", "habitudes"],
   author: { name: "Guesso" },
+  category: "Psychologie",
   readingTime: "6 min",
 };
 
 export default function NeuroDopamineRoutine() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
   const url = `${site}/blog/${meta.slug}`;
-
+  
   // 👉 On passera une OG-image auto à l’étape suivante
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.tags[0])}`;
 
@@ -26,12 +27,14 @@ export default function NeuroDopamineRoutine() {
     <>
       <SEO
         title={meta.title}
-        description={meta.description}
-        image={og}
-        type="article"
-        url={url}
-        datePublished={meta.datePublished}
-        dateModified={meta.dateModified}
+  description={meta.description}
+  image={og}
+  type="article"
+  path={`/blog/${meta.slug}`}          // ✅ important pour <link rel="canonical">
+  datePublished={meta.datePublished}
+  dateModified={meta.dateModified}
+  authorName={meta.author?.name}
+  tags={meta.tags}
       />
       <article id="contenu" className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="Fil d’Ariane" className="not-prose text-sm mb-4">
@@ -48,7 +51,7 @@ export default function NeuroDopamineRoutine() {
           </p>
           <div className="mt-6">
             <SmartImg src={meta.cover} alt={`Image de couverture : ${meta.title}`} width={1200} height={630}
-              fetchPriority="high" loading="eager" decoding="sync" style={{ width:"100%", height:"auto", borderRadius:"1rem" }} />
+              priority style={{ width:"100%", height:"auto", borderRadius:"1rem" }} />
           </div>
         </header>
 
