@@ -12,13 +12,14 @@ const meta = {
   dateModified: "2025-08-13",
   tags: ["neurosciences", "motivation", "habitudes"],
   author: { name: "Guesso" },
+  category: "Psychologie",
   readingTime: "6 min",
 };
 
 export default function NeuroDopamineRoutine() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
   const url = `${site}/blog/${meta.slug}`;
-
+  
   // 👉 On passera une OG-image auto à l’étape suivante
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.tags[0])}`;
 
