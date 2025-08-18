@@ -19,9 +19,7 @@ const meta = {
 export default function NeuroDopamineRoutine() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
   const url = `${site}/blog/${meta.slug}`;
-  
-  // 👉 On passera une OG-image auto à l’étape suivante
-  const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.tags[0])}`;
+  const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
 
   return (
     <>
