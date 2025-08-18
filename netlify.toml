@@ -1,4 +1,3 @@
-# netlify.toml
 [[edge_functions]]
 path = "/og"
 function = "og"
