@@ -12,7 +12,7 @@ export default defineConfig({
         name: "L'Éveil – Psychologie & Développement Personnel",
         short_name: "L'Éveil",
         description:
-          "Articles, outils et ressources pour votre bien-être mental, basés sur la science.",
+          'Articles, outils et ressources pour votre bien-être mental, basés sur la science.',
         start_url: '/',
         scope: '/',
         display: 'standalone',
@@ -29,23 +29,25 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
 
-        // SPA fallback
+        // SPA fallback -> index.html (sauf exceptions ci-dessous)
         navigateFallback: 'index.html',
-        // Pas de fallback pour les fichiers “réels” (images, assets, robots/sitemap, etc.)
+
+        // N'applique PAS le fallback pour ces routes/fichiers
         navigateFallbackDenylist: [
+          /^\/og(?:$|\/)/,             // <-- IMPORTANT : laisse /og à l’Edge Function
           /\/assets\//,
           /\/images\//,
           /\/icons?\//,
           /\/manifest\.json(?:\?.*)?$/,
           /\/robots\.txt(?:\?.*)?$/,
           /\/sitemap\.xml(?:\?.*)?$/,
-          /\.[^/]+$/, // toute URL qui finit par une extension
+          /\.[^/]+$/,                  // toute URL qui finit par une extension
         ],
 
         cleanupOutdatedCaches: true,
         clientsClaim: true,
 
-        // Caches runtime utiles
+        // Caches runtime utiles (images Pexels, Google Fonts, images locales)
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
@@ -77,7 +79,7 @@ export default defineConfig({
         ],
       },
 
-      // devOptions: { enabled: true }, // à activer seulement si tu veux tester le SW en dev
+      // devOptions: { enabled: true }, // active uniquement si tu veux tester le SW en dev
     }),
   ],
 })
