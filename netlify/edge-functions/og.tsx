@@ -1,4 +1,4 @@
-// netlify/edge-functions/og.ts
+// netlify/edge-functions/og.tsx
 import { ImageResponse } from "@vercel/og";
 
 export default async (req: Request) => {
@@ -10,15 +10,15 @@ export default async (req: Request) => {
     (
       <div
         style={{
-          width: "1200px",
-          height: "630px",
+          width: 1200,
+          height: 630,
           display: "flex",
           background: "linear-gradient(135deg,#0f172a,#111827)",
           color: "white",
           padding: "72px",
           justifyContent: "space-between",
           alignItems: "flex-end",
-          fontFamily: "system-ui, Segoe UI, Arial",
+          fontFamily: "system-ui, Segoe UI, Arial, sans-serif",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 900 }}>
