@@ -18,7 +18,7 @@ export default async (req: Request) => {
           padding: "72px",
           justifyContent: "space-between",
           alignItems: "flex-end",
-          fontFamily: "system-ui, Segoe UI, Arial, sans-serif",
+          fontFamily: "system-ui, -apple-system, Segoe UI, Arial, sans-serif",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 900 }}>
