@@ -12,7 +12,7 @@ export default defineConfig({
         name: "L'Éveil – Psychologie & Développement Personnel",
         short_name: "L'Éveil",
         description:
-          'Articles, outils et ressources pour votre bien-être mental, basés sur la science.',
+          "Articles, outils et ressources pour votre bien-être mental, basés sur la science.",
         start_url: '/',
         scope: '/',
         display: 'standalone',
@@ -27,46 +27,55 @@ export default defineConfig({
       },
 
       workbox: {
-  globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
 
-  // SPA fallback…
-  navigateFallback: 'index.html',
+        // SPA fallback…
+        navigateFallback: 'index.html',
+        // …sauf pour /og (edge), et quelques fichiers réels
+        navigateFallbackDenylist: [
+          /^\/og(?:$|\/)/,
+          /\/assets\//,
+          /\/images\//,
+          /\/icons?\//,
+          /\/manifest\.json(?:\?.*)?$/,
+          /\/robots\.txt(?:\?.*)?$/,
+          /\/sitemap\.xml(?:\?.*)?$/,
+          /\.[^/]+$/,
+        ],
 
-  // …mais JAMAIS pour /og (edge function) + quelques fichiers “réels”
-  navigateFallbackDenylist: [
-    /^\/og(?:$|\/)/,          // ⬅️ IMPORTANT : exclut /og de la SPA
-    /\/assets\//,
-    /\/images\//,
-    /\/icons?\//,
-    /\/manifest\.json(?:\?.*)?$/,
-    /\/robots\.txt(?:\?.*)?$/,
-    /\/sitemap\.xml(?:\?.*)?$/,
-    /\.[^/]+$/,               // toute URL qui finit par une extension
-  ],
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
 
-  cleanupOutdatedCaches: true,
-  clientsClaim: true,
-
-  runtimeCaching: [
-    {
-      urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
-      handler: 'CacheFirst',
-      options: { cacheName: 'pexels-images', expiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 } },
-    },
-    {
-      urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-      handler: 'StaleWhileRevalidate',
-      options: { cacheName: 'google-fonts-styles' },
-    },
-    {
-      urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-      handler: 'CacheFirst',
-      options: { cacheName: 'google-fonts-webfonts', expiration: { maxEntries: 30, maxAgeSeconds: 365 * 24 * 60 * 60 } },
-    },
-    {
-      urlPattern: ({ request, sameOrigin }) => sameOrigin && request.destination === 'image',
-      handler: 'StaleWhileRevalidate',
-      options: { cacheName: 'same-origin-images' },
-    },
-  ],
-},
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'pexels-images',
+              expiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'google-fonts-styles' },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-webfonts',
+              expiration: { maxEntries: 30, maxAgeSeconds: 365 * 24 * 60 * 60 },
+            },
+          },
+          {
+            urlPattern: ({ request, sameOrigin }) =>
+              sameOrigin && request.destination === 'image',
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'same-origin-images' },
+          },
+        ],
+      }, // <- fin workbox
+    }),   // <- fin VitePWA
+  ],      // <- fin plugins
+})        // <- fin defineConfig
