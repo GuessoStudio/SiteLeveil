@@ -12,12 +12,14 @@
     "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
+    "@resvg/resvg-wasm": "^2.6.2",
     "fuse.js": "^6.6.2",
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "satori": "^0.16.2"
   },
   "devDependencies": {
     "@types/react": "^18.3.23",
