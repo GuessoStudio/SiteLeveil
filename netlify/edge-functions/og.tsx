@@ -1,61 +1,92 @@
-// netlify/functions/og.ts
-import type { Handler } from "@netlify/functions";
-import satori from "satori";
-import { Resvg } from "@resvg/resvg-js";
+// netlify/edge-functions/og.tsx
+import { ImageResponse } from "@vercel/og";
 
+// Cache mémoire (Edge) pour éviter de re-télécharger les polices à chaque appel
 let interRegular: ArrayBuffer | null = null;
 let interBold: ArrayBuffer | null = null;
 
-async function fetchFont(url: string) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Font fetch failed: ${url}`);
-  return res.arrayBuffer();
+async function loadRegular(): Promise<ArrayBuffer> {
+  if (interRegular) return interRegular;              // ← déjà un ArrayBuffer ici
+  const res = await fetch(
+    "https://github.com/google/fonts/raw/main/ofl/inter/Inter-Regular.ttf"
+  );
+  interRegular = await res.arrayBuffer();
+  return interRegular!;                                // ← non-null assertion
 }
 
-export const handler: Handler = async (event) => {
-  try {
-    const url = new URL(event.rawUrl);
-    const title = (url.searchParams.get("title") ?? "L’Éveil").slice(0, 120);
-    const tag = (url.searchParams.get("tag") ?? "Psychologie & Neurosciences").slice(0, 40);
+async function loadBold(): Promise<ArrayBuffer> {
+  if (interBold) return interBold;
+  const res = await fetch(
+    "https://github.com/google/fonts/raw/main/ofl/inter/Inter-Bold.ttf"
+  );
+  interBold = await res.arrayBuffer();
+  return interBold!;
+}
 
-    // Charge (et garde) les polices en mémoire
-    if (!interRegular) interRegular = await fetchFont("https://github.com/google/fonts/raw/main/ofl/inter/Inter-Regular.ttf");
-    if (!interBold)    interBold    = await fetchFont("https://github.com/google/fonts/raw/main/ofl/inter/Inter-Bold.ttf");
+export default async (req: Request) => {
+  const { searchParams } = new URL(req.url);
+  const title = (searchParams.get("title") ?? "L’Éveil").slice(0, 120);
+  const tag   = (searchParams.get("tag")   ?? "Psychologie & Neurosciences").slice(0, 40);
 
-    const svg = await satori(
-      <div style={{
-        width: 1200, height: 630, display: "flex",
-        background: "linear-gradient(135deg,#0f172a,#111827)", color: "#fff",
-        padding: 72, justifyContent: "space-between", alignItems: "flex-end"
-      }}>
-        <div style={{ display:"flex", flexDirection:"column", gap: 24, maxWidth: 840 }}>
-          <div style={{ fontSize: 44, opacity: 0.8 }}>{tag}</div>
-          <div style={{ fontWeight: 700, fontSize: 74, lineHeight: 1.1 }}>{title}</div>
+  const [reg, bold] = await Promise.all([loadRegular(), loadBold()]);
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: 1200,
+          height: 630,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          padding: 72,
+          color: "#fff",
+          background: "linear-gradient(135deg,#0f172a,#111827)",
+          fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif",
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 840 }}>
+          <div
+            style={{
+              display: "inline-flex",
+              padding: "8px 14px",
+              borderRadius: 999,
+              background: "rgba(99,102,241,.2)",
+              color: "#c7d2fe",
+              fontSize: 28,
+              fontWeight: 600,
+            }}
+          >
+            {tag}
+          </div>
+          <div style={{ fontSize: 64, lineHeight: 1.1, fontWeight: 800 }}>{title}</div>
         </div>
-        <div style={{ fontSize: 32, opacity: 0.7 }}>L’Éveil</div>
-      </div>,
-      {
-        width: 1200,
-        height: 630,
-        fonts: [
-          { name: "Inter", data: interRegular!, weight: 400, style: "normal" },
-          { name: "Inter", data: interBold!,    weight: 700, style: "normal" },
-        ],
-      }
-    );
 
-    const png = new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng();
-
-    return {
-      statusCode: 200,
-      headers: {
-        "Content-Type": "image/png",
-        "Cache-Control": "public, max-age=31536000, immutable",
-      },
-      body: Buffer.from(png).toString("base64"),
-      isBase64Encoded: true,
-    };
-  } catch (e: any) {
-    return { statusCode: 500, body: `OG render error: ${e?.message ?? e}` };
-  }
+        <div
+          style={{
+            width: 180,
+            height: 180,
+            borderRadius: 24,
+            background: "rgba(255,255,255,.06)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 54,
+            fontWeight: 800,
+          }}
+        >
+          É
+        </div>
+      </div>
+    ),
+    {
+      width: 1200,
+      height: 630,
+      // On passe explicitement les polices -> évite l’erreur NotoSans manquante
+      fonts: [
+        { name: "Inter", data: reg,  weight: 400, style: "normal" },
+        { name: "Inter", data: bold, weight: 700, style: "normal" },
+      ],
+    }
+  );
 };
