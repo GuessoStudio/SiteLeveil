@@ -12,6 +12,8 @@
     "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
+    "@netlify/functions": "^4.2.2",
+    "@resvg/resvg-js": "^2.6.2",
     "@resvg/resvg-wasm": "^2.6.2",
     "fuse.js": "^6.6.2",
     "lucide-react": "^0.263.1",

@@ -1,115 +1,61 @@
-// netlify/edge-functions/og.tsx
+// netlify/functions/og.ts
+import type { Handler } from "@netlify/functions";
 import satori from "satori";
-import initResvg, { Resvg } from "@resvg/resvg-wasm";
+import { Resvg } from "@resvg/resvg-js";
 
-// Caches en mémoire Edge
 let interRegular: ArrayBuffer | null = null;
 let interBold: ArrayBuffer | null = null;
-let resvgReady = false;
 
-async function fetchArrayBuffer(url: string) {
-  const r = await fetch(url);
-  return await r.arrayBuffer();
+async function fetchFont(url: string) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Font fetch failed: ${url}`);
+  return res.arrayBuffer();
 }
 
-async function ensureFonts() {
-  if (!interRegular) {
-    interRegular = await fetchArrayBuffer(
-      "https://github.com/google/fonts/raw/main/ofl/inter/Inter-Regular.ttf",
-    );
-  }
-  if (!interBold) {
-    interBold = await fetchArrayBuffer(
-      "https://github.com/google/fonts/raw/main/ofl/inter/Inter-Bold.ttf",
-    );
-  }
-}
+export const handler: Handler = async (event) => {
+  try {
+    const url = new URL(event.rawUrl);
+    const title = (url.searchParams.get("title") ?? "L’Éveil").slice(0, 120);
+    const tag = (url.searchParams.get("tag") ?? "Psychologie & Neurosciences").slice(0, 40);
 
-async function ensureResvg() {
-  if (resvgReady) return;
-  // Charge le WASM de resvg depuis un CDN (pas de bundle local)
-  const wasm = await fetchArrayBuffer(
-    "https://cdn.jsdelivr.net/npm/@resvg/resvg-wasm@2.6.0/index_bg.wasm",
-  );
-  await initResvg(wasm);
-  resvgReady = true;
-}
+    // Charge (et garde) les polices en mémoire
+    if (!interRegular) interRegular = await fetchFont("https://github.com/google/fonts/raw/main/ofl/inter/Inter-Regular.ttf");
+    if (!interBold)    interBold    = await fetchFont("https://github.com/google/fonts/raw/main/ofl/inter/Inter-Bold.ttf");
 
-export default async (req: Request) => {
-  const { searchParams } = new URL(req.url);
-
-  const title = (searchParams.get("title") || "L’Éveil").slice(0, 120);
-  const tag   = (searchParams.get("tag")   || "Psychologie & Neurosciences").slice(0, 40);
-
-  // Dimensions OG standard
-  const width  = +(searchParams.get("w") || 1200);
-  const height = +(searchParams.get("h") || 630);
-  const format = (searchParams.get("format") || "png").toLowerCase(); // png | svg
-
-  await ensureFonts();
-
-  const svg = await satori(
-    (
-      <div
-        style={{
-          width, height,
-          display: "flex",
-          background: "linear-gradient(135deg,#0f172a,#111827)",
-          color: "white",
-          padding: 72,
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 900 }}>
-          <div style={{ opacity: 0.7, fontSize: 28 }}>{tag}</div>
-          <div style={{ fontSize: 64, lineHeight: 1.1, fontWeight: 700, whiteSpace: "pre-wrap" }}>
-            {title}
-          </div>
+    const svg = await satori(
+      <div style={{
+        width: 1200, height: 630, display: "flex",
+        background: "linear-gradient(135deg,#0f172a,#111827)", color: "#fff",
+        padding: 72, justifyContent: "space-between", alignItems: "flex-end"
+      }}>
+        <div style={{ display:"flex", flexDirection:"column", gap: 24, maxWidth: 840 }}>
+          <div style={{ fontSize: 44, opacity: 0.8 }}>{tag}</div>
+          <div style={{ fontWeight: 700, fontSize: 74, lineHeight: 1.1 }}>{title}</div>
         </div>
+        <div style={{ fontSize: 32, opacity: 0.7 }}>L’Éveil</div>
+      </div>,
+      {
+        width: 1200,
+        height: 630,
+        fonts: [
+          { name: "Inter", data: interRegular!, weight: 400, style: "normal" },
+          { name: "Inter", data: interBold!,    weight: 700, style: "normal" },
+        ],
+      }
+    );
 
-        <div
-          style={{
-            border: "2px solid rgba(255,255,255,.2)",
-            padding: "10px 16px",
-            borderRadius: 12,
-            fontSize: 24,
-            fontWeight: 700,
-            letterSpacing: 0.2,
-          }}
-        >
-          L’Éveil
-        </div>
-      </div>
-    ),
-    {
-      width, height,
-      fonts: [
-        { name: "Inter", data: interRegular!, weight: 400, style: "normal" },
-        { name: "Inter", data: interBold!,    weight: 700, style: "normal" },
-      ],
-    }
-  );
+    const png = new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng();
 
-  // Option : retourner le SVG (utile pour debug)
-  if (format === "svg") {
-    return new Response(svg, {
+    return {
+      statusCode: 200,
       headers: {
-        "content-type": "image/svg+xml; charset=utf-8",
-        "cache-control": "public, max-age=604800, immutable",
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=31536000, immutable",
       },
-    });
+      body: Buffer.from(png).toString("base64"),
+      isBase64Encoded: true,
+    };
+  } catch (e: any) {
+    return { statusCode: 500, body: `OG render error: ${e?.message ?? e}` };
   }
-
-  // Par défaut → PNG pour les scrapers (Facebook/Twitter n'aiment pas le SVG)
-  await ensureResvg();
-  const png = new Resvg(svg, { fitTo: { mode: "width", value: width } }).render().asPng();
-
-  return new Response(png, {
-    headers: {
-      "content-type": "image/png",
-      "cache-control": "public, max-age=604800, immutable",
-    },
-  });
 };

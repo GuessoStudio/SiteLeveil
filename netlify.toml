@@ -1,4 +1,7 @@
-# netlify.toml
-[[edge_functions]]
-path = "/og"
-function = "og"
+# (enlève tout bloc [[edge_functions]] lié à /og)
+
+# Route conviviale /og -> function Node
+[[redirects]]
+  from = "/og"
+  to = "/.netlify/functions/og"
+  status = 200
