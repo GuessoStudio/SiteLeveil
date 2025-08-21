@@ -61,58 +61,64 @@ const Home = () => {
   path="/"
   image="/images/og-default.jpg"
 />
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900">
-        <div className="container mx-auto px-4">
+      {/* Hero Section avec image de fond */}
+      <section className="relative py-20 min-h-[80vh] flex items-center overflow-hidden">
+        {/* Image de fond */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero-bg.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay subtil pour lisibilité */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40"></div>
+        </div>
+        
+        {/* Contenu au premier plan */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              <img
-    src="/images/og-default.jpg"
-    alt="L'Éveil – Psychologie & Neurosciences"
-    width={1200}
-    height={630}
-    className="mx-auto mb-6 w-full max-w-2xl rounded-2xl shadow-lg"
-    fetchPriority="high"
-    loading="eager"
-    decoding="async"
-  />
-              <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
-                Éveillez votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">potentiel</span>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Éveillez votre{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-amber-200">
+                  potentiel
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md">
                 Psychologie, neurosciences et développement personnel fondés sur la science pour transformer votre vie
               </p>
             </div>
 
-            {/* CTA */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link
                 to="/blog"
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-semibold
-                           transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl
-                           transform hover:-translate-y-1 focus-ring"
+                className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
+                           text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
+                           flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
+                           transform hover:-translate-y-1 focus-ring backdrop-blur-sm"
               >
                 Découvrir les articles <ArrowRight className="w-5 h-5" />
               </Link>
 
-              {/* ancre interne → on garde <a>, mais avec focus-ring */}
               <a
                 href="#newsletter"
-                className="bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700
-                           text-neutral-900 dark:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300
-                           border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus-ring"
+                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white 
+                           px-8 py-4 rounded-lg font-semibold transition-all duration-300
+                           border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
+                           transform hover:-translate-y-1 focus-ring"
               >
                 Recevoir le guide gratuit
               </a>
             </div>
 
-            {/* Stats */}
+            {/* Stats avec effet glassmorphism */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <stat.icon className="w-8 h-8 mx-auto mb-2 text-indigo-600 dark:text-indigo-400" />
-                  <div className="text-2xl font-bold text-neutral-900 dark:text-white">{stat.value}</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{stat.label}</div>
+                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <stat.icon className="w-8 h-8 mx-auto mb-2 text-yellow-300" />
+                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -217,7 +223,7 @@ const Home = () => {
 
                   <Link
                     to={`/article/${article.slug}`}
-                    aria-label={`Lire l’article : ${article.title}`}
+                    aria-label={`Lire l'article : ${article.title}`}
                     className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
                                dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring"
                   >
