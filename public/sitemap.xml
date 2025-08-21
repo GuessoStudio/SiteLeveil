@@ -35,12 +35,12 @@
 
   <!-- Exemples articles (ajoute ceux que tu as) -->
   <url>
-    <loc>https://siteleveil.netlify.app/article/surmonter-rejet-social</loc>
+    <loc>https://siteleveil.netlify.app/blog/surmonter-rejet-social</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siteleveil.netlify.app/article/neuroplasticite-cerveau</loc>
+    <loc>https://siteleveil.netlify.app/blog/neuroplasticite-cerveau</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
