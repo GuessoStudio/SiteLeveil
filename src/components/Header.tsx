@@ -37,9 +37,11 @@ const Header = () => {
             className="flex items-center space-x-3 rounded-xl focus-ring"
             aria-label="Aller à l’accueil"
           >
-            <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">É</span>
-            </div>
+             <img 
+    src="/images/logo.jpg" 
+    alt="Logo L'Éveil"
+    className="w-10 h-10 object-contain rounded-full"
+  />
             <span className="text-xl font-bold text-neutral-900 dark:text-white">
               L'Éveil
             </span>
