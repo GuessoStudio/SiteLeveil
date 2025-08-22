@@ -5,7 +5,12 @@ import ResumeReading from '../components/ResumeReading'
 import Newsletter from '../components/Newsletter'
 import SmartImg from '../components/SmartImg'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
-import SEO from '../components/SEO' 
+import SEO from '../components/SEO'
+
+// Import seulement les animations texte qui marchent
+import SplitText from '../components/ui/text-animations/SplitText/SplitText'
+import CountUp from '../components/ui/text-animations/CountUp/CountUp'  
+import BlurText from '../components/ui/text-animations/BlurText/BlurText'
 
 const Home = () => {
   const featuredArticles = [
@@ -39,10 +44,10 @@ const Home = () => {
   ]
 
   const stats = [
-    { icon: Users, value: "10,000+", label: "Lecteurs actifs" },
-    { icon: BookOpen, value: "500+", label: "Articles publiés" },
-    { icon: TrendingUp, value: "95%", label: "Satisfaction" },
-    { icon: Heart, value: "50,000+", label: "Vies transformées" }
+    { icon: Users, value: 10000, label: "Lecteurs actifs" },
+    { icon: BookOpen, value: 500, label: "Articles publiés" },
+    { icon: TrendingUp, value: 95, label: "Satisfaction" },
+    { icon: Heart, value: 50000, label: "Vies transformées" }
   ]
 
   const categories = [
@@ -61,42 +66,55 @@ const Home = () => {
   path="/"
   image="/images/og-default.jpg"
 />
-      {/* Hero Section avec image de fond */}
+      
+      {/* Hero Section avec votre magnifique image de fond + animations texte */}
       <section className="relative py-20 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Image de fond */}
+        {/* Image de fond existante */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero-bg.jpg"
             alt=""
             className="w-full h-full object-cover"
           />
-          {/* Overlay subtil pour lisibilité */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40"></div>
         </div>
         
-        {/* Contenu au premier plan */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                Éveillez votre{" "}
+              {/* Titre principal avec SplitText */}
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+                <SplitText 
+                  text="Éveillez votre"
+                  delay={100}
+                  className="text-white"
+                />{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-amber-200">
-                  potentiel
+                  <SplitText 
+                    text="potentiel"
+                    delay={600}
+                  />
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md">
-                Psychologie, neurosciences et développement personnel fondés sur la science pour transformer votre vie
-              </p>
+              
+              {/* Sous-titre avec BlurText */}
+              <div className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md">
+                <BlurText 
+                  text="Psychologie, neurosciences et développement personnel fondés sur la science pour transformer votre vie"
+                  delay={1200}
+                  className="text-white/95"
+                />
+              </div>
             </div>
 
-            {/* CTA Buttons */}
+            {/* Boutons avec hover amélioré */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link
                 to="/blog"
                 className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
                            text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
                            flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
-                           transform hover:-translate-y-1 focus-ring backdrop-blur-sm"
+                           transform hover:-translate-y-2 hover:scale-105 focus-ring backdrop-blur-sm"
               >
                 Découvrir les articles <ArrowRight className="w-5 h-5" />
               </Link>
@@ -106,18 +124,35 @@ const Home = () => {
                 className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white 
                            px-8 py-4 rounded-lg font-semibold transition-all duration-300
                            border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
-                           transform hover:-translate-y-1 focus-ring"
+                           transform hover:-translate-y-2 hover:scale-105 focus-ring"
               >
                 Recevoir le guide gratuit
               </a>
             </div>
 
-            {/* Stats avec effet glassmorphism */}
+            {/* Stats avec CountUp */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div 
+                  key={index} 
+                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20
+                             hover:bg-white/15 transition-all duration-500 hover:scale-105
+                             animate-in fade-in"
+                  style={{ animationDelay: `${1.5 + index * 0.2}s` }}
+                >
                   <stat.icon className="w-8 h-8 mx-auto mb-2 text-yellow-300" />
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  
+                  <div className="text-2xl font-bold text-white">
+                    <CountUp 
+                      from={0} 
+                      to={stat.value} 
+                      duration={2500}
+                      delay={1800 + (index * 300)}
+                      className="text-white"
+                    />
+                    {stat.value >= 1000 ? "+" : "%"}
+                  </div>
+                  
                   <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
               ))}
@@ -140,10 +175,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-20 bg-white dark:bg-neutral-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      {/* Categories avec animations CSS */}
+      <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-in fade-in duration-700">
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
               Explorez nos domaines d'expertise
             </h2>
@@ -154,32 +189,42 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((category, index) => (
-              <Link
+              <div 
                 key={index}
-                to={`/blog?cat=${encodeURIComponent(category.title)}`}
-                className="group bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all
-                           duration-300 transform hover:-translate-y-2 border border-neutral-100 dark:border-neutral-700
-                           focus-ring block"
+                className="animate-in slide-in-from-bottom-4 duration-700"
+                style={{ animationDelay: `${0.8 + index * 0.2}s` }}
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <category.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
-                  {category.title}
-                </h3>
-                <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                  {category.description}
-                </p>
-              </Link>
+                <Link
+                  to={`/blog?cat=${encodeURIComponent(category.title)}`}
+                  className="group bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all
+                             duration-500 transform hover:-translate-y-4 hover:scale-105 border border-neutral-100 dark:border-neutral-700
+                             focus-ring block hover:bg-gradient-to-br hover:from-white hover:to-neutral-50
+                             dark:hover:from-neutral-800 dark:hover:to-neutral-750"
+                >
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}>
+                    <category.icon className="w-8 h-8 text-white relative z-10" />
+                    {/* Effet de brillance */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                    translate-x-[-100%] group-hover:translate-x-[100%] 
+                                    transition-transform duration-700 skew-x-12" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+                    {category.title}
+                  </h3>
+                  <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                    {category.description}
+                  </p>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Featured Articles */}
-      <section className="py-20 bg-neutral-50 dark:bg-neutral-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-800 relative overflow-hidden">        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-in fade-in duration-700">
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
               Articles à la une
             </h2>
@@ -189,57 +234,65 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredArticles.map((article) => (
-              <article key={article.id} className="bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div className="relative overflow-hidden rounded-b-none" style={{ aspectRatio: '3/2' }}>
-                  <SmartImg
-                    src={article.image}
-                    alt={article.title}
-                    width={1200}
-                    height={800}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {article.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <Star className="w-5 h-5 text-amber-400 fill-current" />
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-                  <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
-                    <span>{article.readTime} min de lecture</span>
+            {featuredArticles.map((article, index) => (
+              <div
+                key={article.id}
+                className="animate-in slide-in-from-bottom-8 duration-700"
+                style={{ animationDelay: `${0.6 + index * 0.2}s` }}
+              >
+                <article className="bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group transform hover:scale-105 hover:-translate-y-2">
+                  <div className="relative overflow-hidden rounded-b-none" style={{ aspectRatio: '3/2' }}>
+                    <SmartImg
+                      src={article.image}
+                      alt={article.title}
+                      width={1200}
+                      height={800}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                        {article.category}
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg" />
+                    </div>
                   </div>
 
-                  <Link
-                    to={`/article/${article.slug}`}
-                    aria-label={`Lire l'article : ${article.title}`}
-                    className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
-                               dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring"
-                  >
-                    Lire l'article
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </article>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+
+                    <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+                      <span>{article.readTime} min de lecture</span>
+                    </div>
+
+                    <Link
+                      to={`/article/${article.slug}`}
+                      aria-label={`Lire l'article : ${article.title}`}
+                      className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
+                                 dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring
+                                 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300"
+                    >
+                      Lire l'article
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                  </div>
+                </article>
+              </div>
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center animate-in fade-in duration-700" style={{ animationDelay: '1.4s' }}>
             <Link
               to="/blog"
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold
-                         transition-colors inline-flex items-center gap-2 focus-ring"
+                         transition-all duration-300 inline-flex items-center gap-2 focus-ring
+                         hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl"
             >
               Voir tous les articles <ArrowRight className="w-4 h-4" />
             </Link>
