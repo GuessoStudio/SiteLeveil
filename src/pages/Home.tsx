@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import DailyQuote from '../components/DailyQuote'
 import ResumeReading from '../components/ResumeReading'
@@ -6,6 +6,54 @@ import Newsletter from '../components/Newsletter'
 import SmartImg from '../components/SmartImg'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
 import SEO from '../components/SEO'
+
+/* -------- Counter léger sans dépendance -------- */
+function Counter({ to, duration = 1000, prefix = '', suffix = '' }:{
+  to: number; duration?: number; prefix?: string; suffix?: string;
+}) {
+  const [val, setVal] = React.useState(0)
+  const start = React.useRef<number | null>(null)
+
+  React.useEffect(() => {
+    let raf = 0
+    const step = (t: number) => {
+      if (start.current === null) start.current = t
+      const p = Math.min((t - start.current) / duration, 1)
+      const eased = 1 - Math.pow(1 - p, 3) // easeOutCubic
+      setVal(Math.round(eased * to))
+      if (p < 1) raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [to, duration])
+
+  return <span>{prefix}{val.toLocaleString()}{suffix}</span>
+}
+
+/* -------- Particules CSS (positions fixées) -------- */
+function ParticlesLite({ count = 24 }: { count?: number }) {
+  const dots = useMemo(
+    () =>
+      Array.from({ length: count }).map((_, i) => ({
+        left: `${(i * 37) % 100}%`,
+        bottom: `${(i * 23) % 100}%`,
+        duration: `${6 + (i % 5)}s`,
+        opacity: 0.85 - (i % 4) * 0.15
+      })),
+    [count]
+  )
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {dots.map((d, i) => (
+        <span
+          key={i}
+          style={{ left: d.left, bottom: d.bottom, ['--p-duration' as any]: d.duration, opacity: d.opacity }}
+          className="absolute h-[3px] w-[3px] rounded-full bg-amber-300/70 animate-particle"
+        />
+      ))}
+    </div>
+  )
+}
 
 const Home = () => {
   const featuredArticles = [
@@ -39,10 +87,10 @@ const Home = () => {
   ]
 
   const stats = [
-    { icon: Users, value: 10000, label: "Lecteurs actifs" },
-    { icon: BookOpen, value: 500, label: "Articles publiés" },
-    { icon: TrendingUp, value: 95, label: "Satisfaction" },
-    { icon: Heart, value: 50000, label: "Vies transformées" }
+    { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
+    { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
+    { icon: TrendingUp, value: 95, label: "Satisfaction", suffix: "%" },
+    { icon: Heart, value: 50000, label: "Vies transformées", suffix: "+" }
   ]
 
   const categories = [
@@ -55,97 +103,74 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <SEO
-       isHome
-  title="Psychologie, Neurosciences & Développement Personnel"
-  description="Articles quotidiens, outils et ressources pour comprendre l'esprit humain et transformer votre vie."
-  path="/"
-  image="/images/og-default.jpg"
-/>
-      
-      {/* Hero Section avec votre magnifique image de fond + animations CSS */}
+        isHome
+        title="Psychologie, Neurosciences & Développement Personnel"
+        description="Articles quotidiens, outils et ressources pour comprendre l'esprit humain et transformer votre vie."
+        path="/"
+        image="/images/og-default.jpg"
+      />
+
+      {/* Hero Section */}
       <section className="relative py-20 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Image de fond existante */}
+        {/* Image de fond optimisée + overlay lisibilité */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero-bg.jpg"
             alt=""
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40"></div>
+          <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
         </div>
-        
-        {/* Particules CSS flottantes */}
-        <div className="absolute inset-0 z-5">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-yellow-400/30 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-              }}
-            />
-          ))}
-        </div>
-        
+
+        {/* Particules CSS légères */}
+        <ParticlesLite />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              {/* Titre principal avec animation CSS lettre par lettre */}
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-                <span className="inline-block text-white">
-                  {['É', 'v', 'e', 'i', 'l', 'l', 'e', 'z', ' ', 'v', 'o', 't', 'r', 'e'].map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-700"
-                      style={{
-                        animationDelay: `${100 + index * 100}ms`,
-                        animationFillMode: 'both'
-                      }}
-                    >
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </span>
-                  ))}
-                </span>{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-amber-200">
-                  {['p', 'o', 't', 'e', 'n', 't', 'i', 'e', 'l'].map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-1000"
-                      style={{
-                        animationDelay: `${600 + index * 150}ms`,
-                        animationFillMode: 'both'
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                </span>
-              </h1>
-              
-              {/* Sous-titre avec animation flou progressif */}
-              <div className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md">
-                <div 
-                  className="animate-in fade-in duration-1000"
-                  style={{ 
-                    animationDelay: '2000ms',
-                    animationFillMode: 'both'
-                  }}
-                >
-                  Psychologie, neurosciences et développement personnel fondés sur la science pour transformer votre vie
-                </div>
-              </div>
+              {/* Titre principal animé (lettre par lettre) */}
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
+  <span className="inline-block">
+    {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+      <span
+        key={index}
+        className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-700"
+        style={{ animationDelay: `${100 + index * 100}ms`, animationFillMode: 'both' }}
+      >
+        {letter === ' ' ? '\u00A0' : letter}
+      </span>
+    ))}
+  </span>{" "}
+  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+    <span
+      key={index}
+      className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-1000
+                 text-transparent bg-clip-text bg-gradient-to-r
+                 from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg"
+      style={{ animationDelay: `${600 + index * 150}ms`, animationFillMode: 'both' }}
+    >
+      {letter}
+    </span>
+  ))}
+</h1>
+
+
+              {/* Sous-titre */}
+              <p
+                className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md"
+                style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
+              >
+                Psychologie, neurosciences et développement personnel fondés sur la science pour transformer votre vie
+              </p>
             </div>
 
-            {/* Boutons avec hover amélioré */}
-            <div 
+            {/* CTA */}
+            <div
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
-              style={{ 
-                animationDelay: '2500ms',
-                animationFillMode: 'both'
-              }}
+              style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
             >
               <Link
                 to="/blog"
@@ -154,12 +179,12 @@ const Home = () => {
                            flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
                            transform hover:-translate-y-2 hover:scale-105 focus-ring backdrop-blur-sm
                            relative overflow-hidden"
+                aria-label="Découvrir les articles du blog"
               >
                 <span className="relative z-10">Découvrir les articles</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                {/* Effet de brillance */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                translate-x-[-100%] group-hover:translate-x-[100%] 
+                                -translate-x-full group-hover:translate-x-full 
                                 transition-transform duration-700 skew-x-12" />
               </Link>
 
@@ -170,33 +195,29 @@ const Home = () => {
                            border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
                            transform hover:-translate-y-2 hover:scale-105 focus-ring
                            relative overflow-hidden"
+                aria-label="Recevoir le guide gratuit par email"
               >
                 <span className="relative z-10">Recevoir le guide gratuit</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                                translate-x-[-100%] group-hover:translate-x-[100%] 
+                                -translate-x-full group-hover:translate-x-full 
                                 transition-transform duration-700 skew-x-12" />
               </a>
             </div>
 
-            {/* Stats avec compteurs CSS */}
+            {/* Stats (Counter) */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {stats.map((stat, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20
                              hover:bg-white/15 transition-all duration-500 hover:scale-105
                              animate-in slide-in-from-bottom-8 duration-700"
-                  style={{ 
-                    animationDelay: `${3000 + index * 200}ms`,
-                    animationFillMode: 'both'
-                  }}
+                  style={{ animationDelay: `${3000 + index * 200}ms`, animationFillMode: 'both' }}
                 >
                   <stat.icon className="w-8 h-8 mx-auto mb-2 text-yellow-300 animate-pulse" />
-                  
                   <div className="text-2xl font-bold text-white">
-                    {stat.value >= 1000 ? `${stat.value.toLocaleString()}+` : `${stat.value}%`}
+                    <Counter to={stat.value} duration={1100 + index * 150} suffix={stat.suffix as string} />
                   </div>
-                  
                   <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
               ))}
@@ -219,24 +240,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Categories avec animations CSS */}
+      {/* Categories */}
       <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
-        {/* Particules de fond */}
         <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-indigo-400/20 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${4 + Math.random() * 3}s`,
-              }}
-            />
-          ))}
+          {/* petites particules indigo discrètes */}
+          {useMemo(
+            () => Array.from({ length: 15 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-indigo-400/20 rounded-full animate-pulse"
+                style={{
+                  left: `${(i * 29) % 100}%`,
+                  top: `${(i * 17) % 100}%`,
+                  animationDelay: `${(i % 4) * 0.5}s`,
+                  animationDuration: `${4 + (i % 3)}s`,
+                }}
+              />
+            )),
+            []
+          )}
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-in fade-in duration-700">
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
@@ -263,9 +287,8 @@ const Home = () => {
                 >
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}>
                     <category.icon className="w-8 h-8 text-white relative z-10" />
-                    {/* Effet de brillance */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
-                                    translate-x-[-100%] group-hover:translate-x-[100%] 
+                                    -translate-x-full group-hover:translate-x-full 
                                     transition-transform duration-700 skew-x-12" />
                   </div>
                   <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
@@ -274,7 +297,6 @@ const Home = () => {
                   <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                     {category.description}
                   </p>
-                  {/* Barre de progression décorative */}
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
                                   group-hover:w-full transition-all duration-500" />
                 </Link>
@@ -286,7 +308,6 @@ const Home = () => {
 
       {/* Featured Articles */}
       <section className="py-20 bg-neutral-50 dark:bg-neutral-800 relative overflow-hidden">
-        {/* Effet de faisceau CSS */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-indigo-500/20 to-transparent animate-pulse" />
           <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-purple-500/20 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
@@ -318,9 +339,7 @@ const Home = () => {
                       height={800}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    {/* Overlay graduel */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
                     <div className="absolute top-4 left-4">
                       <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
                         {article.category}
@@ -329,10 +348,8 @@ const Home = () => {
                     <div className="absolute top-4 right-4">
                       <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg animate-pulse" />
                     </div>
-                    
-                    {/* Effet de brillance diagonal */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                    translate-x-[-100%] group-hover:translate-x-[100%] 
+                                    -translate-x-full group-hover:translate-x-full 
                                     transition-transform duration-1000 skew-x-12" />
                   </div>
 
@@ -363,7 +380,6 @@ const Home = () => {
                     </Link>
                   </div>
 
-                  {/* Barre de progression en bas */}
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
                                   group-hover:w-full transition-all duration-700" />
                 </article>
@@ -383,7 +399,7 @@ const Home = () => {
               <span className="relative z-10">Voir tous les articles</span>
               <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                              translate-x-[-100%] group-hover:translate-x-[100%] 
+                              -translate-x-full group-hover:translate-x-full 
                               transition-transform duration-700 skew-x-12" />
             </Link>
           </div>
