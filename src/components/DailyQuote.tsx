@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Quote, Share2, Twitter, Linkedin, Facebook } from 'lucide-react'
+import { Quote, Share2, Twitter, Linkedin, Facebook, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface QuoteData {
   id: number
@@ -11,6 +11,7 @@ interface QuoteData {
 
 const DailyQuote = () => {
   const [quote, setQuote] = useState<QuoteData | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
   const [showShare, setShowShare] = useState(false)
 
   const quotes: QuoteData[] = [
@@ -48,16 +49,170 @@ const DailyQuote = () => {
       author: "Charles Swindoll",
       category: "résilience",
       source: "psychologie"
+    },
+    {
+      id: 6,
+      text: "Nous sommes ce que nous répétons sans cesse. L'excellence n'est donc pas un acte, mais une habitude",
+      author: "Aristote",
+      category: "habitudes",
+      source: "philosophie"
+    },
+    {
+      id: 7,
+      text: "Votre zone de confort est un bel endroit, mais rien n'y pousse",
+      author: "John Assaraf",
+      category: "développement",
+      source: "coaching"
+    },
+    {
+      id: 8,
+      text: "L'intelligence émotionnelle est plus importante que le QI",
+      author: "Daniel Goleman",
+      category: "émotions",
+      source: "psychologie"
+    },
+    {
+      id: 9,
+      text: "La méditation n'est pas une évasion mais une rencontre sereine avec la réalité",
+      author: "Thich Nhat Hanh",
+      category: "mindfulness",
+      source: "spiritualité"
+    },
+    {
+      id: 10,
+      text: "Les habitudes que vous créez vous créent en retour",
+      author: "James Clear",
+      category: "habitudes",
+      source: "développement"
+    },
+    {
+      id: 11,
+      text: "La vulnérabilité est le berceau de l'innovation, de la créativité et du changement",
+      author: "Brené Brown",
+      category: "vulnérabilité",
+      source: "psychologie"
+    },
+    {
+      id: 12,
+      text: "Votre attention est votre ressource la plus précieuse",
+      author: "Cal Newport",
+      category: "focus",
+      source: "productivité"
+    },
+    {
+      id: 13,
+      text: "La croissance commence à la fin de votre zone de confort",
+      author: "Tony Robbins",
+      category: "croissance",
+      source: "coaching"
+    },
+    {
+      id: 14,
+      text: "Ce ne sont pas les événements qui nous troublent, mais nos jugements sur ces événements",
+      author: "Épictète",
+      category: "stoïcisme",
+      source: "philosophie"
+    },
+    {
+      id: 15,
+      text: "Votre état d'esprit détermine votre expérience de vie",
+      author: "Carol Dweck",
+      category: "mindset",
+      source: "psychologie"
+    },
+    {
+      id: 16,
+      text: "La gratitude transforme ce que nous avons en suffisant",
+      author: "Melody Beattie",
+      category: "gratitude",
+      source: "bien-être"
+    },
+    {
+      id: 17,
+      text: "L'échec n'est pas le contraire du succès, c'est une partie du succès",
+      author: "Arianna Huffington",
+      category: "échec",
+      source: "entrepreneuriat"
+    },
+    {
+      id: 18,
+      text: "Votre potentiel est infini quand vous cessez de vous limiter",
+      author: "Wayne Dyer",
+      category: "potentiel",
+      source: "développement"
+    },
+    {
+      id: 19,
+      text: "La paix intérieure commence au moment où vous choisissez de ne pas laisser les autres contrôler vos émotions",
+      author: "Pema Chödrön",
+      category: "paix intérieure",
+      source: "spiritualité"
+    },
+    {
+      id: 20,
+      text: "Investissez en vous-même : c'est le meilleur investissement que vous puissiez faire",
+      author: "Warren Buffett",
+      category: "investissement personnel",
+      source: "développement"
+    },
+    {
+      id: 21,
+      text: "La compassion envers soi-même est la clé de la guérison émotionnelle",
+      author: "Kristin Neff",
+      category: "auto-compassion",
+      source: "psychologie"
+    },
+    {
+      id: 22,
+      text: "Votre environnement façonne plus votre comportement que votre motivation",
+      author: "B.J. Fogg",
+      category: "environnement",
+      source: "comportement"
+    },
+    {
+      id: 23,
+      text: "La pleine conscience est l'art d'être présent à sa propre vie",
+      author: "Jon Kabat-Zinn",
+      category: "pleine conscience",
+      source: "méditation"
+    },
+    {
+      id: 24,
+      text: "Vos pensées deviennent vos mots, vos mots deviennent vos actions",
+      author: "Lao Tseu",
+      category: "pensées",
+      source: "philosophie"
+    },
+    {
+      id: 25,
+      text: "La créativité naît de l'angoisse comme le jour naît de la nuit obscure",
+      author: "Albert Einstein",
+      category: "créativité",
+      source: "science"
     }
   ]
 
   useEffect(() => {
-    // Sélection basée sur la date pour avoir une citation différente chaque jour
+    // Citation du jour basée sur la date
     const today = new Date()
     const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000)
-    const selectedQuote = quotes[dayOfYear % quotes.length]
-    setQuote(selectedQuote)
+    const dailyIndex = dayOfYear % quotes.length
+    setCurrentIndex(dailyIndex)
+    setQuote(quotes[dailyIndex])
   }, [])
+
+  // Navigation manuelle
+  const nextQuote = () => {
+    const newIndex = (currentIndex + 1) % quotes.length
+    setCurrentIndex(newIndex)
+    setQuote(quotes[newIndex])
+  }
+
+  const prevQuote = () => {
+    const newIndex = currentIndex === 0 ? quotes.length - 1 : currentIndex - 1
+    setCurrentIndex(newIndex)
+    setQuote(quotes[newIndex])
+  }
 
   const shareQuote = (platform: string) => {
     if (!quote) return
@@ -93,7 +248,7 @@ const DailyQuote = () => {
           <blockquote className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 font-medium mb-4 leading-relaxed">
             "{quote.text}"
           </blockquote>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-4">
             <cite className="text-neutral-600 dark:text-neutral-400 font-medium">
               — {quote.author}
             </cite>
@@ -133,11 +288,36 @@ const DailyQuote = () => {
               )}
             </div>
           </div>
+          
+          {/* Navigation entre citations */}
+          <div className="flex items-center justify-between">
+            <button
+              onClick={prevQuote}
+              className="flex items-center gap-1 text-sm text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
+              aria-label="Citation précédente"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              Précédente
+            </button>
+            
+            <span className="text-xs text-neutral-400">
+              {currentIndex + 1} / {quotes.length}
+            </span>
+            
+            <button
+              onClick={nextQuote}
+              className="flex items-center gap-1 text-sm text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
+              aria-label="Citation suivante"
+            >
+              Suivante
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
-      <div className="mt-4 text-center">
+      <div className="mt-6 text-center">
         <span className="inline-block bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 px-3 py-1 rounded-full text-sm font-medium">
-          Citation du jour
+          Citation du jour #{currentIndex + 1}
         </span>
       </div>
     </div>
