@@ -133,30 +133,29 @@ const Home = () => {
             <div className="mb-8">
               {/* Titre principal animé (lettre par lettre) */}
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
-  <span className="inline-block">
-    {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-      <span
-        key={index}
-        className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: `${100 + index * 100}ms`, animationFillMode: 'both' }}
-      >
-        {letter === ' ' ? '\u00A0' : letter}
-      </span>
-    ))}
-  </span>{" "}
-  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-    <span
-      key={index}
-      className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-1000
-                 text-transparent bg-clip-text bg-gradient-to-r
-                 from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg"
-      style={{ animationDelay: `${600 + index * 150}ms`, animationFillMode: 'both' }}
-    >
-      {letter}
-    </span>
-  ))}
-</h1>
-
+                <span className="inline-block">
+                  {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-700"
+                      style={{ animationDelay: `${100 + index * 100}ms`, animationFillMode: 'both' }}
+                    >
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-amber-200">
+                  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-1000"
+                      style={{ animationDelay: `${600 + index * 150}ms`, animationFillMode: 'both' }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+              </h1>
 
               {/* Sous-titre */}
               <p
