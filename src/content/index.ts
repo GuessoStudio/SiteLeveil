@@ -5,11 +5,15 @@ import type { FC } from "react";
 import NeuroDopamineRoutine from "../articles/NeuroDopamineRoutine";
 import RejetSocial from "../articles/RejetSocial";
 import ConfianceEnSoi from "../articles/ConfianceEnSoi";
+import NeuroplasticiteCerveau from "../articles/NeuroplasticiteCerveau";
+
+
 
 // Mappe chaque slug vers le composant de l’article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d’article.
 export const articlesBySlug: Record<string, FC> = {
   "neuro-dopamine-routine": NeuroDopamineRoutine,
   "surmonter-rejet-social": RejetSocial,
-  "confiance-en-soi-durable": ConfianceEnSoi, 
+  "confiance-en-soi-durable": ConfianceEnSoi,
+  "neuroplasticite-cerveau": NeuroplasticiteCerveau,
 };
