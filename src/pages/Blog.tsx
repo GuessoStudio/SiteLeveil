@@ -13,7 +13,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 8,
       date: "2024-01-15",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/images/articles/rejet-social-thumb.jpg",
       slug: "surmonter-rejet-social",
       featured: true
     },
@@ -24,7 +24,7 @@ const Blog = () => {
       category: "Neurosciences",
       readTime: 12,
       date: "2024-01-12",
-      image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/images/articles/neuroplasticite-thumb.jpg",
       slug: "neuroplasticite-cerveau"
     },
     {
@@ -34,10 +34,20 @@ const Blog = () => {
       category: "Développement Personnel",
       readTime: 10,
       date: "2024-01-10",
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/images/articles/confiance-soi-thumb.jpg",
       slug: "confiance-en-soi-durable"
-    }
-  ]
+    },
+    {
+      id: 4,
+      title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
+      excerpt: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
+      category: "Psychologie",
+      readTime: 6,
+      date: "2025-08-13",
+      image: "/images/articles/dopamine-thumb.jpg",
+      slug: "neuro-dopamine-routine"
+  }
+]
 
   const categories = ["Tous", "Psychologie", "Neurosciences", "Développement Personnel", "Bien-être"]
 

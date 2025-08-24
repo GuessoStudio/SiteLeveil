@@ -83,9 +83,17 @@ const Home = () => {
       readTime: 10,
       image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
       slug: "confiance-en-soi-durable"
-    }
-  ]
-
+    },
+  {
+    id: 4,
+    title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
+    excerpt: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
+    category: "Psychologie",
+    readTime: 6,
+    image: "/images/articles/dopamine-cover.jpg",
+    slug: "neuro-dopamine-routine"
+  }
+]
   const stats = [
     { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
     { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
