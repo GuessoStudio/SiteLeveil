@@ -32,7 +32,6 @@ function App() {
                     <Route path="/resources" element={<Resources />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/legal" element={<Legal />} />
-                    <Route path="/article/:slug" element={<Navigate to="/blog/:slug" replace />} />
                   </Routes>
                 </main>
                 <Footer />
