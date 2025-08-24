@@ -63,7 +63,7 @@ const Home = () => {
       excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
       category: "Psychologie",
       readTime: 8,
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "/images/articles/rejet-social-cover.jpg",
       slug: "surmonter-rejet-social"
     },
     {
@@ -72,7 +72,7 @@ const Home = () => {
       excerpt: "Explorez les dernières découvertes sur la capacité du cerveau à se réorganiser tout au long de la vie.",
       category: "Neurosciences",
       readTime: 12,
-      image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "/images/articles/neuroplasticite-cover.jpg",
       slug: "neuroplasticite-cerveau"
     },
     {
@@ -81,7 +81,7 @@ const Home = () => {
       excerpt: "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
       category: "Développement Personnel",
       readTime: 10,
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "/images/articles/confiance-soi-cover.jpg",
       slug: "confiance-en-soi-durable"
     },
   {
