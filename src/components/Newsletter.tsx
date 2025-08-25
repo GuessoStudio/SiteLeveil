@@ -14,16 +14,29 @@ const Newsletter = () => {
 
     setIsLoading(true)
     
-    // Simulation d'inscription (remplacer par vraie API)
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      setIsSubscribed(true)
-      addNotification({
-        type: 'success',
-        title: 'Inscription réussie !',
-        message: 'Vous recevrez bientôt votre guide gratuit par email.'
+      // Envoyer à Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'newsletter',
+          'email': email
+        }).toString()
       })
+      
+      if (response.ok) {
+        setIsSubscribed(true)
+        addNotification({
+          type: 'success',
+          title: 'Inscription réussie !',
+          message: 'Vous recevrez le guide "21 déclencheurs mentaux" dans les 24h par email.'
+        })
+      } else {
+        throw new Error('Erreur réseau')
+      }
     } catch (error) {
+      console.error('Erreur inscription:', error)
       addNotification({
         type: 'error',
         title: 'Erreur',
@@ -44,8 +57,8 @@ const Newsletter = () => {
               Merci pour votre inscription !
             </h2>
             <p className="text-xl text-indigo-100 mb-8">
-              Vous recevrez bientôt votre guide "21 déclencheurs mentaux pour réussir" 
-              ainsi que nos meilleurs contenus directement dans votre boîte mail.
+              Vous recevrez votre guide "21 déclencheurs mentaux pour réussir" 
+              dans les 24h directement dans votre boîte mail.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-white mb-2">
