@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/public/images/Logo.jpg" 
+                src="/public/images/logo-leveil-petit.jpg" 
                 alt="L'Éveil" 
                 className="w-10 h-10 rounded-full"
               />
@@ -22,23 +22,50 @@ const Footer = () => {
               Psychologie, neurosciences et développement personnel fondés sur la science.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com/..." aria-label="Twitter" className="...">
-  <Twitter className="w-5 h-5" aria-hidden="true" />
-  <span className="sr-only">Twitter</span>
-</a>
-<a href="https://linkedin.com/..." aria-label="LinkedIn" className="...">
-  <Linkedin className="w-5 h-5" aria-hidden="true" />
-  <span className="sr-only">LinkedIn</span>
-</a>
-<a href="https://facebook.com/..." aria-label="Facebook" className="...">
-  <Facebook className="w-5 h-5" aria-hidden="true" />
-  <span className="sr-only">Facebook</span>
-</a>
-<a href="mailto:contact@..." aria-label="Email" className="...">
-  <Mail className="w-5 h-5" aria-hidden="true" />
-  <span className="sr-only">Email</span>
-              </a>
-            </div>
+  
+  {/* Twitter */}
+  <a 
+    href="https://twitter.com" 
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nous rejoindre sur Twitter" 
+    className="text-neutral-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
+  >
+    <Twitter className="w-5 h-5" aria-hidden="true" />
+  </a>
+
+  {/* LinkedIn */}
+  <a 
+    href="https://linkedin.com" 
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nous rejoindre sur LinkedIn" 
+    className="text-neutral-400 hover:text-blue-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
+  >
+    <Linkedin className="w-5 h-5" aria-hidden="true" />
+  </a>
+
+  {/* Facebook */}
+  <a 
+    href="https://facebook.com" 
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nous rejoindre sur Facebook" 
+    className="text-neutral-400 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
+  >
+    <Facebook className="w-5 h-5" aria-hidden="true" />
+  </a>
+
+  {/* Email */}
+  <a 
+    href="mailto:contact@leveil.fr" 
+    aria-label="Nous envoyer un email" 
+    className="text-neutral-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
+  >
+    <Mail className="w-5 h-5" aria-hidden="true" />
+  </a>
+  
+</div>
           </div>
 
           {/* Navigation */}
