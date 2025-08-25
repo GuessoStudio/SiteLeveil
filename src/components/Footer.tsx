@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/public/images/L'éveil .jpg" 
+                src="/public/images/Logo.jpg" 
                 alt="L'Éveil" 
                 className="w-10 h-10 rounded-full"
               />
@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="border-t border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 text-neutral-300 text-sm">
   <img 
-    src="/images/Logo.png" 
+    src="/images/logo-footer.png" 
     alt="Logo L'Éveil" 
     className="w-5 h-5 rounded-full"
   />
