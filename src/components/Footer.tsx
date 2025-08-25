@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src="/public/images/logo-footer.jpg" 
                 alt="L'Éveil" 
-                className="w-10 h-10 rounded-full"
+                className=  "w-10 h-10 rounded-full"
               />
               <span className="text-xl font-bold text-white">L'Éveil</span>
             </div>
