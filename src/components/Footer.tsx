@@ -66,9 +66,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-neutral-300 text-sm">
-            © 2024 L'Éveil. Tous droits réservés.
-          </p>
+          <div className="flex items-center gap-2 text-neutral-300 text-sm">
+  <img 
+    src="/images/Logo.png" 
+    alt="Logo L'Éveil" 
+    className="w-5 h-5 rounded-full"
+  />
+  <span>© 2024 L'Éveil. Tous droits réservés.</span>
+</div>
           <p className="text-neutral-300 text-sm flex items-center gap-1 mt-4 md:mt-0">
             Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
           </p>
