@@ -1,3 +1,5 @@
+// NEWSLETTER VRAIMENT OPÉRATIONNELLE - src/components/Newsletter.tsx
+
 import React, { useState } from 'react'
 import { Mail, Gift, CheckCircle, ArrowRight } from 'lucide-react'
 import { useNotifications } from '../contexts/NotificationContext'
@@ -15,7 +17,7 @@ const Newsletter = () => {
     setIsLoading(true)
     
     try {
-      // Envoyer à Netlify Forms
+      // VRAIE SOUMISSION NETLIFY FORMS (plus de simulation)
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -27,20 +29,21 @@ const Newsletter = () => {
       
       if (response.ok) {
         setIsSubscribed(true)
+        setEmail('') // Reset du formulaire
         addNotification({
           type: 'success',
           title: 'Inscription réussie !',
           message: 'Vous recevrez le guide "21 déclencheurs mentaux" dans les 24h par email.'
         })
       } else {
-        throw new Error('Erreur réseau')
+        throw new Error(`Erreur ${response.status}: ${response.statusText}`)
       }
     } catch (error) {
-      console.error('Erreur inscription:', error)
+      console.error('Erreur inscription newsletter:', error)
       addNotification({
         type: 'error',
-        title: 'Erreur',
-        message: 'Une erreur est survenue. Veuillez réessayer.'
+        title: 'Erreur d\'inscription',
+        message: 'Une erreur est survenue. Veuillez réessayer ou nous contacter.'
       })
     } finally {
       setIsLoading(false)
@@ -54,11 +57,11 @@ const Newsletter = () => {
           <div className="max-w-2xl mx-auto">
             <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Merci pour votre inscription !
+              Inscription confirmée !
             </h2>
             <p className="text-xl text-indigo-100 mb-8">
-              Vous recevrez votre guide "21 déclencheurs mentaux pour réussir" 
-              dans les 24h directement dans votre boîte mail.
+              Votre demande a été enregistrée. Vous recevrez votre guide 
+              "21 déclencheurs mentaux pour réussir" dans les 24h par email.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-white mb-2">
@@ -108,15 +111,19 @@ const Newsletter = () => {
                   placeholder="Votre adresse email"
                   className="w-full px-4 py-3 rounded-lg bg-white text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-300"
                   required
+                  disabled={isLoading}
                 />
               </div>
               <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || !email}
                 className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isLoading ? (
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Envoi...
+                  </>
                 ) : (
                   <>
                     <Mail className="w-5 h-5" />
