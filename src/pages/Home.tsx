@@ -143,27 +143,27 @@ const Home = () => {
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
   <span className="inline-block">
     {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-      <span
-        key={index}
-        className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: `${100 + index * 100}ms`, animationFillMode: 'both' }}
-      >
-        {letter === ' ' ? '\u00A0' : letter}
-      </span>
-    ))}
+  <span
+    key={index}
+    className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+    style={{ animationDelay: `${50 + index * 60}ms`, animationFillMode: 'both' }}
+  >
+    {letter === ' ' ? '\u00A0' : letter}
+  </span>
+))}
   </span>{" "}
   
   {/* Gradient appliqué une seule fois au mot entier */}
   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg">
     {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-      <span
-        key={index}
-        className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-1000"
-        style={{ animationDelay: `${600 + index * 150}ms`, animationFillMode: 'both' }}
-      >
-        {letter}
-      </span>
-    ))}
+  <span
+    key={index}
+    className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-500"
+    style={{ animationDelay: `${300 + index * 80}ms`, animationFillMode: 'both' }}
+  >
+    {letter}
+  </span>
+))}
   </span>
 </h1>
 

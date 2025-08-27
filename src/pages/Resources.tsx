@@ -186,9 +186,13 @@ const Resources = () => {
                       <span>4.8/5</span>
                     </div>
                   </div>
-                  <button className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors">
-                    Télécharger gratuitement
-                  </button>
+                  <a 
+  href="/resources/21 declencheurs mentaux pour reprogrammer ton cerveau.pdf"
+  download
+  className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-block"
+>
+  Télécharger gratuitement
+</a>
                 </div>
                 <div className="w-full md:w-64 h-48 bg-white/10 rounded-xl flex items-center justify-center">
                   <BookOpen className="w-16 h-16 text-white/60" />

@@ -54,7 +54,7 @@ const About = () => {
         <section className="text-center mb-16">
           <div className="max-w-3xl mx-auto">
             <img 
-              src="/public/images/L'éveil .jpg" 
+              src="/public/images/Logo.jpg" 
               alt="L'Éveil" 
               className="w-24 h-24 mx-auto rounded-full shadow-lg mb-8"
             />
