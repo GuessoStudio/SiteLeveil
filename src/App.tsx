@@ -13,7 +13,7 @@ import About from './pages/About'
 import Resources from './pages/Resources'
 import Contact from './pages/Contact'
 import Legal from './pages/Legal'
-
+import HabitTracker from './pages/HabitTracker'  
 function App() {
   return (
     <HelmetProvider>
@@ -32,6 +32,7 @@ function App() {
                     <Route path="/resources" element={<Resources />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/legal" element={<Legal />} />
+                     <Route path="/habit-tracker" element={<HabitTracker />} />  
                   </Routes>
                 </main>
                 <Footer />

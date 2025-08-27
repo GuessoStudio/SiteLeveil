@@ -53,9 +53,8 @@ const Resources = () => {
       type: "Web App",
       users: "5K+",
       rating: 4.6,
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
-      free: false,
-      price: "9.99€"
+      image: "/images/habit-tracker-cover.jpg",
+      free: true,  
     },
     {
       id: 5,
@@ -273,15 +272,24 @@ const Resources = () => {
                     </div>
                   </div>
                   
-                  <button className={`w-full py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 ${
-                    resource.free 
-                      ? "bg-indigo-600 hover:bg-indigo-700 text-white"
-                      : "bg-green-600 hover:bg-green-700 text-white"
-                  }`}>
-                    <Download className="w-4 h-4" />
-                    {resource.free ? "Télécharger gratuitement" : `Acheter ${resource.price}`}
-                  </button>
-                </div>
+                  </div>
+                  
+{/* ←←← BLOC COMPLET À COPIER-COLLER ↓↓↓ */}
+{resource.id === 4 ? (
+  <a href="/habit-tracker" className="...">
+    <Smartphone className="w-4 h-4" />
+    Lancer l'app
+  </a>
+) : (
+  <button className="...">
+    <Download className="w-4 h-4" />
+    {resource.free ? "Télécharger..." : `Acheter...`}
+  </button>
+)}
+{/* ←←← FIN DU BLOC ↑↑↑ */}
+
+
+                
               </div>
             )
           })}
