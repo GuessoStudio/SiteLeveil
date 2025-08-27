@@ -155,16 +155,20 @@ const Home = () => {
   
   {/* Gradient appliqué une seule fois au mot entier */}
   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg">
-    {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-  <span
-    key={index}
-    className="inline-block animate-in fade-in slide-in-from-bottom-8 duration-500"
-    style={{ animationDelay: `${300 + index * 80}ms`, animationFillMode: 'both' }}
-  >
-    {letter}
-  </span>
-))}
-  </span>
+  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+    <span
+      key={index}
+      className="inline-block opacity-0 transform translate-y-4 animate-fade-in-up"
+      style={{ 
+        animationDelay: `${300 + index * 80}ms`,
+        animationDuration: '500ms',
+        animationFillMode: 'forwards'
+      }}
+    >
+      {letter}
+    </span>
+  ))}
+</span>
 </h1>
 
               {/* Sous-titre */}
