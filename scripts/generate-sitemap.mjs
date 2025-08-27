@@ -5,6 +5,8 @@ const staticRoutes = ["/", "/blog", "/about", "/resources", "/contact", "/legal"
 const articles = [
   "/blog/surmonter-rejet-social",
   "/blog/neuroplasticite-cerveau",
+  "/blog/confiance-en-soi-durable",  
+  "/blog/neuro-dopamine-routine"
   // ajoute ici…
 ];
 

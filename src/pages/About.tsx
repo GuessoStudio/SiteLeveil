@@ -211,7 +211,7 @@ const About = () => {
                 Découvrir nos articles
               </a>
               <a
-                href="#newsletter"
+                href="/#newsletter"
                 className="bg-indigo-700 hover:bg-indigo-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-indigo-500"
               >
                 S'abonner à la newsletter
