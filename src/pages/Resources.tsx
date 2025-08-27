@@ -276,14 +276,19 @@ const Resources = () => {
                   
 {/* ←←← BLOC COMPLET À COPIER-COLLER ↓↓↓ */}
 {resource.id === 4 ? (
-  <a href="/habit-tracker" className="...">
+  <a href="/habit-tracker" className="w-full py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white"
+  >
     <Smartphone className="w-4 h-4" />
     Lancer l'app
   </a>
 ) : (
-  <button className="...">
+  <button className={`w-full py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 ${
+    resource.free 
+      ? "bg-indigo-600 hover:bg-indigo-700 text-white"
+      : "bg-green-600 hover:bg-green-700 text-white"
+  }`}>
     <Download className="w-4 h-4" />
-    {resource.free ? "Télécharger..." : `Acheter...`}
+    {resource.free ? "Télécharger gratuitement" : `Acheter ${resource.price}`}
   </button>
 )}
 {/* ←←← FIN DU BLOC ↑↑↑ */}
