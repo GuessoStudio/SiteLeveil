@@ -195,12 +195,12 @@ const HabitTracker = () => {
     
     // Current streak
     let current = 0
-    let d = new Date(today)
+    let streakDate = new Date(today)
     while (true) {
-      const key = d.toISOString().slice(0, 10)
+      const key = streakDate.toISOString().slice(0, 10)
       if (completions.has(key)) {
         current++
-        d.setDate(d.getDate() - 1)
+        streakDate.setDate(streakDate.getDate() - 1)
       } else {
         break
       }
@@ -230,9 +230,9 @@ const HabitTracker = () => {
     // Last 7 days
     let last7 = 0
     for (let i = 0; i < 7; i++) {
-      const d = new Date(today)
-      d.setDate(today.getDate() - i)
-      const key = d.toISOString().slice(0, 10)
+      const last7Date = new Date(today)
+      last7Date.setDate(today.getDate() - i)
+      const key = last7Date.toISOString().slice(0, 10)
       if (completions.has(key)) last7++
     }
     
@@ -241,12 +241,12 @@ const HabitTracker = () => {
     const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0)
     let monthDays = 0
     let monthCompleted = 0
-    const d = new Date(monthStart)
-    while (d <= monthEnd && d <= today) {
+    const monthDate = new Date(monthStart)
+    while (monthDate <= monthEnd && monthDate <= today) {
       monthDays++
-      const key = d.toISOString().slice(0, 10)
+      const key = monthDate.toISOString().slice(0, 10)
       if (completions.has(key)) monthCompleted++
-      d.setDate(d.getDate() + 1)
+      monthDate.setDate(monthDate.getDate() + 1)
     }
     const completionRate = monthDays > 0 ? Math.round((monthCompleted / monthDays) * 100) : 0
     
