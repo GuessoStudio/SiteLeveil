@@ -62,6 +62,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.gradient-text {
+  background: linear-gradient(to right, #facc15, #f97316, #ef4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 .fade-in-up {
   animation: fade-in-up 500ms ease-out forwards;
 }
