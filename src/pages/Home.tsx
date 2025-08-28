@@ -153,16 +153,14 @@ const Home = () => {
 ))}
   </span>{" "}
   
-  {/* Gradient appliqué une seule fois au mot entier */}
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg">
+<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg">
   {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
     <span
       key={index}
-      className="inline-block opacity-0 transform translate-y-4 animate-fade-in-up"
+      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
       style={{ 
         animationDelay: `${300 + index * 80}ms`,
-        animationDuration: '500ms',
-        animationFillMode: 'forwards'
+        animationFillMode: 'both'
       }}
     >
       {letter}

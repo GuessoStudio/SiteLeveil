@@ -26,24 +26,18 @@ const About = () => {
   ]
 
   const stats = [
-    { number: "500+", label: "Articles publiés" },
-    { number: "10,000+", label: "Lecteurs mensuels" },
-    { number: "50+", label: "Études citées" },
-    { number: "95%", label: "Satisfaction lecteurs" }
+    { number: "2020", label: "Année de création" },
+  { number: "100%", label: "Passion authentique" },
+  { number: "Science", label: "Base de nos contenus" },
+  { number: "∞", label: "Potentiel à révéler" }
   ]
 
   const team = [
     {
-      name: "Dr. Sarah Martin",
-      role: "Psychologue clinicienne",
-      description: "Spécialisée en thérapies cognitivo-comportementales et neurosciences appliquées.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=300"
-    },
-    {
-      name: "Marc Dubois",
-      role: "Coach en développement personnel",
-      description: "Expert en motivation et performance, formateur certifié en PNL.",
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=300"
+      name: "Guesso", 
+    role: "Fondateur de L'Éveil", 
+    description: "Explorateur curieux de l'esprit humain, je m'inspire des découvertes en psychologie et neurosciences pour les rendre simples et accessibles.",
+    image: "/images/guesso-silhouette.jpg" 
     }
   ]
 
@@ -61,10 +55,11 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
               À propos de L'Éveil
             </h1>
-            <p className="text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Notre mission est de démocratiser l'accès aux connaissances en psychologie, 
-              neurosciences et développement personnel pour aider chacun à révéler son potentiel.
-            </p>
+            <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
+  L'Éveil est né de ma passion pour comprendre l'esprit humain. Mon objectif est simple : 
+  traduire les découvertes fascinantes de la psychologie et des neurosciences en conseils 
+  pratiques que vous pouvez utiliser pour améliorer votre vie quotidienne.
+</p>
           </div>
         </section>
 
@@ -73,7 +68,7 @@ const About = () => {
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-neutral-800 dark:to-neutral-900 rounded-3xl p-8 md:p-12">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
-                Notre Mission
+                Ma Mission
               </h2>
               <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
                 Dans un monde où l'information sur le bien-être mental est souvent complexe ou commercialisée, 
@@ -172,7 +167,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="flex justify-center max-w-4xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg text-center">
                 <img
