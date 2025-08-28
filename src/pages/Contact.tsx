@@ -49,46 +49,12 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "contact@leveil.fr",
-      description: "Réponse sous 24h"
+      description: "Réponse sous 24h-48h"
     },
-    {
-      icon: Phone,
-      title: "Téléphone",
-      value: "+33 1 23 45 67 89",
-      description: "Lun-Ven 9h-18h"
-    },
-    {
-      icon: MapPin,
-      title: "Adresse",
-      value: "Paris, France",
-      description: "Consultations sur RDV"
-    },
-    {
-      icon: Clock,
-      title: "Horaires",
-      value: "9h - 18h",
-      description: "Du lundi au vendredi"
-    }
+    
   ]
 
-  const faq = [
-    {
-      question: "Combien de temps pour recevoir une réponse ?",
-      answer: "Nous nous engageons à répondre à tous les messages dans les 24h ouvrées."
-    },
-    {
-      question: "Proposez-vous des consultations individuelles ?",
-      answer: "Oui, nous proposons des séances de coaching et de thérapie sur rendez-vous."
-    },
-    {
-      question: "Vos ressources sont-elles gratuites ?",
-      answer: "La plupart de nos ressources sont gratuites. Certains contenus premium sont payants."
-    },
-    {
-      question: "Comment puis-je contribuer au blog ?",
-      answer: "Nous acceptons les articles invités. Contactez-nous avec votre proposition."
-    }
-  ]
+
 
   if (isSubmitted) {
     return (
@@ -106,11 +72,11 @@ const Contact = () => {
               <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">
                 En attendant notre réponse :
               </h3>
-              <ul className="text-neutral-600 dark:text-neutral-300 space-y-2">
-                <li>• Explorez nos articles sur le blog</li>
-                <li>• Téléchargez nos ressources gratuites</li>
-                <li>• Rejoignez notre newsletter</li>
-              </ul>
+              <ul className="text-neutral-600 dark:text-neutral-300 space-y-3">
+  <li>• <a href="/blog" className="text-indigo-600 dark:text-indigo-400 hover:underline">Parcourez nos articles</a></li>
+  <li>• <a href="/resources" className="text-indigo-600 dark:text-indigo-400 hover:underline">Découvrez nos ressources gratuites</a></li>
+  <li>• <a href="/#newsletter" className="text-indigo-600 dark:text-indigo-400 hover:underline">Rejoignez la newsletter</a></li>
+</ul>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -198,13 +164,13 @@ const Contact = () => {
                   required
                   className="w-full px-4 py-3 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-900 dark:text-white"
                 >
-                  <option value="">Sélectionnez un sujet</option>
-                  <option value="question">Question générale</option>
-                  <option value="consultation">Demande de consultation</option>
-                  <option value="collaboration">Proposition de collaboration</option>
-                  <option value="technique">Support technique</option>
-                  <option value="autre">Autre</option>
-                </select>
+                   <option value="">Sélectionnez un sujet</option>
+  <option value="question">Question générale</option>
+  <option value="article">Idée d'article ou de contenu</option>
+  <option value="partenariat">Partenariat ou collaboration</option>
+  <option value="feedback">Retour sur le site ou les ressources</option>
+  <option value="autre">Autre</option>
+</select>
               </div>
 
               <div>
@@ -277,16 +243,7 @@ const Contact = () => {
               </h2>
               
               <div className="space-y-4">
-                {faq.map((item, index) => (
-                  <div key={index} className="border-b border-neutral-200 dark:border-neutral-700 pb-4 last:border-b-0">
-                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">
-                      {item.question}
-                    </h3>
-                    <p className="text-neutral-600 dark:text-neutral-300 text-sm">
-                      {item.answer}
-                    </p>
-                  </div>
-                ))}
+            
               </div>
             </div>
           </div>

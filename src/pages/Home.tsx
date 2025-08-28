@@ -153,7 +153,7 @@ const Home = () => {
 ))}
   </span>{" "}
   
-<span className="gradient-text">
+<span className="text-yellow-400">
   {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
     <span
       key={index}
