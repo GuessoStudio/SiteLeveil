@@ -7,7 +7,7 @@ const meta = {
   slug: "neuro-dopamine-routine",
   title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
   description: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
-  cover: "/images/articles/dopamine-cover-1200x630.jpg",
+  cover: "/images/articles/dopamine-cover.jpg",
   datePublished: "2025-08-13",
   dateModified: "2025-08-13",
   tags: ["neurosciences", "motivation", "habitudes"],

@@ -12,7 +12,7 @@ const meta = {
   date: "2024-01-15",
   author: "L'Éveil",
   image:
-    "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "/images/articles/rejet-social-cover.jpg",
   tags: ["rejet social", "résilience", "psychologie", "estime de soi"],
 };
 

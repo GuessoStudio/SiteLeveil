@@ -7,7 +7,7 @@ const meta = {
   slug: "attention-fragmentee-concentration-numerique",
   title: "Attention fragmentée : comprendre et protéger sa concentration à l'ère numérique",
   description: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 5 stratégies validées scientifiquement pour améliorer votre concentration face aux distractions numériques.",
-  cover: "/images/articles/attention-fragmentee-cover-1200x630.jpg",
+  cover: "/images/articles/confiance-soi-cover-1200x630.jpg",
   datePublished: "2025-08-28",
   dateModified: "2025-08-28",
   tags: ["attention", "concentration", "neurosciences", "distractions numériques", "productivité"],

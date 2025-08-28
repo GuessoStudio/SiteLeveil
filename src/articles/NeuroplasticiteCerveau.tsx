@@ -14,7 +14,7 @@ const meta = {
   date: "2024-01-12",
   author: "L'Éveil",
   image:
-    "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "/images/articles/neuroplasticite-cover.jpg",
   tags: ["neuroplasticité", "cerveau", "neurosciences", "apprentissage"],
 };
 

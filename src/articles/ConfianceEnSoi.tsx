@@ -13,8 +13,7 @@ const meta = {
   readTime: 10,
   date: "2024-01-10",
   author: "L'Éveil",
-  image:
-    "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  image: "/images/articles/confiance-soi-cover.jpg",
   tags: ["confiance en soi", "estime de soi", "développement personnel", "psychologie"],
 };
 
