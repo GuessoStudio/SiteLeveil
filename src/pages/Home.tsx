@@ -153,7 +153,7 @@ const Home = () => {
 ))}
   </span>{" "}
   
-<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-lg">
+<span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
   {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
     <span
       key={index}
