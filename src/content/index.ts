@@ -6,7 +6,7 @@ import NeuroDopamineRoutine from "../articles/NeuroDopamineRoutine";
 import RejetSocial from "../articles/RejetSocial";
 import ConfianceEnSoi from "../articles/ConfianceEnSoi";
 import NeuroplasticiteCerveau from "../articles/NeuroplasticiteCerveau";
-
+import AttentionFragmenteeArticle from '../articles/AttentionFragmenteeArticle'
 
 
 // Mappe chaque slug vers le composant de l’article correspondant.
@@ -16,4 +16,5 @@ export const articlesBySlug: Record<string, FC> = {
   "surmonter-rejet-social": RejetSocial,
   "confiance-en-soi-durable": ConfianceEnSoi,
   "neuroplasticite-cerveau": NeuroplasticiteCerveau,
+  'attention-fragmentee-concentration-numerique': AttentionFragmenteeArticle,
 };

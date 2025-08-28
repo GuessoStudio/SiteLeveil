@@ -46,6 +46,16 @@ const Blog = () => {
       date: "2025-08-13",
       image: "/images/articles/dopamine-thumb.jpg",
       slug: "neuro-dopamine-routine"
+      },
+    {
+      id: 5,
+      title: "Attention fragmentée : comprendre et protéger sa concentration à l'ère numérique",
+  excerpt: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 5 stratégies validées scientifiquement.",
+  category: "Neurosciences",
+  readTime: 8,
+  date: "2025-08-28",
+  image: "/images/articles/attention-fragmentee-cover-1200x630.jpg",
+  slug: "attention-fragmentee-concentration-numerique"
   }
 ]
 
