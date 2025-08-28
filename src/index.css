@@ -62,21 +62,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.gradient-text-fallback {
-  position: relative;
+.gradient-text-fallback span {
   background: linear-gradient(45deg, #facc15, #f97316, #ef4444);
-  background-size: 100%;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 
+.gradient-text-fallback {
+  display: inline-block;
+}
 /* Fallback pour les navigateurs qui ne supportent pas bg-clip */
 @supports not (background-clip: text) {
-  .gradient-text-fallback {
+  .gradient-text-fallback span {
     background: none;
-    color: #f97316; /* Orange fallback */
+    color: #f97316 !important;
+    display: inline-block;
   }
 }
 
