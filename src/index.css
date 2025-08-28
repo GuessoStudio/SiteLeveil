@@ -62,12 +62,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.gradient-text {
-  background: linear-gradient(to right, #facc15, #f97316, #ef4444);
+.gradient-text-fallback {
+  position: relative;
+  background: linear-gradient(45deg, #facc15, #f97316, #ef4444);
+  background-size: 100%;
   -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+/* Fallback pour les navigateurs qui ne supportent pas bg-clip */
+@supports not (background-clip: text) {
+  .gradient-text-fallback {
+    background: none;
+    color: #f97316; /* Orange fallback */
+  }
 }
 
 .fade-in-up {
