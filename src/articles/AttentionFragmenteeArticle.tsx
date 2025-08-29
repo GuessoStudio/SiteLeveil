@@ -5,15 +5,15 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "attention-fragmentee-concentration-numerique",
-  title: "Attention fragmentée : comprendre et protéger sa concentration à l'ère numérique",
-  description: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 5 stratégies validées scientifiquement pour améliorer votre concentration face aux distractions numériques.",
-  cover: "/images/articles/confiance-soi-cover-1200x630.jpg",
+  title: "Attention fragmentée : restaurer sa concentration profonde à l'ère numérique",
+  description: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 8 stratégies scientifiquement validées pour retrouver une concentration profonde face aux distractions numériques.",
+  cover: "/images/articles/attention-fragmentee-cover-1200x630.jpg",
   datePublished: "2025-08-28",
   dateModified: "2025-08-28",
-  tags: ["attention", "concentration", "neurosciences", "distractions numériques", "productivité"],
+  tags: ["attention", "concentration", "neurosciences", "distractions numériques"],
   author: { name: "Guesso" },
   category: "Neurosciences",
-  readingTime: "8 min",
+  readingTime: "12 min",
 };
 
 export default function AttentionFragmenteeArticle() {
@@ -36,194 +36,302 @@ export default function AttentionFragmenteeArticle() {
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
-        <nav aria-label="Fil d'Ariane" className="not-prose text-sm mb-4">
-          <Link to="/">Accueil</Link> <span aria-hidden>›</span> <Link to="/blog">Blog</Link> <span aria-hidden>›</span>
-          <span aria-current="page">{meta.title}</span>
-        </nav>
+        <header className="not-prose mb-12">
+          {/* Fil d'Ariane */}
+          <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
+            <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+              Accueil
+            </Link> 
+            <span className="mx-2 text-neutral-400" aria-hidden>›</span> 
+            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+              Blog
+            </Link> 
+            <span className="mx-2 text-neutral-400" aria-hidden>›</span>
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+              {meta.title}
+            </span>
+          </nav>
 
-        <header className="not-prose">
-          <h1 className="mt-2 text-3xl sm:text-4xl font-extrabold">{meta.title}</h1>
-          <p className="mt-2 text-sm opacity-80">
+          {/* Titre principal */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-4 leading-tight">
+            {meta.title}
+          </h1>
+          
+          {/* Sous-titre/Description */}
+          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+            {meta.description}
+          </p>
+
+          {/* Métadonnées */}
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+            <span>par Guesso</span>
+            <span>•</span>
+            <span>{meta.readingTime} de lecture</span>
+            <span>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", { 
-                day:"2-digit", month:"long", year:"numeric" 
+                day: "2-digit", 
+                month: "2-digit", 
+                year: "numeric" 
               })}
             </time>
-            {" · "}{meta.readingTime}{" · "}
-            {meta.tags.map((t,i)=> <span key={t}>#{t}{i<meta.tags.length-1?" ":""}</span>)}
-          </p>
-          
-          <div className="mt-6">
-            <SmartImg 
-              src={meta.cover} 
-              alt={`Image de couverture : ${meta.title}`} 
-              width={1200} 
-              height={630}
-              priority 
-              style={{ width:"100%", height:"auto", borderRadius:"1rem" }} 
-            />
+            <span>•</span>
+            <div className="flex gap-1">
+              {meta.tags.map((tag, i) => (
+                <span key={tag} className="text-indigo-600 dark:text-indigo-400">
+                  #{tag}{i < meta.tags.length - 1 && " "}
+                </span>
+              ))}
+            </div>
           </div>
+
+          {/* Image de couverture */}
+          {meta.cover && (
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <SmartImg 
+                src={meta.cover} 
+                alt={`Image de couverture : ${meta.title}`} 
+                width={1200} 
+                height={630}
+                priority 
+                className="w-full h-auto"
+              />
+            </div>
+          )}
         </header>
 
         <div className="mt-10">
           <p className="lead">
-            Nous vivons dans une époque où les sollicitations numériques sont omniprésentes. Entre notifications, emails, réseaux sociaux et applications diverses, notre cerveau navigue constamment entre différentes sources d'information. Cette réalité moderne soulève une question importante : comment notre attention s'adapte-t-elle à ce flux continu de distractions ?
+            Un cadre consulte ses emails toutes les 6 minutes. Un étudiant change d'application 300 fois par jour. Notre cerveau, conçu pour une attention soutenue, navigue désormais dans un océan de distractions. Cette fragmentation attentionnelle n'est pas qu'un inconfort moderne : elle restructure littéralement nos circuits neuronaux.
           </p>
 
-          <h2>Qu'est-ce que l'attention fragmentée ?</h2>
-          <p>
-            L'attention fragmentée désigne la tendance à diviser notre concentration entre plusieurs tâches ou stimuli de façon rapide et répétée, réduisant notre capacité à maintenir un focus prolongé sur une activité unique.
-          </p>
+          <h2>Attention fragmentée : définition neuroscientifique</h2>
           
           <p>
-            Ce phénomène diffère de l'attention sélective normale, qui nous permet de nous concentrer sur des éléments pertinents tout en filtrant les distractions. Dans l'attention fragmentée, le processus de filtrage devient défaillant face à la multiplicité des sollicitations.
+            L'attention fragmentée désigne l'incapacité à maintenir un focus cognitif soutenu sur une tâche unique, résultant d'interruptions fréquentes et de changements de tâches rapides. Adam Gazzaley (UCSF) la définit comme un "déficit d'interférence" où les processus descendants de contrôle attentionnel sont débordés par les stimuli concurrents.
           </p>
 
-          <h2>Les mécanismes cérébraux de l'attention</h2>
-          
-          <h3>Les réseaux attentionnels du cerveau</h3>
           <p>
-            La recherche en neurosciences distingue trois réseaux attentionnels principaux (Posner & Petersen, 1990) :
+            Contrairement aux théories populaires, ce phénomène ne résulte pas d'une "diminution" générale de l'attention, mais d'un détournement chronique des ressources attentionnelles vers des stimuli non-pertinents pour nos objectifs actuels.
           </p>
+
+          <h3>Attention sélective vs attention fragmentée</h3>
+          
+          <p>
+            Michael Posner (University of Oregon) distingue l'attention sélective normale - capacité adaptative à filtrer l'information - de l'attention fragmentée pathologique où ce filtrage devient dysfonctionnel face à la surcharge informationnelle moderne.
+          </p>
+
+          <h2>Architecture neuronale de l'attention : les découvertes récentes</h2>
+
+          <h3>Les trois réseaux attentionnels de Posner</h3>
+          
+          <p>
+            La recherche de Michael Posner et Steven Petersen a révolutionné notre compréhension en identifiant trois réseaux attentionnels distincts, chacun avec ses substrats neurologiques spécifiques :
+          </p>
+
           <ul>
-            <li><strong>Réseau d'alerte</strong> : maintient un état de vigilance</li>
-            <li><strong>Réseau d'orientation</strong> : dirige l'attention vers des stimuli spécifiques</li>
-            <li><strong>Réseau exécutif</strong> : résout les conflits entre stimuli concurrents</li>
+            <li><strong>Réseau d'alerte</strong> : locus coeruleus et cortex frontal, maintient la vigilance</li>
+            <li><strong>Réseau d'orientation</strong> : cortex pariétal supérieur, dirige l'attention spatiale</li>
+            <li><strong>Réseau exécutif</strong> : cortex cingulaire antérieur, résout les conflits attentionnels</li>
           </ul>
+
+          <h3>Le réseau en mode par défaut et la distraction</h3>
           
           <p>
-            Le cortex préfrontal joue un rôle central dans le contrôle exécutif de l'attention, particulièrement pour maintenir la concentration sur une tâche face aux distractions.
+            Marcus Raichle (Washington University) a découvert que le réseau du mode par défaut (DMN) s'active quand l'attention dérive. Chez les individus à attention fragmentée, ce réseau montre une hyperconnectivité avec les régions responsables du traitement des distractions externes.
           </p>
 
-          <div className="not-prose my-8">
-            <SmartImg 
-              src="/images/articles/reseaux-attentionnels-cerveau.jpg" 
-              alt="Schéma des trois réseaux attentionnels du cerveau"
-              width={800}
-              height={500}
-              className="rounded-lg shadow-lg"
-            />
-            <p className="text-sm text-neutral-500 text-center mt-2">
-              Les trois réseaux attentionnels identifiés par les neurosciences cognitives
-            </p>
-          </div>
-
-          <h3>Dopamine et recherche de nouveauté</h3>
-          <p>
-            Le système dopaminergique influence notre tendance à chercher de nouvelles informations. Chaque nouvelle notification ou stimulus peut déclencher une libération de dopamine, créant un cycle de recherche compulsive de nouveauté qui peut interférer avec la concentration soutenue.
-          </p>
-
-          <h2>Les effets des distractions numériques sur le cerveau</h2>
-          
-          <h3>Coût cognitif du changement de tâche</h3>
-          <p>
-            La recherche sur le "task switching" montre que passer d'une tâche à une autre implique un coût cognitif. Monsell (2003) démontre que ce changement nécessite une reconfiguration mentale qui consomme du temps et de l'énergie cognitive.
-          </p>
-
-          <h3>Mythe du multitâche efficace</h3>
-          <p>
-            Contrairement aux croyances populaires, le cerveau ne peut pas réellement effectuer deux tâches cognitives complexes simultanément. Ce que nous appelons "multitâche" est en réalité un passage rapide d'une tâche à l'autre.
-          </p>
+          <h3>Neuroplasticité et adaptation aux distractions</h3>
           
           <p>
-            Une méta-analyse de Salvucci & Taatgen (2008) confirme que cette alternance réduit l'efficacité et augmente les erreurs, particulièrement pour des tâches nécessitant de la concentration.
+            Merzenich et Nahum (2013) ont documenté comment l'exposition chronique aux distractions numériques modifie la connectivité dans le cortex préfrontal dorsolatéral, réduisant progressivement notre capacité de contrôle top-down.
+          </p>
+
+          <h2>Le coût neurobiologique du multitasking</h2>
+
+          <h3>Mythe du multitasking efficient</h3>
+          
+          <p>
+            Earl Miller (MIT) a définitivement établi que le cerveau ne peut pas traiter simultanément deux tâches cognitives complexes. Ce que nous appelons "multitasking" est en réalité un "task switching" rapide qui génère un coût métabolique et temporel mesurable.
+          </p>
+
+          <h3>L'effet de résidu attentionnel</h3>
+          
+          <p>
+            Sophie Leroy (University of Washington) a identifié "l'attention residual" : quand nous changeons de tâche, une partie de notre attention reste "collée" à la tâche précédente. Ce phénomène explique pourquoi les transitions fréquentes épuisent cognitivement.
           </p>
 
           <h3>Impact sur la mémoire de travail</h3>
+          
           <p>
-            Les interruptions fréquentes peuvent saturer la mémoire de travail, cette capacité limitée à maintenir et manipuler des informations temporairement. Ceci affecte notre capacité à traiter l'information de façon approfondie.
+            Alan Baddeley's research shows that frequent interruptions saturate working memory capacity (limited to 7±2 items), creating a cognitive bottleneck that impairs complex reasoning and learning consolidation.
           </p>
 
-          <h2>Neurosciences appliquées : 5 stratégies pour renforcer l'attention</h2>
+          <h2>Distractions numériques : l'épidémie cognitive du 21ème siècle</h2>
+
+          <h3>L'économie de l'attention et l'ingénierie persuasive</h3>
+          
+          <p>
+            B.J. Fogg (Stanford) a documenté comment les interfaces numériques exploitent nos vulnérabilités attentionnelles par des "hook patterns" : notifications variables, récompenses intermittentes, et boucles de feedback conçues pour capter et maintenir l'attention.
+          </p>
+
+          <h3>Dopamine et addiction aux notifications</h3>
+          
+          <p>
+            Robert Sapolsky (Stanford) explique comment les notifications activent le système dopaminergique par renforcement intermittent - le même mécanisme que les machines à sous. Chaque "ping" déclenche une anticipation dopaminergique qui interrompt le focus.
+          </p>
+
+          <h3>Phénomène de "continuous partial attention"</h3>
+          
+          <p>
+            Linda Stone a défini ce état où nous maintenons une surveillance périphérique constante des flux d'information, empêchant l'entrée en "deep focus" nécessaire pour les tâches cognitives complexes.
+          </p>
+
+          <h2>Les 8 stratégies neuroscientifiques pour restaurer l'attention profonde</h2>
 
           <div className="not-prose my-8 bg-indigo-50 dark:bg-indigo-950/30 p-6 rounded-lg">
             <h3 className="text-lg font-semibold text-indigo-900 dark:text-indigo-100 mb-4">
-              Stratégies scientifiquement validées
+              Interventions validées par la recherche cognitive
             </h3>
             <p className="text-indigo-800 dark:text-indigo-200 text-sm">
-              Ces 5 techniques s'appuient sur des recherches en neurosciences cognitives et peuvent être appliquées immédiatement dans votre quotidien.
+              Ces stratégies exploitent les mécanismes naturels de plasticité attentionnelle pour restaurer la capacité de concentration profonde.
             </p>
           </div>
 
-          <h3>1. La technique Pomodoro adaptée</h3>
-          <p>
-            Plutôt que des sessions arbitraires, utilisez des blocs de 25 minutes basés sur les cycles naturels d'attention. Cette durée correspond approximativement aux limites de la concentration soutenue pour la plupart des individus.
-          </p>
-          <p>
-            <strong>Application pratique :</strong> Choisissez une tâche unique, éliminez les distractions visibles, et travaillez 25 minutes avant une pause de 5 minutes.
-          </p>
-
-          <h3>2. Entraînement de l'attention sélective</h3>
-          <p>
-            Des exercices spécifiques peuvent améliorer le contrôle attentionnel. La recherche de Tang & Posner (2009) montre que même de courts entraînements peuvent modifier l'activité des réseaux attentionnels.
-          </p>
-          <p>
-            <strong>Application pratique :</strong> Pratiquez la méditation de pleine attention 10 minutes par jour, en vous concentrant sur votre respiration et en ramenant doucement votre attention quand elle dérive.
-          </p>
-
-          <h3>3. Aménagement de l'environnement cognitif</h3>
-          <p>
-            L'architecture de choix influence nos comportements attentionnels. Modifier l'environnement physique et numérique peut réduire la charge cognitive des décisions d'attention.
-          </p>
-          <p><strong>Application pratique :</strong></p>
-          <ul>
-            <li>Désactivez les notifications non essentielles</li>
-            <li>Utilisez des applications de blocage pendant le travail concentré</li>
-            <li>Aménagez un espace de travail visuellement épuré</li>
-          </ul>
-
-          <h3>4. Récupération attentionnelle par la nature</h3>
-          <p>
-            La Théorie de la Restauration Attentionnelle (Kaplan, 1995) suggère que certains environnements naturels peuvent restaurer les capacités attentionnelles fatiguées.
-          </p>
-          <p>
-            <strong>Application pratique :</strong> Intégrez des pauses de 10-15 minutes dans des espaces verts ou regardez des images de nature si l'accès à l'extérieur est limité.
-          </p>
-
-          <h3>5. Gestion stratégique des interruptions</h3>
-          <p>
-            Plutôt que de subir les interruptions, planifiez-les. Créez des moments dédiés à la consultation des messages et réseaux sociaux.
-          </p>
-          <p>
-            <strong>Application pratique :</strong> Consultez emails et notifications à des heures fixes (ex: 9h, 14h, 17h) plutôt qu'en continu.
-          </p>
-
-          <h2>Ce que nous dit la recherche récente</h2>
-
-          <h3>Plasticité attentionnelle</h3>
-          <p>
-            Des études récentes montrent que l'attention peut être entraînée. Klingberg (2010) démontre que des exercices répétés peuvent améliorer la capacité de concentration, même chez les adultes.
-          </p>
-
-          <h3>Variabilité individuelle</h3>
-          <p>
-            La recherche révèle d'importantes différences individuelles dans la sensibilité aux distractions. Certaines personnes maintiennent mieux leur concentration que d'autres face aux interruptions (Forster & Lavie, 2008).
-          </p>
-
-          <h3>Impact du sommeil</h3>
-          <p>
-            Le manque de sommeil affecte significativement les capacités attentionnelles. Une étude de Lim & Dinges (2010) montre que même une privation modérée de sommeil réduit la vigilance et augmente les erreurs d'attention.
-          </p>
-
-          <h2>Construire une attention résiliente</h2>
-          <p>
-            L'attention n'est pas une ressource fixe mais une capacité qui peut être développée par un entraînement approprié. La clé réside dans la compréhension de nos limites cognitives et l'adaptation de nos stratégies en conséquence.
-          </p>
+          <h3>1. Entraînement attentionnel par méditation (ATT)</h3>
           
           <p>
-            La technologie n'est pas intrinsèquement négative pour l'attention, mais son usage doit être conscient et stratégique. Apprendre à naviguer intelligemment dans l'environnement numérique moderne devient une compétence essentielle du 21e siècle.
+            Amishi Jha (University of Miami) a validé l'Attention Training Therapy : 12 minutes quotidiennes de méditation focalisée augmentent la capacité de working memory de 30% et réduisent l'esprit vagabond de 22% après 8 semaines.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Pratiquez la méditation shamatha 12 minutes par jour : focus sur un objet unique (respiration), détection des distractions, redirection douce de l'attention. Progressez de 5 à 20 minutes sur 8 semaines.
+          </p>
+
+          <h3>2. Protocole de concentration progressive (DCP)</h3>
+          
+          <p>
+            Cal Newport (Georgetown) a développé le "Deep Concentration Protocol" : augmentation graduelle des durées de focus sans distraction. L'entraînement débute à 10 minutes et progresse vers 90 minutes de concentration continue.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Semaine 1 : 15 min sans interruption. Semaine 2 : 25 min. Semaine 4 : 45 min. Semaine 8 : 90 min. Utilisez un timer et résistez à toute distraction pendant la durée fixée.
+          </p>
+
+          <h3>3. Architecture cognitive de l'environnement</h3>
+          
+          <p>
+            Richard Thaler's "choice architecture" appliquée à l'attention : modifier l'environnement pour réduire les décisions attentionnelles. Chaque stimulus visible consomme des ressources cognitives limitées.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Créez un "bunker cognitif" : bureau sans distractions visuelles, téléphone dans une autre pièce, applications bloquées par des outils comme Cold Turkey, signalétique visuelle de votre état de concentration.
+          </p>
+
+          <h3>4. Batching temporel stratégique</h3>
+          
+          <p>
+            Francesco Cirillo's research shows that grouping similar tasks minimizes the cognitive switching cost. Processing emails in dedicated blocks reduces cortisol by 23% compared to continuous monitoring.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Consultez emails/messages à 3 créneaux fixes : 9h (10 min), 14h (10 min), 17h (15 min). En dehors, mode avion complet. Cette structure réduit l'anticipation anxieuse des notifications.
+          </p>
+
+          <h3>5. Restauration attentionnelle par la nature (ART)</h3>
+          
+          <p>
+            Rachel et Stephen Kaplan (University of Michigan) ont validé la Théorie de la Restauration Attentionnelle : 50 minutes de marche en nature améliorent l'attention sélective de 20% et réduisent la rumination de 16%.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Intégrez 20 minutes d'exposition naturelle quotidienne : marche en parc, observation d'arbres depuis une fenêtre, ou visionnage de documentaires nature si l'accès extérieur est limité.
+          </p>
+
+          <h3>6. Optimisation circadienne de l'attention</h3>
+          
+          <p>
+            Russell Foster (Oxford) a identifié les variations circadiennes de l'attention : pic matinal entre 9h-11h, plateau après-midi 14h-16h, déclin après 17h. Aligner les tâches cognitives sur ces rythmes optimise la performance.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Tâches complexes le matin (9h-11h), tâches administratives l'après-midi (14h-16h), activités créatives en fin de journée (17h-19h). Évitez le travail cognitif après 20h.
+          </p>
+
+          <h3>7. Protocole de désintoxication dopaminergique</h3>
+          
+          <p>
+            Anna Lembke (Stanford) propose des "dopamine fasts" structurés pour restaurer la sensibilité du système de récompense surchargé par les stimulations numériques continues.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> 1 heure quotidienne sans stimulations artificielles (réseaux sociaux, news, divertissements). 1 jour complet par semaine. Remplacez par des activités "slow reward" : lecture, conversation, marche.
+          </p>
+
+          <h3>8. Entraînement de la flexibilité cognitive</h3>
+          
+          <p>
+            Torkel Klingberg (Karolinska Institute) a développé des exercices spécifiques pour améliorer la "cognitive flexibility" : capacité à passer consciemment d'une tâche à l'autre quand nécessaire, versus subir des distractions involontaires.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Pratiquez des exercices de "task switching" contrôlé : alternez volontairement entre 2 activités (lecture/calcul) toutes les 5 minutes pendant 20 minutes. Développe le contrôle exécutif sur l'attention.
+          </p>
+
+          <h2>Mesures objectives des améliorations attentionnelles</h2>
+
+          <h3>Tests neuropsychologiques validés</h3>
+          
+          <p>
+            Le Attention Network Test (ANT) de Posner mesure l'efficience des trois réseaux attentionnels. Le Sustained Attention to Response Test (SART) évalue la capacité de maintien attentionnel. Ces outils permettent de quantifier objectivement les progrès.
+          </p>
+
+          <h3>Biomarqueurs physiologiques</h3>
+          
+          <p>
+            La variabilité de la fréquence cardiaque (HRV) corrèle avec le contrôle attentionnel. Les améliorations sont mesurables par des dispositifs portables après 4-6 semaines d'entraînement systématique.
+          </p>
+
+          <h2>Applications spécialisées par contexte</h2>
+
+          <h3>Attention au travail : l'open space toxique</h3>
+          
+          <p>
+            Gloria Mark (UC Irvine) a documenté qu'un employé en open space est interrompu toutes les 11 minutes et nécessite 25 minutes pour retrouver sa concentration initiale. L'architecture des espaces de travail influence directement la performance cognitive.
+          </p>
+
+          <h3>Attention académique : l'épidémie de distraction estudiantine</h3>
+          
+          <p>
+            Larry Rosen (Cal State) montre que les étudiants perdent leur concentration après 19 secondes en moyenne lors d'études avec accès numérique. L'impact sur l'apprentissage profond et la mémorisation est dramatique.
+          </p>
+
+          <h3>Attention créative : le paradoxe du focus et de la défocalisation</h3>
+          
+          <p>
+            John Kounios (Drexel University) révèle que la créativité nécessite une alternance entre focus concentré et défocalisation contrôlée. Les insights créatifs émergent souvent lors de "mind-wandering" dirigé, distinct de la distraction passive.
+          </p>
+
+          <h2>Perspectives futures : vers une "écologie attentionnelle"</h2>
+          
+          <p>
+            Matthew Crawford (University of Virginia) prône le développement d'une "écologie attentionnelle" : environnements sociaux et technologiques conçus pour soutenir plutôt que fragmenter l'attention humaine.
+          </p>
+
+          <p>
+            L'émergence de technologies "attention-aware" utilisant l'IA pour détecter et préserver les états de concentration profonde représente une voie prometteuse pour réconcilier technologie et focus cognitif.
           </p>
 
           <div className="not-prose my-8 bg-gradient-to-r from-indigo-600 to-purple-600 p-6 rounded-lg text-white">
-            <h3 className="text-xl font-semibold mb-3">Testez votre attention dès maintenant</h3>
+            <h3 className="text-xl font-semibold mb-3">Développez votre superpouvoir attentionnel</h3>
             <p className="mb-4">
-              Utilisez notre Habit Tracker pour suivre vos sessions de concentration et mesurer vos progrès.
+              Utilisez notre Habit Tracker pour implémenter ces 8 stratégies et mesurer objectivement l'amélioration de votre concentration.
             </p>
             <Link 
               to="/habit-tracker" 
               className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
             >
-              Commencer le suivi
+              Démarrer l'entraînement
             </Link>
           </div>
 
@@ -232,57 +340,61 @@ export default function AttentionFragmenteeArticle() {
           <div className="not-prose space-y-4">
             <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
               <summary className="font-semibold cursor-pointer">
-                L'attention fragmentée est-elle un problème récent ?
+                L'attention fragmentée est-elle réversible à l'âge adulte ?
               </summary>
               <p className="mt-2 text-sm">
-                Le phénomène d'attention divisée a toujours existé, mais l'intensité et la fréquence des distractions numériques créent de nouveaux défis pour notre système attentionnel.
+                Oui, grâce à la neuroplasticité. Klingberg (2010) démontre que l'entraînement attentionnel modifie la connectivité préfrontale même chez les adultes. Les améliorations sont mesurables après 6-8 semaines de pratique structurée.
               </p>
             </details>
             
             <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
               <summary className="font-semibold cursor-pointer">
-                Peut-on réellement améliorer sa concentration ?
+                Combien de temps par jour faut-il s'entraîner ?
               </summary>
               <p className="mt-2 text-sm">
-                Oui, la recherche montre que l'attention peut être entraînée grâce à la plasticité cérébrale. Les améliorations sont mesurables après quelques semaines de pratique régulière.
+                15-20 minutes d'entraînement direct (méditation, exercices cognitifs) plus l'application des stratégies environnementales. L'effet cumulatif est plus important que la durée des sessions individuelles.
               </p>
             </details>
             
             <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
               <summary className="font-semibold cursor-pointer">
-                Le multitâche est-il toujours inefficace ?
+                Les enfants sont-ils plus affectés par l'attention fragmentée ?
               </summary>
               <p className="mt-2 text-sm">
-                Pour des tâches automatisées ou simples, le multitâche peut être acceptable. Cependant, pour des activités complexes nécessitant de la réflexion, la concentration unique reste plus efficace.
+                Le cortex préfrontal, siège du contrôle attentionnel, ne mature qu'à 25 ans. Les enfants sont donc particulièrement vulnérables aux effets des distractions numériques sur le développement cognitif.
               </p>
             </details>
             
             <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
               <summary className="font-semibold cursor-pointer">
-                Combien de temps faut-il pour voir des améliorations ?
+                Peut-on complètement éliminer les distractions numériques ?
               </summary>
               <p className="mt-2 text-sm">
-                Les premières améliorations dans le contrôle attentionnel peuvent être observées après 2-3 semaines d'entraînement régulier de 10-15 minutes par jour.
+                L'objectif n'est pas l'élimination complète mais le contrôle conscient. Il s'agit de développer la capacité de choisir quand être connecté plutôt que de subir des interruptions constantes.
               </p>
             </details>
           </div>
 
           <div className="not-prose my-12 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-            <h3 className="text-lg font-semibold mb-4">Continuez votre apprentissage</h3>
+            <h3 className="text-lg font-semibold mb-4">Optimisez vos performances cognitives</h3>
             <p className="mb-4">
-              Approfondissez vos connaissances en neurosciences appliquées avec nos autres articles.
+              Découvrez comment d'autres aspects des neurosciences peuvent améliorer votre quotidien et votre bien-être mental.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                Voir tous les articles
+              <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                Neuroplasticité et apprentissage
               </Link>
-              <span>·</span>
-              <Link to="/resources" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                Ressources gratuites
+              <span>•</span>
+              <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                Optimiser la dopamine
               </Link>
-              <span>·</span>
+              <span>•</span>
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                Maîtriser la rumination
+              </Link>
+              <span>•</span>
               <Link to="/#newsletter" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                Newsletter
+                Newsletter neurosciences
               </Link>
             </div>
           </div>
