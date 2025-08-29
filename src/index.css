@@ -281,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Liens et texte coloré - correction contraste mode sombre */
 .prose a {
-  color: rgb(79 70 229); /* indigo-600 */
+  color: rgb(79 70 229); /* indigo-400 */
 }
 
 .prose a:hover {
