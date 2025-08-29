@@ -1,23 +1,22 @@
-// src/articles/ConfianceSoi.tsx
-import React from "react";
+// src/articles/ConfianceEnSoi.tsx
 import { Link } from "react-router-dom";
-import SEO from "../components/SEO";
 import SmartImg from "../components/SmartImg";
+import SEO from "../components/SEO";
 
 const meta = {
   slug: "confiance-en-soi-durable",
-  title: "Construire une confiance en soi durable",
-  excerpt:
-    "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
+  title: "Construire une confiance en soi durable : guide scientifique complet",
+  description: "Découvrez les mécanismes psychologiques de la confiance en soi et 6 stratégies scientifiquement validées pour développer une estime de soi authentique et durable.",
+  cover: "/images/articles/confiance-soi-cover.jpg",
+  datePublished: "2024-01-10",
+  dateModified: "2024-01-10",
+  tags: ["confiance en soi", "estime de soi", "psychologie", "auto-efficacité"],
+  author: { name: "Guesso" },
   category: "Développement Personnel",
-  readTime: 10,
-  date: "2024-01-10",
-  author: "L'Éveil",
-  image: "/images/articles/confiance-soi-cover.jpg",
-  tags: ["confiance en soi", "estime de soi", "développement personnel", "psychologie"],
+  readingTime: "10 min",
 };
 
-export default function ConfianceSoi() {
+export default function ConfianceEnSoi() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
   const url = `${site}/blog/${meta.slug}`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
@@ -26,320 +25,365 @@ export default function ConfianceSoi() {
     <>
       <SEO
         title={meta.title}
-        description={meta.excerpt}
+        description={meta.description}
         image={og}
         type="article"
         path={`/blog/${meta.slug}`}
-        datePublished={meta.date}
-        dateModified={meta.date}
-        authorName={meta.author}
+        datePublished={meta.datePublished}
+        dateModified={meta.dateModified}
+        authorName={meta.author?.name}
         tags={meta.tags}
       />
       
-      <div className="min-h-screen py-8">
-        <div className="container mx-auto px-4">
-          {/* Retour au blog */}
-          <div className="mb-8">
-            <Link
-              to="/blog"
-              className="text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center gap-2"
-            >
-              ← Retour au blog
-            </Link>
-          </div>
+      <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="not-prose mb-12">
+          {/* Fil d'Ariane */}
+          <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
+            <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+              Accueil
+            </Link> 
+            <span className="mx-2 text-neutral-400" aria-hidden>›</span> 
+            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+              Blog
+            </Link> 
+            <span className="mx-2 text-neutral-400" aria-hidden>›</span>
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+              {meta.title}
+            </span>
+          </nav>
 
-          {/* Header de l'article */}
-          <header className="mb-12">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-6">
-                <span className="inline-block bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                  {meta.category}
-                </span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
-                {meta.title}
-              </h1>
-              
-              <div className="flex items-center gap-6 text-neutral-600 dark:text-neutral-400 mb-8">
-                <div className="flex items-center gap-2">
-                  <span>Par {meta.author}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span>{new Date(meta.date).toLocaleDateString('fr-FR')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span>{meta.readTime} min de lecture</span>
-                </div>
-              </div>
+          {/* Titre principal */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-4 leading-tight">
+            {meta.title}
+          </h1>
+          
+          {/* Sous-titre/Description */}
+          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+            {meta.description}
+          </p>
 
-              <div className="relative overflow-hidden rounded-2xl mb-12">
-                <SmartImg
-                  src={meta.image}
-                  alt={meta.title}
-                  width={1200}
-                  height={600}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </header>
-
-          {/* Contenu de l'article */}
-          <article className="max-w-4xl mx-auto prose prose-lg prose-neutral dark:prose-invert">
-            
-            <h2>Comprendre la confiance en soi : au-delà des idées reçues</h2>
-            <p>
-              La confiance en soi est souvent mal comprise. Il ne s'agit pas d'un trait de 
-              personnalité fixe avec lequel on naît, mais plutôt d'une compétence qui peut 
-              être développée et renforcée tout au long de la vie.
-            </p>
-
-            <p>
-              La recherche en psychologie nous montre que la confiance en soi authentique 
-              repose sur des bases solides : la connaissance de soi, l'acceptation de ses 
-              forces et faiblesses, et le développement progressif de compétences réelles.
-            </p>
-
-            <h2>Les fondements scientifiques de l'estime de soi</h2>
-
-            <h3>La théorie de l'auto-efficacité d'Albert Bandura</h3>
-            <p>
-              Le psychologue Albert Bandura a démontré que notre sentiment d'efficacité 
-              personnelle influence directement notre comportement, nos émotions et notre 
-              motivation. Plus nous croyons en notre capacité à accomplir une tâche, 
-              plus nous avons de chances de réussir.
-            </p>
-
-            <h3>Les sources de l'auto-efficacité</h3>
-            <p>
-              Bandura identifie quatre sources principales de l'auto-efficacité :
-            </p>
-            <ul>
-              <li><strong>Les expériences de maîtrise</strong> : nos succès passés</li>
-              <li><strong>L'apprentissage social</strong> : observer les réussites d'autrui</li>
-              <li><strong>La persuasion verbale</strong> : les encouragements reçus</li>
-              <li><strong>Les états physiologiques</strong> : notre état physique et émotionnel</li>
-            </ul>
-
-            <h3>Le rôle des neurotransmetteurs</h3>
-            <p>
-              La confiance en soi est aussi liée à la chimie de notre cerveau. La sérotonine 
-              favorise une humeur positive et la confiance, tandis que la dopamine nous motive 
-              à poursuivre nos objectifs. L'exercice physique, la méditation et une alimentation 
-              équilibrée peuvent naturellement optimiser ces neurotransmetteurs.
-            </p>
-
-            <h2>Les obstacles à la confiance en soi</h2>
-
-            <h3>Le syndrome de l'imposteur</h3>
-            <p>
-              Près de 70% des personnes expérimentent le syndrome de l'imposteur à un moment 
-              donné. Ce phénomène se caractérise par la peur d'être "démasqué" malgré des 
-              compétences réelles et des accomplissements objectifs.
-            </p>
-
-            <h3>Le perfectionnisme toxique</h3>
-            <p>
-              Le perfectionnisme peut devenir un ennemi de la confiance en soi. Il crée des 
-              standards irréalistes qui mènent inévitablement à la déception et au sentiment 
-              d'échec.
-            </p>
-
-            <h3>Les biais cognitifs limitants</h3>
-            <p>
-              Notre cerveau peut nous jouer des tours avec des biais comme :
-            </p>
-            <ul>
-              <li>Le biais de confirmation négatif</li>
-              <li>La généralisation excessive</li>
-              <li>La personnalisation excessive</li>
-              <li>La prédiction catastrophique</li>
-            </ul>
-
-            <h2>Techniques pratiques pour développer une confiance durable</h2>
-
-            <h3>1. La technique des petites victoires</h3>
-            <p>
-              Commencez par vous fixer des objectifs petits mais réalisables. Chaque victoire, 
-              même mineure, renforce votre sentiment d'efficacité personnelle. L'accumulation 
-              de ces succès crée un momentum puissant.
-            </p>
-
-            <h3>2. La restructuration cognitive</h3>
-            <p>
-              Apprenez à identifier et challenger vos pensées négatives automatiques. 
-              Remplacez "Je ne suis pas capable" par "Je peux apprendre à le faire" ou 
-              "Je vais m'améliorer avec la pratique".
-            </p>
-
-            <h3>3. La visualisation positive</h3>
-            <p>
-              Pratiquez la visualisation de vos succès futurs. Cette technique, utilisée 
-              par les athlètes de haut niveau, programme votre cerveau à anticiper le succès 
-              plutôt que l'échec.
-            </p>
-
-            <h3>4. Le développement de compétences réelles</h3>
-            <p>
-              La vraie confiance se construit sur des fondations solides. Investissez dans 
-              l'acquisition de compétences concrètes qui vous rapprochent de vos objectifs.
-            </p>
-
-            <h3>5. La pratique de l'auto-compassion</h3>
-            <p>
-              Traitez-vous avec la même bienveillance que vous offririez à un bon ami. 
-              L'auto-critique excessive érode la confiance, tandis que l'auto-compassion 
-              la nourrit.
-            </p>
-
-            <h2>Le plan d'action en 30 jours</h2>
-
-            <h3>Semaine 1 : Auto-évaluation et prise de conscience</h3>
-            <ul>
-              <li>Identifiez vos forces et vos domaines d'amélioration</li>
-              <li>Tenez un journal de vos pensées automatiques</li>
-              <li>Définissez 3 objectifs spécifiques et mesurables</li>
-            </ul>
-
-            <h3>Semaine 2 : Mise en action</h3>
-            <ul>
-              <li>Commencez par le plus petit objectif</li>
-              <li>Pratiquez la restructuration cognitive quotidiennement</li>
-              <li>Célébrez chaque petit progrès</li>
-            </ul>
-
-            <h3>Semaine 3 : Consolidation</h3>
-            <ul>
-              <li>Augmentez progressivement la difficulté de vos défis</li>
-              <li>Demandez des feedbacks constructifs</li>
-              <li>Pratiquez la visualisation 10 minutes par jour</li>
-            </ul>
-
-            <h3>Semaine 4 : Intégration</h3>
-            <ul>
-              <li>Évaluez vos progrès objectivement</li>
-              <li>Ajustez votre plan d'action</li>
-              <li>Définissez vos prochains objectifs</li>
-            </ul>
-
-            <h2>L'importance de l'environnement social</h2>
-            <p>
-              Votre environnement joue un rôle crucial dans le développement de votre confiance. 
-              Entourez-vous de personnes qui vous soutiennent et vous encouragent. Limitez le 
-              temps passé avec ceux qui vous dévalorisent ou vous découragent.
-            </p>
-
-            <h3>Construire un réseau de soutien</h3>
-            <ul>
-              <li>Rejoignez des groupes partageant vos intérêts</li>
-              <li>Trouvez un mentor dans votre domaine</li>
-              <li>Cultivez des amitiés authentiques</li>
-              <li>Considérez l'accompagnement professionnel si nécessaire</li>
-            </ul>
-
-            <h2>Maintenir sa confiance face aux échecs</h2>
-            <p>
-              L'échec fait partie intégrante de la vie et de l'apprentissage. La différence 
-              entre les personnes confiantes et les autres réside dans leur capacité à voir 
-              l'échec comme une opportunité d'apprentissage plutôt que comme une confirmation 
-              de leur incompétence.
-            </p>
-
-            <h3>La résilience : rebondir après un échec</h3>
-            <ul>
-              <li>Analysez objectivement ce qui s'est passé</li>
-              <li>Identifiez les leçons apprises</li>
-              <li>Ajustez votre approche</li>
-              <li>Recommencez avec ces nouvelles informations</li>
-            </ul>
-
-            <h2>La confiance en soi dans différents domaines de vie</h2>
-
-            <h3>Au travail</h3>
-            <p>
-              Développez votre expertise, prenez des initiatives mesurées, et n'hésitez pas 
-              à partager vos idées. La confiance professionnelle se construit par l'action 
-              et les résultats.
-            </p>
-
-            <h3>Dans les relations</h3>
-            <p>
-              La confiance en soi améliore la qualité de nos relations. Elle nous permet 
-              d'exprimer nos besoins, de poser des limites saines et d'être authentiques 
-              avec les autres.
-            </p>
-
-            <h3>Dans les défis personnels</h3>
-            <p>
-              Que ce soit apprendre une nouvelle compétence, changer de carrière ou surmonter 
-              une peur, la confiance en soi vous donne le courage de sortir de votre zone 
-              de confort.
-            </p>
-
-            <h2>Erreurs à éviter</h2>
-
-            <h3>Chercher la validation externe constante</h3>
-            <p>
-              Une confiance basée uniquement sur l'approbation des autres est fragile. 
-              Développez votre capacité à vous auto-évaluer objectivement.
-            </p>
-
-            <h3>Comparer constamment avec les autres</h3>
-            <p>
-              Les comparaisons sont le vol de la joie. Concentrez-vous sur votre propre 
-              parcours et vos progrès personnels.
-            </p>
-
-            <h3>Vouloir tout maîtriser immédiatement</h3>
-            <p>
-              La confiance se développe progressivement. Soyez patient avec vous-même et 
-              célébrez les petites victoires en chemin.
-            </p>
-
-            <h2>Conclusion : Votre voyage vers une confiance authentique</h2>
-            <p>
-              Construire une confiance en soi durable est un processus continu, pas une 
-              destination finale. C'est un investissement dans votre bien-être et votre 
-              capacité à créer la vie que vous désirez.
-            </p>
-
-            <p>
-              Rappelez-vous que la vraie confiance ne vient pas de l'absence de peur, 
-              mais de votre capacité à agir malgré la peur. Elle se nourrit de vos 
-              expériences, de vos apprentissages et de votre volonté de grandir.
-            </p>
-
-            <p>
-              Commencez dès aujourd'hui : identifiez un domaine où vous aimeriez développer 
-              votre confiance, fixez-vous un petit objectif réalisable, et passez à l'action. 
-              Votre futur moi vous en remerciera.
-            </p>
-
-            <p>
-              La confiance en soi n'est pas un luxe, c'est une nécessité pour une vie 
-              épanouie. Vous avez tous les outils pour la développer - il ne reste plus 
-              qu'à commencer le travail.
-            </p>
-
-          </article>
-
-          {/* Tags */}
-          <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
-            <div className="flex flex-wrap gap-2">
-              {meta.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-sm"
-                >
-                  #{tag}
+          {/* Métadonnées */}
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+            <span>par Guesso</span>
+            <span>•</span>
+            <span>{meta.readingTime} de lecture</span>
+            <span>•</span>
+            <time dateTime={meta.datePublished}>
+              {new Date(meta.datePublished).toLocaleDateString("fr-FR", { 
+                day: "2-digit", 
+                month: "2-digit", 
+                year: "numeric" 
+              })}
+            </time>
+            <span>•</span>
+            <div className="flex gap-1">
+              {meta.tags.map((tag, i) => (
+                <span key={tag} className="text-green-600 dark:text-green-400">
+                  #{tag}{i < meta.tags.length - 1 && " "}
                 </span>
               ))}
             </div>
           </div>
 
+          {/* Image de couverture */}
+          {meta.cover && (
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <SmartImg 
+                src={meta.cover} 
+                alt={`Image de couverture : ${meta.title}`} 
+                width={1200} 
+                height={630}
+                priority 
+                className="w-full h-auto"
+              />
+            </div>
+          )}
+        </header>
+
+        <div className="mt-10">
+          <p className="lead">
+            La confiance en soi n'est pas un trait de personnalité fixe. Les recherches en psychologie cognitive et sociale démontrent qu'elle peut être développée de façon scientifiquement mesurable, à condition d'appliquer les bonnes stratégies basées sur des preuves empiriques.
+          </p>
+
+          <h2>Qu'est-ce que la confiance en soi : définitions scientifiques</h2>
+          
+          <p>
+            La psychologie distingue trois concepts souvent confondus : l'estime de soi (évaluation globale de sa valeur), l'auto-efficacité (croyance en sa capacité à accomplir des tâches spécifiques), et la confiance en soi (assurance dans ses jugements et actions).
+          </p>
+
+          <p>
+            Albert Bandura, pionnier de la théorie sociale cognitive à Stanford, a démontré que l'auto-efficacité influence directement la performance, la motivation et la résilience face aux difficultés.
+          </p>
+
+          <h3>Les fondements neurobiologiques de la confiance</h3>
+          
+          <p>
+            Les neurosciences révèlent que la confiance en soi active spécifiquement le cortex préfrontal ventromédian et module l'activité de l'amygdale. Cette régulation émotionnelle explique pourquoi les personnes confiantes gèrent mieux le stress et prennent de meilleures décisions sous pression.
+          </p>
+
+          <h2>Les 4 sources de l'auto-efficacité selon Bandura</h2>
+
+          <h3>1. Les expériences de maîtrise</h3>
+          
+          <p>
+            Nos succès passés constituent la source la plus puissante d'auto-efficacité. Une méta-analyse de Stajkovic et Luthans (1998) sur 114 études confirme que les expériences positives antérieures prédisent significativement la performance future.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Documentez vos réussites dans un "journal des victoires" quotidien. Même les petits accomplissements renforcent progressivement votre sentiment de compétence.
+          </p>
+
+          <h3>2. L'apprentissage social (modeling)</h3>
+          
+          <p>
+            Observer des personnes similaires réussir augmente notre propre sentiment d'efficacité. L'effet est maximal quand le modèle nous ressemble en termes d'âge, genre, ou contexte socio-économique.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Identifiez des mentors ou des pairs qui ont surmonté des défis similaires aux vôtres. Étudiez leurs stratégies et adaptez-les à votre situation.
+          </p>
+
+          <h3>3. La persuasion verbale</h3>
+          
+          <p>
+            Les encouragements crédibles d'autrui renforcent temporairement l'auto-efficacité, particulièrement quand ils sont spécifiques et focalisés sur les stratégies plutôt que sur les capacités innées.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Entourez-vous de personnes qui vous donnent des feedbacks constructifs et spécifiques. Évitez les compliments vagues au profit d'analyses détaillées de vos progrès.
+          </p>
+
+          <h3>4. Les états physiologiques et émotionnels</h3>
+          
+          <p>
+            Notre interprétation des signaux corporels (rythme cardiaque, tension musculaire) influence notre confiance. La recherche de Matthew Lieberman (UCLA) montre que nommer nos émotions réduit l'activation de l'amygdale de 50%.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Pratiquez la régulation émotionnelle par la respiration cohérente (5 secondes inspiration, 5 secondes expiration) avant les situations challengeantes.
+          </p>
+
+          <h2>Les obstacles scientifiquement identifiés</h2>
+
+          <h3>Le syndrome de l'imposteur : au-delà du mythe</h3>
+          
+          <p>
+            Pauline Clance et Suzanne Imes ont identifié ce phénomène en 1978. Leurs recherches montrent que 70% des personnes l'expérimentent, indépendamment de leurs compétences objectives. Les perfectionnistes et les personnes à haut potentiel y sont particulièrement vulnérables.
+          </p>
+
+          <h3>Les biais cognitifs limitants</h3>
+          
+          <p>
+            Aaron Beck et la thérapie cognitive ont catalogué les distorsions de pensée qui sabotent la confiance : généralisation excessive, filtrage mental, prédictions catastrophiques, et personnalisation excessive. Ces patterns automatiques peuvent être consciemment modifiés.
+          </p>
+
+          <h2>Les 6 stratégies scientifiquement validées</h2>
+
+          <div className="not-prose my-8 bg-green-50 dark:bg-green-950/30 p-6 rounded-lg">
+            <h3 className="text-lg font-semibold text-green-900 dark:text-green-100 mb-4">
+              Méthodes basées sur la recherche empirique
+            </h3>
+            <p className="text-green-800 dark:text-green-200 text-sm">
+              Ces techniques exploitent les mécanismes naturels de construction de l'auto-efficacité pour développer une confiance authentique et durable.
+            </p>
+          </div>
+
+          <h3>1. La technique des microréussites progressives</h3>
+          
+          <p>
+            Teresa Amabile (Harvard Business School) a démontré que les petites victoires quotidiennes génèrent plus de motivation que les grands succès sporadiques. Son "principe du progrès" montre que documenter ses avancées quotidiennes améliore significativement la performance et le bien-être.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Décomposez vos objectifs en étapes de 25% maximum de votre capacité actuelle. Chaque succès renforce votre sentiment d'efficacité et crée un momentum psychologique.
+          </p>
+
+          <h3>2. La restructuration cognitive basée sur la TCC</h3>
+          
+          <p>
+            Les techniques de thérapie cognitive-comportementale, validées par plus de 500 études contrôlées, permettent d'identifier et modifier les pensées automatiques négatives qui minent la confiance.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Utilisez la méthode ABCDE d'Albert Ellis : Adversité (situation), Beliefs (croyances), Conséquences (émotions), Disputation (questionnement), Energization (nouvelles émotions).
+          </p>
+
+          <h3>3. L'imagerie mentale optimale</h3>
+          
+          <p>
+            Les recherches en psychologie du sport montrent que la visualisation améliore la performance de 13-16% en moyenne. L'efficacité est maximale quand on visualise le processus (étapes d'action) plutôt que seulement le résultat.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Pratiquez 10 minutes de visualisation quotidienne en mode "première personne", incluant les sensations physiques et les émotions positives associées au succès.
+          </p>
+
+          <h3>4. L'exposition graduelle systématique</h3>
+          
+          <p>
+            Basée sur les principes de désensibilisation de Joseph Wolpe, cette approche réduit progressivement l'anxiété liée aux situations sociales ou professionnelles challengeantes.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Créez une hiérarchie de 10 situations anxiogènes (de 1 à 10). Maîtrisez le niveau 1 avant de passer au niveau 2. Cette progression systématique construit une confiance solide.
+          </p>
+
+          <h3>5. Le développement de compétences spécifiques</h3>
+          
+          <p>
+            La théorie de l'auto-détermination de Deci et Ryan démontre que le développement de compétences réelles satisfait un besoin psychologique fondamental et renforce durablement la motivation intrinsèque.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Identifiez 3 compétences clés pour vos objectifs. Consacrez 1 heure quotidienne à la pratique délibérée, avec feedbacks réguliers et correction progressive.
+          </p>
+
+          <h3>6. L'auto-compassion selon Kristin Neff</h3>
+          
+          <p>
+            Les recherches de Kristin Neff (University of Texas) montrent que l'auto-compassion prédit mieux le bien-être que l'estime de soi. Elle comprend trois composantes : auto-bienveillance, humanité commune, et pleine conscience.
+          </p>
+
+          <p>
+            <strong>Application pratique :</strong> Quand vous faites une erreur, posez-vous trois questions : "Comment puis-je être bienveillant envers moi-même ?", "Comment cette expérience me connecte-t-elle aux autres ?", "Que puis-je apprendre de cette situation ?"
+          </p>
+
+          <h2>Applications contextuelles de la confiance</h2>
+
+          <h3>Confiance professionnelle et leadership</h3>
+          
+          <p>
+            Amy Cuddy (Harvard) a démontré que les postures de pouvoir pendant 2 minutes augmentent la testostérone de 20% et réduisent le cortisol de 25%. Cette "préparation corporelle" influence directement notre assurance en situation professionnelle.
+          </p>
+
+          <h3>Confiance sociale et relations</h3>
+          
+          <p>
+            Les recherches de John Gottman sur les relations montrent que la confiance interpersonnelle repose sur trois piliers : l'accessibilité émotionnelle, la réactivité empathique, et l'engagement mutuel. Ces patterns peuvent être consciemment développés.
+          </p>
+
+          <h2>Éviter les pièges de la fausse confiance</h2>
+
+          <h3>Narcissisme vs confiance authentique</h3>
+          
+          <p>
+            Jean Twenge (San Diego State University) distingue la confiance authentique (basée sur des compétences réelles) du narcissisme défensif (compensation de l'insécurité). La vraie confiance inclut l'humilité et la capacité d'apprentissage.
+          </p>
+
+          <h3>Dépendance à la validation externe</h3>
+          
+          <p>
+            Edward Deci a montré que la motivation extrinsèque (récompenses, approbation) peut paradoxalement réduire la confiance intrinsèque. L'objectif est de développer une validation interne basée sur vos propres standards et valeurs.
+          </p>
+
+          <div className="not-prose my-8 bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-lg text-white">
+            <h3 className="text-xl font-semibold mb-3">Développez votre confiance quotidiennement</h3>
+            <p className="mb-4">
+              Utilisez notre Habit Tracker pour suivre vos pratiques de développement personnel et mesurer l'évolution de votre confiance.
+            </p>
+            <Link 
+              to="/habit-tracker" 
+              className="inline-flex items-center bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+            >
+              Commencer le suivi
+            </Link>
+          </div>
+
+          <h2>Plan d'action scientifiquement structuré</h2>
+
+          <h3>Semaines 1-2 : Évaluation et fondations</h3>
+          
+          <p>
+            Utilisez l'Échelle d'auto-efficacité généralisée de Schwarzer et Jerusalem pour mesurer votre niveau de base. Identifiez vos domaines de force et vos axes d'amélioration prioritaires.
+          </p>
+
+          <h3>Semaines 3-6 : Implémentation des stratégies</h3>
+          
+          <p>
+            Intégrez une technique par semaine : microréussites (semaine 3), restructuration cognitive (semaine 4), visualisation (semaine 5), exposition graduelle (semaine 6). Documentez vos progrès quotidiennement.
+          </p>
+
+          <h3>Semaines 7-8 : Consolidation et évaluation</h3>
+          
+          <p>
+            Réévaluez votre auto-efficacité avec la même échelle. Identifiez les stratégies les plus efficaces pour vous et planifiez leur maintien à long terme.
+          </p>
+
+          <h2>Recherches récentes et perspectives futures</h2>
+          
+          <p>
+            Les neurosciences sociales révèlent que la confiance modifie littéralement la connectivité cérébrale. L'imagerie par résonance magnétique montre des changements dans le réseau de saillance après seulement 8 semaines de pratiques ciblées.
+          </p>
+
+          <p>
+            Les applications de réalité virtuelle permettent maintenant de pratiquer l'exposition graduelle dans des environnements contrôlés, ouvrant de nouvelles perspectives thérapeutiques pour le développement de la confiance sociale.
+          </p>
+
+          <h2>Questions fréquentes</h2>
+          
+          <div className="not-prose space-y-4">
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
+              <summary className="font-semibold cursor-pointer">
+                Combien de temps faut-il pour développer une confiance durable ?
+              </summary>
+              <p className="mt-2 text-sm">
+                Les recherches montrent des améliorations mesurables après 3-4 semaines de pratique quotidienne, mais une confiance solide nécessite généralement 3-6 mois d'entraînement systématique.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
+              <summary className="font-semibold cursor-pointer">
+                Peut-on être trop confiant ?
+              </summary>
+              <p className="mt-2 text-sm">
+                La surconfiance devient problématique quand elle empêche l'apprentissage ou la prise en compte des feedbacks. La confiance optimale inclut une évaluation réaliste de ses limites.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
+              <summary className="font-semibold cursor-pointer">
+                La confiance en soi est-elle différente chez les hommes et les femmes ?
+              </summary>
+              <p className="mt-2 text-sm">
+                Les études montrent des différences dans l'expression de la confiance plutôt que dans le niveau réel. Les femmes sous-estiment souvent leurs compétences tandis que les hommes les surestiment légèrement.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
+              <summary className="font-semibold cursor-pointer">
+                Que faire si j'ai peur de sortir de ma zone de confort ?
+              </summary>
+              <p className="mt-2 text-sm">
+                Utilisez l'exposition graduelle : commencez par des défis qui vous mettent à 20-30% en dehors de votre zone de confort. La peur diminue avec la familiarisation progressive.
+              </p>
+            </details>
+          </div>
+
+          <div className="not-prose my-12 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+            <h3 className="text-lg font-semibold mb-4">Continuez votre développement personnel</h3>
+            <p className="mb-4">
+              Explorez nos autres ressources pour développer vos compétences psychologiques et optimiser votre bien-être mental.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Link to="/blog/surmonter-rejet-social" className="text-green-600 dark:text-green-400 hover:underline">
+                Surmonter le rejet social
+              </Link>
+              <span>•</span>
+              <Link to="/blog/neuroplasticite-cerveau" className="text-green-600 dark:text-green-400 hover:underline">
+                Optimiser la neuroplasticité
+              </Link>
+              <span>•</span>
+              <Link to="/blog/neuro-dopamine-routine" className="text-green-600 dark:text-green-400 hover:underline">
+                Motivation et dopamine
+              </Link>
+              <span>•</span>
+              <Link to="/#newsletter" className="text-green-600 dark:text-green-400 hover:underline">
+                Newsletter recherche
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
     </>
   );
 }
