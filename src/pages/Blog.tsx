@@ -56,6 +56,17 @@ const Blog = () => {
   date: "2025-08-28",
   image: "/images/articles/attention-fragmentee-cover-1200x630.jpg",
   slug: "attention-fragmentee-concentration-numerique"
+  },
+   {
+    id: 6,
+    title: "Rumination mentale : comprendre et libérer son esprit des pensées obsessionnelles",
+    excerpt: "Découvrez les mécanismes neuroscientifiques de la rumination et 7 stratégies validées pour briser le cycle des pensées répétitives.",
+    category: "Psychologie",
+    readTime: 11,
+    date: "2025-08-29",
+    image: "/images/articles/rumination-cover.jpg",
+    slug: "rumination-mentale-pensees-obsessionnelles",
+    featured: true
   }
 ]
 
