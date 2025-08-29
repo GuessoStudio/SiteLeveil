@@ -71,6 +71,16 @@ const Blog = () => {
       date: "2025-08-29",
       image: "/images/articles/rumination-cover.jpg",
       slug: "rumination-mentale-pensees-obsessionnelles"
+    },
+    {
+      id: 7,
+      title:  "Procrastination : comprendre les mécanismes cérébraux pour enfin passer à l'action",
+      excerpt: "Découvrez les bases neuroscientifiques de la procrastination et 8 stratégies validées scientifiquement pour surmonter l'évitement comportemental et retrouver la motivation.",
+      category: "Psychologie",
+      readTime: 13,
+      date: "2025-08-24",
+      image: "/images/articles/procrastination-brain-conflict.jpg",
+      slug: "procrastination-cerveau-agir-neurosciences",
     }
   ]
 
