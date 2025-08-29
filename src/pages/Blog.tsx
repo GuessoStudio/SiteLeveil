@@ -158,7 +158,7 @@ const Blog = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <User className="w-4 h-4" />
-                      <span>L'Éveil</span>
+                      <span>Guesso</span>
                     </div>
                   </div>
                   <span>{new Date(article.date).toLocaleDateString('fr-FR')}</span>
