@@ -6,8 +6,10 @@ const articles = [
   "/blog/surmonter-rejet-social",
   "/blog/neuroplasticite-cerveau",
   "/blog/confiance-en-soi-durable",  
-  "/blog/neuro-dopamine-routine"
-  // ajoute ici…
+  "/blog/neuro-dopamine-routine",
+  "/blog/rumination-mentale-pensees-obsessionnelles",
+  "/blog/attention-fragmentee-concentration-numerique",
+  "/blog/procrastination-cerveau-agir-neurosciences"
 ];
 
 const urls = [...staticRoutes, ...articles]
