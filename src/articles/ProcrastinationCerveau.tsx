@@ -197,7 +197,7 @@ export default function ProcrastinationCerveau() {
           </p>
 
           <p>
-            <strong>Application pratique :</strong> Pour toute tâche > 2 minutes, identifiez la plus petite action possible (ouvrir le document, écrire une phrase, chercher une référence). Cette micro-action active les circuits dopaminergiques et réduit l'aversion initiale.
+            <strong>Application pratique :</strong> Pour toute tâche supérieur à 2 minutes, identifiez la plus petite action possible (ouvrir le document, écrire une phrase, chercher une référence). Cette micro-action active les circuits dopaminergiques et réduit l'aversion initiale.
           </p>
 
           <h3>2. Fractionnement cognitif basé sur la charge mentale</h3>
@@ -240,7 +240,7 @@ export default function ProcrastinationCerveau() {
             <strong>Application pratique :</strong> Pour chaque tâche importante : visualisez le résultat accompli (activation dopaminergique), anticipez l'obstacle principal (préparation préfrontale), planifiez la réponse "si-alors" (automatisation comportementale).
           </p>
 
-          <div class="not-prose my-8">
+          <div className="not-prose my-8">
             <SmartImg 
               src="/images/articles/procrastination-action-motivation.jpg" 
               alt="Transition de la procrastination à l'action - activation des circuits motivationnels"
