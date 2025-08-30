@@ -20,6 +20,6 @@ export const articlesBySlug: Record<string, FC> = {
   "neuroplasticite-cerveau": NeuroplasticiteCerveau,
   'attention-fragmentee-concentration-numerique': AttentionFragmenteeArticle,
   "rumination-mentale-pensees-obsessionnelles": RuminationMentale,
-  "procrastination-cerveau-agir-neurosciences": ProcrastinationCerveau
+  "procrastination-cerveau-agir-neurosciences": ProcrastinationCerveau,
   "methode-acr-repondre-aux-bonnes-nouvelles": MethodeAcrRepondreAuxBonnesNouvelles
 };
