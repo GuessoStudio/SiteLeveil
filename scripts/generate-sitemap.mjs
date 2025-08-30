@@ -9,7 +9,8 @@ const articles = [
   "/blog/neuro-dopamine-routine",
   "/blog/rumination-mentale-pensees-obsessionnelles",
   "/blog/attention-fragmentee-concentration-numerique",
-  "/blog/procrastination-cerveau-agir-neurosciences"
+  "/blog/procrastination-cerveau-agir-neurosciences",
+  "/blog/methode-acr-repondre-aux-bonnes-nouvelles"
 ];
 
 const urls = [...staticRoutes, ...articles]

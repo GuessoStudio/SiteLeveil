@@ -1,15 +1,31 @@
 // src/pages/Blog.tsx
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { Search, Filter, Clock, User } from 'lucide-react'
 import SmartImg from '../components/SmartImg'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 
 const Blog = () => {
-  // État pour le filtre actif
-  const [activeFilter, setActiveFilter] = useState("Tous")
+  const [searchParams, setSearchParams] = useSearchParams()
   const [searchQuery, setSearchQuery] = useState("")
+  
+  // Initialiser activeFilter depuis l'URL ou "Tous" par défaut
+  const [activeFilter, setActiveFilter] = useState(() => {
+    return searchParams.get('category') || "Tous"
+  })
 
+  // Synchroniser l'URL quand le filtre change
+  const updateFilter = (category: string) => {
+    setActiveFilter(category)
+    if (category === "Tous") {
+      searchParams.delete('category')
+    } else {
+      searchParams.set('category', category)
+    }
+    setSearchParams(searchParams)
+  }
+
+  // Articles avec tous vos articles récents
   const articles = [
     {
       id: 1,
@@ -24,8 +40,8 @@ const Blog = () => {
     },
     {
       id: 2,
-      title: "La neuroplasticité : votre cerveau peut changer",
-      excerpt: "Explorez les dernières découvertes sur la capacité du cerveau à se réorganiser tout au long de la vie.",
+      title: "Neuroplasticité : comment reprogrammer son cerveau après 25 ans",
+      excerpt: "Découvrez les mécanismes scientifiques de la neuroplasticité et 7 stratégies concrètes pour optimiser la plasticité de votre cerveau.",
       category: "Neurosciences",
       readTime: 12,
       date: "2024-01-12",
@@ -74,17 +90,27 @@ const Blog = () => {
     },
     {
       id: 7,
-      title:  "Procrastination : comprendre les mécanismes cérébraux pour enfin passer à l'action",
-      excerpt: "Découvrez les bases neuroscientifiques de la procrastination et 8 stratégies validées scientifiquement pour surmonter l'évitement comportemental et retrouver la motivation.",
+      title: "Procrastination : comprendre les mécanismes cérébraux pour enfin passer à l'action",
+      excerpt: "Découvrez les bases neuroscientifiques de la procrastination et 8 stratégies validées scientifiquement.",
       category: "Psychologie",
       readTime: 13,
-      date: "2025-08-24",
+      date: "2025-08-30",
       image: "/images/articles/procrastination-brain-conflict.jpg",
-      slug: "procrastination-cerveau-agir-neurosciences",
+      slug: "procrastination-cerveau-agir-neurosciences"
+    },
+    {
+     id: 8,
+      title: "La méthode ACR : répondre aux bonnes nouvelles pour renforcer les relations",
+      excerpt: "Découvrez comment la réponse active-constructive (ACR) transforme votre façon de célébrer les bonnes nouvelles et renforce durablement vos liens interpersonnels.",
+      category: "Relations Humaines",
+      readTime: 10,
+      date: "2025-08-30",
+      image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover-1600x900.jpg",
+      slug: "methode-acr-repondre-aux-bonnes-nouvelles"
     }
   ]
 
-  const categories = ["Tous", "Psychologie", "Neurosciences", "Développement Personnel", "Bien-être"]
+  const categories = ["Tous", "Psychologie", "Neurosciences", "Développement Personnel", "Relations Humaines"]
 
   // Filtrage des articles basé sur la catégorie et la recherche
   const filteredArticles = useMemo(() => {
@@ -146,12 +172,12 @@ const Blog = () => {
             </button>
           </div>
 
-          {/* Categories - MAINTENANT FONCTIONNELS */}
+          {/* Categories - MAINTENANT FONCTIONNELS AVEC URL SYNC */}
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setActiveFilter(category)}
+                onClick={() => updateFilter(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                   activeFilter === category
                     ? "bg-indigo-600 text-white shadow-md"
@@ -202,12 +228,14 @@ const Blog = () => {
                   <div className="flex items-center justify-between mb-3">
                     <span 
                       className={`text-xs font-medium px-3 py-1 rounded-full ${
-                        article.category === 'Psychologie' 
-                          ? 'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400'
-                          : article.category === 'Neurosciences'
-                          ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400'
-                          : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
-                      }`}
+  article.category === 'Psychologie' 
+    ? 'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400'
+    : article.category === 'Neurosciences'
+    ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400'
+    : article.category === 'Relations Humaines'
+    ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400'
+    : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
+}`}
                     >
                       {article.category}
                     </span>
@@ -259,7 +287,7 @@ const Blog = () => {
               </div>
               <button
                 onClick={() => {
-                  setActiveFilter("Tous");
+                  updateFilter("Tous");
                   setSearchQuery("");
                 }}
                 className="text-indigo-600 dark:text-indigo-400 hover:underline"

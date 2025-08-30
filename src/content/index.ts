@@ -9,6 +9,7 @@ import NeuroplasticiteCerveau from "../articles/NeuroplasticiteCerveau";
 import AttentionFragmenteeArticle from '../articles/AttentionFragmenteeArticle';
 import RuminationMentale from "../articles/RuminationMentale";
 import ProcrastinationCerveau from "../articles/ProcrastinationCerveau";
+import MethodeAcrRepondreAuxBonnesNouvelles from "../articles/MethodeAcrRepondreAuxBonnesNouvelles";
 
 // Mappe chaque slug vers le composant de l’article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d’article.
@@ -20,4 +21,5 @@ export const articlesBySlug: Record<string, FC> = {
   'attention-fragmentee-concentration-numerique': AttentionFragmenteeArticle,
   "rumination-mentale-pensees-obsessionnelles": RuminationMentale,
   "procrastination-cerveau-agir-neurosciences": ProcrastinationCerveau
+  "methode-acr-repondre-aux-bonnes-nouvelles": MethodeAcrRepondreAuxBonnesNouvelles
 };

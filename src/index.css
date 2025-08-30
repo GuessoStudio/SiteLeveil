@@ -318,6 +318,40 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(165 180 252); /* indigo-300 */
 }
 
+/* Corrections mode sombre pour les articles */
+@media (prefers-color-scheme: dark) {
+  .prose.dark\\:prose-invert {
+    --tw-prose-bold: rgb(245 245 245); /* neutral-100 */
+    --tw-prose-headings: rgb(255 255 255);
+    --tw-prose-body: rgb(212 212 212); /* neutral-300 */
+    --tw-prose-links: rgb(168 162 158); /* neutral-400 */
+  }
+
+  .prose.dark\\:prose-invert strong {
+    color: rgb(245 245 245) !important;
+  }
+
+  .prose.dark\\:prose-invert em {
+    color: rgb(212 212 212) !important;
+  }
+}
+
+/* Pour le mode sombre explicite avec data-theme */
+[data-theme="dark"] .prose.dark\\:prose-invert {
+  --tw-prose-bold: rgb(245 245 245);
+  --tw-prose-headings: rgb(255 255 255);
+  --tw-prose-body: rgb(212 212 212);
+  --tw-prose-links: rgb(168 162 158);
+}
+
+[data-theme="dark"] .prose.dark\\:prose-invert strong {
+  color: rgb(245 245 245) !important;
+}
+
+[data-theme="dark"] .prose.dark\\:prose-invert em {
+  color: rgb(212 212 212) !important;
+}
+
 /* ---------- Utilitaires Tailwind personnalisés ---------- */
 @layer utilities {
   /* Anneau de focus accessible et cohérent partout */
