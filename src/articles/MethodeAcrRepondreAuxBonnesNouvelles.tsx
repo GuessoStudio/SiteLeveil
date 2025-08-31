@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import SmartImg from "../components/SmartImg";
+
 
 const meta = {
   slug: "methode-acr-repondre-aux-bonnes-nouvelles",
@@ -64,11 +64,11 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
               </div>
 
               <div className="relative overflow-hidden rounded-2xl mb-12">
-                <SmartImg
+                <img
                   src={meta.image}
                   alt={meta.title}
-                  width={1600}
-                  height={900}
+                  width="1600"
+                  height="900"
                   className="w-full h-auto"
                 />
               </div>
@@ -108,11 +108,11 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
             </p>
 
             <div className="my-8 not-prose">
-              <SmartImg
+              <img
                 src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-4-styles-1200x675.jpg"
                 alt="Diagramme des 4 styles de réponse aux bonnes nouvelles"
-                width={1200}
-                height={675}
+                width="1200"
+                height="675"
                 className="w-full h-auto rounded-lg"
               />
             </div>
@@ -223,11 +223,11 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
             </p>
 
             <div className="my-8 not-prose">
-              <SmartImg
+              <img
                 src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-bids-1200x675.jpg"
                 alt="Diagramme des bids de connexion selon Gottman"
-                width={1200}
-                height={675}
+                width="1200"
+                height="675"
                 className="w-full h-auto rounded-lg"
               />
             </div>
