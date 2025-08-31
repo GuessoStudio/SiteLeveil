@@ -14,6 +14,36 @@ const Blog = () => {
     return searchParams.get('category') || "Tous"
   })
 
+  const getCategoryColors = (category: string) => {
+    switch (category) {
+      case 'Psychologie':
+        return { 
+          active: 'bg-rose-600 text-white', 
+          hover: 'hover:bg-rose-100 hover:text-rose-600 dark:hover:bg-rose-900/20 dark:hover:text-rose-400' 
+        };
+      case 'Neurosciences':
+        return { 
+          active: 'bg-indigo-600 text-white', 
+          hover: 'hover:bg-indigo-100 hover:text-indigo-600 dark:hover:bg-indigo-900/20 dark:hover:text-indigo-400' 
+        };
+      case 'Relations Humaines':
+        return { 
+          active: 'bg-purple-600 text-white', 
+          hover: 'hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/20 dark:hover:text-purple-400' 
+        };
+      case 'Développement Personnel':
+        return { 
+          active: 'bg-green-600 text-white', 
+          hover: 'hover:bg-green-100 hover:text-green-600 dark:hover:bg-green-900/20 dark:hover:text-green-400' 
+        };
+      default:
+        return { 
+          active: 'bg-indigo-600 text-white', 
+          hover: 'hover:bg-indigo-100 hover:text-indigo-600 dark:hover:bg-indigo-900/20 dark:hover:text-indigo-400' 
+        };
+    }
+  };
+
   // Synchroniser l'URL quand le filtre change
   const updateFilter = (category: string) => {
     setActiveFilter(category)
@@ -173,21 +203,24 @@ const Blog = () => {
           </div>
 
           {/* Categories - MAINTENANT FONCTIONNELS AVEC URL SYNC */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => updateFilter(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-                  activeFilter === category
-                    ? "bg-indigo-600 text-white shadow-md"
-                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+<div className="flex flex-wrap gap-2">
+  {categories.map((category) => {
+    const colors = getCategoryColors(category);
+    return (
+      <button
+        key={category}
+        onClick={() => updateFilter(category)}
+        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+          activeFilter === category
+            ? colors.active + " shadow-md"
+            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 " + colors.hover
+        }`}
+      >
+        {category}
+      </button>
+    );
+  })}
+</div>
 
           {/* Indicateur du nombre de résultats */}
           {(activeFilter !== "Tous" || searchQuery.trim()) && (

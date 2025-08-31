@@ -11,7 +11,7 @@ const meta = {
   category: "Relations Humaines",
   readTime: 10,
   date: "2025-08-30",
-  author: "L'Éveil",
+  author: "Guesso",
   image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover-1600x900.jpg",
   tags: ["relations humaines", "communication", "ACR", "capitalisation", "Gottman", "couples"],
 };
