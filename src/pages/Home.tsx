@@ -7,83 +7,135 @@ import SmartImg from '../components/SmartImg'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
 import SEO from '../components/SEO'
 
-/* -------- Counter léger sans dépendance -------- */
-function Counter({ to, duration = 1000, prefix = '', suffix = '' }:{
-  to: number; duration?: number; prefix?: string; suffix?: string;
+/* ========================================
+   COMPOSANTS UTILITAIRES
+======================================== */
+
+// Compteur animé avec ease-out
+function Counter({ 
+  to, 
+  duration = 1000, 
+  prefix = '', 
+  suffix = '' 
+}: {
+  to: number
+  duration?: number
+  prefix?: string
+  suffix?: string
 }) {
-  const [val, setVal] = React.useState(0)
-  const start = React.useRef<number | null>(null)
+  const [value, setValue] = React.useState(0)
+  const startTimeRef = React.useRef<number | null>(null)
 
   React.useEffect(() => {
-    let raf = 0
-    const step = (t: number) => {
-      if (start.current === null) start.current = t
-      const p = Math.min((t - start.current) / duration, 1)
-      const eased = 1 - Math.pow(1 - p, 3) // easeOutCubic
-      setVal(Math.round(eased * to))
-      if (p < 1) raf = requestAnimationFrame(step)
+    let animationFrame = 0
+
+    const step = (timestamp: number) => {
+      if (startTimeRef.current === null) {
+        startTimeRef.current = timestamp
+      }
+      
+      const progress = Math.min((timestamp - startTimeRef.current) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3) // easeOutCubic
+      
+      setValue(Math.round(eased * to))
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(step)
+      }
     }
-    raf = requestAnimationFrame(step)
-    return () => cancelAnimationFrame(raf)
+
+    animationFrame = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(animationFrame)
   }, [to, duration])
 
-  return <span>{prefix}{val.toLocaleString()}{suffix}</span>
+  return <span>{prefix}{value.toLocaleString()}{suffix}</span>
 }
 
-/* -------- Particules CSS (positions fixées) -------- */
-function ParticlesLite({ count = 24 }: { count?: number }) {
-  const dots = useMemo(
+// Particules d'arrière-plan CSS uniquement
+function ParticlesBackground({ count = 24 }: { count?: number }) {
+  const particles = useMemo(
     () =>
-      Array.from({ length: count }).map((_, i) => ({
-        left: `${(i * 37) % 100}%`,
-        bottom: `${(i * 23) % 100}%`,
-        duration: `${6 + (i % 5)}s`,
-        opacity: 0.85 - (i % 4) * 0.15
+      Array.from({ length: count }).map((_, index) => ({
+        left: `${(index * 37) % 100}%`,
+        bottom: `${(index * 23) % 100}%`,
+        duration: `${6 + (index % 5)}s`,
+        opacity: 0.85 - (index % 4) * 0.15,
+        delay: `${(index % 8) * 0.3}s`
       })),
     [count]
   )
+
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {dots.map((d, i) => (
-        <span
-          key={i}
-          style={{ left: d.left, bottom: d.bottom, ['--p-duration' as any]: d.duration, opacity: d.opacity }}
-          className="absolute h-[3px] w-[3px] rounded-full bg-amber-300/70 animate-particle"
+      {particles.map((particle, index) => (
+        <div
+          key={index}
+          style={{ 
+            left: particle.left, 
+            bottom: particle.bottom, 
+            animationDuration: particle.duration,
+            animationDelay: particle.delay,
+            opacity: particle.opacity
+          }}
+          className="absolute h-1 w-1 rounded-full bg-amber-300/60 animate-particle"
         />
       ))}
     </div>
   )
 }
 
-const Home = () => {
-  const featuredArticles = [
-    {
-      id: 1,
-      title: "Comment surmonter le rejet social",
-      excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
-      category: "Psychologie",
-      readTime: 8,
-      image: "/images/articles/rejet-social-cover.jpg",
-      slug: "surmonter-rejet-social"
-    },
-    {
-      id: 2,
-      title: "La neuroplasticité : votre cerveau peut changer",
-      excerpt: "Explorez les dernières découvertes sur la capacité du cerveau à se réorganiser tout au long de la vie.",
-      category: "Neurosciences",
-      readTime: 12,
-      image: "/images/articles/neuroplasticite-cover.jpg",
-      slug: "neuroplasticite-cerveau"
-    },
-    {
-      id: 3,
-      title: "Construire une confiance en soi durable",
-      excerpt: "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
-      category: "Développement Personnel",
-      readTime: 10,
-      image: "/images/articles/confiance-soi-cover.jpg",
-      slug: "confiance-en-soi-durable"
-    },
+// Particules discrètes pour les sections
+function DiscreteParticles({ count = 15 }: { count?: number }) {
+  return useMemo(
+    () =>
+      Array.from({ length: count }).map((_, index) => (
+        <div
+          key={index}
+          className="absolute w-1 h-1 bg-indigo-400/20 rounded-full animate-pulse"
+          style={{
+            left: `${(index * 29) % 100}%`,
+            top: `${(index * 17) % 100}%`,
+            animationDelay: `${(index % 4) * 0.5}s`,
+            animationDuration: `${4 + (index % 3)}s`,
+          }}
+        />
+      )),
+    [count]
+  )
+}
+
+/* ========================================
+   DONNÉES STATIQUES
+======================================== */
+
+const FEATURED_ARTICLES = [
+  {
+    id: 1,
+    title: "Comment surmonter le rejet social",
+    excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
+    category: "Psychologie",
+    readTime: 8,
+    image: "/images/articles/rejet-social-cover.jpg",
+    slug: "surmonter-rejet-social"
+  },
+  {
+    id: 2,
+    title: "La neuroplasticité : votre cerveau peut changer",
+    excerpt: "Explorez les dernières découvertes sur la capacité du cerveau à se réorganiser tout au long de la vie.",
+    category: "Neurosciences",
+    readTime: 12,
+    image: "/images/articles/neuroplasticite-cover.jpg",
+    slug: "neuroplasticite-cerveau"
+  },
+  {
+    id: 3,
+    title: "Construire une confiance en soi durable",
+    excerpt: "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
+    category: "Développement Personnel",
+    readTime: 10,
+    image: "/images/articles/confiance-soi-cover.jpg",
+    slug: "confiance-en-soi-durable"
+  },
   {
     id: 4,
     title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
@@ -94,22 +146,49 @@ const Home = () => {
     slug: "neuro-dopamine-routine"
   }
 ]
-  const stats = [
-    { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
-    { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
-    { icon: TrendingUp, value: 95, label: "Satisfaction", suffix: "%" },
-    { icon: Heart, value: 50000, label: "Vies transformées", suffix: "+" }
-  ]
 
-  const categories = [
-    { icon: Brain,  title: "Neurosciences",             description: "Découvrez comment votre cerveau fonctionne et comment l'optimiser", color: "from-blue-500 to-indigo-600" },
-    { icon: Heart,  title: "Psychologie",               description: "Comprenez vos émotions et développez votre intelligence émotionnelle", color: "from-pink-500 to-rose-600" },
-    { icon: TrendingUp, title: "Développement Personnel", description: "Techniques pratiques pour votre croissance personnelle et professionnelle", color: "from-green-500 to-emerald-600" },
-    { icon: Users,  title: "Relations Humaines",        description: "Améliorez vos relations et votre communication interpersonnelle", color: "from-purple-500 to-violet-600" }
-  ]
+const STATS = [
+  { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
+  { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
+  { icon: TrendingUp, value: 95, label: "Satisfaction", suffix: "%" },
+  { icon: Heart, value: 50000, label: "Vies transformées", suffix: "+" }
+]
 
+const CATEGORIES = [
+  {
+    icon: Brain,
+    title: "Neurosciences",
+    description: "Découvrez comment votre cerveau fonctionne et comment l'optimiser",
+    color: "from-blue-500 to-indigo-600"
+  },
+  {
+    icon: Heart,
+    title: "Psychologie",
+    description: "Comprenez vos émotions et développez votre intelligence émotionnelle",
+    color: "from-pink-500 to-rose-600"
+  },
+  {
+    icon: TrendingUp,
+    title: "Développement Personnel",
+    description: "Techniques pratiques pour votre croissance personnelle et professionnelle",
+    color: "from-green-500 to-emerald-600"
+  },
+  {
+    icon: Users,
+    title: "Relations Humaines",
+    description: "Améliorez vos relations et votre communication interpersonnelle",
+    color: "from-purple-500 to-violet-600"
+  }
+]
+
+/* ========================================
+   COMPOSANT PRINCIPAL
+======================================== */
+
+const Home = () => {
   return (
     <div className="min-h-screen">
+      {/* SEO Metadata */}
       <SEO
         isHome
         title="Psychologie, Neurosciences & Développement Personnel"
@@ -119,8 +198,8 @@ const Home = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 min-h-[80vh] flex items-center overflow-hidden">
-        {/* Image de fond optimisée + overlay lisibilité */}
+      <section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+        {/* Background Image avec overlay */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero-bg.jpg"
@@ -133,51 +212,56 @@ const Home = () => {
           <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
         </div>
 
-        {/* Particules CSS légères */}
-        <ParticlesLite />
+        {/* Particules animées */}
+        <ParticlesBackground count={24} />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
+            {/* Titre principal animé */}
             <div className="mb-8">
-              {/* Titre principal animé (lettre par lettre) */}
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
-  <span className="inline-block">
-    {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-  <span
-    key={index}
-    className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-    style={{ animationDelay: `${50 + index * 60}ms`, animationFillMode: 'both' }}
-  >
-    {letter === ' ' ? '\u00A0' : letter}
-  </span>
-))}
-  </span>{" "}
-  
-<span className="text-yellow-400">
-  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-    <span
-      key={index}
-      className="inline-block fade-in-up"
-      style={{ 
-        animationDelay: `${300 + index * 80}ms`
-      }}
-    >
-      {letter}
-    </span>
-  ))}
-</span>
-</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
+                <span className="inline-block">
+                  {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+                      style={{ 
+                        animationDelay: `${50 + index * 60}ms`, 
+                        animationFillMode: 'both' 
+                      }}
+                    >
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </span>
+                  ))}
+                </span>
+                <br className="block sm:hidden" />
+                <span className="inline-block gradient-text-fallback">
+                  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+                    <span
+                      key={index + 14}
+                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+                      style={{ 
+                        animationDelay: `${50 + (index + 14) * 60}ms`, 
+                        animationFillMode: 'both' 
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+              </h1>
 
               {/* Sous-titre */}
               <p
-                className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md"
+                className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
                 style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
               >
-                Psychologie, neurosciences et développement personnel fondés sur la science pour transformer votre vie
+                Psychologie, neurosciences et développement personnel fondés 
+                sur la science pour transformer votre vie
               </p>
             </div>
 
-            {/* CTA */}
+            {/* Boutons d'action */}
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
               style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
@@ -214,19 +298,26 @@ const Home = () => {
               </a>
             </div>
 
-            {/* Stats (Counter) */}
+            {/* Statistiques animées */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              {stats.map((stat, index) => (
+              {STATS.map((stat, index) => (
                 <div
                   key={index}
                   className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20
                              hover:bg-white/15 transition-all duration-500 hover:scale-105
                              animate-in slide-in-from-bottom-8 duration-700"
-                  style={{ animationDelay: `${3000 + index * 200}ms`, animationFillMode: 'both' }}
+                  style={{ 
+                    animationDelay: `${3000 + index * 200}ms`, 
+                    animationFillMode: 'both' 
+                  }}
                 >
                   <stat.icon className="w-8 h-8 mx-auto mb-2 text-yellow-300 animate-pulse" />
                   <div className="text-2xl font-bold text-white">
-                    <Counter to={stat.value} duration={1100 + index * 150} suffix={stat.suffix as string} />
+                    <Counter 
+                      to={stat.value} 
+                      duration={1100 + index * 150} 
+                      suffix={stat.suffix} 
+                    />
                   </div>
                   <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
@@ -236,39 +327,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Daily Quote */}
+      {/* Citation du jour */}
       <section className="py-12 bg-white dark:bg-neutral-900">
         <div className="container mx-auto px-4">
           <DailyQuote />
         </div>
       </section>
 
-      {/* Resume Reading */}
+      {/* Reprendre la lecture */}
       <section className="py-8 bg-neutral-50 dark:bg-neutral-800">
         <div className="container mx-auto px-4">
           <ResumeReading />
         </div>
       </section>
 
-      {/* Categories */}
+      {/* Domaines d'expertise */}
       <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
+        {/* Particules d'arrière-plan discrètes */}
         <div className="absolute inset-0">
-          {/* petites particules indigo discrètes */}
-          {useMemo(
-            () => Array.from({ length: 15 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-1 bg-indigo-400/20 rounded-full animate-pulse"
-                style={{
-                  left: `${(i * 29) % 100}%`,
-                  top: `${(i * 17) % 100}%`,
-                  animationDelay: `${(i % 4) * 0.5}s`,
-                  animationDuration: `${4 + (i % 3)}s`,
-                }}
-              />
-            )),
-            []
-          )}
+          <DiscreteParticles count={15} />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -282,7 +359,7 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category, index) => (
+            {CATEGORIES.map((category, index) => (
               <div 
                 key={index}
                 className="animate-in slide-in-from-bottom-4 duration-700"
@@ -301,12 +378,15 @@ const Home = () => {
                                     -translate-x-full group-hover:translate-x-full 
                                     transition-transform duration-700 skew-x-12" />
                   </div>
+                  
                   <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
                     {category.title}
                   </h3>
+                  
                   <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                     {category.description}
                   </p>
+                  
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
                                   group-hover:w-full transition-all duration-500" />
                 </Link>
@@ -316,8 +396,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Articles */}
+      {/* Articles à la une */}
       <section className="py-20 bg-neutral-50 dark:bg-neutral-800 relative overflow-hidden">
+        {/* Lignes décoratives d'arrière-plan */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-indigo-500/20 to-transparent animate-pulse" />
           <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-purple-500/20 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
@@ -334,69 +415,80 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredArticles.map((article, index) => (
-              <div
+            {FEATURED_ARTICLES.map((article, index) => (
+              <article
                 key={article.id}
-                className="animate-in slide-in-from-bottom-8 duration-700"
+                className="group bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 relative animate-in slide-in-from-bottom-8 duration-700"
                 style={{ animationDelay: `${300 + index * 200}ms` }}
               >
-                <article className="group bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 relative">
-                  <div className="relative overflow-hidden rounded-b-none" style={{ aspectRatio: '3/2' }}>
-                    <SmartImg
-                      src={article.image}
-                      alt={article.title}
-                      width={1200}
-                      height={800}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
-                        {article.category}
-                      </span>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg animate-pulse" />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                    -translate-x-full group-hover:translate-x-full 
-                                    transition-transform duration-1000 skew-x-12" />
+                {/* Image de couverture */}
+                <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                  <SmartImg
+                    src={article.image}
+                    alt={article.title}
+                    width={400}
+                    height={267}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  
+                  {/* Overlay au hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Badge catégorie */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
+                      {article.category}
+                    </span>
+                  </div>
+                  
+                  {/* Étoile featured */}
+                  <div className="absolute top-4 right-4">
+                    <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg animate-pulse" />
+                  </div>
+                  
+                  {/* Effet de brillance au hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                  -translate-x-full group-hover:translate-x-full 
+                                  transition-transform duration-1000 skew-x-12" />
+                </div>
+
+                {/* Contenu de l'article */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
+                    {article.title}
+                  </h3>
+                  
+                  <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                    {article.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+                    <span className="group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+                      {article.readTime} min de lecture
+                    </span>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
-                      {article.excerpt}
-                    </p>
+                  <Link
+                    to={`/blog/${article.slug}`}
+                    aria-label={`Lire l'article : ${article.title}`}
+                    className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
+                               dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring
+                               hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300
+                               group-hover:translate-x-1"
+                  >
+                    Lire l'article
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </div>
 
-                    <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
-                      <span className="group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
-                        {article.readTime} min de lecture
-                      </span>
-                    </div>
-
-                    <Link
-                      to={`/blog/${article.slug}`}
-                      aria-label={`Lire l'article : ${article.title}`}
-                      className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
-                                 dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring
-                                 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300
-                                 group-hover:translate-x-1"
-                    >
-                      Lire l'article
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
-                  </div>
-
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
-                                  group-hover:w-full transition-all duration-700" />
-                </article>
-              </div>
+                {/* Barre de progression au hover */}
+                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
+                                group-hover:w-full transition-all duration-700" />
+              </article>
             ))}
           </div>
 
+          {/* Bouton voir tous les articles */}
           <div className="text-center animate-in fade-in duration-700" style={{ animationDelay: '1000ms' }}>
             <Link
               to="/blog"
@@ -416,7 +508,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter (ancre pour le CTA) */}
+      {/* Newsletter */}
       <section id="newsletter">
         <Newsletter />
       </section>
