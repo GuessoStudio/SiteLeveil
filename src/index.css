@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Citation du jour */
 .daily-quote {
   opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
+  animation: fade-in-up 1s ease-out forwards;
 }
 
 /* Scrollbar personnalisée */

@@ -10,7 +10,7 @@ interface QuoteData {
 }
 
 const DailyQuote = () => {
-  // INITIALISATION DIRECTE - pas de null
+  const [quote, setQuote] = useState<QuoteData | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showShare, setShowShare] = useState(false)
 
@@ -84,34 +84,141 @@ const DailyQuote = () => {
       author: "James Clear",
       category: "habitudes",
       source: "développement"
+    },
+    {
+      id: 11,
+      text: "La vulnérabilité est le berceau de l'innovation, de la créativité et du changement",
+      author: "Brené Brown",
+      category: "vulnérabilité",
+      source: "psychologie"
+    },
+    {
+      id: 12,
+      text: "Votre attention est votre ressource la plus précieuse",
+      author: "Cal Newport",
+      category: "focus",
+      source: "productivité"
+    },
+    {
+      id: 13,
+      text: "La croissance commence à la fin de votre zone de confort",
+      author: "Tony Robbins",
+      category: "croissance",
+      source: "coaching"
+    },
+    {
+      id: 14,
+      text: "Ce ne sont pas les événements qui nous troublent, mais nos jugements sur ces événements",
+      author: "Épictète",
+      category: "stoïcisme",
+      source: "philosophie"
+    },
+    {
+      id: 15,
+      text: "Votre état d'esprit détermine votre expérience de vie",
+      author: "Carol Dweck",
+      category: "mindset",
+      source: "psychologie"
+    },
+    {
+      id: 16,
+      text: "La gratitude transforme ce que nous avons en suffisant",
+      author: "Melody Beattie",
+      category: "gratitude",
+      source: "bien-être"
+    },
+    {
+      id: 17,
+      text: "L'échec n'est pas le contraire du succès, c'est une partie du succès",
+      author: "Arianna Huffington",
+      category: "échec",
+      source: "entrepreneuriat"
+    },
+    {
+      id: 18,
+      text: "Votre potentiel est infini quand vous cessez de vous limiter",
+      author: "Wayne Dyer",
+      category: "potentiel",
+      source: "développement"
+    },
+    {
+      id: 19,
+      text: "La paix intérieure commence au moment où vous choisissez de ne pas laisser les autres contrôler vos émotions",
+      author: "Pema Chödrön",
+      category: "paix intérieure",
+      source: "spiritualité"
+    },
+    {
+      id: 20,
+      text: "Investissez en vous-même : c'est le meilleur investissement que vous puissiez faire",
+      author: "Warren Buffett",
+      category: "investissement personnel",
+      source: "développement"
+    },
+    {
+      id: 21,
+      text: "La compassion envers soi-même est la clé de la guérison émotionnelle",
+      author: "Kristin Neff",
+      category: "auto-compassion",
+      source: "psychologie"
+    },
+    {
+      id: 22,
+      text: "Votre environnement façonne plus votre comportement que votre motivation",
+      author: "B.J. Fogg",
+      category: "environnement",
+      source: "comportement"
+    },
+    {
+      id: 23,
+      text: "La pleine conscience est l'art d'être présent à sa propre vie",
+      author: "Jon Kabat-Zinn",
+      category: "pleine conscience",
+      source: "méditation"
+    },
+    {
+      id: 24,
+      text: "Vos pensées deviennent vos mots, vos mots deviennent vos actions",
+      author: "Lao Tseu",
+      category: "pensées",
+      source: "philosophie"
+    },
+    {
+      id: 25,
+      text: "La créativité naît de l'angoisse comme le jour naît de la nuit obscure",
+      author: "Albert Einstein",
+      category: "créativité",
+      source: "science"
     }
   ]
 
-  // CALCUL DIRECT de la citation du jour - plus simple
-  const today = new Date()
-  const dayOfYear = today.getDate() + today.getMonth() * 31 // Calcul approximatif mais fiable
-  const dailyIndex = dayOfYear % quotes.length
-  
-  // Citation actuelle basée sur l'index
-  const currentQuote = quotes[currentIndex]
-
-  // Initialisation de l'index du jour au premier rendu
   useEffect(() => {
+    // Citation du jour basée sur la date - calcul fiable
+    const today = new Date()
+    const start = new Date(today.getFullYear(), 0, 1)
+    const dayOfYear = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1
+    const dailyIndex = (dayOfYear - 1) % quotes.length
+    
     setCurrentIndex(dailyIndex)
-  }, [dailyIndex])
+    setQuote(quotes[dailyIndex])
+  }, [quotes.length])
 
   const nextQuote = () => {
     const newIndex = (currentIndex + 1) % quotes.length
     setCurrentIndex(newIndex)
+    setQuote(quotes[newIndex])
   }
 
   const prevQuote = () => {
     const newIndex = currentIndex === 0 ? quotes.length - 1 : currentIndex - 1
     setCurrentIndex(newIndex)
+    setQuote(quotes[newIndex])
   }
 
   const shareQuote = (platform: string) => {
-    const text = `"${currentQuote.text}" - ${currentQuote.author}`
+    if (!quote) return
+    
+    const text = `"${quote.text}" - ${quote.author}`
     const url = window.location.origin
     
     let shareUrl = ''
@@ -132,18 +239,22 @@ const DailyQuote = () => {
     }
   }
 
-  // RENDU DIRECT - pas de condition null
+  // Fallback au cas où quote est null
+  const displayQuote = quote || quotes[0]
+
+  if (!displayQuote) return null
+
   return (
     <div className="daily-quote bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl p-8 mb-12 max-w-2xl mx-auto shadow-lg border border-neutral-200 dark:border-neutral-700">
       <div className="flex items-start gap-4">
         <Quote className="w-8 h-8 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" />
         <div className="flex-1">
           <blockquote className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 font-medium mb-4 leading-relaxed">
-            "{currentQuote.text}"
+            "{displayQuote.text}"
           </blockquote>
           <div className="flex items-center justify-between mb-4">
             <cite className="text-neutral-600 dark:text-neutral-400 font-medium">
-              — {currentQuote.author}
+              — {displayQuote.author}
             </cite>
             <div className="relative">
               <button
@@ -199,7 +310,7 @@ const DailyQuote = () => {
             
             <button
               onClick={nextQuote}
-              className="flex items-center gap-1 text-sm text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
+              className="flex items-items gap-1 text-sm text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
               aria-label="Citation suivante"
             >
               Suivante

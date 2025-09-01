@@ -25,7 +25,7 @@ export default {
         },
       },
       animation: {
-        "fade-in-up": "fadeInUp 0.6s ease-out",
+        "fade-in-up": "fade-in-up 0.6s ease-out",
         pulse: "pulse 2s infinite",
         "fade-in": "fadeIn 0.8s ease-out both",
         "slide-in-bottom-4": "slideInBottom4 0.7s ease-out both",
@@ -33,7 +33,7 @@ export default {
         particle: "particle var(--p-duration,8s) linear infinite",
       },
       keyframes: {
-        fadeInUp: {
+        fade-in-up: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
