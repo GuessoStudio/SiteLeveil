@@ -341,60 +341,81 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Domaines d'expertise */}
-      <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
-        {/* Particules d'arrière-plan discrètes */}
-        <div className="absolute inset-0">
-          <DiscreteParticles count={15} />
-        </div>
+      /* Remplacez toute la section "Domaines d'expertise" dans votre Home.tsx par ce code : */
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 animate-in fade-in duration-700">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-              Explorez nos domaines d'expertise
-            </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Des contenus scientifiquement fondés pour votre développement personnel et professionnel
+{/* Domaines d'expertise */}
+<section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
+  {/* Particules d'arrière-plan discrètes */}
+  <div className="absolute inset-0">
+    <DiscreteParticles count={15} />
+  </div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="text-center mb-16 animate-in fade-in duration-700">
+      <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+        Explorez nos domaines d'expertise
+      </h2>
+      <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+        Des contenus scientifiquement fondés pour votre développement personnel et professionnel
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {CATEGORIES.map((category, index) => (
+        <div 
+          key={index}
+          className="animate-in slide-in-from-bottom-4 duration-700"
+          style={{ animationDelay: `${200 + index * 150}ms` }}
+        >
+          <Link
+            to={`/blog?category=${encodeURIComponent(category.title)}`}
+            className="group bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all
+                       duration-500 transform hover:-translate-y-4 hover:scale-105 border border-neutral-100 dark:border-neutral-700
+                       focus-ring block hover:bg-gradient-to-br hover:from-white hover:to-neutral-50
+                       dark:hover:from-neutral-800 dark:hover:to-neutral-750 relative overflow-hidden"
+            aria-label={`Voir tous les articles de ${category.title}`}
+          >
+            {/* Icône avec gradient */}
+            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}>
+              <category.icon className="w-8 h-8 text-white relative z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
+                              -translate-x-full group-hover:translate-x-full 
+                              transition-transform duration-700 skew-x-12" />
+            </div>
+            
+            {/* Titre avec effet au hover */}
+            <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
+              {category.title}
+            </h3>
+            
+            {/* Description */}
+            <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+              {category.description}
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {CATEGORIES.map((category, index) => (
-              <div 
-                key={index}
-                className="animate-in slide-in-from-bottom-4 duration-700"
-                style={{ animationDelay: `${200 + index * 150}ms` }}
-              >
-                <Link
-                  to={`/blog?cat=${encodeURIComponent(category.title)}`}
-                  className="group bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all
-                             duration-500 transform hover:-translate-y-4 hover:scale-105 border border-neutral-100 dark:border-neutral-700
-                             focus-ring block hover:bg-gradient-to-br hover:from-white hover:to-neutral-50
-                             dark:hover:from-neutral-800 dark:hover:to-neutral-750 relative overflow-hidden"
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}>
-                    <category.icon className="w-8 h-8 text-white relative z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
-                                    -translate-x-full group-hover:translate-x-full 
-                                    transition-transform duration-700 skew-x-12" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
-                    {category.title}
-                  </h3>
-                  
-                  <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
-                    {category.description}
-                  </p>
-                  
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
-                                  group-hover:w-full transition-all duration-500" />
-                </Link>
+            
+            {/* Barre de progression au hover */}
+            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
+                            group-hover:w-full transition-all duration-500" />
+                            
+            {/* Badge "Voir articles" qui apparaît au hover */}
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="bg-indigo-600 text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
+                Voir articles
               </div>
-            ))}
-          </div>
+            </div>
+          </Link>
         </div>
-      </section>
+      ))}
+    </div>
+    
+    {/* Message informatif */}
+    <div className="text-center mt-12 animate-in fade-in duration-700" style={{ animationDelay: '800ms' }}>
+      <p className="text-sm text-neutral-500 dark:text-neutral-400">
+        Cliquez sur une catégorie pour voir tous les articles correspondants
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Articles à la une */}
       <section className="py-20 bg-neutral-50 dark:bg-neutral-800 relative overflow-hidden">

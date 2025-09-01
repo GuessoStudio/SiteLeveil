@@ -192,22 +192,46 @@ const DailyQuote = () => {
     }
   ]
 
-  useEffect(() => {
-    // CORRECTION : Citation du jour basée sur la date - calcul plus fiable
+  // Dans votre DailyQuote.tsx, remplacez le useEffect par cette version corrigée :
+
+useEffect(() => {
+  try {
+    // Citation du jour basée sur la date - CALCUL CORRIGÉ
     const today = new Date()
     
-    // Calcul plus simple et plus fiable du jour de l'année
+    // CORRECTION: Calcul plus simple et fiable du jour de l'année
     const start = new Date(today.getFullYear(), 0, 1)
     const dayOfYear = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1
     
     // S'assurer que l'index est valide
     const dailyIndex = (dayOfYear - 1) % quotes.length
     
-    console.log('DailyQuote Debug:', { today, dayOfYear, dailyIndex, quotesLength: quotes.length })
+    // CORRECTION: Console.log sécurisé avec vérification
+    console.log('DailyQuote Debug:', { 
+      today: today.toISOString().split('T')[0], // Format plus lisible
+      dayOfYear, 
+      dailyIndex, 
+      quotesLength: quotes.length,
+      selectedQuote: quotes[dailyIndex]?.text?.substring(0, 50) + '...' // Aperçu de la citation
+    })
     
-    setCurrentIndex(dailyIndex)
-    setQuote(quotes[dailyIndex])
-  }, [quotes.length]) // Ajout de la dépendance pour éviter les erreurs
+    // Vérification de sécurité
+    if (dailyIndex >= 0 && dailyIndex < quotes.length && quotes[dailyIndex]) {
+      setCurrentIndex(dailyIndex)
+      setQuote(quotes[dailyIndex])
+    } else {
+      // Fallback sur la première citation
+      console.warn('DailyQuote: Index invalide, utilisation de la première citation')
+      setCurrentIndex(0)
+      setQuote(quotes[0])
+    }
+  } catch (error) {
+    console.error('DailyQuote Error:', error)
+    // Fallback en cas d'erreur
+    setCurrentIndex(0)
+    setQuote(quotes[0])
+  }
+}, [quotes.length])
 
   // Navigation manuelle
   const nextQuote = () => {
