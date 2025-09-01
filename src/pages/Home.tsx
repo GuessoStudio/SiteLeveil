@@ -341,8 +341,6 @@ const Home = () => {
         </div>
       </section>
 
-      /* Remplacez toute la section "Domaines d'expertise" dans votre Home.tsx par ce code : */
-
 {/* Domaines d'expertise */}
 <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
   {/* Particules d'arrière-plan discrètes */}
