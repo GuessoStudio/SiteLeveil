@@ -341,6 +341,7 @@ const Home = () => {
         </div>
       </section>
 
+
 {/* Domaines d'expertise */}
 <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
   {/* Particules d'arrière-plan discrètes */}
