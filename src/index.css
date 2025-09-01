@@ -74,7 +74,6 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-
 .fade-in-up {
   animation: fade-in-up 500ms ease-out forwards;
 }
@@ -281,75 +280,75 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Liens et texte coloré - correction contraste mode sombre */
 .prose a {
-  color: rgb(79 70 229); /* indigo-400 */
+  color: rgb(79, 70, 229); /* indigo-400 */
 }
 
 .prose a:hover {
-  color: rgb(67 56 202); /* indigo-700 */
+  color: rgb(67, 56, 202); /* indigo-700 */
 }
 
 /* Classes Tailwind communes dans les articles */
 .prose .text-indigo-600 {
-  color: rgb(79 70 229); /* indigo-600 */
+  color: rgb(79, 70, 229); /* indigo-600 */
 }
 
 .prose .text-blue-600 {
-  color: rgb(37 99 235); /* blue-600 */
+  color: rgb(37, 99, 235); /* blue-600 */
 }
 
 /* Mode sombre - couleurs plus claires pour le contraste */
 [data-theme="dark"] .prose a {
-  color: rgb(129 140 248); /* indigo-400 */
+  color: rgb(129, 140, 248); /* indigo-400 */
 }
 
 [data-theme="dark"] .prose a:hover {
-  color: rgb(165 180 252); /* indigo-300 */
+  color: rgb(165, 180, 252); /* indigo-300 */
 }
 
 [data-theme="dark"] .prose .text-indigo-600 {
-  color: rgb(129 140 248); /* indigo-400 */
+  color: rgb(129, 140, 248); /* indigo-400 */
 }
 
 [data-theme="dark"] .prose .text-blue-600 {
-  color: rgb(96 165 250); /* blue-400 */
+  color: rgb(96, 165, 250); /* blue-400 */
 }
 
 [data-theme="dark"] .prose .text-indigo-800 {
-  color: rgb(165 180 252); /* indigo-300 */
+  color: rgb(165, 180, 252); /* indigo-300 */
 }
 
 /* Corrections mode sombre pour les articles */
 @media (prefers-color-scheme: dark) {
-  .prose.dark\\:prose-invert {
-    --tw-prose-bold: rgb(245 245 245); /* neutral-100 */
-    --tw-prose-headings: rgb(255 255 255);
-    --tw-prose-body: rgb(212 212 212); /* neutral-300 */
-    --tw-prose-links: rgb(168 162 158); /* neutral-400 */
+  .prose.dark\:prose-invert {
+    --tw-prose-bold: rgb(245, 245, 245); /* neutral-100 */
+    --tw-prose-headings: rgb(255, 255, 255);
+    --tw-prose-body: rgb(212, 212, 212); /* neutral-300 */
+    --tw-prose-links: rgb(168, 162, 158); /* neutral-400 */
   }
 
-  .prose.dark\\:prose-invert strong {
-    color: rgb(245 245 245) !important;
+  .prose.dark\:prose-invert strong {
+    color: rgb(245, 245, 245) !important;
   }
 
-  .prose.dark\\:prose-invert em {
-    color: rgb(212 212 212) !important;
+  .prose.dark\:prose-invert em {
+    color: rgb(212, 212, 212) !important;
   }
 }
 
 /* Pour le mode sombre explicite avec data-theme */
-[data-theme="dark"] .prose.dark\\:prose-invert {
-  --tw-prose-bold: rgb(245 245 245);
-  --tw-prose-headings: rgb(255 255 255);
-  --tw-prose-body: rgb(212 212 212);
-  --tw-prose-links: rgb(168 162 158);
+[data-theme="dark"] .prose.dark\:prose-invert {
+  --tw-prose-bold: rgb(245, 245, 245);
+  --tw-prose-headings: rgb(255, 255, 255);
+  --tw-prose-body: rgb(212, 212, 212);
+  --tw-prose-links: rgb(168, 162, 158);
 }
 
-[data-theme="dark"] .prose.dark\\:prose-invert strong {
-  color: rgb(245 245 245) !important;
+[data-theme="dark"] .prose.dark\:prose-invert strong {
+  color: rgb(245, 245, 245) !important;
 }
 
-[data-theme="dark"] .prose.dark\\:prose-invert em {
-  color: rgb(212 212 212) !important;
+[data-theme="dark"] .prose.dark\:prose-invert em {
+  color: rgb(212, 212, 212) !important;
 }
 
 /* ---------- Utilitaires Tailwind personnalisés ---------- */
@@ -370,6 +369,7 @@ h1, h2, h3, h4, h5, h6 {
            dark:focus-visible:ring-offset-neutral-800;
   }
 }
+
 /* Fix pour éviter l'espace noir après le header */
 .header-fixed-spacing {
   margin-top: 4rem; /* Compense la hauteur du header sticky */
@@ -383,13 +383,13 @@ h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
     hyphens: auto;
   }
-  
+
   /* Ajuste l'espacement pour éviter le débordement */
   .hero-title span {
     display: inline-block;
     max-width: 100%;
   }
-  
+
   /* Container plus serré sur mobile */
   .container {
     padding-left: 0.75rem;
@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.875rem !important; /* text-3xl en Tailwind */
     line-height: 1.3 !important;
   }
-  
+
   /* Padding réduit pour optimiser l'espace */
   .hero-section-mobile {
     padding-top: 2rem !important;
@@ -419,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     padding-top: 4rem; /* Compense le header sticky de 4rem (h-16) */
   }
-  
+
   /* Alternative : utilise viewport units en tenant compte du header */
   .hero-min-height {
     min-height: calc(100vh - 4rem);
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 320px;
     margin: 0 auto;
   }
-  
+
   .hero-buttons button {
     width: 100%;
     padding: 1rem;
