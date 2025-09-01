@@ -193,13 +193,21 @@ const DailyQuote = () => {
   ]
 
   useEffect(() => {
-    // Citation du jour basée sur la date
+    // CORRECTION : Citation du jour basée sur la date - calcul plus fiable
     const today = new Date()
-    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000)
-    const dailyIndex = dayOfYear % quotes.length
+    
+    // Calcul plus simple et plus fiable du jour de l'année
+    const start = new Date(today.getFullYear(), 0, 1)
+    const dayOfYear = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1
+    
+    // S'assurer que l'index est valide
+    const dailyIndex = (dayOfYear - 1) % quotes.length
+    
+    console.log('DailyQuote Debug:', { today, dayOfYear, dailyIndex, quotesLength: quotes.length })
+    
     setCurrentIndex(dailyIndex)
     setQuote(quotes[dailyIndex])
-  }, [])
+  }, [quotes.length]) // Ajout de la dépendance pour éviter les erreurs
 
   // Navigation manuelle
   const nextQuote = () => {
@@ -238,7 +246,19 @@ const DailyQuote = () => {
     }
   }
 
-  if (!quote) return null
+  // CORRECTION : Fallback au cas où quote est null - afficher la première citation
+  const displayQuote = quote || quotes[0]
+
+  if (!displayQuote) {
+    // Si même la première citation n'existe pas, afficher un message de debug
+    return (
+      <div className="daily-quote bg-red-100 dark:bg-red-900/20 rounded-2xl p-8 mb-12 max-w-2xl mx-auto">
+        <p className="text-red-600 dark:text-red-400">
+          Erreur : Aucune citation disponible. Vérifiez le composant DailyQuote.
+        </p>
+      </div>
+    )
+  }
 
   return (
     <div className="daily-quote bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl p-8 mb-12 max-w-2xl mx-auto shadow-lg border border-neutral-200 dark:border-neutral-700">
@@ -246,11 +266,11 @@ const DailyQuote = () => {
         <Quote className="w-8 h-8 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" />
         <div className="flex-1">
           <blockquote className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 font-medium mb-4 leading-relaxed">
-            "{quote.text}"
+            "{displayQuote.text}"
           </blockquote>
           <div className="flex items-center justify-between mb-4">
             <cite className="text-neutral-600 dark:text-neutral-400 font-medium">
-              — {quote.author}
+              — {displayQuote.author}
             </cite>
             <div className="relative">
               <button
