@@ -181,29 +181,23 @@ const Blog = () => {
         </div>
 
         {/* Search and Filters */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row gap-4 mb-6">
-            {/* Search */}
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Rechercher un article..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-900 dark:text-white"
-              />
-            </div>
-            
-            {/* Filter Button */}
-            <button className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors text-neutral-900 dark:text-white">
-              <Filter className="w-5 h-5" />
-              Filtres
-            </button>
-          </div>
+<div className="mb-12">
+  <div className="mb-6">
+    {/* Search - maintenant pleine largeur */}
+    <div className="relative max-w-2xl mx-auto">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-5 h-5" />
+      <input
+        type="text"
+        placeholder="Rechercher un article..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full pl-10 pr-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-900 dark:text-white"
+      />
+    </div>
+  </div>
 
           {/* Categories - MAINTENANT FONCTIONNELS AVEC URL SYNC */}
-<div className="flex flex-wrap gap-2">
+<div className="flex flex-wrap gap-2 justify-center">
   {categories.map((category) => {
     const colors = getCategoryColors(category);
     return (

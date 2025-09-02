@@ -6,6 +6,7 @@ import { ReadingProvider } from './contexts/ReadingContext'
 import { NotificationProvider } from './contexts/NotificationContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Article from './pages/Article'
@@ -21,6 +22,7 @@ function App() {
         <ReadingProvider>
           <NotificationProvider>
             <Router>
+              <ScrollToTop />
               <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
                 <Header />
                 <main>
