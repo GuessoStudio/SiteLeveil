@@ -2,22 +2,25 @@
 import { Link } from "react-router-dom";
 import SmartImg from "../components/SmartImg";
 import SEO from "../components/SEO";
+import SocialShare from "../components/SocialShare";
 
-const meta = {
+// Export meta pour l'auto-import
+export const meta = {
   slug: "neuro-dopamine-routine",
   title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
   description: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces basées sur les neurosciences.",
+  excerpt: "Découvrez comment exploiter les mécanismes neurochimiques de la dopamine pour créer une motivation durable sans attendre passivement qu'elle arrive.",
   cover: "/images/articles/dopamine-cover.jpg",
   datePublished: "2025-08-13",
   dateModified: "2025-08-13",
-  tags: ["neurosciences", "motivation", "habitudes"],
+  tags: ["dopamine", "neurosciences", "motivation", "habitudes"],
   author: { name: "Guesso" },
   category: "Psychologie",
   readingTime: "6 min",
 };
 
 export default function NeuroDopamineRoutine() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://siteleveil.netlify.app";
   const url = `${site}/blog/${meta.slug}`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
 
@@ -64,7 +67,7 @@ export default function NeuroDopamineRoutine() {
 
           {/* Métadonnées */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
-            <span>par Guesso</span>
+            <span>par {meta.author.name}</span>
             <span>•</span>
             <span>{meta.readingTime} de lecture</span>
             <span>•</span>
@@ -83,6 +86,20 @@ export default function NeuroDopamineRoutine() {
                 </span>
               ))}
             </div>
+          </div>
+
+          {/* Partage social en haut */}
+          <div className="flex items-center justify-between py-4 border-y border-neutral-200 dark:border-neutral-700 mb-8">
+            <div className="text-sm text-neutral-600 dark:text-neutral-400">
+              Cet article vous plaît ? Partagez-le !
+            </div>
+            <SocialShare
+              title={meta.title}
+              url={url}
+              description={meta.description}
+              hashtags={meta.tags}
+              size="md"
+            />
           </div>
 
           {/* Image de couverture */}
@@ -269,24 +286,50 @@ export default function NeuroDopamineRoutine() {
               </p>
             </details>
           </div>
+        </div>
 
-          <div className="not-prose my-12 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
-            <h3 className="text-lg font-semibold mb-4">Approfondissez vos connaissances</h3>
-            <p className="mb-4">
-              Découvrez d'autres stratégies basées sur les neurosciences pour optimiser votre quotidien.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <Link to="/blog" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                Tous les articles
-              </Link>
-              <span>•</span>
-              <Link to="/resources" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                Ressources gratuites
-              </Link>
-              <span>•</span>
-              <Link to="/#newsletter" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                Newsletter neurosciences
-              </Link>
+        {/* Call-to-action de partage en bas d'article */}
+        <div className="not-prose mt-12 border-t border-neutral-200 dark:border-neutral-700 pt-8">
+          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 rounded-2xl p-6">
+            <div className="text-center mb-4">
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
+                Aidez-nous à diffuser ces connaissances
+              </h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                Partagez cet article avec votre communauté pour l'aider à mieux comprendre la dopamine
+              </p>
+            </div>
+            
+            <div className="flex justify-center mb-6">
+              <SocialShare
+                title={`${meta.title} - L'Éveil`}
+                url={url}
+                description={meta.description}
+                hashtags={[...meta.tags, "psychologie", "bienetre"]}
+                size="lg"
+                showLabels={false}
+              />
+            </div>
+            
+            {/* Liens vers autres contenus */}
+            <div className="text-center">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+                Plus d'articles comme celui-ci dans votre boîte mail
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a 
+                  href="/#newsletter"
+                  className="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+                >
+                  S'abonner à la newsletter
+                </a>
+                <Link 
+                  to="/blog"
+                  className="inline-flex items-center bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white px-6 py-2 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
+                >
+                  Voir tous les articles
+                </Link>
+              </div>
             </div>
           </div>
         </div>

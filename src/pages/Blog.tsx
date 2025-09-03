@@ -4,6 +4,7 @@ import { Search, Filter, Clock, User } from 'lucide-react'
 import SmartImg from '../components/SmartImg'
 import { Link, useSearchParams } from 'react-router-dom'
 import SEO from '../components/SEO'
+import Fuse from 'fuse.js'
 
 const Blog = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -144,23 +145,33 @@ const Blog = () => {
 
   // Filtrage des articles basé sur la catégorie et la recherche
   const filteredArticles = useMemo(() => {
-    let filtered = articles;
-
-    // Filtrage par catégorie
-    if (activeFilter !== "Tous") {
-      filtered = filtered.filter(article => article.category === activeFilter);
-    }
-
-    // Filtrage par recherche
-    if (searchQuery.trim()) {
-      filtered = filtered.filter(article =>
-        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    return filtered;
-  }, [activeFilter, searchQuery]);
+  let filtered = articles;
+  
+  // Filtrage par catégorie (garde votre logique existante)
+  if (activeFilter !== "Tous") {
+    filtered = filtered.filter(article => article.category === activeFilter);
+  }
+  
+  // NOUVELLE logique de recherche intelligente
+  if (searchQuery.trim()) {
+    const fuse = new Fuse(filtered, {
+      keys: [
+        { name: 'title', weight: 0.4 },
+        { name: 'excerpt', weight: 0.3 },
+        { name: 'category', weight: 0.2 },
+        { name: 'tags', weight: 0.1 } // Si vous avez des tags
+      ],
+      threshold: 0.3, // Plus tolérant aux fautes de frappe
+      ignoreLocation: true,
+      minMatchCharLength: 2
+    })
+    
+    const results = fuse.search(searchQuery.trim())
+    filtered = results.map(result => result.item)
+  }
+  
+  return filtered;
+}, [activeFilter, searchQuery]);
 
   return (
     <div className="min-h-screen py-8">
