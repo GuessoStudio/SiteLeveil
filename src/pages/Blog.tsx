@@ -1,7 +1,6 @@
 // src/pages/Blog.tsx
 import React, { useState, useMemo, useEffect } from 'react'
 import { Search, Filter, Clock, User } from 'lucide-react'
-import SmartImg from '../components/SmartImg'
 import { Link, useSearchParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Fuse from 'fuse.js'
@@ -247,13 +246,15 @@ const Blog = () => {
                 className="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="relative overflow-hidden">
-                  <SmartImg
-                    src={article.image}
-                    alt={article.title}
-                    width={400}
-                    height={240}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                <img
+  src={`${article.image}.webp`}
+  alt={article.title}
+  width="400"
+  height="240"
+  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+  loading="lazy"
+  decoding="async"
+/>
                   {article.featured && (
                     <div className="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                       À la une

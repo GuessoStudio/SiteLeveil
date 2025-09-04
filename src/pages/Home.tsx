@@ -443,13 +443,15 @@ const Home = () => {
               >
                 {/* Image de couverture */}
                 <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                  <SmartImg
-                    src={article.image}
-                    alt={article.title}
-                    width={400}
-                    height={267}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img
+      src={`${article.image}.webp`}   
+      alt={article.title}
+      width="400"
+      height="300"
+      className="w-full h-48 object-cover"
+      loading="lazy"
+      decoding="async"
+    />
                   
                   {/* Overlay au hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

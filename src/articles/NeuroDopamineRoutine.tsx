@@ -105,14 +105,15 @@ export default function NeuroDopamineRoutine() {
           {/* Image de couverture */}
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <SmartImg 
-                src={meta.cover} 
-                alt={`Image de couverture : ${meta.title}`} 
-                width={1200} 
-                height={630}
-                priority 
-                className="w-full h-auto"
-              />
+              <img
+  src="/images/articles/dopamine-cover.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
+/>
             </div>
           )}
         </header>
