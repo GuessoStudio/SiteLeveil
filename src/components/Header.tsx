@@ -38,13 +38,15 @@ const Header = () => {
             className="flex items-center space-x-3 rounded-xl focus-ring"
             aria-label="Aller à l’accueil"
           >
-             <SmartImg 
-              src="/images/logo.webp"
-              alt="L'Éveil"
-              width={100}
-              height={100}
-              className="w-6 h-6 rounded-full"
-          />
+             <img 
+  src="/images/logo.webp"
+  alt="L'Éveil"
+  width="32" 
+  height="32"
+  className="w-8 h-8 rounded-full"
+  loading="lazy"
+  decoding="async"
+/>
             <span className="text-xl font-bold text-neutral-900 dark:text-white">
               L'Éveil
             </span>

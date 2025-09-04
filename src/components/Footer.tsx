@@ -11,12 +11,14 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <SmartImg 
+              <img 
   src="/images/logo.webp"
   alt="L'Éveil"
-  width={100}
-  height={100}
-  className="w-6 h-6 rounded-full"
+  width="32"
+  height="32"
+  className="w-8 h-8 rounded-full"
+  loading="lazy"
+  decoding="async"
 />
               <span className="text-xl font-bold text-white">L'Éveil</span>
             </div>

@@ -48,12 +48,14 @@ const About = () => {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="max-w-3xl mx-auto">
-            <SmartImg 
+            <img 
   src="/images/logo.webp"
   alt="L'Éveil"
-  width={200}
-  height={200}
-  className="w-6 h-6 rounded-full"
+  width="96"
+  height="96"  
+  className="w-24 h-24 mx-auto rounded-full shadow-lg mb-8"
+  loading="lazy"
+  decoding="async"
 />
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
               À propos de L'Éveil
