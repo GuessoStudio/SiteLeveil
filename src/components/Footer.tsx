@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <SmartImg 
-  src="/images/logo.jpg"
+  src="/images/logo.webp"
   alt="L'Éveil"
   width={400}
   height={400}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Sun, Moon, Search } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
+import SmartImg from '../components/SmartImg'
 
 <a
   href="#main"
@@ -37,11 +38,13 @@ const Header = () => {
             className="flex items-center space-x-3 rounded-xl focus-ring"
             aria-label="Aller à l’accueil"
           >
-             <img 
-    src="/images/logo.jpg" 
-    alt="Logo L'Éveil"
-    className="w-10 h-10 object-contain rounded-full"
-  />
+             <SmartImg 
+  src="/images/logo.jpg"
+  alt="L'Éveil"
+  width={400}
+  height={400}
+  className="w-10 h-10 rounded-full"
+/>
             <span className="text-xl font-bold text-neutral-900 dark:text-white">
               L'Éveil
             </span>

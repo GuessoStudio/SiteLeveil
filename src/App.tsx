@@ -15,6 +15,8 @@ import Resources from './pages/Resources'
 import Contact from './pages/Contact'
 import Legal from './pages/Legal'
 import HabitTracker from './pages/HabitTracker'  
+import OGTest from './pages/OGTest'
+
 function App() {
   return (
     <HelmetProvider>
@@ -35,6 +37,7 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/legal" element={<Legal />} />
                      <Route path="/habit-tracker" element={<HabitTracker />} />  
+                     <Route path="/og-test" element={<OGTest />} />
                   </Routes>
                 </main>
                 <Footer />

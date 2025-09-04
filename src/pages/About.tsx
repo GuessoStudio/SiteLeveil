@@ -38,7 +38,7 @@ const About = () => {
       name: "Guesso", 
     role: "Fondateur de L'Éveil", 
     description: "Explorateur curieux de l'esprit humain, je m'inspire des découvertes en psychologie et neurosciences pour les rendre simples et accessibles.",
-    image: "/images/guesso-silhouette.jpg" 
+    image: "/images/guesso-silhouette.webp" 
     }
   ]
 
@@ -49,7 +49,7 @@ const About = () => {
         <section className="text-center mb-16">
           <div className="max-w-3xl mx-auto">
             <SmartImg 
-  src="/images/logo.jpg"
+  src="/images/logo.webp"
   alt="L'Éveil"
   width={400}
   height={400}
