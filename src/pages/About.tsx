@@ -51,8 +51,8 @@ const About = () => {
             <SmartImg 
   src="/images/logo.webp"
   alt="L'Éveil"
-  width={400}
-  height={400}
+  width={200}
+  height={200}
   className="w-10 h-10 rounded-full"
 />
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">

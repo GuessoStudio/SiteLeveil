@@ -39,16 +39,16 @@ const Header = () => {
             aria-label="Aller à l’accueil"
           >
              <SmartImg 
-  src="/images/logo.jpg"
-  alt="L'Éveil"
-  width={400}
-  height={400}
-  className="w-10 h-10 rounded-full"
-/>
+              src="/images/logo.webp"
+              alt="L'Éveil"
+              width={100}
+              height={100}
+              className="w-10 h-10 rounded-full"
+          />
             <span className="text-xl font-bold text-neutral-900 dark:text-white">
               L'Éveil
             </span>
-          </Link>
+          </Link>jpg
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-2">

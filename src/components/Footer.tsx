@@ -14,8 +14,8 @@ const Footer = () => {
               <SmartImg 
   src="/images/logo.webp"
   alt="L'Éveil"
-  width={400}
-  height={400}
+  width={100}
+  height={100}
   className="w-10 h-10 rounded-full"
 />
               <span className="text-xl font-bold text-white">L'Éveil</span>
