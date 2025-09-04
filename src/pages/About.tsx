@@ -27,9 +27,9 @@ const About = () => {
 
   const stats = [
     { number: "2020", label: "Année de création" },
-  { number: "100%", label: "Passion authentique" },
-  { number: "Science", label: "Base de nos contenus" },
-  { number: "∞", label: "Potentiel à révéler" }
+  { number: "10 000+", label: "lecteur mensuels" },
+  { number: "95%", label: "de satisfaction lecteurs" },
+  { number: "5 ans", label: "d'expertise partagée" }
   ]
 
   const team = [
@@ -68,7 +68,7 @@ const About = () => {
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-neutral-800 dark:to-neutral-900 rounded-3xl p-8 md:p-12">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
-                Ma Mission
+                Notre Mission
               </h2>
               <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
                 Dans un monde où l'information sur le bien-être mental est souvent complexe ou commercialisée, 
@@ -193,7 +193,7 @@ const About = () => {
         <section className="text-center">
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Rejoignez notre communauté
+              Rejoignez la communauté des éveillé(e)s
             </h2>
             <p className="text-xl mb-8 text-indigo-100">
               Plus de 10 000 personnes nous font déjà confiance pour leur développement personnel

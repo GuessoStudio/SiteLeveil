@@ -350,7 +350,7 @@ const Blog = () => {
               to="/#newsletter"
               className="inline-flex items-center bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
             >
-              S'abonner à la newsletter
+              Recevoir le guide gratuit + newsletter
             </Link>
           </div>
         </div>
