@@ -201,14 +201,14 @@ const Home = () => {
       <section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
         {/* Background Image avec overlay */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero-bg.jpg"
-            alt=""
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            className="w-full h-full object-cover"
-          />
+          <SmartImg
+  src="/images/hero-bg.jpg"
+  alt=""
+  width={1600}
+  height={900}
+  priority={true}
+  className="w-full h-full object-cover"
+/>
           <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
         </div>
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Heart, Users, BookOpen, Award, Target, Lightbulb } from 'lucide-react'
+import SmartImg from '../components/SmartImg'
 
 const About = () => {
   const values = [
@@ -47,11 +48,13 @@ const About = () => {
         {/* Hero Section */}
         <section className="text-center mb-16">
           <div className="max-w-3xl mx-auto">
-            <img 
-              src="/images/logo.jpg" 
-              alt="L'Éveil" 
-              className="w-24 h-24 mx-auto rounded-full shadow-lg mb-8"
-            />
+            <SmartImg 
+  src="/images/logo.jpg"
+  alt="L'Éveil"
+  width={400}
+  height={400}
+  className="w-10 h-10 rounded-full"
+/>
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
               À propos de L'Éveil
             </h1>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Twitter, Linkedin, Facebook, Heart } from 'lucide-react'
+import SmartImg from '../components/SmartImg'
 
 const Footer = () => {
   return (
@@ -10,11 +11,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/images/logo.jpg" 
-                alt="L'Éveil" 
-                className=  "w-10 h-10 rounded-full"
-              />
+              <SmartImg 
+  src="/images/logo.jpg"
+  alt="L'Éveil"
+  width={400}
+  height={400}
+  className="w-10 h-10 rounded-full"
+/>
               <span className="text-xl font-bold text-white">L'Éveil</span>
             </div>
             <p className="text-neutral-300 mb-6 max-w-md">
