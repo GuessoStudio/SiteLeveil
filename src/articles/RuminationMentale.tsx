@@ -124,13 +124,16 @@ export default function RuminationMentale() {
           <h2>Les mécanismes neuroscientifiques de la rumination</h2>
 
           <div className="not-prose my-8">
-            <SmartImg 
-              src="/images/articles/rumination-brain-mechanisms" 
-              alt="Mécanismes cérébraux de la rumination mentale"
-              width={800}
-              height={500}
-              className="w-full h-auto rounded-lg shadow-md"
-            />
+            <img
+  src="/images/articles/rumination-cover.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
+/>
+
           </div>
 
           <h3>Le réseau du mode par défaut (Default Mode Network)</h3>

@@ -1,6 +1,5 @@
 // src/articles/ProcrastinationCerveau.tsx
 import { Link } from "react-router-dom";
-import SmartImg from "../components/SmartImg";
 import SEO from "../components/SEO";
 
 const meta = {
@@ -88,14 +87,15 @@ export default function ProcrastinationCerveau() {
           {/* Image de couverture */}
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <SmartImg 
-                src={meta.cover} 
-                alt={`Image de couverture : ${meta.title}`} 
-                width={1200} 
-                height={630}
-                priority 
-                className="w-full h-auto"
-              />
+              <img
+  src="/images/articles/procrastination-brain-conflict.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
+/>
             </div>
           )}
         </header>
@@ -124,13 +124,15 @@ export default function ProcrastinationCerveau() {
           <h2>Architecture neuronale de la procrastination</h2>
 
           <div className="not-prose my-8">
-            <SmartImg 
-              src="/images/articles/procrastination-brain-mechanisms" 
-              alt="Mécanismes cérébraux de la procrastination - conflit cortex préfrontal et système limbique"
-              width={800}
-              height={500}
-              className="w-full h-auto rounded-lg shadow-md"
-            />
+            <img
+  src="/images/articles/procrastination-brain-conflict.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
+/>
           </div>
 
           <h3>Le conflit préfrontal-limbique : guerre neuronale</h3>
@@ -241,13 +243,15 @@ export default function ProcrastinationCerveau() {
           </p>
 
           <div className="not-prose my-8">
-            <SmartImg 
-              src="/images/articles/procrastination-action-motivation" 
-              alt="Transition de la procrastination à l'action - activation des circuits motivationnels"
-              width={800}
-              height={500}
-              className="w-full h-auto rounded-lg shadow-md"
-            />
+            <img
+              src="/images/articles/procrastination-action-motivation.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
+/>
           </div>
 
           <h3>6. Optimisation chronobiologique</h3>

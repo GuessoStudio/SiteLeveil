@@ -1,13 +1,12 @@
 // src/articles/AttentionFragmenteeArticle.tsx
 import { Link } from "react-router-dom";
-import SmartImg from "../components/SmartImg";
 import SEO from "../components/SEO";
 
 const meta = {
   slug: "attention-fragmentee-concentration-numerique",
   title: "Attention fragmentée : restaurer sa concentration profonde à l'ère numérique",
   description: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 8 stratégies scientifiquement validées pour retrouver une concentration profonde face aux distractions numériques.",
-  cover: "/images/articles/attention-fragmentee-cover-1200x630.jpg",
+  cover: "/images/articles/attention-fragmentee-cover-1200x630",
   datePublished: "2025-08-28",
   dateModified: "2025-08-28",
   tags: ["attention", "concentration", "neurosciences", "distractions numériques"],
@@ -88,14 +87,15 @@ export default function AttentionFragmenteeArticle() {
           {/* Image de couverture */}
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <SmartImg 
-                src={meta.cover} 
-                alt={`Image de couverture : ${meta.title}`} 
-                width={1200} 
-                height={630}
-                priority 
-                className="w-full h-auto"
-              />
+              <img
+  src="/images/articles/attention-fragmentee-cover-1200x630.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
+/>
             </div>
           )}
         </header>
