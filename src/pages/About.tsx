@@ -1,6 +1,6 @@
 import React from 'react'
 import { Heart, Users, BookOpen, Award, Target, Lightbulb } from 'lucide-react'
-import SmartImg from '../components/SmartImg'
+
 
 const About = () => {
   const values = [

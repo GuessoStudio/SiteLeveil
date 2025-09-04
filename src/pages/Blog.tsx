@@ -64,7 +64,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 8,
       date: "2024-01-15",
-      image: "/images/articles/rejet-social-cover.jpg",
+      image: "/images/articles/rejet-social-cover.webp",
       slug: "surmonter-rejet-social",
       featured: true
     },
@@ -75,7 +75,7 @@ const Blog = () => {
       category: "Neurosciences",
       readTime: 12,
       date: "2024-01-12",
-      image: "/images/articles/neuroplasticite-cover.jpg",
+      image: "/images/articles/neuroplasticite-cover.webp",
       slug: "neuroplasticite-cerveau"
     },
     {
@@ -85,7 +85,7 @@ const Blog = () => {
       category: "Développement Personnel",
       readTime: 10,
       date: "2024-01-10",
-      image: "/images/articles/confiance-soi-cover.jpg",
+      image: "/images/articles/confiance-soi-cover.webp",
       slug: "confiance-en-soi-durable"
     },
     {
@@ -95,7 +95,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 6,
       date: "2025-08-13",
-      image: "/images/articles/dopamine-cover.jpg",
+      image: "/images/articles/dopamine-cover.webp",
       slug: "neuro-dopamine-routine"
     },
     {

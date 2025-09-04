@@ -1,6 +1,5 @@
 // src/articles/RuminationMentale.tsx
 import { Link } from "react-router-dom";
-import SmartImg from "../components/SmartImg";
 import SEO from "../components/SEO";
 
 const meta = {
@@ -88,13 +87,14 @@ export default function RuminationMentale() {
           {/* Image de couverture */}
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <SmartImg 
-                src={meta.cover} 
-                alt={`Image de couverture : ${meta.title}`} 
-                width={1200} 
-                height={630}
-                priority 
-                className="w-full h-auto"
+              <img
+  src="/images/articles/rumination-cover.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
               />
             </div>
           )}
@@ -125,7 +125,7 @@ export default function RuminationMentale() {
 
           <div className="not-prose my-8">
             <img
-  src="/images/articles/rumination-cover.webp"
+  src="/images/articles/rumination-brain-mechanisms.webp"
   alt={meta.title}
   width="1600"
   height="900" 
@@ -244,12 +244,14 @@ export default function RuminationMentale() {
           </p>
 
           <div className="not-prose my-8">
-            <SmartImg 
-              src="/images/articles/rumination-liberation" 
-              alt="Libération mentale et techniques anti-rumination"
-              width={800}
-              height={500}
-              className="w-full h-auto rounded-lg shadow-md"
+            <img
+  src="/images/articles/rumination-liberation.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
             />
           </div>
 

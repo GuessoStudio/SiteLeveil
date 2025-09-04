@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Twitter, Linkedin, Facebook, Heart } from 'lucide-react'
-import SmartImg from '../components/SmartImg'
+
 
 const Footer = () => {
   return (

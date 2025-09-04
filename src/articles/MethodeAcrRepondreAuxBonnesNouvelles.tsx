@@ -65,11 +65,13 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
 
               <div className="relative overflow-hidden rounded-2xl mb-12">
                 <img
-                  src={meta.image}
-                  alt={meta.title}
-                  width="1600"
-                  height="900"
-                  className="w-full h-auto"
+  src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630.webp"
+  alt={meta.title}
+  width="1600"
+  height="900" 
+  className="w-full h-auto rounded-2xl"
+  loading="eager"
+  decoding="async"
                 />
               </div>
             </div>
@@ -109,7 +111,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
 
             <div className="my-8 not-prose">
               <img
-                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-4-styles-1200x675"
+                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-4-styles-1200x675.webp"
                 alt="Diagramme des 4 styles de réponse aux bonnes nouvelles"
                 width="1200"
                 height="675"
@@ -224,7 +226,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
 
             <div className="my-8 not-prose">
               <img
-                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-bids-1200x675"
+                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-bids-1200x675.webp"
                 alt="Diagramme des bids de connexion selon Gottman"
                 width="1200"
                 height="675"

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Sun, Moon, Search } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
-import SmartImg from '../components/SmartImg'
 
 <a
   href="#main"

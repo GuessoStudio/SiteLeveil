@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import DailyQuote from '../components/DailyQuote'
 import ResumeReading from '../components/ResumeReading'
 import Newsletter from '../components/Newsletter'
-import SmartImg from '../components/SmartImg'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
 import SEO from '../components/SEO'
 
@@ -201,13 +200,15 @@ const Home = () => {
       <section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
         {/* Background Image avec overlay */}
         <div className="absolute inset-0 z-0">
-          <SmartImg
-  src="/images/hero-bg.jpg"
+          <img
+  src="/images/hero-bg.webp"
   alt=""
-  width={1600}
-  height={900}
-  priority={true}
+  width="1600"
+  height="900"
   className="w-full h-full object-cover"
+  loading="eager"
+  decoding="async"
+  fetchPriority="high"
 />
           <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
         </div>
