@@ -7,7 +7,7 @@ const meta = {
   slug: "rumination-mentale-pensees-obsessionnelles",
   title: "Rumination mentale : comprendre et libérer son esprit des pensées obsessionnelles",
   description: "Découvrez les mécanismes neuroscientifiques de la rumination et 7 stratégies validées scientifiquement pour briser le cycle des pensées répétitives et retrouver la paix mentale.",
-  cover: "/images/articles/rumination-cover.jpg",
+  cover: "/images/articles/rumination-cover",
   datePublished: "2025-08-29",
   dateModified: "2025-08-29",
   tags: ["rumination mentale", "pensées obsessionnelles", "anxiété", "neurosciences"],
@@ -125,7 +125,7 @@ export default function RuminationMentale() {
 
           <div className="not-prose my-8">
             <SmartImg 
-              src="/images/articles/rumination-brain-mechanisms.jpg" 
+              src="/images/articles/rumination-brain-mechanisms" 
               alt="Mécanismes cérébraux de la rumination mentale"
               width={800}
               height={500}
@@ -242,7 +242,7 @@ export default function RuminationMentale() {
 
           <div className="not-prose my-8">
             <SmartImg 
-              src="/images/articles/rumination-liberation.jpg" 
+              src="/images/articles/rumination-liberation" 
               alt="Libération mentale et techniques anti-rumination"
               width={800}
               height={500}

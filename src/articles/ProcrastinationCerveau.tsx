@@ -7,7 +7,7 @@ const meta = {
   slug: "procrastination-cerveau-agir-neurosciences",
   title: "Procrastination : comprendre les mécanismes cérébraux pour enfin passer à l'action",
   description: "Découvrez les bases neuroscientifiques de la procrastination et 8 stratégies validées scientifiquement pour surmonter l'évitement comportemental et retrouver la motivation.",
-  cover: "/images/articles/procrastination-brain-conflict.jpg",
+  cover: "/images/articles/procrastination-brain-conflict",
   datePublished: "2025-08-30",
   dateModified: "2025-08-30",
   tags: ["procrastination", "neurosciences", "motivation", "dopamine"],
@@ -125,7 +125,7 @@ export default function ProcrastinationCerveau() {
 
           <div className="not-prose my-8">
             <SmartImg 
-              src="/images/articles/procrastination-brain-mechanisms.jpg" 
+              src="/images/articles/procrastination-brain-mechanisms" 
               alt="Mécanismes cérébraux de la procrastination - conflit cortex préfrontal et système limbique"
               width={800}
               height={500}
@@ -242,7 +242,7 @@ export default function ProcrastinationCerveau() {
 
           <div className="not-prose my-8">
             <SmartImg 
-              src="/images/articles/procrastination-action-motivation.jpg" 
+              src="/images/articles/procrastination-action-motivation" 
               alt="Transition de la procrastination à l'action - activation des circuits motivationnels"
               width={800}
               height={500}

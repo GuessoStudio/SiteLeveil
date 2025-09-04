@@ -12,13 +12,13 @@ const meta = {
   readTime: 10,
   date: "2025-08-30",
   author: "Guesso",
-  image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover-1600x900.jpg",
+  image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover-1600x900",
   tags: ["relations humaines", "communication", "ACR", "capitalisation", "Gottman", "couples"],
 };
 
 export default function MethodeAcrRepondreAuxBonnesNouvelles() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
-  const og = `/images/articles/${meta.slug}-og-1200x630.jpg`;
+  const og = `/images/articles/${meta.slug}-og-1200x630`;
 
   return (
     <>
@@ -109,7 +109,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
 
             <div className="my-8 not-prose">
               <img
-                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-4-styles-1200x675.jpg"
+                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-4-styles-1200x675"
                 alt="Diagramme des 4 styles de réponse aux bonnes nouvelles"
                 width="1200"
                 height="675"
@@ -224,7 +224,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
 
             <div className="my-8 not-prose">
               <img
-                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-bids-1200x675.jpg"
+                src="/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-diagram-bids-1200x675"
                 alt="Diagramme des bids de connexion selon Gottman"
                 width="1200"
                 height="675"
