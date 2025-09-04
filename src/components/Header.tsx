@@ -43,14 +43,14 @@ const Header = () => {
   alt="L'Éveil"
   width="32" 
   height="32"
-  className="w-8 h-8 rounded-full"
+  className="w-10 h-10 rounded-full"
   loading="lazy"
   decoding="async"
 />
             <span className="text-xl font-bold text-neutral-900 dark:text-white">
               L'Éveil
             </span>
-          </Link>jpg
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-2">
