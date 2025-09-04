@@ -16,7 +16,7 @@ const Footer = () => {
   alt="L'Éveil"
   width={100}
   height={100}
-  className="w-10 h-10 rounded-full"
+  className="w-6 h-6 rounded-full"
 />
               <span className="text-xl font-bold text-white">L'Éveil</span>
             </div>

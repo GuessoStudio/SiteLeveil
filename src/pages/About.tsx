@@ -53,7 +53,7 @@ const About = () => {
   alt="L'Éveil"
   width={200}
   height={200}
-  className="w-10 h-10 rounded-full"
+  className="w-6 h-6 rounded-full"
 />
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
               À propos de L'Éveil
