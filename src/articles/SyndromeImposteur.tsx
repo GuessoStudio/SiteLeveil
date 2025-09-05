@@ -462,7 +462,7 @@ export default function SyndromeImposteur() {
           {/* Section liens internes vers articles connexes - VERSION AMÉLIORÉE */}
           <div className="not-prose my-12 p-8 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-purple-900/20 rounded-3xl border border-indigo-100 dark:border-purple-800/30 shadow-2xl">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold mb-3 text-neutral-900 dark:text-white">
                 🚀 Continue ton développement personnel
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
@@ -471,7 +471,7 @@ export default function SyndromeImposteur() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <Link to="/blog/confiance-en-soi-durable" className="group block p-6 bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+              <Link to="/blog/confiance-en-soi-durable" className="group block p-6 bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
@@ -485,7 +485,7 @@ export default function SyndromeImposteur() {
                 </div>
               </Link>
               
-              <Link to="/blog/surmonter-rejet-social" className="group block p-6 bg-gradient-to-br from-rose-500 to-pink-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+              <Link to="/blog/surmonter-rejet-social" className="group block p-6 bg-gradient-to-br from-rose-500 to-pink-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
@@ -499,7 +499,7 @@ export default function SyndromeImposteur() {
                 </div>
               </Link>
               
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="group block p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="group block p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
@@ -513,7 +513,7 @@ export default function SyndromeImposteur() {
                 </div>
               </Link>
               
-              <Link to="/habit-tracker" className="group block p-6 bg-gradient-to-br from-purple-500 to-violet-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+              <Link to="/habit-tracker" className="group block p-6 bg-gradient-to-br from-purple-500 to-violet-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
