@@ -74,7 +74,6 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-
 .fadeInUp {
   animation: fadeInUp 500ms ease-out forwards;
 }
@@ -112,7 +111,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
   border-radius: inherit;
 }
-
 
 /* Scrollbar personnalisée */
 ::-webkit-scrollbar {
@@ -274,43 +272,122 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--neutral-400);
 }
 
-/* Liens et texte coloré - correction contraste mode sombre */
+/* ===== CORRECTIONS COULEURS ARTICLES - VERSION AMÉLIORÉE ===== */
+
+/* Liens dans les articles - MODE CLAIR */
 .prose a {
-  color: rgb(79 70 229); /* indigo-400 */
+  color: rgb(67 56 202); /* indigo-700 - meilleur contraste */
+  text-decoration: underline;
+  text-decoration-color: rgba(67, 56, 202, 0.3);
 }
 
 .prose a:hover {
+  color: rgb(55 48 163); /* indigo-800 */
+  text-decoration-color: rgb(55 48 163);
+}
+
+/* Classes Tailwind communes dans les articles - MODE CLAIR */
+.prose .text-indigo-600 {
+  color: rgb(67 56 202); /* indigo-700 pour meilleur contraste */
+}
+
+.prose .text-indigo-700 {
   color: rgb(67 56 202); /* indigo-700 */
 }
 
-/* Classes Tailwind communes dans les articles */
-.prose .text-indigo-600 {
-  color: rgb(79 70 229); /* indigo-600 */
+.prose .text-indigo-800 {
+  color: rgb(55 48 163); /* indigo-800 */
 }
 
 .prose .text-blue-600 {
-  color: rgb(37 99 235); /* blue-600 */
+  color: rgb(29 78 216); /* blue-700 pour meilleur contraste */
 }
 
-/* Mode sombre - couleurs plus claires pour le contraste */
+.prose .text-blue-700 {
+  color: rgb(29 78 216); /* blue-700 */
+}
+
+.prose .text-blue-800 {
+  color: rgb(30 64 175); /* blue-800 */
+}
+
+.prose .text-purple-600 {
+  color: rgb(124 58 237); /* purple-600 */
+}
+
+.prose .text-purple-700 {
+  color: rgb(109 40 217); /* purple-700 */
+}
+
+.prose .text-green-600 {
+  color: rgb(22 163 74); /* green-600 */
+}
+
+.prose .text-green-700 {
+  color: rgb(21 128 61); /* green-700 */
+}
+
+/* ===== MODE SOMBRE - Couleurs beaucoup plus claires ===== */
+
+/* Liens - MODE SOMBRE */
 [data-theme="dark"] .prose a {
-  color: rgb(129 140 248); /* indigo-400 */
+  color: rgb(165 180 252); /* indigo-300 - bien plus clair */
+  text-decoration-color: rgba(165, 180, 252, 0.4);
 }
 
 [data-theme="dark"] .prose a:hover {
+  color: rgb(196 181 253); /* indigo-200 - encore plus clair */
+  text-decoration-color: rgb(196 181 253);
+}
+
+/* Classes Tailwind - MODE SOMBRE */
+[data-theme="dark"] .prose .text-indigo-600 {
   color: rgb(165 180 252); /* indigo-300 */
 }
 
-[data-theme="dark"] .prose .text-indigo-600 {
-  color: rgb(129 140 248); /* indigo-400 */
-}
-
-[data-theme="dark"] .prose .text-blue-600 {
-  color: rgb(96 165 250); /* blue-400 */
+[data-theme="dark"] .prose .text-indigo-700 {
+  color: rgb(165 180 252); /* indigo-300 */
 }
 
 [data-theme="dark"] .prose .text-indigo-800 {
-  color: rgb(165 180 252); /* indigo-300 */
+  color: rgb(196 181 253); /* indigo-200 */
+}
+
+[data-theme="dark"] .prose .text-blue-600 {
+  color: rgb(147 197 253); /* blue-300 */
+}
+
+[data-theme="dark"] .prose .text-blue-700 {
+  color: rgb(147 197 253); /* blue-300 */
+}
+
+[data-theme="dark"] .prose .text-blue-800 {
+  color: rgb(186 230 253); /* blue-200 */
+}
+
+[data-theme="dark"] .prose .text-purple-600 {
+  color: rgb(196 181 253); /* purple-300 */
+}
+
+[data-theme="dark"] .prose .text-purple-700 {
+  color: rgb(196 181 253); /* purple-300 */
+}
+
+[data-theme="dark"] .prose .text-green-600 {
+  color: rgb(134 239 172); /* green-300 */
+}
+
+[data-theme="dark"] .prose .text-green-700 {
+  color: rgb(134 239 172); /* green-300 */
+}
+
+/* Classes utilitaires pour forcer le contraste en mode sombre */
+[data-theme="dark"] .prose [class*="text-blue-"]:not(.text-blue-100):not(.text-blue-200):not(.text-blue-300) {
+  color: rgb(147 197 253) !important; /* blue-300 */
+}
+
+[data-theme="dark"] .prose [class*="text-indigo-"]:not(.text-indigo-100):not(.text-indigo-200):not(.text-indigo-300) {
+  color: rgb(165 180 252) !important; /* indigo-300 */
 }
 
 /* Corrections mode sombre pour les articles */
@@ -319,7 +396,7 @@ h1, h2, h3, h4, h5, h6 {
     --tw-prose-bold: rgb(245 245 245); /* neutral-100 */
     --tw-prose-headings: rgb(255 255 255);
     --tw-prose-body: rgb(212 212 212); /* neutral-300 */
-    --tw-prose-links: rgb(168 162 158); /* neutral-400 */
+    --tw-prose-links: rgb(165 180 252); /* indigo-300 - plus clair */
   }
 
   .prose.dark\\:prose-invert strong {
@@ -336,7 +413,7 @@ h1, h2, h3, h4, h5, h6 {
   --tw-prose-bold: rgb(245 245 245);
   --tw-prose-headings: rgb(255 255 255);
   --tw-prose-body: rgb(212 212 212);
-  --tw-prose-links: rgb(168 162 158);
+  --tw-prose-links: rgb(165 180 252); /* indigo-300 - plus clair */
 }
 
 [data-theme="dark"] .prose.dark\\:prose-invert strong {
@@ -357,7 +434,7 @@ h1, h2, h3, h4, h5, h6 {
            dark:focus-visible:ring-offset-neutral-900;
   }
 
-  /* Variante si l’élément est posé sur une carte foncée */
+  /* Variante si l'élément est posé sur une carte foncée */
   .focus-ring-card {
     @apply focus-visible:outline-none
            focus-visible:ring-2 focus-visible:ring-indigo-400
@@ -365,6 +442,7 @@ h1, h2, h3, h4, h5, h6 {
            dark:focus-visible:ring-offset-neutral-800;
   }
 }
+
 /* Fix pour éviter l'espace noir après le header */
 .header-fixed-spacing {
   margin-top: 4rem; /* Compense la hauteur du header sticky */
