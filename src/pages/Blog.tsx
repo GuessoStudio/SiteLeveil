@@ -145,7 +145,7 @@ const Blog = () => {
   category: "Psychologie",
   readTime: 10,
   date: "2025-09-05",
-  image: "/images/articles/syndrome-imposteur-cover.webp",
+  image: "/images/articles/syndrome-imposteur-cover",
   slug: "syndrome-imposteur-solutions",
   featured: true // Si tu veux le mettre en avant
 }
