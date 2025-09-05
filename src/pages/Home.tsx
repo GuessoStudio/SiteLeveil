@@ -114,7 +114,7 @@ const FEATURED_ARTICLES = [
     excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
     category: "Psychologie",
     readTime: 8,
-    image: "/images/articles/rejet-social-cover.jpg",
+    image: "/images/articles/rejet-social-cover.webp",
     slug: "surmonter-rejet-social"
   },
   {
@@ -123,7 +123,7 @@ const FEATURED_ARTICLES = [
     excerpt: "Explorez les dernières découvertes sur la capacité du cerveau à se réorganiser tout au long de la vie.",
     category: "Neurosciences",
     readTime: 12,
-    image: "/images/articles/neuroplasticite-cover.jpg",
+    image: "/images/articles/neuroplasticite-cover.webp",
     slug: "neuroplasticite-cerveau"
   },
   {
@@ -132,7 +132,7 @@ const FEATURED_ARTICLES = [
     excerpt: "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
     category: "Développement Personnel",
     readTime: 10,
-    image: "/images/articles/confiance-soi-cover.jpg",
+    image: "/images/articles/confiance-soi-cover.webp",
     slug: "confiance-en-soi-durable"
   },
   {
@@ -141,7 +141,7 @@ const FEATURED_ARTICLES = [
     excerpt: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
     category: "Psychologie",
     readTime: 6,
-    image: "/images/articles/dopamine-cover.jpg",
+    image: "/images/articles/dopamine-cover.webp",
     slug: "neuro-dopamine-routine"
   }
 ]

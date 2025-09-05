@@ -97,40 +97,77 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center gap-2 text-neutral-300 text-sm">
-  <img 
-    src="/images/logo-footer.png" 
-    alt="Logo L'Éveil" 
-    className="w-5 h-5 rounded-full"
-  />
-  <span>© 2024 L'Éveil. Tous droits réservés.</span>
-</div>
-          {/* Message central */}
-          <p className="text-neutral-300 text-sm flex items-center gap-1">
-            Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
-          </p>
+        <div className="border-t border-neutral-800 mt-12 pt-8">
+          {/* Version Desktop */}
+          <div className="hidden md:flex justify-between items-center">
+            {/* Copyright L'Éveil */}
+            <div className="flex items-center gap-2 text-neutral-300 text-sm">
+              <img 
+                src="/images/logo-footer.webp" 
+                alt="Logo L'Éveil" 
+                className="w-5 h-5 rounded-full"
+              />
+              <span>© 2024 L'Éveil. Tous droits réservés.</span>
+            </div>
+            
+            {/* Message central */}
+            <p className="text-neutral-300 text-sm flex items-center gap-1">
+              Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
+            </p>
 
-          {/* Guesso Studio */}
-          <div className="flex items-center gap-2 text-neutral-400 text-sm hover:text-neutral-300 transition-colors">
-            <span>Propulsé par</span>
-            <a 
-              href="https://guesso-studio.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
-              aria-label="Visiter Guesso Studio"
-            >
-              {/* Logo Guesso Studio */}
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-400 rounded-lg flex items-center justify-center p-1">
+            {/* Guesso Studio */}
+            <div className="flex items-center gap-2 text-neutral-400 text-sm hover:text-neutral-300 transition-colors">
+              <span>Propulsé par</span>
+              <a 
+                href="https://guesso-studio.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
+                aria-label="Visiter Guesso Studio"
+              >
+                {/* Logo Guesso Studio - SANS fond bleu */}
                 <img 
-  src="/images/guesso-logo.webp" 
-  alt="Guesso Studio" 
-  className="w-6 h-6 rounded-lg"
-/>
-              </div>
-              <span className="font-medium">Guesso Studio</span>
-            </a>
+                  src="/images/guesso-logo.webp" 
+                  alt="Guesso Studio" 
+                  className="w-6 h-6 rounded-lg"
+                />
+                <span className="font-medium">Guesso Studio</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Version Mobile */}
+          <div className="md:hidden space-y-4 text-center">
+            <div className="flex items-center justify-center gap-2 text-neutral-300 text-sm">
+              <img 
+                src="/images/logo-footer.webp" 
+                alt="Logo L'Éveil" 
+                className="w-5 h-5 rounded-full"
+              />
+              <span>© 2024 L'Éveil. Tous droits réservés.</span>
+            </div>
+            
+            <p className="text-neutral-300 text-sm flex items-center justify-center gap-1">
+              Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
+            </p>
+
+            <div className="flex items-center justify-center gap-2 text-neutral-400 text-sm">
+              <span>Propulsé par</span>
+              <a 
+                href="https://guesso-studio.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
+                aria-label="Visiter Guesso Studio"
+              >
+                <img 
+                  src="/images/guesso-logo.webp" 
+                  alt="Guesso Studio" 
+                  className="w-5 h-5 rounded-lg"
+                />
+                <span className="font-medium">Guesso Studio</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

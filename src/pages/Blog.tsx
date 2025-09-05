@@ -105,7 +105,7 @@ const Blog = () => {
       category: "Neurosciences",
       readTime: 12,
       date: "2025-08-28",
-      image: "/images/articles/attention-fragmentee-cover-1200x630",
+      image: "/images/articles/attention-fragmentee-cover-1200x630.webp",
       slug: "attention-fragmentee-concentration-numerique"
     },
     {
@@ -115,7 +115,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 11,
       date: "2025-08-29",
-      image: "/images/articles/rumination-cover.",
+      image: "/images/articles/rumination-cover.webp",
       slug: "rumination-mentale-pensees-obsessionnelles"
     },
     {
@@ -125,7 +125,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 13,
       date: "2025-08-30",
-      image: "/images/articles/procrastination-brain-conflict",
+      image: "/images/articles/procrastination-brain-conflict.webp",
       slug: "procrastination-cerveau-agir-neurosciences"
     },
     {
@@ -135,7 +135,7 @@ const Blog = () => {
       category: "Relations Humaines",
       readTime: 10,
       date: "2025-08-30",
-      image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover-1600x900",
+      image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630.webp" ,
       slug: "methode-acr-repondre-aux-bonnes-nouvelles"
     }
   ]
