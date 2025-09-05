@@ -8,7 +8,7 @@ export const meta = {
   title: "Syndrome de l'imposteur : comprendre ses mécanismes et 6 solutions efficaces",
   description: "Découvre les causes du syndrome de l'imposteur et 6 stratégies validées en psychologie et neurosciences pour renforcer ta confiance.",
   excerpt: "70% des personnes vivent le syndrome de l'imposteur. Explore les mécanismes neuroscientifiques de ce phénomène et 6 stratégies concrètes pour t'en libérer définitivement.",
-  cover: "/images/articles/syndrome-imposteur-cover",
+  cover: "/images/articles/syndrome-imposteur-cover.webp",
   datePublished: "2025-09-05",
   dateModified: "2025-09-05",
   tags: ["syndrome de l'imposteur", "manque de confiance", "psychologie", "neurosciences", "confiance en soi", "auto-efficacité"],
@@ -459,32 +459,79 @@ export default function SyndromeImposteur() {
             </details>
           </div>
 
-          {/* Section liens internes vers articles connexes */}
-          <div className="not-prose my-12 p-6 bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-700 rounded-2xl border border-neutral-200 dark:border-neutral-600">
-            <h3 className="text-xl font-bold mb-4 text-neutral-900 dark:text-white">Continue ton développement personnel</h3>
-            <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-              Explore nos autres ressources pour renforcer ta confiance et optimiser ton bien-être psychologique.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Link to="/blog/confiance-en-soi-durable" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Construire une confiance durable</h4>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">6 stratégies scientifiques pour développer une estime de soi authentique</p>
+          {/* Section liens internes vers articles connexes - VERSION AMÉLIORÉE */}
+          <div className="not-prose my-12 p-8 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-purple-900/20 rounded-3xl border border-indigo-100 dark:border-purple-800/30 shadow-2xl">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                🚀 Continue ton développement personnel
+              </h3>
+              <p className="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+                Explore nos autres ressources pour <strong>renforcer ta confiance</strong> et optimiser ton bien-être psychologique.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <Link to="/blog/confiance-en-soi-durable" className="group block p-6 bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">💪</span>
+                    <h4 className="font-bold text-lg">Construire une confiance durable</h4>
+                  </div>
+                  <p className="text-green-100 text-sm leading-relaxed">6 stratégies scientifiques pour développer une estime de soi authentique et inébranlable</p>
+                  <div className="mt-4 text-xs bg-white/20 px-3 py-1 rounded-full inline-block">
+                    ⭐ Article populaire
+                  </div>
+                </div>
               </Link>
               
-              <Link to="/blog/surmonter-rejet-social" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Surmonter le rejet social</h4>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">Mécanismes psychologiques et stratégies de résilience émotionnelle</p>
+              <Link to="/blog/surmonter-rejet-social" className="group block p-6 bg-gradient-to-br from-rose-500 to-pink-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">🛡️</span>
+                    <h4 className="font-bold text-lg">Surmonter le rejet social</h4>
+                  </div>
+                  <p className="text-rose-100 text-sm leading-relaxed">Mécanismes psychologiques et stratégies de résilience émotionnelle face au rejet</p>
+                  <div className="mt-4 text-xs bg-white/20 px-3 py-1 rounded-full inline-block">
+                    🧠 Neurosciences
+                  </div>
+                </div>
               </Link>
               
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Te libérer des ruminations mentales</h4>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">7 techniques validées pour arrêter les pensées obsessionnelles</p>
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="group block p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">🧘</span>
+                    <h4 className="font-bold text-lg">Te libérer des ruminations</h4>
+                  </div>
+                  <p className="text-blue-100 text-sm leading-relaxed">7 techniques validées pour arrêter les pensées obsessionnelles et retrouver la paix mentale</p>
+                  <div className="mt-4 text-xs bg-white/20 px-3 py-1 rounded-full inline-block">
+                    ✨ Transformation
+                  </div>
+                </div>
               </Link>
               
-              <Link to="/habit-tracker" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Habit Tracker scientifique</h4>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">Suis tes progrès avec des insights comportementaux</p>
+              <Link to="/habit-tracker" className="group block p-6 bg-gradient-to-br from-purple-500 to-violet-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">📊</span>
+                    <h4 className="font-bold text-lg">Habit Tracker scientifique</h4>
+                  </div>
+                  <p className="text-purple-100 text-sm leading-relaxed">Suis tes progrès avec des insights comportementaux et visualise ton évolution</p>
+                  <div className="mt-4 text-xs bg-white/20 px-3 py-1 rounded-full inline-block">
+                    🔧 Outil gratuit
+                  </div>
+                </div>
               </Link>
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                💡 <strong>Astuce :</strong> Combine ces ressources pour maximiser ton développement personnel
+              </p>
             </div>
           </div>
 
