@@ -137,7 +137,18 @@ const Blog = () => {
       date: "2025-08-30",
       image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630" ,
       slug: "methode-acr-repondre-aux-bonnes-nouvelles"
-    }
+    },
+    {
+  id: 9,
+  title: "Syndrome de l'imposteur : comprendre ses mécanismes et 6 solutions efficaces",
+  excerpt: "70% des personnes vivent le syndrome de l'imposteur. Explore les mécanismes neuroscientifiques et 6 stratégies concrètes pour t'en libérer définitivement.",
+  category: "Psychologie",
+  readTime: 10,
+  date: "2025-09-05",
+  image: "/images/articles/syndrome-imposteur-cover.webp",
+  slug: "syndrome-imposteur-solutions",
+  featured: true // Si tu veux le mettre en avant
+}
   ]
 
   const categories = ["Tous", "Psychologie", "Neurosciences", "Développement Personnel", "Relations Humaines"]

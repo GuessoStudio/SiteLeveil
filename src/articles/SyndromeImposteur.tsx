@@ -1,0 +1,526 @@
+// src/articles/SyndromeImposteur.tsx
+import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
+import SocialShare from "../components/SocialShare";
+
+export const meta = {
+  slug: "syndrome-imposteur-solutions",
+  title: "Syndrome de l'imposteur : comprendre ses mécanismes et 6 solutions efficaces",
+  description: "Découvre les causes du syndrome de l'imposteur et 6 stratégies validées en psychologie et neurosciences pour renforcer ta confiance.",
+  excerpt: "70% des personnes vivent le syndrome de l'imposteur. Explorez les mécanismes neuroscientifiques de ce phénomène et 6 stratégies concrètes pour vous en libérer définitivement.",
+  cover: "/images/articles/syndrome-imposteur-cover.webp",
+  datePublished: "2025-09-05",
+  dateModified: "2025-09-05",
+  tags: ["syndrome de l'imposteur", "manque de confiance", "psychologie", "neurosciences", "confiance en soi", "auto-efficacité"],
+  author: { name: "Guesso" },
+  category: "Psychologie",
+  readingTime: "10 min",
+};
+
+export default function SyndromeImposteur() {
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://siteleveil.netlify.app";
+  const url = `${site}/blog/${meta.slug}`;
+  const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+
+  return (
+    <>
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        image={og}
+        type="article"
+        path={`/blog/${meta.slug}`}
+        datePublished={meta.datePublished}
+        dateModified={meta.dateModified}
+        authorName={meta.author?.name}
+        tags={meta.tags}
+      />
+      
+      <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="not-prose mb-12">
+          {/* Fil d'Ariane */}
+          <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
+            <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
+              Accueil
+            </Link> 
+            <span className="mx-2 text-neutral-400" aria-hidden="true">›</span> 
+            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
+              Blog
+            </Link> 
+            <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+              Syndrome de l'imposteur
+            </span>
+          </nav>
+
+          {/* Badge catégorie */}
+          <div className="mb-6">
+            <span className="inline-block bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+              {meta.category}
+            </span>
+          </div>
+
+          {/* Titre principal */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-4 leading-tight">
+            {meta.title}
+          </h1>
+          
+          {/* Sous-titre/Description */}
+          <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+            {meta.description}
+          </p>
+
+          {/* Métadonnées */}
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+            <span>par {meta.author.name}</span>
+            <span>•</span>
+            <span>{meta.readingTime} de lecture</span>
+            <span>•</span>
+            <time dateTime={meta.datePublished}>
+              {new Date(meta.datePublished).toLocaleDateString("fr-FR", { 
+                day: "2-digit", 
+                month: "long", 
+                year: "numeric" 
+              })}
+            </time>
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {meta.tags.slice(0, 4).map((tag) => (
+              <span key={tag} className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">
+                #{tag.replace(/\s+/g, '')}
+              </span>
+            ))}
+          </div>
+
+          {/* Image de couverture */}
+          <div className="relative overflow-hidden rounded-2xl shadow-lg mb-8">
+            <img
+              src={meta.cover}
+              alt="Personne surmontant le syndrome de l'imposteur en retirant un masque, révélant sa vraie confiance"
+              width="1600"
+              height="900" 
+              className="w-full h-auto"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          {/* Boutons de partage */}
+          <div className="not-prose">
+            <SocialShare 
+              url={url}
+              title={meta.title}
+              description={meta.description}
+            />
+          </div>
+        </header>
+
+        <div className="mt-10">
+          {/* Introduction engageante avec hook */}
+          <p className="lead">
+            <strong>Vous êtes-vous déjà senti comme un imposteur dans votre propre succès ?</strong> Cette sensation de ne pas mériter vos réussites, de craindre d'être "démasqué" à tout moment ? Vous n'êtes pas seul. Le syndrome de l'imposteur touche <strong>70% des individus</strong> au moins une fois dans leur vie selon l'étude fondatrice de Clance & Imes (1978).
+          </p>
+
+          <p>
+            Dans cet article, nous explorerons les mécanismes neurobiologiques de ce phénomène fascinant et vous découvrirez 6 stratégies scientifiquement validées pour transformer ce sentiment paralysant en moteur de croissance personnelle.
+          </p>
+
+          <h2>Qu'est-ce que le syndrome de l'imposteur ?</h2>
+          
+          <p>
+            Le syndrome de l'imposteur est un <strong>biais cognitif</strong> caractérisé par une tendance persistante à attribuer ses réussites à des facteurs externes (chance, erreurs des autres, timing favorable) plutôt qu'à ses propres compétences et efforts.
+          </p>
+
+          <p>
+            Cette distorsion de perception génère un cocktail toxique : doute constant sur ses capacités, peur chronique de l'échec, et sentiment profond de tromper son entourage sur sa "vraie" valeur.
+          </p>
+
+          <blockquote>
+            <p>"Je me sens comme un fraudeur qui va être démasqué à tout moment." - Témoignage récurrent des personnes touchées</p>
+          </blockquote>
+
+          <h2>Les mécanismes psychologiques et neuroscientifiques</h2>
+
+          <p>
+            Les neurosciences révèlent des patterns cérébraux spécifiques chez les personnes souffrant du syndrome de l'imposteur. Comprendre ces mécanismes est la première étape vers la guérison.
+          </p>
+
+          <h3>Le rôle de l'amygdale et du système de la peur</h3>
+          
+          <p>
+            L'<strong>amygdale</strong>, centre de détection des menaces, déclenche des signaux d'alerte disproportionnés face à toute exposition ou défi professionnel. Chez les "imposteurs", cette structure est hyperactive, générant une peur excessive de l'échec et du jugement.
+          </p>
+
+          <p>
+            Les études en neuroimagerie montrent une activation accrue du <strong>cortex cingulaire antérieur</strong>, zone responsable du monitoring des erreurs, créant une hypersensibilité aux moindres imperfections.
+          </p>
+
+          <h3>L'influence du perfectionnisme</h3>
+          
+          <p>
+            La croyance rigide <em>"si ce n'est pas parfait, c'est nul"</em> entretient un cercle vicieux. Le perfectionnisme pathologique amplifie la conviction de ne jamais être assez compétent, créant des standards impossibles à atteindre.
+          </p>
+
+          <h3>La comparaison sociale amplifiée par les réseaux</h3>
+          
+          <p>
+            Sur LinkedIn ou Instagram, nous sommes constamment exposés aux <strong>highlight reels</strong> des autres. Ce miroir biaisé amplifie l'impression de ne jamais être à la hauteur, alimentant le sentiment d'imposture.
+          </p>
+
+          <p>
+            Leon Festinger avait anticipé ce phénomène avec sa <a href="https://psycnet.apa.org/record/1955-00188-001" target="_blank" rel="noopener noreferrer">théorie de la comparaison sociale</a> dès 1954, bien avant l'ère numérique.
+          </p>
+
+          <h2>Les conséquences du syndrome de l'imposteur</h2>
+
+          <h3>Stress et anxiété chronique</h3>
+          
+          <p>
+            Vivre dans la peur permanente d'être "démasqué" génère un <strong>stress chronique</strong> qui épuise les ressources mentales. Cette activation constante du système nerveux sympathique favorise l'insomnie, les troubles digestifs et l'affaiblissement immunitaire.
+          </p>
+
+          <h3>Sabotage inconscient et procrastination</h3>
+          
+          <p>
+            Paradoxalement, la peur d'échouer pousse à éviter ou retarder les projets importants. Ce mécanisme de <strong>protection psychologique</strong> maintient l'illusion que "si j'avais vraiment essayé, j'aurais réussi".
+          </p>
+
+          <p>
+            Cette dynamique est explorée en profondeur dans notre guide sur <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="text-green-600 dark:text-green-400 hover:underline font-medium">les mécanismes cérébraux de la procrastination</Link>.
+          </p>
+
+          <h3>Impact sur la carrière et l'estime de soi</h3>
+          
+          <p>
+            Les conséquences professionnelles sont tangibles : moins de candidatures à des postes ambitieux, négociations salariales timides, autocensure en réunion. Le syndrome de l'imposteur devient un <strong>plafond de verre invisible</strong> qui limite la croissance de carrière.
+          </p>
+
+          {/* Placement optimal de l'infographie */}
+          <div className="not-prose my-12 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-6 rounded-2xl">
+            <h3 className="text-xl font-bold text-center mb-6 text-neutral-900 dark:text-white">
+              Les 6 stratégies scientifiquement validées
+            </h3>
+            <div className="flex justify-center">
+              <img
+                src="/images/articles/syndrome-imposteur-infographie.webp"
+                alt="Infographie des 6 stratégies pour vaincre le syndrome de l'imposteur : reconnaître ses pensées, tenir un journal des réussites, redéfinir la réussite, demander du feedback, pratiquer l'auto-compassion et se faire accompagner"
+                className="rounded-xl shadow-lg max-w-full h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <p className="text-center text-sm text-neutral-600 dark:text-neutral-400 mt-4">
+              Découvrons maintenant chaque stratégie en détail
+            </p>
+          </div>
+
+          <h2>6 stratégies pour dépasser le syndrome de l'imposteur</h2>
+
+          <h3>1. Reconnaître et normaliser ses pensées</h3>
+          
+          <p>
+            La première étape consiste à <strong>identifier ces pensées</strong> sans les juger. Accepter que ces doutes sont fréquents et ne reflètent pas la réalité objective de vos compétences.
+          </p>
+
+          <p>
+            <strong>Exercice pratique :</strong> Tenez un "journal des pensées d'imposture" pendant une semaine. Notez chaque fois que vous vous sentez illégitime. Cette prise de conscience est thérapeutique en soi.
+          </p>
+
+          <p>
+            Pour approfondir la gestion des pensées intrusives, consultez notre article sur <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-green-600 dark:text-green-400 hover:underline font-medium">la rumination mentale et les pensées obsessionnelles</Link>.
+          </p>
+
+          <h3>2. Tenir un journal des réussites</h3>
+          
+          <p>
+            Noter quotidiennement vos <strong>victoires</strong>, même les plus petites, reprogramme littéralement votre cerveau à reconnaître vos compétences. Cette pratique active la neuroplasticité positive.
+          </p>
+
+          {/* Image journal - placement optimal */}
+          <div className="not-prose my-8">
+            <img
+              src="/images/articles/journal-reussites.webp"
+              alt="Journal ouvert sur un bureau avec une personne écrivant ses réussites quotidiennes, lumière naturelle douce"
+              className="rounded-xl shadow-lg w-full h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <p className="text-center text-sm text-neutral-600 dark:text-neutral-400 mt-2">
+              Le journal des réussites : un outil puissant de reprogrammation cognitive
+            </p>
+          </div>
+
+          <p>
+            <strong>Structure recommandée :</strong>
+          </p>
+          <ul>
+            <li>3 accomplissements du jour (personnels/professionnels)</li>
+            <li>1 compétence utilisée avec succès</li>
+            <li>1 feedback positif reçu</li>
+            <li>1 difficulté surmontée</li>
+          </ul>
+
+          <div className="not-prose my-6 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
+            <p className="text-blue-800 dark:text-blue-200 font-medium">
+              💡 <strong>Astuce technologique :</strong> Utilisez notre <Link to="/habit-tracker" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Habit Tracker</Link> pour automatiser le suivi de vos victoires quotidiennes et visualiser l'évolution de votre confiance sur le long terme.
+            </p>
+          </div>
+
+          <h3>3. Redéfinir la réussite personnelle</h3>
+          
+          <p>
+            Abandonnez les standards perfectionnistes au profit d'une <strong>réussite authentique</strong> alignée sur vos valeurs. Privilégiez le progrès continu plutôt que la perfection ponctuelle.
+          </p>
+
+          <p>
+            <strong>Questions de réflexion :</strong>
+          </p>
+          <ul>
+            <li>Qu'est-ce qui compte vraiment pour moi ?</li>
+            <li>Comment puis-je mesurer mes progrès autrement que par la perfection ?</li>
+            <li>Quelles sont mes valeurs fondamentales ?</li>
+          </ul>
+
+          <h3>4. Demander du feedback constructif</h3>
+          
+          <p>
+            Les retours extérieurs offrent une <strong>perspective objective</strong> que votre cerveau "imposteur" ne peut distordre facilement. Sollicitez activement des feedbacks spécifiques sur vos performances.
+          </p>
+
+          <p>
+            <strong>Script de demande :</strong> <em>"Pourrais-tu me donner des retours spécifiques sur [compétence/projet] ? J'aimerais comprendre mes forces et mes axes d'amélioration."</em>
+          </p>
+
+          <h3>5. Pratiquer l'auto-compassion</h3>
+          
+          <p>
+            Kristin Neff a démontré que <strong>l'auto-compassion</strong> - se traiter avec la même bienveillance qu'un ami en difficulté - réduit significativement le stress et renforce la résilience émotionnelle.
+          </p>
+
+          <p>
+            <strong>Les 3 piliers de l'auto-compassion :</strong>
+          </p>
+          <ol>
+            <li><strong>Auto-bienveillance :</strong> remplacer l'autocritique par la gentillesse</li>
+            <li><strong>Humanité commune :</strong> reconnaître que la souffrance fait partie de l'expérience humaine</li>
+            <li><strong>Pleine conscience :</strong> observer ses émotions sans les amplifier</li>
+          </ol>
+
+          <p>
+            Cette approche complète parfaitement les techniques pour <Link to="/blog/confiance-en-soi-durable" className="text-green-600 dark:text-green-400 hover:underline font-medium">construire une confiance en soi durable</Link>.
+          </p>
+
+          <h3>6. Se faire accompagner (thérapie, coaching, mentorat)</h3>
+          
+          <p>
+            Un <strong>professionnel qualifié</strong> vous aide à déconstruire les croyances limitantes ancrées et à développer des stratégies personnalisées. L'accompagnement accélère significativement le processus de guérison.
+          </p>
+
+          <p>
+            <strong>Types d'accompagnement efficaces :</strong>
+          </p>
+          <ul>
+            <li><strong>Thérapie cognitive-comportementale (TCC) :</strong> restructuration des pensées dysfonctionnelles</li>
+            <li><strong>Coaching professionnel :</strong> développement de compétences spécifiques</li>
+            <li><strong>Mentorat :</strong> perspective d'expérience et soutien émotionnel</li>
+          </ul>
+
+          <h2>Études scientifiques récentes sur le syndrome de l'imposteur</h2>
+          
+          <p>
+            La recherche académique continue d'éclairer ce phénomène complexe :
+          </p>
+
+          <ul>
+            <li><strong><a href="https://psycnet.apa.org/record/1978-20751-001" target="_blank" rel="noopener noreferrer">Clance & Imes (1978)</a> :</strong> Étude fondatrice révélant que 70% des individus expérimentent le syndrome au moins une fois</li>
+            <li><strong>Sakulku & Alexander (2011) :</strong> Méta-analyse établissant les liens avec anxiété, dépression et faible estime de soi</li>
+            <li><strong><a href="https://link.springer.com/article/10.1007/s11606-019-05364-1" target="_blank" rel="noopener noreferrer">Bravata et al. (2020)</a> :</strong> Revue systématique confirmant la prévalence dans toutes les professions, y compris chez les experts reconnus</li>
+            <li><strong>Neurosciences sociales (2023) :</strong> Nouvelles découvertes sur la plasticité cérébrale et les interventions thérapeutiques</li>
+          </ul>
+
+          <h2>Plan d'action : programme 8 semaines</h2>
+
+          <div className="not-prose my-8 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-2xl">
+            <h3 className="text-lg font-bold mb-4 text-neutral-900 dark:text-white">Programme structuré de libération</h3>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-purple-700 dark:text-purple-300">Semaines 1-2 : Évaluation et prise de conscience</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Auto-évaluation, identification des déclencheurs, début du journal des pensées</p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-purple-700 dark:text-purple-300">Semaines 3-4 : Restructuration cognitive</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Journal des réussites, remise en question des croyances limitantes</p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-purple-700 dark:text-purple-300">Semaines 5-6 : Développement de l'auto-compassion</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Pratiques de bienveillance, redéfinition des standards de réussite</p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-purple-700 dark:text-purple-300">Semaines 7-8 : Consolidation et projection</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Intégration des nouvelles habitudes, planification du maintien long terme</p>
+              </div>
+            </div>
+          </div>
+
+          <h2>Questions introspectives pour approfondir</h2>
+          
+          <div className="not-prose my-8 bg-neutral-50 dark:bg-neutral-800/50 p-6 rounded-2xl">
+            <h3 className="text-lg font-semibold mb-4 text-neutral-900 dark:text-white">Réflexions guidées</h3>
+            <ul className="space-y-3 text-neutral-700 dark:text-neutral-300">
+              <li>• Quand avez-vous ressenti pour la dernière fois que vous ne méritiez pas vos succès ?</li>
+              <li>• Quelles preuves objectives pouvez-vous opposer à ces pensées ?</li>
+              <li>• Quelle petite réussite personnelle pourriez-vous célébrer aujourd'hui ?</li>
+              <li>• Quelle personne de confiance pourriez-vous solliciter pour un feedback objectif ?</li>
+              <li>• Comment parleriez-vous à un ami vivant la même situation ?</li>
+            </ul>
+          </div>
+
+          <h2>Conclusion : transformer l'imposteur en allié</h2>
+          
+          <p>
+            Le syndrome de l'imposteur n'est pas une fatalité, mais une <strong>illusion cognitive</strong> qu'il est possible de déconstruire. C'est même, paradoxalement, le signe d'une conscience élevée de vos responsabilités et d'une exigence personnelle qui, bien canalisée, devient un moteur d'excellence.
+          </p>
+
+          <p>
+            En appliquant ces 6 stratégies avec constance et bienveillance envers vous-même, vous transformerez progressivement ce sentiment paralysant en <strong>moteur d'évolution personnelle</strong>.
+          </p>
+
+          <blockquote>
+            <p>"La compétence sans confiance est comme un moteur sans carburant - elle ne vous mènera nulle part." - Anonymous</p>
+          </blockquote>
+
+          {/* CTA principal vers newsletter */}
+          <div className="not-prose my-12 bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-2xl text-white text-center">
+            <h3 className="text-2xl font-bold mb-4">Libérez votre véritable potentiel</h3>
+            <p className="text-lg mb-6 opacity-90">
+              Rejoignez +10 000 lecteurs qui reçoivent chaque semaine nos outils pratiques et insights neuroscientifiques pour développer une confiance authentique et durable.
+            </p>
+            <Link 
+              to="/#newsletter" 
+              className="inline-flex items-center bg-white text-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-colors shadow-lg"
+            >
+              S'abonner gratuitement
+            </Link>
+            <p className="text-sm mt-3 opacity-75">✓ Gratuit ✓ Désabonnement en 1 clic ✓ Contenu exclusif</p>
+          </div>
+
+          <h2>Questions fréquentes</h2>
+          
+          <div className="not-prose space-y-4">
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-5 rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <summary className="font-semibold cursor-pointer text-neutral-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                Qu'est-ce que le syndrome de l'imposteur exactement ?
+              </summary>
+              <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                C'est un phénomène psychologique où une personne doute de ses accomplissements et a une peur persistante d'être exposée comme une "fraude", malgré des preuves externes de sa compétence.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-5 rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <summary className="font-semibold cursor-pointer text-neutral-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                Qui est concerné par le syndrome de l'imposteur ?
+              </summary>
+              <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                70% des personnes l'expérimentent au moins une fois. Il touche particulièrement les hauts potentiels, les perfectionnistes, et les personnes en transition professionnelle, quel que soit leur niveau d'expertise.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-5 rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <summary className="font-semibold cursor-pointer text-neutral-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                Combien de temps faut-il pour vaincre le syndrome de l'imposteur ?
+              </summary>
+              <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Avec une approche structurée, les premiers progrès apparaissent après 3-4 semaines. Une transformation durable nécessite généralement 2-3 mois de pratique régulière des stratégies proposées.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-5 rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <summary className="font-semibold cursor-pointer text-neutral-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                Le syndrome de l'imposteur est-il lié au perfectionnisme ?
+              </summary>
+              <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Oui, fortement. Le perfectionnisme pathologique maintient des standards impossibles à atteindre, alimentant le sentiment de ne jamais être "assez bon". C'est pourquoi redéfinir la réussite est crucial.
+              </p>
+            </details>
+            
+            <details className="bg-neutral-50 dark:bg-neutral-800 p-5 rounded-lg border border-neutral-200 dark:border-neutral-700">
+              <summary className="font-semibold cursor-pointer text-neutral-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                Quand faut-il consulter un professionnel ?
+              </summary>
+              <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Si le syndrome interfère significativement avec votre fonctionnement quotidien, génère de l'anxiété chronique, ou s'accompagne de symptômes dépressifs, un accompagnement professionnel est recommandé.
+              </p>
+            </details>
+          </div>
+
+          {/* Section liens internes vers articles connexes */}
+          <div className="not-prose my-12 p-6 bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-700 rounded-2xl border border-neutral-200 dark:border-neutral-600">
+            <h3 className="text-xl font-bold mb-4 text-neutral-900 dark:text-white">Continuez votre développement personnel</h3>
+            <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+              Explorez nos autres ressources pour renforcer votre confiance et optimiser votre bien-être psychologique.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link to="/blog/confiance-en-soi-durable" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Construire une confiance durable</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">6 stratégies scientifiques pour développer une estime de soi authentique</p>
+              </Link>
+              
+              <Link to="/blog/surmonter-rejet-social" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Surmonter le rejet social</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Mécanismes psychologiques et stratégies de résilience émotionnelle</p>
+              </Link>
+              
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Libérer des ruminations mentales</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">7 techniques validées pour arrêter les pensées obsessionnelles</p>
+              </Link>
+              
+              <Link to="/habit-tracker" className="block p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">Habit Tracker scientifique</h4>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">Suivez vos progrès avec des insights comportementaux</p>
+              </Link>
+            </div>
+          </div>
+
+          {/* JSON-LD Schema markup pour les rich snippets */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": meta.title,
+              "description": meta.description,
+              "image": `${site}${meta.cover}`,
+              "author": {
+                "@type": "Person",
+                "name": meta.author.name
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "L'Éveil",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": `${site}/logo.png`
+                }
+              },
+              "datePublished": meta.datePublished,
+              "dateModified": meta.dateModified,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": url
+              },
+              "keywords": meta.tags.join(", "),
+              "articleSection": meta.category,
+              "wordCount": "2400"
+            })}
+          </script>
+        </div>
+      </article>
+    </>
+  );
+}
