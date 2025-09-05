@@ -541,155 +541,193 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
   }
 }
-/* ===== CORRECTIF FINAL - ÉLÉMENTS .not-prose DANS LES ARTICLES ===== */
-/* À AJOUTER À LA FIN DE index.css - APRÈS toutes les autres règles */
+/* ===== SOLUTION NUCLÉAIRE - ULTRA SPÉCIFIQUE ===== */
+/* REMPLACEZ tout le bloc "CORRECTIF FINAL" dans votre index.css par ceci */
 
-/* Force les couleurs pour TOUS les éléments, même ceux en .not-prose */
-[data-theme="dark"] .text-blue-600 {
+/* Force BRUTALEMENT les couleurs avec spécificité maximale */
+html[data-theme="dark"] body .text-blue-600,
+html[data-theme="dark"] body div .text-blue-600,
+html[data-theme="dark"] body article .text-blue-600,
+html[data-theme="dark"] body section .text-blue-600,
+html[data-theme="dark"] body .prose .text-blue-600,
+html[data-theme="dark"] body .not-prose .text-blue-600 {
   color: rgb(147 197 253) !important; /* blue-300 */
 }
 
-[data-theme="dark"] .text-blue-700 {
+html[data-theme="dark"] body .text-blue-700,
+html[data-theme="dark"] body div .text-blue-700,
+html[data-theme="dark"] body article .text-blue-700,
+html[data-theme="dark"] body section .text-blue-700,
+html[data-theme="dark"] body .prose .text-blue-700,
+html[data-theme="dark"] body .not-prose .text-blue-700 {
   color: rgb(147 197 253) !important; /* blue-300 */
 }
 
-[data-theme="dark"] .text-blue-800 {
+html[data-theme="dark"] body .text-blue-800,
+html[data-theme="dark"] body div .text-blue-800,
+html[data-theme="dark"] body article .text-blue-800,
+html[data-theme="dark"] body section .text-blue-800,
+html[data-theme="dark"] body .prose .text-blue-800,
+html[data-theme="dark"] body .not-prose .text-blue-800 {
   color: rgb(186 230 253) !important; /* blue-200 */
 }
 
-[data-theme="dark"] .text-indigo-600 {
+html[data-theme="dark"] body .text-indigo-600,
+html[data-theme="dark"] body div .text-indigo-600,
+html[data-theme="dark"] body article .text-indigo-600,
+html[data-theme="dark"] body section .text-indigo-600,
+html[data-theme="dark"] body .prose .text-indigo-600,
+html[data-theme="dark"] body .not-prose .text-indigo-600 {
   color: rgb(165 180 252) !important; /* indigo-300 */
 }
 
-[data-theme="dark"] .text-indigo-700 {
+html[data-theme="dark"] body .text-indigo-700,
+html[data-theme="dark"] body div .text-indigo-700,
+html[data-theme="dark"] body article .text-indigo-700,
+html[data-theme="dark"] body section .text-indigo-700,
+html[data-theme="dark"] body .prose .text-indigo-700,
+html[data-theme="dark"] body .not-prose .text-indigo-700 {
   color: rgb(165 180 252) !important; /* indigo-300 */
 }
 
-[data-theme="dark"] .text-indigo-800 {
+html[data-theme="dark"] body .text-indigo-800,
+html[data-theme="dark"] body div .text-indigo-800,
+html[data-theme="dark"] body article .text-indigo-800,
+html[data-theme="dark"] body section .text-indigo-800,
+html[data-theme="dark"] body .prose .text-indigo-800,
+html[data-theme="dark"] body .not-prose .text-indigo-800 {
   color: rgb(196 181 253) !important; /* indigo-200 */
 }
 
-[data-theme="dark"] .text-green-600 {
+html[data-theme="dark"] body .text-green-600,
+html[data-theme="dark"] body div .text-green-600,
+html[data-theme="dark"] body article .text-green-600,
+html[data-theme="dark"] body section .text-green-600,
+html[data-theme="dark"] body .prose .text-green-600,
+html[data-theme="dark"] body .not-prose .text-green-600 {
   color: rgb(134 239 172) !important; /* green-300 */
 }
 
-[data-theme="dark"] .text-green-700 {
+html[data-theme="dark"] body .text-green-700,
+html[data-theme="dark"] body div .text-green-700,
+html[data-theme="dark"] body article .text-green-700,
+html[data-theme="dark"] body section .text-green-700,
+html[data-theme="dark"] body .prose .text-green-700,
+html[data-theme="dark"] body .not-prose .text-green-700 {
   color: rgb(134 239 172) !important; /* green-300 */
 }
 
-[data-theme="dark"] .text-rose-600 {
+html[data-theme="dark"] body .text-rose-600,
+html[data-theme="dark"] body div .text-rose-600,
+html[data-theme="dark"] body article .text-rose-600,
+html[data-theme="dark"] body section .text-rose-600,
+html[data-theme="dark"] body .prose .text-rose-600,
+html[data-theme="dark"] body .not-prose .text-rose-600 {
   color: rgb(251 113 133) !important; /* rose-300 */
 }
 
-[data-theme="dark"] .text-rose-700 {
+html[data-theme="dark"] body .text-rose-700,
+html[data-theme="dark"] body div .text-rose-700,
+html[data-theme="dark"] body article .text-rose-700,
+html[data-theme="dark"] body section .text-rose-700,
+html[data-theme="dark"] body .prose .text-rose-700,
+html[data-theme="dark"] body .not-prose .text-rose-700 {
   color: rgb(251 113 133) !important; /* rose-300 */
 }
 
-[data-theme="dark"] .text-purple-600 {
+html[data-theme="dark"] body .text-purple-600,
+html[data-theme="dark"] body div .text-purple-600,
+html[data-theme="dark"] body article .text-purple-600,
+html[data-theme="dark"] body section .text-purple-600,
+html[data-theme="dark"] body .prose .text-purple-600,
+html[data-theme="dark"] body .not-prose .text-purple-600 {
   color: rgb(196 181 253) !important; /* purple-300 */
 }
 
-[data-theme="dark"] .text-purple-700 {
+html[data-theme="dark"] body .text-purple-700,
+html[data-theme="dark"] body div .text-purple-700,
+html[data-theme="dark"] body article .text-purple-700,
+html[data-theme="dark"] body section .text-purple-700,
+html[data-theme="dark"] body .prose .text-purple-700,
+html[data-theme="dark"] body .not-prose .text-purple-700 {
   color: rgb(196 181 253) !important; /* purple-300 */
 }
 
-/* ===== CLASSES HOVER ===== */
-[data-theme="dark"] .hover\\:text-blue-600:hover {
+/* ===== HOVER STATES ULTRA-SPÉCIFIQUES ===== */
+html[data-theme="dark"] body .hover\\:text-blue-600:hover,
+html[data-theme="dark"] body div .hover\\:text-blue-600:hover,
+html[data-theme="dark"] body .prose .hover\\:text-blue-600:hover,
+html[data-theme="dark"] body .not-prose .hover\\:text-blue-600:hover {
   color: rgb(147 197 253) !important; /* blue-300 */
 }
 
-[data-theme="dark"] .hover\\:text-blue-700:hover {
-  color: rgb(147 197 253) !important; /* blue-300 */
-}
-
-[data-theme="dark"] .hover\\:text-indigo-600:hover {
+html[data-theme="dark"] body .hover\\:text-indigo-600:hover,
+html[data-theme="dark"] body div .hover\\:text-indigo-600:hover,
+html[data-theme="dark"] body .prose .hover\\:text-indigo-600:hover,
+html[data-theme="dark"] body .not-prose .hover\\:text-indigo-600:hover {
   color: rgb(165 180 252) !important; /* indigo-300 */
 }
 
-[data-theme="dark"] .hover\\:text-indigo-700:hover {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-[data-theme="dark"] .hover\\:text-green-600:hover {
+html[data-theme="dark"] body .hover\\:text-green-600:hover,
+html[data-theme="dark"] body div .hover\\:text-green-600:hover,
+html[data-theme="dark"] body .prose .hover\\:text-green-600:hover,
+html[data-theme="dark"] body .not-prose .hover\\:text-green-600:hover {
   color: rgb(134 239 172) !important; /* green-300 */
 }
 
-[data-theme="dark"] .hover\\:text-rose-600:hover {
-  color: rgb(251 113 133) !important; /* rose-300 */
-}
-
-/* ===== CLASSES DARK: EXPLICITES ===== */
-[data-theme="dark"] .dark\\:text-blue-200 {
-  color: rgb(186 230 253) !important; /* blue-200 */
-}
-
-[data-theme="dark"] .dark\\:text-blue-300 {
+/* ===== CLASSES DARK: EXPLICITES ULTRA-SPÉCIFIQUES ===== */
+html[data-theme="dark"] body .dark\\:text-blue-200,
+html[data-theme="dark"] body .dark\\:text-blue-300,
+html[data-theme="dark"] body .dark\\:text-blue-400,
+html[data-theme="dark"] body .prose .dark\\:text-blue-200,
+html[data-theme="dark"] body .prose .dark\\:text-blue-300,
+html[data-theme="dark"] body .prose .dark\\:text-blue-400,
+html[data-theme="dark"] body .not-prose .dark\\:text-blue-200,
+html[data-theme="dark"] body .not-prose .dark\\:text-blue-300,
+html[data-theme="dark"] body .not-prose .dark\\:text-blue-400 {
   color: rgb(147 197 253) !important; /* blue-300 */
 }
 
-[data-theme="dark"] .dark\\:text-blue-400 {
-  color: rgb(96 165 250) !important; /* blue-400 */
-}
-
-[data-theme="dark"] .dark\\:text-indigo-200 {
-  color: rgb(196 181 253) !important; /* indigo-200 */
-}
-
-[data-theme="dark"] .dark\\:text-indigo-300 {
+html[data-theme="dark"] body .dark\\:text-indigo-200,
+html[data-theme="dark"] body .dark\\:text-indigo-300,
+html[data-theme="dark"] body .dark\\:text-indigo-400,
+html[data-theme="dark"] body .prose .dark\\:text-indigo-200,
+html[data-theme="dark"] body .prose .dark\\:text-indigo-300,
+html[data-theme="dark"] body .prose .dark\\:text-indigo-400,
+html[data-theme="dark"] body .not-prose .dark\\:text-indigo-200,
+html[data-theme="dark"] body .not-prose .dark\\:text-indigo-300,
+html[data-theme="dark"] body .not-prose .dark\\:text-indigo-400 {
   color: rgb(165 180 252) !important; /* indigo-300 */
 }
 
-[data-theme="dark"] .dark\\:text-indigo-400 {
-  color: rgb(129 140 248) !important; /* indigo-400 */
-}
-
-[data-theme="dark"] .dark\\:text-green-300 {
+html[data-theme="dark"] body .dark\\:text-green-300,
+html[data-theme="dark"] body .dark\\:text-green-400,
+html[data-theme="dark"] body .prose .dark\\:text-green-300,
+html[data-theme="dark"] body .prose .dark\\:text-green-400,
+html[data-theme="dark"] body .not-prose .dark\\:text-green-300,
+html[data-theme="dark"] body .not-prose .dark\\:text-green-400 {
   color: rgb(134 239 172) !important; /* green-300 */
 }
 
-[data-theme="dark"] .dark\\:text-green-400 {
-  color: rgb(74 222 128) !important; /* green-400 */
-}
-
-[data-theme="dark"] .dark\\:text-rose-300 {
-  color: rgb(251 113 133) !important; /* rose-300 */
-}
-
-[data-theme="dark"] .dark\\:text-rose-400 {
-  color: rgb(251 113 133) !important; /* rose-400 */
-}
-
-/* ===== MEGA RÈGLE FINALE - ATTRAPE TOUT ===== */
-/* Force TOUTES les couleurs foncées à être claires en mode sombre, peu importe où elles sont */
-[data-theme="dark"] [class*="text-blue-"]:not(.text-blue-50):not(.text-blue-100):not(.text-blue-200):not(.text-blue-300):not(.text-blue-400) {
+/* ===== OPTION NUCLÉAIRE TOTALE - ATTRAPE TOUT ===== */
+html[data-theme="dark"] body *[class*="text-blue-"]:not([class*="text-blue-50"]):not([class*="text-blue-100"]):not([class*="text-blue-200"]):not([class*="text-blue-300"]),
+html[data-theme="dark"] body .prose *[class*="text-blue-"]:not([class*="text-blue-50"]):not([class*="text-blue-100"]):not([class*="text-blue-200"]):not([class*="text-blue-300"]),
+html[data-theme="dark"] body .not-prose *[class*="text-blue-"]:not([class*="text-blue-50"]):not([class*="text-blue-100"]):not([class*="text-blue-200"]):not([class*="text-blue-300"]) {
   color: rgb(147 197 253) !important; /* blue-300 */
 }
 
-[data-theme="dark"] [class*="text-indigo-"]:not(.text-indigo-50):not(.text-indigo-100):not(.text-indigo-200):not(.text-indigo-300):not(.text-indigo-400) {
+html[data-theme="dark"] body *[class*="text-indigo-"]:not([class*="text-indigo-50"]):not([class*="text-indigo-100"]):not([class*="text-indigo-200"]):not([class*="text-indigo-300"]),
+html[data-theme="dark"] body .prose *[class*="text-indigo-"]:not([class*="text-indigo-50"]):not([class*="text-indigo-100"]):not([class*="text-indigo-200"]):not([class*="text-indigo-300"]),
+html[data-theme="dark"] body .not-prose *[class*="text-indigo-"]:not([class*="text-indigo-50"]):not([class*="text-indigo-100"]):not([class*="text-indigo-200"]):not([class*="text-indigo-300"]) {
   color: rgb(165 180 252) !important; /* indigo-300 */
 }
 
-[data-theme="dark"] [class*="text-green-"]:not(.text-green-50):not(.text-green-100):not(.text-green-200):not(.text-green-300):not(.text-green-400) {
-  color: rgb(134 239 172) !important; /* green-300 */
-}
-
-[data-theme="dark"] [class*="text-rose-"]:not(.text-rose-50):not(.text-rose-100):not(.text-rose-200):not(.text-rose-300):not(.text-rose-400) {
-  color: rgb(251 113 133) !important; /* rose-300 */
-}
-
-[data-theme="dark"] [class*="text-purple-"]:not(.text-purple-50):not(.text-purple-100):not(.text-purple-200):not(.text-purple-300):not(.text-purple-400) {
-  color: rgb(196 181 253) !important; /* purple-300 */
-}
-
-/* ===== DEBUG TEMPORAIRE ===== */
-/* Décommentez pour voir tous les éléments avec des couleurs problématiques */
+/* ===== TEST DE DEBUG ===== */
+/* Décommentez pour voir tous les éléments avec bordure rouge */
 /*
-[data-theme="dark"] [class*="text-blue-"],
-[data-theme="dark"] [class*="text-indigo-"],
-[data-theme="dark"] [class*="text-green-"],
-[data-theme="dark"] [class*="text-rose-"],
-[data-theme="dark"] [class*="text-purple-"] {
-  outline: 1px solid yellow !important;
-  outline-offset: 1px;
+html[data-theme="dark"] body *[class*="text-blue-"],
+html[data-theme="dark"] body *[class*="text-indigo-"] {
+  outline: 2px solid red !important;
+  outline-offset: 2px;
 }
 */
