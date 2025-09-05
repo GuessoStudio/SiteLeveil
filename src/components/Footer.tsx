@@ -129,7 +129,7 @@ const Footer = () => {
                 <img 
                   src="/images/guesso-logo.webp" 
                   alt="Guesso Studio" 
-                  className="w-6 h-6 rounded-lg"
+                  className="w-10 h-10 rounded-lg"
                 />
                 <span className="font-medium">Guesso Studio</span>
               </a>
@@ -163,7 +163,7 @@ const Footer = () => {
                 <img 
                   src="/images/guesso-logo.webp" 
                   alt="Guesso Studio" 
-                  className="w-5 h-5 rounded-lg"
+                  className="w-7 h-7 rounded-lg"
                 />
                 <span className="font-medium">Guesso Studio</span>
               </a>

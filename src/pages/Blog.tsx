@@ -64,7 +64,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 8,
       date: "2024-01-15",
-      image: "/images/articles/rejet-social-cover.webp",
+      image: "/images/articles/rejet-social-cover",
       slug: "surmonter-rejet-social",
       featured: true
     },
@@ -75,7 +75,7 @@ const Blog = () => {
       category: "Neurosciences",
       readTime: 12,
       date: "2024-01-12",
-      image: "/images/articles/neuroplasticite-cover.webp",
+      image: "/images/articles/neuroplasticite-cover",
       slug: "neuroplasticite-cerveau"
     },
     {
@@ -85,7 +85,7 @@ const Blog = () => {
       category: "Développement Personnel",
       readTime: 10,
       date: "2024-01-10",
-      image: "/images/articles/confiance-soi-cover.webp",
+      image: "/images/articles/confiance-soi-cover",
       slug: "confiance-en-soi-durable"
     },
     {
@@ -95,7 +95,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 6,
       date: "2025-08-13",
-      image: "/images/articles/dopamine-cover.webp",
+      image: "/images/articles/dopamine-cover",
       slug: "neuro-dopamine-routine"
     },
     {
@@ -105,7 +105,7 @@ const Blog = () => {
       category: "Neurosciences",
       readTime: 12,
       date: "2025-08-28",
-      image: "/images/articles/attention-fragmentee-cover-1200x630.webp",
+      image: "/images/articles/attention-fragmentee-cover-1200x630",
       slug: "attention-fragmentee-concentration-numerique"
     },
     {
@@ -115,7 +115,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 11,
       date: "2025-08-29",
-      image: "/images/articles/rumination-cover.webp",
+      image: "/images/articles/rumination-cover",
       slug: "rumination-mentale-pensees-obsessionnelles"
     },
     {
@@ -125,7 +125,7 @@ const Blog = () => {
       category: "Psychologie",
       readTime: 13,
       date: "2025-08-30",
-      image: "/images/articles/procrastination-brain-conflict.webp",
+      image: "/images/articles/procrastination-brain-conflict",
       slug: "procrastination-cerveau-agir-neurosciences"
     },
     {
@@ -135,7 +135,7 @@ const Blog = () => {
       category: "Relations Humaines",
       readTime: 10,
       date: "2025-08-30",
-      image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630.webp" ,
+      image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630" ,
       slug: "methode-acr-repondre-aux-bonnes-nouvelles"
     }
   ]
