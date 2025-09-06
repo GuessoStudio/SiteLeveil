@@ -81,7 +81,7 @@ export default function SommeilReparateur() {
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-8">
             {meta.tags.slice(0, 4).map((tag) => (
-              <span key={tag} className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">
+              <span key={tag} className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-full text-sm">
                 #{tag.replace(/\s+/g, '')}
               </span>
             ))}
@@ -115,7 +115,7 @@ export default function SommeilReparateur() {
           {/* TL;DR Section */}
           <div className="not-prose mb-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-2xl">
             <h2 className="text-xl font-bold text-center mb-6 text-neutral-900 dark:text-white">
-              🚀 TL;DR - Ce que tu vas apprendre
+              🚀 Ce que tu vas apprendre
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="flex items-start gap-2">
@@ -525,13 +525,6 @@ export default function SommeilReparateur() {
 
           <h2>Programme de transformation 8 semaines</h2>
 
-          <img
-            src="/images/articles/programme-8-semaines-sommeil.webp"
-            alt="Programme 8 semaines transformation sommeil - Timeline visuelle avec étapes objectifs et résultats attendus"
-            className="rounded-xl shadow-lg max-w-full h-auto my-8"
-            loading="lazy"
-            decoding="async"
-          />
           <p className="text-center text-sm text-neutral-600 dark:text-neutral-400 -mt-4 mb-8">
             <em>Votre roadmap vers un sommeil réparateur : 8 étapes pour transformer vos nuits</em>
           </p>
@@ -580,14 +573,14 @@ export default function SommeilReparateur() {
             <li><strong>Résultat attendu :</strong> Routine solide et durable</li>
           </ul>
 
-          <div className="not-prose my-12 bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-2xl text-white text-center">
+          <div className="not-prose my-12 bg-gradient-to-r from-indigo-600 to-purple-600 p-8 rounded-2xl text-white text-center">
             <h3 className="text-2xl font-bold mb-4">📥 Passe à l'action maintenant</h3>
             <p className="text-lg mb-6 opacity-90">
               🎁 <strong>BONUS EXCLUSIF :</strong> Télécharge la checklist PDF des 7 stratégies pour l'avoir sur ta table de nuit. Format pratique, résumé visuel, à consulter chaque soir.
             </p>
             <Link 
               to="/#newsletter" 
-              className="inline-flex items-center bg-white text-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-colors shadow-lg"
+              className="inline-flex items-center bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-50 transition-colors shadow-lg"
             >
               JE TÉLÉCHARGE LA CHECKLIST GRATUITE
             </Link>
@@ -696,7 +689,7 @@ export default function SommeilReparateur() {
           <div className="not-prose my-8 text-center">
             <Link 
               to="/#newsletter" 
-              className="inline-flex items-center bg-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors shadow-lg"
+              className="inline-flex items-center bg-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-colors shadow-lg"
             >
               JE VEUX OPTIMISER MON SOMMEIL
             </Link>
