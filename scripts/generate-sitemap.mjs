@@ -10,7 +10,9 @@ const articles = [
   "/blog/rumination-mentale-pensees-obsessionnelles",
   "/blog/attention-fragmentee-concentration-numerique",
   "/blog/procrastination-cerveau-agir-neurosciences",
-  "/blog/methode-acr-repondre-aux-bonnes-nouvelles"
+  "/blog/methode-acr-repondre-aux-bonnes-nouvelles",
+  "/blog/syndrome-imposteur-solutions",
+  "/blog/sommeil-reparateur-7-strategies-validees"
 ];
 
 const urls = [...staticRoutes, ...articles]

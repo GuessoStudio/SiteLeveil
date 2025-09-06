@@ -148,6 +148,17 @@ const Blog = () => {
   image: "/images/articles/syndrome-imposteur-cover",
   slug: "syndrome-imposteur-solutions",
   featured: true // Si tu veux le mettre en avant
+},
+{
+  id: 10, // Prendre le prochain ID disponible
+  title: "Sommeil réparateur : 7 stratégies validées pour booster énergie & mémoire",
+  excerpt: "30% des adultes souffrent de troubles du sommeil. Explorez les mécanismes neuroscientifiques et 7 stratégies scientifiques pour une récupération optimale.",
+  category: "Neurosciences",
+  readTime: 12,
+  date: "2025-09-06",
+  image: "/images/articles/sommeil-reparateur-cover",
+  slug: "sommeil-reparateur-7-strategies-validees",
+  featured: true // Si tu veux le mettre en avant
 }
   ]
 

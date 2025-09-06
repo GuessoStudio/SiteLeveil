@@ -51,4 +51,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/rumination-mentale-pensees-obsessionnelles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/attention-fragmentee-concentration-numerique</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/procrastination-cerveau-agir-neurosciences</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/methode-acr-repondre-aux-bonnes-nouvelles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/syndrome-imposteur-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/sommeil-reparateur-7-strategies-validees</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
