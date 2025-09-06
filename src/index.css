@@ -541,193 +541,84 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
   }
 }
-/* ===== SOLUTION NUCLÉAIRE - ULTRA SPÉCIFIQUE ===== */
-/* REMPLACEZ tout le bloc "CORRECTIF FINAL" dans votre index.css par ceci */
-
-/* Force BRUTALEMENT les couleurs avec spécificité maximale */
-html[data-theme="dark"] body .text-blue-600,
-html[data-theme="dark"] body div .text-blue-600,
-html[data-theme="dark"] body article .text-blue-600,
-html[data-theme="dark"] body section .text-blue-600,
-html[data-theme="dark"] body .prose .text-blue-600,
-html[data-theme="dark"] body .not-prose .text-blue-600 {
-  color: rgb(147 197 253) !important; /* blue-300 */
+/* ===== SOLUTION DÉFINITIVE - @layer utilities ===== */
+@layer utilities {
+  /* Force les couleurs APRÈS Tailwind */
+  [data-theme="dark"] .text-blue-500 {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .text-blue-600 {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .text-blue-700 {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .text-blue-800 {
+    color: rgb(186 230 253) !important;
+  }
+  
+  [data-theme="dark"] .text-indigo-500 {
+    color: rgb(165 180 252) !important;
+  }
+  
+  [data-theme="dark"] .text-indigo-600 {
+    color: rgb(165 180 252) !important;
+  }
+  
+  [data-theme="dark"] .text-indigo-700 {
+    color: rgb(165 180 252) !important;
+  }
+  
+  [data-theme="dark"] .text-indigo-800 {
+    color: rgb(196 181 253) !important;
+  }
+  
+  /* Hover states */
+  [data-theme="dark"] .hover\\:text-blue-400:hover {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .hover\\:text-blue-500:hover {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .hover\\:text-blue-600:hover {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .hover\\:text-indigo-600:hover {
+    color: rgb(165 180 252) !important;
+  }
+  
+  /* Classes dark: explicites */
+  [data-theme="dark"] .dark\\:text-blue-200 {
+    color: rgb(186 230 253) !important;
+  }
+  
+  [data-theme="dark"] .dark\\:text-blue-300 {
+    color: rgb(147 197 253) !important;
+  }
+  
+  [data-theme="dark"] .dark\\:text-blue-400 {
+    color: rgb(96 165 250) !important;
+  }
+  
+  [data-theme="dark"] .dark\\:text-indigo-200 {
+    color: rgb(196 181 253) !important;
+  }
+  
+  [data-theme="dark"] .dark\\:text-indigo-300 {
+    color: rgb(165 180 252) !important;
+  }
+  
+  [data-theme="dark"] .dark\\:text-indigo-400 {
+    color: rgb(129 140 248) !important;
+  }
+  
+  [data-theme="dark"] .dark\\:text-green-400 {
+    color: rgb(74 222 128) !important;
+  }
 }
-
-html[data-theme="dark"] body .text-blue-700,
-html[data-theme="dark"] body div .text-blue-700,
-html[data-theme="dark"] body article .text-blue-700,
-html[data-theme="dark"] body section .text-blue-700,
-html[data-theme="dark"] body .prose .text-blue-700,
-html[data-theme="dark"] body .not-prose .text-blue-700 {
-  color: rgb(147 197 253) !important; /* blue-300 */
-}
-
-html[data-theme="dark"] body .text-blue-800,
-html[data-theme="dark"] body div .text-blue-800,
-html[data-theme="dark"] body article .text-blue-800,
-html[data-theme="dark"] body section .text-blue-800,
-html[data-theme="dark"] body .prose .text-blue-800,
-html[data-theme="dark"] body .not-prose .text-blue-800 {
-  color: rgb(186 230 253) !important; /* blue-200 */
-}
-
-html[data-theme="dark"] body .text-indigo-600,
-html[data-theme="dark"] body div .text-indigo-600,
-html[data-theme="dark"] body article .text-indigo-600,
-html[data-theme="dark"] body section .text-indigo-600,
-html[data-theme="dark"] body .prose .text-indigo-600,
-html[data-theme="dark"] body .not-prose .text-indigo-600 {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-html[data-theme="dark"] body .text-indigo-700,
-html[data-theme="dark"] body div .text-indigo-700,
-html[data-theme="dark"] body article .text-indigo-700,
-html[data-theme="dark"] body section .text-indigo-700,
-html[data-theme="dark"] body .prose .text-indigo-700,
-html[data-theme="dark"] body .not-prose .text-indigo-700 {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-html[data-theme="dark"] body .text-indigo-800,
-html[data-theme="dark"] body div .text-indigo-800,
-html[data-theme="dark"] body article .text-indigo-800,
-html[data-theme="dark"] body section .text-indigo-800,
-html[data-theme="dark"] body .prose .text-indigo-800,
-html[data-theme="dark"] body .not-prose .text-indigo-800 {
-  color: rgb(196 181 253) !important; /* indigo-200 */
-}
-
-html[data-theme="dark"] body .text-green-600,
-html[data-theme="dark"] body div .text-green-600,
-html[data-theme="dark"] body article .text-green-600,
-html[data-theme="dark"] body section .text-green-600,
-html[data-theme="dark"] body .prose .text-green-600,
-html[data-theme="dark"] body .not-prose .text-green-600 {
-  color: rgb(134 239 172) !important; /* green-300 */
-}
-
-html[data-theme="dark"] body .text-green-700,
-html[data-theme="dark"] body div .text-green-700,
-html[data-theme="dark"] body article .text-green-700,
-html[data-theme="dark"] body section .text-green-700,
-html[data-theme="dark"] body .prose .text-green-700,
-html[data-theme="dark"] body .not-prose .text-green-700 {
-  color: rgb(134 239 172) !important; /* green-300 */
-}
-
-html[data-theme="dark"] body .text-rose-600,
-html[data-theme="dark"] body div .text-rose-600,
-html[data-theme="dark"] body article .text-rose-600,
-html[data-theme="dark"] body section .text-rose-600,
-html[data-theme="dark"] body .prose .text-rose-600,
-html[data-theme="dark"] body .not-prose .text-rose-600 {
-  color: rgb(251 113 133) !important; /* rose-300 */
-}
-
-html[data-theme="dark"] body .text-rose-700,
-html[data-theme="dark"] body div .text-rose-700,
-html[data-theme="dark"] body article .text-rose-700,
-html[data-theme="dark"] body section .text-rose-700,
-html[data-theme="dark"] body .prose .text-rose-700,
-html[data-theme="dark"] body .not-prose .text-rose-700 {
-  color: rgb(251 113 133) !important; /* rose-300 */
-}
-
-html[data-theme="dark"] body .text-purple-600,
-html[data-theme="dark"] body div .text-purple-600,
-html[data-theme="dark"] body article .text-purple-600,
-html[data-theme="dark"] body section .text-purple-600,
-html[data-theme="dark"] body .prose .text-purple-600,
-html[data-theme="dark"] body .not-prose .text-purple-600 {
-  color: rgb(196 181 253) !important; /* purple-300 */
-}
-
-html[data-theme="dark"] body .text-purple-700,
-html[data-theme="dark"] body div .text-purple-700,
-html[data-theme="dark"] body article .text-purple-700,
-html[data-theme="dark"] body section .text-purple-700,
-html[data-theme="dark"] body .prose .text-purple-700,
-html[data-theme="dark"] body .not-prose .text-purple-700 {
-  color: rgb(196 181 253) !important; /* purple-300 */
-}
-
-/* ===== HOVER STATES ULTRA-SPÉCIFIQUES ===== */
-html[data-theme="dark"] body .hover\\:text-blue-600:hover,
-html[data-theme="dark"] body div .hover\\:text-blue-600:hover,
-html[data-theme="dark"] body .prose .hover\\:text-blue-600:hover,
-html[data-theme="dark"] body .not-prose .hover\\:text-blue-600:hover {
-  color: rgb(147 197 253) !important; /* blue-300 */
-}
-
-html[data-theme="dark"] body .hover\\:text-indigo-600:hover,
-html[data-theme="dark"] body div .hover\\:text-indigo-600:hover,
-html[data-theme="dark"] body .prose .hover\\:text-indigo-600:hover,
-html[data-theme="dark"] body .not-prose .hover\\:text-indigo-600:hover {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-html[data-theme="dark"] body .hover\\:text-green-600:hover,
-html[data-theme="dark"] body div .hover\\:text-green-600:hover,
-html[data-theme="dark"] body .prose .hover\\:text-green-600:hover,
-html[data-theme="dark"] body .not-prose .hover\\:text-green-600:hover {
-  color: rgb(134 239 172) !important; /* green-300 */
-}
-
-/* ===== CLASSES DARK: EXPLICITES ULTRA-SPÉCIFIQUES ===== */
-html[data-theme="dark"] body .dark\\:text-blue-200,
-html[data-theme="dark"] body .dark\\:text-blue-300,
-html[data-theme="dark"] body .dark\\:text-blue-400,
-html[data-theme="dark"] body .prose .dark\\:text-blue-200,
-html[data-theme="dark"] body .prose .dark\\:text-blue-300,
-html[data-theme="dark"] body .prose .dark\\:text-blue-400,
-html[data-theme="dark"] body .not-prose .dark\\:text-blue-200,
-html[data-theme="dark"] body .not-prose .dark\\:text-blue-300,
-html[data-theme="dark"] body .not-prose .dark\\:text-blue-400 {
-  color: rgb(147 197 253) !important; /* blue-300 */
-}
-
-html[data-theme="dark"] body .dark\\:text-indigo-200,
-html[data-theme="dark"] body .dark\\:text-indigo-300,
-html[data-theme="dark"] body .dark\\:text-indigo-400,
-html[data-theme="dark"] body .prose .dark\\:text-indigo-200,
-html[data-theme="dark"] body .prose .dark\\:text-indigo-300,
-html[data-theme="dark"] body .prose .dark\\:text-indigo-400,
-html[data-theme="dark"] body .not-prose .dark\\:text-indigo-200,
-html[data-theme="dark"] body .not-prose .dark\\:text-indigo-300,
-html[data-theme="dark"] body .not-prose .dark\\:text-indigo-400 {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-html[data-theme="dark"] body .dark\\:text-green-300,
-html[data-theme="dark"] body .dark\\:text-green-400,
-html[data-theme="dark"] body .prose .dark\\:text-green-300,
-html[data-theme="dark"] body .prose .dark\\:text-green-400,
-html[data-theme="dark"] body .not-prose .dark\\:text-green-300,
-html[data-theme="dark"] body .not-prose .dark\\:text-green-400 {
-  color: rgb(134 239 172) !important; /* green-300 */
-}
-
-/* ===== OPTION NUCLÉAIRE TOTALE - ATTRAPE TOUT ===== */
-html[data-theme="dark"] body *[class*="text-blue-"]:not([class*="text-blue-50"]):not([class*="text-blue-100"]):not([class*="text-blue-200"]):not([class*="text-blue-300"]),
-html[data-theme="dark"] body .prose *[class*="text-blue-"]:not([class*="text-blue-50"]):not([class*="text-blue-100"]):not([class*="text-blue-200"]):not([class*="text-blue-300"]),
-html[data-theme="dark"] body .not-prose *[class*="text-blue-"]:not([class*="text-blue-50"]):not([class*="text-blue-100"]):not([class*="text-blue-200"]):not([class*="text-blue-300"]) {
-  color: rgb(147 197 253) !important; /* blue-300 */
-}
-
-html[data-theme="dark"] body *[class*="text-indigo-"]:not([class*="text-indigo-50"]):not([class*="text-indigo-100"]):not([class*="text-indigo-200"]):not([class*="text-indigo-300"]),
-html[data-theme="dark"] body .prose *[class*="text-indigo-"]:not([class*="text-indigo-50"]):not([class*="text-indigo-100"]):not([class*="text-indigo-200"]):not([class*="text-indigo-300"]),
-html[data-theme="dark"] body .not-prose *[class*="text-indigo-"]:not([class*="text-indigo-50"]):not([class*="text-indigo-100"]):not([class*="text-indigo-200"]):not([class*="text-indigo-300"]) {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-/* ===== TEST DE DEBUG ===== */
-/* Décommentez pour voir tous les éléments avec bordure rouge */
-/*
-html[data-theme="dark"] body *[class*="text-blue-"],
-html[data-theme="dark"] body *[class*="text-indigo-"] {
-  outline: 2px solid red !important;
-  outline-offset: 2px;
-}
-*/
