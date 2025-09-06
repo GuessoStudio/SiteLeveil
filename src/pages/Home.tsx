@@ -343,26 +343,40 @@ const Home = () => {
       </section>
 
 
-{/* Domaines d'expertise */}
-{/* Domaines d'expertise - VERSION POINT 1 AMÉLIORÉE */}
+{/* Point 2 : Domaines d'expertise - CARTES REPENSÉES DESKTOP & MOBILE */}
 <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
-  {/* Particules d'arrière-plan discrètes */}
+  {/* Background patterns géométriques - responsive */}
+  <div className="absolute inset-0 opacity-20 md:opacity-30">
+    <div className="absolute top-10 left-4 md:left-10 w-16 md:w-32 h-16 md:h-32 border border-indigo-200/20 dark:border-indigo-400/10 rounded-full animate-pulse"></div>
+    <div className="absolute top-32 md:top-40 right-4 md:right-20 w-12 md:w-24 h-12 md:h-24 border border-purple-200/20 dark:border-purple-400/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <div className="absolute bottom-20 left-1/4 w-8 md:w-16 h-8 md:h-16 border border-emerald-200/20 dark:border-emerald-400/10 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <div className="absolute bottom-32 md:bottom-40 right-1/3 w-10 md:w-20 h-10 md:h-20 border border-pink-200/20 dark:border-pink-400/10 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+  </div>
+
+  {/* Particules - réduites sur mobile */}
   <div className="absolute inset-0">
-    <DiscreteParticles count={15} />
+    <div className="hidden md:block">
+      <DiscreteParticles count={20} />
+    </div>
+    <div className="block md:hidden">
+      <DiscreteParticles count={8} />
+    </div>
   </div>
 
   <div className="container mx-auto px-4 relative z-10">
-    <div className="text-center mb-16 animate-in fade-in duration-700">
-      <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+    <div className="text-center mb-12 md:mb-16 animate-in fade-in duration-700">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
         Explorez nos domaines d'expertise
       </h2>
-      <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+      <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
         Des contenus scientifiquement fondés pour votre développement personnel et professionnel
       </p>
     </div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* NEUROSCIENCES - Carte avec nouveau système de couleurs */}
+    {/* Grid responsive optimisé */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      
+      {/* NEUROSCIENCES - Card responsive */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '200ms' }}
@@ -373,53 +387,81 @@ const Home = () => {
           aria-label="Voir tous les articles de Neurosciences"
         >
           <div className="relative bg-gradient-neurosciences-soft hover:bg-gradient-neurosciences-hover 
-                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-neurosciences
-                          transform hover:-translate-y-4 hover:scale-105
-                          focus-ring overflow-hidden border border-white/10">
+                          glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-neurosciences
+                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          focus-ring overflow-hidden border border-white/10
+                          touch-manipulation">
             
-            {/* Background gradient overlay au hover */}
-            <div className="absolute inset-0 bg-gradient-neurosciences opacity-0 group-hover:opacity-10 
+            {/* Background gradient overlay - plus subtil sur mobile */}
+            <div className="absolute inset-0 bg-gradient-neurosciences opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
                             transition-opacity duration-400 rounded-2xl"></div>
             
-            {/* Icône améliorée avec gradient */}
+            {/* Pattern géométrique subtil en arrière-plan */}
+            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+              <svg width="40" height="40" viewBox="0 0 40 40" className="text-current">
+                <path d="M20 8 L32 20 L20 32 L8 20 Z" stroke="currentColor" strokeWidth="1" fill="none" className="text-indigo-400"/>
+                <circle cx="20" cy="20" r="6" stroke="currentColor" strokeWidth="1" fill="none" className="text-indigo-500"/>
+              </svg>
+            </div>
+            
+            {/* Icône améliorée avec micro-animations */}
             <div className="relative z-10 mb-6">
-              <div className="w-16 h-16 bg-gradient-neurosciences rounded-xl 
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-neurosciences rounded-xl 
                               flex items-center justify-center shadow-glow-neurosciences
-                              group-hover:animate-glow-pulse group-hover:scale-110 
-                              transition-all duration-300">
-                <Brain className="w-8 h-8 text-white drop-shadow-lg" />
+                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
+                              transition-all duration-300 relative overflow-hidden">
+                <Brain className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10" />
+                
+                {/* Ondulation au clic/touch */}
+                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
+                                transition-transform duration-200 ease-out md:hidden"></div>
               </div>
+              
+              {/* Particules flottantes autour de l'icône - desktop only */}
+              <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-indigo-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.2s' }}></div>
+              <div className="hidden md:block absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-blue-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.4s' }}></div>
             </div>
 
-            {/* Contenu */}
+            {/* Contenu avec animations texte */}
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-neurosciences transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-neurosciences transition-all duration-300
+                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
                 Neurosciences
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+              <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                 Découvrez comment votre cerveau fonctionne et comment l'optimiser
               </p>
             </div>
 
-            {/* Effet de brillance au hover */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+            {/* Barre de progression interactive - responsive */}
+            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-neurosciences 
+                            group-hover:w-full transition-all duration-500 ease-out"></div>
+
+            {/* Effet de brillance - adapté mobile */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
                             bg-gradient-to-r from-transparent via-white to-transparent
                             transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-700 ease-out pointer-events-none"></div>
+                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
             
-            {/* Badge "Voir articles" qui apparaît au hover */}
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            {/* Badge dynamique - taille responsive */}
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
+                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="bg-gradient-neurosciences text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
-                Voir articles
+                <span className="hidden sm:inline">Voir articles</span>
+                <span className="sm:hidden">Voir</span>
               </div>
             </div>
           </div>
         </Link>
       </div>
 
-      {/* PSYCHOLOGIE - Carte améliorée */}
+      {/* PSYCHOLOGIE - Card responsive */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '350ms' }}
@@ -430,48 +472,74 @@ const Home = () => {
           aria-label="Voir tous les articles de Psychologie"
         >
           <div className="relative bg-gradient-psychologie-soft hover:bg-gradient-psychologie-hover 
-                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-psychologie
-                          transform hover:-translate-y-4 hover:scale-105
-                          focus-ring overflow-hidden border border-white/10">
+                          glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-psychologie
+                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          focus-ring overflow-hidden border border-white/10
+                          touch-manipulation">
             
-            <div className="absolute inset-0 bg-gradient-psychologie opacity-0 group-hover:opacity-10 
+            <div className="absolute inset-0 bg-gradient-psychologie opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
                             transition-opacity duration-400 rounded-2xl"></div>
             
+            {/* Pattern coeur stylisé */}
+            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+              <svg width="40" height="40" viewBox="0 0 40 40" className="text-pink-400">
+                <path d="M20 32 C15 27, 8 20, 8 14 C8 10, 12 8, 16 10 C18 11, 20 13, 20 13 C20 13, 22 11, 24 10 C28 8, 32 10, 32 14 C32 20, 25 27, 20 32 Z" 
+                      stroke="currentColor" strokeWidth="1" fill="none"/>
+              </svg>
+            </div>
+            
             <div className="relative z-10 mb-6">
-              <div className="w-16 h-16 bg-gradient-psychologie rounded-xl 
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-psychologie rounded-xl 
                               flex items-center justify-center shadow-glow-psychologie
-                              group-hover:animate-glow-pulse group-hover:scale-110 
-                              transition-all duration-300">
-                <Heart className="w-8 h-8 text-white drop-shadow-lg" />
+                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
+                              transition-all duration-300 relative overflow-hidden">
+                <Heart className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10 
+                                 group-hover:animate-pulse" />
+                
+                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
+                                transition-transform duration-200 ease-out md:hidden"></div>
               </div>
+              
+              <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-pink-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.1s' }}></div>
+              <div className="hidden md:block absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-rose-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.3s' }}></div>
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-psychologie transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-psychologie transition-all duration-300
+                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
                 Psychologie
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+              <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                 Comprenez vos émotions et développez votre intelligence émotionnelle
               </p>
             </div>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-psychologie 
+                            group-hover:w-full transition-all duration-500 ease-out"></div>
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
                             bg-gradient-to-r from-transparent via-white to-transparent
                             transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-700 ease-out pointer-events-none"></div>
+                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
             
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
+                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="bg-gradient-psychologie text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
-                Voir articles
+                <span className="hidden sm:inline">Voir articles</span>
+                <span className="sm:hidden">Voir</span>
               </div>
             </div>
           </div>
         </Link>
       </div>
 
-      {/* DÉVELOPPEMENT PERSONNEL - Carte améliorée */}
+      {/* DÉVELOPPEMENT PERSONNEL - Card responsive */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '500ms' }}
@@ -482,48 +550,75 @@ const Home = () => {
           aria-label="Voir tous les articles de Développement Personnel"
         >
           <div className="relative bg-gradient-developpement-soft hover:bg-gradient-developpement-hover 
-                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-developpement
-                          transform hover:-translate-y-4 hover:scale-105
-                          focus-ring overflow-hidden border border-white/10">
+                          glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-developpement
+                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          focus-ring overflow-hidden border border-white/10
+                          touch-manipulation">
             
-            <div className="absolute inset-0 bg-gradient-developpement opacity-0 group-hover:opacity-10 
+            <div className="absolute inset-0 bg-gradient-developpement opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
                             transition-opacity duration-400 rounded-2xl"></div>
             
+            {/* Pattern croissance */}
+            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+              <svg width="40" height="40" viewBox="0 0 40 40" className="text-emerald-400">
+                <path d="M8 32 L16 24 L24 28 L32 8" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="32" cy="8" r="3" fill="currentColor"/>
+                <circle cx="24" cy="28" r="2" fill="currentColor"/>
+                <circle cx="16" cy="24" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            
             <div className="relative z-10 mb-6">
-              <div className="w-16 h-16 bg-gradient-developpement rounded-xl 
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-developpement rounded-xl 
                               flex items-center justify-center shadow-glow-developpement
-                              group-hover:animate-glow-pulse group-hover:scale-110 
-                              transition-all duration-300">
-                <TrendingUp className="w-8 h-8 text-white drop-shadow-lg" />
+                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
+                              transition-all duration-300 relative overflow-hidden">
+                <TrendingUp className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10" />
+                
+                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
+                                transition-transform duration-200 ease-out md:hidden"></div>
               </div>
+              
+              <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.2s' }}></div>
+              <div className="hidden md:block absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-green-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.4s' }}></div>
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-developpement transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-developpement transition-all duration-300
+                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
                 Développement Personnel
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+              <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                 Techniques pratiques pour votre croissance personnelle et professionnelle
               </p>
             </div>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-developpement 
+                            group-hover:w-full transition-all duration-500 ease-out"></div>
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
                             bg-gradient-to-r from-transparent via-white to-transparent
                             transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-700 ease-out pointer-events-none"></div>
+                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
             
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
+                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="bg-gradient-developpement text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
-                Voir articles
+                <span className="hidden sm:inline">Voir articles</span>
+                <span className="sm:hidden">Voir</span>
               </div>
             </div>
           </div>
         </Link>
       </div>
 
-      {/* RELATIONS HUMAINES - Carte améliorée */}
+      {/* RELATIONS HUMAINES - Card responsive */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '650ms' }}
@@ -534,52 +629,81 @@ const Home = () => {
           aria-label="Voir tous les articles de Relations Humaines"
         >
           <div className="relative bg-gradient-relations-soft hover:bg-gradient-relations-hover 
-                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-relations
-                          transform hover:-translate-y-4 hover:scale-105
-                          focus-ring overflow-hidden border border-white/10">
+                          glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-relations
+                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          focus-ring overflow-hidden border border-white/10
+                          touch-manipulation">
             
-            <div className="absolute inset-0 bg-gradient-relations opacity-0 group-hover:opacity-10 
+            <div className="absolute inset-0 bg-gradient-relations opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
                             transition-opacity duration-400 rounded-2xl"></div>
             
+            {/* Pattern connexions */}
+            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+              <svg width="40" height="40" viewBox="0 0 40 40" className="text-purple-400">
+                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <circle cx="28" cy="12" r="4" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <circle cx="20" cy="28" r="4" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <path d="M16 12 L24 12 M16 15 L17 25 M24 15 L23 25" stroke="currentColor" strokeWidth="1"/>
+              </svg>
+            </div>
+            
             <div className="relative z-10 mb-6">
-              <div className="w-16 h-16 bg-gradient-relations rounded-xl 
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-relations rounded-xl 
                               flex items-center justify-center shadow-glow-relations
-                              group-hover:animate-glow-pulse group-hover:scale-110 
-                              transition-all duration-300">
-                <Users className="w-8 h-8 text-white drop-shadow-lg" />
+                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
+                              transition-all duration-300 relative overflow-hidden">
+                <Users className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10" />
+                
+                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
+                                transition-transform duration-200 ease-out md:hidden"></div>
               </div>
+              
+              <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-purple-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.1s' }}></div>
+              <div className="hidden md:block absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-violet-400 rounded-full 
+                              opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
+                   style={{ animationDelay: '0.3s' }}></div>
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-relations transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-relations transition-all duration-300
+                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
                 Relations Humaines
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+              <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                 Améliorez vos relations et votre communication interpersonnelle
               </p>
             </div>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-relations 
+                            group-hover:w-full transition-all duration-500 ease-out"></div>
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
                             bg-gradient-to-r from-transparent via-white to-transparent
                             transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-700 ease-out pointer-events-none"></div>
+                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
             
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
+                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="bg-gradient-relations text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
-                Voir articles
+                <span className="hidden sm:inline">Voir articles</span>
+                <span className="sm:hidden">Voir</span>
               </div>
             </div>
           </div>
         </Link>
       </div>
+
     </div>
     
-    {/* Message informatif */}
-    <div className="text-center mt-12 animate-in fade-in duration-700" style={{ animationDelay: '800ms' }}>
-      <p className="text-sm text-neutral-500 dark:text-neutral-400">
-        Cliquez sur une catégorie pour voir tous les articles correspondants
+    {/* Message informatif - responsive */}
+    <div className="text-center mt-8 md:mt-12 animate-in fade-in duration-700" style={{ animationDelay: '800ms' }}>
+      <p className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400">
+        <span className="hidden sm:inline">Cliquez sur une catégorie pour voir tous les articles correspondants</span>
+        <span className="sm:hidden">Touchez une catégorie pour voir les articles</span>
       </p>
     </div>
   </div>
