@@ -470,3 +470,27 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow-x: hidden;
 }
+ /* Style amélioré pour les éléments strong */
+  .prose strong,
+  strong {
+    font-weight: 600;
+    color: #1d4ed8; /* blue-700 - mode clair */
+  }
+  
+  [data-theme="dark"] .prose strong,
+  [data-theme="dark"] strong {
+    color: #60a5fa !important; /* blue-400 - mode sombre, plus clair que avant */
+  }
+  
+  /* Effet subtil au hover pour les strong */
+  .prose strong:hover,
+  strong:hover {
+    color: #1e40af; /* blue-800 - mode clair */
+    transition: color 0.2s ease;
+  }
+  
+  [data-theme="dark"] .prose strong:hover,
+  [data-theme="dark"] strong:hover {
+    color: #93c5fd !important; /* blue-300 - mode sombre */
+    transition: color 0.2s ease;
+  }
