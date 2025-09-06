@@ -344,6 +344,7 @@ const Home = () => {
 
 
 {/* Domaines d'expertise */}
+{/* Domaines d'expertise - VERSION POINT 1 AMÉLIORÉE */}
 <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
   {/* Particules d'arrière-plan discrètes */}
   <div className="absolute inset-0">
@@ -361,51 +362,218 @@ const Home = () => {
     </div>
 
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {CATEGORIES.map((category, index) => (
-        <div 
-          key={index}
-          className="animate-in slide-in-from-bottom-4 duration-700"
-          style={{ animationDelay: `${200 + index * 150}ms` }}
+      {/* NEUROSCIENCES - Carte avec nouveau système de couleurs */}
+      <div 
+        className="animate-in slide-in-from-bottom-4 duration-700"
+        style={{ animationDelay: '200ms' }}
+      >
+        <Link
+          to="/blog?category=Neurosciences"
+          className="group block enhanced-transition"
+          aria-label="Voir tous les articles de Neurosciences"
         >
-          <Link
-            to={`/blog?category=${encodeURIComponent(category.title)}`}
-            className="group bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all
-                       duration-500 transform hover:-translate-y-4 hover:scale-105 border border-neutral-100 dark:border-neutral-700
-                       focus-ring block hover:bg-gradient-to-br hover:from-white hover:to-neutral-50
-                       dark:hover:from-neutral-800 dark:hover:to-neutral-750 relative overflow-hidden"
-            aria-label={`Voir tous les articles de ${category.title}`}
-          >
-            {/* Icône avec gradient */}
-            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative overflow-hidden`}>
-              <category.icon className="w-8 h-8 text-white relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
-                              -translate-x-full group-hover:translate-x-full 
-                              transition-transform duration-700 skew-x-12" />
+          <div className="relative bg-gradient-neurosciences-soft hover:bg-gradient-neurosciences-hover 
+                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-neurosciences
+                          transform hover:-translate-y-4 hover:scale-105
+                          focus-ring overflow-hidden border border-white/10">
+            
+            {/* Background gradient overlay au hover */}
+            <div className="absolute inset-0 bg-gradient-neurosciences opacity-0 group-hover:opacity-10 
+                            transition-opacity duration-400 rounded-2xl"></div>
+            
+            {/* Icône améliorée avec gradient */}
+            <div className="relative z-10 mb-6">
+              <div className="w-16 h-16 bg-gradient-neurosciences rounded-xl 
+                              flex items-center justify-center shadow-glow-neurosciences
+                              group-hover:animate-glow-pulse group-hover:scale-110 
+                              transition-all duration-300">
+                <Brain className="w-8 h-8 text-white drop-shadow-lg" />
+              </div>
             </div>
+
+            {/* Contenu */}
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-neurosciences transition-all duration-300">
+                Neurosciences
+              </h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+                Découvrez comment votre cerveau fonctionne et comment l'optimiser
+              </p>
+            </div>
+
+            {/* Effet de brillance au hover */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+                            bg-gradient-to-r from-transparent via-white to-transparent
+                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
+                            transition-transform duration-700 ease-out pointer-events-none"></div>
             
-            {/* Titre avec effet au hover */}
-            <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
-              {category.title}
-            </h3>
-            
-            {/* Description */}
-            <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
-              {category.description}
-            </p>
-            
-            {/* Barre de progression au hover */}
-            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
-                            group-hover:w-full transition-all duration-500" />
-                            
             {/* Badge "Voir articles" qui apparaît au hover */}
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-              <div className="bg-indigo-600 text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
+              <div className="bg-gradient-neurosciences text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
                 Voir articles
               </div>
             </div>
-          </Link>
-        </div>
-      ))}
+          </div>
+        </Link>
+      </div>
+
+      {/* PSYCHOLOGIE - Carte améliorée */}
+      <div 
+        className="animate-in slide-in-from-bottom-4 duration-700"
+        style={{ animationDelay: '350ms' }}
+      >
+        <Link
+          to="/blog?category=Psychologie"
+          className="group block enhanced-transition"
+          aria-label="Voir tous les articles de Psychologie"
+        >
+          <div className="relative bg-gradient-psychologie-soft hover:bg-gradient-psychologie-hover 
+                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-psychologie
+                          transform hover:-translate-y-4 hover:scale-105
+                          focus-ring overflow-hidden border border-white/10">
+            
+            <div className="absolute inset-0 bg-gradient-psychologie opacity-0 group-hover:opacity-10 
+                            transition-opacity duration-400 rounded-2xl"></div>
+            
+            <div className="relative z-10 mb-6">
+              <div className="w-16 h-16 bg-gradient-psychologie rounded-xl 
+                              flex items-center justify-center shadow-glow-psychologie
+                              group-hover:animate-glow-pulse group-hover:scale-110 
+                              transition-all duration-300">
+                <Heart className="w-8 h-8 text-white drop-shadow-lg" />
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-psychologie transition-all duration-300">
+                Psychologie
+              </h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+                Comprenez vos émotions et développez votre intelligence émotionnelle
+              </p>
+            </div>
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+                            bg-gradient-to-r from-transparent via-white to-transparent
+                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
+                            transition-transform duration-700 ease-out pointer-events-none"></div>
+            
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="bg-gradient-psychologie text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
+                Voir articles
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      {/* DÉVELOPPEMENT PERSONNEL - Carte améliorée */}
+      <div 
+        className="animate-in slide-in-from-bottom-4 duration-700"
+        style={{ animationDelay: '500ms' }}
+      >
+        <Link
+          to="/blog?category=Développement Personnel"
+          className="group block enhanced-transition"
+          aria-label="Voir tous les articles de Développement Personnel"
+        >
+          <div className="relative bg-gradient-developpement-soft hover:bg-gradient-developpement-hover 
+                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-developpement
+                          transform hover:-translate-y-4 hover:scale-105
+                          focus-ring overflow-hidden border border-white/10">
+            
+            <div className="absolute inset-0 bg-gradient-developpement opacity-0 group-hover:opacity-10 
+                            transition-opacity duration-400 rounded-2xl"></div>
+            
+            <div className="relative z-10 mb-6">
+              <div className="w-16 h-16 bg-gradient-developpement rounded-xl 
+                              flex items-center justify-center shadow-glow-developpement
+                              group-hover:animate-glow-pulse group-hover:scale-110 
+                              transition-all duration-300">
+                <TrendingUp className="w-8 h-8 text-white drop-shadow-lg" />
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-developpement transition-all duration-300">
+                Développement Personnel
+              </h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+                Techniques pratiques pour votre croissance personnelle et professionnelle
+              </p>
+            </div>
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+                            bg-gradient-to-r from-transparent via-white to-transparent
+                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
+                            transition-transform duration-700 ease-out pointer-events-none"></div>
+            
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="bg-gradient-developpement text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
+                Voir articles
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      {/* RELATIONS HUMAINES - Carte améliorée */}
+      <div 
+        className="animate-in slide-in-from-bottom-4 duration-700"
+        style={{ animationDelay: '650ms' }}
+      >
+        <Link
+          to="/blog?category=Relations Humaines"
+          className="group block enhanced-transition"
+          aria-label="Voir tous les articles de Relations Humaines"
+        >
+          <div className="relative bg-gradient-relations-soft hover:bg-gradient-relations-hover 
+                          glass-card-soft p-8 rounded-2xl shadow-category card-glow-relations
+                          transform hover:-translate-y-4 hover:scale-105
+                          focus-ring overflow-hidden border border-white/10">
+            
+            <div className="absolute inset-0 bg-gradient-relations opacity-0 group-hover:opacity-10 
+                            transition-opacity duration-400 rounded-2xl"></div>
+            
+            <div className="relative z-10 mb-6">
+              <div className="w-16 h-16 bg-gradient-relations rounded-xl 
+                              flex items-center justify-center shadow-glow-relations
+                              group-hover:animate-glow-pulse group-hover:scale-110 
+                              transition-all duration-300">
+                <Users className="w-8 h-8 text-white drop-shadow-lg" />
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 
+                             group-hover:text-gradient-relations transition-all duration-300">
+                Relations Humaines
+              </h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed
+                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+                Améliorez vos relations et votre communication interpersonnelle
+              </p>
+            </div>
+
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 
+                            bg-gradient-to-r from-transparent via-white to-transparent
+                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
+                            transition-transform duration-700 ease-out pointer-events-none"></div>
+            
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div className="bg-gradient-relations text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
+                Voir articles
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
     </div>
     
     {/* Message informatif */}

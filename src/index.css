@@ -23,6 +23,35 @@
   --text-primary: #1c1917;
   --text-secondary: #525252;
   --text-muted: #737373;
+
+  /* === NOUVEAU : GRADIENTS PAR CATÉGORIE === */
+  --gradient-neurosciences: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+  --gradient-neurosciences-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  --gradient-neurosciences-hover: linear-gradient(135deg, #5b56f0 0%, #2563eb 100%);
+  
+  --gradient-psychologie: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  --gradient-psychologie-soft: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%);
+  --gradient-psychologie-hover: linear-gradient(135deg, #db2777 0%, #ea580c 100%);
+  
+  --gradient-developpement: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  --gradient-developpement-soft: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+  --gradient-developpement-hover: linear-gradient(135deg, #059669 0%, #0891b2 100%);
+  
+  --gradient-relations: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --gradient-relations-soft: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  --gradient-relations-hover: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+
+  /* === NOUVEAU : GLASSMORPHISM VARIABLES === */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --glass-backdrop: blur(20px);
+
+  /* === NOUVEAU : OMBRES DYNAMIQUES === */
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-strong: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 [data-theme="dark"] {
@@ -42,6 +71,35 @@
   --text-primary: #f5f5f4;
   --text-secondary: #d4d4d4;
   --text-muted: #a3a3a3;
+
+  /* === GRADIENTS ADAPTÉS POUR LE MODE SOMBRE === */
+  --gradient-neurosciences: linear-gradient(135deg, #8b87ff 0%, #60a5fa 100%);
+  --gradient-neurosciences-soft: linear-gradient(135deg, rgba(139, 135, 255, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%);
+  --gradient-neurosciences-hover: linear-gradient(135deg, #9d95ff 0%, #72b7fd 100%);
+  
+  --gradient-psychologie: linear-gradient(135deg, #f472b6 0%, #fb923c 100%);
+  --gradient-psychologie-soft: linear-gradient(135deg, rgba(244, 114, 182, 0.15) 0%, rgba(251, 146, 60, 0.15) 100%);
+  --gradient-psychologie-hover: linear-gradient(135deg, #f687b3 0%, #fdba74 100%);
+  
+  --gradient-developpement: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+  --gradient-developpement-soft: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(34, 211, 238, 0.15) 100%);
+  --gradient-developpement-hover: linear-gradient(135deg, #6ee7b7 0%, #67e8f9 100%);
+  
+  --gradient-relations: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+  --gradient-relations-soft: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(244, 114, 182, 0.15) 100%);
+  --gradient-relations-hover: linear-gradient(135deg, #c4b5fd 0%, #f687b3 100%);
+
+  /* === GLASSMORPHISM MODE SOMBRE === */
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --glass-backdrop: blur(20px);
+
+  /* === OMBRES MODE SOMBRE === */
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-strong: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(139, 135, 255, 0.4);
 }
 
 /* Typographie */
@@ -470,27 +528,188 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow-x: hidden;
 }
- /* Style amélioré pour les éléments strong */
-  .prose strong,
-  strong {
-    font-weight: 600;
-    color: #1d4ed8; /* blue-700 - mode clair */
-  }
-  
-  [data-theme="dark"] .prose strong,
-  [data-theme="dark"] strong {
-    color: #60a5fa !important; /* blue-400 - mode sombre, plus clair que avant */
-  }
-  
-  /* Effet subtil au hover pour les strong */
-  .prose strong:hover,
-  strong:hover {
-    color: #1e40af; /* blue-800 - mode clair */
-    transition: color 0.2s ease;
-  }
-  
-  [data-theme="dark"] .prose strong:hover,
-  [data-theme="dark"] strong:hover {
-    color: #93c5fd !important; /* blue-300 - mode sombre */
-    transition: color 0.2s ease;
-  }
+
+/* Style amélioré pour les éléments strong */
+.prose strong,
+strong {
+  font-weight: 600;
+  color: #1d4ed8; /* blue-700 - mode clair */
+}
+
+[data-theme="dark"] .prose strong,
+[data-theme="dark"] strong {
+  color: #60a5fa !important; /* blue-400 - mode sombre, plus clair que avant */
+}
+
+/* Effet subtil au hover pour les strong */
+.prose strong:hover,
+strong:hover {
+  color: #1e40af; /* blue-800 - mode clair */
+  transition: color 0.2s ease;
+}
+
+[data-theme="dark"] .prose strong:hover,
+[data-theme="dark"] strong:hover {
+  color: #93c5fd !important; /* blue-300 - mode sombre */
+  transition: color 0.2s ease;
+}
+
+/* ===== NOUVELLES CLASSES UTILITAIRES POUR LES GRADIENTS ===== */
+
+/* Backgrounds gradients */
+.bg-gradient-neurosciences {
+  background: var(--gradient-neurosciences);
+}
+
+.bg-gradient-psychologie {
+  background: var(--gradient-psychologie);
+}
+
+.bg-gradient-developpement {
+  background: var(--gradient-developpement);
+}
+
+.bg-gradient-relations {
+  background: var(--gradient-relations);
+}
+
+/* Backgrounds gradients soft (pour les cartes) */
+.bg-gradient-neurosciences-soft {
+  background: var(--gradient-neurosciences-soft);
+}
+
+.bg-gradient-psychologie-soft {
+  background: var(--gradient-psychologie-soft);
+}
+
+.bg-gradient-developpement-soft {
+  background: var(--gradient-developpement-soft);
+}
+
+.bg-gradient-relations-soft {
+  background: var(--gradient-relations-soft);
+}
+
+/* ===== CLASSES GLASSMORPHISM ===== */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-radius: 1rem;
+}
+
+.glass-card-soft {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ===== CLASSES OMBRES DYNAMIQUES ===== */
+.shadow-category {
+  box-shadow: var(--shadow-medium);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-category:hover {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-4px);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* ===== CLASSES POUR TEXTE GRADIENT ===== */
+.text-gradient-neurosciences {
+  background: var(--gradient-neurosciences);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-psychologie {
+  background: var(--gradient-psychologie);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-developpement {
+  background: var(--gradient-developpement);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-relations {
+  background: var(--gradient-relations);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== EFFET GLOW POUR LES CARTES ===== */
+.card-glow-neurosciences:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.card-glow-psychologie:hover {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+.card-glow-developpement:hover {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+.card-glow-relations:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+/* ===== AMÉLIORATION DES TRANSITIONS ===== */
+.enhanced-transition {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enhanced-transition-fast {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== BORDURES GRADIENT ===== */
+.border-gradient-neurosciences {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, var(--gradient-neurosciences) border-box;
+}
+
+[data-theme="dark"] .border-gradient-neurosciences {
+  background: linear-gradient(#1f2937, #1f2937) padding-box, var(--gradient-neurosciences) border-box;
+}
+
+.border-gradient-psychologie {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, var(--gradient-psychologie) border-box;
+}
+
+[data-theme="dark"] .border-gradient-psychologie {
+  background: linear-gradient(#1f2937, #1f2937) padding-box, var(--gradient-psychologie) border-box;
+}
+
+.border-gradient-developpement {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, var(--gradient-developpement) border-box;
+}
+
+[data-theme="dark"] .border-gradient-developpement {
+  background: linear-gradient(#1f2937, #1f2937) padding-box, var(--gradient-developpement) border-box;
+}
+
+.border-gradient-relations {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, var(--gradient-relations) border-box;
+}
+
+[data-theme="dark"] .border-gradient-relations {
+  background: linear-gradient(#1f2937, #1f2937) padding-box, var(--gradient-relations) border-box;
+}
