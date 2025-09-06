@@ -10,12 +10,19 @@
   --accent: #f59e0b;
   --neutral-50: #fafaf9;
   --neutral-100: #f5f5f4;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
   --neutral-800: #292524;
   --neutral-900: #1c1917;
   --success: #22c55e;
   --warning: #eab308;
   --error: #ef4444;
   --progress: #3b82f6;
+  
+  /* Couleurs spécifiques pour le texte */
+  --text-primary: #1c1917;
+  --text-secondary: #525252;
+  --text-muted: #737373;
 }
 
 [data-theme="dark"] {
@@ -25,9 +32,16 @@
   --accent: #ffd23f;
   --neutral-50: #0f0f23;
   --neutral-100: #1a1a2e;
+  --neutral-600: #a3a3a3;
+  --neutral-700: #d4d4d4;
   --neutral-800: #c9c5d0;
   --neutral-900: #eee6ff;
   --progress: #60a5fa;
+  
+  /* Couleurs spécifiques pour le texte en mode sombre */
+  --text-primary: #f5f5f4;
+  --text-secondary: #d4d4d4;
+  --text-muted: #a3a3a3;
 }
 
 /* Typographie */
@@ -160,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-line-clamp: 3;
 }
 
-/* Styles pour le contenu des articles */
+/* ===== STYLES POUR LE CONTENU DES ARTICLES ===== */
 .prose {
   max-width: 65ch;
   color: inherit;
@@ -196,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .prose .lead {
   font-size: 1.125rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-weight: 400;
 }
@@ -210,9 +224,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+/* CORRECTION PRINCIPALE - Elements strong */
 .prose strong {
   font-weight: 600;
-  color: var(--neutral-900);
+  color: var(--text-primary);
 }
 
 .prose blockquote {
@@ -246,266 +261,76 @@ h1, h2, h3, h4, h5, h6 {
 .prose figcaption {
   text-align: center;
   font-size: 0.875rem;
-  color: var(--neutral-500);
+  color: var(--text-muted);
   margin-top: 0.5rem;
   font-style: italic;
 }
 
-/* Mode sombre pour le prose */
-[data-theme="dark"] .prose .lead {
-  color: var(--neutral-400);
-}
-
-[data-theme="dark"] .prose strong {
-  color: var(--neutral-100);
-}
-
-[data-theme="dark"] .prose code {
-  background-color: var(--neutral-800);
-}
-
-[data-theme="dark"] .prose pre {
-  background-color: var(--neutral-800);
-}
-
-[data-theme="dark"] .prose figcaption {
-  color: var(--neutral-400);
-}
-
-/* ===== CORRECTIONS COULEURS ARTICLES - VERSION AMÉLIORÉE ===== */
-
-/* Liens dans les articles - MODE CLAIR */
+/* ===== LIENS DANS LES ARTICLES ===== */
 .prose a {
-  color: rgb(67 56 202); /* indigo-700 - meilleur contraste */
+  color: #4338ca; /* indigo-700 - bon contraste mode clair */
   text-decoration: underline;
   text-decoration-color: rgba(67, 56, 202, 0.3);
 }
 
 .prose a:hover {
-  color: rgb(55 48 163); /* indigo-800 */
-  text-decoration-color: rgb(55 48 163);
+  color: #3730a3; /* indigo-800 */
+  text-decoration-color: #3730a3;
 }
 
-/* Classes Tailwind communes dans les articles - MODE CLAIR */
-.prose .text-indigo-600 {
-  color: rgb(67 56 202); /* indigo-700 pour meilleur contraste */
-}
-
-.prose .text-indigo-700 {
-  color: rgb(67 56 202); /* indigo-700 */
-}
-
-.prose .text-indigo-800 {
-  color: rgb(55 48 163); /* indigo-800 */
-}
-
-.prose .text-blue-600 {
-  color: rgb(29 78 216); /* blue-700 pour meilleur contraste */
-}
-
-.prose .text-blue-700 {
-  color: rgb(29 78 216); /* blue-700 */
-}
-
-.prose .text-blue-800 {
-  color: rgb(30 64 175); /* blue-800 */
-}
-
-.prose .text-purple-600 {
-  color: rgb(124 58 237); /* purple-600 */
-}
-
-.prose .text-purple-700 {
-  color: rgb(109 40 217); /* purple-700 */
-}
-
-.prose .text-green-600 {
-  color: rgb(22 163 74); /* green-600 */
-}
-
-.prose .text-green-700 {
-  color: rgb(21 128 61); /* green-700 */
-}
-
-/* ===== MODE SOMBRE - Couleurs beaucoup plus claires ===== */
-
-/* Liens - MODE SOMBRE */
+/* Mode sombre - liens */
 [data-theme="dark"] .prose a {
-  color: rgb(165 180 252); /* indigo-300 - bien plus clair */
+  color: #a5b4fc; /* indigo-300 - visible sur fond sombre */
   text-decoration-color: rgba(165, 180, 252, 0.4);
 }
 
 [data-theme="dark"] .prose a:hover {
-  color: rgb(196 181 253); /* indigo-200 - encore plus clair */
-  text-decoration-color: rgb(196 181 253);
+  color: #c4b5fd; /* indigo-200 */
+  text-decoration-color: #c4b5fd;
 }
 
-/* Classes Tailwind - MODE SOMBRE */
-[data-theme="dark"] .prose .text-indigo-600 {
-  color: rgb(165 180 252); /* indigo-300 */
-}
-
-[data-theme="dark"] .prose .text-indigo-700 {
-  color: rgb(165 180 252); /* indigo-300 */
-}
-
-[data-theme="dark"] .prose .text-indigo-800 {
-  color: rgb(196 181 253); /* indigo-200 */
-}
-
-[data-theme="dark"] .prose .text-blue-600 {
-  color: rgb(147 197 253); /* blue-300 */
-}
-
-[data-theme="dark"] .prose .text-blue-700 {
-  color: rgb(147 197 253); /* blue-300 */
-}
-
-[data-theme="dark"] .prose .text-blue-800 {
-  color: rgb(186 230 253); /* blue-200 */
-}
-
-[data-theme="dark"] .prose .text-purple-600 {
-  color: rgb(196 181 253); /* purple-300 */
-}
-
-[data-theme="dark"] .prose .text-purple-700 {
-  color: rgb(196 181 253); /* purple-300 */
-}
-
-[data-theme="dark"] .prose .text-green-600 {
-  color: rgb(134 239 172); /* green-300 */
-}
-
-[data-theme="dark"] .prose .text-green-700 {
-  color: rgb(134 239 172); /* green-300 */
-}
-
-/* Classes utilitaires pour forcer le contraste en mode sombre */
-[data-theme="dark"] .prose [class*="text-blue-"]:not(.text-blue-100):not(.text-blue-200):not(.text-blue-300) {
-  color: rgb(147 197 253) !important; /* blue-300 */
-}
-
-[data-theme="dark"] .prose [class*="text-indigo-"]:not(.text-indigo-100):not(.text-indigo-200):not(.text-indigo-300) {
-  color: rgb(165 180 252) !important; /* indigo-300 */
-}
-
-/* Corrections mode sombre pour les articles */
-@media (prefers-color-scheme: dark) {
-  .prose.dark\\:prose-invert {
-    --tw-prose-bold: rgb(245 245 245); /* neutral-100 */
-    --tw-prose-headings: rgb(255 255 255);
-    --tw-prose-body: rgb(212 212 212); /* neutral-300 */
-    --tw-prose-links: rgb(165 180 252); /* indigo-300 - plus clair */
-  }
-
-  .prose.dark\\:prose-invert strong {
-    color: rgb(245 245 245) !important;
-  }
-
-  .prose.dark\\:prose-invert em {
-    color: rgb(212 212 212) !important;
-  }
-}
-
-/* Pour le mode sombre explicite avec data-theme */
-[data-theme="dark"] .prose.dark\\:prose-invert {
-  --tw-prose-bold: rgb(245 245 245);
-  --tw-prose-headings: rgb(255 255 255);
-  --tw-prose-body: rgb(212 212 212);
-  --tw-prose-links: rgb(165 180 252); /* indigo-300 - plus clair */
-}
-
-[data-theme="dark"] .prose.dark\\:prose-invert strong {
-  color: rgb(245 245 245) !important;
-}
-
-[data-theme="dark"] .prose.dark\\:prose-invert em {
-  color: rgb(212 212 212) !important;
-}
-
-/* ---------- Utilitaires Tailwind personnalisés ---------- */
-@layer utilities {
-  /* Anneau de focus accessible et cohérent partout */
-  .focus-ring {
-    @apply focus-visible:outline-none
-           focus-visible:ring-2 focus-visible:ring-indigo-500
-           focus-visible:ring-offset-2 focus-visible:ring-offset-white
-           dark:focus-visible:ring-offset-neutral-900;
-  }
-
-  /* Variante si l'élément est posé sur une carte foncée */
-  .focus-ring-card {
-    @apply focus-visible:outline-none
-           focus-visible:ring-2 focus-visible:ring-indigo-400
-           focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100
-           dark:focus-visible:ring-offset-neutral-800;
-  }
-}
-
-/* Fix pour éviter l'espace noir après le header */
-.header-fixed-spacing {
-  margin-top: 4rem; /* Compense la hauteur du header sticky */
-}
-
-/* Corrections responsive pour les titres principaux */
+/* ===== CORRECTIONS RESPONSIVE ===== */
 @media (max-width: 640px) {
-  /* Force la césure du titre sur mobile si nécessaire */
   .hero-title {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
   }
   
-  /* Ajuste l'espacement pour éviter le débordement */
   .hero-title span {
     display: inline-block;
     max-width: 100%;
   }
   
-  /* Container plus serré sur mobile */
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
 }
 
-/* Corrections spécifiques pour très petits écrans */
 @media (max-width: 375px) {
-  /* Titre encore plus petit pour iPhone SE et petits écrans */
   .hero-title-mobile {
-    font-size: 1.875rem !important; /* text-3xl en Tailwind */
+    font-size: 1.875rem !important;
     line-height: 1.3 !important;
   }
   
-  /* Padding réduit pour optimiser l'espace */
   .hero-section-mobile {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
 }
 
-/* Fix pour la transition entre header et hero */
 @media (max-width: 768px) {
-  /* Assure-toi que le header ne crée pas d'espace non désiré */
   .hero-section {
     margin-top: 0;
-    padding-top: 4rem; /* Compense le header sticky de 4rem (h-16) */
+    padding-top: 4rem;
   }
   
-  /* Alternative : utilise viewport units en tenant compte du header */
   .hero-min-height {
     min-height: calc(100vh - 4rem);
   }
 }
 
-/* Fix pour l'animation du texte qui peut causer des problèmes de layout */
-.letter-animation {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-/* Permet le retour à la ligne naturel sur mobile pour "potentiel" */
 @media (max-width: 480px) {
   .letter-animation {
     white-space: normal;
@@ -513,22 +338,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Assure-toi que les éléments inline-block ne débordent pas */
-.hero-text-container {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* Fix pour les statistiques responsive */
 @media (max-width: 640px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-}
-
-/* Optimisation pour les boutons sur mobile */
-@media (max-width: 640px) {
+  
   .hero-buttons {
     width: 100%;
     max-width: 320px;
@@ -541,84 +356,117 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
   }
 }
-/* ===== SOLUTION DÉFINITIVE - @layer utilities ===== */
+
+/* ===== UTILITIES ET FOCUS ===== */
 @layer utilities {
-  /* Force les couleurs APRÈS Tailwind */
-  [data-theme="dark"] .text-blue-500 {
-    color: rgb(147 197 253) !important;
+  /* Anneau de focus accessible */
+  .focus-ring {
+    @apply focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-indigo-500
+           focus-visible:ring-offset-2 focus-visible:ring-offset-white
+           dark:focus-visible:ring-offset-neutral-900;
+  }
+
+  .focus-ring-card {
+    @apply focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-indigo-400
+           focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100
+           dark:focus-visible:ring-offset-neutral-800;
+  }
+
+  /* ===== CORRECTIONS DÉFINITIVES COULEURS MODE SOMBRE ===== */
+  
+  /* Force les éléments strong à être visibles */
+  [data-theme="dark"] .prose strong,
+  [data-theme="dark"] strong {
+    color: #f5f5f4 !important;
   }
   
-  [data-theme="dark"] .text-blue-600 {
-    color: rgb(147 197 253) !important;
-  }
-  
-  [data-theme="dark"] .text-blue-700 {
-    color: rgb(147 197 253) !important;
-  }
-  
+  /* Force toutes les couleurs bleues/indigo à être visibles */
+  [data-theme="dark"] .text-blue-500,
+  [data-theme="dark"] .text-blue-600,
+  [data-theme="dark"] .text-blue-700,
   [data-theme="dark"] .text-blue-800 {
-    color: rgb(186 230 253) !important;
+    color: #93c5fd !important; /* blue-300 */
   }
   
-  [data-theme="dark"] .text-indigo-500 {
-    color: rgb(165 180 252) !important;
-  }
-  
-  [data-theme="dark"] .text-indigo-600 {
-    color: rgb(165 180 252) !important;
-  }
-  
-  [data-theme="dark"] .text-indigo-700 {
-    color: rgb(165 180 252) !important;
-  }
-  
+  [data-theme="dark"] .text-indigo-500,
+  [data-theme="dark"] .text-indigo-600,
+  [data-theme="dark"] .text-indigo-700,
   [data-theme="dark"] .text-indigo-800 {
-    color: rgb(196 181 253) !important;
+    color: #a5b4fc !important; /* indigo-300 */
   }
   
   /* Hover states */
-  [data-theme="dark"] .hover\\:text-blue-400:hover {
-    color: rgb(147 197 253) !important;
+  [data-theme="dark"] .hover\\:text-blue-400:hover,
+  [data-theme="dark"] .hover\\:text-blue-500:hover,
+  [data-theme="dark"] .hover\\:text-blue-600:hover,
+  [data-theme="dark"] .hover\\:text-blue-700:hover {
+    color: #93c5fd !important; /* blue-300 */
   }
   
-  [data-theme="dark"] .hover\\:text-blue-500:hover {
-    color: rgb(147 197 253) !important;
-  }
-  
-  [data-theme="dark"] .hover\\:text-blue-600:hover {
-    color: rgb(147 197 253) !important;
-  }
-  
-  [data-theme="dark"] .hover\\:text-indigo-600:hover {
-    color: rgb(165 180 252) !important;
+  [data-theme="dark"] .hover\\:text-indigo-400:hover,
+  [data-theme="dark"] .hover\\:text-indigo-500:hover,
+  [data-theme="dark"] .hover\\:text-indigo-600:hover,
+  [data-theme="dark"] .hover\\:text-indigo-700:hover {
+    color: #a5b4fc !important; /* indigo-300 */
   }
   
   /* Classes dark: explicites */
   [data-theme="dark"] .dark\\:text-blue-200 {
-    color: rgb(186 230 253) !important;
+    color: #bfdbfe !important; /* blue-200 */
   }
   
   [data-theme="dark"] .dark\\:text-blue-300 {
-    color: rgb(147 197 253) !important;
+    color: #93c5fd !important; /* blue-300 */
   }
   
   [data-theme="dark"] .dark\\:text-blue-400 {
-    color: rgb(96 165 250) !important;
+    color: #60a5fa !important; /* blue-400 */
   }
   
   [data-theme="dark"] .dark\\:text-indigo-200 {
-    color: rgb(196 181 253) !important;
+    color: #c4b5fd !important; /* indigo-200 */
   }
   
   [data-theme="dark"] .dark\\:text-indigo-300 {
-    color: rgb(165 180 252) !important;
+    color: #a5b4fc !important; /* indigo-300 */
   }
   
   [data-theme="dark"] .dark\\:text-indigo-400 {
-    color: rgb(129 140 248) !important;
+    color: #818cf8 !important; /* indigo-400 */
   }
   
-  [data-theme="dark"] .dark\\:text-green-400 {
-    color: rgb(74 222 128) !important;
+  /* Autres couleurs */
+  [data-theme="dark"] .dark\\:text-green-300,
+  [data-theme="dark"] .dark\\:text-green-400,
+  [data-theme="dark"] .text-green-600,
+  [data-theme="dark"] .text-green-700 {
+    color: #86efac !important; /* green-300 */
   }
+  
+  /* Force TOUS les liens sans classe à être visibles */
+  [data-theme="dark"] .prose a:not([class]) {
+    color: #a5b4fc !important; /* indigo-300 */
+  }
+  
+  [data-theme="dark"] .prose a:not([class]):hover {
+    color: #c4b5fd !important; /* indigo-200 */
+  }
+}
+
+/* Fix pour éviter l'espace noir après le header */
+.header-fixed-spacing {
+  margin-top: 4rem;
+}
+
+/* Fix pour l'animation du texte */
+.letter-animation {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hero-text-container {
+  width: 100%;
+  overflow-x: hidden;
 }
