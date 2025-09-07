@@ -196,248 +196,137 @@ const Home = () => {
         image="/images/og-default.jpg"
       />
 
-      {/* Point 3 : Hero Section TRANSFORMÉE - Interactions tactiles optimisées */}
-<section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden group">
-  {/* Background Image avec parallax subtil */}
-  <div className="absolute inset-0 z-0">
-    <div className="absolute inset-0 transform transition-transform duration-1000 ease-out 
-                    scale-100 group-hover:scale-105">
-      <img
-        src="/images/hero-bg.webp"
-        alt=""
-        width="1600"
-        height="900"
-        className="w-full h-full object-cover"
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
-      />
-    </div>
-    <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
-    
-    {/* Overlay gradient dynamique */}
-    <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-transparent to-purple-900/20 
-                    opacity-70 group-hover:opacity-80 transition-opacity duration-700"></div>
-  </div>
+      {/* Hero Section */}
+      <section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+        {/* Background Image avec overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+  src="/images/hero-bg.webp"
+  alt=""
+  width="1600"
+  height="900"
+  className="w-full h-full object-cover"
+  loading="eager"
+  decoding="async"
+  fetchPriority="high"
+/>
+          <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
+        </div>
 
-  {/* Particules interactives améliorées - responsive */}
-  <div className="absolute inset-0 z-5">
-    {/* Particules principales */}
-    <div className="absolute inset-0 overflow-hidden">
-      {Array.from({ length: 24 }).map((_, index) => (
-        <div
-          key={index}
-          className="absolute rounded-full pointer-events-none transition-all duration-300
-                     hidden md:block"
-          style={{
-            left: `${(index * 37) % 100}%`,
-            bottom: `${(index * 23) % 100}%`,
-            width: `${2 + (index % 3)}px`,
-            height: `${2 + (index % 3)}px`,
-            background: index % 4 === 0 ? '#fbbf24' : index % 4 === 1 ? '#60a5fa' : index % 4 === 2 ? '#34d399' : '#f472b6',
-            opacity: 0.6 - (index % 4) * 0.1,
-            animation: `float ${5 + (index % 3)}s ease-in-out infinite`,
-            animationDelay: `${(index % 6) * 0.5}s`,
-            filter: 'blur(0.5px)',
-          }}
-        />
-      ))}
-      
-      {/* Particules mobiles réduites */}
-      {Array.from({ length: 8 }).map((_, index) => (
-        <div
-          key={`mobile-${index}`}
-          className="absolute rounded-full pointer-events-none transition-all duration-300
-                     block md:hidden"
-          style={{
-            left: `${(index * 40) % 100}%`,
-            bottom: `${(index * 30) % 100}%`,
-            width: `${1 + (index % 2)}px`,
-            height: `${1 + (index % 2)}px`,
-            background: index % 3 === 0 ? '#fbbf24' : index % 3 === 1 ? '#60a5fa' : '#34d399',
-            opacity: 0.5,
-            animation: `float ${4 + (index % 2)}s ease-in-out infinite`,
-            animationDelay: `${index * 0.6}s`,
-          }}
-        />
-      ))}
-    </div>
-  </div>
+        {/* Particules animées */}
+        <ParticlesBackground count={24} />
 
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-4xl mx-auto text-center">
-      {/* Titre principal avec interactions tactiles */}
-      <div className="mb-8">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
-          {/* Première ligne avec effet stagger */}
-          <span className="inline-block">
-            {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-              <span
-                key={index}
-                className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500 
-                           transition-all cursor-default
-                           hover:text-yellow-300 hover:scale-110 hover:-translate-y-1
-                           active:scale-95 active:text-yellow-400"
-                style={{ 
-                  animationDelay: `${50 + index * 60}ms`, 
-                  animationFillMode: 'both' 
-                }}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Titre principal animé */}
+            <div className="mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
+                <span className="inline-block">
+                  {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+                      style={{ 
+                        animationDelay: `${50 + index * 60}ms`, 
+                        animationFillMode: 'both' 
+                      }}
+                    >
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </span>
+                  ))}
+                </span>
+                <br className="block sm:hidden" />
+                <span className="inline-block gradient-text-fallback">
+                  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+                    <span
+                      key={index + 14}
+                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+                      style={{ 
+                        animationDelay: `${50 + (index + 14) * 60}ms`, 
+                        animationFillMode: 'both' 
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+              </h1>
+
+              {/* Sous-titre */}
+              <p
+                className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
+                style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
               >
-                {letter === ' ' ? '\u00A0' : letter}
-              </span>
-            ))}
-          </span>
-          <br className="block sm:hidden" />
-          
-          {/* Deuxième ligne avec gradient animé */}
-          <span className="inline-block relative">
-            <span className="gradient-text-fallback">
-              {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-                <span
-                  key={index + 14}
-                  className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500
-                             transition-all cursor-default
-                             hover:scale-110 hover:-translate-y-1
-                             active:scale-95"
+                Psychologie, neurosciences et développement personnel fondés 
+                sur la science pour transformer votre vie
+              </p>
+            </div>
+
+            {/* Boutons d'action */}
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
+              style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
+            >
+              <Link
+                to="/blog"
+                className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
+                           text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
+                           flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
+                           transform hover:-translate-y-2 hover:scale-105 focus-ring backdrop-blur-sm
+                           relative overflow-hidden"
+                aria-label="Découvrir les articles du blog"
+              >
+                <span className="relative z-10">Découvrir les articles</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                -translate-x-full group-hover:translate-x-full 
+                                transition-transform duration-700 skew-x-12" />
+              </Link>
+
+              <a
+                href="#newsletter"
+                className="group bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white 
+                           px-8 py-4 rounded-lg font-semibold transition-all duration-300
+                           border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
+                           transform hover:-translate-y-2 hover:scale-105 focus-ring
+                           relative overflow-hidden"
+                aria-label="Recevoir le guide gratuit par email"
+              >
+                <span className="relative z-10">Recevoir le guide gratuit</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+                                -translate-x-full group-hover:translate-x-full 
+                                transition-transform duration-700 skew-x-12" />
+              </a>
+            </div>
+
+            {/* Statistiques animées */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              {STATS.map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20
+                             hover:bg-white/15 transition-all duration-500 hover:scale-105
+                             animate-in slide-in-from-bottom-8 duration-700"
                   style={{ 
-                    animationDelay: `${50 + (index + 14) * 60}ms`, 
+                    animationDelay: `${3000 + index * 200}ms`, 
                     animationFillMode: 'both' 
                   }}
                 >
-                  {letter}
-                </span>
+                  <stat.icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 text-yellow-300" />
+                  <div className="text-2xl font-bold text-white">
+                    <Counter 
+                      to={stat.value} 
+                      duration={1100 + index * 150} 
+                      suffix={stat.suffix} 
+                    />
+                  </div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
+                </div>
               ))}
-            </span>
-          </span>
-        </h1>
-
-        {/* Sous-titre avec curseur clignotant */}
-        <div className="relative">
-          <p
-            className="text-lg md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto
-                       animate-in fade-in slide-in-from-bottom-4 duration-1000"
-            style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
-          >
-            <span className="relative">
-              Psychologie, neurosciences et développement personnel fondés 
-              sur la science pour transformer votre vie
-              {/* Curseur clignotant */}
-              <span className="inline-block w-0.5 md:w-1 h-6 md:h-8 ml-1 bg-yellow-400 
-                               animate-pulse opacity-0"
-                    style={{ animationDelay: '3500ms', animationFillMode: 'both' }}></span>
-            </span>
-          </p>
-        </div>
-      </div>
-
-      {/* Boutons d'action avec micro-animations avancées */}
-      <div
-        className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
-      >
-        {/* Bouton principal avec effet ripple et interactions tactiles */}
-        <Link
-          to="/blog"
-          className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 
-                     text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
-                     flex items-center justify-center gap-2 shadow-xl
-                     transform focus-ring backdrop-blur-sm overflow-hidden touch-manipulation
-                     
-                     hover:from-yellow-600 hover:to-orange-600 hover:shadow-2xl hover:-translate-y-2 hover:scale-105
-                     
-                     active:scale-95 active:shadow-lg active:from-yellow-600 active:to-orange-600"
-          aria-label="Découvrir les articles du blog"
-        >
-          <span className="relative z-10 transition-transform duration-200 group-active:scale-95">
-            Découvrir les articles
-          </span>
-          <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 
-                                 group-hover:translate-x-1 group-active:translate-x-0.5" />
-          
-          {/* Effet de brillance desktop */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                          -translate-x-full md:group-hover:translate-x-full 
-                          transition-transform duration-700 skew-x-12 hidden md:block" />
-          
-          {/* Effet ripple mobile */}
-          <div className="absolute inset-0 bg-white/20 rounded-lg scale-0 
-                          group-active:scale-110 md:group-active:scale-100
-                          transition-transform duration-300 ease-out" />
-        </Link>
-
-        {/* Bouton secondaire avec interactions tactiles */}
-        <a
-          href="#newsletter"
-          className="group relative bg-white/20 backdrop-blur-sm text-white 
-                     px-8 py-4 rounded-lg font-semibold transition-all duration-300
-                     border border-white/30 shadow-lg focus-ring overflow-hidden touch-manipulation
-                     
-                     hover:bg-white/30 hover:border-white/50 hover:shadow-xl hover:-translate-y-2 hover:scale-105
-                     
-                     active:scale-95 active:bg-white/40 active:shadow-md"
-          aria-label="Recevoir le guide gratuit par email"
-        >
-          <span className="relative z-10 transition-transform duration-200 group-active:scale-95">
-            Recevoir le guide gratuit
-          </span>
-          
-          {/* Effet de brillance desktop */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                          -translate-x-full md:group-hover:translate-x-full 
-                          transition-transform duration-700 skew-x-12 hidden md:block" />
-          
-          {/* Effet ripple mobile */}
-          <div className="absolute inset-0 bg-white/10 rounded-lg scale-0 
-                          group-active:scale-110 md:group-active:scale-100
-                          transition-transform duration-300 ease-out" />
-        </a>
-      </div>
-
-      {/* Statistiques animées avec interactions tactiles */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
-        {STATS.map((stat, index) => (
-          <div
-            key={index}
-            className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 
-                       border border-white/20 transition-all duration-500 touch-manipulation
-                       
-                       hover:bg-white/15 hover:scale-105 hover:shadow-lg
-                       
-                       active:scale-95 active:bg-white/20
-                       
-                       animate-in slide-in-from-bottom-8 duration-700"
-            style={{ 
-              animationDelay: `${3000 + index * 200}ms`, 
-              animationFillMode: 'both' 
-            }}
-          >
-            <stat.icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 text-yellow-300 
-                                 animate-pulse transition-transform duration-300
-                                 group-hover:scale-110 group-active:scale-95" />
-            <div className="text-xl md:text-2xl font-bold text-white transition-transform duration-200">
-              <Counter 
-                to={stat.value} 
-                duration={1100 + index * 150} 
-                suffix={stat.suffix} 
-              />
-            </div>
-            <div className="text-xs md:text-sm text-white/80 transition-colors duration-300">
-              {stat.label}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  {/* Indicateur de scroll avec interaction */}
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center
-                    transition-all duration-300 hover:border-white/50 active:scale-90">
-      <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Citation du jour */}
       <section className="py-12 bg-white dark:bg-neutral-900">

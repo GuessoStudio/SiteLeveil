@@ -1,176 +1,309 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Mail, Twitter, Linkedin, Facebook, Heart } from 'lucide-react'
+// Footer COMPLET avec ta section Guesso Studio + effets visuels
+// Remplace ton components/Footer.tsx existant
 
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Mail, Twitter, Linkedin, Github, Heart, ArrowUp } from 'lucide-react'
 
 const Footer = () => {
+  const [emailHovered, setEmailHovered] = useState(false)
+
+  // Scroll to top avec animation
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
-    <footer className="bg-neutral-900 dark:bg-neutral-950 text-neutral-300">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <img 
-  src="/images/logo.webp"
-  alt="L'Éveil"
-  width="40"
-  height="40"
-  className="w-10 h-10 rounded-full"
-  loading="lazy"
-  decoding="async"
-/>
-              <span className="text-xl font-bold text-white">L'Éveil</span>
+    <footer className="bg-neutral-900 dark:bg-neutral-950 text-white relative overflow-hidden">
+      {/* Background pattern PLUS VISIBLE */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-0 left-0 w-full h-full">
+          {/* Pattern géométrique plus visible */}
+          <svg className="w-full h-full" viewBox="0 0 100 100">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                <circle cx="5" cy="5" r="1" fill="currentColor" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+          </svg>
+          
+          {/* Cercles décoratifs plus visibles */}
+          <div className="absolute top-20 left-20 w-32 h-32 border border-yellow-400/20 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-20 h-20 border border-indigo-400/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-10 w-16 h-16 border border-purple-400/20 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid md:grid-cols-4 gap-8 py-12">
+          
+          {/* Logo et description avec animations VISIBLES */}
+          <div className="md:col-span-2">
+            <div className="mb-6 group">
+              <Link 
+                to="/" 
+                className="flex items-center space-x-3 transition-all duration-300
+                           focus-ring rounded-lg w-fit
+                           hover:scale-110 hover:rotate-1"
+              >
+                <div className="relative overflow-hidden rounded-full">
+                  <img 
+                    src="/images/logo-footer.webp" 
+                    alt="Logo L'Éveil" 
+                    className="w-12 h-12 rounded-full transition-all duration-500
+                               group-hover:scale-125 group-hover:rotate-12 group-hover:brightness-110"
+                  />
+                  {/* Effet de brillance PLUS VISIBLE */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent
+                                  -translate-x-full group-hover:translate-x-full
+                                  transition-transform duration-1000 ease-out rounded-full"></div>
+                </div>
+                <span className="text-2xl font-bold transition-all duration-300
+                               group-hover:text-yellow-400 group-hover:scale-105">
+                  L'Éveil
+                </span>
+              </Link>
             </div>
-            <p className="text-neutral-300 mb-6 max-w-md">
-              Votre guide vers une meilleure compréhension de l'esprit humain. 
-              Psychologie, neurosciences et développement personnel fondés sur la science.
+            
+            <p className="text-neutral-300 mb-6 leading-relaxed max-w-md
+                         hover:text-neutral-100 transition-colors duration-300">
+              Psychologie, neurosciences et développement personnel fondés sur la science. 
+              Transformez votre vie grâce à des contenus rigoureusement documentés.
             </p>
+
+            {/* Réseaux sociaux avec effets PLUS VISIBLES */}
             <div className="flex space-x-4">
-  
-  {/* Twitter */}
-  <a 
-    href="https://twitter.com" 
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Nous rejoindre sur Twitter" 
-    className="text-neutral-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
-  >
-    <Twitter className="w-5 h-5" aria-hidden="true" />
-  </a>
+              <a 
+                href="https://twitter.com/leveil" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nous suivre sur Twitter"
+                className="group p-3 rounded-full bg-neutral-800/50 hover:bg-blue-600 
+                           transition-all duration-300 transform hover:scale-125 hover:-translate-y-2 
+                           focus-ring relative overflow-hidden hover:shadow-lg hover:shadow-blue-500/25"
+              >
+                <Twitter className="w-5 h-5 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12" />
+                
+                {/* Effet ripple PLUS VISIBLE */}
+                <div className="absolute inset-0 bg-blue-400/30 rounded-full scale-0 
+                                group-hover:scale-200 group-active:scale-150
+                                transition-transform duration-500"></div>
+              </a>
 
-  {/* LinkedIn */}
-  <a 
-    href="https://linkedin.com" 
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Nous rejoindre sur LinkedIn" 
-    className="text-neutral-400 hover:text-blue-500 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
-  >
-    <Linkedin className="w-5 h-5" aria-hidden="true" />
-  </a>
+              <a 
+                href="https://linkedin.com/company/leveil" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nous suivre sur LinkedIn"
+                className="group p-3 rounded-full bg-neutral-800/50 hover:bg-blue-700 
+                           transition-all duration-300 transform hover:scale-125 hover:-translate-y-2 
+                           focus-ring relative overflow-hidden hover:shadow-lg hover:shadow-blue-600/25"
+              >
+                <Linkedin className="w-5 h-5 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12" />
+                
+                <div className="absolute inset-0 bg-blue-500/30 rounded-full scale-0 
+                                group-hover:scale-200 group-active:scale-150
+                                transition-transform duration-500"></div>
+              </a>
 
-  {/* Facebook */}
-  <a 
-    href="https://facebook.com" 
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Nous rejoindre sur Facebook" 
-    className="text-neutral-400 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
-  >
-    <Facebook className="w-5 h-5" aria-hidden="true" />
-  </a>
+              <a 
+                href="https://github.com/leveil" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Notre code sur GitHub"
+                className="group p-3 rounded-full bg-neutral-800/50 hover:bg-neutral-700 
+                           transition-all duration-300 transform hover:scale-125 hover:-translate-y-2 
+                           focus-ring relative overflow-hidden hover:shadow-lg hover:shadow-neutral-500/25"
+              >
+                <Github className="w-5 h-5 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12" />
+                
+                <div className="absolute inset-0 bg-neutral-600/30 rounded-full scale-0 
+                                group-hover:scale-200 group-active:scale-150
+                                transition-transform duration-500"></div>
+              </a>
 
-  {/* Email */}
-  <a 
-    href="mailto:contact@leveil.fr" 
-    aria-label="Nous envoyer un email" 
-    className="text-neutral-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 p-2 rounded-lg hover:bg-neutral-800/50"
-  >
-    <Mail className="w-5 h-5" aria-hidden="true" />
-  </a>
-  
-</div>
+              {/* Email avec animation TRÈS VISIBLE */}
+              <button
+                onMouseEnter={() => setEmailHovered(true)}
+                onMouseLeave={() => setEmailHovered(false)}
+                onClick={() => window.location.href = 'mailto:contact@leveil.fr'}
+                aria-label="Nous envoyer un email"
+                className="group p-3 rounded-full bg-neutral-800/50 hover:bg-green-600 
+                           transition-all duration-300 transform hover:scale-125 hover:-translate-y-2 
+                           focus-ring relative overflow-hidden hover:shadow-lg hover:shadow-green-500/25"
+              >
+                <Mail className={`w-5 h-5 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12
+                                 ${emailHovered ? 'animate-bounce' : ''}`} />
+                
+                <div className="absolute inset-0 bg-green-400/30 rounded-full scale-0 
+                                group-hover:scale-200 group-active:scale-150
+                                transition-transform duration-500"></div>
+              </button>
+            </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">Accueil</Link></li>
-              <li><Link to="/blog" className="text-neutral-300 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to="/about" className="text-neutral-300 hover:text-white transition-colors">À propos</Link></li>
-              <li><Link to="/resources" className="text-neutral-300 hover:text-white transition-colors">Ressources</Link></li>
-              <li><Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</Link></li>
+          {/* Navigation avec underlines PLUS VISIBLES */}
+          <div className="group">
+            <h3 className="text-white font-semibold mb-6 text-lg relative">
+              Navigation
+              <div className="absolute -bottom-2 left-0 w-0 h-1 bg-yellow-400 
+                              group-hover:w-full transition-all duration-500"></div>
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { name: 'Accueil', href: '/' },
+                { name: 'Blog', href: '/blog' },
+                { name: 'À propos', href: '/about' },
+                { name: 'Ressources', href: '/resources' },
+                { name: 'Contact', href: '/contact' }
+              ].map((item, index) => (
+                <li key={item.name}>
+                  <Link 
+                    to={item.href} 
+                    className="group text-neutral-300 hover:text-yellow-400 transition-all duration-300
+                               flex items-center gap-3 hover:translate-x-4 transform
+                               animate-in slide-in-from-left duration-400"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full opacity-0 scale-0
+                                    group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div>
+                    <span className="relative">
+                      {item.name}
+                      <div className="absolute -bottom-1 left-0 w-0 h-1 bg-yellow-400 
+                                      group-hover:w-full transition-all duration-500"></div>
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Légal</h3>
-            <ul className="space-y-2">
-              <li><Link to="/legal#mentions" className="text-neutral-300 hover:text-white transition-colors">Mentions légales</Link></li>
-              <li><Link to="/legal#privacy" className="text-neutral-300 hover:text-white transition-colors">Confidentialité</Link></li>
-              <li><Link to="/legal#cookies" className="text-neutral-300 hover:text-white transition-colors">Cookies</Link></li>
-              <li><Link to="/legal#terms" className="text-neutral-300 hover:text-white transition-colors">CGU</Link></li>
+          {/* Legal avec underlines PLUS VISIBLES */}
+          <div className="group">
+            <h3 className="text-white font-semibold mb-6 text-lg relative">
+              Légal
+              <div className="absolute -bottom-2 left-0 w-0 h-1 bg-indigo-400 
+                              group-hover:w-full transition-all duration-500"></div>
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { name: 'Mentions légales', href: '/legal#mentions' },
+                { name: 'Confidentialité', href: '/legal#privacy' },
+                { name: 'Cookies', href: '/legal#cookies' },
+                { name: 'CGU', href: '/legal#terms' }
+              ].map((item, index) => (
+                <li key={item.name}>
+                  <Link 
+                    to={item.href} 
+                    className="group text-neutral-300 hover:text-indigo-400 transition-all duration-300
+                               flex items-center gap-3 hover:translate-x-4 transform
+                               animate-in slide-in-from-left duration-400"
+                    style={{ animationDelay: `${(index + 5) * 100}ms` }}
+                  >
+                    <div className="w-2 h-2 bg-indigo-400 rounded-full opacity-0 scale-0
+                                    group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div>
+                    <span className="relative">
+                      {item.name}
+                      <div className="absolute -bottom-1 left-0 w-0 h-1 bg-indigo-400 
+                                      group-hover:w-full transition-all duration-500"></div>
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-neutral-800 mt-12 pt-8">
-          {/* Version Desktop */}
-          <div className="hidden md:flex justify-between items-center">
-            {/* Copyright L'Éveil */}
-            <div className="flex items-center gap-2 text-neutral-300 text-sm">
+        {/* Bottom section avec animations TRÈS VISIBLES */}
+        <div className="border-t border-neutral-800 pt-8 pb-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            {/* Copyright avec animation VISIBLE */}
+            <div className="flex items-center gap-2 text-neutral-400 text-sm group hover:text-neutral-200 transition-colors duration-300">
               <img 
                 src="/images/logo-footer.webp" 
                 alt="Logo L'Éveil" 
-                className="w-5 h-5 rounded-full"
+                className="w-5 h-5 rounded-full transition-all duration-500
+                           group-hover:rotate-180 group-hover:scale-125 group-hover:brightness-125"
               />
-              <span>© 2024 L'Éveil. Tous droits réservés.</span>
+              <span className="group-hover:text-neutral-100 transition-colors duration-300">
+                © 2024 L'Éveil. Tous droits réservés.
+              </span>
             </div>
-            
-            {/* Message central */}
-            <p className="text-neutral-300 text-sm flex items-center gap-1">
-              Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
-            </p>
 
-            {/* Guesso Studio */}
-            <div className="flex items-center gap-2 text-neutral-400 text-sm hover:text-neutral-300 transition-colors">
-              <span>Propulsé par</span>
-              <a 
-                href="https://guesso-studio.com" 
-                target="_blank" 
+            {/* TA SECTION GUESSO STUDIO avec effets ajoutés */}
+            <div className="flex items-center gap-2 text-neutral-400 text-sm group">
+              <span>Propulsé par:</span>
+              <a
+                href="https://guesso-studio.com"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
+                className="flex items-center gap-2 hover:scale-105 transition-all duration-300
+                           hover:text-neutral-200 focus-ring rounded-lg"
                 aria-label="Visiter Guesso Studio"
               >
-                {/* Logo Guesso Studio - SANS fond bleu */}
-                <img 
-                  src="/images/guesso-logo.webp" 
-                  alt="Guesso Studio" 
-                  className="w-10 h-10 rounded-lg"
-                />
-                <span className="font-medium">Guesso Studio</span>
+                {/* Logo Guesso Studio avec effets */}
+                <div className="relative overflow-hidden rounded-lg">
+                  <img
+                    src="/images/guesso-logo.webp"
+                    alt="Guesso Studio"
+                    className="w-10 h-10 rounded-lg transition-all duration-300
+                               group-hover:scale-110 group-hover:rotate-6 group-hover:brightness-110"
+                  />
+                  {/* Effet de brillance sur le logo */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent
+                                  -translate-x-full group-hover:translate-x-full
+                                  transition-transform duration-700 ease-out rounded-lg"></div>
+                </div>
+                <span className="font-medium group-hover:text-blue-400 transition-colors duration-300">
+                  Guesso Studio
+                </span>
               </a>
             </div>
-          </div>
 
-          {/* Version Mobile */}
-          <div className="md:hidden space-y-4 text-center">
-            <div className="flex items-center justify-center gap-2 text-neutral-300 text-sm">
-              <img 
-                src="/images/logo-footer.webp" 
-                alt="Logo L'Éveil" 
-                className="w-5 h-5 rounded-full"
-              />
-              <span>© 2024 L'Éveil. Tous droits réservés.</span>
+            {/* Made with love avec cœur QUI PULSE VISIBLEMENT */}
+            <div className="flex items-center gap-2 text-neutral-400 text-sm group hover:text-red-300 transition-colors duration-300">
+              <span>Fait avec</span>
+              <Heart className="w-5 h-5 text-red-500 transition-all duration-300
+                               group-hover:scale-150 group-hover:text-red-400 
+                               animate-pulse group-hover:animate-bounce" 
+                     style={{animationDuration: '1s'}} />
+              <span>en France</span>
             </div>
-            
-            <p className="text-neutral-300 text-sm flex items-center justify-center gap-1">
-              Fait avec <Heart className="w-4 h-4 text-red-500" /> pour votre bien-être mental
-            </p>
 
-            <div className="flex items-center justify-center gap-2 text-neutral-400 text-sm">
-              <span>Propulsé par</span>
-              <a 
-                href="https://guesso-studio.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
-                aria-label="Visiter Guesso Studio"
-              >
-                <img 
-                  src="/images/guesso-logo.webp" 
-                  alt="Guesso Studio" 
-                  className="w-7 h-7 rounded-lg"
-                />
-                <span className="font-medium">Guesso Studio</span>
-              </a>
-            </div>
+            {/* Bouton retour en haut TRÈS VISIBLE */}
+            <button
+              onClick={scrollToTop}
+              className="group p-3 rounded-full bg-indigo-600/80 hover:bg-indigo-500 
+                         transition-all duration-300 transform hover:scale-125 hover:-translate-y-3 
+                         focus-ring relative overflow-hidden shadow-lg hover:shadow-indigo-500/50
+                         border-2 border-indigo-400/30 hover:border-indigo-300"
+              aria-label="Retour en haut de page"
+            >
+              <ArrowUp className="w-6 h-6 transition-all duration-300 
+                                 group-hover:scale-125 group-hover:-translate-y-1 group-hover:text-white" />
+              
+              {/* Effet ripple TRÈS VISIBLE */}
+              <div className="absolute inset-0 bg-indigo-300/30 rounded-full scale-0 
+                              group-hover:scale-200 group-active:scale-150
+                              transition-transform duration-500"></div>
+              
+              {/* Ring animation au hover */}
+              <div className="absolute inset-0 rounded-full border-2 border-indigo-300 scale-100 opacity-0
+                              group-hover:scale-150 group-hover:opacity-100 group-hover:border-indigo-200
+                              transition-all duration-500"></div>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Dégradé en bas PLUS VISIBLE */}
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r 
+                      from-yellow-400 via-indigo-500 to-purple-600 opacity-80"></div>
     </footer>
   )
 }

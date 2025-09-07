@@ -713,3 +713,324 @@ strong:hover {
 [data-theme="dark"] .border-gradient-relations {
   background: linear-gradient(#1f2937, #1f2937) padding-box, var(--gradient-relations) border-box;
 }
+/* Point 4 : Animations CSS supplémentaires - AJOUTE à la fin de ton index.css */
+
+/* ===== ANIMATIONS CONTEXTUELLES SUPPLÉMENTAIRES ===== */
+
+/* Animation de fade-in pour les pages */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour les éléments au scroll */
+@keyframes revealOnScroll {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animation pour les boutons avec effet de pulsation */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+}
+
+/* Animation pour les éléments de navigation */
+@keyframes navSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation pour les icônes qui tournent */
+@keyframes iconSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation pour l'effet de vague */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation pour l'effet de brillance qui se déplace */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+/* Animation pour l'effet de rebond doux */
+@keyframes softBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===== CLASSES UTILITAIRES POUR ANIMATIONS ===== */
+
+/* Animation d'entrée de page */
+.page-enter {
+  animation: pageEnter 0.6s ease-out;
+}
+
+/* Révélation au scroll avec Intersection Observer */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Effet de pulsation pour les boutons importants */
+.pulse-glow:hover {
+  animation: buttonPulse 2s infinite;
+}
+
+/* Animation pour les éléments de navigation */
+.nav-item {
+  animation: navSlideIn 0.4s ease-out;
+}
+
+/* Rotation d'icône au hover */
+.icon-spin:hover {
+  animation: iconSpin 0.6s ease-in-out;
+}
+
+/* Effet de vague pour les éléments flottants */
+.wave-animation {
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Effet de brillance pour les cartes premium */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  transition: none;
+}
+
+.shimmer-effect:hover::before {
+  animation: shimmer 1.5s ease-out;
+}
+
+/* Rebond doux pour les éléments interactifs */
+.soft-bounce:hover {
+  animation: softBounce 0.6s ease-in-out;
+}
+
+/* ===== MICRO-INTERACTIONS SPÉCIFIQUES ===== */
+
+/* Effet de survol sur les liens avec soulignement animé */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease-out;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Effet de focus accessible amélioré */
+.focus-ring-enhanced:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px white,
+    0 0 0 4px rgb(99, 102, 241),
+    0 4px 12px rgba(99, 102, 241, 0.3);
+  transform: scale(1.02);
+}
+
+/* Animation pour les badges/notifications */
+.badge-animate {
+  animation: softBounce 1s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Effet de morphing pour les boutons */
+.button-morph {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-morph:hover {
+  border-radius: 2rem;
+  transform: scale(1.05);
+}
+
+/* Animation de chargement pour les images */
+.image-load {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s ease-out;
+}
+
+.image-load.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Effet de parallax léger */
+.parallax-light {
+  transform: translateZ(0);
+  transition: transform 0.1s ease-out;
+}
+
+/* ===== ANIMATIONS RESPONSIVE ===== */
+
+/* Réduction des animations sur mobile pour les performances */
+@media (max-width: 768px) {
+  .reveal-on-scroll {
+    transform: translateY(20px) scale(0.98);
+  }
+  
+  .wave-animation {
+    animation-duration: 3s;
+  }
+  
+  .shimmer-effect:hover::before {
+    animation-duration: 1s;
+  }
+}
+
+/* Respect des préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .nav-item,
+  .wave-animation,
+  .soft-bounce:hover,
+  .badge-animate {
+    animation: none;
+  }
+  
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .shimmer-effect::before {
+    display: none;
+  }
+  
+  .button-morph:hover {
+    transform: none;
+    border-radius: inherit;
+  }
+}
+
+/* ===== ÉTATS DE LOADING ÉLÉGANTS ===== */
+
+/* Skeleton loader pour les cartes */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 25%,
+    #3a3a3a 50%,
+    #2a2a2a 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Spinner de chargement élégant */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(99, 102, 241, 0.1);
+  border-left: 4px solid rgb(99, 102, 241);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
