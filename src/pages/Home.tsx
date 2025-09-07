@@ -196,137 +196,248 @@ const Home = () => {
         image="/images/og-default.jpg"
       />
 
-      {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
-        {/* Background Image avec overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-  src="/images/hero-bg.webp"
-  alt=""
-  width="1600"
-  height="900"
-  className="w-full h-full object-cover"
-  loading="eager"
-  decoding="async"
-  fetchPriority="high"
-/>
-          <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
-        </div>
+      {/* Point 3 : Hero Section TRANSFORMÉE - Interactions tactiles optimisées */}
+<section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden group">
+  {/* Background Image avec parallax subtil */}
+  <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 transform transition-transform duration-1000 ease-out 
+                    scale-100 group-hover:scale-105">
+      <img
+        src="/images/hero-bg.webp"
+        alt=""
+        width="1600"
+        height="900"
+        className="w-full h-full object-cover"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+      />
+    </div>
+    <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
+    
+    {/* Overlay gradient dynamique */}
+    <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-transparent to-purple-900/20 
+                    opacity-70 group-hover:opacity-80 transition-opacity duration-700"></div>
+  </div>
 
-        {/* Particules animées */}
-        <ParticlesBackground count={24} />
+  {/* Particules interactives améliorées - responsive */}
+  <div className="absolute inset-0 z-5">
+    {/* Particules principales */}
+    <div className="absolute inset-0 overflow-hidden">
+      {Array.from({ length: 24 }).map((_, index) => (
+        <div
+          key={index}
+          className="absolute rounded-full pointer-events-none transition-all duration-300
+                     hidden md:block"
+          style={{
+            left: `${(index * 37) % 100}%`,
+            bottom: `${(index * 23) % 100}%`,
+            width: `${2 + (index % 3)}px`,
+            height: `${2 + (index % 3)}px`,
+            background: index % 4 === 0 ? '#fbbf24' : index % 4 === 1 ? '#60a5fa' : index % 4 === 2 ? '#34d399' : '#f472b6',
+            opacity: 0.6 - (index % 4) * 0.1,
+            animation: `float ${5 + (index % 3)}s ease-in-out infinite`,
+            animationDelay: `${(index % 6) * 0.5}s`,
+            filter: 'blur(0.5px)',
+          }}
+        />
+      ))}
+      
+      {/* Particules mobiles réduites */}
+      {Array.from({ length: 8 }).map((_, index) => (
+        <div
+          key={`mobile-${index}`}
+          className="absolute rounded-full pointer-events-none transition-all duration-300
+                     block md:hidden"
+          style={{
+            left: `${(index * 40) % 100}%`,
+            bottom: `${(index * 30) % 100}%`,
+            width: `${1 + (index % 2)}px`,
+            height: `${1 + (index % 2)}px`,
+            background: index % 3 === 0 ? '#fbbf24' : index % 3 === 1 ? '#60a5fa' : '#34d399',
+            opacity: 0.5,
+            animation: `float ${4 + (index % 2)}s ease-in-out infinite`,
+            animationDelay: `${index * 0.6}s`,
+          }}
+        />
+      ))}
+    </div>
+  </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Titre principal animé */}
-            <div className="mb-8">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
-                <span className="inline-block">
-                  {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-                      style={{ 
-                        animationDelay: `${50 + index * 60}ms`, 
-                        animationFillMode: 'both' 
-                      }}
-                    >
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </span>
-                  ))}
-                </span>
-                <br className="block sm:hidden" />
-                <span className="inline-block gradient-text-fallback">
-                  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-                    <span
-                      key={index + 14}
-                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-                      style={{ 
-                        animationDelay: `${50 + (index + 14) * 60}ms`, 
-                        animationFillMode: 'both' 
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                </span>
-              </h1>
-
-              {/* Sous-titre */}
-              <p
-                className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
-                style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-4xl mx-auto text-center">
+      {/* Titre principal avec interactions tactiles */}
+      <div className="mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
+          {/* Première ligne avec effet stagger */}
+          <span className="inline-block">
+            {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+              <span
+                key={index}
+                className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500 
+                           transition-all cursor-default
+                           hover:text-yellow-300 hover:scale-110 hover:-translate-y-1
+                           active:scale-95 active:text-yellow-400"
+                style={{ 
+                  animationDelay: `${50 + index * 60}ms`, 
+                  animationFillMode: 'both' 
+                }}
               >
-                Psychologie, neurosciences et développement personnel fondés 
-                sur la science pour transformer votre vie
-              </p>
-            </div>
-
-            {/* Boutons d'action */}
-            <div
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
-              style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
-            >
-              <Link
-                to="/blog"
-                className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
-                           text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
-                           flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
-                           transform hover:-translate-y-2 hover:scale-105 focus-ring backdrop-blur-sm
-                           relative overflow-hidden"
-                aria-label="Découvrir les articles du blog"
-              >
-                <span className="relative z-10">Découvrir les articles</span>
-                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                -translate-x-full group-hover:translate-x-full 
-                                transition-transform duration-700 skew-x-12" />
-              </Link>
-
-              <a
-                href="#newsletter"
-                className="group bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white 
-                           px-8 py-4 rounded-lg font-semibold transition-all duration-300
-                           border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
-                           transform hover:-translate-y-2 hover:scale-105 focus-ring
-                           relative overflow-hidden"
-                aria-label="Recevoir le guide gratuit par email"
-              >
-                <span className="relative z-10">Recevoir le guide gratuit</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                                -translate-x-full group-hover:translate-x-full 
-                                transition-transform duration-700 skew-x-12" />
-              </a>
-            </div>
-
-            {/* Statistiques animées */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              {STATS.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20
-                             hover:bg-white/15 transition-all duration-500 hover:scale-105
-                             animate-in slide-in-from-bottom-8 duration-700"
+                {letter === ' ' ? '\u00A0' : letter}
+              </span>
+            ))}
+          </span>
+          <br className="block sm:hidden" />
+          
+          {/* Deuxième ligne avec gradient animé */}
+          <span className="inline-block relative">
+            <span className="gradient-text-fallback">
+              {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+                <span
+                  key={index + 14}
+                  className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500
+                             transition-all cursor-default
+                             hover:scale-110 hover:-translate-y-1
+                             active:scale-95"
                   style={{ 
-                    animationDelay: `${3000 + index * 200}ms`, 
+                    animationDelay: `${50 + (index + 14) * 60}ms`, 
                     animationFillMode: 'both' 
                   }}
                 >
-                  <stat.icon className="w-8 h-8 mx-auto mb-2 text-yellow-300 animate-pulse" />
-                  <div className="text-2xl font-bold text-white">
-                    <Counter 
-                      to={stat.value} 
-                      duration={1100 + index * 150} 
-                      suffix={stat.suffix} 
-                    />
-                  </div>
-                  <div className="text-sm text-white/80">{stat.label}</div>
-                </div>
+                  {letter}
+                </span>
               ))}
+            </span>
+          </span>
+        </h1>
+
+        {/* Sous-titre avec curseur clignotant */}
+        <div className="relative">
+          <p
+            className="text-lg md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto
+                       animate-in fade-in slide-in-from-bottom-4 duration-1000"
+            style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
+          >
+            <span className="relative">
+              Psychologie, neurosciences et développement personnel fondés 
+              sur la science pour transformer votre vie
+              {/* Curseur clignotant */}
+              <span className="inline-block w-0.5 md:w-1 h-6 md:h-8 ml-1 bg-yellow-400 
+                               animate-pulse opacity-0"
+                    style={{ animationDelay: '3500ms', animationFillMode: 'both' }}></span>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Boutons d'action avec micro-animations avancées */}
+      <div
+        className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
+        style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
+      >
+        {/* Bouton principal avec effet ripple et interactions tactiles */}
+        <Link
+          to="/blog"
+          className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 
+                     text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
+                     flex items-center justify-center gap-2 shadow-xl
+                     transform focus-ring backdrop-blur-sm overflow-hidden touch-manipulation
+                     
+                     hover:from-yellow-600 hover:to-orange-600 hover:shadow-2xl hover:-translate-y-2 hover:scale-105
+                     
+                     active:scale-95 active:shadow-lg active:from-yellow-600 active:to-orange-600"
+          aria-label="Découvrir les articles du blog"
+        >
+          <span className="relative z-10 transition-transform duration-200 group-active:scale-95">
+            Découvrir les articles
+          </span>
+          <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 
+                                 group-hover:translate-x-1 group-active:translate-x-0.5" />
+          
+          {/* Effet de brillance desktop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                          -translate-x-full md:group-hover:translate-x-full 
+                          transition-transform duration-700 skew-x-12 hidden md:block" />
+          
+          {/* Effet ripple mobile */}
+          <div className="absolute inset-0 bg-white/20 rounded-lg scale-0 
+                          group-active:scale-110 md:group-active:scale-100
+                          transition-transform duration-300 ease-out" />
+        </Link>
+
+        {/* Bouton secondaire avec interactions tactiles */}
+        <a
+          href="#newsletter"
+          className="group relative bg-white/20 backdrop-blur-sm text-white 
+                     px-8 py-4 rounded-lg font-semibold transition-all duration-300
+                     border border-white/30 shadow-lg focus-ring overflow-hidden touch-manipulation
+                     
+                     hover:bg-white/30 hover:border-white/50 hover:shadow-xl hover:-translate-y-2 hover:scale-105
+                     
+                     active:scale-95 active:bg-white/40 active:shadow-md"
+          aria-label="Recevoir le guide gratuit par email"
+        >
+          <span className="relative z-10 transition-transform duration-200 group-active:scale-95">
+            Recevoir le guide gratuit
+          </span>
+          
+          {/* Effet de brillance desktop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+                          -translate-x-full md:group-hover:translate-x-full 
+                          transition-transform duration-700 skew-x-12 hidden md:block" />
+          
+          {/* Effet ripple mobile */}
+          <div className="absolute inset-0 bg-white/10 rounded-lg scale-0 
+                          group-active:scale-110 md:group-active:scale-100
+                          transition-transform duration-300 ease-out" />
+        </a>
+      </div>
+
+      {/* Statistiques animées avec interactions tactiles */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
+        {STATS.map((stat, index) => (
+          <div
+            key={index}
+            className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 
+                       border border-white/20 transition-all duration-500 touch-manipulation
+                       
+                       hover:bg-white/15 hover:scale-105 hover:shadow-lg
+                       
+                       active:scale-95 active:bg-white/20
+                       
+                       animate-in slide-in-from-bottom-8 duration-700"
+            style={{ 
+              animationDelay: `${3000 + index * 200}ms`, 
+              animationFillMode: 'both' 
+            }}
+          >
+            <stat.icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 text-yellow-300 
+                                 animate-pulse transition-transform duration-300
+                                 group-hover:scale-110 group-active:scale-95" />
+            <div className="text-xl md:text-2xl font-bold text-white transition-transform duration-200">
+              <Counter 
+                to={stat.value} 
+                duration={1100 + index * 150} 
+                suffix={stat.suffix} 
+              />
+            </div>
+            <div className="text-xs md:text-sm text-white/80 transition-colors duration-300">
+              {stat.label}
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* Indicateur de scroll avec interaction */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center
+                    transition-all duration-300 hover:border-white/50 active:scale-90">
+      <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
 
       {/* Citation du jour */}
       <section className="py-12 bg-white dark:bg-neutral-900">
@@ -343,7 +454,7 @@ const Home = () => {
       </section>
 
 
-{/* Point 2 : Domaines d'expertise - CARTES REPENSÉES DESKTOP & MOBILE */}
+{/* Point 2 CORRIGÉ : Domaines d'expertise - Interactions tactiles optimisées */}
 <section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
   {/* Background patterns géométriques - responsive */}
   <div className="absolute inset-0 opacity-20 md:opacity-30">
@@ -376,7 +487,7 @@ const Home = () => {
     {/* Grid responsive optimisé */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       
-      {/* NEUROSCIENCES - Card responsive */}
+      {/* NEUROSCIENCES - Interactions tactiles optimisées */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '200ms' }}
@@ -386,38 +497,51 @@ const Home = () => {
           className="group block enhanced-transition"
           aria-label="Voir tous les articles de Neurosciences"
         >
-          <div className="relative bg-gradient-neurosciences-soft hover:bg-gradient-neurosciences-hover 
+          <div className="relative bg-gradient-neurosciences-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-neurosciences
-                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          transform transition-all duration-300 ease-out
                           focus-ring overflow-hidden border border-white/10
-                          touch-manipulation">
+                          touch-manipulation
+                          
+                          hover:bg-gradient-neurosciences-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          
+                          active:bg-gradient-neurosciences-hover active:scale-95 active:shadow-lg
+                          md:active:scale-100">
             
-            {/* Background gradient overlay - plus subtil sur mobile */}
-            <div className="absolute inset-0 bg-gradient-neurosciences opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
-                            transition-opacity duration-400 rounded-2xl"></div>
+            {/* Background gradient overlay - Desktop hover + Mobile active */}
+            <div className="absolute inset-0 bg-gradient-neurosciences opacity-0 
+                            md:group-hover:opacity-10 group-active:opacity-15
+                            transition-opacity duration-300 rounded-2xl"></div>
             
-            {/* Pattern géométrique subtil en arrière-plan */}
-            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+            {/* Pattern géométrique - Responsive opacity */}
+            <div className="absolute top-4 right-4 opacity-10 
+                            md:group-hover:opacity-20 group-active:opacity-25
+                            transition-opacity duration-300">
               <svg width="40" height="40" viewBox="0 0 40 40" className="text-current">
                 <path d="M20 8 L32 20 L20 32 L8 20 Z" stroke="currentColor" strokeWidth="1" fill="none" className="text-indigo-400"/>
                 <circle cx="20" cy="20" r="6" stroke="currentColor" strokeWidth="1" fill="none" className="text-indigo-500"/>
               </svg>
             </div>
             
-            {/* Icône améliorée avec micro-animations */}
+            {/* Icône avec feedback tactile */}
             <div className="relative z-10 mb-6">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-neurosciences rounded-xl 
                               flex items-center justify-center shadow-glow-neurosciences
-                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
-                              transition-all duration-300 relative overflow-hidden">
-                <Brain className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10" />
+                              transition-all duration-300 relative overflow-hidden
+                              
+                              md:group-hover:animate-glow-pulse md:group-hover:scale-110
+                              group-active:scale-110 group-active:shadow-glow-neurosciences">
+                <Brain className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10 
+                                 transition-transform duration-200
+                                 group-active:scale-110" />
                 
-                {/* Ondulation au clic/touch */}
-                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
-                                transition-transform duration-200 ease-out md:hidden"></div>
+                {/* Effet ripple au touch - Mobile only */}
+                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                                group-active:scale-150 md:group-active:scale-0
+                                transition-transform duration-300 ease-out"></div>
               </div>
               
-              {/* Particules flottantes autour de l'icône - desktop only */}
+              {/* Particules flottantes - Desktop only */}
               <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-indigo-400 rounded-full 
                               opacity-0 group-hover:opacity-60 group-hover:animate-float transition-all duration-500"
                    style={{ animationDelay: '0.2s' }}></div>
@@ -426,32 +550,41 @@ const Home = () => {
                    style={{ animationDelay: '0.4s' }}></div>
             </div>
 
-            {/* Contenu avec animations texte */}
+            {/* Contenu avec feedback tactile */}
             <div className="relative z-10">
               <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-neurosciences transition-all duration-300
-                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
+                             transition-all duration-300
+                             md:group-hover:text-gradient-neurosciences 
+                             group-active:text-indigo-600 dark:group-active:text-indigo-400
+                             transform md:group-hover:translate-x-1 group-active:translate-x-0.5">
                 Neurosciences
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                           transition-colors duration-300
+                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
                 Découvrez comment votre cerveau fonctionne et comment l'optimiser
               </p>
             </div>
 
-            {/* Barre de progression interactive - responsive */}
+            {/* Barre de progression - Responsive */}
             <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-neurosciences 
-                            group-hover:w-full transition-all duration-500 ease-out"></div>
+                            transition-all duration-500 ease-out
+                            md:group-hover:w-full group-active:w-full"></div>
 
-            {/* Effet de brillance - adapté mobile */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
+            {/* Effet de brillance - Adapté mobile */}
+            <div className="absolute inset-0 opacity-0 
+                            md:group-hover:opacity-20 group-active:opacity-10
                             bg-gradient-to-r from-transparent via-white to-transparent
-                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
+                            transform -skew-x-12 translate-x-full 
+                            md:group-hover:translate-x-0 group-active:translate-x-0
+                            transition-transform duration-500 ease-out pointer-events-none"></div>
             
-            {/* Badge dynamique - taille responsive */}
-            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
-                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            {/* Badge tactile responsive */}
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 
+                            transition-all duration-300 transform translate-y-2
+                            md:group-hover:opacity-100 md:group-hover:translate-y-0
+                            group-active:opacity-100 group-active:translate-y-0">
               <div className="bg-gradient-neurosciences text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
                 <span className="hidden sm:inline">Voir articles</span>
                 <span className="sm:hidden">Voir</span>
@@ -461,7 +594,7 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* PSYCHOLOGIE - Card responsive */}
+      {/* PSYCHOLOGIE - Interactions tactiles optimisées */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '350ms' }}
@@ -471,17 +604,25 @@ const Home = () => {
           className="group block enhanced-transition"
           aria-label="Voir tous les articles de Psychologie"
         >
-          <div className="relative bg-gradient-psychologie-soft hover:bg-gradient-psychologie-hover 
+          <div className="relative bg-gradient-psychologie-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-psychologie
-                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          transform transition-all duration-300 ease-out
                           focus-ring overflow-hidden border border-white/10
-                          touch-manipulation">
+                          touch-manipulation
+                          
+                          hover:bg-gradient-psychologie-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          
+                          active:bg-gradient-psychologie-hover active:scale-95 active:shadow-lg
+                          md:active:scale-100">
             
-            <div className="absolute inset-0 bg-gradient-psychologie opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
-                            transition-opacity duration-400 rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-psychologie opacity-0 
+                            md:group-hover:opacity-10 group-active:opacity-15
+                            transition-opacity duration-300 rounded-2xl"></div>
             
             {/* Pattern coeur stylisé */}
-            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+            <div className="absolute top-4 right-4 opacity-10 
+                            md:group-hover:opacity-20 group-active:opacity-25
+                            transition-opacity duration-300">
               <svg width="40" height="40" viewBox="0 0 40 40" className="text-pink-400">
                 <path d="M20 32 C15 27, 8 20, 8 14 C8 10, 12 8, 16 10 C18 11, 20 13, 20 13 C20 13, 22 11, 24 10 C28 8, 32 10, 32 14 C32 20, 25 27, 20 32 Z" 
                       stroke="currentColor" strokeWidth="1" fill="none"/>
@@ -491,13 +632,17 @@ const Home = () => {
             <div className="relative z-10 mb-6">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-psychologie rounded-xl 
                               flex items-center justify-center shadow-glow-psychologie
-                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
-                              transition-all duration-300 relative overflow-hidden">
+                              transition-all duration-300 relative overflow-hidden
+                              
+                              md:group-hover:animate-glow-pulse md:group-hover:scale-110
+                              group-active:scale-110 group-active:shadow-glow-psychologie">
                 <Heart className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10 
-                                 group-hover:animate-pulse" />
+                                 transition-transform duration-200
+                                 group-active:scale-110 md:group-hover:animate-pulse" />
                 
-                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
-                                transition-transform duration-200 ease-out md:hidden"></div>
+                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                                group-active:scale-150 md:group-active:scale-0
+                                transition-transform duration-300 ease-out"></div>
               </div>
               
               <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-pink-400 rounded-full 
@@ -510,26 +655,35 @@ const Home = () => {
 
             <div className="relative z-10">
               <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-psychologie transition-all duration-300
-                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
+                             transition-all duration-300
+                             md:group-hover:text-gradient-psychologie 
+                             group-active:text-pink-600 dark:group-active:text-pink-400
+                             transform md:group-hover:translate-x-1 group-active:translate-x-0.5">
                 Psychologie
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                           transition-colors duration-300
+                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
                 Comprenez vos émotions et développez votre intelligence émotionnelle
               </p>
             </div>
 
             <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-psychologie 
-                            group-hover:w-full transition-all duration-500 ease-out"></div>
+                            transition-all duration-500 ease-out
+                            md:group-hover:w-full group-active:w-full"></div>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
+            <div className="absolute inset-0 opacity-0 
+                            md:group-hover:opacity-20 group-active:opacity-10
                             bg-gradient-to-r from-transparent via-white to-transparent
-                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
+                            transform -skew-x-12 translate-x-full 
+                            md:group-hover:translate-x-0 group-active:translate-x-0
+                            transition-transform duration-500 ease-out pointer-events-none"></div>
             
-            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
-                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 
+                            transition-all duration-300 transform translate-y-2
+                            md:group-hover:opacity-100 md:group-hover:translate-y-0
+                            group-active:opacity-100 group-active:translate-y-0">
               <div className="bg-gradient-psychologie text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
                 <span className="hidden sm:inline">Voir articles</span>
                 <span className="sm:hidden">Voir</span>
@@ -539,7 +693,7 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* DÉVELOPPEMENT PERSONNEL - Card responsive */}
+      {/* DÉVELOPPEMENT PERSONNEL - Interactions tactiles optimisées */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '500ms' }}
@@ -549,17 +703,25 @@ const Home = () => {
           className="group block enhanced-transition"
           aria-label="Voir tous les articles de Développement Personnel"
         >
-          <div className="relative bg-gradient-developpement-soft hover:bg-gradient-developpement-hover 
+          <div className="relative bg-gradient-developpement-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-developpement
-                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          transform transition-all duration-300 ease-out
                           focus-ring overflow-hidden border border-white/10
-                          touch-manipulation">
+                          touch-manipulation
+                          
+                          hover:bg-gradient-developpement-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          
+                          active:bg-gradient-developpement-hover active:scale-95 active:shadow-lg
+                          md:active:scale-100">
             
-            <div className="absolute inset-0 bg-gradient-developpement opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
-                            transition-opacity duration-400 rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-developpement opacity-0 
+                            md:group-hover:opacity-10 group-active:opacity-15
+                            transition-opacity duration-300 rounded-2xl"></div>
             
             {/* Pattern croissance */}
-            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+            <div className="absolute top-4 right-4 opacity-10 
+                            md:group-hover:opacity-20 group-active:opacity-25
+                            transition-opacity duration-300">
               <svg width="40" height="40" viewBox="0 0 40 40" className="text-emerald-400">
                 <path d="M8 32 L16 24 L24 28 L32 8" stroke="currentColor" strokeWidth="2" fill="none"/>
                 <circle cx="32" cy="8" r="3" fill="currentColor"/>
@@ -571,12 +733,17 @@ const Home = () => {
             <div className="relative z-10 mb-6">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-developpement rounded-xl 
                               flex items-center justify-center shadow-glow-developpement
-                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
-                              transition-all duration-300 relative overflow-hidden">
-                <TrendingUp className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10" />
+                              transition-all duration-300 relative overflow-hidden
+                              
+                              md:group-hover:animate-glow-pulse md:group-hover:scale-110
+                              group-active:scale-110 group-active:shadow-glow-developpement">
+                <TrendingUp className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10 
+                                     transition-transform duration-200
+                                     group-active:scale-110" />
                 
-                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
-                                transition-transform duration-200 ease-out md:hidden"></div>
+                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                                group-active:scale-150 md:group-active:scale-0
+                                transition-transform duration-300 ease-out"></div>
               </div>
               
               <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full 
@@ -589,26 +756,35 @@ const Home = () => {
 
             <div className="relative z-10">
               <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-developpement transition-all duration-300
-                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
+                             transition-all duration-300
+                             md:group-hover:text-gradient-developpement 
+                             group-active:text-emerald-600 dark:group-active:text-emerald-400
+                             transform md:group-hover:translate-x-1 group-active:translate-x-0.5">
                 Développement Personnel
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                           transition-colors duration-300
+                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
                 Techniques pratiques pour votre croissance personnelle et professionnelle
               </p>
             </div>
 
             <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-developpement 
-                            group-hover:w-full transition-all duration-500 ease-out"></div>
+                            transition-all duration-500 ease-out
+                            md:group-hover:w-full group-active:w-full"></div>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
+            <div className="absolute inset-0 opacity-0 
+                            md:group-hover:opacity-20 group-active:opacity-10
                             bg-gradient-to-r from-transparent via-white to-transparent
-                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
+                            transform -skew-x-12 translate-x-full 
+                            md:group-hover:translate-x-0 group-active:translate-x-0
+                            transition-transform duration-500 ease-out pointer-events-none"></div>
             
-            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
-                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 
+                            transition-all duration-300 transform translate-y-2
+                            md:group-hover:opacity-100 md:group-hover:translate-y-0
+                            group-active:opacity-100 group-active:translate-y-0">
               <div className="bg-gradient-developpement text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
                 <span className="hidden sm:inline">Voir articles</span>
                 <span className="sm:hidden">Voir</span>
@@ -618,7 +794,7 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* RELATIONS HUMAINES - Card responsive */}
+      {/* RELATIONS HUMAINES - Interactions tactiles optimisées */}
       <div 
         className="animate-in slide-in-from-bottom-4 duration-700"
         style={{ animationDelay: '650ms' }}
@@ -628,17 +804,25 @@ const Home = () => {
           className="group block enhanced-transition"
           aria-label="Voir tous les articles de Relations Humaines"
         >
-          <div className="relative bg-gradient-relations-soft hover:bg-gradient-relations-hover 
+          <div className="relative bg-gradient-relations-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-relations
-                          transform hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          transform transition-all duration-300 ease-out
                           focus-ring overflow-hidden border border-white/10
-                          touch-manipulation">
+                          touch-manipulation
+                          
+                          hover:bg-gradient-relations-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                          
+                          active:bg-gradient-relations-hover active:scale-95 active:shadow-lg
+                          md:active:scale-100">
             
-            <div className="absolute inset-0 bg-gradient-relations opacity-0 group-hover:opacity-5 md:group-hover:opacity-10 
-                            transition-opacity duration-400 rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-relations opacity-0 
+                            md:group-hover:opacity-10 group-active:opacity-15
+                            transition-opacity duration-300 rounded-2xl"></div>
             
             {/* Pattern connexions */}
-            <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+            <div className="absolute top-4 right-4 opacity-10 
+                            md:group-hover:opacity-20 group-active:opacity-25
+                            transition-opacity duration-300">
               <svg width="40" height="40" viewBox="0 0 40 40" className="text-purple-400">
                 <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1" fill="none"/>
                 <circle cx="28" cy="12" r="4" stroke="currentColor" strokeWidth="1" fill="none"/>
@@ -650,12 +834,17 @@ const Home = () => {
             <div className="relative z-10 mb-6">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-relations rounded-xl 
                               flex items-center justify-center shadow-glow-relations
-                              group-hover:animate-glow-pulse group-hover:scale-105 md:group-hover:scale-110 
-                              transition-all duration-300 relative overflow-hidden">
-                <Users className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10" />
+                              transition-all duration-300 relative overflow-hidden
+                              
+                              md:group-hover:animate-glow-pulse md:group-hover:scale-110
+                              group-active:scale-110 group-active:shadow-glow-relations">
+                <Users className="w-7 h-7 md:w-8 md:h-8 text-white drop-shadow-lg relative z-10 
+                                 transition-transform duration-200
+                                 group-active:scale-110" />
                 
-                <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-active:scale-110 
-                                transition-transform duration-200 ease-out md:hidden"></div>
+                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                                group-active:scale-150 md:group-active:scale-0
+                                transition-transform duration-300 ease-out"></div>
               </div>
               
               <div className="hidden md:block absolute -top-1 -right-1 w-2 h-2 bg-purple-400 rounded-full 
@@ -668,26 +857,35 @@ const Home = () => {
 
             <div className="relative z-10">
               <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
-                             group-hover:text-gradient-relations transition-all duration-300
-                             transform group-hover:translate-x-1 group-active:translate-x-0.5">
+                             transition-all duration-300
+                             md:group-hover:text-gradient-relations 
+                             group-active:text-purple-600 dark:group-active:text-purple-400
+                             transform md:group-hover:translate-x-1 group-active:translate-x-0.5">
                 Relations Humaines
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
-                           group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                           transition-colors duration-300
+                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
                 Améliorez vos relations et votre communication interpersonnelle
               </p>
             </div>
 
             <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-relations 
-                            group-hover:w-full transition-all duration-500 ease-out"></div>
+                            transition-all duration-500 ease-out
+                            md:group-hover:w-full group-active:w-full"></div>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 md:group-hover:opacity-20 
+            <div className="absolute inset-0 opacity-0 
+                            md:group-hover:opacity-20 group-active:opacity-10
                             bg-gradient-to-r from-transparent via-white to-transparent
-                            transform -skew-x-12 translate-x-full group-hover:translate-x-0
-                            transition-transform duration-500 md:duration-700 ease-out pointer-events-none"></div>
+                            transform -skew-x-12 translate-x-full 
+                            md:group-hover:translate-x-0 group-active:translate-x-0
+                            transition-transform duration-500 ease-out pointer-events-none"></div>
             
-            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 group-hover:opacity-100 
-                            transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0 
+                            transition-all duration-300 transform translate-y-2
+                            md:group-hover:opacity-100 md:group-hover:translate-y-0
+                            group-active:opacity-100 group-active:translate-y-0">
               <div className="bg-gradient-relations text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
                 <span className="hidden sm:inline">Voir articles</span>
                 <span className="sm:hidden">Voir</span>
