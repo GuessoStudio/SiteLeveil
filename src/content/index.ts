@@ -12,6 +12,7 @@ import ProcrastinationCerveau from "../articles/ProcrastinationCerveau";
 import MethodeAcrRepondreAuxBonnesNouvelles from "../articles/MethodeAcrRepondreAuxBonnesNouvelles";
 import SyndromeImposteur from "../articles/SyndromeImposteur";
 import SommeilReparateur from "../articles/SommeilReparateur";
+import LumiereNaturelle from "../articles/LumiereNaturelle";
 
 // Mappe chaque slug vers le composant de l’article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d’article.
@@ -26,5 +27,6 @@ export const articlesBySlug: Record<string, FC> = {
   "methode-acr-repondre-aux-bonnes-nouvelles": MethodeAcrRepondreAuxBonnesNouvelles,
   "syndrome-imposteur-solutions": SyndromeImposteur,
   "sommeil-reparateur-7-strategies-validees": SommeilReparateur,
+  "lumiere-naturelle-cerveau-sommeil-sante-mentale": LumiereNaturelle,
 };
 

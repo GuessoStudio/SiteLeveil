@@ -12,7 +12,8 @@ const articles = [
   "/blog/procrastination-cerveau-agir-neurosciences",
   "/blog/methode-acr-repondre-aux-bonnes-nouvelles",
   "/blog/syndrome-imposteur-solutions",
-  "/blog/sommeil-reparateur-7-strategies-validees"
+  "/blog/sommeil-reparateur-7-strategies-validees",
+  "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale"
 ];
 
 const urls = [...staticRoutes, ...articles]

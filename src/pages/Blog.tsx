@@ -159,6 +159,17 @@ const Blog = () => {
   image: "/images/articles/sommeil-reparateur-cover",
   slug: "sommeil-reparateur-7-strategies-validees",
   featured: true // Si tu veux le mettre en avant
+},
+{
+  id: 11, // Prendre le prochain ID
+  title: "Lumière naturelle : effets sur le cerveau, le sommeil et la santé mentale",
+  excerpt: "90% de notre temps passé en intérieur dérègle notre horloge biologique. Explorez les mécanismes neuroscientifiques et 7 stratégies pour retrouver un équilibre naturel.",
+  category: "Neurosciences", 
+  readTime: 14,
+  date: "2025-09-08",
+  image: "/images/articles/lumiere-naturelle-cover",
+  slug: "lumiere-naturelle-cerveau-sommeil-sante-mentale",
+  featured: true
 }
   ]
 
