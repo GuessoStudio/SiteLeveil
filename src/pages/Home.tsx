@@ -5,6 +5,7 @@ import ResumeReading from '../components/ResumeReading'
 import Newsletter from '../components/Newsletter'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
 import SEO from '../components/SEO'
+import { RevealOnScroll } from '../components/ui/animations/RevealOnScroll'
 
 /* ========================================
    COMPOSANTS UTILITAIRES
@@ -220,37 +221,39 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center">
             {/* Titre principal animé */}
             <div className="mb-8">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
-                <span className="inline-block">
-                  {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-                      style={{ 
-                        animationDelay: `${50 + index * 60}ms`, 
-                        animationFillMode: 'both' 
-                      }}
-                    >
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </span>
-                  ))}
-                </span>
-                <br className="block sm:hidden" />
-                <span className="inline-block gradient-text-fallback">
-                  {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-                    <span
-                      key={index + 14}
-                      className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-                      style={{ 
-                        animationDelay: `${50 + (index + 14) * 60}ms`, 
-                        animationFillMode: 'both' 
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                </span>
-              </h1>
+              <RevealOnScroll direction="down" delay={0}>
+  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
+    <span className="inline-block">
+      {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+        <span
+          key={index}
+          className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+          style={{ 
+            animationDelay: `${50 + index * 60}ms`, 
+            animationFillMode: 'both' 
+          }}
+        >
+          {letter === ' ' ? '\u00A0' : letter}
+        </span>
+      ))}
+    </span>
+    <br />
+    <span className="inline-block text-gradient">
+      {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
+        <span
+          key={index}
+          className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+          style={{ 
+            animationDelay: `${50 + (14 + index) * 60}ms`, 
+            animationFillMode: 'both' 
+          }}
+        >
+          {letter}
+        </span>
+      ))}
+    </span>
+  </h1>
+</RevealOnScroll>
 
               {/* Sous-titre */}
               <p
@@ -365,9 +368,11 @@ const Home = () => {
 
   <div className="container mx-auto px-4 relative z-10">
     <div className="text-center mb-12 md:mb-16 animate-in fade-in duration-700">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-        Explorez nos domaines d'expertise
-      </h2>
+      <RevealOnScroll direction="down" delay={100}>
+  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+    Explorez nos domaines d'expertise
+  </h2>
+</RevealOnScroll>
       <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
         Des contenus scientifiquement fondés pour votre développement personnel et professionnel
       </p>
@@ -377,15 +382,12 @@ const Home = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       
       {/* NEUROSCIENCES - Interactions tactiles optimisées */}
-      <div 
-        className="animate-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: '200ms' }}
-      >
-        <Link
-          to="/blog?category=Neurosciences"
-          className="group block enhanced-transition"
-          aria-label="Voir tous les articles de Neurosciences"
-        >
+<RevealOnScroll direction="up" delay={200}>
+  <Link
+    to="/blog?category=Neurosciences"
+    className="group block enhanced-transition"
+    aria-label="Voir tous les articles de Neurosciences"
+  >
           <div className="relative bg-gradient-neurosciences-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-neurosciences
                           transform transition-all duration-300 ease-out
@@ -481,18 +483,15 @@ const Home = () => {
             </div>
           </div>
         </Link>
-      </div>
+      </RevealOnScroll>
 
       {/* PSYCHOLOGIE - Interactions tactiles optimisées */}
-      <div 
-        className="animate-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: '350ms' }}
-      >
-        <Link
-          to="/blog?category=Psychologie"
-          className="group block enhanced-transition"
-          aria-label="Voir tous les articles de Psychologie"
-        >
+<RevealOnScroll direction="up" delay={300}>
+  <Link
+    to="/blog?category=Psychologie"
+    className="group block enhanced-transition"
+    aria-label="Voir tous les articles de Psychologie"
+  >
           <div className="relative bg-gradient-psychologie-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-psychologie
                           transform transition-all duration-300 ease-out
@@ -580,18 +579,15 @@ const Home = () => {
             </div>
           </div>
         </Link>
-      </div>
+      </RevealOnScroll>
 
       {/* DÉVELOPPEMENT PERSONNEL - Interactions tactiles optimisées */}
-      <div 
-        className="animate-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: '500ms' }}
-      >
-        <Link
-          to="/blog?category=Développement Personnel"
-          className="group block enhanced-transition"
-          aria-label="Voir tous les articles de Développement Personnel"
-        >
+<RevealOnScroll direction="up" delay={400}>
+  <Link
+    to="/blog?category=Développement Personnel"
+    className="group block enhanced-transition"
+    aria-label="Voir tous les articles de Développement Personnel"
+  >
           <div className="relative bg-gradient-developpement-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-developpement
                           transform transition-all duration-300 ease-out
@@ -681,18 +677,15 @@ const Home = () => {
             </div>
           </div>
         </Link>
-      </div>
+      </RevealOnScroll>
 
       {/* RELATIONS HUMAINES - Interactions tactiles optimisées */}
-      <div 
-        className="animate-in slide-in-from-bottom-4 duration-700"
-        style={{ animationDelay: '650ms' }}
-      >
-        <Link
-          to="/blog?category=Relations Humaines"
-          className="group block enhanced-transition"
-          aria-label="Voir tous les articles de Relations Humaines"
-        >
+<RevealOnScroll direction="up" delay={500}>
+  <Link
+    to="/blog?category=Relations Humaines"
+    className="group block enhanced-transition"
+    aria-label="Voir tous les articles de Relations Humaines"
+  >
           <div className="relative bg-gradient-relations-soft 
                           glass-card-soft p-6 md:p-8 rounded-2xl shadow-category card-glow-relations
                           transform transition-all duration-300 ease-out
@@ -782,7 +775,7 @@ const Home = () => {
             </div>
           </div>
         </Link>
-      </div>
+      </RevealOnScroll>
 
     </div>
     

@@ -1,10 +1,10 @@
 // ================================
-// ÉTAPE 6 : src/components/animations/RevealOnScroll.tsx
+// RÉVEAL ON SCROLL - VERSION CORRIGÉE COMPLÈTE
+// src/components/ui/animations/RevealOnScroll.tsx
 // ================================
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useScrollReveal } from 'hooks/useScrollReveal'
 
 interface RevealOnScrollProps {
   children: React.ReactNode
@@ -16,6 +16,71 @@ interface RevealOnScrollProps {
   triggerOnce?: boolean
 }
 
+// ✅ HOOK DÉFINI AVANT LE COMPOSANT
+const useScrollRevealLocal = (options: any = {}) => {
+  const {
+    threshold = 0.1,
+    rootMargin = '0px 0px -50px 0px',
+    triggerOnce = true,
+    delay = 0
+  } = options
+
+  const [isVisible, setIsVisible] = React.useState(false)
+  const [isMounted, setIsMounted] = React.useState(false)
+  const ref = React.useRef<HTMLDivElement>(null)
+  const [reducedMotion, setReducedMotion] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsMounted(true)
+    
+    // Vérifier les préférences d'animation
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReducedMotion(mediaQuery.matches)
+    
+    const handleChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
+    mediaQuery.addEventListener('change', handleChange)
+    
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
+
+  React.useEffect(() => {
+    if (!isMounted || reducedMotion) {
+      setIsVisible(true) // Pas d'animation si reduced motion
+      return
+    }
+
+    const element = ref.current
+    if (!element) return
+
+    const obs = new IntersectionObserver((entries) => {
+      const [entry] = entries
+      if (entry.isIntersecting) {
+        if (delay > 0) {
+          setTimeout(() => setIsVisible(true), delay)
+        } else {
+          setIsVisible(true)
+        }
+        
+        if (triggerOnce) {
+          obs.unobserve(element)
+        }
+      } else if (!triggerOnce) {
+        setIsVisible(false)
+      }
+    }, { threshold, rootMargin })
+
+    obs.observe(element)
+    return () => obs.disconnect()
+  }, [isMounted, reducedMotion, threshold, rootMargin, triggerOnce, delay])
+
+  return { 
+    ref, 
+    isVisible: reducedMotion ? true : isVisible, 
+    isMounted 
+  }
+}
+
+// ✅ COMPOSANT PRINCIPAL
 export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
   children,
   direction = 'up',
@@ -25,14 +90,14 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
   className = '',
   triggerOnce = true
 }) => {
-  const { ref, isVisible, isMounted } = useScrollReveal({ 
+  // ✅ UTILISATION DU HOOK LOCAL
+  const { ref, isVisible, isMounted } = useScrollRevealLocal({ 
     delay,
     triggerOnce,
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   })
 
-  // Fonction pour obtenir l'état initial selon la direction
   const getInitialState = () => {
     switch (direction) {
       case 'up':
@@ -51,7 +116,6 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
     }
   }
 
-  // Fonction pour obtenir l'état d'animation
   const getAnimateState = () => {
     const baseTransition = {
       duration,
@@ -79,7 +143,7 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
           scale: 1,
           transition: {
             ...baseTransition,
-            ease: [0.34, 1.56, 0.64, 1] // Ease plus élastique pour scale
+            ease: [0.34, 1.56, 0.64, 1]
           }
         }
       case 'fade':

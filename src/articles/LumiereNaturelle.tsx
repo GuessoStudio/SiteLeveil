@@ -223,13 +223,6 @@ export default function LumiereNaturelle() {
             En 2002, <strong>David Berson</strong> (Université Brown) a découvert un troisième type de photorécepteur dans l'œil. Contrairement aux cônes et bâtonnets qui servent à la vision, les cellules ganglionnaires intrinsèquement photosensibles (ipRGC) détectent exclusivement la lumière pour réguler l'horloge biologique.
           </p>
 
-          <img
-            src="/images/articles/cellules-iprgc-oeil.webp"
-            alt="Cellules ipRGC dans l'oeil - Photorécepteurs spécialisés dans la régulation circadienne"
-            className="rounded-xl shadow-lg max-w-full h-auto my-8"
-            loading="lazy"
-            decoding="async"
-          />
           <p className="text-center text-sm text-neutral-600 dark:text-neutral-400 -mt-4 mb-8">
             <em>Les cellules ipRGC : les détecteurs temporels cachés de tes yeux</em>
           </p>
@@ -532,13 +525,6 @@ export default function LumiereNaturelle() {
 
           <h2>Programme de transformation lumineuse - 6 semaines</h2>
 
-          <img
-            src="/images/articles/programme-6-semaines-lumiere.webp"
-            alt="Programme 6 semaines transformation lumière naturelle - Timeline progressive exposition chronothérapie optimisation"
-            className="rounded-xl shadow-lg max-w-full h-auto my-8"
-            loading="lazy"
-            decoding="async"
-          />
           <p className="text-center text-sm text-neutral-600 dark:text-neutral-400 -mt-4 mb-8">
             <em>Votre roadmap vers une harmonie circadienne : 6 étapes pour synchroniser votre biologie</em>
           </p>
