@@ -14,10 +14,10 @@ const Resources = () => {
       description: "Guide complet des biais cognitifs et techniques de persuasion basés sur la psychologie comportementale.",
       category: "E-books",
       type: "PDF",
-      pages: 45,
+      pages: 28,
       downloads: 2500,
       rating: 4.8,
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/resources/21-déclencheurs-mentaux-pour-réussir",
       featured: true,
       free: true
     },
@@ -90,7 +90,7 @@ const Resources = () => {
       pages: 6,
       downloads: 100,
       rating: 4.6,
-      image: "/images/resources/reset-mental-express.webp",
+      image: "/resources/reset-mental-express.webp",
       featured: true,
       free: true
     }
