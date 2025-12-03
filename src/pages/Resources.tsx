@@ -80,6 +80,19 @@ const Resources = () => {
       image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=400",
       free: false,
       price: "29.99€"
+    },
+    {
+      id: 7,
+      title: "RESET MENTAL EXPRESS",
+      description: "Protocole neuroscientifique de 5 minutes pour apaiser ton cerveau saturé. 3 étapes simples basées sur la recherche.",
+      category: "Guides",
+      type: "PDF",
+      pages: 6,
+      downloads: 100,
+      rating: 4.6,
+      image: "/images/resources/reset-mental-express.webp",
+      featured: true,
+      free: true
     }
   ]
 
