@@ -17,7 +17,7 @@ const Resources = () => {
       pages: 28,
       downloads: 2500,
       rating: 4.8,
-      image: "/resources/21-déclencheurs-mentaux-pour-réussir",
+      image: "public/images/resources/21-déclencheurs-mentaux-pour-réussir",
       featured: true,
       free: true
     },
@@ -90,7 +90,7 @@ const Resources = () => {
       pages: 6,
       downloads: 100,
       rating: 4.6,
-      image: "/resources/reset-mental-express.webp",
+      image: "public/images/resources/reset-mental-express.webp",
       featured: true,
       free: true
     }
