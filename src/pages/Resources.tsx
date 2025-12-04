@@ -11,7 +11,7 @@ const Resources = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedResource, setSelectedResource] = useState<any>(null)
 
-  const categories = ['Tous', 'E-books', 'Guides', 'Outils', 'Vidéos', 'Applications']
+  const categories = ['Tous', 'E-books', 'Guides', 'Outils', 'Applications']
 
   const resources = [
     {
@@ -30,32 +30,6 @@ const Resources = () => {
     },
     {
       id: 2,
-      title: "Carnet de Gratitude Quotidienne",
-      description: "Template structuré pour développer une pratique de gratitude scientifiquement prouvée pour le bien-être.",
-      category: "Outils",
-      type: "PDF",
-      pages: 30,
-      downloads: 1800,
-      rating: 4.9,
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400",
-      free: true,
-      downloadUrl: "/resources/carnet-gratitude.pdf"
-    },
-    {
-      id: 3,
-      title: "Méditation Guidée : Gestion du Stress",
-      description: "Séance audio de 20 minutes basée sur la pleine conscience pour réduire l'anxiété et le stress quotidien.",
-      category: "Vidéos",
-      type: "Audio",
-      duration: "20 min",
-      downloads: 3200,
-      rating: 4.7,
-      image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=400",
-      free: true,
-      downloadUrl: "/resources/meditation-stress.mp3"
-    },
-    {
-      id: 4,
       title: "Tracker d'Habitudes Scientifique",
       description: "Application web pour suivre vos habitudes avec des insights basés sur la recherche comportementale.",
       category: "Applications",
@@ -68,33 +42,7 @@ const Resources = () => {
       webAppUrl: "/habit-tracker"
     },
     {
-      id: 5,
-      title: "Guide de la Communication Non-Violente",
-      description: "Techniques pratiques pour améliorer vos relations interpersonnelles et résoudre les conflits.",
-      category: "Guides",
-      type: "PDF",
-      pages: 35,
-      downloads: 1500,
-      rating: 4.8,
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400",
-      free: true,
-      downloadUrl: "/resources/communication-non-violente.pdf"
-    },
-    {
-      id: 6,
-      title: "Masterclass : Neuroplasticité et Apprentissage",
-      description: "Série de 5 vidéos sur comment optimiser votre cerveau pour l'apprentissage et la mémorisation.",
-      category: "Vidéos",
-      type: "Vidéo",
-      duration: "2h 15min",
-      downloads: 980,
-      rating: 4.9,
-      image: "https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=400",
-      free: true,
-      downloadUrl: "/resources/masterclass-neuroplasticite.zip"
-    },
-    {
-      id: 7,
+      id: 3,
       title: "RESET MENTAL EXPRESS",
       description: "Protocole neuroscientifique de 5 minutes pour apaiser ton cerveau saturé. 3 étapes simples basées sur la recherche.",
       category: "Guides",
@@ -289,12 +237,6 @@ const Resources = () => {
                       <div className="flex items-center gap-1">
                         <BookOpen className="w-4 h-4" />
                         <span>{resource.pages} pages</span>
-                      </div>
-                    )}
-                    {resource.duration && (
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        <span>{resource.duration}</span>
                       </div>
                     )}
                     {resource.users && (
