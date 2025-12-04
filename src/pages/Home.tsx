@@ -146,14 +146,14 @@ const FEATURED_ARTICLES = [
     slug: "neuro-dopamine-routine"
   }
 ]
-
+/*
 const STATS = [
   { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
   { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
   { icon: TrendingUp, value: 95, label: "Satisfaction", suffix: "%" },
   { icon: Heart, value: 50000, label: "Vies transformées", suffix: "+" }
 ]
-
+*/
 const CATEGORIES = [
   {
     icon: Brain,
@@ -222,37 +222,42 @@ const Home = () => {
             {/* Titre principal animé */}
             <div className="mb-8">
               <RevealOnScroll direction="down" delay={0}>
-  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg text-white px-2">
-    <span className="inline-block">
-      {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg px-2 flex justify-center items-center flex-wrap gap-3">
+  
+  {/* PARTIE 1 : "Éveillez votre" (Blanc simple) */}
+  <span className="inline-block text-white font-normal">
+    {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
+      <span
+        key={index}
+        className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
+        style={{ animationDelay: `${50 + index * 40}ms`, animationFillMode: 'both' }}
+      >
+        {letter === ' ' ? '\u00A0' : letter}
+      </span>
+    ))}
+  </span>
+
+  {/* PARTIE 2 : "POTENTIEL" (Avec Glow Intense & Majuscules) */}
+  <span className="inline-block relative">
+    {/* L'aura lumineuse derrière */}
+    <span className="absolute inset-0 blur-md bg-yellow-500/50 animate-pulse"></span>
+    
+    {/* Le texte par dessus */}
+    <span className="relative text-yellow-100 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] uppercase tracking-widest font-extrabold">
+      {['P','o','t','e','n','t','i','e','l'].map((letter, index) => (
         <span
           key={index}
           className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-          style={{ 
-            animationDelay: `${50 + index * 60}ms`, 
-            animationFillMode: 'both' 
-          }}
-        >
-          {letter === ' ' ? '\u00A0' : letter}
-        </span>
-      ))}
-    </span>
-    <br />
-    <span className="inline-block text-gradient">
-      {['p','o','t','e','n','t','i','e','l'].map((letter, index) => (
-        <span
-          key={index}
-          className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-          style={{ 
-            animationDelay: `${50 + (14 + index) * 60}ms`, 
-            animationFillMode: 'both' 
-          }}
+          // On ajoute un délai plus long (14 lettres avant * 40ms) pour qu'il apparaisse après le début de la phrase
+          style={{ animationDelay: `${50 + (14 + index) * 40}ms`, animationFillMode: 'both' }}
         >
           {letter}
         </span>
       ))}
     </span>
-  </h1>
+  </span>
+
+</h1>
 </RevealOnScroll>
 
               {/* Sous-titre */}
@@ -260,8 +265,8 @@ const Home = () => {
                 className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
                 style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
               >
-                Psychologie, neurosciences et développement personnel fondés 
-                sur la science pour transformer votre vie
+                Comprenez votre psychologie pour arrêter de subir. 
+                Une transformation fondée sur la science.
               </p>
             </div>
 
@@ -302,31 +307,10 @@ const Home = () => {
               </a>
             </div>
 
-            {/* Statistiques animées */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              {STATS.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20
-                             hover:bg-white/15 transition-all duration-500 hover:scale-105
-                             animate-in slide-in-from-bottom-8 duration-700"
-                  style={{ 
-                    animationDelay: `${3000 + index * 200}ms`, 
-                    animationFillMode: 'both' 
-                  }}
-                >
-                  <stat.icon className="w-6 h-6 md:w-8 md:h-8 mx-auto mb-2 text-yellow-300" />
-                  <div className="text-2xl font-bold text-white">
-                    <Counter 
-                      to={stat.value} 
-                      duration={1100 + index * 150} 
-                      suffix={stat.suffix} 
-                    />
-                  </div>
-                  <div className="text-sm text-white/80">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            {/* Preuve sociale discrète */}
+            <p className="text-base md:text-lg text-white/90 text-center max-w-2xl mx-auto mt-12 font-light tracking-wide">
+  Une communauté grandissante d'esprits en quête de clarté.
+</p>
           </div>
         </div>
       </section>
