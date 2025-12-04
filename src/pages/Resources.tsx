@@ -62,7 +62,7 @@ const Resources = () => {
       type: "Web App",
       users: "5K+",
       rating: 4.6,
-      image: "/images/habit-tracker-cover.webp",
+      image: "/images/resources/habit-tracker-cover.webp",
       free: true,
       isWebApp: true,
       webAppUrl: "/habit-tracker"
