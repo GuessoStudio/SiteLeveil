@@ -17,7 +17,7 @@ const Resources = () => {
       pages: 28,
       downloads: 2500,
       rating: 4.8,
-      image: "public/images/resources/21-déclencheurs-mentaux-pour-réussir",
+      image: "images/ressources/21-déclencheurs-mentaux-pour-réussir.webp",
       featured: true,
       free: true
     },
@@ -53,7 +53,7 @@ const Resources = () => {
       type: "Web App",
       users: "5K+",
       rating: 4.6,
-      image: "/images/habit-tracker-cover.jpg",
+      image: "/images/ressources/habit-tracker-cover.webp",
       free: true,  
     },
     {
@@ -90,7 +90,7 @@ const Resources = () => {
       pages: 6,
       downloads: 100,
       rating: 4.6,
-      image: "public/images/resources/reset-mental-express.webp",
+      image: "/images/ressources/reset-mental-express.webp",
       featured: true,
       free: true
     }
