@@ -17,6 +17,7 @@ import Contact from './pages/Contact'
 import Legal from './pages/Legal'
 import HabitTracker from './pages/HabitTracker'  
 import OGTest from './pages/OGTest'
+import EmailDashboard from './pages/EmailDashboard'
 
 const AnimatedRoutes = () => {
   const location = useLocation()
@@ -33,6 +34,7 @@ const AnimatedRoutes = () => {
         <Route path="/legal" element={<Legal />} />
         <Route path="/habit-tracker" element={<HabitTracker />} />  
         <Route path="/og-test" element={<OGTest />} />
+        <Route path="/admin/emails" element={<EmailDashboard />} />
       </Routes>
     </PageTransition>
   )
