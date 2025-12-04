@@ -31,8 +31,11 @@ export const sendToEmailJS = async (
   email: string,
   resourceTitle: string
 ): Promise<boolean> => {
-  try {
-    // Dynamically import emailjs only when needed
+  // Fonction désactivée pour l'instant - à activer quand vous configurerez EmailJS
+  console.log('EmailJS non configuré')
+  return true
+  
+  /* try {
     const emailjs = await import('@emailjs/browser')
     
     const response = await emailjs.default.send(
@@ -52,9 +55,8 @@ export const sendToEmailJS = async (
   } catch (error) {
     console.error('❌ EmailJS error:', error)
     return false
-  }
+  } */
 }
-
 // ============================================
 // FORMSPREE (50 soumissions/mois gratuit)
 // ============================================
@@ -132,7 +134,7 @@ export const sendEmailToServices = async (
   // Essayer tous les services configurés
   // Ne pas bloquer le téléchargement si un service échoue
   
-  const promises = [
+  const promises: Array<Promise<boolean>> = [
     // Décommenter le service que vous voulez utiliser
     // sendToEmailJS(email, resourceTitle),
     // sendToFormspree(email, resourceTitle),
