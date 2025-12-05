@@ -1,46 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://siteleveil.netlify.app/</loc>
-    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://siteleveil.netlify.app/blog</loc>
-    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://siteleveil.netlify.app/about</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://siteleveil.netlify.app/resources</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://siteleveil.netlify.app/contact</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://siteleveil.netlify.app/legal</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
-
-  <!-- Exemples articles (ajoute ceux que tu as) -->
   <url>
-    <loc>https://siteleveil.netlify.app/article/surmonter-rejet-social</loc>
+    <loc>https://siteleveil.netlify.app/blog/surmonter-rejet-social</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://siteleveil.netlify.app/article/neuroplasticite-cerveau</loc>
+    <loc>https://siteleveil.netlify.app/blog/neuroplasticite-cerveau</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/confiance-en-soi-durable</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/neuro-dopamine-routine</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/rumination-mentale-pensees-obsessionnelles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/attention-fragmentee-concentration-numerique</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/procrastination-cerveau-agir-neurosciences</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/methode-acr-repondre-aux-bonnes-nouvelles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/syndrome-imposteur-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/sommeil-reparateur-7-strategies-validees</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://siteleveil.netlify.app/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://leveilmental.fr/</loc>
+    <loc>https://siteleveil.netlify.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog</loc>
+    <loc>https://siteleveil.netlify.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/about</loc>
+    <loc>https://siteleveil.netlify.app/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/resources</loc>
+    <loc>https://siteleveil.netlify.app/resources</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/contact</loc>
+    <loc>https://siteleveil.netlify.app/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/legal</loc>
+    <loc>https://siteleveil.netlify.app/legal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/surmonter-rejet-social</loc>
+    <loc>https://siteleveil.netlify.app/blog/surmonter-rejet-social</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/neuroplasticite-cerveau</loc>
+    <loc>https://siteleveil.netlify.app/blog/neuroplasticite-cerveau</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/confiance-en-soi-durable</loc>
+    <loc>https://siteleveil.netlify.app/blog/confiance-en-soi-durable</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/neuro-dopamine-routine</loc>
+    <loc>https://siteleveil.netlify.app/blog/neuro-dopamine-routine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/rumination-mentale-pensees-obsessionnelles</loc>
+    <loc>https://siteleveil.netlify.app/blog/rumination-mentale-pensees-obsessionnelles</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/attention-fragmentee-concentration-numerique</loc>
+    <loc>https://siteleveil.netlify.app/blog/attention-fragmentee-concentration-numerique</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/procrastination-cerveau-agir-neurosciences</loc>
+    <loc>https://siteleveil.netlify.app/blog/procrastination-cerveau-agir-neurosciences</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles</loc>
+    <loc>https://siteleveil.netlify.app/blog/methode-acr-repondre-aux-bonnes-nouvelles</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/syndrome-imposteur-solutions</loc>
+    <loc>https://siteleveil.netlify.app/blog/syndrome-imposteur-solutions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/sommeil-reparateur-7-strategies-validees</loc>
+    <loc>https://siteleveil.netlify.app/blog/sommeil-reparateur-7-strategies-validees</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale</loc>
+    <loc>https://siteleveil.netlify.app/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
