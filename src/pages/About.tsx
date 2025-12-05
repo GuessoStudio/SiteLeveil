@@ -1,8 +1,21 @@
 import React from 'react'
 import { Heart, Users, BookOpen, Award, Target, Lightbulb } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 
 const About = () => {
+    const navigate = useNavigate()
+  
+  const handleNewsletterClick = () => {
+    navigate('/')
+    setTimeout(() => {
+      const element = document.getElementById('newsletter')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 500)
+  }
+
   const values = [
     {
       icon: Lightbulb,
@@ -26,18 +39,12 @@ const About = () => {
     }
   ]
 
-  const stats = [
-    { number: "2020", label: "Année de création" },
-  { number: "10 000+", label: "lecteur mensuels" },
-  { number: "95%", label: "de satisfaction lecteurs" },
-  { number: "5 ans", label: "d'expertise partagée" }
-  ]
-
+  
   const team = [
     {
       name: "Guesso", 
     role: "Fondateur de L'Éveil", 
-    description: "Explorateur curieux de l'esprit humain, je m'inspire des découvertes en psychologie et neurosciences pour les rendre simples et accessibles.",
+    description: "Passionné par la psychologie et les neurosciences depuis 2020, j'ai créé L'Éveil pour partager ce qui m'a aidé à mieux comprendre mon propre fonctionnement. Mon approche : traduire la science en conseils simples et actionnables, sans promesses miracles ni jargon complexe.",
     image: "/images/guesso-silhouette.webp" 
     }
   ]
@@ -134,43 +141,18 @@ const About = () => {
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="mb-20">
-          <div className="bg-neutral-900 dark:bg-neutral-800 rounded-3xl p-8 md:p-12 text-white">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                L'Éveil en chiffres
-              </h2>
-              <p className="text-xl text-neutral-300">
-                L'impact de notre communauté grandissante
-              </p>
-            </div>
+      
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-indigo-400 mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-neutral-300">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Team */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-              Notre Équipe
-            </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Des experts passionnés dédiés à votre développement personnel
-            </p>
-          </div>
+       {/* Team */}
+<section className="mb-20">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+      Qui suis-je ?
+    </h2>
+    <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+      L'histoire derrière L'Éveil Mental
+    </p>
+  </div>
 
           <div className="flex justify-center max-w-4xl mx-auto">
             {team.map((member, index) => (
@@ -195,27 +177,27 @@ const About = () => {
         </section>
 
         {/* CTA */}
-        <section className="text-center">
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Rejoignez la communauté des éveillé(e)s
-            </h2>
-            <p className="text-xl mb-8 text-indigo-100">
-              Plus de 10 000 personnes nous font déjà confiance pour leur développement personnel
-            </p>
+<section className="text-center">
+  <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      Prêt(e) à éveiller votre potentiel ?
+    </h2>
+    <p className="text-xl mb-8 text-indigo-100">
+      Des outils concrets pour comprendre votre psychologie et transformer votre quotidien
+    </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/blog"
                 className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
               >
                 Découvrir nos articles
-              </a>
-              <a
-                href="/#newsletter"
-                className="bg-indigo-700 hover:bg-indigo-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-indigo-500"
-              >
-                S'abonner à la newsletter
-              </a>
+                </a>
+                <button
+  onClick={handleNewsletterClick}
+  className="bg-indigo-700 hover:bg-indigo-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-indigo-500"
+>
+  S'abonner à la newsletter
+</button>
             </div>
           </div>
         </section>
