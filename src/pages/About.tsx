@@ -19,23 +19,23 @@ const About = () => {
   const values = [
     {
       icon: Lightbulb,
-      title: "Science & Evidence",
-      description: "Tous nos contenus sont basés sur des recherches scientifiques rigoureuses et des études peer-reviewed."
+      title: "Science & Rigueur",
+      description: "Tous mes contenus sont basés sur des recherches scientifiques rigoureuses et des études peer-reviewed. Pas de pseudoscience."
     },
     {
       icon: Heart,
       title: "Bienveillance",
-      description: "Nous croyons en une approche empathique et non-jugeante du développement personnel."
+      description: "Je crois en une approche empathique et sans jugement du développement personnel. Chacun avance à son rythme."
     },
     {
       icon: Users,
       title: "Accessibilité",
-      description: "Rendre la psychologie et les neurosciences accessibles à tous, sans jargon complexe."
+      description: "Rendre la psychologie et les neurosciences accessibles à tous, sans jargon complexe ni élitisme intellectuel."
     },
     {
       icon: Target,
       title: "Pratique",
-      description: "Des conseils concrets et applicables immédiatement dans votre quotidien."
+      description: "Des conseils concrets et applicables immédiatement dans votre quotidien. La théorie sans action ne sert à rien."
     }
   ]
 
@@ -79,36 +79,32 @@ const About = () => {
         <section className="mb-20">
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-neutral-800 dark:to-neutral-900 rounded-3xl p-8 md:p-12">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
-                Notre Mission
-              </h2>
-              <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
-                Dans un monde où l'information sur le bien-être mental est souvent complexe ou commercialisée, 
-                L'Éveil se positionne comme une source fiable et accessible. Nous traduisons les dernières 
-                découvertes scientifiques en conseils pratiques que vous pouvez appliquer dès aujourd'hui.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
-                  <BookOpen className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
-                    Éducation scientifique
-                  </h3>
-                  <p className="text-neutral-600 dark:text-neutral-300">
-                    Vulgariser les recherches en psychologie et neurosciences pour les rendre 
-                    compréhensibles et applicables par tous.
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
-                  <Award className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
-                    Transformation personnelle
-                  </h3>
-                  <p className="text-neutral-600 dark:text-neutral-300">
-                    Accompagner chaque lecteur dans son parcours de développement personnel 
-                    avec des outils concrets et éprouvés.
-                  </p>
-                </div>
-              </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
+  Ma Mission
+</h2>
+<p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
+  Dans un monde saturé d'informations contradictoires sur le bien-être mental, je veux créer une source fiable et accessible. Ma mission : traduire les dernières découvertes en psychologie et neurosciences en conseils pratiques que vous pouvez appliquer dès aujourd'hui, sans jargon ni promesses miracles.
+</p>
+<div className="grid md:grid-cols-2 gap-8 text-left">
+  <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
+    <BookOpen className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
+    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+      Éducation scientifique
+    </h3>
+    <p className="text-neutral-600 dark:text-neutral-300">
+      Vulgariser les recherches en psychologie et neurosciences pour les rendre compréhensibles par tous, sans simplification excessive.
+    </p>
+  </div>
+  <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
+    <Award className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
+    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+      Accompagnement authentique
+    </h3>
+    <p className="text-neutral-600 dark:text-neutral-300">
+      Vous accompagner dans votre parcours de développement personnel avec des outils concrets, testés et honnêtes.
+    </p>
+  </div>
+</div>
             </div>
           </div>
         </section>
@@ -117,11 +113,11 @@ const About = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-              Nos Valeurs
-            </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Les principes qui guident notre approche et notre création de contenu
-            </p>
+  Mes Valeurs
+</h2>
+<p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+  Les principes qui guident ma création de contenu
+</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

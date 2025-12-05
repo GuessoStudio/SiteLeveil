@@ -41,7 +41,7 @@ const Newsletter = () => {
                 </button>
               </div>
               <p className="text-indigo-200 text-sm mt-4">
-                ✓ Gratuit • ✓ Pas de spam • ✓ Désabonnement en 1 clic
+                ✓ Gratuit • ✓ Pas de spam • ✓ Désabonnement facilement
               </p>
             </div>
 

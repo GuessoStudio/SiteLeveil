@@ -1,19 +1,14 @@
 import React, { useState } from 'react'
-import { Shield, Eye, Cookie, FileText, ChevronDown, ChevronUp } from 'lucide-react'
+import { Shield, Eye, Cookie, FileText } from 'lucide-react'
 
 const Legal = () => {
   const [activeSection, setActiveSection] = useState('mentions')
 
   const sections = [
     { id: 'mentions', title: 'Mentions légales', icon: FileText },
-    { id: 'privacy', title: 'Politique de confidentialité', icon: Shield },
-    { id: 'cookies', title: 'Politique des cookies', icon: Cookie },
-    { id: 'terms', title: 'Conditions d\'utilisation', icon: Eye }
+    { id: 'privacy', title: 'Vie privée', icon: Shield },
+    { id: 'cookies', title: 'Cookies', icon: Cookie }
   ]
-
-  const toggleSection = (sectionId: string) => {
-    setActiveSection(activeSection === sectionId ? '' : sectionId)
-  }
 
   return (
     <div className="min-h-screen py-8">
@@ -24,13 +19,13 @@ const Legal = () => {
             Informations légales
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-            Transparence et conformité RGPD pour votre tranquillité d'esprit
+            Transparence totale sur ce projet personnel
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           {/* Navigation */}
-          <div className="grid md:grid-cols-4 gap-4 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 mb-12">
             {sections.map((section) => (
               <button
                 key={section.id}
@@ -58,39 +53,73 @@ const Legal = () => {
                 </h2>
                 
                 <div className="space-y-6 text-neutral-700 dark:text-neutral-300">
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Éditeur du site</h3>
-                    <p><strong>Nom :</strong> L'Éveil</p>
-                    <p><strong>Forme juridique :</strong> Entreprise individuelle</p>
-                    <p><strong>Adresse :</strong> 123 Rue de la Psychologie, 75001 Paris, France</p>
-                    <p><strong>Email :</strong> contact@leveil.fr</p>
-                    <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Directeur de publication</h3>
-                    <p>Dr. Sarah Martin</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Hébergement</h3>
-                    <p><strong>Hébergeur :</strong> Netlify, Inc.</p>
-                    <p><strong>Adresse :</strong> 2325 3rd Street, Suite 296, San Francisco, CA 94107, USA</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Propriété intellectuelle</h3>
-                    <p>
-                      L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur 
-                      et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour 
-                      les documents téléchargeables et les représentations iconographiques et photographiques.
+                  {/* Éditeur */}
+                  <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-6">
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Éditeur du site
+                    </h3>
+                    <div className="space-y-2">
+                      <p><strong>Nom :</strong> Guesso</p>
+                      <p><strong>Nature :</strong> Site personnel / Blog éducatif</p>
+                      <p><strong>Email :</strong> <a href="mailto:leveilmental@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline">leveilmental@gmail.com</a></p>
+                    </div>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-4 italic">
+                      L'Éveil Mental est un projet personnel dédié au partage de connaissances en psychologie et neurosciences.
                     </p>
+                  </div>
+
+                  {/* Hébergement */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Hébergement
+                    </h3>
+                    <p><strong>Hébergeur :</strong> Netlify, Inc.</p>
+                    <p><strong>Adresse :</strong> 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA</p>
+                    <p className="mt-2">
+                      <strong>Site :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">www.netlify.com</a>
+                    </p>
+                  </div>
+
+                  {/* Propriété intellectuelle */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Propriété intellectuelle
+                    </h3>
+                    <p>
+                      L'ensemble des contenus de ce site (textes, images, logo, ressources PDF) est la propriété de l'éditeur, sauf mention contraire explicite.
+                    </p>
+                    <p className="mt-3">
+                      <strong>Vous pouvez :</strong>
+                    </p>
+                    <ul className="list-disc list-inside mt-2 space-y-1">
+                      <li>Lire et consulter les articles gratuitement</li>
+                      <li>Télécharger les ressources pour usage personnel</li>
+                      <li>Partager les liens sur vos réseaux sociaux</li>
+                    </ul>
+                    <p className="mt-3">
+                      <strong>Vous ne pouvez pas :</strong>
+                    </p>
+                    <ul className="list-disc list-inside mt-2 space-y-1">
+                      <li>Reproduire ou redistribuer le contenu sans autorisation</li>
+                      <li>Utiliser le contenu à des fins commerciales</li>
+                      <li>Modifier les ressources téléchargeables</li>
+                    </ul>
+                  </div>
+
+                  {/* Crédits */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Crédits
+                    </h3>
+                    <p><strong>Développement & Contenu :</strong> Guesso</p>
+                    <p><strong>Visuels :</strong> Midjourney, Canva</p>
+                    <p><strong>Technologies :</strong> React, TypeScript, Tailwind CSS, Netlify</p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Politique de confidentialité */}
+            {/* Vie privée */}
             {activeSection === 'privacy' && (
               <div>
                 <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
@@ -99,171 +128,200 @@ const Legal = () => {
                 </h2>
                 
                 <div className="space-y-6 text-neutral-700 dark:text-neutral-300">
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Collecte des données</h3>
-                    <p>
-                      Nous collectons uniquement les données nécessaires au fonctionnement de nos services :
-                    </p>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>Adresse email pour la newsletter (avec consentement explicite)</li>
-                      <li>Données de navigation anonymisées pour améliorer l'expérience utilisateur</li>
-                      <li>Préférences de lecture sauvegardées localement sur votre appareil</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Utilisation des données</h3>
-                    <p>Vos données sont utilisées exclusivement pour :</p>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>L'envoi de notre newsletter (désabonnement possible à tout moment)</li>
-                      <li>L'amélioration de nos contenus et services</li>
-                      <li>La sauvegarde de vos préférences de lecture</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Vos droits RGPD</h3>
-                    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>Droit d'accès à vos données personnelles</li>
-                      <li>Droit de rectification de vos données</li>
-                      <li>Droit à l'effacement de vos données</li>
-                      <li>Droit à la portabilité de vos données</li>
-                      <li>Droit d'opposition au traitement</li>
-                    </ul>
-                    <p className="mt-3">
-                      Pour exercer ces droits, contactez-nous à : <strong>privacy@leveil.fr</strong>
+                  {/* Engagement */}
+                  <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 border-l-4 border-green-600">
+                    <p className="font-medium text-green-800 dark:text-green-300">
+                      💚 Je respecte votre vie privée. Ce site collecte le strict minimum de données et ne vend rien à personne.
                     </p>
                   </div>
 
+                  {/* Collecte */}
                   <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Conservation des données</h3>
-                    <p>
-                      Nous conservons vos données uniquement le temps nécessaire aux finalités pour lesquelles 
-                      elles ont été collectées, et dans le respect des obligations légales.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Politique des cookies */}
-            {activeSection === 'cookies' && (
-              <div>
-                <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
-                  <Cookie className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                  Politique des cookies
-                </h2>
-                
-                <div className="space-y-6 text-neutral-700 dark:text-neutral-300">
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Qu'est-ce qu'un cookie ?</h3>
-                    <p>
-                      Un cookie est un petit fichier texte déposé sur votre ordinateur lors de la visite d'un site web. 
-                      Il permet de mémoriser des informations relatives à votre navigation.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Types de cookies utilisés</h3>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Quelles données sont collectées ?
+                    </h3>
                     
                     <div className="space-y-4">
-                      <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-                        <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">Cookies essentiels</h4>
-                        <p className="text-green-700 dark:text-green-400 text-sm">
-                          Nécessaires au fonctionnement du site (préférences de thème, position de lecture). 
-                          Ces cookies ne nécessitent pas votre consentement.
+                      <div className="border-l-4 border-indigo-600 pl-4">
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                          1. Adresses email (avec votre consentement)
+                        </h4>
+                        <p>
+                          Collectées uniquement quand vous téléchargez une ressource gratuite (guide PDF) ou vous inscrivez à la newsletter.
+                        </p>
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+                          <strong>Stockage :</strong> localStorage de votre navigateur (vos données restent chez vous).
                         </p>
                       </div>
 
-                      <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                        <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">Cookies analytiques</h4>
-                        <p className="text-blue-700 dark:text-blue-400 text-sm">
-                          Google Analytics pour comprendre l'utilisation du site (données anonymisées). 
-                          Soumis à votre consentement.
+                      <div className="border-l-4 border-green-600 pl-4">
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                          2. Préférences de navigation
+                        </h4>
+                        <p>
+                          Mode sombre/clair, ressources téléchargées - stockées localement dans votre navigateur uniquement.
+                        </p>
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+                          <strong>Important :</strong> Ces données ne quittent JAMAIS votre appareil.
                         </p>
                       </div>
 
-                      <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
-                        <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">Cookies de préférences</h4>
-                        <p className="text-purple-700 dark:text-purple-400 text-sm">
-                          Sauvegarde de vos préférences (mode sombre, progression de lecture). 
-                          Stockés localement sur votre appareil.
+                      <div className="border-l-4 border-amber-600 pl-4">
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                          3. Statistiques anonymes (Netlify)
+                        </h4>
+                        <p>
+                          L'hébergeur collecte des stats de visite anonymes (pages vues, pays, navigateur).
+                        </p>
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+                          <strong>Utilisation :</strong> Améliorer les performances du site. Aucune donnée personnelle identifiable.
                         </p>
                       </div>
                     </div>
                   </div>
 
+                  {/* Utilisation */}
                   <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Gestion des cookies</h3>
-                    <p>
-                      Vous pouvez à tout moment modifier vos préférences de cookies via les paramètres de votre navigateur 
-                      ou en utilisant notre centre de préférences.
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Comment sont utilisées vos données ?
+                    </h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                        <span><strong>Emails :</strong> Uniquement pour vous envoyer le guide PDF demandé. Pas de spam, pas de vente à des tiers.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                        <span><strong>Préférences :</strong> Améliorer votre expérience (se souvenir de vos téléchargements).</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                        <span><strong>Stats :</strong> Comprendre quels articles intéressent le plus.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Vos droits RGPD */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Vos droits (RGPD)
+                    </h3>
+                    <p className="mb-4">
+                      Conformément au RGPD, vous pouvez à tout moment :
                     </p>
-                    <button className="mt-3 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">
-                      Gérer mes préférences
-                    </button>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-3">
+                        <p className="font-semibold text-sm">✅ Accéder à vos données</p>
+                      </div>
+                      <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-3">
+                        <p className="font-semibold text-sm">✏️ Corriger vos informations</p>
+                      </div>
+                      <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-3">
+                        <p className="font-semibold text-sm">🗑️ Supprimer vos données</p>
+                      </div>
+                      <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-3">
+                        <p className="font-semibold text-sm">🚫 Vous opposer au traitement</p>
+                      </div>
+                    </div>
+                    <p className="mt-4">
+                      <strong>Pour exercer ces droits :</strong> Envoyez un email à{' '}
+                      <a href="mailto:contact@leveil.fr" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+                        contact@leveil.fr
+                      </a>{' '}
+                      avec l'objet "RGPD". Je réponds sous 48h.
+                    </p>
+                  </div>
+
+                  {/* Disclaimer médical */}
+                  <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-6 border-l-4 border-amber-600">
+                    <h3 className="font-semibold text-amber-900 dark:text-amber-300 mb-2">
+                      ⚠️ Avertissement important
+                    </h3>
+                    <p className="text-amber-800 dark:text-amber-200 text-sm">
+                      Les informations de ce site sont fournies à titre éducatif uniquement. Elles ne remplacent pas un avis médical ou psychologique professionnel. Consultez toujours un professionnel de santé qualifié pour des questions spécifiques.
+                    </p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Conditions d'utilisation */}
-            {activeSection === 'terms' && (
+            {/* Cookies */}
+            {activeSection === 'cookies' && (
               <div>
                 <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
-                  <Eye className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                  Conditions d'utilisation
+                  <Cookie className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                  Cookies & localStorage
                 </h2>
                 
                 <div className="space-y-6 text-neutral-700 dark:text-neutral-300">
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Acceptation des conditions</h3>
-                    <p>
-                      En accédant et en utilisant ce site web, vous acceptez d'être lié par les présentes conditions 
-                      d'utilisation et toutes les lois et réglementations applicables.
+                  {/* Explication simple */}
+                  <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6">
+                    <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">
+                      🍪 Pas de cookies tiers, juste du localStorage
+                    </h3>
+                    <p className="text-blue-800 dark:text-blue-200">
+                      Ce site n'utilise PAS de cookies de tracking. Toutes vos préférences sont stockées localement dans votre navigateur via le localStorage (une technologie similaire mais plus respectueuse).
                     </p>
                   </div>
 
+                  {/* Ce qui est stocké */}
                   <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Utilisation du contenu</h3>
-                    <p>Le contenu de ce site est fourni à des fins éducatives et informatives. Vous pouvez :</p>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>Lire et consulter les articles gratuitement</li>
-                      <li>Télécharger les ressources gratuites pour usage personnel</li>
-                      <li>Partager les liens vers nos articles sur les réseaux sociaux</li>
-                    </ul>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Qu'est-ce qui est stocké dans votre navigateur ?
+                    </h3>
                     
-                    <p className="mt-3">Vous ne pouvez pas :</p>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>Reproduire ou redistribuer le contenu sans autorisation</li>
-                      <li>Utiliser le contenu à des fins commerciales sans accord préalable</li>
-                      <li>Modifier ou altérer le contenu original</li>
+                    <div className="space-y-3">
+                      <div className="bg-white dark:bg-neutral-900 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700">
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                          📧 Emails capturés
+                        </h4>
+                        <p className="text-sm">
+                          Quand vous téléchargez une ressource, votre email est stocké localement pour éviter de vous redemander. Visible uniquement dans votre navigateur.
+                        </p>
+                      </div>
+
+                      <div className="bg-white dark:bg-neutral-900 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700">
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                          🌙 Préférence mode sombre/clair
+                        </h4>
+                        <p className="text-sm">
+                          Votre choix de thème est sauvegardé pour la prochaine visite.
+                        </p>
+                      </div>
+
+                      <div className="bg-white dark:bg-neutral-900 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700">
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                          📥 Liste de téléchargements
+                        </h4>
+                        <p className="text-sm">
+                          Garde la trace des ressources déjà téléchargées pour éviter les doublons.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Gestion */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Comment effacer ces données ?
+                    </h3>
+                    <p className="mb-3">
+                      Vous pouvez vider le localStorage à tout moment via les paramètres de votre navigateur :
+                    </p>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li><strong>Chrome/Edge :</strong> Paramètres → Confidentialité → Effacer les données de navigation → Cocher "Cookies et autres données de sites"</li>
+                      <li><strong>Firefox :</strong> Paramètres → Vie privée → Effacer l'historique récent → Cookies</li>
+                      <li><strong>Safari :</strong> Préférences → Confidentialité → Gérer les données de sites web</li>
                     </ul>
                   </div>
 
+                  {/* Netlify Analytics */}
                   <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Limitation de responsabilité</h3>
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
+                      Statistiques de visite (Netlify)
+                    </h3>
                     <p>
-                      Les informations contenues sur ce site sont fournies à titre informatif uniquement. 
-                      Elles ne remplacent pas un avis médical ou psychologique professionnel. 
-                      Consultez toujours un professionnel de santé qualifié pour des questions spécifiques.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Modifications</h3>
-                    <p>
-                      Nous nous réservons le droit de modifier ces conditions d'utilisation à tout moment. 
-                      Les modifications prendront effet dès leur publication sur cette page.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">Contact</h3>
-                    <p>
-                      Pour toute question concernant ces conditions d'utilisation, 
-                      contactez-nous à : <strong>legal@leveil.fr</strong>
+                      L'hébergeur Netlify collecte des statistiques anonymes de visite (nombre de visiteurs, pages vues, pays). Ces données sont agrégées et ne permettent pas de vous identifier personnellement.
                     </p>
                   </div>
                 </div>
@@ -273,7 +331,7 @@ const Legal = () => {
 
           {/* Last updated */}
           <div className="text-center mt-8 text-sm text-neutral-500 dark:text-neutral-400">
-            Dernière mise à jour : 15 janvier 2024
+            Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
           </div>
         </div>
       </div>
