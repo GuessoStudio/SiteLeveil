@@ -15,12 +15,12 @@ type SEOProps = {
 
 const SITE_NAME = "L'Éveil"
 const DEFAULT_DESC = "Psychologie, neurosciences et développement personnel fondés sur la science."
-const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://siteleveil.netlify.app'
+const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://leveilmental.fr'
 
 // Générateur d'image OG automatique
 function generateOGImage(title: string, category?: string): string {
   const baseUrl = 'https://og-image.vercel.app'
-  
+
   // Couleurs par catégorie
   const categoryConfig: { [key: string]: { bg: string; color: string } } = {
     'Psychologie': { bg: 'ec4899', color: 'white' },
@@ -28,13 +28,13 @@ function generateOGImage(title: string, category?: string): string {
     'Développement Personnel': { bg: '10b981', color: 'white' },
     'Relations Humaines': { bg: '8b5cf6', color: 'white' },
   }
-  
+
   const config = categoryConfig[category || ''] || { bg: '6366f1', color: 'white' }
-  
+
   // Encodage pour URL
   const encodedTitle = encodeURIComponent(title)
   const encodedSubtitle = category ? encodeURIComponent(`${category} • L'Éveil`) : encodeURIComponent("L'Éveil")
-  
+
   return `${baseUrl}/${encodedTitle}.png?theme=light&md=1&fontSize=72px&text=${encodedSubtitle}&bg=${config.bg}&color=${config.color}`
 }
 
@@ -51,10 +51,10 @@ export default function SEO({
   isHome = false,
 }: SEOProps) {
   const url = `${BASE_URL}${path}`
-  
+
   // Image OG : utilise l'image fournie OU génère automatiquement
   let ogImage: string
-  
+
   if (image && image.startsWith('http')) {
     ogImage = image
   } else if (image && image.startsWith('/')) {
@@ -150,7 +150,7 @@ export default function SEO({
           <script type="application/ld+json">{JSON.stringify(orgLd)}</script>
         </>
       )}
-      
+
       {articleLd && (
         <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
       )}
