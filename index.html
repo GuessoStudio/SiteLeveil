@@ -1,17 +1,22 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="Agygcte7BCfG7g5TP-UBhkCwpikIAgUCr8jHvAxS5mg" />
+
   <!-- SEO Meta Tags de base -->
   <title>L'Éveil — Psychologie & Développement Personnel</title>
   <meta name="description" content="Psychologie, neurosciences et développement personnel fondés sur la science." />
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="L'Éveil — Psychologie & Développement Personnel" />
-  <meta property="og:description" content="Psychologie, neurosciences et développement personnel fondés sur la science." />
+  <meta property="og:description"
+    content="Psychologie, neurosciences et développement personnel fondés sur la science." />
   <meta property="og:url" content="https://siteleveil.netlify.app/" />
   <meta property="og:image" content="https://siteleveil.netlify.app/images/og-default.jpg?v=2" />
   <meta property="og:image:width" content="1200" />
@@ -20,19 +25,21 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="L'Éveil — Psychologie & Développement Personnel" />
-  <meta name="twitter:description" content="Psychologie, neurosciences et développement personnel fondés sur la science." />
+  <meta name="twitter:description"
+    content="Psychologie, neurosciences et développement personnel fondés sur la science." />
   <meta name="twitter:image" content="https://siteleveil.netlify.app/images/og-default.jpg?v=2" />
   <!-- TODO: Ajouter votre compte Twitter -->
   <!-- <meta name="twitter:site" content="@votre_compte"> -->
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Police secondaire différée -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
 
-  
+
   <!-- Icons & Manifest -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -40,24 +47,27 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
 
-<!-- Preload Hero Image pour LCP (-1,650ms gain) -->
-<link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp">
+  <!-- Preload Hero Image pour LCP (-1,650ms gain) -->
+  <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp">
 
 
-<!-- Preload Police Critique si pas déjà fait -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+  <!-- Preload Police Critique si pas déjà fait -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    as="style">
 
-<!-- DNS Prefetch pour ressources externes -->
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link rel="dns-prefetch" href="//static.cloudflareinsights.com">
+  <!-- DNS Prefetch pour ressources externes -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//static.cloudflareinsights.com">
 </head>
+
 <body>
   <!-- Formulaire Netlify caché pour la newsletter -->
   <form name="newsletter" netlify hidden>
     <input type="email" name="email" />
   </form>
-  
+
   <!-- Formulaire Netlify caché pour le contact -->
   <form name="contact" netlify hidden>
     <input type="text" name="name" />
@@ -65,15 +75,17 @@
     <input type="text" name="subject" />
     <textarea name="message"></textarea>
   </form>
-  
+
   <!-- Point de montage React (UNIQUE) -->
   <div id="root"></div>
-  
+
   <!-- Script principal -->
   <script type="module" src="/src/main.tsx"></script>
 
   <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b7be1890d2b84935b1507173c10d6b0f"}'></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"b7be1890d2b84935b1507173c10d6b0f"}'></script>
   <!-- End Cloudflare Web Analytics -->
 </body>
+
 </html>
