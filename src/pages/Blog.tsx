@@ -4,8 +4,20 @@ import { Search, Filter, Clock, User } from 'lucide-react'
 import { Link, useSearchParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Fuse from 'fuse.js'
+import { useNavigate } from 'react-router-dom'
 
 const Blog = () => {
+  const navigate = useNavigate()
+
+const handleNewsletterClick = () => {
+  navigate('/')
+  setTimeout(() => {
+    const element = document.getElementById('newsletter')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, 500)
+}
   const [searchParams, setSearchParams] = useSearchParams()
   const [searchQuery, setSearchQuery] = useState("")
   
@@ -219,7 +231,7 @@ const Blog = () => {
             Blog L'Éveil
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-            Découvrez nos articles sur la psychologie, les neurosciences et le développement personnel
+          Explorez la psychologie, les neurosciences et le développement personnel fondés sur la science
           </p>
         </div>
 
@@ -377,15 +389,15 @@ const Blog = () => {
               Ne manquez aucun article
             </h2>
             <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
-              Recevez nos derniers articles sur la psychologie et les neurosciences 
+            Recevez les derniers articles sur la psychologie et les neurosciences 
               directement dans votre boîte mail.
             </p>
-            <Link
-              to="/#newsletter"
-              className="inline-flex items-center bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
-            >
-              Recevoir le guide gratuit + newsletter
-            </Link>
+            <button
+  onClick={handleNewsletterClick}
+  className="inline-flex items-center bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+>
+  Recevoir le guide gratuit + newsletter
+</button>
           </div>
         </div>
       </div>

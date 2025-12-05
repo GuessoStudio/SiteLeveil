@@ -354,11 +354,11 @@ const Home = () => {
     <div className="text-center mb-12 md:mb-16 animate-in fade-in duration-700">
       <RevealOnScroll direction="down" delay={100}>
   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-    Explorez nos domaines d'expertise
+  Les thèmes que j'explore
   </h2>
 </RevealOnScroll>
       <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-        Des contenus scientifiquement fondés pour votre développement personnel et professionnel
+      Des contenus basés sur la recherche en psychologie et neurosciences
       </p>
     </div>
 
@@ -787,7 +787,7 @@ const Home = () => {
               Articles à la une
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-              Nos contenus les plus populaires pour commencer votre transformation
+            Les articles les plus lus pour commencer
             </p>
           </div>
 
