@@ -1,11 +1,11 @@
 import { writeFileSync } from "fs";
 
-const base = "https://siteleveil.netlify.app";
+const base = "https://leveilmental.fr";
 const staticRoutes = ["/", "/blog", "/about", "/resources", "/contact", "/legal"];
 const articles = [
   "/blog/surmonter-rejet-social",
   "/blog/neuroplasticite-cerveau",
-  "/blog/confiance-en-soi-durable",  
+  "/blog/confiance-en-soi-durable",
   "/blog/neuro-dopamine-routine",
   "/blog/rumination-mentale-pensees-obsessionnelles",
   "/blog/attention-fragmentee-concentration-numerique",
