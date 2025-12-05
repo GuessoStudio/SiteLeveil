@@ -13,7 +13,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-neutral-900 dark:bg-neutral-950 text-white relative overflow-hidden">
+    <footer className="bg-sand-100 dark:bg-neutral-900 text-sand-900 dark:text-white relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-15">
         <div className="absolute top-0 left-0 w-full h-full">
@@ -55,7 +55,7 @@ const Footer = () => {
               </Link>
             </div>
             
-            <p className="text-neutral-300 mb-6 leading-relaxed max-w-md hover:text-neutral-100 transition-colors duration-300">
+            <p className="text-sand-700 dark:text-sand-700 dark:text-neutral-300 mb-6 leading-relaxed max-w-md hover:text-neutral-100 transition-colors duration-300">
               Psychologie, neurosciences et développement personnel fondés sur la science. 
               Transformez votre vie grâce à des contenus rigoureusement documentés.
             </p>
@@ -103,9 +103,9 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="group">
-            <h3 className="text-white font-semibold mb-6 text-lg relative">
+            <h3 className="text-sand-900 dark:text-white font-semibold mb-6 text-lg relative">
               Navigation
-              <div className="absolute -bottom-2 left-0 w-0 h-1 bg-yellow-400 group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gold-600 group-hover:w-full transition-all duration-500"></div>
             </h3>
             <ul className="space-y-3">
               {[
@@ -118,13 +118,13 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link 
                     to={item.href} 
-                    className="group text-neutral-300 hover:text-yellow-400 transition-all duration-300 flex items-center gap-3 hover:translate-x-4 transform animate-in slide-in-from-left duration-400"
+                    className="group text-sand-700 dark:text-neutral-300 hover:text-gold-600 transition-all duration-300 flex items-center gap-3 hover:translate-x-4 transform animate-in slide-in-from-left duration-400"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div>
+                    <div className="w-2 h-2 bg-gold-600 rounded-full opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div>
                     <span className="relative">
                       {item.name}
-                      <div className="absolute -bottom-1 left-0 w-0 h-1 bg-yellow-400 group-hover:w-full transition-all duration-500"></div>
+                      <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gold-600 group-hover:w-full transition-all duration-500"></div>
                     </span>
                   </Link>
                 </li>
@@ -134,7 +134,7 @@ const Footer = () => {
 
           {/* Légal */}
           <div className="group">
-            <h3 className="text-white font-semibold mb-6 text-lg relative">
+            <h3 className="text-sand-900 dark:text-white font-semibold mb-6 text-lg relative">
               Légal
               <div className="absolute -bottom-2 left-0 w-0 h-1 bg-indigo-400 group-hover:w-full transition-all duration-500"></div>
             </h3>
@@ -148,7 +148,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link 
                     to={item.href} 
-                    className="group text-neutral-300 hover:text-indigo-400 transition-all duration-300 flex items-center gap-3 hover:translate-x-4 transform animate-in slide-in-from-left duration-400"
+                    className="group text-sand-700 dark:text-sand-700 dark:text-neutral-300 hover:text-indigo-400 transition-all duration-300 flex items-center gap-3 hover:translate-x-4 transform animate-in slide-in-from-left duration-400"
                     style={{ animationDelay: `${(index + 5) * 100}ms` }}
                   >
                     <div className="w-2 h-2 bg-indigo-400 rounded-full opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div>
@@ -168,7 +168,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             
             {/* Copyright */}
-            <div className="flex items-center gap-2 text-neutral-400 text-sm group hover:text-neutral-200 transition-colors duration-300">
+            <div className="flex items-center gap-2 text-sand-600 dark:text-neutral-400 text-sm group hover:text-neutral-200 transition-colors duration-300">
               <img 
                 src="/images/logo-footer.webp" 
                 alt="Logo L'Éveil" 
@@ -180,7 +180,7 @@ const Footer = () => {
             </div>
 
             {/* Guesso Studio */}
-            <div className="flex items-center gap-2 text-neutral-400 text-sm group">
+            <div className="flex items-center gap-2 text-sand-600 dark:text-neutral-400 text-sm group">
               <span>Propulsé par:</span>
               <a
                 href="https://guesso-studio.com"
@@ -204,7 +204,7 @@ const Footer = () => {
             </div>
 
             {/* Fait avec amour */}
-            <div className="flex items-center gap-2 text-neutral-400 text-sm group hover:text-red-300 transition-colors duration-300">
+            <div className="flex items-center gap-2 text-sand-600 dark:text-neutral-400 text-sm group hover:text-red-300 transition-colors duration-300">
               <span>Fait avec</span>
               <Heart className="w-5 h-5 text-red-500 transition-all duration-300 group-hover:scale-150 group-hover:text-red-400 animate-pulse group-hover:animate-bounce" style={{animationDuration: '1s'}} />
               <span>en France</span>
@@ -216,7 +216,7 @@ const Footer = () => {
               className="group p-3 rounded-full bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 transform hover:scale-125 hover:-translate-y-3 focus-ring relative overflow-hidden shadow-lg hover:shadow-indigo-500/50 border-2 border-indigo-400/30 hover:border-indigo-300"
               aria-label="Retour en haut de page"
             >
-              <ArrowUp className="w-6 h-6 transition-all duration-300 group-hover:scale-125 group-hover:-translate-y-1 group-hover:text-white" />
+              <ArrowUp className="w-6 h-6 transition-all duration-300 group-hover:scale-125 group-hover:-translate-y-1 group-hover:text-sand-900 dark:text-white" />
               <div className="absolute inset-0 bg-indigo-300/30 rounded-full scale-0 group-hover:scale-200 group-active:scale-150 transition-transform duration-500"></div>
               <div className="absolute inset-0 rounded-full border-2 border-indigo-300 scale-100 opacity-0 group-hover:scale-150 group-hover:opacity-100 group-hover:border-indigo-200 transition-all duration-500"></div>
             </button>

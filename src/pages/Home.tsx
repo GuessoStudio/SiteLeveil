@@ -236,7 +236,7 @@ const Home = () => {
       </span>
     ))}
   </span>
-
+  {'\u00A0'}
   {/* PARTIE 2 : "POTENTIEL" (Avec Glow Intense & Majuscules) */}
   <span className="inline-block relative">
     {/* L'aura lumineuse derrière */}
@@ -265,8 +265,8 @@ const Home = () => {
                 className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
                 style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
               >
-                Comprenez votre psychologie pour arrêter de subir. 
-                Une transformation fondée sur la science.
+                Comprenez comment votre cerveau fonctionne.<br />
+                Transformez votre vie avec la science.
               </p>
             </div>
 
@@ -293,7 +293,7 @@ const Home = () => {
 
               <a
                 href="#newsletter"
-                className="group bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white 
+                className="group bg-sand-50/20 backdrop-blur-sm hover:bg-sand-50/30 text-white 
                            px-8 py-4 rounded-lg font-semibold transition-all duration-300
                            border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
                            transform hover:-translate-y-2 hover:scale-105 focus-ring
@@ -309,14 +309,14 @@ const Home = () => {
 
             {/* Preuve sociale discrète */}
             <p className="text-base md:text-lg text-white/90 text-center max-w-2xl mx-auto mt-12 font-light tracking-wide">
-  Une communauté grandissante d'esprits en quête de clarté.
+            Rejoignez les esprits curieux qui reprennent le contrôle.
 </p>
           </div>
         </div>
       </section>
 
       {/* Citation du jour */}
-      <section className="py-12 bg-white dark:bg-neutral-900">
+      <section className="py-12 bg-sand-50 dark:bg-neutral-900">
         <div className="container mx-auto px-4">
           <DailyQuote />
         </div>
@@ -331,7 +331,7 @@ const Home = () => {
 
 
 {/* Point 2 CORRIGÉ : Domaines d'expertise - Interactions tactiles optimisées */}
-<section className="py-20 bg-white dark:bg-neutral-900 relative overflow-hidden">
+<section className="py-20 bg-sand-50 dark:bg-neutral-900 relative overflow-hidden">
   {/* Background patterns géométriques - responsive */}
   <div className="absolute inset-0 opacity-20 md:opacity-30">
     <div className="absolute top-10 left-4 md:left-10 w-16 md:w-32 h-16 md:h-32 border border-indigo-200/20 dark:border-indigo-400/10 rounded-full animate-pulse"></div>
@@ -353,7 +353,7 @@ const Home = () => {
   <div className="container mx-auto px-4 relative z-10">
     <div className="text-center mb-12 md:mb-16 animate-in fade-in duration-700">
       <RevealOnScroll direction="down" delay={100}>
-  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4">
   Les thèmes que j'explore
   </h2>
 </RevealOnScroll>
@@ -411,7 +411,7 @@ const Home = () => {
                                  group-active:scale-110" />
                 
                 {/* Effet ripple au touch - Mobile only */}
-                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                <div className="absolute inset-0 bg-sand-50/30 rounded-xl scale-0 
                                 group-active:scale-150 md:group-active:scale-0
                                 transition-transform duration-300 ease-out"></div>
               </div>
@@ -427,7 +427,7 @@ const Home = () => {
 
             {/* Contenu avec feedback tactile */}
             <div className="relative z-10">
-              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+              <h3 className="text-lg md:text-xl font-bold text-sand-900 dark:text-sand-50 mb-3 
                              transition-all duration-300
                              md:group-hover:text-gradient-neurosciences 
                              group-active:text-indigo-600 dark:group-active:text-indigo-400
@@ -436,8 +436,8 @@ const Home = () => {
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
                            transition-colors duration-300
-                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
-                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
+                           md:group-hover:text-sand-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-sand-700 dark:group-active:text-neutral-200">
                 Découvrez comment votre cerveau fonctionne et comment l'optimiser
               </p>
             </div>
@@ -512,7 +512,7 @@ const Home = () => {
                                  transition-transform duration-200
                                  group-active:scale-110 md:group-hover:animate-pulse" />
                 
-                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                <div className="absolute inset-0 bg-sand-50/30 rounded-xl scale-0 
                                 group-active:scale-150 md:group-active:scale-0
                                 transition-transform duration-300 ease-out"></div>
               </div>
@@ -526,7 +526,7 @@ const Home = () => {
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+              <h3 className="text-lg md:text-xl font-bold text-sand-900 dark:text-sand-50 mb-3 
                              transition-all duration-300
                              md:group-hover:text-gradient-psychologie 
                              group-active:text-pink-600 dark:group-active:text-pink-400
@@ -535,8 +535,8 @@ const Home = () => {
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
                            transition-colors duration-300
-                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
-                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
+                           md:group-hover:text-sand-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-sand-700 dark:group-active:text-neutral-200">
                 Comprenez vos émotions et développez votre intelligence émotionnelle
               </p>
             </div>
@@ -610,7 +610,7 @@ const Home = () => {
                                      transition-transform duration-200
                                      group-active:scale-110" />
                 
-                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                <div className="absolute inset-0 bg-sand-50/30 rounded-xl scale-0 
                                 group-active:scale-150 md:group-active:scale-0
                                 transition-transform duration-300 ease-out"></div>
               </div>
@@ -624,7 +624,7 @@ const Home = () => {
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+              <h3 className="text-lg md:text-xl font-bold text-sand-900 dark:text-sand-50 mb-3 
                              transition-all duration-300
                              md:group-hover:text-gradient-developpement 
                              group-active:text-emerald-600 dark:group-active:text-emerald-400
@@ -633,8 +633,8 @@ const Home = () => {
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
                            transition-colors duration-300
-                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
-                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
+                           md:group-hover:text-sand-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-sand-700 dark:group-active:text-neutral-200">
                 Techniques pratiques pour votre croissance personnelle et professionnelle
               </p>
             </div>
@@ -708,7 +708,7 @@ const Home = () => {
                                  transition-transform duration-200
                                  group-active:scale-110" />
                 
-                <div className="absolute inset-0 bg-white/30 rounded-xl scale-0 
+                <div className="absolute inset-0 bg-sand-50/30 rounded-xl scale-0 
                                 group-active:scale-150 md:group-active:scale-0
                                 transition-transform duration-300 ease-out"></div>
               </div>
@@ -722,7 +722,7 @@ const Home = () => {
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-lg md:text-xl font-bold text-neutral-900 dark:text-white mb-3 
+              <h3 className="text-lg md:text-xl font-bold text-sand-900 dark:text-sand-50 mb-3 
                              transition-all duration-300
                              md:group-hover:text-gradient-relations 
                              group-active:text-purple-600 dark:group-active:text-purple-400
@@ -731,8 +731,8 @@ const Home = () => {
               </h3>
               <p className="text-sm md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300
                            transition-colors duration-300
-                           md:group-hover:text-neutral-700 dark:md:group-hover:text-neutral-200
-                           group-active:text-neutral-700 dark:group-active:text-neutral-200">
+                           md:group-hover:text-sand-700 dark:md:group-hover:text-neutral-200
+                           group-active:text-sand-700 dark:group-active:text-neutral-200">
                 Améliorez vos relations et votre communication interpersonnelle
               </p>
             </div>
@@ -783,7 +783,7 @@ const Home = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-in fade-in duration-700">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4">
               Articles à la une
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
@@ -795,7 +795,7 @@ const Home = () => {
             {FEATURED_ARTICLES.map((article, index) => (
               <article
                 key={article.id}
-                className="group bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 relative animate-in slide-in-from-bottom-8 duration-700"
+                className="group bg-sand-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 relative animate-in slide-in-from-bottom-8 duration-700"
                 style={{ animationDelay: `${300 + index * 200}ms` }}
               >
                 {/* Image de couverture */}
@@ -833,11 +833,11 @@ const Home = () => {
 
                 {/* Contenu de l'article */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
                     {article.title}
                   </h3>
                   
-                  <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                  <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-sand-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
                     {article.excerpt}
                   </p>
 
@@ -871,7 +871,7 @@ const Home = () => {
           <div className="text-center animate-in fade-in duration-700" style={{ animationDelay: '1000ms' }}>
             <Link
               to="/blog"
-              className="group bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold
+              className="group bg-gold-500 hover:bg-gold-600 text-sand-900 dark:bg-gold-400 dark:hover:bg-gold-300e px-8 py-3 rounded-lg font-semibold
                          transition-all duration-300 inline-flex items-center gap-2 focus-ring
                          hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl
                          hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600

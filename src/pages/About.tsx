@@ -64,10 +64,10 @@ const About = () => {
   loading="lazy"
   decoding="async"
 />
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-sand-900 dark:text-sand-50 mb-6">
               À propos de L'Éveil
             </h1>
-            <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
+            <p className="text-lg text-sand-700 dark:text-neutral-300 mb-8 leading-relaxed">
   L'Éveil est né de ma passion pour comprendre l'esprit humain. Mon objectif est simple : 
   traduire les découvertes fascinantes de la psychologie et des neurosciences en conseils 
   pratiques que vous pouvez utiliser pour améliorer votre vie quotidienne.
@@ -79,25 +79,25 @@ const About = () => {
         <section className="mb-20">
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-neutral-800 dark:to-neutral-900 rounded-3xl p-8 md:p-12">
             <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-6">
   Ma Mission
 </h2>
-<p className="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
+<p className="text-lg text-sand-700 dark:text-neutral-300 mb-8 leading-relaxed">
   Dans un monde saturé d'informations contradictoires sur le bien-être mental, je veux créer une source fiable et accessible. Ma mission : traduire les dernières découvertes en psychologie et neurosciences en conseils pratiques que vous pouvez appliquer dès aujourd'hui, sans jargon ni promesses miracles.
 </p>
 <div className="grid md:grid-cols-2 gap-8 text-left">
-  <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
+  <div className="bg-sand-50  dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
     <BookOpen className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
-    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+    <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3">
       Éducation scientifique
     </h3>
     <p className="text-neutral-600 dark:text-neutral-300">
       Vulgariser les recherches en psychologie et neurosciences pour les rendre compréhensibles par tous, sans simplification excessive.
     </p>
   </div>
-  <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
+  <div className="bg-sand-50  dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
     <Award className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
-    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+    <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3">
       Accompagnement authentique
     </h3>
     <p className="text-neutral-600 dark:text-neutral-300">
@@ -112,7 +112,7 @@ const About = () => {
         {/* Values */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4">
   Mes Valeurs
 </h2>
 <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
@@ -126,7 +126,7 @@ const About = () => {
                 <div className="bg-indigo-100 dark:bg-indigo-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-3">
+                <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3">
                   {value.title}
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
@@ -142,7 +142,7 @@ const About = () => {
        {/* Team */}
 <section className="mb-20">
   <div className="text-center mb-12">
-    <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4">
       Qui suis-je ?
     </h2>
     <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
@@ -152,13 +152,13 @@ const About = () => {
 
           <div className="flex justify-center max-w-4xl mx-auto">
             {team.map((member, index) => (
-              <div key={index} className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg text-center">
+              <div key={index} className="bg-sand-50  dark:bg-neutral-800 rounded-2xl p-8 shadow-lg text-center">
                 <img
                   src={member.image}
                   alt={member.name}
                   className="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
                 />
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
+                <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   {member.name}
                 </h3>
                 <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-4">
@@ -184,7 +184,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/blog"
-                className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+                className="bg-sand-50  text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
               >
                 Découvrir nos articles
                 </a>

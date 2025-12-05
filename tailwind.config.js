@@ -23,6 +23,25 @@ export default {
           800: "#292524",
           900: "#1c1917",
         },
+        sand: {
+          50: '#F5EDE2',   // Beige très clair - fonds mode clair
+          100: '#E8D9C4',  // Beige clair - cartes mode clair
+          200: '#D4C4B0',  // Beige moyen - texte mode sombre
+          300: '#C0B09C',  // Beige
+          400: '#A89984',  // Beige grisé - métadonnées
+          500: '#8B7869',  // Marron clair
+          600: '#6F5F52',  // Marron moyen
+          700: '#5A4A42',  // Marron foncé - texte mode clair
+          800: '#453832',  // Marron très foncé
+          900: '#2D2520',  // Marron presque noir - titres mode clair
+        },
+        gold: {
+          300: '#F4C47E',  // Doré clair - glow effects
+          400: '#E8A85E',  // Doré lumineux - CTA mode sombre
+          500: '#D4974E',  // Doré - CTA mode clair
+          600: '#B8804A',  // Doré foncé - hover
+          700: '#9C6A3E',  // Doré très foncé
+        },
         // ✨ NOUVEAU : Couleurs pour chaque catégorie
         neurosciences: {
           50: "#eef2ff",

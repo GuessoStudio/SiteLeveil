@@ -227,7 +227,7 @@ const handleNewsletterClick = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-sand-900 dark:text-sand-50 mb-4">
             Blog L'Éveil
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
@@ -246,7 +246,7 @@ const handleNewsletterClick = () => {
         placeholder="Rechercher un article..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full pl-10 pr-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-900 dark:text-white"
+        className="w-full pl-10 pr-4 py-3 bg-sand-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sand-900 dark:text-sand-50"
       />
     </div>
   </div>
@@ -288,7 +288,7 @@ const handleNewsletterClick = () => {
               <Link
                 key={article.id}
                 to={`/blog/${article.slug}`}
-                className="group bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group bg-sand-50 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="relative overflow-hidden">
                 <img
@@ -330,7 +330,7 @@ const handleNewsletterClick = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-sand-900 dark:text-sand-50 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
                     {article.title}
                   </h3>
 
@@ -394,7 +394,7 @@ const handleNewsletterClick = () => {
             </p>
             <button
   onClick={handleNewsletterClick}
-  className="inline-flex items-center bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+  className="inline-flex items-center bg-sand-50 text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
 >
   Recevoir le guide gratuit + newsletter
 </button>

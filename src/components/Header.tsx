@@ -45,8 +45,8 @@ const Header = () => {
 
       <header className={`sticky top-0 z-50 transition-all duration-500 ease-out
                          ${isScrolled 
-                           ? 'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-lg border-b border-neutral-200/50 dark:border-neutral-700/50' 
-                           : 'bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-200/30 dark:border-neutral-700/30'
+                           ? 'bg-sand-50/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-lg border-b border-neutral-200/50 dark:border-neutral-700/50' 
+                           : 'bg-sand-50/90 dark:bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-200/30 dark:border-neutral-700/30'
                          }`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -74,7 +74,7 @@ const Header = () => {
                                 -translate-x-full group-hover:translate-x-full
                                 transition-transform duration-700 ease-out rounded-full"></div>
               </div>
-              <span className="text-xl font-bold text-neutral-900 dark:text-white
+              <span className="text-xl font-bold text-sand-900 dark:text-sand-50
                                transition-all duration-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
                 L'Éveil
               </span>

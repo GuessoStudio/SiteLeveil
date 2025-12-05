@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-sand-900 dark:text-sand-50 mb-4">
             Contactez-moi
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ const Contact = () => {
             </p>
             <a
               href="mailto:contact@leveil.fr?subject=Contact depuis leveilmental.fr"
-              className="inline-flex items-center gap-3 bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-50 transition-all transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-3 bg-sand-50 text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-50 transition-all transform hover:scale-105 shadow-lg"
             >
               <Mail className="w-6 h-6" />
               contact@leveil.fr
@@ -39,9 +39,9 @@ const Contact = () => {
 
           {/* Informations pratiques */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
+            <div className="bg-sand-50 dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
               <Clock className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
-              <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-2">
                 Délai de réponse
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300">
@@ -49,9 +49,9 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
+            <div className="bg-sand-50 dark:bg-neutral-800 rounded-2xl p-6 shadow-lg">
               <Heart className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mb-4" />
-              <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-2">
                 Mon approche
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300">
@@ -62,12 +62,12 @@ const Contact = () => {
 
           {/* FAQ */}
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+            <h3 className="text-2xl font-bold text-sand-900 dark:text-sand-50 mb-6">
               Questions fréquentes
             </h3>
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                <h4 className="font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   💬 Puis-je vous poser une question personnelle ?
                 </h4>
                 <p className="text-neutral-600 dark:text-neutral-300">
@@ -76,7 +76,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                <h4 className="font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   📚 Proposez-vous du coaching personnalisé ?
                 </h4>
                 <p className="text-neutral-600 dark:text-neutral-300">
@@ -85,7 +85,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                <h4 className="font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   🤝 Vous êtes ouvert aux partenariats ?
                 </h4>
                 <p className="text-neutral-600 dark:text-neutral-300">
@@ -94,7 +94,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
+                <h4 className="font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   🔧 J'ai un problème technique sur le site
                 </h4>
                 <p className="text-neutral-600 dark:text-neutral-300">
@@ -112,14 +112,14 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
                 href="/blog"
-                className="inline-flex items-center gap-2 bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
+                className="inline-flex items-center gap-2 bg-sand-50 dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-sand-900 dark:text-sand-50 px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
               >
                 Lire les articles
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="/resources"
-                className="inline-flex items-center gap-2 bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
+                className="inline-flex items-center gap-2 bg-sand-50 dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-sand-900 dark:text-sand-50 px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
               >
                 Télécharger les guides
                 <ArrowRight className="w-4 h-4" />
