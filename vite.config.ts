@@ -3,6 +3,19 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendors React
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          // Autres vendors
+          'vendor-ui': ['framer-motion', 'lucide-react'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 600
+  },
   plugins: [
     react(),
     VitePWA({
@@ -27,58 +40,58 @@ export default defineConfig({
       },
 
       workbox: {
-  globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
 
-  navigateFallback: 'index.html',
-  navigateFallbackDenylist: [
-    /^\/og(?:$|[\/?])/,   // ← match /og, /og/ et /og?...
-    /\/assets\//,
-    /\/images\//,
-    /\/icons?\//,
-    /\/manifest\.json(?:\?.*)?$/,
-    /\/robots\.txt(?:\?.*)?$/,
-    /\/sitemap\.xml(?:\?.*)?$/,
-    /\.[^/]+$/,
-  ],
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [
+          /^\/og(?:$|[\/?])/,   // ← match /og, /og/ et /og?...
+          /\/assets\//,
+          /\/images\//,
+          /\/icons?\//,
+          /\/manifest\.json(?:\?.*)?$/,
+          /\/robots\.txt(?:\?.*)?$/,
+          /\/sitemap\.xml(?:\?.*)?$/,
+          /\.[^/]+$/,
+        ],
 
-  cleanupOutdatedCaches: true,
-  clientsClaim: true,
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
 
-  runtimeCaching: [
-    // ⚠️ NE JAMAIS cacher /og : on veut laisser l’Edge Function répondre
-    {
-      urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.startsWith('/og'),
-      handler: 'NetworkOnly',
-    },
+        runtimeCaching: [
+          // ⚠️ NE JAMAIS cacher /og : on veut laisser l’Edge Function répondre
+          {
+            urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.startsWith('/og'),
+            handler: 'NetworkOnly',
+          },
 
-    {
-      urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'pexels-images',
-        expiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 },
+          {
+            urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'pexels-images',
+              expiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'google-fonts-styles' },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-webfonts',
+              expiration: { maxEntries: 30, maxAgeSeconds: 365 * 24 * 60 * 60 },
+            },
+          },
+          {
+            urlPattern: ({ request, sameOrigin }) => sameOrigin && request.destination === 'image',
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'same-origin-images' },
+          },
+        ],
       },
-    },
-    {
-      urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-      handler: 'StaleWhileRevalidate',
-      options: { cacheName: 'google-fonts-styles' },
-    },
-    {
-      urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'google-fonts-webfonts',
-        expiration: { maxEntries: 30, maxAgeSeconds: 365 * 24 * 60 * 60 },
-      },
-    },
-    {
-      urlPattern: ({ request, sameOrigin }) => sameOrigin && request.destination === 'image',
-      handler: 'StaleWhileRevalidate',
-      options: { cacheName: 'same-origin-images' },
-    },
-  ],
-},
 
     }),   // <- fin VitePWA
   ],      // <- fin plugins
