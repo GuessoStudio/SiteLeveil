@@ -7,7 +7,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "prebuild": "npm run sitemap",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/optimize-html.mjs",
     "preview": "vite preview",
     "new-post": "node scripts/new-post.js",
     "build-content": "node scripts/build-content.js",
