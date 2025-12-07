@@ -28,8 +28,6 @@
   <meta name="twitter:description"
     content="Psychologie, neurosciences et développement personnel fondés sur la science." />
   <meta name="twitter:image" content="https://leveilmental.fr/images/og-default.webp" />
-  <!-- TODO: Ajouter votre compte Twitter -->
-  <!-- <meta name="twitter:site" content="@votre_compte"> -->
 
   <!-- Fonts optimisées (non-bloquantes) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +46,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
 
-
   <!-- Icons & Manifest -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -56,18 +53,16 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
 
-  <!-- Preload Hero Image pour LCP (-1,650ms gain) -->
+  <!-- Preload Hero Image pour LCP -->
   <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp">
-
-
-
 
   <!-- DNS Prefetch pour ressources externes -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link rel="dns-prefetch" href="//static.cloudflareinsights.com">
+
   <style>
-    /* Critical CSS for Hero App Shell */
+    /* Critical CSS for Hero App Shell - COMPLETE */
     .min-h-screen {
       min-height: 100vh
     }
@@ -103,6 +98,18 @@
       align-items: center
     }
 
+    .justify-center {
+      justify-content: center
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    .gap-3 {
+      gap: 0.75rem
+    }
+
     .overflow-hidden {
       overflow: hidden
     }
@@ -131,6 +138,11 @@
       margin-right: auto
     }
 
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem
+    }
+
     .px-4 {
       padding-left: 1rem;
       padding-right: 1rem
@@ -142,15 +154,6 @@
 
     .text-center {
       text-align: center
-    }
-
-    .text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem
-    }
-
-    .font-bold {
-      font-weight: 700
     }
 
     .mb-6 {
@@ -185,12 +188,14 @@
       font-weight: 800
     }
 
-    .bg-black\/35 {
-      background-color: rgba(0, 0, 0, .35)
+    /* Font Sizes Responsive */
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem
     }
 
-    .text-yellow-100 {
-      color: #fef9c3
+    .font-bold {
+      font-weight: 700
     }
 
     @media (min-width:640px) {
@@ -223,11 +228,56 @@
         line-height: 1
       }
     }
+
+    /* Complex Tailwind JIT Definitions */
+    .bg-black\/35 {
+      background-color: rgb(0 0 0 / 0.35);
+    }
+
+    .bg-yellow-500\/50 {
+      background-color: rgb(234 179 8 / 0.5);
+    }
+
+    .text-yellow-100 {
+      color: #fef9c3;
+    }
+
+    /* Filters & Effects */
+    .blur-md {
+      filter: blur(12px);
+    }
+
+    /* Fallback for drop-shadow JIT */
+    .drop-shadow-lg {
+      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    }
+
+    /* Custom arbitrary shadow from your code */
+    .drop-shadow-\[0_0_10px_rgba\(234\2c179\2c8\2c0\.8\)\] {
+      filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.8));
+    }
+
+    /* Animations */
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .5;
+      }
+    }
   </style>
-  <script type="module" crossorigin src="/assets/index-DAYFxaxE.js"></script>
+  <script type="module" crossorigin src="/assets/index-PdC1Q5EZ.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-react-BWTqOkCc.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-ui-Bodlwdk8.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-BKNLPDFH.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-BStUhODc.css">
 <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js" defer></script></head>
 
 <body>
@@ -244,7 +294,7 @@
     <textarea name="message"></textarea>
   </form>
 
-  <!-- Point de montage React (UNIQUE) -->
+  <!-- Point de montage React (App Shell) -->
   <div id="root">
     <div class="min-h-screen">
       <section class="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
@@ -275,7 +325,6 @@
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token":"b7be1890d2b84935b1507173c10d6b0f"}'></script>
-  <!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>
