@@ -83,7 +83,30 @@
   </form>
 
   <!-- Point de montage React (UNIQUE) -->
-  <div id="root"></div>
+  <div id="root">
+    <div class="min-h-screen">
+      <section class="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img src="/images/hero-bg.webp" alt="L'Éveil - Psychologie et Développement Personnel" width="1600"
+            height="900" class="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high">
+          <div class="absolute inset-0 bg-black/35"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="max-w-4xl mx-auto text-center">
+            <h1
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg px-2 flex justify-center items-center flex-wrap gap-3 text-white">
+              <span class="inline-block font-normal">Éveillez votre</span>
+              <span class="inline-block relative">
+                <span class="absolute inset-0 blur-md bg-yellow-500/50 animate-pulse"></span>
+                <span
+                  class="relative text-yellow-100 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] uppercase tracking-widest font-extrabold">POTENTIEL</span>
+              </span>
+            </h1>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 
   <!-- Script principal -->
   <script type="module" src="/src/main.tsx"></script>
