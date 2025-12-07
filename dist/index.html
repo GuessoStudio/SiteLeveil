@@ -31,17 +31,10 @@
   <!-- TODO: Ajouter votre compte Twitter -->
   <!-- <meta name="twitter:site" content="@votre_compte"> -->
 
-  <!-- Fonts optimisées pour performance mobile -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Font principale avec fallback -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Police secondaire différée -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
@@ -57,6 +50,11 @@
   <!-- Preload Hero Image pour LCP (-1,650ms gain) -->
   <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp">
 
+
+  <!-- Preload Police Critique si pas déjà fait -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    as="style">
 
   <!-- DNS Prefetch pour ressources externes -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
