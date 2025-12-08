@@ -82,7 +82,7 @@ export default function SEO({
     '@type': 'Organization',
     name: SITE_NAME,
     url: BASE_URL,
-    logo: `${BASE_URL}/favicon.ico`,
+    logo: `${BASE_URL}/images/logo.webp`,
   }
 
   const articleLd = type === 'article' ? {
@@ -101,10 +101,40 @@ export default function SEO({
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: `${BASE_URL}/favicon.ico`
+        url: `${BASE_URL}/images/logo.webp`
       }
     }
   } : null
+
+  // Fil d'Ariane (Breadcrumb)
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Accueil',
+        item: BASE_URL
+      },
+      ...(type === 'article' ? [{
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${BASE_URL}/blog`
+      }, {
+        '@type': 'ListItem',
+        position: 3,
+        name: title,
+        item: url
+      }] : [{
+        '@type': 'ListItem',
+        position: 2,
+        name: title,
+        item: url
+      }])
+    ]
+  }
 
   return (
     <Helmet prioritizeSeoTags>
@@ -144,6 +174,7 @@ export default function SEO({
       )}
 
       {/* JSON-LD Schema */}
+      <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       {isHome && (
         <>
           <script type="application/ld+json">{JSON.stringify(websiteLd)}</script>
