@@ -1,14 +1,15 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, RotateCcw, Check, Brain, Activity, Heart, Users, Shield } from 'lucide-react';
+import { ArrowRight, RotateCcw, Check, Brain, Activity, Heart, Users, Shield, Download, Lock } from 'lucide-react';
 import { QUESTIONS, INTERPRETATIONS, type Question, type Trait } from '../data/bigFiveQuestions';
+import EmailCaptureModal from '../components/EmailCaptureModal';
 
 // Configurations
 const ANIMATION_DURATION = 0.5;
 
 // Composant : Radar Chart SVG simple
-const RadarChart = ({ scores }: { scores: Record<Trait, number> }) => {
+const RadarChart = ({ scores, isPreview = false }: { scores: Record<Trait, number>, isPreview?: boolean }) => {
     const size = 300;
     const center = size / 2;
     const radius = 120;
@@ -28,7 +29,7 @@ const RadarChart = ({ scores }: { scores: Record<Trait, number> }) => {
     const gridLevels = [0.2, 0.4, 0.6, 0.8, 1];
 
     return (
-        <div className="relative w-full max-w-[300px] mx-auto aspect-square">
+        <div className={`relative w-full max-w-[300px] mx-auto aspect-square ${isPreview ? 'blur-[2px] opacity-70 scale-90' : ''}`}>
             <svg viewBox={`0 0 ${size} ${size}`} className="w-full h-full overflow-visible">
                 {/* Grille */}
                 {gridLevels.map((level, i) => (
@@ -68,11 +69,11 @@ const RadarChart = ({ scores }: { scores: Record<Trait, number> }) => {
 
                 {/* Zone de score */}
                 <motion.polygon
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 0.6, scale: 1 }}
+                    initial={isPreview ? { opacity: 0.6, scale: 1 } : { opacity: 0, scale: 0 }}
+                    animate={isPreview ? { opacity: 0.6, scale: 1 } : { opacity: 0.6, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     points={points}
-                    fill="rgba(234, 179, 8, 0.5)" // Yellow-500 avec opacité
+                    fill="rgba(234, 179, 8, 0.5)"
                     stroke="rgb(234, 179, 8)"
                     strokeWidth="2"
                 />
@@ -80,7 +81,6 @@ const RadarChart = ({ scores }: { scores: Record<Trait, number> }) => {
                 {/* Labels */}
                 {traits.map((trait, i) => {
                     const angle = (Math.PI * 2 * i) / traits.length - Math.PI / 2;
-                    // Position légèrement à l'extérieur
                     const x = center + Math.cos(angle) * (radius + 25);
                     const y = center + Math.sin(angle) * (radius + 20);
 
@@ -106,12 +106,43 @@ export default function BigFiveTest() {
     const [step, setStep] = useState<'intro' | 'test' | 'calculating' | 'results'>('intro');
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<Record<number, number>>({});
+    const [modalOpen, setModalOpen] = useState(false);
+
+    // Persistence: Charger l'état au montage
+    useEffect(() => {
+        const saved = localStorage.getItem('bigfive-progress');
+        if (saved) {
+            try {
+                const { step: savedStep, index, answers: savedAnswers } = JSON.parse(saved);
+                if (savedStep === 'test' || savedStep === 'results') {
+                    // Restaurer potentiellement, mais pour l'instant simple warning ou option
+                    // Pour simplifier l'UX ici, on restaure si on était en plein test
+                    if (savedStep === 'test') {
+                        setStep('test');
+                        setCurrentQuestionIndex(index);
+                        setAnswers(savedAnswers);
+                    }
+                }
+            } catch (e) {
+                console.error("Erreur de restauration", e);
+            }
+        }
+    }, []);
+
+    // Persistence: Sauvegarder à chaque changement
+    useEffect(() => {
+        if (step === 'test') {
+            localStorage.setItem('bigfive-progress', JSON.stringify({ step, index: currentQuestionIndex, answers }));
+        }
+    }, [step, currentQuestionIndex, answers]);
+
 
     // Réinitialiser
     const resetTest = () => {
         setStep('intro');
         setCurrentQuestionIndex(0);
         setAnswers({});
+        localStorage.removeItem('bigfive-progress');
         window.scrollTo(0, 0);
     };
 
@@ -130,45 +161,39 @@ export default function BigFiveTest() {
 
     // Calcul des résultats
     const results = useMemo(() => {
-        if (step !== 'results') return null;
+        if (step !== 'results' && step !== 'intro') return null; // 'intro' pour le preview
+
+        // Fake results pour preview en intro
+        if (step === 'intro') {
+            return {
+                'Ouverture': 75,
+                'Conscience': 60,
+                'Extraversion': 45,
+                'Agréabilité': 80,
+                'Névrosisme': 30
+            };
+        }
 
         const traitScores: Record<Trait, number> = {
-            'Ouverture': 0,
-            'Conscience': 0,
-            'Extraversion': 0,
-            'Agréabilité': 0,
-            'Névrosisme': 0
+            'Ouverture': 0, 'Conscience': 0, 'Extraversion': 0, 'Agréabilité': 0, 'Névrosisme': 0
         };
-
         const traitCounts: Record<Trait, number> = {
-            'Ouverture': 0,
-            'Conscience': 0,
-            'Extraversion': 0,
-            'Agréabilité': 0,
-            'Névrosisme': 0
+            'Ouverture': 0, 'Conscience': 0, 'Extraversion': 0, 'Agréabilité': 0, 'Névrosisme': 0
         };
 
         QUESTIONS.forEach(q => {
-            const value = answers[q.id] || 3; // Par défaut neutre si manquant (ne devrait pas arriver)
-            // Si inversé : 1->5, 2->4, 3->3, 4->2, 5->1  =>  6 - value
+            const value = answers[q.id] || 3;
             const score = q.reversed ? (6 - value) : value;
-
             traitScores[q.trait] += score;
             traitCounts[q.trait] += 1;
         });
 
-        // Normaliser sur 100
-        // Score min par question = 1, max = 5.
-        // Pour N questions, min = N, max = 5N.
-        // (Total - Min) / (Max - Min) * 100
         const finalScores: Record<Trait, number> = {} as any;
-
         (Object.keys(traitScores) as Trait[]).forEach(trait => {
             const raw = traitScores[trait];
             const count = traitCounts[trait];
             const min = count * 1;
             const max = count * 5;
-
             finalScores[trait] = Math.round(((raw - min) / (max - min)) * 100);
         });
 
@@ -181,14 +206,38 @@ export default function BigFiveTest() {
         'Conscience': Shield,
         'Extraversion': Activity,
         'Agréabilité': Heart,
-        'Névrosisme': Users // Ou un autre symbole approprié
+        'Névrosisme': Users
+    };
+
+    const TraitKeywords: Record<Trait, string> = {
+        'Ouverture': 'Créativité, Curiosité',
+        'Conscience': 'Discipline, Ordre',
+        'Extraversion': 'Énergie, Social',
+        'Agréabilité': 'Empathie, Altruisme',
+        'Névrosisme': 'Stabilité Émotionnelle'
+    };
+
+    // Schema.org Quiz Data
+    const quizSchema = {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Test de Personnalité Big Five (OCEAN)",
+        "description": "Découvrez vos 5 traits de personnalité majeurs avec ce test scientifique gratuit.",
+        "educationalLevel": "Beginner",
+        "assesses": ["Openness", "Conscientiousness", "Extraversion", "Agreeableness", "Neuroticism"],
+        "numberOfQuestions": 30
     };
 
     return (
         <div className="min-h-screen pt-24 pb-12 px-4 bg-sand-50 dark:bg-neutral-900 transition-colors duration-300">
             <Helmet>
-                <title>Test de Personnalité Big Five | L'Éveil</title>
-                <meta name="description" content="Découvrez votre profil psychologique complet avec notre test scientifique basé sur le modèle des Big Five (OCEAN)." />
+                <title>Test Big Five Gratuit | Analyse Personnalité Scientifique</title>
+                <meta name="description" content="Découvrez votre profil psychologique avec le test Big Five (OCEAN). 30 questions, résultats immédiats, 100% gratuit, validé scientifiquement." />
+                <meta property="og:image" content="https://leveilmental.fr/images/resources/big-five-cover.webp" />
+                <meta property="og:title" content="Mon Profil Big Five - Test de Personnalité" />
+                <meta property="og:description" content="Découvrez vos 5 traits de personnalité majeurs avec ce test scientifique gratuit." />
+                <meta property="og:type" content="website" />
+                <script type="application/ld+json">{JSON.stringify(quizSchema)}</script>
             </Helmet>
 
             <div className="max-w-3xl mx-auto">
@@ -198,40 +247,90 @@ export default function BigFiveTest() {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center space-y-8"
+                        className="space-y-12"
                     >
-                        <div className="inline-block p-4 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 mb-4">
-                            <Brain className="w-12 h-12" />
+                        {/* Hero Intro */}
+                        <div className="text-center space-y-6">
+                            <div className="inline-block p-4 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 mb-2">
+                                <Brain className="w-12 h-12" />
+                            </div>
+                            <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-sand-50 tracking-tight">
+                                Test de Personnalité <span className="text-yellow-600 dark:text-yellow-400 block mt-2">Big Five (OCEAN)</span>
+                            </h1>
+                            <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+                                Le seul test scientifique qui cartographie votre personnalité en 5 dimensions précises.
+                            </p>
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-sand-50">
-                            Test de Personnalité <span className="text-yellow-600 dark:text-yellow-400">Big Five</span>
-                        </h1>
-                        <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-                            Le modèle des Big Five est la référence scientifique en psychologie.
-                            Découvrez vos 5 traits majeurs : Ouverture, Conscienciosité, Extraversion, Agréabilité et Névrosisme.
-                        </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-2xl mx-auto py-8">
-                            {[
-                                { icon: Activity, title: "Rapide", desc: "30 questions (~3 min)" },
-                                { icon: Shield, title: "Scientifique", desc: "Basé sur l'IPIP-NEO" },
-                                { icon: Brain, title: "Détaillé", desc: "Analyse complète" }
-                            ].map((item, i) => (
-                                <div key={i} className="bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700">
-                                    <item.icon className="w-6 h-6 text-yellow-500 mb-2" />
-                                    <h3 className="font-bold text-neutral-900 dark:text-neutral-100">{item.title}</h3>
-                                    <p className="text-sm text-neutral-500 dark:text-neutral-400">{item.desc}</p>
+                        {/* Visual Trait Row */}
+                        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                            {(Object.keys(TraitIcons) as Trait[]).map((trait) => {
+                                const Icon = TraitIcons[trait];
+                                return (
+                                    <div key={trait} className="flex flex-col items-center p-3 bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-700">
+                                        <Icon className="w-6 h-6 text-yellow-500 mb-2" />
+                                        <span className="font-bold text-sm text-neutral-900 dark:text-white">{trait}</span>
+                                        <span className="text-[10px] text-neutral-500 text-center leading-tight mt-1">{TraitKeywords[trait]}</span>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
+                        {/* Split: Trust Box + Preview */}
+                        <div className="grid md:grid-cols-2 gap-8 items-center bg-white dark:bg-neutral-800 rounded-3xl p-8 shadow-sm border border-neutral-100 dark:border-neutral-700">
+                            {/* Trust Box */}
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+                                    <Shield className="w-6 h-6 text-yellow-500" />
+                                    Pourquoi ce test ?
+                                </h3>
+                                <div className="space-y-3 text-neutral-600 dark:text-neutral-300">
+                                    <p>
+                                        Le modèle Big Five est le <strong>standard n°1</strong> en psychologie scientifique. Contrairement aux tests "ludiques", il est validé par des décennies de recherche (IPIP-NEO).
+                                    </p>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-center gap-2">
+                                            <Check className="w-4 h-4 text-green-500" />
+                                            <span>Utilisé par les psychologues du travail</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <Check className="w-4 h-4 text-green-500" />
+                                            <span>Prédit la réussite pro et le bien-être</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <Check className="w-4 h-4 text-green-500" />
+                                            <span>Stable dans le temps</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                            ))}
+                            </div>
+
+                            {/* Report Preview */}
+                            <div className="relative group cursor-default">
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent dark:from-neutral-800/80 z-10 flex items-end justify-center pb-4">
+                                    <span className="text-sm font-bold text-neutral-500 uppercase tracking-widest bg-white/90 dark:bg-neutral-900/90 px-3 py-1 rounded-full shadow-sm backdrop-blur-sm">
+                                        Aperçu du rapport
+                                    </span>
+                                </div>
+                                <div className="opacity-80 grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                                    <RadarChart scores={results!} isPreview={true} />
+                                </div>
+                            </div>
                         </div>
 
-                        <button
-                            onClick={() => setStep('test')}
-                            className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-neutral-900 dark:bg-white dark:text-neutral-900 rounded-full hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-900"
-                        >
-                            Commencer le test
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        {/* CTA */}
+                        <div className="text-center pt-4">
+                            <button
+                                onClick={() => setStep('test')}
+                                className="group relative inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-white transition-all duration-200 bg-neutral-900 dark:bg-white dark:text-neutral-900 rounded-full hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-neutral-200 dark:focus:ring-neutral-700"
+                            >
+                                Commencer l'analyse
+                                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <p className="mt-4 text-sm text-neutral-500 font-medium">
+                                ⏱️ Durée : 3 min • 100% Gratuit • Sans inscription
+                            </p>
+                        </div>
                     </motion.div>
                 )}
 
@@ -389,7 +488,6 @@ export default function BigFiveTest() {
                                                         <Check className="w-4 h-4" /> Analyse
                                                     </h4>
                                                     <p className="text-sm text-neutral-600 dark:text-neutral-400 italic">
-                                                        {/* Ici on pourrait ajouter des conseils dynamiques si on avait plus de données */}
                                                         Ce score indique une tendance {isHigh ? 'marquée' : 'modérée'} pour ce trait.
                                                     </p>
                                                 </div>
@@ -400,8 +498,28 @@ export default function BigFiveTest() {
                             })}
                         </div>
 
+                        {/* CTA Stratégique */}
+                        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-8 rounded-2xl border border-indigo-100 dark:border-indigo-900/50 text-center">
+                            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">📊 Recevez votre profil complet</h3>
+                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 max-w-xl mx-auto">
+                                Téléchargez votre analyse détaillée au format PDF pour la conserver et découvrir comment utiliser vos forces.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="/blog" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold shadow-sm hover:shadow-md transition-all border border-neutral-200 dark:border-neutral-700">
+                                    Lire nos articles
+                                </a>
+                                <button
+                                    onClick={() => setModalOpen(true)}
+                                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 transition-colors gap-2"
+                                >
+                                    <Download className="w-5 h-5" />
+                                    Télécharger mon PDF
+                                </button>
+                            </div>
+                        </div>
+
                         {/* Restart */}
-                        <div className="text-center py-12">
+                        <div className="text-center py-8">
                             <button
                                 onClick={resetTest}
                                 className="inline-flex items-center text-neutral-500 dark:text-neutral-400 hover:text-yellow-600 dark:hover:text-yellow-400 font-medium transition-colors"
@@ -413,6 +531,19 @@ export default function BigFiveTest() {
                     </motion.div>
                 )}
             </div>
+
+            {/* Email Modal */}
+            <EmailCaptureModal
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                resourceTitle="Rapport Complet Big Five"
+                resourceFile="" // À connecter à un générateur PDF réel plus tard
+                onSuccess={(email) => {
+                    console.log("Email capturé pour Big Five:", email);
+                    // Ici on pourrait déclencher la génération PDF réelle
+                    alert("Votre rapport PDF a été généré (simulation) !");
+                }}
+            />
         </div>
     );
 }

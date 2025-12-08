@@ -24,10 +24,10 @@ const Resources = () => {
       type: "Test Interactif",
       users: "Nouveau",
       rating: 5.0,
-      image: "", // Pas d'image pour l'instant, le fallback s'affichera
+      image: "/images/resources/big-five-cover.webp",
       free: true,
       isWebApp: true,
-      webAppUrl: "/resources/test-big-five",
+      webAppUrl: "/test-personnalite-big-five",
       featured: true
     },
     {
@@ -141,8 +141,8 @@ const Resources = () => {
               key={category}
               onClick={() => setActiveFilter(category)}
               className={`px-6 py-2 rounded-lg font-medium transition-all ${activeFilter === category
-                  ? 'bg-indigo-600 text-white shadow-md'
-                  : 'bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-700'
+                ? 'bg-indigo-600 text-white shadow-md'
+                : 'bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-700'
                 }`}
             >
               {category}
