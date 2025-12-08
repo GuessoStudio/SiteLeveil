@@ -182,7 +182,7 @@ const Resources = () => {
                     </div>
                   </div>
                   <button
-                    onClick={() => handleDownloadClick(resources[0])}
+                    onClick={() => handleDownloadClick(resources[1])}
                     className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center gap-2"
                   >
                     <Download className="w-5 h-5" />
@@ -191,8 +191,8 @@ const Resources = () => {
                 </div>
                 <div className="w-full md:w-64 h-48 bg-white/10 rounded-xl overflow-hidden">
                   <img
-                    src={resources[0].image}
-                    alt={resources[0].title}
+                    src={resources[1].image}
+                    alt={resources[1].title}
                     className="w-full h-full object-cover"
                   />
                 </div>

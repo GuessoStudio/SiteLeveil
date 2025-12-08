@@ -306,15 +306,18 @@ export default function BigFiveTest() {
                             </div>
 
                             {/* Report Preview */}
-                            <div className="relative group cursor-default">
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent dark:from-neutral-800/80 z-10 flex items-end justify-center pb-4">
-                                    <span className="text-sm font-bold text-neutral-500 uppercase tracking-widest bg-white/90 dark:bg-neutral-900/90 px-3 py-1 rounded-full shadow-sm backdrop-blur-sm">
-                                        Aperçu du rapport
-                                    </span>
+                            {/* Report Preview */}
+                            <div className="group cursor-default text-center">
+                                <div className="relative mb-4 overflow-hidden rounded-xl bg-neutral-50 dark:bg-neutral-800/50">
+                                    <img
+                                        src="/images/resources/radar-preview.webp"
+                                        alt="Aperçu du résultat Big Five"
+                                        className="w-full max-w-[320px] mx-auto transform group-hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
-                                <div className="opacity-80 grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
-                                    <RadarChart scores={results!} isPreview={true} />
-                                </div>
+                                <span className="inline-block text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-sm">
+                                    Aperçu du rapport
+                                </span>
                             </div>
                         </div>
 
