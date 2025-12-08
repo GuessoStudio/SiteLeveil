@@ -4,7 +4,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { ReadingProvider } from './contexts/ReadingContext'
 import { NotificationProvider } from './contexts/NotificationContext'
-import { PageTransition } from './components/ui/animations/PageTransition'  // ← Chemin adapté
+import { PageTransition } from './components/ui/animations/PageTransition'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -15,9 +15,10 @@ import About from './pages/About'
 import Resources from './pages/Resources'
 import Contact from './pages/Contact'
 import Legal from './pages/Legal'
-import HabitTracker from './pages/HabitTracker'  
+import HabitTracker from './pages/HabitTracker'
 import OGTest from './pages/OGTest'
 import EmailDashboard from './pages/EmailDashboard'
+import BigFiveTest from './pages/BigFiveTest'
 
 const AnimatedRoutes = () => {
   const location = useLocation()
@@ -27,12 +28,13 @@ const AnimatedRoutes = () => {
       <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:slug" element={<Article />} />
-        <Route path="/blog" element={<Blog />} />                    
+        <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/resources/test-big-five" element={<BigFiveTest />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/legal" element={<Legal />} />
-        <Route path="/habit-tracker" element={<HabitTracker />} />  
+        <Route path="/habit-tracker" element={<HabitTracker />} />
         <Route path="/og-test" element={<OGTest />} />
         <Route path="/admin/emails" element={<EmailDashboard />} />
       </Routes>

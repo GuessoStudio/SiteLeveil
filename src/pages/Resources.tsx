@@ -1,12 +1,14 @@
 // src/pages/Resources.tsx
 import React, { useState } from 'react'
-import { Download, BookOpen, Video, Smartphone, Filter, Search, Star, Clock, Users } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Download, BookOpen, Video, Smartphone, Filter, Search, Star, Clock, Users, Brain } from 'lucide-react'
 import EmailCaptureModal from '../components/EmailCaptureModal'
 
 const Resources = () => {
+  const navigate = useNavigate()
   const [activeFilter, setActiveFilter] = useState('Tous')
   const [searchTerm, setSearchTerm] = useState('')
-  
+
   // État pour le modal
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedResource, setSelectedResource] = useState<any>(null)
@@ -14,6 +16,20 @@ const Resources = () => {
   const categories = ['Tous', 'E-books', 'Guides', 'Outils', 'Applications']
 
   const resources = [
+    {
+      id: 0, // Nouveau ID
+      title: "Test de Personnalité Big Five (OCEAN)",
+      description: "Découvrez votre profil psychologique complet avec ce test scientifique interactif. 30 questions pour mieux vous connaître.",
+      category: "Outils",
+      type: "Test Interactif",
+      users: "Nouveau",
+      rating: 5.0,
+      image: "", // Pas d'image pour l'instant, le fallback s'affichera
+      free: true,
+      isWebApp: true,
+      webAppUrl: "/resources/test-big-five",
+      featured: true
+    },
     {
       id: 1,
       title: "21 Déclencheurs Mentaux pour Réussir",
@@ -63,6 +79,7 @@ const Resources = () => {
       case 'Guides': return BookOpen
       case 'Vidéos': return Video
       case 'Applications': return Smartphone
+      case 'Outils': return Brain
       default: return BookOpen
     }
   }
@@ -70,7 +87,7 @@ const Resources = () => {
   const filteredResources = resources.filter(resource => {
     const matchesFilter = activeFilter === 'Tous' || resource.category === activeFilter
     const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         resource.description.toLowerCase().includes(searchTerm.toLowerCase())
+      resource.description.toLowerCase().includes(searchTerm.toLowerCase())
     return matchesFilter && matchesSearch
   })
 
@@ -78,7 +95,7 @@ const Resources = () => {
   const handleDownloadClick = (resource: any) => {
     // Si c'est une web app, rediriger directement
     if (resource.isWebApp && resource.webAppUrl) {
-      window.location.href = resource.webAppUrl
+      navigate(resource.webAppUrl)
       return
     }
 
@@ -90,7 +107,7 @@ const Resources = () => {
   return (
     <div className="min-h-screen py-20">
       {/* SEO et Header similaires au code original... */}
-      
+
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -123,11 +140,10 @@ const Resources = () => {
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-6 py-2 rounded-lg font-medium transition-all ${
-                activeFilter === category
+              className={`px-6 py-2 rounded-lg font-medium transition-all ${activeFilter === category
                   ? 'bg-indigo-600 text-white shadow-md'
                   : 'bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-700'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -148,7 +164,7 @@ const Resources = () => {
                     21 Déclencheurs Mentaux pour Réussir
                   </h2>
                   <p className="text-lg text-indigo-100 mb-6">
-                    Découvrez les biais cognitifs et techniques de persuasion 
+                    Découvrez les biais cognitifs et techniques de persuasion
                     utilisés par les experts en psychologie comportementale.
                   </p>
                   <div className="flex items-center gap-6 text-sm text-indigo-100 mb-6">
@@ -174,8 +190,8 @@ const Resources = () => {
                   </button>
                 </div>
                 <div className="w-full md:w-64 h-48 bg-white/10 rounded-xl overflow-hidden">
-                  <img 
-                    src={resources[0].image} 
+                  <img
+                    src={resources[0].image}
                     alt={resources[0].title}
                     className="w-full h-full object-cover"
                   />
@@ -190,8 +206,8 @@ const Resources = () => {
           {filteredResources.map((resource) => {
             const IconComponent = getIcon(resource.category)
             return (
-              <div 
-                key={resource.id} 
+              <div
+                key={resource.id}
                 className="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="relative h-48 bg-neutral-100 dark:bg-neutral-700 overflow-hidden">
