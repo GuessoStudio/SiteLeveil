@@ -25,7 +25,7 @@ import NeuroJournalLayout from './pages/NeuroJournal/NeuroJournalLayout'
 import Onboarding from './pages/NeuroJournal/Onboarding'
 import Dashboard from './pages/NeuroJournal/Dashboard'
 import DailyCheckIn from './pages/NeuroJournal/DailyCheckIn'
-
+import NeuroJournalLanding from './pages/NeuroJournalLanding'
 const AnimatedRoutes = () => {
   const location = useLocation()
 
@@ -33,10 +33,17 @@ const AnimatedRoutes = () => {
     <PageTransition>
       <Routes location={location}>
         <Route path="/" element={<Home />} />
+
+        {/* Landing Page SEO */}
+        <Route path="/neuro-journal" element={<NeuroJournalLanding />} />
+
+        {/* Blog & Content */}
         <Route path="/blog/:slug" element={<Article />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/about" element={<About />} />
+        {/* ... other routes ... */}
+
         <Route path="/resources" element={<Resources />} />
+        <Route path="/about" element={<About />} />
         <Route path="/test-personnalite-big-five" element={<BigFiveTest />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/legal" element={<Legal />} />
@@ -44,7 +51,7 @@ const AnimatedRoutes = () => {
         <Route path="/og-test" element={<OGTest />} />
         <Route path="/admin/emails" element={<EmailDashboard />} />
 
-        {/* Neuro Journal Routes (Standalone Layout) */}
+        {/* Neuro Journal Routes (App) */}
         <Route path="/neuro-journal/*" element={
           <div className="bg-gray-50 dark:bg-neutral-900 min-h-screen">
             {/* Note: NeuroJournal has its own Layout inside */}
