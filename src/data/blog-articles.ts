@@ -1,0 +1,128 @@
+export interface ArticleData {
+    id: number;
+    title: string;
+    excerpt: string;
+    category: string;
+    readTime: number;
+    date: string;
+    image: string;
+    slug: string;
+    featured?: boolean;
+}
+
+export const articles: ArticleData[] = [
+    {
+        id: 1,
+        title: "Comment surmonter le rejet social",
+        excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
+        category: "Psychologie",
+        readTime: 8,
+        date: "2024-01-15",
+        image: "/images/articles/rejet-social-cover",
+        slug: "surmonter-rejet-social",
+        featured: true
+    },
+    {
+        id: 2,
+        title: "Neuroplasticité : comment reprogrammer son cerveau après 25 ans",
+        excerpt: "Découvrez les mécanismes scientifiques de la neuroplasticité et 7 stratégies concrètes pour optimiser la plasticité de votre cerveau.",
+        category: "Neurosciences",
+        readTime: 12,
+        date: "2024-01-12",
+        image: "/images/articles/neuroplasticite-cover",
+        slug: "neuroplasticite-cerveau"
+    },
+    {
+        id: 3,
+        title: "Construire une confiance en soi durable",
+        excerpt: "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
+        category: "Développement Personnel",
+        readTime: 10,
+        date: "2024-01-10",
+        image: "/images/articles/confiance-soi-cover",
+        slug: "confiance-en-soi-durable"
+    },
+    {
+        id: 4,
+        title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
+        excerpt: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
+        category: "Psychologie",
+        readTime: 6,
+        date: "2025-08-13",
+        image: "/images/articles/dopamine-cover",
+        slug: "neuro-dopamine-routine"
+    },
+    {
+        id: 5,
+        title: "Attention fragmentée : restaurer sa concentration profonde à l'ère numérique",
+        excerpt: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 8 stratégies scientifiquement validées.",
+        category: "Neurosciences",
+        readTime: 12,
+        date: "2025-08-28",
+        image: "/images/articles/attention-fragmentee-cover-1200x630",
+        slug: "attention-fragmentee-concentration-numerique"
+    },
+    {
+        id: 6,
+        title: "Rumination mentale : comprendre et libérer son esprit des pensées obsessionnelles",
+        excerpt: "Découvrez les mécanismes neuroscientifiques de la rumination et 7 stratégies validées scientifiquement.",
+        category: "Psychologie",
+        readTime: 11,
+        date: "2025-08-29",
+        image: "/images/articles/rumination-cover",
+        slug: "rumination-mentale-pensees-obsessionnelles"
+    },
+    {
+        id: 7,
+        title: "Procrastination : comprendre les mécanismes cérébraux pour enfin passer à l'action",
+        excerpt: "Découvrez les bases neuroscientifiques de la procrastination et 8 stratégies validées scientifiquement.",
+        category: "Psychologie",
+        readTime: 13,
+        date: "2025-08-30",
+        image: "/images/articles/procrastination-brain-conflict",
+        slug: "procrastination-cerveau-agir-neurosciences"
+    },
+    {
+        id: 8,
+        title: "La méthode ACR : répondre aux bonnes nouvelles pour renforcer les relations",
+        excerpt: "Découvrez comment la réponse active-constructive (ACR) transforme votre façon de célébrer les bonnes nouvelles et renforce durablement vos liens interpersonnels.",
+        category: "Relations Humaines",
+        readTime: 10,
+        date: "2025-08-30",
+        image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630",
+        slug: "methode-acr-repondre-aux-bonnes-nouvelles"
+    },
+    {
+        id: 9,
+        title: "Syndrome de l'imposteur : comprendre ses mécanismes et 6 solutions efficaces",
+        excerpt: "70% des personnes vivent le syndrome de l'imposteur. Explore les mécanismes neuroscientifiques et 6 stratégies concrètes pour t'en libérer définitivement.",
+        category: "Psychologie",
+        readTime: 10,
+        date: "2025-09-05",
+        image: "/images/articles/syndrome-imposteur-cover",
+        slug: "syndrome-imposteur-solutions",
+        featured: true
+    },
+    {
+        id: 10,
+        title: "Sommeil réparateur : 7 stratégies validées pour booster énergie & mémoire",
+        excerpt: "30% des adultes souffrent de troubles du sommeil. Explorez les mécanismes neuroscientifiques et 7 stratégies scientifiques pour une récupération optimale.",
+        category: "Neurosciences",
+        readTime: 12,
+        date: "2025-09-06",
+        image: "/images/articles/sommeil-reparateur-cover",
+        slug: "sommeil-reparateur-7-strategies-validees",
+        featured: true
+    },
+    {
+        id: 11,
+        title: "Lumière naturelle : effets sur le cerveau, le sommeil et la santé mentale",
+        excerpt: "90% de notre temps passé en intérieur dérègle notre horloge biologique. Explorez les mécanismes neuroscientifiques et 7 stratégies pour retrouver un équilibre naturel.",
+        category: "Neurosciences",
+        readTime: 14,
+        date: "2025-09-08",
+        image: "/images/articles/lumiere-naturelle-cover",
+        slug: "lumiere-naturelle-cerveau-sommeil-sante-mentale",
+        featured: true
+    }
+];

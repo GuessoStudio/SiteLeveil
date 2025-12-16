@@ -20,6 +20,12 @@ import OGTest from './pages/OGTest'
 import EmailDashboard from './pages/EmailDashboard'
 import BigFiveTest from './pages/BigFiveTest'
 
+// Neuro-Journal Imports
+import NeuroJournalLayout from './pages/NeuroJournal/NeuroJournalLayout'
+import Onboarding from './pages/NeuroJournal/Onboarding'
+import Dashboard from './pages/NeuroJournal/Dashboard'
+import DailyCheckIn from './pages/NeuroJournal/DailyCheckIn'
+
 const AnimatedRoutes = () => {
   const location = useLocation()
 
@@ -37,6 +43,21 @@ const AnimatedRoutes = () => {
         <Route path="/habit-tracker" element={<HabitTracker />} />
         <Route path="/og-test" element={<OGTest />} />
         <Route path="/admin/emails" element={<EmailDashboard />} />
+
+        {/* Neuro Journal Routes (Standalone Layout) */}
+        <Route path="/neuro-journal/*" element={
+          <div className="bg-gray-50 dark:bg-neutral-900 min-h-screen">
+            {/* Note: NeuroJournal has its own Layout inside */}
+            <Routes>
+              <Route element={<NeuroJournalLayout />}>
+                <Route index element={<Onboarding />} />
+                <Route path="onboarding" element={<Onboarding />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="checkin" element={<DailyCheckIn />} />
+              </Route>
+            </Routes>
+          </div>
+        } />
       </Routes>
     </PageTransition>
   )

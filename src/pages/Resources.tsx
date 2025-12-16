@@ -31,6 +31,20 @@ const Resources = () => {
       featured: true
     },
     {
+      id: 101, // ID Special
+      title: "Neuro-Journal (Beta)",
+      description: "Votre compagnon quotidien pour tracker votre santé mentale (Humeur, Sommeil, Énergie). Données 100% privées & locales.",
+      category: "Outils",
+      type: "Web App",
+      users: "Beta",
+      rating: 5.0,
+      image: "/images/resources/neuro-journal-cover.webp", // Fallback needed if not exists, but code handles it with Icon
+      free: true,
+      isWebApp: true,
+      webAppUrl: "/neuro-journal/onboarding",
+      featured: true
+    },
+    {
       id: 1,
       title: "21 Déclencheurs Mentaux pour Réussir",
       description: "Guide complet des biais cognitifs et techniques de persuasion basés sur la psychologie comportementale.",
@@ -151,54 +165,62 @@ const Resources = () => {
         </div>
 
         {/* Featured Resource */}
-        {activeFilter === 'Tous' && resources.find(r => r.featured && r.id === 1) && (
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-1 text-white">
-                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <Star className="w-4 h-4 text-yellow-300" />
-                    <span>Ressource vedette</span>
+        {activeFilter === 'Tous' && (
+          (() => {
+            const featuredResource = resources.find(r => r.featured && r.id === 1);
+            if (!featuredResource) return null;
+
+            return (
+              <div className="mb-16">
+                <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+                    <div className="flex-1 text-white">
+                      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <Star className="w-4 h-4 text-yellow-300" />
+                        <span>Ressource vedette</span>
+                      </div>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        {featuredResource.title}
+                      </h2>
+                      <p className="text-lg text-indigo-100 mb-6">
+                        {featuredResource.description}
+                      </p>
+                      <div className="flex items-center gap-6 text-sm text-indigo-100 mb-6">
+                        {featuredResource.pages && (
+                          <div className="flex items-center gap-1">
+                            <BookOpen className="w-4 h-4" />
+                            <span>{featuredResource.pages} pages</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-1">
+                          <Download className="w-4 h-4" />
+                          <span>2500+ téléchargements</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Star className="w-4 h-4 text-yellow-400" />
+                          <span>{featuredResource.rating}/5</span>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => handleDownloadClick(featuredResource)}
+                        className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center gap-2"
+                      >
+                        <Download className="w-5 h-5" />
+                        Télécharger gratuitement
+                      </button>
+                    </div>
+                    <div className="w-full md:w-64 h-48 bg-white/10 rounded-xl overflow-hidden">
+                      <img
+                        src={featuredResource.image}
+                        alt={featuredResource.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    21 Déclencheurs Mentaux pour Réussir
-                  </h2>
-                  <p className="text-lg text-indigo-100 mb-6">
-                    Découvrez les biais cognitifs et techniques de persuasion
-                    utilisés par les experts en psychologie comportementale.
-                  </p>
-                  <div className="flex items-center gap-6 text-sm text-indigo-100 mb-6">
-                    <div className="flex items-center gap-1">
-                      <BookOpen className="w-4 h-4" />
-                      <span>28 pages</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Download className="w-4 h-4" />
-                      <span>2500+ téléchargements</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-400" />
-                      <span>4.8/5</span>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => handleDownloadClick(resources[1])}
-                    className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors inline-flex items-center gap-2"
-                  >
-                    <Download className="w-5 h-5" />
-                    Télécharger gratuitement
-                  </button>
-                </div>
-                <div className="w-full md:w-64 h-48 bg-white/10 rounded-xl overflow-hidden">
-                  <img
-                    src={resources[1].image}
-                    alt={resources[1].title}
-                    className="w-full h-full object-cover"
-                  />
                 </div>
               </div>
-            </div>
-          </div>
+            );
+          })()
         )}
 
         {/* Resources Grid */}
