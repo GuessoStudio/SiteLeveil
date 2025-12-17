@@ -3,7 +3,7 @@ import type { FC } from "react";
 
 // ⚠️ Les chemins et les noms doivent correspondre EXACTEMENT aux fichiers
 import NeuroDopamineRoutine from "../articles/NeuroDopamineRoutine";
-import RejetSocial from "../articles/RejetSocial";
+import RejetSocial from "../pages/Blog/RejetSocial";
 import ConfianceEnSoi from "../articles/ConfianceEnSoi";
 import NeuroplasticiteCerveau from "../articles/NeuroplasticiteCerveau";
 import AttentionFragmenteeArticle from '../articles/AttentionFragmenteeArticle';

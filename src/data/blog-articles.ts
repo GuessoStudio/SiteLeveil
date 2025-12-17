@@ -13,11 +13,11 @@ export interface ArticleData {
 export const articles: ArticleData[] = [
     {
         id: 1,
-        title: "Comment surmonter le rejet social",
-        excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
-        category: "Psychologie",
-        readTime: 8,
-        date: "2024-01-15",
+        title: "Rejet social : ce que les neurosciences révèlent sur la douleur sociale",
+        excerpt: "Découvrez les mécanismes neuroscientifiques du rejet et 7 stratégies issues d'approches validées pour reprogrammer votre cerveau.",
+        category: "Neurosciences",
+        readTime: 14,
+        date: "2025-12-17",
         image: "/images/articles/rejet-social-cover",
         slug: "surmonter-rejet-social",
         featured: true
