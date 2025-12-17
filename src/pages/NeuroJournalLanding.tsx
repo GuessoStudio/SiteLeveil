@@ -39,26 +39,27 @@ const NeuroJournalLanding = () => {
         {
             "@context": "https://schema.org",
             "@type": "HowTo",
-            "name": "Comment utiliser le NeuroJournal en 2 minutes",
+            "name": "Comment utiliser le NeuroJournal",
+            "description": "Guide rapide en 3 étapes pour commencer à suivre votre bien-être mental en moins de 2 minutes par jour",
             "totalTime": "PT2M",
             "step": [
                 {
                     "@type": "HowToStep",
-                    "position": 1,
-                    "name": "Note tes données quotidiennes",
-                    "text": "Chaque soir, prends 30 secondes pour enregistrer ton niveau d'humeur, ta qualité de sommeil et ton niveau d'énergie."
+                    "name": "Note Tes Données Quotidiennes",
+                    "text": "Enregistre ton humeur, qualité de sommeil et niveau d'énergie en 30 secondes via une interface simple",
+                    "position": 1
                 },
                 {
                     "@type": "HowToStep",
-                    "position": 2,
-                    "name": "Visualise tes patterns",
-                    "text": "Consulte ton tableau de bord personnel pour voir les graphiques de corrélation entre ton sommeil et ton humeur."
+                    "name": "Visualise Tes Patterns Dans Le Dashboard",
+                    "text": "Consulte tes graphiques, calendrier heatmap et identifie les corrélations entre sommeil, humeur et énergie",
+                    "position": 2
                 },
                 {
                     "@type": "HowToStep",
-                    "position": 3,
-                    "name": "Reçois des insights personnalisés",
-                    "text": "Après 7 à 14 jours de suivi, l'algorithme génère des recommandations basées sur les neurosciences pour améliorer ton bien-être."
+                    "name": "Reçois Des Insights Personnalisés",
+                    "text": "Après 7-14 jours, obtiens des recommandations IA basées sur tes patterns comportementaux uniques",
+                    "position": 3
                 }
             ]
         },
@@ -69,42 +70,84 @@ const NeuroJournalLanding = () => {
                 {
                     "@type": "Question",
                     "name": "Combien de temps ça prend par jour ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Moins de 2 minutes. La saisie quotidienne est conçue pour être ultra-rapide (environ 30 secondes) afin de maintenir l'habitude facilement." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Moins de 2 minutes par jour. Le NeuroJournal est conçu pour être ultra-rapide : 30 secondes pour saisir tes données (humeur, sommeil, énergie), puis tu consultes ton dashboard quand tu veux. Aucune contrainte d'écriture longue."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Mes données sont-elles vraiment privées ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "OUI, à 100%. Le NeuroJournal utilise une architecture 'Local-First'. Vos données sont stockées uniquement dans le navigateur de votre appareil (localStorage). Nous n'avons aucun accès à vos informations personnelles." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "100% privé. Toutes tes données restent sur ton appareil via localStorage. Nous ne collectons rien, ne vendons rien, et n'avons même pas accès à tes informations. C'est conforme RGPD par design."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Quelles données je dois suivre ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Le journal se concentre sur 3 piliers : l'Humeur, le Sommeil et l'Énergie. Vous pouvez aussi ajouter des tags personnalisés (sport, méditation, etc.)." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Le strict minimum : humeur (échelle 1-5), qualité de sommeil (échelle 1-5), et niveau d'énergie (échelle 1-5). Optionnel : alimentation, activités. Plus tu es régulier, plus les insights IA sont précis."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Comment fonctionnent les insights IA ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Après 7-14 jours, notre algorithme détecte des corrélations locales (ex: impact du sommeil sur l'anxiété) et vous propose des conseils ciblés." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Notre algorithme analyse tes patterns sur 7-14 jours et détecte les corrélations invisibles à l'œil nu. Exemple : 'Ton humeur chute systématiquement après moins de 6h de sommeil'. C'est basé sur les neurosciences comportementales."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Est-ce vraiment gratuit ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Oui, la version Bêta actuelle est 100% gratuite et sans publicité." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oui, 100% gratuit à vie. Aucun freemium, aucun upgrade payant, aucune publicité. Notre mission est de rendre les outils de bien-être mental accessibles à tous. Point."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Ça fonctionne sur mobile ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Absolument. C'est une Progressive Web App (PWA) optimisée pour mobile. Vous pouvez l'ajouter à votre écran d'accueil." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Parfaitement. Le NeuroJournal est une Progressive Web App (PWA). Sur mobile, il se comporte comme une app native : ajout à l'écran d'accueil, notifications, mode hors-ligne. Compatible iOS et Android."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Dois-je créer un compte ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Non. Pas d'inscription, pas d'email. Vos données restent sur votre appareil." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Non, aucune inscription requise. Lance l'outil et commence immédiatement. Tes données sont stockées localement. Si tu veux synchroniser entre appareils à l'avenir, on ajoutera l'option compte (optionnel)."
+                    }
                 },
                 {
                     "@type": "Question",
                     "name": "Combien de temps avant de voir des résultats ?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Dès 3 jours pour la prise de conscience, et environ 2 semaines pour voir apparaître vos premiers patterns significatifs." }
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Premiers patterns visibles dès 3-5 jours. Insights IA précis après 7-14 jours de saisie régulière. La clé : constance > intensité. 2 min/jour pendant 2 semaines = transformation visible."
+                    }
+                }
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Accueil",
+                    "item": "https://leveilmental.fr"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "NeuroJournal",
+                    "item": "https://leveilmental.fr/neuro-journal"
                 }
             ]
         }
