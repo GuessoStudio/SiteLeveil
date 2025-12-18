@@ -6,7 +6,7 @@ const meta = {
   slug: "surmonter-rejet-social",
   title: "Comment surmonter le rejet social : guide scientifique de résilience émotionnelle",
   description: "Découvrez les mécanismes neuropsychologiques du rejet social et 6 stratégies validées scientifiquement pour développer votre résilience émotionnelle.",
-  cover: "/images/articles/rejet-social-cover.jpg",
+  cover: "/images/articles/rejet-social-cover.webp",
   datePublished: "2024-01-15T08:00:00+01:00",
   dateModified: "2025-12-17T08:00:00+01:00",
   tags: ["rejet social", "résilience", "psychologie", "estime de soi"],
