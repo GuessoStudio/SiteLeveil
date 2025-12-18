@@ -41,7 +41,6 @@ const faqData = [
 
 export default function RejetSocial() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const url = `${site}/blog/${meta.slug}`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
 
@@ -131,7 +130,6 @@ export default function RejetSocial() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
         jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
       />
       
