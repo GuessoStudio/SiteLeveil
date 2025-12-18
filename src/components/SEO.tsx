@@ -199,13 +199,13 @@ export default function SEO({
       {articleLd && <script type="application/ld+json">{JSON.stringify(articleLd)}</script>}
 
       {/* Custom JSON-LD passed from pages (prend la main) */}
-      {jsonLd?.map((obj, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
-        />
-      ))}
+      {jsonLd
+        ?.filter(Boolean)
+        .map((obj, i) => (
+          <script key={`ld-${i}`} type="application/ld+json">
+            {JSON.stringify(obj)}
+          </script>
+        ))}
     </Helmet>
   );
 }

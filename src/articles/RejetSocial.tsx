@@ -16,9 +16,100 @@ const meta = {
 };
 
 export default function RejetSocial() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const url = `${site}/blog/${meta.slug}`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+
+  // FAQ data for JSON-LD schema
+  const faqData = [
+    {
+      question: "Pourquoi le rejet fait-il si mal physiquement ?",
+      answer: "Le rejet active les mêmes circuits neuraux que la douleur physique (cortex cingulaire antérieur et insula). C'est un mécanisme évolutionnaire qui signalait à nos ancêtres le danger de l'exclusion sociale."
+    },
+    {
+      question: "Combien de temps faut-il pour récupérer d'un rejet ?",
+      answer: "Cela dépend de l'importance de la relation et de vos stratégies de coping. Avec les bonnes techniques, l'intensité émotionnelle diminue généralement en 2-3 semaines, bien que l'apprentissage puisse durer plusieurs mois."
+    },
+    {
+      question: "Comment savoir si ma sensibilité au rejet est normale ?",
+      answer: "Une sensibilité excessive se manifeste par l'évitement systématique de situations sociales, l'anticipation constante du rejet, ou une détresse disproportionnée. Si ces symptômes interfèrent avec votre quotidien, consultez un professionnel."
+    },
+    {
+      question: "L'autocompassion ne rend-elle pas plus faible ?",
+      answer: "Au contraire, les recherches montrent que l'autocompassion améliore la résilience et la motivation. Elle permet de récupérer plus vite des échecs et d'apprendre de ses erreurs sans s'autodétruire."
+    }
+  ];
+
+  // JSON-LD Schemas as plain objects
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: meta.title,
+    description: meta.description,
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: {
+      "@type": "Person",
+      name: meta.author.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "L'Éveil Mental",
+      url: site,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site}/images/logo.webp`
+      }
+    },
+    image: [og],
+    about: {
+      "@type": "DefinedTerm",
+      name: "Rejet social"
+    },
+    keywords: meta.tags.join(", "),
+    articleSection: meta.category,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url
+    }
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: site
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${site}/blog`
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Rejet social"
+      }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    }))
+  };
 
   return (
     <>
@@ -32,6 +123,7 @@ export default function RejetSocial() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
