@@ -7,67 +7,74 @@ const meta = {
   title: "Comment surmonter le rejet social : guide scientifique de résilience émotionnelle",
   description: "Découvrez les mécanismes neuropsychologiques du rejet social et 6 stratégies validées scientifiquement pour développer votre résilience émotionnelle.",
   cover: "/images/articles/rejet-social-cover.jpg",
-  datePublished: "2024-01-15",
-  dateModified: "2024-01-15",
+  datePublished: "2024-01-15T08:00:00+01:00",
+  dateModified: "2025-12-17T08:00:00+01:00",
   tags: ["rejet social", "résilience", "psychologie", "estime de soi"],
-  author: { name: "Guesso" },
+  author: { 
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/about"
+  },
   category: "Psychologie",
-  readingTime: "8 min",
+  readingTime: "14 min",
 };
 
+// FAQ Data pour Schema
+const faqData = [
+  {
+    question: "Pourquoi le rejet fait-il si mal physiquement ?",
+    answer: "Le rejet active les mêmes circuits neuraux que la douleur physique (cortex cingulaire antérieur et insula). C'est un mécanisme évolutionnaire qui signalait à nos ancêtres le danger de l'exclusion sociale."
+  },
+  {
+    question: "Combien de temps faut-il pour récupérer d'un rejet ?",
+    answer: "Cela dépend de l'importance de la relation et de vos stratégies de coping. Avec les bonnes techniques, l'intensité émotionnelle diminue généralement en 2-3 semaines, bien que l'apprentissage puisse durer plusieurs mois."
+  },
+  {
+    question: "Comment savoir si ma sensibilité au rejet est normale ?",
+    answer: "Une sensibilité excessive se manifeste par l'évitement systématique de situations sociales, l'anticipation constante du rejet, ou une détresse disproportionnée. Si ces symptômes interfèrent avec votre quotidien, consultez un professionnel."
+  },
+  {
+    question: "L'autocompassion ne rend-elle pas plus faible ?",
+    answer: "Au contraire, les recherches montrent que l'autocompassion améliore la résilience et la motivation. Elle permet de récupérer plus vite des échecs et d'apprendre de ses erreurs sans s'autodétruire."
+  }
+];
+
 export default function RejetSocial() {
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const url = `${site}/blog/${meta.slug}`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
 
-  // FAQ data for JSON-LD schema
-  const faqData = [
-    {
-      question: "Pourquoi le rejet fait-il si mal physiquement ?",
-      answer: "Le rejet active les mêmes circuits neuraux que la douleur physique (cortex cingulaire antérieur et insula). C'est un mécanisme évolutionnaire qui signalait à nos ancêtres le danger de l'exclusion sociale."
-    },
-    {
-      question: "Combien de temps faut-il pour récupérer d'un rejet ?",
-      answer: "Cela dépend de l'importance de la relation et de vos stratégies de coping. Avec les bonnes techniques, l'intensité émotionnelle diminue généralement en 2-3 semaines, bien que l'apprentissage puisse durer plusieurs mois."
-    },
-    {
-      question: "Comment savoir si ma sensibilité au rejet est normale ?",
-      answer: "Une sensibilité excessive se manifeste par l'évitement systématique de situations sociales, l'anticipation constante du rejet, ou une détresse disproportionnée. Si ces symptômes interfèrent avec votre quotidien, consultez un professionnel."
-    },
-    {
-      question: "L'autocompassion ne rend-elle pas plus faible ?",
-      answer: "Au contraire, les recherches montrent que l'autocompassion améliore la résilience et la motivation. Elle permet de récupérer plus vite des échecs et d'apprendre de ses erreurs sans s'autodétruire."
-    }
-  ];
-
-  // JSON-LD Schemas as plain objects
+  // ✅ SCHEMAS JSON-LD (AJOUTE CE BLOC)
   const schemaBlogPosting = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: meta.title,
     description: meta.description,
+    image: og,
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
     author: {
       "@type": "Person",
-      name: meta.author.name
+      "name": "Guesso",
+      "url": "https://leveilmental.fr/about"
     },
     publisher: {
       "@type": "Organization",
-      name: "L'Éveil Mental",
-      url: site,
-      logo: {
+      "name": "L'Éveil Mental",
+      "url": site,
+      "logo": {
         "@type": "ImageObject",
-        url: `${site}/images/logo.webp`
+        "url": `${site}/images/logo.webp`,
+        "width": 600,
+        "height": 150
       }
     },
-    image: [og],
     about: {
       "@type": "DefinedTerm",
-      name: "Rejet social"
+      "name": "Rejet social",
+      "description": "Mécanismes neuropsychologiques du rejet social et stratégies de résilience émotionnelle"
     },
-    keywords: meta.tags.join(", "),
-    articleSection: meta.category,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url
@@ -113,6 +120,7 @@ export default function RejetSocial() {
 
   return (
     <>
+      {/* ✅ PASSE LES SCHEMAS AU COMPOSANT SEO */}
       <SEO
         title={meta.title}
         description={meta.description}
@@ -123,6 +131,7 @@ export default function RejetSocial() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
         jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
       />
       
@@ -180,14 +189,14 @@ export default function RejetSocial() {
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-  src="/images/articles/rejet-social-cover.webp"
-  alt={meta.title}
-  width="1600"
-  height="900" 
-  className="w-full h-auto rounded-2xl"
-  loading="eager"
-  decoding="async"
-/>
+                src="/images/articles/rejet-social-cover.webp"
+                alt={meta.title}
+                width="1600"
+                height="900" 
+                className="w-full h-auto rounded-2xl"
+                loading="eager"
+                decoding="async"
+              />
             </div>
           )}
         </header>
@@ -342,41 +351,16 @@ export default function RejetSocial() {
           <h2>Questions fréquentes</h2>
           
           <div className="not-prose space-y-4">
-            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
-              <summary className="font-semibold cursor-pointer">
-                Pourquoi le rejet fait-il si mal physiquement ?
-              </summary>
-              <p className="mt-2 text-sm">
-                Le rejet active les mêmes circuits neuraux que la douleur physique (cortex cingulaire antérieur et insula). C'est un mécanisme évolutionnaire qui signalait à nos ancêtres le danger de l'exclusion sociale.
-              </p>
-            </details>
-            
-            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
-              <summary className="font-semibold cursor-pointer">
-                Combien de temps faut-il pour récupérer d'un rejet ?
-              </summary>
-              <p className="mt-2 text-sm">
-                Cela dépend de l'importance de la relation et de vos stratégies de coping. Avec les bonnes techniques, l'intensité émotionnelle diminue généralement en 2-3 semaines, bien que l'apprentissage puisse durer plusieurs mois.
-              </p>
-            </details>
-            
-            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
-              <summary className="font-semibold cursor-pointer">
-                Comment savoir si ma sensibilité au rejet est normale ?
-              </summary>
-              <p className="mt-2 text-sm">
-                Une sensibilité excessive se manifeste par l'évitement systématique de situations sociales, l'anticipation constante du rejet, ou une détresse disproportionnée. Si ces symptômes interfèrent avec votre quotidien, consultez un professionnel.
-              </p>
-            </details>
-            
-            <details className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
-              <summary className="font-semibold cursor-pointer">
-                L'autocompassion ne rend-elle pas plus faible ?
-              </summary>
-              <p className="mt-2 text-sm">
-                Au contraire, les recherches montrent que l'autocompassion améliore la résilience et la motivation. Elle permet de récupérer plus vite des échecs et d'apprendre de ses erreurs sans s'autodétruire.
-              </p>
-            </details>
+            {faqData.map((faq, index) => (
+              <details key={index} className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg">
+                <summary className="font-semibold cursor-pointer">
+                  {faq.question}
+                </summary>
+                <p className="mt-2 text-sm">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
           </div>
 
           <div className="not-prose my-12 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
