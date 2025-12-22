@@ -39,6 +39,10 @@ const StressZeroLanding = () => {
                 <meta name="keywords" content="stress financier, anxiété argent, insomnie financière, gérer son budget, inflation 2025, bien-être financier" />
                 <link rel="canonical" href="https://leveilmental.fr/stress-zero" />
 
+                {/* Preconnect to external domains */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
                 {/* Open Graph */}
                 <meta property="og:title" content="Stress Zéro, Finances héros - Retrouvez la Sérénité Financière" />
                 <meta property="og:description" content="67% des Français perdent le sommeil à cause de l'argent. Découvrez la méthode qui rend vos nuits sereines en 30 jours." />
@@ -67,6 +71,10 @@ const StressZeroLanding = () => {
                             src="/images/resources/Cover.webp"
                             alt="Couverture livre Stress Zéro Finances héros"
                             className="mx-auto max-w-sm rounded-2xl shadow-2xl mb-12 hover:scale-105 transition-transform duration-300"
+                            loading="eager"
+                            fetchPriority="high"
+                            width="350"
+                            height="525"
                         />
                         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                             67% des Français se réveillent la nuit à cause de l'argent. Et vous ?
