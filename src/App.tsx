@@ -26,6 +26,7 @@ import Onboarding from './pages/NeuroJournal/Onboarding'
 import Dashboard from './pages/NeuroJournal/Dashboard'
 import DailyCheckIn from './pages/NeuroJournal/DailyCheckIn'
 import NeuroJournalLanding from './pages/NeuroJournalLanding'
+import StressZeroLanding from './pages/StressZeroLanding'
 const AnimatedRoutes = () => {
   const location = useLocation()
 
@@ -36,6 +37,7 @@ const AnimatedRoutes = () => {
 
         {/* Landing Page SEO */}
         <Route path="/neuro-journal" element={<NeuroJournalLanding />} />
+        <Route path="/stress-zero" element={<StressZeroLanding />} />
 
         {/* Blog & Content */}
         <Route path="/blog/:slug" element={<Article />} />
