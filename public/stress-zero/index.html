@@ -879,6 +879,71 @@
         }
     </style>
 
+    <!-- ═══ DARK MODE SUPPORT ═══ -->
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Reassign colors for dark background */
+                --color-primary: #59a5cb;
+                /* Lighter blue for contrast */
+                --color-dark: #f0f0f0;
+                /* Text becomes light */
+                --color-light: #0d0d0d;
+                /* Section backgrounds become very dark */
+                --color-white: #1a1a1a;
+                /* Card backgrounds become dark grey */
+
+                /* Adjust shadows */
+                --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+                --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
+            }
+
+            body {
+                background-color: var(--color-light);
+                color: var(--color-dark);
+            }
+
+            /* Ensure text contrast on specific elements */
+            .section-title,
+            .benefit-title,
+            .bonus-text,
+            .testimonial-author .author-name {
+                color: var(--color-dark);
+            }
+
+            p,
+            .benefit-description,
+            .section-subtitle,
+            .testimonial-quote {
+                color: #cccccc;
+            }
+
+            /* Form inputs */
+            .form-input {
+                background-color: #252525;
+                border-color: #404040;
+                color: #ffffff;
+            }
+
+            .form-input::placeholder {
+                color: #888888;
+            }
+
+            /* Book excerpt box */
+            .book-excerpt {
+                background-color: var(--color-white);
+                color: #e0e0e0;
+                border-left-color: var(--color-accent);
+            }
+
+            /* Footer is already dark, but ensure text is light */
+            .footer {
+                background-color: #000000;
+                border-top: 1px solid #333;
+            }
+        }
+    </style>
+
     <!-- Schema.org structured data for Book -->
     <script type="application/ld+json">
     {
