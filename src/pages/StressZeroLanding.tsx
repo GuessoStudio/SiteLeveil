@@ -1,12 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle } from 'lucide-react';
-import { useDeferredAnalytics } from '../hooks/useDeferredAnalytics';
+// import { useDeferredAnalytics } from '../hooks/useDeferredAnalytics'; // Disabled due to mobile crash
 import { Link } from 'react-router-dom';
 
 const StressZeroLanding = () => {
-    // Charger Google Analytics de manière différée
-    useDeferredAnalytics('G-X04TK20VY6');
+    // Charger Google Analytics de manière différée -> Désactivé pour debug mobile
+    // useDeferredAnalytics('G-X04TK20VY6');
 
     // Schema.org JSON-LD Data for Book
     const jsonLd = [
