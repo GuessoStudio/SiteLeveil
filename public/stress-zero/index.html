@@ -883,19 +883,22 @@
     <style>
         @media (prefers-color-scheme: dark) {
             :root {
-                /* Reassign colors for dark background */
-                --color-primary: #59a5cb;
-                /* Lighter blue for contrast */
-                --color-dark: #f0f0f0;
+                /* Project Standard: Neutral Palette */
+                --color-dark: #f5f5f5;
                 /* Text becomes light */
-                --color-light: #0d0d0d;
-                /* Section backgrounds become very dark */
-                --color-white: #1a1a1a;
-                /* Card backgrounds become dark grey */
+                --color-light: #171717;
+                /* Background: Neutral 900 */
+                --color-white: #262626;
+                /* Cards: Neutral 800 */
 
-                /* Adjust shadows */
-                --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
-                --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
+                /* Keep brand colors but ensure contrast */
+                --color-primary: #59a5cb;
+                /* Lighter blue for dark mode */
+
+                /* Shadows adapted for dark mode */
+                --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+                --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.4);
+                --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.5);
             }
 
             body {
@@ -903,43 +906,90 @@
                 color: var(--color-dark);
             }
 
-            /* Ensure text contrast on specific elements */
+            /* Specific Text Overrides for Legibility */
             .section-title,
             .benefit-title,
             .bonus-text,
-            .testimonial-author .author-name {
-                color: var(--color-dark);
+            .testimonial-author .author-name,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #ffffff;
+                /* Explicit white for headings */
             }
 
             p,
             .benefit-description,
             .section-subtitle,
-            .testimonial-quote {
-                color: #cccccc;
+            .testimonial-quote,
+            .benefit-text {
+                color: #d4d4d4;
+                /* Neutral 300 for body text */
             }
 
-            /* Form inputs */
+            /* Form Inputs - Standardized */
             .form-input {
-                background-color: #252525;
+                background-color: #262626;
+                /* Neutral 800 */
                 border-color: #404040;
+                /* Neutral 700 */
                 color: #ffffff;
             }
 
             .form-input::placeholder {
-                color: #888888;
+                color: #737373;
+                /* Neutral 500 */
             }
 
-            /* Book excerpt box */
+            /* Component Specifics */
             .book-excerpt {
-                background-color: var(--color-white);
-                color: #e0e0e0;
-                border-left-color: var(--color-accent);
+                background-color: #262626;
+                color: #e5e5e5;
+                border: 1px solid #404040;
+                border-left: 6px solid var(--color-accent);
             }
 
-            /* Footer is already dark, but ensure text is light */
+            /* FOOTER FIX (Critical) - Force original dark styles or specific neutral-950 */
             .footer {
-                background-color: #000000;
-                border-top: 1px solid #333;
+                background-color: #0a0a0a !important;
+                /* Neutral 950 */
+                border-top: 1px solid #262626;
+                color: #e5e5e5;
+            }
+
+            .footer-brand,
+            .footer-link {
+                color: #a3a3a3 !important;
+                /* Neutral 400 */
+            }
+
+            .footer-link:hover {
+                color: #ffffff !important;
+                text-decoration: underline;
+            }
+
+            .social-link {
+                background-color: #262626;
+                /* Neutral 800 */
+                color: #ffffff;
+            }
+
+            .social-link:hover {
+                background-color: var(--color-accent);
+            }
+
+            /* Button Color Adjustments */
+            .btn-white {
+                background-color: #262626;
+                color: #ffffff;
+                border-color: #404040;
+            }
+
+            .btn-white:hover {
+                background-color: #404040;
             }
         }
     </style>

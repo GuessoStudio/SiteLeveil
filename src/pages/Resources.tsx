@@ -45,6 +45,20 @@ const Resources = () => {
       featured: true
     },
     {
+      id: 102,
+      title: "Stress Zéro, Finances Héros",
+      description: "Le livre et la méthode complète pour retrouver la sérénité financière en 30 jours, sans privation.",
+      category: "E-books",
+      type: "Livre / Méthode",
+      users: "Bestseller",
+      rating: 4.9,
+      image: "/images/resources/Cover.webp",
+      free: false,
+      isWebApp: true,
+      webAppUrl: "/stress-zero/",
+      featured: true
+    },
+    {
       id: 1,
       title: "21 Déclencheurs Mentaux pour Réussir",
       description: "Guide complet des biais cognitifs et techniques de persuasion basés sur la psychologie comportementale.",
