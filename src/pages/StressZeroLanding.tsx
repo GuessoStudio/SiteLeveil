@@ -74,10 +74,9 @@ const StressZeroLanding = () => {
                             src="/images/resources/Cover.webp"
                             alt="Couverture livre Stress Zéro Finances héros"
                             className="mx-auto max-w-sm rounded-2xl shadow-2xl mb-12 hover:scale-105 transition-transform duration-300"
-                            loading="eager"
-                            fetchPriority="high"
                             width="350"
                             height="525"
+                            decoding="async"
                         />
                         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                             67% des Français se réveillent la nuit à cause de l'argent. Et vous ?
