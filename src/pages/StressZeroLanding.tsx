@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle } from 'lucide-react';
 import { useDeferredAnalytics } from '../hooks/useDeferredAnalytics';
+import { Link } from 'react-router-dom';
 
 const StressZeroLanding = () => {
     // Charger Google Analytics de manière différée
@@ -45,6 +46,8 @@ const StressZeroLanding = () => {
                 {/* Preconnect to external domains */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link rel="dns-prefetch" href="https://formspree.io" />
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
                 {/* Open Graph */}
                 <meta property="og:title" content="Stress Zéro, Finances héros - Retrouvez la Sérénité Financière" />
@@ -77,6 +80,7 @@ const StressZeroLanding = () => {
                             width="350"
                             height="525"
                             decoding="async"
+                            fetchPriority="high"
                         />
                         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                             67% des Français se réveillent la nuit à cause de l'argent. Et vous ?
@@ -304,11 +308,11 @@ const StressZeroLanding = () => {
                             <a href="https://www.facebook.com/profile.php?id=61572902135677" className="hover:text-[#F4A261] transition-colors" target="_blank" rel="noopener noreferrer">Facebook</a>
                         </div>
                         <div className="flex justify-center gap-4 text-sm opacity-70">
-                            <a href="/mentions-legales" className="hover:underline">Mentions légales</a>
+                            <Link to="/mentions-legales" className="hover:underline">Mentions légales</Link>
                             <span>•</span>
-                            <a href="/politique-confidentialite" className="hover:underline">Politique de confidentialité</a>
+                            <Link to="/politique-confidentialite" className="hover:underline">Politique de confidentialité</Link>
                             <span>•</span>
-                            <a href="/contact" className="hover:underline">Contact</a>
+                            <Link to="/contact" className="hover:underline">Contact</Link>
                         </div>
                     </div>
                 </footer>
