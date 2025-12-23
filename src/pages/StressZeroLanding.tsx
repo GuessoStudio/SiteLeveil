@@ -1,8 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle } from 'lucide-react';
+import { useDeferredAnalytics } from '../hooks/useDeferredAnalytics';
 
 const StressZeroLanding = () => {
+    // Charger Google Analytics de manière différée
+    useDeferredAnalytics('G-X04TK20VY6');
 
     // Schema.org JSON-LD Data for Book
     const jsonLd = [
@@ -67,15 +70,30 @@ const StressZeroLanding = () => {
                 {/* HERO SECTION */}
                 <section className="pt-24 pb-32 text-white">
                     <div className="container mx-auto px-4 max-w-5xl text-center">
-                        <img
-                            src="/images/resources/Cover.webp"
-                            alt="Couverture livre Stress Zéro Finances héros"
-                            className="mx-auto max-w-sm rounded-2xl shadow-2xl mb-12 hover:scale-105 transition-transform duration-300"
-                            loading="eager"
-                            fetchPriority="high"
-                            width="350"
-                            height="525"
-                        />
+                        <picture>
+                            {/* Mobile: image plus petite et optimisée */}
+                            <source
+                                media="(max-width: 640px)"
+                                srcSet="/images/resources/Cover-mobile.webp"
+                                type="image/webp"
+                            />
+                            {/* Tablet */}
+                            <source
+                                media="(max-width: 1024px)"
+                                srcSet="/images/resources/Cover-tablet.webp"
+                                type="image/webp"
+                            />
+                            {/* Desktop: image complète */}
+                            <img
+                                src="/images/resources/Cover.webp"
+                                alt="Couverture livre Stress Zéro Finances héros"
+                                className="mx-auto max-w-sm rounded-2xl shadow-2xl mb-12 hover:scale-105 transition-transform duration-300"
+                                loading="eager"
+                                fetchPriority="high"
+                                width="350"
+                                height="525"
+                            />
+                        </picture>
                         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                             67% des Français se réveillent la nuit à cause de l'argent. Et vous ?
                         </h1>
