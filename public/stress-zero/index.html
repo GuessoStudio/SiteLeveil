@@ -906,45 +906,42 @@
                 color: var(--color-dark);
             }
 
-            /* Specific Text Overrides for Legibility */
-            .section-title,
-            .benefit-title,
-            .bonus-text,
-            .testimonial-author .author-name,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                color: #ffffff;
-                /* Explicit white for headings */
+            /* 1. Global Text Visibility Override */
+            /* Force all text in main sections to be inherited or specific light color */
+            .hero-section *,
+            .lead-magnet-section *,
+            .excerpt-section *,
+            .benefits-section *,
+            .testimonials-section *,
+            .main-cta-section *,
+            .bonus-section * {
+                color: inherit;
             }
 
-            p,
-            .benefit-description,
-            .section-subtitle,
-            .testimonial-quote,
-            .benefit-text {
-                color: #d4d4d4;
-                /* Neutral 300 for body text */
+            /* 2. Specific Section Backgrounds to Match Neutral Palette */
+            .lead-magnet-section,
+            .benefits-section,
+            .bonus-section {
+                background-color: var(--color-white) !important;
+                /* #262626 */
+                color: #e5e5e5;
             }
 
-            /* Form Inputs - Standardized */
-            .form-input {
-                background-color: #262626;
-                /* Neutral 800 */
-                border-color: #404040;
-                /* Neutral 700 */
-                color: #ffffff;
+            .testimonials-section {
+                background-color: var(--color-light);
+                /* #171717 */
             }
 
-            .form-input::placeholder {
-                color: #737373;
-                /* Neutral 500 */
+            /* 3. Cards - Forced Contrast */
+            .benefit-card,
+            .bonus-item,
+            .testimonial-card {
+                background-color: #333333 !important;
+                /* Neutral 750 for contrast against 800 */
+                border: 1px solid #444444;
+                color: #e5e5e5;
             }
 
-            /* Component Specifics */
             .book-excerpt {
                 background-color: #262626;
                 color: #e5e5e5;
@@ -952,18 +949,55 @@
                 border-left: 6px solid var(--color-accent);
             }
 
-            /* FOOTER FIX (Critical) - Force original dark styles or specific neutral-950 */
-            .footer {
-                background-color: #0a0a0a !important;
-                /* Neutral 950 */
-                border-top: 1px solid #262626;
+            /* 4. Headings & High Contrast Text */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .section-title,
+            .benefit-title,
+            .benefit-card h3,
+            .bonus-text,
+            .testimonial-quote {
+                color: #ffffff !important;
+            }
+
+            .section-subtitle,
+            .benefit-description {
+                color: #d4d4d4 !important;
+            }
+
+            /* 5. Forms */
+            .form-input {
+                background-color: #1a1a1a !important;
+                border-color: #404040 !important;
+                color: #ffffff !important;
+            }
+
+            .form-input::placeholder {
+                color: #888888;
+            }
+
+            label {
                 color: #e5e5e5;
             }
 
+            /* 6. Footer - Critical Fix */
+            .footer {
+                background-color: #000000 !important;
+                border-top: 1px solid #333;
+                color: #a3a3a3;
+            }
+
             .footer-brand,
+            .footerh3 {
+                color: #ffffff !important;
+            }
+
             .footer-link {
                 color: #a3a3a3 !important;
-                /* Neutral 400 */
             }
 
             .footer-link:hover {
@@ -972,16 +1006,15 @@
             }
 
             .social-link {
-                background-color: #262626;
-                /* Neutral 800 */
-                color: #ffffff;
+                background-color: #262626 !important;
+                color: #ffffff !important;
             }
 
             .social-link:hover {
-                background-color: var(--color-accent);
+                background-color: var(--color-accent) !important;
             }
 
-            /* Button Color Adjustments */
+            /* 7. Buttons */
             .btn-white {
                 background-color: #262626;
                 color: #ffffff;
