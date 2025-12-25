@@ -74,7 +74,7 @@ const Contact = () => {
                   Absolument ! Je réponds à toutes les questions sur la psychologie, les neurosciences et le développement personnel.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   📚 Proposez-vous du coaching personnalisé ?
@@ -110,7 +110,7 @@ const Contact = () => {
               En attendant ma réponse, explorez nos ressources gratuites
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+              <a
                 href="/blog"
                 className="inline-flex items-center gap-2 bg-sand-50 dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-sand-900 dark:text-sand-50 px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
               >
@@ -118,7 +118,7 @@ const Contact = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="/resources"
+                href="/ressources"
                 className="inline-flex items-center gap-2 bg-sand-50 dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-sand-900 dark:text-sand-50 px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
               >
                 Télécharger les guides

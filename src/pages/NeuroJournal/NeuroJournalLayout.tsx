@@ -8,7 +8,7 @@ const NeuroJournalLayout = () => {
             {/* Simple Top Bar for the 'App' feel */}
             <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border-b border-gray-200 dark:border-neutral-800">
                 <div className="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link to="/resources" className="p-2 -ml-2 text-gray-500 hover:text-indigo-600 dark:text-neutral-400 dark:hover:text-indigo-400 transition-colors">
+                    <Link to="/ressources" className="p-2 -ml-2 text-gray-500 hover:text-indigo-600 dark:text-neutral-400 dark:hover:text-indigo-400 transition-colors">
                         <ArrowLeft className="w-6 h-6" />
                     </Link>
 

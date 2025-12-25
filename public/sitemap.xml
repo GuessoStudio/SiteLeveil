@@ -12,12 +12,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/about</loc>
+    <loc>https://leveilmental.fr/a-propos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/resources</loc>
+    <loc>https://leveilmental.fr/ressources</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

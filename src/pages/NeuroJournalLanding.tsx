@@ -507,7 +507,7 @@ const NeuroJournalLanding = () => {
                                 <span className="text-gray-300">•</span>
                                 <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="hover:underline">Vaincre la Procrastination</Link>
                                 <span className="text-gray-300">•</span>
-                                <Link to="/resources" className="hover:underline">Toutes les Ressources</Link>
+                                <Link to="/ressources" className="hover:underline">Toutes les Ressources</Link>
                             </div>
                         </div>
                     </div>

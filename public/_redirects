@@ -1,6 +1,10 @@
 # Netlify Redirects for React SPA
 # https://docs.netlify.com/routing/redirects/
 
+# Redirections 301 (SEO) - DOIT être avant le fallback SPA
+/about      /a-propos      301
+/resources  /ressources    301
+
 # SPA fallback - toutes les routes non-fichiers vers index.html
 /*    /index.html   200
 
