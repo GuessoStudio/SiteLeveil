@@ -1,7 +1,11 @@
+# Netlify Configuration for L'Éveil Mental
+
+# Edge Functions
 [[edge_functions]]
-path     = "/og"
+path = "/og"
 function = "og"
 
+# Headers
 [[headers]]
   for = "/robots.txt"
   [headers.values]
@@ -11,3 +15,16 @@ function = "og"
   for = "/sitemap.xml"
   [headers.values]
   Cache-Control = "public, max-age=0, s-maxage=600"
+
+# SPA Redirects (backup de _redirects pour plus de sécurité)
+[[redirects]]
+  from = "/stress-zero"
+  to = "/blog"
+  status = 301
+  force = true
+
+# Catch-all redirect for React SPA (doit être en dernier)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
