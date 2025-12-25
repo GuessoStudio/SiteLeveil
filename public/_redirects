@@ -1,1 +1,8 @@
-/* /index.html 200
+# Netlify Redirects for React SPA
+# https://docs.netlify.com/routing/redirects/
+
+# SPA fallback - toutes les routes non-fichiers vers index.html
+/*    /index.html   200
+
+# Anciennes URLs ou pages inexistantes - rediriger vers blog ou home
+/stress-zero    /blog    301
