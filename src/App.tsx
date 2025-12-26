@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { ReadingProvider } from './contexts/ReadingContext'
@@ -43,6 +43,10 @@ const AnimatedRoutes = () => {
         <Route path="/blog/:slug" element={<Article />} />
         <Route path="/blog" element={<Blog />} />
         {/* ... other routes ... */}
+
+        {/* Redirections pour les anciennes URLs */}
+        <Route path="/about" element={<Navigate to="/a-propos" replace />} />
+        <Route path="/resources" element={<Navigate to="/ressources" replace />} />
 
         <Route path="/ressources" element={<Resources />} />
         <Route path="/a-propos" element={<About />} />
