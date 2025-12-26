@@ -19,6 +19,7 @@ import HabitTracker from './pages/HabitTracker'
 import OGTest from './pages/OGTest'
 import EmailDashboard from './pages/EmailDashboard'
 import BigFiveTest from './pages/BigFiveTest'
+import NotFound from './pages/NotFound'
 
 // Neuro-Journal Imports
 import NeuroJournalLayout from './pages/NeuroJournal/NeuroJournalLayout'
@@ -71,6 +72,9 @@ const AnimatedRoutes = () => {
             </Routes>
           </div>
         } />
+
+        {/* Catch-all 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </PageTransition>
   )
