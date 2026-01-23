@@ -41,7 +41,7 @@ const StressZeroLanding = () => {
                 <title>Stress Zéro, Finances héros - Retrouvez la Sérénité Financière en 30 Jours | L'Éveil</title>
                 <meta name="description" content="67% des Français perdent le sommeil à cause de l'argent. Méthode testée 30 jours pour retrouver la sérénité financière. Sans culpabilisation." />
                 <meta name="keywords" content="stress financier, anxiété argent, insomnie financière, gérer son budget, inflation 2025, bien-être financier" />
-                <link rel="canonical" href="https://leveilmental.fr/stress-zero" />
+                <link rel="canonical" href="https://leveilmental.fr/stress-zero/" />
 
                 {/* Preconnect to external domains */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,7 +53,7 @@ const StressZeroLanding = () => {
                 <meta property="og:title" content="Stress Zéro, Finances héros - Retrouvez la Sérénité Financière" />
                 <meta property="og:description" content="67% des Français perdent le sommeil à cause de l'argent. Découvrez la méthode qui rend vos nuits sereines en 30 jours." />
                 <meta property="og:image" content="https://leveilmental.fr/stress-zero/og-cover.webp" />
-                <meta property="og:url" content="https://leveilmental.fr/stress-zero" />
+                <meta property="og:url" content="https://leveilmental.fr/stress-zero/" />
                 <meta property="og:type" content="website" />
 
                 {/* Twitter Card */}

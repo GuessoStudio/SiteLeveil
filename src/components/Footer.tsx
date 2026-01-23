@@ -110,7 +110,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: 'Neuro-Journal', href: '/neuro-journal/onboarding' },
-                { name: 'Livre Stress Zéro', href: '/stress-zero' },
+                { name: 'Livre Stress Zéro', href: '/stress-zero/' },
                 { name: 'Test Big Five', href: '/test-personnalite-big-five' }
               ].map((item, index) => (
                 <li key={item.name}>

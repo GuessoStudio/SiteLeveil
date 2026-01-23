@@ -38,7 +38,7 @@ const AnimatedRoutes = () => {
 
         {/* Landing Page SEO */}
         <Route path="/neuro-journal" element={<NeuroJournalLanding />} />
-        <Route path="/stress-zero" element={<StressZeroLanding />} />
+        <Route path="/stress-zero/" element={<StressZeroLanding />} />
 
         {/* Blog & Content */}
         <Route path="/blog/:slug" element={<Article />} />

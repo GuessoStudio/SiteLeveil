@@ -55,7 +55,7 @@ const Resources = () => {
       image: "/images/resources/Cover.webp",
       free: false,
       isWebApp: true,
-      webAppUrl: "/stress-zero",
+      webAppUrl: "/stress-zero/",
       featured: true
     },
     {
