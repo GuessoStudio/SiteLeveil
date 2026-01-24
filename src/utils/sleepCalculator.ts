@@ -41,7 +41,7 @@ export interface SleepCalculation {
         long: { bedtime: string; hours: number; cycles: number };
     };
     ageGroup: string;             // Ex: "ADULT"
-    recommendedHours: [number, number]; // Ex: [7, 9]
+    recommendedHours: readonly [number, number]; // Ex: [7, 9]
 }
 
 export interface ValidationResult {
@@ -133,7 +133,7 @@ export function getAgeGroup(age: number): string {
 /**
  * Get recommended sleep hours for age
  */
-export function getRecommendedHours(age: number): [number, number] {
+export function getRecommendedHours(age: number): readonly [number, number] {
     for (const [key, config] of Object.entries(CONFIG.AGE_ADJUSTMENTS)) {
         if (age >= config.range[0] && age <= config.range[1]) {
             return config.recommendedHours;
