@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 
 const base = "https://leveilmental.fr";
-const staticRoutes = ["/", "/blog", "/a-propos", "/ressources", "/contact", "/legal", "/test-personnalite-big-five", "/neuro-journal", "/stress-zero"];
+const staticRoutes = ["/", "/blog", "/a-propos", "/ressources", "/contact", "/legal", "/test-personnalite-big-five", "/neuro-journal", "/stress-zero/", "/calculateur-sommeil/"];
 const articles = [
   "/blog/surmonter-rejet-social",
   "/blog/neuroplasticite-cerveau",
