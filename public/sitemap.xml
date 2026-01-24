@@ -43,8 +43,15 @@
   </url>
   <url>
     <loc>https://leveilmental.fr/stress-zero/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leveilmental.fr/calculateur-sommeil/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/habit-tracker</loc>

@@ -19,6 +19,7 @@ import HabitTracker from './pages/HabitTracker'
 import OGTest from './pages/OGTest'
 import EmailDashboard from './pages/EmailDashboard'
 import BigFiveTest from './pages/BigFiveTest'
+import SleepCalculator from './pages/SleepCalculator'
 import NotFound from './pages/NotFound'
 
 // Neuro-Journal Imports
@@ -39,6 +40,7 @@ const AnimatedRoutes = () => {
         {/* Landing Page SEO */}
         <Route path="/neuro-journal" element={<NeuroJournalLanding />} />
         <Route path="/stress-zero/" element={<StressZeroLanding />} />
+        <Route path="/calculateur-sommeil/" element={<SleepCalculator />} />
 
         {/* Blog & Content */}
         <Route path="/blog/:slug" element={<Article />} />

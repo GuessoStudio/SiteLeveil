@@ -71,6 +71,14 @@ export default {
           600: "#7c3aed",
           700: "#6d28d9",
         },
+        // Sleep Calculator Theme
+        sleep: {
+          primary: "#2B7A8F",  // Teal dark
+          light: "#32B8C6",    // Teal light
+          accent: "#E8A638",   // Gold
+          bg: "#F5EDE2",       // Beige warm
+          dark: "#0F2D3D",     // Navy dark
+        },
       },
       // ✨ NOUVEAU : Gradients personnalisés
       backgroundImage: {
@@ -171,7 +179,7 @@ export default {
   plugins: [
     animate, // TON PLUGIN EXISTANT (gardé)
     // ✨ NOUVEAU : Plugin personnalisé pour les classes utilitaires
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
         // Classes glassmorphism
         '.glass-card': {
