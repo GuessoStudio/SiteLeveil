@@ -95,13 +95,13 @@ const HabitTracker = () => {
     setData(prev => {
       const newCompletions = { ...prev.completions }
       if (!newCompletions[habitId]) newCompletions[habitId] = new Set()
-      
+
       if (newCompletions[habitId].has(date)) {
         newCompletions[habitId].delete(date)
       } else {
         newCompletions[habitId].add(date)
       }
-      
+
       return { ...prev, completions: newCompletions }
     })
   }
@@ -129,20 +129,20 @@ const HabitTracker = () => {
     reader.onload = (evt) => {
       try {
         const imported = JSON.parse(evt.target?.result as string)
-        
+
         // Validation robuste de la structure
         if (!imported || typeof imported !== 'object') {
           throw new Error('Le fichier ne contient pas un objet JSON valide')
         }
-        
+
         if (!Array.isArray(imported.habits)) {
           throw new Error('La propriété "habits" doit être un tableau')
         }
-        
+
         if (!imported.completions || typeof imported.completions !== 'object') {
           throw new Error('La propriété "completions" doit être un objet')
         }
-        
+
         // Validation de chaque habitude
         for (const habit of imported.habits) {
           if (!habit.id || typeof habit.id !== 'string') {
@@ -155,7 +155,7 @@ const HabitTracker = () => {
             throw new Error('Chaque habitude doit avoir une "color" valide')
           }
         }
-        
+
         // Validation des completions
         for (const [habitId, completionsSet] of Object.entries(imported.completions)) {
           if (!imported.habits.some((h: any) => h.id === habitId)) {
@@ -171,12 +171,12 @@ const HabitTracker = () => {
             throw new Error(`Les completions pour "${habitId}" doivent être un Array ou Set`)
           }
         }
-        
+
         setData(imported)
         setShowImport(false)
         e.target.value = '' // reset
         console.log('✅ Import réussi:', imported.habits.length, 'habitudes importées')
-        
+
       } catch (err) {
         console.error('❌ Import failed:', err)
         alert(`Erreur d'import: ${err instanceof Error ? err.message : 'Fichier invalide'}`)
@@ -188,11 +188,11 @@ const HabitTracker = () => {
   // Calculate stats for selected habit
   const stats = React.useMemo(() => {
     if (!selected) return { current: 0, best: 0, last7: 0, completionRate: 0 }
-    
+
     const completions = data.completions[selected.id] || new Set()
     const today = new Date()
     const todayKey = today.toISOString().slice(0, 10)
-    
+
     // Current streak
     let current = 0
     let streakDate = new Date(today)
@@ -205,7 +205,7 @@ const HabitTracker = () => {
         break
       }
     }
-    
+
     // Best streak (simplified)
     let best = 0
     let temp = 0
@@ -226,7 +226,7 @@ const HabitTracker = () => {
       }
     }
     best = Math.max(best, temp)
-    
+
     // Last 7 days
     let last7 = 0
     for (let i = 0; i < 7; i++) {
@@ -235,7 +235,7 @@ const HabitTracker = () => {
       const key = last7Date.toISOString().slice(0, 10)
       if (completions.has(key)) last7++
     }
-    
+
     // Current month completion rate
     const monthStart = new Date(today.getFullYear(), today.getMonth(), 1)
     const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0)
@@ -249,7 +249,7 @@ const HabitTracker = () => {
       monthDate.setDate(monthDate.getDate() + 1)
     }
     const completionRate = monthDays > 0 ? Math.round((monthCompleted / monthDays) * 100) : 0
-    
+
     return { current, best, last7, completionRate }
   }, [selected, data.completions])
 
@@ -285,7 +285,7 @@ const HabitTracker = () => {
         description="Suivez vos habitudes avec des insights basés sur la recherche comportementale. Calendrier, stats de progression et export des données."
         path="/habit-tracker"
       />
-      
+
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -308,16 +308,16 @@ const HabitTracker = () => {
               <Plus className="w-4 h-4" />
               Ajouter
             </button>
-            
+
             <div className="flex gap-2">
-              <button 
+              <button
                 onClick={exportData}
                 className="px-4 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors flex items-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 Export
               </button>
-              <button 
+              <button
                 onClick={() => setShowImport(true)}
                 className="px-4 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors flex items-center gap-2"
               >
@@ -331,7 +331,7 @@ const HabitTracker = () => {
             {/* Left sidebar - Habits list */}
             <div className="lg:col-span-1 space-y-4">
               <h2 className="text-xl font-semibold mb-4">Mes habitudes</h2>
-              
+
               {/* Add habit form */}
               {showAdd && (
                 <div className="bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow-lg border border-neutral-200 dark:border-neutral-700">
@@ -344,7 +344,7 @@ const HabitTracker = () => {
                     onKeyPress={(e) => e.key === 'Enter' && addHabit()}
                     autoFocus
                   />
-                  
+
                   {/* Sélecteur de couleur */}
                   <div className="mb-3">
                     <label className="block text-sm font-medium mb-2">Choisir une couleur :</label>
@@ -353,18 +353,17 @@ const HabitTracker = () => {
                         <button
                           key={color}
                           onClick={() => setNewHabitColor(color)}
-                          className={`w-8 h-8 rounded-full border-2 transition-all ${
-                            newHabitColor === color 
-                              ? 'border-neutral-800 dark:border-neutral-200 scale-110' 
+                          className={`w-8 h-8 rounded-full border-2 transition-all ${newHabitColor === color
+                              ? 'border-neutral-800 dark:border-neutral-200 scale-110'
                               : 'border-neutral-300 dark:border-neutral-600'
-                          }`}
+                            }`}
                           style={{ backgroundColor: color }}
                           aria-label={`Couleur ${color}`}
                         />
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="flex gap-2">
                     <button
                       onClick={addHabit}
@@ -391,11 +390,10 @@ const HabitTracker = () => {
                 {data.habits.map(habit => (
                   <div
                     key={habit.id}
-                    className={`p-3 rounded-xl border-2 cursor-pointer transition-all ${
-                      selected?.id === habit.id
+                    className={`p-3 rounded-xl border-2 cursor-pointer transition-all ${selected?.id === habit.id
                         ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/30'
                         : 'border-transparent bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700'
-                    }`}
+                      }`}
                     onClick={() => setSelected(habit)}
                   >
                     <div className="flex items-center justify-between">
@@ -405,7 +403,7 @@ const HabitTracker = () => {
                       </div>
                       <div className="flex items-center gap-1">
                         {/* Bouton changement couleur */}
-                        <button 
+                        <button
                           onClick={(e) => {
                             e.stopPropagation()
                             setEditingColorId(editingColorId === habit.id ? null : habit.id)
@@ -415,7 +413,7 @@ const HabitTracker = () => {
                         >
                           🎨
                         </button>
-                        
+
                         {/* Menu couleurs */}
                         {editingColorId === habit.id && (
                           <div className="absolute right-0 top-8 z-10 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-600 rounded-lg p-2 shadow-lg">
@@ -428,11 +426,10 @@ const HabitTracker = () => {
                                     changeHabitColor(habit.id, color)
                                     setEditingColorId(null)
                                   }}
-                                  className={`w-6 h-6 rounded-full border transition-all ${
-                                    habit.color === color 
-                                      ? 'border-neutral-800 dark:border-neutral-200 scale-110' 
+                                  className={`w-6 h-6 rounded-full border transition-all ${habit.color === color
+                                      ? 'border-neutral-800 dark:border-neutral-200 scale-110'
                                       : 'border-neutral-300 dark:border-neutral-600 hover:scale-105'
-                                  }`}
+                                    }`}
                                   style={{ backgroundColor: color }}
                                   aria-label={`Changer vers la couleur ${color}`}
                                 />
@@ -440,9 +437,9 @@ const HabitTracker = () => {
                             </div>
                           </div>
                         )}
-                        
+
                         {/* Bouton suppression */}
-                        <button 
+                        <button
                           onClick={(e) => {
                             e.stopPropagation()
                             removeHabit(habit.id)
@@ -450,7 +447,7 @@ const HabitTracker = () => {
                           className="p-1 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded"
                           aria-label={`Supprimer l'habitude "${habit.name}"`}
                         >
-                          <Trash2 className="w-4 h-4"/>
+                          <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
                     </div>
@@ -479,7 +476,7 @@ const HabitTracker = () => {
 
                   {/* Week navigation */}
                   <div className="flex items-center justify-between mb-4">
-                    <button 
+                    <button
                       onClick={() => navigateWeek('prev')}
                       className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
                     >
@@ -488,7 +485,7 @@ const HabitTracker = () => {
                     <div className="text-lg font-semibold">
                       {monthNames[startOfWeek.getMonth()]} {startOfWeek.getFullYear()}
                     </div>
-                    <button 
+                    <button
                       onClick={() => navigateWeek('next')}
                       className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors"
                     >
@@ -521,15 +518,15 @@ const HabitTracker = () => {
                         const dayName = d.toLocaleDateString('fr-FR', { weekday: 'long' })
                         const dayNumber = d.getDate()
                         const monthName = d.toLocaleDateString('fr-FR', { month: 'long' })
-                        
+
                         return (
                           <button
                             key={colIdx}
                             onClick={() => toggleCompletion(selected.id, dateKey)}
                             className={`
                               w-8 h-8 rounded-lg border-2 transition-all duration-200 flex items-center justify-center text-sm font-semibold
-                              ${isDone 
-                                ? `border-transparent text-white shadow-md` 
+                              ${isDone
+                                ? `border-transparent text-white shadow-md`
                                 : `border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-500`
                               }
                               ${isToday ? 'ring-2 ring-indigo-400 ring-offset-2 dark:ring-offset-neutral-800' : ''}
@@ -560,28 +557,28 @@ const HabitTracker = () => {
               {selected && (
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow flex items-center gap-3">
-                    <Flame className="w-6 h-6 text-orange-500"/>
+                    <Flame className="w-6 h-6 text-orange-500" />
                     <div>
                       <div className="text-xs text-neutral-500">Série actuelle</div>
                       <div className="text-xl font-semibold">{stats.current}</div>
                     </div>
                   </div>
                   <div className="bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow flex items-center gap-3">
-                    <Trophy className="w-6 h-6 text-yellow-500"/>
+                    <Trophy className="w-6 h-6 text-yellow-500" />
                     <div>
                       <div className="text-xs text-neutral-500">Meilleure série</div>
                       <div className="text-xl font-semibold">{stats.best}</div>
                     </div>
                   </div>
                   <div className="bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow flex items-center gap-3">
-                    <BarChart2 className="w-6 h-6 text-blue-500"/>
+                    <BarChart2 className="w-6 h-6 text-blue-500" />
                     <div>
                       <div className="text-xs text-neutral-500">7 derniers jours</div>
                       <div className="text-xl font-semibold">{stats.last7}/7</div>
                     </div>
                   </div>
                   <div className="bg-white dark:bg-neutral-800 rounded-2xl p-4 shadow flex items-center gap-3">
-                    <CalendarIcon className="w-6 h-6 text-indigo-500"/>
+                    <CalendarIcon className="w-6 h-6 text-indigo-500" />
                     <div>
                       <div className="text-xs text-neutral-500">Taux du mois</div>
                       <div className="text-xl font-semibold">{stats.completionRate}%</div>
@@ -604,20 +601,20 @@ const HabitTracker = () => {
                       for (let d = 0; d < 7; d++) {
                         const cur = new Date(start)
                         cur.setDate(start.getDate() + d)
-                        const k = cur.toISOString().slice(0,10)
+                        const k = cur.toISOString().slice(0, 10)
                         if (data.completions[selected.id]?.has(k)) count++
                       }
                       const height = Math.round((count / 7) * 100)
                       return (
                         <div key={idx} className="flex flex-col items-center gap-2">
                           <div className="w-full h-28 bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden flex items-end">
-                            <div 
-                              className="w-full transition-all duration-500" 
-                              style={{ 
-                                height: `${height}%`, 
+                            <div
+                              className="w-full transition-all duration-500"
+                              style={{
+                                height: `${height}%`,
                                 backgroundColor: selected.color,
                                 opacity: 0.8
-                              }} 
+                              }}
                             />
                           </div>
                           <div className="text-xs text-neutral-500">{count}/7</div>
@@ -632,27 +629,63 @@ const HabitTracker = () => {
         </div>
       </div>
 
+      {/* SEO Content Section - Helps indexing by providing static content */}
+      <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="prose dark:prose-invert mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Pourquoi utiliser un tracker d'habitudes ?</h2>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">1. Visualiser vos progrès</h3>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  La recherche en psychologie comportementale montre que le simple fait de suivre une activitéaugmente les chances de la maintenir. Notre <strong>Habit Tracker gratuit</strong> vous donne une vue immédiate sur votre constance ("Seinfeld Strategy").
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">2. Identifier les points de friction</h3>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Grâce aux statistiques détaillées (séries, taux de complétion), vous repérez facilement quels jours sont difficiles. C'est la première étape pour optimiser votre environnement et <strong>créer des habitudes durables</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 bg-neutral-50 dark:bg-neutral-900/50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold mb-6 text-center">Comment ça marche ?</h3>
+              <ol className="space-y-4 list-decimal pl-6">
+                <li><strong>Créez vos habitudes</strong> : Ajoutez ce que vous voulez suivre (sport, lecture, méditation...).</li>
+                <li><strong>Personnalisez</strong> : Assignez une couleur unique à chaque activité pour une visualisation claire.</li>
+                <li><strong>Cochez quotidiennement</strong> : Cliquez simplement sur les jours du calendrier.</li>
+                <li><strong>Analysez</strong> : Vos données sont sauvegardées localement dans votre navigateur (100% privé).</li>
+                <li><strong>Exportez</strong> : Vous gardez le contrôle total de vos données avec l'export JSON.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Import modal */}
       {showImport && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
           <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 w-full max-w-md shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold">Importer des données</h3>
-              <button 
-                onClick={() => setShowImport(false)} 
+              <button
+                onClick={() => setShowImport(false)}
                 className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
               >
-                <X className="w-4 h-4"/>
+                <X className="w-4 h-4" />
               </button>
             </div>
             <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4">
               Sélectionnez un fichier <code>.json</code> exporté depuis ce tracker.
             </p>
-            <input 
-              type="file" 
-              accept="application/json" 
-              onChange={onImportFile} 
-              className="w-full p-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-neutral-50 dark:bg-neutral-700" 
+            <input
+              type="file"
+              accept="application/json"
+              onChange={onImportFile}
+              className="w-full p-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-neutral-50 dark:bg-neutral-700"
             />
           </div>
         </div>
