@@ -42,14 +42,9 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/stress-zero/</loc>
+    <loc>https://leveilmental.fr/stress-zero</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://leveilmental.fr/habit-tracker</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/blog/surmonter-rejet-social</loc>

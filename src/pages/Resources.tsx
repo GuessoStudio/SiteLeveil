@@ -98,6 +98,19 @@ const Resources = () => {
       featured: true,
       free: true,
       downloadUrl: "/resources/reset-mental-express.pdf"
+    },
+    {
+      id: 4,
+      title: "Calculateur de Sommeil",
+      description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",
+      category: "Outils",
+      type: "Web App",
+      users: "2K+",
+      rating: 4.8,
+      image: "/images/resources/calculator-sleep.webp",
+      free: true,
+      isWebApp: true,
+      webAppUrl: "/calculateur-sommeil"
     }
   ]
 
