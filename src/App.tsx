@@ -20,6 +20,7 @@ import OGTest from './pages/OGTest'
 import EmailDashboard from './pages/EmailDashboard'
 import BigFiveTest from './pages/BigFiveTest'
 import SleepCalculator from './pages/SleepCalculator'
+import HydroMindPrivacy from './pages/HydroMindPrivacy'
 import NotFound from './pages/NotFound'
 
 // Neuro-Journal Imports
@@ -41,6 +42,7 @@ const AnimatedRoutes = () => {
         <Route path="/neuro-journal" element={<NeuroJournalLanding />} />
         <Route path="/stress-zero/" element={<StressZeroLanding />} />
         <Route path="/calculateur-sommeil/" element={<SleepCalculator />} />
+        <Route path="/hydromind/privacy-policy/" element={<HydroMindPrivacy />} />
 
         {/* Blog & Content */}
         <Route path="/blog/:slug" element={<Article />} />
