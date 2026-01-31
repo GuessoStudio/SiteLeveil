@@ -44,13 +44,14 @@ export const articles: ArticleData[] = [
     },
     {
         id: 4,
-        title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
-        excerpt: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
-        category: "Psychologie",
-        readTime: 6,
-        date: "2025-08-13",
+        title: "Dopamine Naturelle : 10 Méthodes Scientifiques + Détox Complète (Guide 2026)",
+        excerpt: "Découvrez comment booster naturellement votre dopamine avec 10 techniques validées par les neurosciences. Protocole détox inclus + aliments + exercice. Guide complet 2026.",
+        category: "Neurosciences",
+        readTime: 15,
+        date: "2026-01-31",
         image: "/images/articles/dopamine-cover",
-        slug: "neuro-dopamine-routine"
+        slug: "neuro-dopamine-routine",
+        featured: true
     },
     {
         id: 5,
