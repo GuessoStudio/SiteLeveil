@@ -204,7 +204,7 @@ const Footer = () => {
                 className="w-5 h-5 rounded-full transition-all duration-500 group-hover:rotate-180 group-hover:scale-125 group-hover:brightness-125"
               />
               <span className="group-hover:text-neutral-100 transition-colors duration-300">
-                © 2024 L'Éveil. Tous droits réservés.
+                © 2026 L'Éveil. Tous droits réservés.
               </span>
             </div>
 

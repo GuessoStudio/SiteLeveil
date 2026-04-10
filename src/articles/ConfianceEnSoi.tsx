@@ -151,53 +151,6 @@ export default function ConfianceEnSoi() {
     }))
   };
 
-  // Schema HowTo (pour les 6 stratégies)
-  const schemaHowTo = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "6 Stratégies Scientifiques pour Développer une Confiance en Soi Durable",
-    description: "Guide pratique basé sur les recherches d'Albert Bandura et les neurosciences pour construire une confiance authentique",
-    totalTime: "P12W", // 12 semaines pour intégrer
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Accumuler des expériences de maîtrise (microréussites)",
-        text: "Documentez vos réussites quotidiennes dans un 'journal des victoires'. Décomposez les grands objectifs en étapes de 2-3 jours maximum. Célébrez chaque victoire même minime pour renforcer les circuits neuronaux de la confiance."
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Pratiquer la restructuration cognitive",
-        text: "Utilisez la méthode ABCDE d'Albert Ellis : identifiez l'Adversité (situation), vos Beliefs (croyances), les Conséquences émotionnelles, pratiquez la Disputation (questionnement logique), et ressentez l'Energization (nouvelles émotions positives)."
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Visualiser le processus de réussite",
-        text: "Pratiquez 10 minutes de visualisation quotidienne en mode 'première personne'. Visualisez le processus complet (chaque étape d'action) plutôt que seulement le résultat final, en incluant sensations physiques et émotions positives."
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Appliquer l'exposition graduelle systématique",
-        text: "Créez une hiérarchie de 10 situations anxiogènes (notées de 1 à 10). Maîtrisez complètement le niveau 1 avant de passer au niveau 2. Cette progression systématique construit une confiance solide et durable."
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "Développer des compétences réelles et spécifiques",
-        text: "Identifiez 3 compétences clés pour vos objectifs. Consacrez 1 heure quotidienne à la pratique délibérée avec feedbacks réguliers et correction progressive. La confiance authentique repose sur des compétences mesurables."
-      },
-      {
-        "@type": "HowToStep",
-        position: 6,
-        name: "Cultiver l'auto-compassion selon Kristin Neff",
-        text: "Face à une erreur, posez-vous trois questions : 'Comment être bienveillant envers moi-même ?', 'Comment cette expérience me connecte aux autres humains ?', 'Que puis-je apprendre de cette situation ?'"
-      }
-    ]
-  };
-
   // ==================== RENDU ====================
 
   return (
@@ -214,7 +167,7 @@ export default function ConfianceEnSoi() {
         authorName={meta.author?.name}
         tags={meta.tags}
         category={meta.category}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ, schemaHowTo]}
+        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
       />
 
       {/* Article */}
@@ -531,7 +484,7 @@ export default function ConfianceEnSoi() {
               <h4 class="font-bold text-xl mb-3">✅ Merci ! Votre guide arrive dans quelques instants</h4>
               <p class="mb-4 text-emerald-700">Vérifiez votre boîte mail (et vos spams si besoin)</p>
               <a 
-                href="/resources/Guide-Confiance-LEveilMental.pdf" 
+                href="/ressources/Guide-Confiance-LEveilMental.pdf"
                 download
                 class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700"
               >
@@ -703,7 +656,7 @@ export default function ConfianceEnSoi() {
                 Motivation et dopamine
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/resources" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/ressources" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Tous les guides gratuits
               </Link>
               <span className="text-neutral-400">•</span>

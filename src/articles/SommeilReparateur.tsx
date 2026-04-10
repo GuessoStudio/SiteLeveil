@@ -159,59 +159,6 @@ export default function SommeilReparateur() {
     }))
   };
 
-  // Schema HowTo
-  const schemaHowTo = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "7 Stratégies Scientifiques pour un Sommeil Réparateur",
-    description: "Guide pratique basé sur les recherches de Matthew Walker et la chronobiologie pour optimiser votre récupération nocturne",
-    totalTime: "P8W",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Découvrir et respecter son chronotype",
-        text: "Identifiez si vous êtes alouette (lève-tôt) ou hibou (couche-tard) en observant vos rythmes naturels pendant un week-end sans réveil. Alignez vos activités importantes sur vos pics d'énergie naturels."
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Créer un environnement optimal",
-        text: "Chambre fraîche (16-19°C), obscurité totale (rideaux occultants ou masque), silence absolu (bouchons d'oreilles si nécessaire). Ces paramètres facilitent la production de mélatonine et le maintien du sommeil profond."
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Pratiquer la chronothérapie lumineuse",
-        text: "Exposez-vous à la lumière naturelle intense (10 000 lux minimum) dans les 30 minutes après le réveil pendant 15-20 minutes. Évitez toute lumière bleue 2-3 heures avant le coucher."
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Optimiser la nutrition circadienne",
-        text: "Dernier repas 3 heures avant le coucher minimum. Favorisez les aliments riches en tryptophane (dinde, noix, bananes) le soir. Évitez caféine après 14h et alcool 4 heures avant le coucher."
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "Établir un rituel de transition",
-        text: "Créez une routine de 60-90 minutes avant le coucher avec activités apaisantes constantes : lecture, méditation, étirements légers, douche tiède. La répétition conditionne le cerveau à reconnaître les signaux de sommeil."
-      },
-      {
-        "@type": "HowToStep",
-        position: 6,
-        name: "Gérer l'anxiété nocturne",
-        text: "Si vous ne dormez pas après 20 minutes au lit, levez-vous et pratiquez une activité calme dans une autre pièce. Ne restez jamais éveillé au lit - cela crée un conditionnement négatif."
-      },
-      {
-        "@type": "HowToStep",
-        position: 7,
-        name: "Utiliser les siestes stratégiquement",
-        text: "Siestes de 10-20 minutes entre 13h-15h pour booster la vigilance sans perturber le sommeil nocturne. Évitez absolument les siestes après 16h qui réduisent la pression de sommeil nocturne."
-      }
-    ]
-  };
-
   // ==================== RENDU ====================
 
   return (
@@ -228,7 +175,7 @@ export default function SommeilReparateur() {
         authorName={meta.author?.name}
         tags={meta.tags}
         category={meta.category}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ, schemaHowTo]}
+        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
       />
 
       {/* Article */}

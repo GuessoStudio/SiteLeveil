@@ -149,59 +149,6 @@ export default function NeuroplasticiteCerveau() {
     }))
   };
 
-  // Schema HowTo (pour les 7 stratégies)
-  const schemaHowTo = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "7 Stratégies Scientifiquement Validées pour Optimiser la Neuroplasticité",
-    description: "Guide pratique basé sur les neurosciences pour stimuler la plasticité cérébrale à tout âge",
-    totalTime: "P12W", // 12 semaines pour voir des résultats
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "L'apprentissage par espacement (spaced repetition)",
-        text: "Répartissez vos sessions d'apprentissage sur plusieurs jours plutôt que de tout concentrer en une seule session intensive. Utilisez des intervalles croissants (1 jour, 3 jours, 1 semaine, 1 mois) pour optimiser la consolidation mnésique."
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "L'exercice physique régulier",
-        text: "Pratiquez 30-45 minutes d'exercice aérobie modéré 3-5 fois par semaine. Privilégiez les activités qui augmentent significativement votre rythme cardiaque comme la course, la natation ou le vélo."
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "La méditation et la pleine conscience",
-        text: "Pratiquez 10-20 minutes de méditation quotidienne. Commencez par des exercices simples de concentration sur la respiration avant de progresser vers des pratiques plus avancées."
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Le sommeil de qualité",
-        text: "Maintenez un cycle régulier de 7-9 heures de sommeil par nuit. Créez une routine de coucher apaisante et évitez les écrans 1 heure avant le sommeil pour optimiser la consolidation mnésique nocturne."
-      },
-      {
-        "@type": "HowToStep",
-        position: 5,
-        name: "L'exposition à la nouveauté",
-        text: "Sortez régulièrement de votre zone de confort en apprenant de nouvelles compétences, en explorant de nouveaux environnements ou en pratiquant de nouvelles activités chaque semaine."
-      },
-      {
-        "@type": "HowToStep",
-        position: 6,
-        name: "Une nutrition optimale pour le cerveau",
-        text: "Intégrez des acides gras oméga-3 (poissons gras 2-3 fois par semaine), des antioxydants (myrtilles, curcuma) et des légumes verts feuillus riches en vitamines B dans votre alimentation quotidienne."
-      },
-      {
-        "@type": "HowToStep",
-        position: 7,
-        name: "La stimulation cognitive progressive",
-        text: "Engagez-vous dans des activités intellectuelles qui challengent progressivement vos capacités : puzzles logiques, jeux de stratégie, lecture analytique, en augmentant régulièrement la difficulté."
-      }
-    ]
-  };
-
   // ==================== RENDU ====================
 
   return (
@@ -217,7 +164,7 @@ export default function NeuroplasticiteCerveau() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ, schemaHowTo]}
+        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
       />
 
       {/* Article */}

@@ -97,64 +97,7 @@ export default function NeuroDopamineRoutine() {
     ]
   };
 
-  const schemaHowTo = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Comment optimiser sa dopamine naturellement",
-    "description": "Guide complet en 10 étapes pour booster votre dopamine par des méthodes naturelles et scientifiquement validées",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Alimentation riche en tyrosine",
-        "text": "Consommer quotidiennement des aliments riches en tyrosine (précurseur de dopamine) : amandes, avocats, bananes, œufs, légumineuses. Éviter sucres raffinés."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Exercice HIIT ou aérobie",
-        "text": "Pratiquer 30-45 minutes d'exercice intense 3-5x/semaine. HIIT optimal pour pics dopaminergiques durables."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Optimiser le sommeil",
-        "text": "Dormir 7-9h/nuit. Le sommeil régule le baseline dopaminergique. Éviter écrans 1h avant coucher."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Exposition solaire matinale",
-        "text": "S'exposer 10-30 minutes au soleil naturel le matin. Augmente dopamine +10% et régule rythme circadien."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Méditation dopaminergique",
-        "text": "Pratiquer 10-20 minutes de méditation de pleine conscience quotidiennement. Augmente dopamine +65% dans noyau accumbens."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Détox dopamine stratégique",
-        "text": "Protocole 7-30 jours : éliminer stimulations artificielles (réseaux sociaux, vidéos courtes, sucre raffiné, porno). Resensibilise récepteurs D2."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Musique et créativité",
-        "text": "Écouter musique plaisante augmente dopamine +9%. Pratiquer activité créative (écriture, dessin, musique) active circuits récompense."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Accomplissements progressifs",
-        "text": "Découper objectifs en micro-tâches. Chaque accomplissement libère dopamine. Célébrer petites victoires systématiquement."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Relations sociales de qualité",
-        "text": "Interactions sociales positives augmentent ocytocine et dopamine. Privilégier qualité sur quantité."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Suppléments naturels (optionnel)",
-        "text": "Considérer L-tyrosine (500-2000mg), mucuna pruriens, rhodiola rosea. Consulter médecin avant supplémentation."
-      }
-    ]
-  };
+
 const NeuroDopamineRoutine = () => {
   const breadcrumbItems = [
     { label: "Accueil", path: "/" },
@@ -177,7 +120,7 @@ const NeuroDopamineRoutine = () => {
         authorName={meta.author.name}
         tags={meta.tags}
         category={meta.category}
-        jsonLd={[schemaFAQ, schemaHowTo]} // ✅ Schemas customs
+        jsonLd={[schemaFAQ]}
       />
 
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -315,7 +258,7 @@ const NeuroDopamineRoutine = () => {
           </p>
 
           <p>
-            Le plaisir lui-même est généré par les <strong>opioïdes endogènes</strong> (endorphines). La dopamine, elle, code l'<em>anticipation</em> de la récompense. Nuance fondamentale découverte par Wolfram Schultz (Cambridge, Prix Nobel 2000).
+            Le plaisir lui-même est généré par les <strong>opioïdes endogènes</strong> (endorphines). La dopamine, elle, code l'<em>anticipation</em> de la récompense. Nuance fondamentale découverte par Wolfram Schultz (Cambridge, Prix Nobel 2017).
           </p>
 
           <div className="not-prose my-6 p-5 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg border-l-4 border-yellow-500">
