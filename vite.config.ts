@@ -2,12 +2,56 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-export default defineConfig({
+// Slugs des articles — doit rester synchronisé avec src/data/blog-articles.ts
+const ARTICLE_SLUGS = [
+  'surmonter-rejet-social',
+  'neuroplasticite-cerveau',
+  'confiance-en-soi-durable',
+  'neuro-dopamine-routine',
+  'attention-fragmentee-concentration-numerique',
+  'rumination-mentale-pensees-obsessionnelles',
+  'procrastination-cerveau-agir-neurosciences',
+  'methode-acr-repondre-aux-bonnes-nouvelles',
+  'syndrome-imposteur-solutions',
+  'sommeil-reparateur-7-strategies-validees',
+  'lumiere-naturelle-cerveau-sommeil-sante-mentale',
+]
+
+export default defineConfig(({ isSsrBuild }) => ({
+  ssgOptions: {
+    mock: true,
+    dirStyle: 'nested',
+    includedRoutes(paths: string[]) {
+      const EXCLUDE = ['/og-test', '/habit-tracker']
+      const EXCLUDE_PREFIX = [
+        '/admin',
+        '/neuro-journal/onboarding',
+        '/neuro-journal/dashboard',
+        '/neuro-journal/checkin',
+      ]
+      return paths
+        .flatMap(p =>
+          p.includes(':slug')
+            ? ARTICLE_SLUGS.map(s => `/blog/${s}`)
+            : [p]
+        )
+        .filter(
+          p =>
+            !EXCLUDE.includes(p) &&
+            !EXCLUDE_PREFIX.some(x => p.startsWith(x)) &&
+            !p.includes(':') &&
+            !p.includes('*')
+        )
+    },
+  },
+  ssr: {
+    noExternal: ['react-helmet-async'],
+  },
   build: {
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: {
+        manualChunks: isSsrBuild ? undefined : {
           // Vendors React
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           // Autres vendors
@@ -44,7 +88,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
 
-        navigateFallback: 'index.html',
+        navigateFallback: null,
         navigateFallbackDenylist: [
           /^\/og(?:$|[\/?])/,   // ← match /og, /og/ et /og?...
           /\/assets\//,
@@ -97,4 +141,4 @@ export default defineConfig({
 
     }),   // <- fin VitePWA
   ],      // <- fin plugins
-})        // <- fin defineConfig
+}))       // <- fin defineConfig

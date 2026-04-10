@@ -19,15 +19,18 @@ export const useTheme = () => {
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
+    // Guard SSR : localStorage et window ne sont pas disponibles côté serveur
+    if (typeof window === 'undefined') return 'light'
+
     // 1. localStorage si déjà défini
     const saved = localStorage.getItem('theme') as Theme
     if (saved) return saved
-    
+
     // 2. Préférence système
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (typeof window.matchMedia === 'function' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
     }
-    
+
     // 3. Auto selon l'heure (18h-6h = sombre)
     const hour = new Date().getHours()
     return (hour >= 18 || hour <= 6) ? 'dark' : 'light'

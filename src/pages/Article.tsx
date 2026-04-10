@@ -87,7 +87,8 @@ export default function Article() {
   return (
     <>
       <Component />
-      {currentArticle && ReactDOM.createPortal(
+      {/* Guard SSR : createPortal requiert document.body (browser uniquement) */}
+      {typeof document !== 'undefined' && currentArticle && ReactDOM.createPortal(
         <button
           onClick={() => toggleFavorite({
             id: currentArticle.id,

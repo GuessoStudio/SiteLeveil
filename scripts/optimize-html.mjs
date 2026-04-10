@@ -1,41 +1,58 @@
 import fs from 'fs';
 import path from 'path';
 
-const distPath = path.resolve('dist/index.html');
+function findHtmlFiles(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...findHtmlFiles(fullPath));
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
 
-try {
-    let html = fs.readFileSync(distPath, 'utf-8');
+const distDir = path.resolve('dist');
+const htmlFiles = findHtmlFiles(distDir);
 
-    console.log('🔄 Optimizing dist/index.html...');
+console.log(`🔄 Optimizing ${htmlFiles.length} HTML file(s)...`);
+
+let totalOptimized = 0;
+
+for (const filePath of htmlFiles) {
+  try {
+    let html = fs.readFileSync(filePath, 'utf-8');
+    let changed = false;
 
     // 1. Rendre le CSS principal asynchrone
-    // Regex pour trouver le lien CSS généré par Vite
-    const linkRegex = /<link rel="stylesheet" crossorigin href="\/assets\/index-[^"]+\.css">/;
+    const linkRegex = /<link rel="stylesheet" crossorigin href="\/assets\/[^"]+\.css">/;
     const match = html.match(linkRegex);
-
     if (match) {
-        const originalLink = match[0];
-        // Transformation en chargement asynchrone standard
-        // On ajoute aussi <noscript> pour le fallback
-        const asyncLink = originalLink.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"');
-        const noscriptLink = `<noscript>${originalLink}</noscript>`;
-
-        html = html.replace(originalLink, `${asyncLink}${noscriptLink}`);
-        console.log('✅ Main CSS made asynchronous.');
-    } else {
-        console.warn('⚠️ Main CSS link not found. It might be already inlined or naming changed.');
+      const originalLink = match[0];
+      const asyncLink = originalLink.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"');
+      const noscriptLink = `<noscript>${originalLink}</noscript>`;
+      html = html.replace(originalLink, `${asyncLink}${noscriptLink}`);
+      changed = true;
     }
 
-    // 2. Vérifier fetchpriority (optionnel, mais pour être sûr)
-    if (!html.includes('fetchpriority="high"')) {
-        html = html.replace('loading="eager"', 'loading="eager" fetchpriority="high"');
-        console.log('✅ Added fetchpriority="high" to LCP image.');
+    // 2. fetchpriority sur l'image LCP
+    if (!html.includes('fetchpriority="high"') && html.includes('loading="eager"')) {
+      html = html.replace('loading="eager"', 'loading="eager" fetchpriority="high"');
+      changed = true;
     }
 
-    fs.writeFileSync(distPath, html);
-    console.log('🚀 HTML Optimization complete.');
-
-} catch (e) {
-    console.error('❌ Error optimizing HTML:', e);
+    if (changed) {
+      fs.writeFileSync(filePath, html);
+      totalOptimized++;
+    }
+  } catch (e) {
+    console.error(`❌ Error optimizing ${filePath}:`, e);
     process.exit(1);
+  }
 }
+
+console.log(`✅ Optimized ${totalOptimized}/${htmlFiles.length} HTML file(s).`);
+console.log('🚀 HTML Optimization complete.');

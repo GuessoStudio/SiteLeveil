@@ -1,5 +1,4 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { ReadingProvider } from './contexts/ReadingContext'
@@ -8,98 +7,25 @@ import { PageTransition } from './components/ui/animations/PageTransition'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
-import Home from './pages/Home'
-import Blog from './pages/Blog'
-import Article from './pages/Article'
-import About from './pages/About'
-import Resources from './pages/Resources'
-import Contact from './pages/Contact'
-import Legal from './pages/Legal'
-import HabitTracker from './pages/HabitTracker'
-import OGTest from './pages/OGTest'
-import EmailDashboard from './pages/EmailDashboard'
-import BigFiveTest from './pages/BigFiveTest'
-import SleepCalculator from './pages/SleepCalculator'
-import HydroMindPrivacy from './pages/HydroMindPrivacy'
-import NotFound from './pages/NotFound'
 
-// Neuro-Journal Imports
-import NeuroJournalLayout from './pages/NeuroJournal/NeuroJournalLayout'
-import Onboarding from './pages/NeuroJournal/Onboarding'
-import Dashboard from './pages/NeuroJournal/Dashboard'
-import DailyCheckIn from './pages/NeuroJournal/DailyCheckIn'
-import NeuroJournalLanding from './pages/NeuroJournalLanding'
-import StressZeroLanding from './pages/StressZeroLanding'
-const AnimatedRoutes = () => {
-  const location = useLocation()
-
-  return (
-    <PageTransition>
-      <Routes location={location}>
-        <Route path="/" element={<Home />} />
-
-        {/* Landing Page SEO */}
-        <Route path="/neuro-journal" element={<NeuroJournalLanding />} />
-        <Route path="/stress-zero/" element={<StressZeroLanding />} />
-        <Route path="/calculateur-sommeil/" element={<SleepCalculator />} />
-        <Route path="/hydromind/privacy-policy/" element={<HydroMindPrivacy />} />
-
-        {/* Blog & Content */}
-        <Route path="/blog/:slug" element={<Article />} />
-        <Route path="/blog" element={<Blog />} />
-        {/* ... other routes ... */}
-
-        {/* Redirections pour les anciennes URLs */}
-        <Route path="/about" element={<Navigate to="/a-propos" replace />} />
-        <Route path="/resources" element={<Navigate to="/ressources" replace />} />
-
-        <Route path="/ressources" element={<Resources />} />
-        <Route path="/a-propos" element={<About />} />
-        <Route path="/test-personnalite-big-five" element={<BigFiveTest />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/legal" element={<Legal />} />
-        <Route path="/habit-tracker" element={<HabitTracker />} />
-        <Route path="/og-test" element={<OGTest />} />
-        <Route path="/admin/emails" element={<EmailDashboard />} />
-
-        {/* Neuro Journal Routes (App) */}
-        <Route path="/neuro-journal/*" element={
-          <div className="bg-gray-50 dark:bg-neutral-900 min-h-screen">
-            {/* Note: NeuroJournal has its own Layout inside */}
-            <Routes>
-              <Route element={<NeuroJournalLayout />}>
-                <Route index element={<Onboarding />} />
-                <Route path="onboarding" element={<Onboarding />} />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="checkin" element={<DailyCheckIn />} />
-              </Route>
-            </Routes>
-          </div>
-        } />
-
-        {/* Catch-all 404 */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </PageTransition>
-  )
-}
-
+// App est le layout racine. ViteReactSSG (vite-react-ssg) injecte le router
+// en amont — pas besoin de BrowserRouter ici.
 function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
         <ReadingProvider>
           <NotificationProvider>
-            <Router>
-              <ScrollToTop />
-              <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
-                <Header />
-                <main id="main">
-                  <AnimatedRoutes />
-                </main>
-                <Footer />
-              </div>
-            </Router>
+            <ScrollToTop />
+            <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+              <Header />
+              <main id="main">
+                <PageTransition>
+                  <Outlet />
+                </PageTransition>
+              </main>
+              <Footer />
+            </div>
           </NotificationProvider>
         </ReadingProvider>
       </ThemeProvider>

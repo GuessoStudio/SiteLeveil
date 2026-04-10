@@ -7,7 +7,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "prebuild": "npm run sitemap",
     "dev": "vite",
-    "build": "tsc && vite build && node scripts/optimize-html.mjs",
+    "build": "tsc && vite-react-ssg build && node scripts/optimize-html.mjs",
     "preview": "vite preview",
     "new-post": "node scripts/new-post.js",
     "build-content": "node scripts/build-content.js",
@@ -41,6 +41,7 @@
     "typescript": "^5.0.2",
     "vite": "^5.4.8",
     "vite-plugin-pwa": "^0.20.5",
+    "vite-react-ssg": "^0.9.1-beta.1",
     "workbox-window": "^7.0.0"
   }
 }

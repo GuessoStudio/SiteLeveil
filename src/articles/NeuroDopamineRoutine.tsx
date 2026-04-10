@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import SocialShare from "../components/SocialShare";
 import SmartImg from "../components/SmartImg";
+import Breadcrumb from "../components/Breadcrumb";
 
 export const meta = {
   slug: "neuro-dopamine-routine",
@@ -154,6 +155,13 @@ export default function NeuroDopamineRoutine() {
       }
     ]
   };
+const NeuroDopamineRoutine = () => {
+  const breadcrumbItems = [
+    { label: "Accueil", path: "/" },
+    { label: "Neurosciences", path: "/blog?category=neurosciences" },
+    { label: "Dopamine Naturelle", path: "/blog/neuro-dopamine-routine" }
+  ];
+
 
   return (
     <>
@@ -1234,4 +1242,6 @@ export default function NeuroDopamineRoutine() {
       </article >
     </>
   );
+}
+  return <NeuroDopamineRoutine />;
 }
