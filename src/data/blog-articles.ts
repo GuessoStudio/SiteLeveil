@@ -125,5 +125,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/lumiere-naturelle-cover",
         slug: "lumiere-naturelle-cerveau-sommeil-sante-mentale",
         featured: true
+    },
+    {
+        id: 12,
+        title: "BDNF : 8 Méthodes Scientifiques pour Augmenter le Facteur Neurotrophique",
+        excerpt: "Le BDNF est la protéine clé de la neuroplasticité. Découvrez 8 méthodes validées par les neurosciences pour augmenter naturellement le BDNF et booster mémoire, humeur et apprentissage.",
+        category: "Neurosciences",
+        readTime: 13,
+        date: "2026-04-11",
+        image: "/images/articles/bdnf-augmenter-naturellement-cover",
+        slug: "bdnf-augmenter-naturellement-neurosciences",
+        featured: false
     }
 ];

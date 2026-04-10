@@ -53,8 +53,8 @@
   </url>
   <url>
     <loc>https://leveilmental.fr/hydromind/privacy-policy/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/blog/surmonter-rejet-social</loc>
@@ -109,12 +109,6 @@
   <url>
     <loc>https://leveilmental.fr/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://leveilmental.fr/habit-tracker</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
