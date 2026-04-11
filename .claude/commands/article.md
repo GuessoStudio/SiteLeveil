@@ -121,7 +121,17 @@ Ajouter l'URL de l'article dans `public/sitemap.xml` :
 
 Insérer dans l'ordre lastmod décroissant (article le plus récent en premier).
 
-### Étape 5.1 — Résumé de livraison
+### Étape 5.1 — Demander l'indexation Google
+⚠️ ACTION MANUELLE REQUISE — Google Search Console
+1. Aller sur search.google.com/search-console
+2. Coller l'URL : https://leveilmental.fr/blog/[slug]
+3. Cliquer "Demander une indexation"
+4. Vérifier : Fils d'Ariane ✅ + FAQ ✅ détectés
+
+Sans cette étape, Google peut mettre 2-4 semaines
+à indexer l'article au lieu de 24-48h.
+
+### Étape 5.2 — Résumé de livraison
 Produire un résumé avec :
 - Fichier créé : `src/articles/[NomArticle].tsx`
 - Slug : `/blog/[slug]`
@@ -130,7 +140,7 @@ Produire un résumé avec :
 - Checklist complète (tous les points cochés)
 - Points d'attention éventuels
 
-### Étape 5.2 — Commit message
+### Étape 5.3 — Commit message
 feat(blog): ajouter article "[titre court]"
 
 Slug : /blog/[slug]
