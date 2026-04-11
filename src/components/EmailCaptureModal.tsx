@@ -1,6 +1,7 @@
 // src/components/EmailCaptureModal.tsx
 import React, { useState } from 'react'
 import { X, Download, Mail } from 'lucide-react'
+import { sendEmailToServices } from '../utils/emailServices'
 
 interface EmailCaptureModalProps {
   isOpen: boolean
@@ -58,8 +59,8 @@ const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({
       emails.push(newEntry)
       localStorage.setItem('captured-emails', JSON.stringify(emails))
 
-      // Envoyer à un service externe (optionnel - à configurer)
-      // await sendToEmailService(email, resourceTitle)
+      // Envoyer à Formspree (newsletter)
+      await sendEmailToServices(email.trim(), resourceTitle)
 
       // Marquer comme téléchargé et déclencher le téléchargement
       setSuccess(true)

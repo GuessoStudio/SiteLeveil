@@ -16,7 +16,8 @@ const CONFIG = {
     publicKey: 'YOUR_PUBLIC_KEY'
   },
   formspree: {
-    endpoint: 'https://formspree.io/f/xojerwda' // Sleep Calculator Form ID
+    endpoint: 'https://formspree.io/f/xojerwda', // Sleep Calculator Form ID
+    newsletterEndpoint: 'https://formspree.io/f/xpqovloz' // ← Créer sur formspree.io : "Newsletter L'Éveil Mental"
   },
   googleSheets: {
     scriptUrl: 'YOUR_GOOGLE_APPS_SCRIPT_URL'
@@ -124,6 +125,40 @@ export const sendToGoogleSheets = async (
 }
 
 // ============================================
+// NEWSLETTER FORMSPREE
+// ============================================
+
+export const sendNewsletterToFormspree = async (
+  email: string,
+  resourceTitle: string
+): Promise<boolean> => {
+  try {
+    const response = await fetch(CONFIG.formspree.newsletterEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        resource: resourceTitle,
+        date: new Date().toISOString(),
+        source: 'leveilmental.fr'
+      })
+    })
+
+    if (response.ok) {
+      console.log('✅ Newsletter Formspree success')
+      return true
+    }
+
+    throw new Error('Formspree response not OK')
+  } catch (error) {
+    console.error('❌ Newsletter Formspree error:', error)
+    return false
+  }
+}
+
+// ============================================
 // FONCTION PRINCIPALE - À UTILISER DANS LE MODAL
 // ============================================
 
@@ -131,17 +166,11 @@ export const sendEmailToServices = async (
   email: string,
   resourceTitle: string
 ): Promise<void> => {
-  // Essayer tous les services configurés
   // Ne pas bloquer le téléchargement si un service échoue
-
   const promises: Array<Promise<boolean>> = [
-    // Décommenter le service que vous voulez utiliser
-    // sendToEmailJS(email, resourceTitle),
-    // sendToFormspree(email, resourceTitle),
-    // sendToGoogleSheets(email, resourceTitle),
+    sendNewsletterToFormspree(email, resourceTitle),
   ]
 
-  // Attendre tous les services sans bloquer
   await Promise.allSettled(promises)
 }
 
