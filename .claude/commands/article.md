@@ -131,7 +131,66 @@ Insérer dans l'ordre lastmod décroissant (article le plus récent en premier).
 Sans cette étape, Google peut mettre 2-4 semaines
 à indexer l'article au lieu de 24-48h.
 
-### Étape 5.2 — Résumé de livraison
+### Étape 5.2 — Lead Magnet
+
+Choisir le format le plus pertinent selon l'article :
+- Liste de techniques → Checklist PDF 1 page
+- Protocole étape par étape → Guide PDF 1 page
+- Données et statistiques → Infographie
+- Sujet complexe → Mini e-book 3-5 pages
+
+Générer le contenu complet :
+- Titre accrocheur
+- Structure complète
+- Contenu scientifique condensé
+- Nom fichier : [slug]-checklist.pdf ou [slug]-guide.pdf
+
+Ajouter l'entrée dans `src/pages/Resources.tsx` :
+```typescript
+{
+  id: [prochain id],
+  title: "[titre lead magnet]",
+  description: "[description courte]",
+  category: "Guides",
+  type: "PDF",
+  pages: [X],
+  rating: 5.0,
+  image: "/images/resources/[slug]-cover.webp",
+  free: true,
+  downloadUrl: "/downloads/[slug]-checklist.pdf"
+}
+```
+
+⚠️ ACTIONS MANUELLES REQUISES :
+a) Mettre en forme sur Canva avec template L'Éveil
+b) Placer le PDF dans /public/downloads/
+c) Vérifier que le CTA est présent dans l'article TSX
+
+### Étape 5.3 — Repurposing réseaux sociaux
+
+/blog repurpose [fichier généré]
+
+Générer dans l'ordre :
+1. Instagram — carrousel 5 slides
+   Slide 1 : accroche + stat choc
+   Slides 2-4 : une méthode clé par slide
+   Slide 5 : CTA → "Lien en bio"
+
+2. TikTok/Reels — script 60 secondes
+   Format : accroche 3 sec + contenu + CTA final
+
+3. Facebook — post éducatif 600-800 mots
+   Format : stat choc → 3-5 points développés →
+   CTA commentaire ("écris BDNF en commentaire
+   pour recevoir le guide")
+   ⚠️ Ne pas mettre de lien externe dans le post Facebook
+
+4. Twitter/X — thread 8 tweets
+   Tweet 1 : stat choc
+   Tweets 2-7 : une idée par tweet
+   Tweet 8 : lien article
+
+### Étape 5.4 — Résumé de livraison
 Produire un résumé avec :
 - Fichier créé : `src/articles/[NomArticle].tsx`
 - Slug : `/blog/[slug]`
@@ -140,7 +199,7 @@ Produire un résumé avec :
 - Checklist complète (tous les points cochés)
 - Points d'attention éventuels
 
-### Étape 5.3 — Commit message
+### Étape 5.5 — Commit message
 feat(blog): ajouter article "[titre court]"
 
 Slug : /blog/[slug]
