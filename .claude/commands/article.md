@@ -107,6 +107,20 @@ Si absent → remplacer par un lien existant.
 
 ## PHASE 5 — Livraison
 
+### Étape 5.0 — Mettre à jour le sitemap
+Ajouter l'URL de l'article dans `public/sitemap.xml` :
+
+```xml
+<url>
+  <loc>https://leveilmental.fr/blog/[slug]</loc>
+  <lastmod>[YYYY-MM-DD]</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+Insérer dans l'ordre lastmod décroissant (article le plus récent en premier).
+
 ### Étape 5.1 — Résumé de livraison
 Produire un résumé avec :
 - Fichier créé : `src/articles/[NomArticle].tsx`
