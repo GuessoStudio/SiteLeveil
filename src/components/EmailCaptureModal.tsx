@@ -1,221 +1,130 @@
-// src/components/EmailCaptureModal.tsx
-import React, { useState } from 'react'
-import { X, Download, Mail } from 'lucide-react'
-import { sendEmailToServices } from '../utils/emailServices'
+import React from 'react'
+import { X } from 'lucide-react'
 
 interface EmailCaptureModalProps {
   isOpen: boolean
   onClose: () => void
-  resourceTitle: string
-  resourceFile: string
+  resourceTitle?: string
+  resourceFile?: string
   onSuccess?: (email: string) => void
 }
 
-const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({
-  isOpen,
-  onClose,
-  resourceTitle,
-  resourceFile,
-  onSuccess
-}) => {
-  const [email, setEmail] = useState('')
-  const [consent, setConsent] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
+const BrevoForm = () => (
+  <div className="sib-form" style={{ textAlign: 'center', backgroundColor: '#eff2f7' }}>
+    <div id="sib-form-container-modal" className="sib-form-container">
+      <div
+        className="sib-container--large sib-container--vertical"
+        style={{ textAlign: 'center', backgroundColor: 'rgba(255,255,255,1)', maxWidth: '540px', borderRadius: '3px', borderWidth: '1px', borderColor: '#C0CCD9', borderStyle: 'solid', margin: '0 auto' }}
+      >
+        <form
+          id="sib-form-modal"
+          method="POST"
+          action="https://0764bcde.sibforms.com/serve/MUIFACGVBDTe_S8OQSTD1PkL5uV9wX8LmfJYLbCEv4_lBylWBBrMO51gqYB9fPS6rf5TP2RTQeTUBvhmMJ1ZoUxfOD9z__lFHogoB5vfJgFWDBIK6415y5nVBSM6y72WkTsi_j-_gQ7DZp14QCWzK6HJoPBj3-sdQ9SDSOywoieCpS3i3Gy2hDfC48U-_aRC_Albn2rufaNPsFZEqw=="
+        >
+          <div style={{ padding: '16px 0' }}>
+            <div className="sib-form-block" style={{ fontSize: '32px', textAlign: 'left', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
+              <p>Rejoindre L'Éveil Mental</p>
+            </div>
+          </div>
 
-  const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return re.test(email)
-  }
+          <div style={{ padding: '16px 0' }}>
+            <div className="sib-form-block" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
+              <div className="sib-text-form-block">
+                <p>Reçois chaque semaine un article scientifique sur neurosciences et psychologie</p>
+              </div>
+            </div>
+          </div>
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
+          <div style={{ padding: '16px 0' }}>
+            <div className="sib-input sib-form-block">
+              <div className="form__entry entry_block">
+                <div className="form__label-row">
+                  <label
+                    className="entry__label"
+                    style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }}
+                    htmlFor="EMAIL-modal"
+                    data-required="*"
+                  >
+                    Veuillez renseigner votre adresse email pour vous inscrire
+                  </label>
+                  <div className="entry__field">
+                    <input className="input" type="text" id="EMAIL-modal" name="EMAIL" autoComplete="off" placeholder="EMAIL" data-required="true" required />
+                  </div>
+                </div>
+                <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }} />
+                <label className="entry__specification" style={{ fontSize: '12px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#8390A4' }}>
+                  Veuillez renseigner votre adresse email pour vous inscrire. Ex. : abc@xyz.com
+                </label>
+              </div>
+            </div>
+          </div>
 
-    // Validation
-    if (!email.trim()) {
-      setError('Veuillez entrer votre adresse email')
-      return
-    }
+          <div style={{ padding: '16px 0' }}>
+            <div className="sib-input sib-form-block">
+              <div className="form__entry entry_block">
+                <div className="form__label-row">
+                  <label
+                    className="entry__label"
+                    style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }}
+                    htmlFor="PRENOM-modal"
+                    data-required="*"
+                  >
+                    Entrez votre PRENOM
+                  </label>
+                  <div className="entry__field">
+                    <input className="input" maxLength={200} type="text" id="PRENOM-modal" name="PRENOM" autoComplete="off" placeholder="PRENOM" data-required="true" required />
+                  </div>
+                </div>
+                <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }} />
+                <label className="entry__specification" style={{ fontSize: '12px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#8390A4' }}>
+                  Personnalisez ce texte d'aide facultatif avant de publier votre formulaire.
+                </label>
+              </div>
+            </div>
+          </div>
 
-    if (!validateEmail(email)) {
-      setError('Veuillez entrer une adresse email valide')
-      return
-    }
+          <div style={{ padding: '16px 0' }}>
+            <div className="sib-form-block" style={{ textAlign: 'center' }}>
+              <button
+                className="sib-form-block__button sib-form-block__button-with-loader"
+                style={{ fontSize: '16px', textAlign: 'center', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#FFFFFF', backgroundColor: '#4f46e5', borderRadius: '3px', border: 'none' }}
+                form="sib-form-modal"
+                type="submit"
+              >
+                <svg className="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                  <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                </svg>
+                Je rejoins L'Éveil Mental
+              </button>
+            </div>
+          </div>
 
-    setIsLoading(true)
+          <input type="text" name="email_address_check" value="" className="input--hidden" readOnly />
+          <input type="hidden" name="locale" value="fr" />
+          <input type="hidden" name="html_type" value="simple" />
+        </form>
+      </div>
+    </div>
+  </div>
+)
 
-    try {
-      // Sauvegarder l'email localement
-      const emails = JSON.parse(localStorage.getItem('captured-emails') || '[]')
-      const newEntry = {
-        email: email.trim(),
-        resource: resourceTitle,
-        date: new Date().toISOString(),
-        downloaded: false
-      }
-      
-      emails.push(newEntry)
-      localStorage.setItem('captured-emails', JSON.stringify(emails))
-
-      // Envoyer à Formspree (newsletter)
-      await sendEmailToServices(email.trim(), resourceTitle)
-
-      // Marquer comme téléchargé et déclencher le téléchargement
-      setSuccess(true)
-      
-      // Attendre 500ms pour montrer le succès
-      setTimeout(() => {
-        // Déclencher le téléchargement
-        const link = document.createElement('a')
-        link.href = resourceFile
-        link.download = resourceFile.split('/').pop() || 'download.pdf'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-
-        // Callback
-        if (onSuccess) {
-          onSuccess(email)
-        }
-
-        // Fermer le modal après 1 seconde
-        setTimeout(() => {
-          onClose()
-          setEmail('')
-          setSuccess(false)
-        }, 1000)
-      }, 500)
-
-    } catch (err) {
-      console.error('Erreur lors de la capture:', err)
-      setError('Une erreur est survenue. Veuillez réessayer.')
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
+const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
       <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl max-w-md w-full overflow-hidden animate-slideUp">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 relative">
+        <div className="flex justify-end p-3">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
+            className="text-neutral-400 hover:text-neutral-600 transition-colors"
             aria-label="Fermer"
           >
             <X className="w-5 h-5" />
           </button>
-          
-          <div className="flex items-center gap-3 text-white">
-            <div className="bg-white/20 p-3 rounded-full">
-              <Download className="w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold">Téléchargement gratuit</h3>
-              <p className="text-sm text-white/80">Recevez aussi nos ressources exclusives</p>
-            </div>
-          </div>
         </div>
-
-        {/* Body */}
-        <div className="p-6">
-          {!success ? (
-            <>
-              <div className="mb-6">
-                <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">
-                  {resourceTitle}
-                </h4>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Entrez votre email pour télécharger cette ressource gratuitement et recevoir nos conseils exclusifs en développement personnel.
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label 
-                    htmlFor="email-capture" 
-                    className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
-                  >
-                    Adresse email
-                  </label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
-                    <input
-                      id="email-capture"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="votre@email.com"
-                      className="w-full pl-11 pr-4 py-3 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-neutral-900 dark:text-white placeholder:text-neutral-400"
-                      disabled={isLoading}
-                      autoFocus
-                    />
-                  </div>
-                  {error && (
-                    <p className="text-sm text-red-600 dark:text-red-400 mt-2">
-                      {error}
-                    </p>
-                  )}
-                </div>
-
-                <label className="flex items-start gap-3 text-xs text-neutral-600 dark:text-neutral-400 mb-4">
-  <input
-    type="checkbox"
-    checked={consent}
-    onChange={(e) => setConsent(e.target.checked)}
-    className="mt-0.5"
-    required
-  />
-  <span>
-    J'accepte de recevoir des emails de leveilmental.fr concernant le développement personnel. 
-    Je peux me désinscrire à tout moment. 
-    <a href="/legal" className="text-indigo-600 hover:underline">
-      Politique de confidentialité
-    </a>
-  </span>
-</label> 
-
-                <button
-                  type="submit"
-                  disabled={isLoading || !consent}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-neutral-300 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>Préparation...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Download className="w-5 h-5" />
-                      <span>Télécharger gratuitement</span>
-                    </>
-                  )}
-                </button>
-
-                <p className="text-xs text-neutral-500 dark:text-neutral-400 text-center">
-                  🔒 Vos données sont sécurisées. Pas de spam, désinscription à tout moment.
-                </p>
-              </form>
-            </>
-          ) : (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Download className="w-8 h-8 text-green-600 dark:text-green-400" />
-              </div>
-              <h4 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
-                Téléchargement en cours...
-              </h4>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Votre ressource va se télécharger automatiquement
-              </p>
-            </div>
-          )}
+        <div className="px-2 pb-4">
+          <BrevoForm />
         </div>
       </div>
     </div>
