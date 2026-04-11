@@ -15,13 +15,24 @@ article du blog leveilmental.fr.
 ## PHASE 1 — Recherche et Brief (ne pas sauter)
 
 ### Étape 1.1 — Analyser la concurrence
-Rechercher sur Google.fr : "[mot-clé principal]"
-Pour les 5 premiers résultats, noter :
-- H1 exact
-- Structure H2 (tous les titres)
-- Présence/absence : FAQ, études citées, données chiffrées,
-  applications pratiques
-- Ce qu'aucun des 5 ne couvre correctement
+
+ACTION MANUELLE REQUISE (2 minutes) :
+Dans Perplexity Pro, copier-coller ce prompt :
+
+"Analyse les 5 premiers résultats Google.fr pour
+'[MOT-CLÉ PRINCIPAL]'. Pour chaque résultat note :
+titre H1, H2 principaux, présence FAQ, études citées.
+Identifie ce qu'aucun ne couvre correctement.
+Trouve ensuite 3 études PubMed récentes sur [SUJET]
+avec statistiques précises utilisables comme StatBlock."
+
+Coller le résultat dans Claude Code avec :
+"Voici l'analyse concurrence : [résultat Perplexity]
+Continue avec l'étape 1.2 — génère le brief."
+
+Si Perplexity non disponible :
+Claude Code fait une analyse approximative
+depuis ses connaissances — moins précis.
 
 ### Étape 1.2 — Générer le brief
 /blog brief "[TOPIC]"
