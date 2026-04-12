@@ -38,7 +38,7 @@ const MerciInscription = () => {
                 Comment booster naturellement ton BDNF — le facteur de croissance neuronal — en 7 habitudes validées par la recherche.
               </p>
               <Link
-                to="/blog/neuro-dopamine-routine"
+                to="/blog/bdnf-augmenter-naturellement-neurosciences"
                 className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium text-sm hover:underline"
               >
                 Lire l'article complet
