@@ -268,7 +268,7 @@ export default function BdnfAugmenterNaturellement() {
                   des personnes atteintes de dépression majeure présentent des niveaux de BDNF significativement réduits
                 </p>
                 <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
-                  Duman & Monteggia, Yale University, Neuron, 2006
+                  Duman & Monteggia, Yale University, Biological Psychiatry, 2006
                 </p>
               </div>
             </div>
@@ -316,7 +316,7 @@ export default function BdnfAugmenterNaturellement() {
                   de BDNF hippocampique après 3 semaines de stress chronique modéré non traité
                 </p>
                 <p className="text-xs text-rose-600 dark:text-rose-400 mt-1">
-                  McEwen et al., Rockefeller University, Journal of Neuroscience, 2007
+                  McEwen et al., Rockefeller University, Physiological Reviews, 2007
                 </p>
               </div>
             </div>
@@ -338,11 +338,11 @@ export default function BdnfAugmenterNaturellement() {
           <h3>1. L'exercice aérobie : le stimulant BDNF le plus puissant</h3>
 
           <p>
-            L'exercice physique — en particulier l'exercice aérobie d'intensité modérée — est de loin la méthode la plus efficace et la mieux documentée pour augmenter le BDNF. Carl Cotman et Nicole Berchtold (UCI) ont publié en 2002 une étude fondatrice montrant que 30 minutes de course à 60-70% de la fréquence cardiaque maximale augmentent le BDNF hippocampique de 200 à 300%. Des résultats analogues ont été confirmés chez l'humain par mesures sanguines (le BDNF sérique reflète les niveaux cérébraux).
+            L'exercice physique — en particulier l'exercice aérobie d'intensité modérée — est de loin la méthode la plus efficace et la mieux documentée pour augmenter le BDNF. Carl Cotman et Nicole Berchtold (UCI) ont publié en 2002 une étude fondatrice montrant que 30 minutes de course à 60-70% de la fréquence cardiaque maximale augmentent le BDNF hippocampique de 200 à 300% — données obtenues dans des études sur rongeurs ; le BDNF hippocampique n'étant pas mesurable directement chez l'humain, les études humaines reposent sur le BDNF sérique comme proxy. Des résultats significatifs ont été confirmés chez l'humain par ces mesures sanguines.
           </p>
 
           <p>
-            Le mécanisme passe par plusieurs voies simultanées : l'augmentation du débit sanguin cérébral, la libération d'IGF-1 musculaire qui traverse la barrière hémato-encéphalique, et la sécrétion d'irisine (découverte par Boström et al., Harvard, 2012) qui stimule directement l'expression du gène BDNF dans l'hippocampe.
+            Le mécanisme passe par plusieurs voies simultanées : l'augmentation du débit sanguin cérébral, la libération d'IGF-1 musculaire qui traverse la barrière hémato-encéphalique, et la sécrétion d'irisine — dont le lien avec le BDNF hippocampique a été démontré par Wrann et al. (Harvard, <em>Cell Metabolism</em>, 2013) — qui stimule directement l'expression du gène BDNF dans l'hippocampe.
           </p>
 
           <div className="not-prose my-6 bg-neutral-100 dark:bg-neutral-800/50 p-5 rounded-lg">
@@ -362,7 +362,7 @@ export default function BdnfAugmenterNaturellement() {
           </p>
 
           <p>
-            Les protocoles les plus étudiés sont le 16/8 (16 heures de jeûne, 8 heures de fenêtre alimentaire) et le 5:2 (alimentation normale 5 jours, restriction à 500-600 kcal 2 jours non consécutifs). Une augmentation de BDNF sérique de 30 à 50% après 8 semaines de pratique régulière du 16/8 est documentée chez l'humain.
+            Les protocoles les plus étudiés sont le 16/8 (16 heures de jeûne, 8 heures de fenêtre alimentaire) et le 5:2 (alimentation normale 5 jours, restriction à 500-600 kcal 2 jours non consécutifs). Une augmentation de BDNF sérique de 30 à 50% après 8 semaines de pratique régulière du 16/8 est documentée chez l'humain — toutefois, l'essentiel des preuves sur les mécanismes BDNF/jeûne provient de modèles animaux ; les études humaines restent préliminaires et les effets sur le BDNF cérébral ne sont pas directement mesurables.
           </p>
 
           <h3>3. Le sommeil profond : la fenêtre de synthèse du BDNF</h3>
@@ -408,10 +408,10 @@ export default function BdnfAugmenterNaturellement() {
               <div className="text-3xl font-black text-sky-600 dark:text-sky-400 leading-none">+300%</div>
               <div>
                 <p className="text-sm font-semibold text-sky-900 dark:text-sky-100">
-                  d'augmentation de noradrénaline (précurseur de la stimulation BDNF) après une exposition à 14°C pendant 20 minutes
+                  de noradrénaline selon l'hypothèse de Shevchuk — une augmentation associée à la stimulation BDNF, proposée comme mécanisme antidépresseur
                 </p>
                 <p className="text-xs text-sky-600 dark:text-sky-400 mt-1">
-                  Shevchuk, Virginia Commonwealth University, Medical Hypotheses, 2008
+                  Shevchuk, Virginia Commonwealth University, <em>Medical Hypotheses</em>, 2008 — non soumis à peer-review classique
                 </p>
               </div>
             </div>
@@ -568,7 +568,7 @@ export default function BdnfAugmenterNaturellement() {
               <strong>[6]</strong> McEwen BS. Physiology and neurobiology of stress and adaptation: central role of the brain. <em>Physiological Reviews</em>. 2007;87(3):873-904. DOI: 10.1152/physrev.00041.2006
             </li>
             <li>
-              <strong>[7]</strong> Boström P et al. A PGC1-α-dependent myokine that drives brown-fat-like development of white fat and thermogenesis. <em>Nature</em>. 2012;481(7382):463-468. DOI: 10.1038/nature10777
+              <strong>[7]</strong> Wrann CD et al. Exercise induces hippocampal BDNF through a PGC-1α/FNDC5 pathway. <em>Cell Metabolism</em>. 2013;18(5):649-659. DOI: 10.1016/j.cmet.2013.09.008
             </li>
             <li>
               <strong>[8]</strong> Gomez-Pinilla F. Brain foods: the effects of nutrients on brain function. <em>Nature Reviews Neuroscience</em>. 2008;9(7):568-578. DOI: 10.1038/nrn2421
@@ -578,6 +578,9 @@ export default function BdnfAugmenterNaturellement() {
             </li>
             <li>
               <strong>[10]</strong> Eriksson PS et al. Neurogenesis in the adult human hippocampus. <em>Nature Medicine</em>. 1998;4(11):1313-1317. DOI: 10.1038/3305
+            </li>
+            <li>
+              <strong>[11]</strong> Goel N et al. Neurocognitive consequences of sleep deprivation. <em>Seminars in Neurology</em>. 2009;29(4):320-339. University of Pennsylvania. DOI: 10.1055/s-0029-1237117
             </li>
           </ol>
 
