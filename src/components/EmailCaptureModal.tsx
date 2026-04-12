@@ -9,6 +9,8 @@ interface EmailCaptureModalProps {
   onSuccess?: (email: string) => void
 }
 
+const BDNF_PDF = 'https://leveilmental.fr/downloads/bdnf-guide-scientifique-leveilmental.pdf'
+
 interface BrevoFormProps {
   resourceFile?: string
 }
@@ -18,11 +20,12 @@ const BrevoForm = ({ resourceFile }: BrevoFormProps) => {
     e.preventDefault()
     const form = e.currentTarget
 
-    // 1. Déclencher le téléchargement PDF immédiatement
-    if (resourceFile) {
+    // 1. Déclencher le téléchargement PDF (ressource spécifique ou guide BDNF par défaut)
+    const pdfUrl = resourceFile || BDNF_PDF
+    if (pdfUrl) {
       const link = document.createElement('a')
-      link.href = resourceFile
-      link.download = resourceFile.split('/').pop() || 'download.pdf'
+      link.href = pdfUrl
+      link.download = pdfUrl.split('/').pop() || 'download.pdf'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)

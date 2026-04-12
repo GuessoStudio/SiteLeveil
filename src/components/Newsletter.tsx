@@ -1,10 +1,19 @@
 import React from 'react'
 import { Mail, Gift, CheckCircle } from 'lucide-react'
 
+const BDNF_PDF = 'https://leveilmental.fr/downloads/bdnf-guide-scientifique-leveilmental.pdf'
+
 const handleBrevoSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault()
   const form = e.currentTarget
-  // Soumettre à Brevo dans un nouvel onglet (évite la navigation de la page courante)
+  // Déclencher le téléchargement du guide BDNF
+  const link = document.createElement('a')
+  link.href = BDNF_PDF
+  link.download = 'bdnf-guide-scientifique-leveilmental.pdf'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  // Soumettre à Brevo dans un nouvel onglet
   form.target = '_blank'
   form.submit()
   form.target = ''
