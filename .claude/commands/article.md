@@ -62,6 +62,35 @@ Vérifier pendant la rédaction :
 /blog factcheck [fichier généré]
 Corriger toute statistique non vérifiable.
 
+### Étape 2.3 — Fact-check scientifique externe
+⚠️ ACTION MANUELLE REQUISE — Perplexity Pro
+
+Copier ce prompt dans Perplexity Pro :
+
+"Vérifie la rigueur scientifique de cet article
+sur [SUJET]. Pour chaque étude citée, vérifie :
+1. Le journal exact de publication
+2. L'année exacte
+3. Si les données sont issues d'études animales
+   ou humaines
+4. Si les chiffres cités sont dans les bonnes
+   proportions
+5. Si les attributions chercheurs/institutions
+   sont correctes
+Signale toute erreur ou approximation."
+
+Coller le texte de l'article + attendre le rapport.
+Corriger TOUTES les erreurs signalées avant
+de passer à la Phase 3.
+
+⚠️ RÈGLES ABSOLUES :
+- Jamais présenter des données animales
+  comme humaines sans précision
+- Toujours indiquer le vrai journal de publication
+- Les hypothèses (Medical Hypotheses) doivent
+  être présentées comme telles
+- Vérifier chaque attribution chercheur/étude
+
 ## PHASE 3 — Validation SEO + GEO
 
 ### Étape 3.1 — Score SEO
