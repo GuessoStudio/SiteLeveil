@@ -136,5 +136,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/bdnf-augmenter-naturellement-cover",
         slug: "bdnf-augmenter-naturellement-neurosciences",
         featured: false
+    },
+    {
+        id: 13,
+        title: "Système Limbique : Comment Votre Cerveau Émotionnel Contrôle Vos Décisions",
+        excerpt: "Le système limbique gouverne émotions, mémoire et décisions. 5 structures clés, mécanismes amygdale–PFC et 4 méthodes validées pour moduler votre cerveau émotionnel.",
+        category: "Neurosciences",
+        readTime: 13,
+        date: "2026-04-12",
+        image: "/images/articles/systeme-limbique-cerveau-emotionnel-cover",
+        slug: "systeme-limbique-cerveau-emotionnel",
+        featured: false
     }
 ];

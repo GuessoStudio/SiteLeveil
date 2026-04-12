@@ -14,6 +14,7 @@ import SyndromeImposteur from "../articles/SyndromeImposteur";
 import SommeilReparateur from "../articles/SommeilReparateur";
 import LumiereNaturelle from "../articles/LumiereNaturelle";
 import BdnfAugmenterNaturellement from "../articles/BdnfAugmenterNaturellement";
+import SystemeLimbique from "../articles/SystemeLimbique";
 
 // Mappe chaque slug vers le composant de l'article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d'article.
@@ -30,4 +31,5 @@ export const articlesBySlug: Record<string, FC> = {
   "sommeil-reparateur-7-strategies-validees": SommeilReparateur,
   "lumiere-naturelle-cerveau-sommeil-sante-mentale": LumiereNaturelle,
   "bdnf-augmenter-naturellement-neurosciences": BdnfAugmenterNaturellement,
+  "systeme-limbique-cerveau-emotionnel": SystemeLimbique,
 };
