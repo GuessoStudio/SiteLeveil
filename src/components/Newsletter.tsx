@@ -1,6 +1,17 @@
 import React from 'react'
 import { Mail, Gift, CheckCircle } from 'lucide-react'
 
+const handleBrevoSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  const form = e.currentTarget
+  // Soumettre à Brevo dans un nouvel onglet (évite la navigation de la page courante)
+  form.target = '_blank'
+  form.submit()
+  form.target = ''
+  // Rediriger vers la page de remerciement
+  window.location.href = '/merci-inscription'
+}
+
 const BrevoForm = () => (
   <div className="sib-form" style={{ textAlign: 'center', backgroundColor: '#eff2f7' }}>
     <div id="sib-form-container" className="sib-form-container">
@@ -13,6 +24,7 @@ const BrevoForm = () => (
           id="sib-form"
           method="POST"
           action="https://0764bcde.sibforms.com/serve/MUIFACGVBDTe_S8OQSTD1PkL5uV9wX8LmfJYLbCEv4_lBylWBBrMO51gqYB9fPS6rf5TP2RTQeTUBvhmMJ1ZoUxfOD9z__lFHogoB5vfJgFWDBIK6415y5nVBSM6y72WkTsi_j-_gQ7DZp14QCWzK6HJoPBj3-sdQ9SDSOywoieCpS3i3Gy2hDfC48U-_aRC_Albn2rufaNPsFZEqw=="
+          onSubmit={handleBrevoSubmit}
         >
           <div style={{ padding: '16px 0' }}>
             <div className="sib-form-block" style={{ fontSize: '32px', textAlign: 'left', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>

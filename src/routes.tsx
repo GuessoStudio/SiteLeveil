@@ -16,6 +16,7 @@ import EmailDashboard from './pages/EmailDashboard'
 import BigFiveTest from './pages/BigFiveTest'
 import SleepCalculator from './pages/SleepCalculator'
 import HydroMindPrivacy from './pages/HydroMindPrivacy'
+import MerciInscription from './pages/MerciInscription'
 import NotFound from './pages/NotFound'
 import NeuroJournalLanding from './pages/NeuroJournalLanding'
 import StressZeroLanding from './pages/StressZeroLanding'
@@ -51,6 +52,7 @@ export const routes: RouteRecord[] = [
       { path: 'hydromind/privacy-policy/', element: <HydroMindPrivacy /> },
       { path: 'test-personnalite-big-five', element: <BigFiveTest /> },
       { path: 'habit-tracker', element: <HabitTracker /> },
+      { path: 'merci-inscription', element: <MerciInscription /> },
 
       // Pages admin/dev — exclues du pré-rendu via ssgOptions.includedRoutes
       { path: 'og-test', element: <OGTest /> },
