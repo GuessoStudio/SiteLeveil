@@ -14,6 +14,30 @@ INTERDIT :
 - Études non citées (toujours : Auteur, Institution, Année)
 - HowTo schema (déprécié Google septembre 2023)
 
+## NIVEAU DE VULGARISATION — RÈGLE ABSOLUE
+
+Cible : grand public francophone, 18-45 ans, sans formation scientifique.
+Niveau visé : Bac général, curieux, non-expert.
+
+RÈGLES CONCRÈTES :
+- Chaque terme technique introduit pour la première fois doit être immédiatement défini en 1 phrase simple
+  Ex : "L'amygdale — une petite structure en forme d'amande au centre du cerveau —"
+- Maximum 1 terme technique par paragraphe
+- Après chaque mécanisme scientifique : 1 exemple concret du quotidien obligatoire
+  Ex : "C'est pourquoi tu sursautes avant même de réaliser qu'un bruit t'a fait peur"
+- Analogies obligatoires pour les concepts abstraits
+  Ex : "L'amygdale fonctionne comme une alarme incendie — elle réagit avant que tu aies le temps de réfléchir"
+- Phrases courtes : maximum 2 lignes par phrase
+- Jamais de jargon sans explication :
+  ❌ "connectivité fonctionnelle fronto-limbique"
+  ✅ "la connexion entre la partie émotionnelle et la partie rationnelle du cerveau"
+- Toujours partir du vécu avant la science :
+  "Tu as déjà ressenti X ? Voici pourquoi..."
+
+TEST MENTAL avant de publier :
+"Est-ce que ma mère sans formation scientifique comprendrait ce paragraphe ?"
+Si non → réécrire.
+
 ## 2. STRUCTURE OBLIGATOIRE DE CHAQUE ARTICLE
 
 ### 2.1 Métadonnées (objet meta en haut du TSX)

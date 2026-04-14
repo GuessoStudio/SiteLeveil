@@ -147,5 +147,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/systeme-limbique-cerveau-emotionnel-cover",
         slug: "systeme-limbique-cerveau-emotionnel",
         featured: false
+    },
+    {
+        id: 14,
+        title: "Plasticité synaptique : comment le cerveau modifie ses connexions pour apprendre",
+        excerpt: "La plasticité synaptique est le mécanisme par lequel le cerveau renforce ou affaiblit ses connexions pour apprendre. LTP, LTD, mécanismes humains et 5 stratégies validées.",
+        category: "Neurosciences",
+        readTime: 14,
+        date: "2026-04-13",
+        image: "/images/articles/plasticite-synaptique-apprentissage-cerveau-cover",
+        slug: "plasticite-synaptique-apprentissage-cerveau",
+        featured: false
     }
 ];

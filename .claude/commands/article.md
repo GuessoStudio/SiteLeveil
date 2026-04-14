@@ -105,12 +105,15 @@ entity mapping complet.
 
 ### Étape 3.3 — Schema markup
 /blog schema [fichier généré]
-Valider le triple stack : Article + ItemList + FAQPage.
+Valider le stack 7 schemas : Person + Organization + ImageObject +
+BlogPosting + BreadcrumbList + ItemList + FAQPage.
 
 ## PHASE 4 — Conversion TSX
 
 ### Étape 4.1 — Convertir en TSX
-Utiliser OBLIGATOIREMENT `ArticleTemplate_V2.tsx` comme base.
+Prendre le dernier article publié comme modèle de référence
+(ex. `src/articles/SystLimbique.tsx` ou `src/articles/BDNF.tsx`).
+`ArticleTemplate_V2.tsx` n'existe pas — toujours partir d'un article existant.
 
 Structure du fichier TSX à produire :
 src/articles/[NomArticle].tsx
@@ -119,10 +122,20 @@ Intégrer dans l'ordre :
 1. Import SEO V2 avec props : category, authorUrl, jsonLd
 2. Composant QuickAnswer dans les 200 premiers mots
 3. Minimum 3 composants StatBlock avec source
-4. Triple JSON-LD via prop jsonLd
+4. Stack 7 JSON-LD via prop jsonLd (Person, Organization, ImageObject,
+   BlogPosting, BreadcrumbList, ItemList, FAQPage)
 5. Signal fraîcheur dans le header
 6. Section FAQ avec minimum 8 questions en HTML visible
 7. Liens internes contextuels (vérifier que les slugs existent)
+
+⚠️ CRITIQUE — Enregistrer le composant dans `src/content/index.ts` :
+```typescript
+import [NomArticle] from "../articles/[NomArticle]";
+// Ajouter dans l'objet articles :
+"[slug]": [NomArticle],
+```
+Sans cette étape, l'article affiche "Article introuvable" même si
+le fichier TSX et blog-articles.ts sont corrects.
 
 ### Étape 4.2 — Mettre à jour les métadonnées
 Ajouter l'entrée dans `src/data/blog-articles.ts` :
@@ -261,8 +274,10 @@ Mettre à jour blog-articles.ts ✓
 ## Erreurs fréquentes à éviter
 - ❌ Commencer à rédiger sans valider le brief
 - ❌ Oublier de mettre à jour blog-articles.ts
+- ❌ Oublier d'ajouter le composant dans src/content/index.ts → page blanche
 - ❌ Lier vers un slug qui n'existe pas
 - ❌ FAQ avec moins de 8 questions
 - ❌ StatBlock sans source complète (Auteur, Institution, Année)
 - ❌ H2 sans format question
 - ❌ Oublier le Quick Answer Block dans les 200 premiers mots
+- ❌ Modifier public/sitemap.xml directement (écrasé au prochain build)
