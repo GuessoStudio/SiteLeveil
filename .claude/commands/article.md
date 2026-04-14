@@ -148,18 +148,20 @@ Si absent → remplacer par un lien existant.
 ## PHASE 5 — Livraison
 
 ### Étape 5.0 — Mettre à jour le sitemap
-Ajouter l'URL de l'article dans `public/sitemap.xml` :
+⚠️ NE PAS modifier `public/sitemap.xml` directement — il est écrasé à chaque
+build par le script `prebuild`.
 
-```xml
-<url>
-  <loc>https://leveilmental.fr/blog/[slug]</loc>
-  <lastmod>[YYYY-MM-DD]</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+Ajouter le slug dans `scripts/generate-sitemap.mjs`, tableau `articles[]` :
+
+```js
+const articles = [
+  // ... articles existants ...
+  "/blog/[slug]"  // ← ajouter ici
+];
 ```
 
-Insérer dans l'ordre lastmod décroissant (article le plus récent en premier).
+`public/sitemap.xml` et `dist/sitemap.xml` sont régénérés automatiquement
+au prochain `npm run build`.
 
 ### Étape 5.1 — Demander l'indexation Google
 ⚠️ ACTION MANUELLE REQUISE — Google Search Console
