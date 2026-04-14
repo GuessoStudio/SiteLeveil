@@ -100,6 +100,18 @@ const Resources = () => {
       downloadUrl: "/resources/reset-mental-express.pdf"
     },
     {
+      id: 5,
+      title: "5 protocoles pour booster ta plasticité synaptique",
+      description: "Checklist scientifique : 5 actions concrètes validées par la recherche pour renforcer tes connexions neuronales et améliorer ta mémoire.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/resources/plasticite-synaptique-checklist-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/plasticite-synaptique-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",
