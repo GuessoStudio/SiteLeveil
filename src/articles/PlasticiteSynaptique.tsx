@@ -11,8 +11,8 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "plasticite-synaptique-apprentissage-cerveau",
-  title: "Plasticité synaptique : comment le cerveau modifie ses connexions pour apprendre",
-  description: "La plasticité synaptique est le mécanisme par lequel le cerveau renforce ou affaiblit ses connexions pour apprendre. LTP, LTD, mécanismes humains et 5 stratégies validées.",
+  title: "Plasticité synaptique : LTP, mémoire et 5 méthodes validées",
+  description: "La plasticité synaptique est le mécanisme par lequel le cerveau renforce ses connexions pour apprendre. LTP, LTD, données humaines et 5 stratégies validées.",
   cover: "/images/articles/plasticite-synaptique-apprentissage-cerveau-cover",
   datePublished: "2026-04-13T08:00:00+01:00",
   dateModified: "2026-04-14T08:00:00+01:00",
@@ -381,7 +381,11 @@ export default function PlasticiteSynaptique() {
           <h3>Un même neurone, deux règles de plasticité différentes</h3>
 
           <p>
-            Pendant longtemps, les chercheurs pensaient que tous les points de contact d'un neurone suivaient les mêmes règles de plasticité. En avril 2025, une étude publiée dans la revue <em>Science</em> (AAAS) par Akiko Hayashi-Takagi et son équipe a renversé cette idée — dans des études sur souris.
+            Pendant longtemps, les chercheurs pensaient que tous les points de contact d'un neurone suivaient les mêmes règles de plasticité. En avril 2025,{" "}
+            <a href="https://doi.org/10.1126/science.ads4706" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+              une étude publiée dans <em>Science</em> (AAAS)
+            </a>{" "}
+            par Akiko Hayashi-Takagi et son équipe a renversé cette idée — dans des études sur souris.
           </p>
 
           <p>
@@ -421,7 +425,11 @@ export default function PlasticiteSynaptique() {
           <h3>Le lien entre plasticité réduite et dépression — données humaines</h3>
 
           <p>
-            En 2022, une équipe de l'Université d'Oslo dirigée par Trine Waage Rygvold a mené une étude sur 111 adultes sains — la première à mesurer directement la plasticité synaptique LTP chez des humains en bonne santé, via des enregistrements EEG (électroencéphalogramme) et des potentiels évoqués visuels.
+            En 2022, une équipe de l'Université d'Oslo dirigée par Trine Waage Rygvold a mené{" "}
+            <a href="https://doi.org/10.3389/fnhum.2022.867675" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+              une étude sur 111 adultes sains
+            </a>{" "}
+            — la première à mesurer directement la plasticité synaptique LTP chez des humains en bonne santé, via des enregistrements EEG (électroencéphalogramme) et des potentiels évoqués visuels.
           </p>
 
           <p>
@@ -465,7 +473,7 @@ export default function PlasticiteSynaptique() {
           </p>
 
           {/* Section 4 : Stratégies */}
-          <h2 id="strategies-stimuler-plasticite-synaptique">Quelles sont les 5 stratégies validées pour stimuler sa plasticité synaptique ?</h2>
+          <h2 id="strategies-stimuler-plasticite-synaptique">Comment stimuler sa plasticité synaptique ? 5 pratiques validées</h2>
 
           <p>
             La bonne nouvelle : la plasticité synaptique est modulable. Plusieurs pratiques ont été validées scientifiquement pour augmenter la LTP, augmenter le BDNF, et favoriser la consolidation synaptique durable.
@@ -482,7 +490,10 @@ export default function PlasticiteSynaptique() {
           </p>
 
           <p>
-            Wrann et al. (2013, <em>Cell Metabolism</em>) ont identifié le mécanisme exact : l'exercice active la voie PGC-1α → FNDC5 → BDNF dans l'hippocampe. L'effet est mesurable après 20 à 30 minutes d'effort aérobie modéré et reste maximal dans les 1 à 2 heures suivant l'exercice — ce qui fait de l'entraînement matinal un levier particulièrement efficace avant une session d'apprentissage. Notre article sur les{" "}
+            <a href="https://doi.org/10.1016/j.cmet.2013.09.008" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+              Wrann et al. (2013, <em>Cell Metabolism</em>)
+            </a>{" "}
+            ont identifié le mécanisme exact : l'exercice active la voie PGC-1α → FNDC5 → BDNF dans l'hippocampe. L'effet est mesurable après 20 à 30 minutes d'effort aérobie modéré et reste maximal dans les 1 à 2 heures suivant l'exercice — ce qui fait de l'entraînement matinal un levier particulièrement efficace avant une session d'apprentissage. Notre article sur les{" "}
             <Link to="/blog/bdnf-augmenter-naturellement-neurosciences" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               8 méthodes scientifiques pour augmenter le BDNF
             </Link>{" "}
