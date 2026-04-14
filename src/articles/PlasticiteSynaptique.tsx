@@ -74,34 +74,57 @@ export default function PlasticiteSynaptique() {
 
   // ==================== SCHEMAS JSON-LD ====================
 
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration de la plasticité synaptique montrant le renforcement d'une connexion entre deux neurones dans l'hippocampe lors de l'apprentissage"
+  };
+
   const schemaBlogPosting = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${url}#article`,
     headline: meta.title,
     description: meta.description,
-    image: og,
+    image: { "@id": `${url}#primaryimage` },
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
-    author: {
-      "@type": "Person",
-      "name": "Guesso",
-      "url": "https://leveilmental.fr/a-propos"
-    },
-    publisher: {
-      "@type": "Organization",
-      "name": "L'Éveil Mental",
-      "url": site,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${site}/images/logo.webp`,
-        "width": 600,
-        "height": 150
-      }
-    },
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
     about: {
       "@type": "DefinedTerm",
-      "name": "Plasticité synaptique et apprentissage",
-      "description": "Mécanismes moléculaires du renforcement et de l'affaiblissement des connexions synaptiques — LTP, LTD, NMDA, AMPA, CREB"
+      name: "Plasticité synaptique et apprentissage",
+      description: "Mécanismes moléculaires du renforcement et de l'affaiblissement des connexions synaptiques — LTP, LTD, NMDA, AMPA, CREB"
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: meta.tags.join(", "),
@@ -113,11 +136,52 @@ export default function PlasticiteSynaptique() {
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: site },
       { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
       { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog?category=neurosciences` },
-      { "@type": "ListItem", position: 4, name: meta.title }
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "5 pratiques validées pour stimuler la plasticité synaptique",
+    description: "Stratégies scientifiquement validées pour renforcer les connexions neuronales et améliorer l'apprentissage",
+    numberOfItems: 5,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "L'exercice aérobie",
+        description: "Active la voie PGC-1α → FNDC5 → BDNF dans l'hippocampe — effet mesurable après 20-30 min d'effort modéré (Wrann et al., Cell Metabolism, 2013)"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Le sommeil profond",
+        description: "Consolide la L-LTP via le replay hippocampique pendant les ondes delta (Stickgold & Walker, Nature Neuroscience, 2013)"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "La répétition espacée",
+        description: "Réactive les récepteurs NMDA et relance la cascade CaMKII → CREB à chaque révision, construisant une synapse structurellement plus robuste"
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "L'apprentissage actif",
+        description: "Stimule les circuits dopaminergiques qui modulent directement l'induction de la LTP dans l'hippocampe"
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "La méditation de pleine conscience",
+        description: "Réduit le cortisol chronique et préserve la fenêtre de métaplasticité (Lazar, Harvard Medical School, 2005)"
+      }
     ]
   };
 
@@ -145,7 +209,7 @@ export default function PlasticiteSynaptique() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +291,7 @@ export default function PlasticiteSynaptique() {
           <div className="not-prose my-8 bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border-l-4 border-emerald-500">
             <p className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide mb-2">Réponse rapide</p>
             <p className="text-emerald-800 dark:text-emerald-200 text-sm leading-relaxed">
-              <strong>En bref :</strong> La plasticité synaptique est le mécanisme par lequel le cerveau renforce ou affaiblit les connexions entre neurones selon l'usage. Quand deux neurones s'activent ensemble de façon répétée, leur connexion se renforce — c'est la LTP (potentialisation à long terme), la base biologique de tout apprentissage. Ce mécanisme peut être stimulé par l'exercice, le sommeil et la répétition espacée, et peut s'affaiblir sous l'effet du stress chronique et de la dépression.
+              <strong>En bref :</strong> La plasticité synaptique est la capacité du cerveau à renforcer ou affaiblir ses connexions neuronales selon l'usage. Le mécanisme central est la LTP — base biologique de tout apprentissage. Il peut être stimulé par l'exercice, le sommeil et la répétition espacée, et s'érode sous l'effet du stress chronique.
             </p>
             <p className="text-emerald-700 dark:text-emerald-300 text-xs mt-2">
               <strong>Sources :</strong> Bliss & Lømo, Journal of Physiology, 1973 ; Rygvold et al., Frontiers in Human Neuroscience, 2022 ; Hayashi-Takagi et al., Science, 2025.
