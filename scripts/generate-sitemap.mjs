@@ -13,7 +13,10 @@ const articles = [
   "/blog/methode-acr-repondre-aux-bonnes-nouvelles",
   "/blog/syndrome-imposteur-solutions",
   "/blog/sommeil-reparateur-7-strategies-validees",
-  "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale"
+  "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale",
+  "/blog/bdnf-augmenter-naturellement-neurosciences",
+  "/blog/systeme-limbique-cerveau-emotionnel",
+  "/blog/plasticite-synaptique-apprentissage-cerveau"
 ];
 
 const urls = [...staticRoutes, ...articles]
