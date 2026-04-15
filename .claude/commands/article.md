@@ -112,26 +112,30 @@ BlogPosting + BreadcrumbList + ItemList + FAQPage.
 
 ### Étape 4.1 — Convertir en TSX
 Prendre le dernier article publié comme modèle de référence
-(ex. `src/articles/SystLimbique.tsx` ou `src/articles/BDNF.tsx`).
+(ex. `src/articles/PlasticiteSynaptique.tsx` ou `src/articles/SystemeLimbique.tsx`).
 `ArticleTemplate_V2.tsx` n'existe pas — toujours partir d'un article existant.
 
 Structure du fichier TSX à produire :
 src/articles/[NomArticle].tsx
 
 Intégrer dans l'ordre :
-1. Import SEO V2 avec props : category, authorUrl, jsonLd
-2. Composant QuickAnswer dans les 200 premiers mots
-3. Minimum 3 composants StatBlock avec source
-4. Stack 7 JSON-LD via prop jsonLd (Person, Organization, ImageObject,
+1. `import SEO from "../components/SEO"` (seul import de composant externe)
+2. Quick Answer Block inline (div JSX avec classes `bg-emerald-50`, pas un composant importé)
+   dans les 200 premiers mots
+3. Minimum 3 StatBlocks inline (div JSX avec classes `bg-teal-50`, pas un composant importé)
+4. Stack 7 JSON-LD via prop `jsonLd` du composant SEO (Person, Organization, ImageObject,
    BlogPosting, BreadcrumbList, ItemList, FAQPage)
-5. Signal fraîcheur dans le header
+5. Signal fraîcheur dans le header (`Version {meta.version} — {meta.verifiedDate}`)
 6. Section FAQ avec minimum 8 questions en HTML visible
 7. Liens internes contextuels (vérifier que les slugs existent)
+
+⚠️ QuickAnswer et StatBlock ne sont PAS des composants React à importer.
+Ce sont des blocs JSX inline copiés depuis un article existant.
 
 ⚠️ CRITIQUE — Enregistrer le composant dans `src/content/index.ts` :
 ```typescript
 import [NomArticle] from "../articles/[NomArticle]";
-// Ajouter dans l'objet articles :
+// Ajouter dans l'objet articlesBySlug :
 "[slug]": [NomArticle],
 ```
 Sans cette étape, l'article affiche "Article introuvable" même si
@@ -267,14 +271,14 @@ Mettre à jour blog-articles.ts ✓
 
 
 ## Usage
-/project:article "BDNF augmenter naturellement neurosciences"
-/project:article "système limbique cerveau émotionnel"
-/project:article "plasticité synaptique apprentissage"
+/project:article "cortisol stress chronique mémoire"
+/project:article "ocytocine lien social neurosciences"
+/project:article "microbiome intestin cerveau axe gut-brain"
 
 ## Erreurs fréquentes à éviter
 - ❌ Commencer à rédiger sans valider le brief
 - ❌ Oublier de mettre à jour blog-articles.ts
-- ❌ Oublier d'ajouter le composant dans src/content/index.ts → page blanche
+- ❌ Oublier d'ajouter le composant dans src/content/index.ts (objet `articlesBySlug`) → page blanche
 - ❌ Lier vers un slug qui n'existe pas
 - ❌ FAQ avec moins de 8 questions
 - ❌ StatBlock sans source complète (Auteur, Institution, Année)
