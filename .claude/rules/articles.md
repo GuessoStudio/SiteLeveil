@@ -46,11 +46,15 @@ const meta = {
   slug: "mot-cle-principal-secondaire",
   title: "Titre H1 : mot-clé dans les 8 premiers mots",
   description: "150-160 chars avec mot-clé principal",
-  cover: "/images/articles/[slug]-cover",
-  datePublished: "YYYY-MM-DD",
-  dateModified: "YYYY-MM-DD",
+  cover: "/images/articles/[slug]-cover",  // sans extension — .webp ajouté dynamiquement
+  datePublished: "YYYY-MM-DDT08:00:00+01:00",
+  dateModified: "YYYY-MM-DDT08:00:00+01:00",
   tags: ["tag1", "tag2", "tag3", "tag4"],
-  author: { name: "Guesso", url: "https://leveilmental.fr/a-propos" },
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   category: "Neurosciences | Psychologie | Relations Humaines | Développement Personnel",
   readingTime: "X min",
   version: "1.0",
@@ -92,21 +96,24 @@ H2 : À retenir (encadré résumé — featured snippet)
 ## 3. COMPOSANTS OBLIGATOIRES
 
 ### QuickAnswer (dans les 200 premiers mots — CRITIQUE)
-```tsx
-<QuickAnswer>
-  **En bref :** [Réponse directe à la question principale en 40-60 mots]
-  **Sources :** Chercheur, Institution, Année
-</QuickAnswer>
-```
+Bloc JSX inline — PAS un composant React importé.
+Copier depuis `src/articles/PlasticiteSynaptique.tsx`. Pattern exact dans `.claude/rules/template-v2.md` section 3.
+Classes : `bg-emerald-50 dark:bg-emerald-950/30 border-l-4 border-emerald-500`
+
+Contenu attendu :
+- Label "Réponse rapide" en uppercase
+- `**En bref :**` + réponse directe 40-60 mots
+- `**Sources :**` Chercheur, Institution, Année
 
 ### StatBlock (minimum 3 par article)
-```tsx
-<StatBlock
-  stat="[Chiffre ou pourcentage exact]"
-  description="[Contexte de la statistique]"
-  source="Auteur et al., Institution, Année"
-/>
-```
+Bloc JSX inline — PAS un composant React importé.
+Copier depuis `src/articles/PlasticiteSynaptique.tsx`. Pattern exact dans `.claude/rules/template-v2.md` section 4.
+Couleurs : teal (`bg-teal-50`) juste après le QuickAnswer / indigo (`bg-indigo-50`) dans le corps.
+
+Contenu attendu :
+- Stat en `text-3xl font-black`
+- Description de la statistique
+- Source complète : Auteur et al., Institution, *Journal*, Année — DOI
 
 ### H2 en questions directes (OBLIGATOIRE)
 ✅ "Comment le cortisol détruit-il le cerveau ?"
@@ -114,12 +121,26 @@ H2 : À retenir (encadré résumé — featured snippet)
 ❌ "Effets du cortisol"
 ❌ "Le stress et le cerveau"
 
-## 4. TRIPLE JSON-LD (obligatoire sur chaque article)
+## 4. 7 SCHEMAS JSON-LD (obligatoire sur chaque article)
 
-Le composant SEO V2 gère le triple stack automatiquement si tu passes :
-- `category` → génère BreadcrumbList 4 niveaux
-- `jsonLd={[schemaArticle, schemaItemList, schemaFAQ]}` → triple stack
-- `authorUrl="/a-propos"` → E-E-A-T signal
+Props réelles du composant `src/components/SEO.tsx` :
+```tsx
+<SEO
+  title={meta.title}
+  description={meta.description}
+  image={og}
+  type="article"
+  path={`/blog/${meta.slug}`}
+  datePublished={meta.datePublished}
+  dateModified={meta.dateModified}
+  authorName={meta.author?.name}
+  tags={meta.tags}
+  jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
+/>
+```
+
+Ordre des 7 schemas : Person + Organization + ImageObject + BlogPosting + BreadcrumbList + ItemList + FAQPage.
+Code exact de chaque schema → `.claude/rules/template-v2.md` section 7.
 
 Vérifier via Google Rich Results Test après publication.
 
@@ -161,13 +182,18 @@ Articles existants disponibles pour lier :
 - /blog/syndrome-imposteur-solutions
 - /blog/sommeil-reparateur-7-strategies-validees
 - /blog/lumiere-naturelle-cerveau-sommeil-sante-mentale
+- /blog/confiance-en-soi-durable
+- /blog/surmonter-rejet-social
+- /blog/bdnf-augmenter-naturellement-neurosciences
+- /blog/systeme-limbique-cerveau-emotionnel
+- /blog/plasticite-synaptique-apprentissage-cerveau
 
 ## 8. SIGNAL DE FRAÎCHEUR (GEO)
 
 Ajouter dans le header de chaque article :
 ```tsx
-<div className="text-xs text-neutral-500 mt-2">
-  Version 1.0 — {mois} {année} | Sources vérifiées {période}
+<div className="text-xs text-neutral-500 dark:text-neutral-500 mt-2 mb-6">
+  Version {meta.version} — {meta.verifiedDate} | Sources vérifiées {période}
 </div>
 ```
 
@@ -185,12 +211,16 @@ Ajouter dans le header de chaque article :
 - [ ] Minimum 3 liens internes contextuels
 
 **Technique**
-- [ ] Triple JSON-LD via SEO V2
+- [ ] 7 schemas JSON-LD via composant SEO (voir template-v2.md)
 - [ ] Fil d'Ariane 4 niveaux + BreadcrumbList schema
-- [ ] Image WebP + alt text 80 chars minimum
-- [ ] dateModified = date du jour
+- [ ] Image WebP présente dans `/public/images/articles/[slug]-cover.webp`
+- [ ] Image WebP + alt text 80 chars minimum dans le TSX
+- [ ] dateModified = date du jour (format ISO 8601 avec timezone)
 - [ ] Meta description 150-160 chars avec KW principal
-- [ ] blog-articles.ts mis à jour avec slug + métadonnées
+- [ ] Composant enregistré dans `src/content/index.ts` (objet `articlesBySlug`)
+- [ ] Entrée ajoutée dans `src/data/blog-articles.ts`
+- [ ] Slug ajouté dans `scripts/generate-sitemap.mjs` tableau `articles[]`
+- [ ] Build vérifié : `npm run build` sans erreur
 
 **GEO**
 - [ ] Réponses H2 immédiates (pyramide inversée)

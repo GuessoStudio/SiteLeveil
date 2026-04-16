@@ -9,8 +9,9 @@ article du blog leveilmental.fr.
 
 ## IMPORTANT — Lire avant tout
 1. Lire `.claude/rules/articles.md` en entier
-2. Lire la spec de l'article dans `docs/articles-specs.md`
-3. Ne PAS commencer à rédiger avant d'avoir validé la spec
+2. Lire `.claude/rules/template-v2.md` pour les patterns JSX exacts
+3. Lire la spec de l'article dans `docs/strategie-seo-v2.md` (section 3)
+4. Ne PAS commencer à rédiger avant d'avoir validé la spec
 
 ## PHASE 1 — Recherche et Brief (ne pas sauter)
 
@@ -141,7 +142,20 @@ import [NomArticle] from "../articles/[NomArticle]";
 Sans cette étape, l'article affiche "Article introuvable" même si
 le fichier TSX et blog-articles.ts sont corrects.
 
-### Étape 4.2 — Mettre à jour les métadonnées
+### Étape 4.2 — Placer l'image de couverture
+Créer ou placer l'image dans :
+```
+/public/images/articles/[slug]-cover.webp
+```
+Dimensions : 1200×630 px minimum. Format : WebP uniquement.
+Alt text prévu dans le TSX : minimum 80 caractères, descriptif.
+
+Si l'image n'existe pas encore → générer via `/seo-image-gen` ou Canva,
+puis placer dans `/public/images/articles/` avant de committer.
+
+⚠️ Sans cette image, la couverture est brisée et l'OG tag renvoie une 404.
+
+### Étape 4.3 — Mettre à jour les métadonnées
 Ajouter l'entrée dans `src/data/blog-articles.ts` :
 ```typescript
 {
@@ -157,10 +171,17 @@ Ajouter l'entrée dans `src/data/blog-articles.ts` :
 }
 ```
 
-### Étape 4.3 — Vérifier les liens internes
+### Étape 4.4 — Vérifier les liens internes
 Pour chaque lien interne dans l'article, vérifier que le slug
 existe dans `src/data/blog-articles.ts`.
 Si absent → remplacer par un lien existant.
+
+### Étape 4.5 — Vérifier le build
+```bash
+npm run build
+```
+Corriger toute erreur TypeScript ou import manquant avant de continuer.
+Ne pas committer un article qui ne compile pas.
 
 ## PHASE 5 — Livraison
 
