@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Shield, Eye, Cookie, FileText } from 'lucide-react'
 
 const Legal = () => {
@@ -11,6 +12,12 @@ const Legal = () => {
   ]
 
   return (
+    <>
+    <Helmet>
+      <title>Mentions légales & Politique de confidentialité | L'Éveil Mental</title>
+      <meta name="robots" content="noindex, follow" />
+      <link rel="canonical" href="https://leveilmental.fr/legal" />
+    </Helmet>
     <div className="min-h-screen py-8">
       <div className="container mx-auto px-4">
         {/* Header */}
@@ -336,6 +343,7 @@ const Legal = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

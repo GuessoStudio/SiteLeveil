@@ -16,13 +16,6 @@ function = "og"
   [headers.values]
   Cache-Control = "public, max-age=0, s-maxage=600"
 
-# SPA Redirects (backup de _redirects pour plus de sécurité)
-[[redirects]]
-  from = "/stress-zero"
-  to = "/blog"
-  status = 301
-  force = true
-
 # Catch-all redirect for React SPA (doit être en dernier)
 [[redirects]]
   from = "/*"

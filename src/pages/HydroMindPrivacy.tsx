@@ -12,7 +12,7 @@ const HydroMindPrivacy: React.FC = () => {
                     name="description"
                     content="Politique de confidentialité de l'application HydroMind. Découvrez comment nous protégeons vos données personnelles conformément au RGPD."
                 />
-                <meta name="robots" content="index, follow" />
+                <meta name="robots" content="noindex, follow" />
                 <link rel="canonical" href="https://leveilmental.fr/hydromind/privacy-policy/" />
             </Helmet>
 

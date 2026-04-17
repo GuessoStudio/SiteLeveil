@@ -233,6 +233,7 @@ export default function BigFiveTest() {
             <Helmet>
                 <title>Test Big Five Gratuit | Analyse Personnalité Scientifique</title>
                 <meta name="description" content="Découvrez votre profil psychologique avec le test Big Five (OCEAN). 30 questions, résultats immédiats, 100% gratuit, validé scientifiquement." />
+                <link rel="canonical" href="https://leveilmental.fr/test-personnalite-big-five" />
                 <meta property="og:image" content="https://leveilmental.fr/images/resources/big-five-cover.webp" />
                 <meta property="og:title" content="Mon Profil Big Five - Test de Personnalité" />
                 <meta property="og:description" content="Découvrez vos 5 traits de personnalité majeurs avec ce test scientifique gratuit." />
