@@ -15,6 +15,9 @@ const ARTICLE_SLUGS = [
   'syndrome-imposteur-solutions',
   'sommeil-reparateur-7-strategies-validees',
   'lumiere-naturelle-cerveau-sommeil-sante-mentale',
+  'bdnf-augmenter-naturellement-neurosciences',
+  'systeme-limbique-cerveau-emotionnel',
+  'plasticite-synaptique-apprentissage-cerveau',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({
