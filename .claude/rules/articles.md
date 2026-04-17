@@ -197,7 +197,67 @@ Ajouter dans le header de chaque article :
 </div>
 ```
 
-## 9. CHECKLIST AVANT LIVRAISON
+## 9. IMAGE DE COUVERTURE — GÉNÉRATION DE PROMPTS
+
+### Principe
+Pour chaque article, générer **3 concepts** avec prompt complet.
+Le style visuel s'adapte au pilier éditorial de l'article.
+
+### Style par pilier
+
+| Pilier | Style |
+|--------|-------|
+| Neurosciences | `scientific visualization` |
+| Psychologie | `emotional abstract art` |
+| Relations Humaines | `human connection art` |
+| Développement Personnel | `conceptual illustration` |
+
+### Contrainte commune (à inclure dans tous les prompts)
+
+```
+high quality digital illustration, cinematic lighting,
+no photograph, no text, no labels, no watermark,
+16:9 landscape, 1200x630px
+```
+
+### Format de sortie
+
+Produire 3 concepts distincts, chacun avec :
+- **Concept X** : [angle narratif en 1 phrase]
+- **Prompt complet** : [description visuelle + style pilier + contrainte commune]
+
+Exemple pour un article Neurosciences sur la mémoire :
+
+```
+Concept 1 : Neurones en réseau illuminés représentant la consolidation mémorielle
+Prompt : Abstract network of bioluminescent neurons forming interconnected webs,
+synaptic connections glowing in blue and gold, dark background with subtle depth,
+scientific visualization, high quality digital illustration, cinematic lighting,
+no photograph, no text, no labels, no watermark, 16:9 landscape, 1200x630px
+
+Concept 2 : Hippocampe stylisé comme carte topographique lumineuse
+Prompt : Stylized hippocampus rendered as a topographic light map,
+warm amber and teal gradient, flowing neural pathways suggesting memory encoding,
+scientific visualization, high quality digital illustration, cinematic lighting,
+no photograph, no text, no labels, no watermark, 16:9 landscape, 1200x630px
+
+Concept 3 : Fragment de souvenir visuel abstrait dans une sphère cristalline
+Prompt : Crystalline sphere containing fragmented abstract memories as light shards,
+deep violet and electric blue tones, sense of preservation and fragility,
+scientific visualization, high quality digital illustration, cinematic lighting,
+no photograph, no text, no labels, no watermark, 16:9 landscape, 1200x630px
+```
+
+### Règle de livraison
+
+- Toujours 3 concepts par article — jamais moins
+- Chaque concept doit proposer un angle visuel différent (macro, métaphore, abstrait)
+- Le prompt doit être en anglais (meilleurs résultats sur les générateurs d'images)
+- Déposer l'image retenue dans `/public/images/articles/[slug]-cover.webp`
+
+---
+
+## 10. CHECKLIST AVANT LIVRAISON
 
 **Contenu**
 - [ ] Quick Answer Block dans les 200 premiers mots
