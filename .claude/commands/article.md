@@ -156,16 +156,22 @@ const ARTICLE_SLUGS = [
 ]
 ```
 
-### Étape 4.3 — Placer l'image de couverture
-Créer ou placer l'image dans :
+### Étape 4.3 — Générer et placer l'image de couverture
+
+**Étape 4.3a — Générer 3 concepts de prompt**
+Suivre la section 9 de `.claude/rules/articles.md` :
+- Identifier le pilier (Neurosciences / Psychologie / Relations Humaines / Développement Personnel)
+- Produire 3 concepts distincts (macro / métaphore / abstrait) avec prompt complet en anglais
+- Inclure le style pilier + contrainte commune (16:9, 1200x630px, no text, no watermark)
+
+Puis choisir 1 concept et générer l'image via `/seo-image-gen` ou Canva.
+
+**Étape 4.3b — Placer l'image**
 ```
 /public/images/articles/[slug]-cover.webp
 ```
 Dimensions : 1200×630 px minimum. Format : WebP uniquement.
-Alt text prévu dans le TSX : minimum 80 caractères, descriptif.
-
-Si l'image n'existe pas encore → générer via `/seo-image-gen` ou Canva,
-puis placer dans `/public/images/articles/` avant de committer.
+Alt text dans le TSX : minimum 80 caractères, descriptif.
 
 ⚠️ Sans cette image, la couverture est brisée et l'OG tag renvoie une 404.
 
@@ -294,7 +300,7 @@ Produire un résumé avec :
 - Points d'attention éventuels
 
 ### Étape 5.5 — Commit message
-feat(blog): ajouter article "[titre court]"
+feat: ajouter article "[titre court]"
 
 Slug : /blog/[slug]
 Catégorie : [catégorie]

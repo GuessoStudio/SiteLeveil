@@ -280,6 +280,7 @@ no photograph, no text, no labels, no watermark, 16:9 landscape, 1200x630px
 - [ ] Composant enregistré dans `src/content/index.ts` (objet `articlesBySlug`)
 - [ ] Entrée ajoutée dans `src/data/blog-articles.ts`
 - [ ] Slug ajouté dans `scripts/generate-sitemap.mjs` tableau `articles[]`
+- [ ] Slug ajouté dans `vite.config.ts` tableau `ARTICLE_SLUGS` (sans /blog/) → sinon HTML vide pour Google
 - [ ] Build vérifié : `npm run build` sans erreur
 
 **GEO**
