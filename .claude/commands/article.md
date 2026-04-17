@@ -142,7 +142,21 @@ import [NomArticle] from "../articles/[NomArticle]";
 Sans cette étape, l'article affiche "Article introuvable" même si
 le fichier TSX et blog-articles.ts sont corrects.
 
-### Étape 4.2 — Placer l'image de couverture
+### Étape 4.2 — Ajouter le slug dans vite.config.ts
+
+⚠️ CRITIQUE — Sans cette étape, la page n'est pas pré-rendue en HTML statique.
+Google reçoit une page vide → canonical non détecté → erreur GSC
+"Page en double sans URL canonique".
+
+Dans `vite.config.ts`, tableau `ARTICLE_SLUGS`, ajouter :
+```typescript
+const ARTICLE_SLUGS = [
+  // ... slugs existants ...
+  '[slug]',  // ← ajouter ici (sans /blog/)
+]
+```
+
+### Étape 4.3 — Placer l'image de couverture
 Créer ou placer l'image dans :
 ```
 /public/images/articles/[slug]-cover.webp
@@ -155,7 +169,7 @@ puis placer dans `/public/images/articles/` avant de committer.
 
 ⚠️ Sans cette image, la couverture est brisée et l'OG tag renvoie une 404.
 
-### Étape 4.3 — Mettre à jour les métadonnées
+### Étape 4.4 — Mettre à jour les métadonnées
 Ajouter l'entrée dans `src/data/blog-articles.ts` :
 ```typescript
 {
@@ -171,12 +185,12 @@ Ajouter l'entrée dans `src/data/blog-articles.ts` :
 }
 ```
 
-### Étape 4.4 — Vérifier les liens internes
+### Étape 4.5 — Vérifier les liens internes
 Pour chaque lien interne dans l'article, vérifier que le slug
 existe dans `src/data/blog-articles.ts`.
 Si absent → remplacer par un lien existant.
 
-### Étape 4.5 — Vérifier le build
+### Étape 4.6 — Vérifier le build
 ```bash
 npm run build
 ```
@@ -306,3 +320,4 @@ Mettre à jour blog-articles.ts ✓
 - ❌ H2 sans format question
 - ❌ Oublier le Quick Answer Block dans les 200 premiers mots
 - ❌ Modifier public/sitemap.xml directement (écrasé au prochain build)
+- ❌ Oublier d'ajouter le slug dans ARTICLE_SLUGS (vite.config.ts) → HTML vide pour Google → erreur GSC "page en double sans canonique"
