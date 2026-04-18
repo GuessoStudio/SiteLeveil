@@ -27,6 +27,13 @@ Ton : professeur scientifique — jamais coach motivationnel.
 Structure : fait scientifique → mécanisme → application.
 Chercheurs nommés + institution. Ex: "Gazzaley (UCSF)".
 
+## ⚠️ Règle submodules Git
+Ne jamais cloner de repo externe (`claude-blog`, `claude-seo`, etc.) directement dans le projet avec `git clone` — ça crée un submodule implicite sans `.gitmodules`, ce qui casse les builds Netlify silencieusement.
+
+Procédure correcte pour intégrer un repo externe :
+1. Copier uniquement les fichiers nécessaires manuellement dans le projet
+2. Ou `git clone` hors du dossier projet, puis copier les fichiers
+
 ## Ne pas lire sauf si demandé
 node_modules/ .git/ dist/ claude-seo/ claude-blog/
 Pour règles articles → .claude/rules/articles.md
