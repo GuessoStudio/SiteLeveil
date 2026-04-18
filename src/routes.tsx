@@ -1,4 +1,3 @@
-import { Navigate } from 'react-router-dom'
 import type { RouteRecord } from 'vite-react-ssg'
 import App from './App'
 import { articles } from './data/blog-articles'
@@ -57,10 +56,6 @@ export const routes: RouteRecord[] = [
       // Pages admin/dev — exclues du pré-rendu via ssgOptions.includedRoutes
       { path: 'og-test', element: <OGTest /> },
       { path: 'admin/emails', element: <EmailDashboard /> },
-
-      // Redirections pour anciennes URLs
-      { path: 'about', element: <Navigate to="/a-propos" replace /> },
-      { path: 'resources', element: <Navigate to="/ressources" replace /> },
 
       // NeuroJournal : landing page (index) + sous-routes de l'application
       {
