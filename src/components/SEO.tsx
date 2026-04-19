@@ -209,14 +209,8 @@ export default function SEO({
       )}
       {articleLd && <script type="application/ld+json">{JSON.stringify(articleLd)}</script>}
 
-      {/* Custom JSON-LD passed from pages (prend la main) */}
-      {jsonLd
-        ?.filter(Boolean)
-        .map((obj, i) => (
-          <script key={`ld-${i}`} type="application/ld+json">
-            {JSON.stringify(obj)}
-          </script>
-        ))}
+      {/* Custom JSON-LD : rendu uniquement via dangerouslySetInnerHTML (hors Helmet)
+          pour éviter les doublons — les scripts statiques sont déjà dans le HTML SSG */}
     </Helmet>
     </>
   );
