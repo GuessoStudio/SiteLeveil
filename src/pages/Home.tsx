@@ -303,34 +303,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section with Animated Counters */}
-      <section className="py-12 bg-white dark:bg-neutral-900 border-b border-sand-100 dark:border-neutral-800 hidden md:block">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {STATS.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <RevealOnScroll
-                  key={index}
-                  direction="up"
-                  delay={index * 0.1}
-                  className="text-center"
-                >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-4">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div className="text-3xl font-bold text-sand-900 dark:text-sand-50 mb-1">
-                    <Counter to={stat.value} duration={2000} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
-                    {stat.label}
-                  </div>
-                </RevealOnScroll>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Citation du jour */}
       <section className="py-12 bg-sand-50 dark:bg-neutral-900">
