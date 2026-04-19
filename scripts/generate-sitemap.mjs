@@ -16,7 +16,8 @@ const articles = [
   "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale",
   "/blog/bdnf-augmenter-naturellement-neurosciences",
   "/blog/systeme-limbique-cerveau-emotionnel",
-  "/blog/plasticite-synaptique-apprentissage-cerveau"
+  "/blog/plasticite-synaptique-apprentissage-cerveau",
+  "/blog/empathie-neurones-miroirs-connexion-humaine"
 ];
 
 const urls = [...staticRoutes, ...articles]

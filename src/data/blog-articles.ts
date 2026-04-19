@@ -158,5 +158,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/plasticite-synaptique-apprentissage-cerveau-cover",
         slug: "plasticite-synaptique-apprentissage-cerveau",
         featured: false
+    },
+    {
+        id: 15,
+        title: "Empathie et neurones miroirs : ce que les neurosciences révèlent vraiment",
+        excerpt: "Les neurones miroirs expliquent-ils vraiment l'empathie ? Circuits cérébraux réels, paradoxe de la fatigue empathique et 4 méthodes validées pour se connecter sans s'épuiser.",
+        category: "Relations Humaines",
+        readTime: 14,
+        date: "2026-04-19",
+        image: "/images/articles/empathie-neurones-miroirs-connexion-humaine-cover",
+        slug: "empathie-neurones-miroirs-connexion-humaine",
+        featured: false
     }
 ];
