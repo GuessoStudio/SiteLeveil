@@ -6,6 +6,9 @@ import Newsletter from '../components/Newsletter'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
 import SEO from '../components/SEO'
 import { RevealOnScroll } from '../components/ui/animations/RevealOnScroll'
+import { BlurText } from '../components/ui/animations/BlurText'
+import { Magnet } from '../components/ui/animations/Magnet'
+import { TiltCard } from '../components/ui/animations/TiltCard'
 
 /* ========================================
    COMPOSANTS UTILITAIRES
@@ -146,14 +149,12 @@ const FEATURED_ARTICLES = [
     slug: "neuro-dopamine-routine"
   }
 ]
-/*
 const STATS = [
   { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
   { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
   { icon: TrendingUp, value: 95, label: "Satisfaction", suffix: "%" },
   { icon: Heart, value: 50000, label: "Vies transformées", suffix: "+" }
 ]
-*/
 const CATEGORIES = [
   {
     icon: Brain,
@@ -221,44 +222,27 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center">
             {/* Titre principal animé */}
             <div className="mb-8">
-              <RevealOnScroll direction="down" delay={0}>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg px-2 flex justify-center items-center flex-wrap gap-3">
+               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg px-2 flex justify-center items-center flex-wrap gap-3">
   
   {/* PARTIE 1 : "Éveillez votre" (Blanc simple) */}
   <span className="inline-block text-white font-normal">
-    {['É','v','e','i','l','l','e','z',' ','v','o','t','r','e'].map((letter, index) => (
-      <span
-        key={index}
-        className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-        style={{ animationDelay: `${50 + index * 40}ms`, animationFillMode: 'both' }}
-      >
-        {letter === ' ' ? '\u00A0' : letter}
-      </span>
-    ))}
+    <BlurText text="Éveillez votre" delay={0.3} className="inline-flex" />
   </span>
   {'\u00A0'}
   {/* PARTIE 2 : "POTENTIEL" (Avec Glow Intense & Majuscules) */}
-  <span className="inline-block relative">
-    {/* L'aura lumineuse derrière */}
-    <span className="absolute inset-0 blur-md bg-yellow-500/50 animate-pulse"></span>
-    
-    {/* Le texte par dessus */}
-    <span className="relative text-yellow-100 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] uppercase tracking-widest font-extrabold">
-      {['P','o','t','e','n','t','i','e','l'].map((letter, index) => (
-        <span
-          key={index}
-          className="inline-block animate-in fade-in slide-in-from-bottom-4 duration-500"
-          // On ajoute un délai plus long (14 lettres avant * 40ms) pour qu'il apparaisse après le début de la phrase
-          style={{ animationDelay: `${50 + (14 + index) * 40}ms`, animationFillMode: 'both' }}
-        >
-          {letter}
-        </span>
-      ))}
+  <RevealOnScroll direction="fade" delay={0.8} distance={0} className="inline-block">
+    <span className="inline-block relative">
+      {/* L'aura lumineuse derrière */}
+      <span className="absolute inset-0 blur-md bg-yellow-500/50 animate-pulse"></span>
+      
+      {/* Le texte par dessus */}
+      <span className="relative text-yellow-100 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] uppercase tracking-widest font-extrabold">
+        POTENTIEL
+      </span>
     </span>
-  </span>
+  </RevealOnScroll>
 
 </h1>
-</RevealOnScroll>
 
               {/* Sous-titre */}
               <p
@@ -275,42 +259,75 @@ const Home = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
               style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
             >
-              <Link
-                to="/blog"
-                className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
-                           text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
-                           flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
-                           transform hover:-translate-y-2 hover:scale-105 focus-ring backdrop-blur-sm
-                           relative overflow-hidden"
-                aria-label="Découvrir les articles du blog"
-              >
-                <span className="relative z-10">Découvrir les articles</span>
-                <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                -translate-x-full group-hover:translate-x-full 
-                                transition-transform duration-700 skew-x-12" />
-              </Link>
+              <Magnet padding={40}>
+                <Link
+                  to="/blog"
+                  className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
+                             text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
+                             flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
+                             transform focus-ring backdrop-blur-sm
+                             relative overflow-hidden"
+                  aria-label="Découvrir les articles du blog"
+                >
+                  <span className="relative z-10">Découvrir les articles</span>
+                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                  -translate-x-full group-hover:translate-x-full 
+                                  transition-transform duration-700 skew-x-12" />
+                </Link>
+              </Magnet>
 
-              <a
-                href="#newsletter"
-                className="group bg-sand-50/20 backdrop-blur-sm hover:bg-sand-50/30 text-white 
-                           px-8 py-4 rounded-lg font-semibold transition-all duration-300
-                           border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
-                           transform hover:-translate-y-2 hover:scale-105 focus-ring
-                           relative overflow-hidden"
-                aria-label="Recevoir le guide gratuit par email"
-              >
-                <span className="relative z-10">Recevoir le guide gratuit</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                                -translate-x-full group-hover:translate-x-full 
-                                transition-transform duration-700 skew-x-12" />
-              </a>
+              <Magnet padding={40}>
+                <a
+                  href="#newsletter"
+                  className="group bg-sand-50/20 backdrop-blur-sm hover:bg-sand-50/30 text-white 
+                             px-8 py-4 rounded-lg font-semibold transition-all duration-300
+                             border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
+                             transform focus-ring
+                             relative overflow-hidden block text-center"
+                  aria-label="Recevoir le guide gratuit par email"
+                >
+                  <span className="relative z-10">Recevoir le guide gratuit</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+                                  -translate-x-full group-hover:translate-x-full 
+                                  transition-transform duration-700 skew-x-12" />
+                </a>
+              </Magnet>
             </div>
 
             {/* Preuve sociale discrète */}
             <p className="text-base md:text-lg text-white/90 text-center max-w-2xl mx-auto mt-12 font-light tracking-wide">
             Rejoignez les esprits curieux qui reprennent le contrôle.
 </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section with Animated Counters */}
+      <section className="py-12 bg-white dark:bg-neutral-900 border-b border-sand-100 dark:border-neutral-800 hidden md:block">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {STATS.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <RevealOnScroll
+                  key={index}
+                  direction="up"
+                  delay={index * 0.1}
+                  className="text-center"
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-4">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="text-3xl font-bold text-sand-900 dark:text-sand-50 mb-1">
+                    <Counter to={stat.value} duration={2000} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
+                    {stat.label}
+                  </div>
+                </RevealOnScroll>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -793,77 +810,82 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {FEATURED_ARTICLES.map((article, index) => (
-              <article
-                key={article.id}
-                className="group bg-sand-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 relative animate-in slide-in-from-bottom-8 duration-700"
-                style={{ animationDelay: `${300 + index * 200}ms` }}
-              >
-                {/* Image de couverture */}
-                <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                  <img
-      src={`${article.image}.webp`}   
-      alt={article.title}
-      width="400"
-      height="300"
-      className="w-full h-48 object-cover"
-      loading="lazy"
-      decoding="async"
-    />
-                  
-                  {/* Overlay au hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Badge catégorie */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
-                      {article.category}
-                    </span>
-                  </div>
-                  
-                  {/* Étoile featured */}
-                  <div className="absolute top-4 right-4">
-                    <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg animate-pulse" />
-                  </div>
-                  
-                  {/* Effet de brillance au hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                  -translate-x-full group-hover:translate-x-full 
-                                  transition-transform duration-1000 skew-x-12" />
-                </div>
-
-                {/* Contenu de l'article */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
-                    {article.title}
-                  </h3>
-                  
-                  <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-sand-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
-                    {article.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
-                    <span className="group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
-                      {article.readTime} min de lecture
-                    </span>
+              <TiltCard key={article.id} maxRotation={3} scale={1.03}>
+                <article
+                  className="group bg-sand-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 relative animate-in slide-in-from-bottom-8 duration-700 h-full"
+                  style={{ animationDelay: `${300 + index * 200}ms` }}
+                >
+                  {/* Image de couverture */}
+                  <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                    <img
+        src={`${article.image}.webp`}   
+        alt={article.title}
+        width="400"
+        height="300"
+        className="w-full h-48 object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+                    
+                    {/* Overlay au hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Badge catégorie */}
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
+                        {article.category}
+                      </span>
+                    </div>
+                    
+                    {/* Étoile featured */}
+                    <div className="absolute top-4 right-4">
+                      <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg animate-pulse" />
+                    </div>
+                    
+                    {/* Effet de brillance au hover */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                    -translate-x-full group-hover:translate-x-full 
+                                    transition-transform duration-1000 skew-x-12" />
                   </div>
 
-                  <Link
-                    to={`/blog/${article.slug}`}
-                    aria-label={`Lire l'article : ${article.title}`}
-                    className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
-                               dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring
-                               hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300
-                               group-hover:translate-x-1"
-                  >
-                    Lire l'article
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </div>
+                  {/* Contenu de l'article */}
+                  <div className="p-6 flex flex-col justify-between" style={{ height: 'calc(100% - 12rem)' }}>
+                    <div>
+                      <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
+                        {article.title}
+                      </h3>
+                      
+                      <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-sand-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
+                        {article.excerpt}
+                      </p>
+                    </div>
 
-                {/* Barre de progression au hover */}
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
-                                group-hover:w-full transition-all duration-700" />
-              </article>
+                    <div>
+                      <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+                        <span className="group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+                          {article.readTime} min de lecture
+                        </span>
+                      </div>
+
+                      <Link
+                        to={`/blog/${article.slug}`}
+                        aria-label={`Lire l'article : ${article.title}`}
+                        className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
+                                  dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring
+                                  hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300
+                                  group-hover:translate-x-1"
+                      >
+                        Lire l'article
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Barre de progression au hover */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
+                                  group-hover:w-full transition-all duration-700" />
+                </article>
+              </TiltCard>
             ))}
           </div>
 

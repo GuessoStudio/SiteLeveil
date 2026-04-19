@@ -45,7 +45,11 @@ const Footer = () => {
                   <img
                     src="/images/logo-footer.webp"
                     alt="Logo L'Éveil"
+                    width="48"
+                    height="48"
                     className="w-12 h-12 rounded-full transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:brightness-110"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out rounded-full"></div>
                 </div>
@@ -201,7 +205,11 @@ const Footer = () => {
               <img
                 src="/images/logo-footer.webp"
                 alt="Logo L'Éveil"
+                width="20"
+                height="20"
                 className="w-5 h-5 rounded-full transition-all duration-500 group-hover:rotate-180 group-hover:scale-125 group-hover:brightness-125"
+                loading="lazy"
+                decoding="async"
               />
               <span className="group-hover:text-neutral-100 transition-colors duration-300">
                 © 2026 L'Éveil. Tous droits réservés.
@@ -222,7 +230,11 @@ const Footer = () => {
                   <img
                     src="/images/guesso-logo.webp"
                     alt="Guesso Studio"
+                    width="40"
+                    height="40"
                     className="w-10 h-10 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:brightness-110"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out rounded-lg"></div>
                 </div>

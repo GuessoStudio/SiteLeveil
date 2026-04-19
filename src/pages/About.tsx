@@ -156,7 +156,11 @@ const About = () => {
                 <img
                   src={member.image}
                   alt={member.name}
+                  width="96"
+                  height="96"
                   className="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-2">
                   {member.name}

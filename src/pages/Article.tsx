@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { articlesBySlug } from "../content/index";
 import { useNeuroJournal } from "../hooks/useNeuroJournal";
 import { Heart } from "lucide-react";
+import { ReadingProgressBar } from "../components/ui/animations/ReadingProgressBar";
 
 export default function Article() {
   const { slug } = useParams();
@@ -86,6 +87,7 @@ export default function Article() {
 
   return (
     <>
+      <ReadingProgressBar />
       <Component />
       {/* Guard SSR : createPortal requiert document.body (browser uniquement) */}
       {typeof document !== 'undefined' && currentArticle && ReactDOM.createPortal(

@@ -66,8 +66,9 @@ const Header = () => {
                   height="40"
                   className="w-10 h-10 rounded-full transition-transform duration-300
                              group-hover:scale-110 group-active:scale-95"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
+                  fetchPriority="high"
                 />
                 {/* Effet de brillance au hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent

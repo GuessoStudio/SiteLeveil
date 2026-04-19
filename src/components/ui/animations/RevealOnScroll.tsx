@@ -1,10 +1,10 @@
 // ================================
-// RÉVEAL ON SCROLL - VERSION CORRIGÉE COMPLÈTE
+// RÉVEAL ON SCROLL - VERSION OPTIMISÉE (SSG & PERF)
 // src/components/ui/animations/RevealOnScroll.tsx
 // ================================
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useRef, useEffect, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 interface RevealOnScrollProps {
   children: React.ReactNode
@@ -14,161 +14,78 @@ interface RevealOnScrollProps {
   distance?: number
   className?: string
   triggerOnce?: boolean
+  staggerChildren?: number
+  rootMargin?: string
 }
 
-// ✅ HOOK DÉFINI AVANT LE COMPOSANT
-const useScrollRevealLocal = (options: any = {}) => {
-  const {
-    threshold = 0.1,
-    rootMargin = '0px 0px -50px 0px',
-    triggerOnce = true,
-    delay = 0
-  } = options
-
-  const [isVisible, setIsVisible] = React.useState(false)
-  const [isMounted, setIsMounted] = React.useState(false)
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [reducedMotion, setReducedMotion] = React.useState(false)
-
-  React.useEffect(() => {
-    setIsMounted(true)
-    
-    // Vérifier les préférences d'animation
+export function RevealOnScroll({
+  children,
+  direction = 'up',
+  delay = 0,
+  duration = 0.6,
+  distance = 30, // Distance réduite pour moins de Layout Shift
+  className = '',
+  triggerOnce = true,
+  staggerChildren = 0,
+  rootMargin = "-50px"
+}: RevealOnScrollProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  
+  // Custom hook pour reduced motion + SSG
+  const [reducedMotion, setReducedMotion] = useState(false)
+  const isServer = typeof window === 'undefined'
+  
+  useEffect(() => {
+    if (isServer) return
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     setReducedMotion(mediaQuery.matches)
     
     const handleChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
     mediaQuery.addEventListener('change', handleChange)
-    
     return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [])
+  }, [isServer])
 
-  React.useEffect(() => {
-    if (!isMounted || reducedMotion) {
-      setIsVisible(true) // Pas d'animation si reduced motion
-      return
-    }
+  const isInView = useInView(ref, { once: triggerOnce, margin: rootMargin as any })
 
-    const element = ref.current
-    if (!element) return
+  // Si on est côté serveur ou reduced motion, pas d'animation
+  // Le retour direct d'une div évite les problèmes d'hydratation
+  if (isServer || reducedMotion) {
+    return <div className={className}>{children}</div>
+  }
 
-    const obs = new IntersectionObserver((entries) => {
-      const [entry] = entries
-      if (entry.isIntersecting) {
-        if (delay > 0) {
-          setTimeout(() => setIsVisible(true), delay)
-        } else {
-          setIsVisible(true)
-        }
-        
-        if (triggerOnce) {
-          obs.unobserve(element)
-        }
-      } else if (!triggerOnce) {
-        setIsVisible(false)
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: direction === 'up' ? distance : direction === 'down' ? -distance : 0,
+      x: direction === 'left' ? distance : direction === 'right' ? -distance : 0,
+      scale: direction === 'scale' ? 0.95 : 1
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration,
+        delay,
+        ease: [0.25, 0.1, 0.25, 1] as any, // Cubic bezier élégant (Apple-like)
+        ...(staggerChildren > 0 && { staggerChildren })
       }
-    }, { threshold, rootMargin })
-
-    obs.observe(element)
-    return () => obs.disconnect()
-  }, [isMounted, reducedMotion, threshold, rootMargin, triggerOnce, delay])
-
-  return { 
-    ref, 
-    isVisible: reducedMotion ? true : isVisible, 
-    isMounted 
-  }
-}
-
-// ✅ COMPOSANT PRINCIPAL
-export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
-  children,
-  direction = 'up',
-  delay = 0,
-  duration = 0.6,
-  distance = 30,
-  className = '',
-  triggerOnce = true
-}) => {
-  // ✅ UTILISATION DU HOOK LOCAL
-  const { ref, isVisible, isMounted } = useScrollRevealLocal({ 
-    delay,
-    triggerOnce,
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  })
-
-  const getInitialState = () => {
-    switch (direction) {
-      case 'up':
-        return { opacity: 0, y: distance }
-      case 'down':
-        return { opacity: 0, y: -distance }
-      case 'left':
-        return { opacity: 0, x: distance }
-      case 'right':
-        return { opacity: 0, x: -distance }
-      case 'scale':
-        return { opacity: 0, scale: 0.9 }
-      case 'fade':
-      default:
-        return { opacity: 0 }
     }
-  }
-
-  const getAnimateState = () => {
-    const baseTransition = {
-      duration,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-
-    switch (direction) {
-      case 'up':
-      case 'down':
-        return { 
-          opacity: 1, 
-          y: 0,
-          transition: baseTransition
-        }
-      case 'left':
-      case 'right':
-        return { 
-          opacity: 1, 
-          x: 0,
-          transition: baseTransition
-        }
-      case 'scale':
-        return { 
-          opacity: 1, 
-          scale: 1,
-          transition: {
-            ...baseTransition,
-            ease: [0.34, 1.56, 0.64, 1]
-          }
-        }
-      case 'fade':
-      default:
-        return { 
-          opacity: 1,
-          transition: baseTransition
-        }
-    }
-  }
-
-  // Pas d'animation si pas encore monté (évite le flash)
-  if (!isMounted) {
-    return <div ref={ref} className={className}>{children}</div>
   }
 
   return (
     <motion.div
       ref={ref}
-      initial={getInitialState()}
-      animate={isVisible ? getAnimateState() : getInitialState()}
+      variants={variants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
       className={className}
       style={{
-        willChange: 'transform, opacity'
+        // Optimisation perf: on évite "will-change: transform" en continu 
+        // car framer-motion le gère dynamiquement pendant l'animation
       }}
+      aria-hidden={!isInView}
     >
       {children}
     </motion.div>

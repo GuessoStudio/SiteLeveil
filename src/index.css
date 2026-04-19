@@ -1058,37 +1058,7 @@ strong:hover {
   will-change: opacity;
 }
 
-/* ===== SKELETON LOADERS AMÉLIORÉS ===== */
 
-/* Animation skeleton moderne */
-@keyframes skeleton-loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 25%,
-    #e8e8e8 50%,
-    #f0f0f0 75%
-  );
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.2s ease-in-out infinite;
-}
-
-[data-theme="dark"] .skeleton {
-  background: linear-gradient(
-    90deg,
-    #2a2a2a 25%,
-    #383838 50%,
-    #2a2a2a 75%
-  );
-}
 
 /* ===== OPTIMISATIONS MOBILE ===== */
 
@@ -1171,43 +1141,6 @@ strong:hover {
   40% {
     transform: scale(1);
   }
-}
-
-/* ===== AMÉLIORATIONS VISUELLES ===== */
-
-/* Shadow pour les éléments flottants */
-.shadow-soft {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.shadow-medium {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.shadow-glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-}
-
-/* Effet de focus amélioré */
-.focus-ring-enhanced:focus-visible {
-  outline: none;
-  box-shadow: 
-    0 0 0 2px white,
-    0 0 0 4px rgb(99, 102, 241),
-    0 4px 12px rgba(99, 102, 241, 0.3);
-  transform: scale(1.02);
-}
-
-/* ===== TRANSITIONS GLOBALES ===== */
-
-/* Transition douce pour les changements de thème */
-.theme-transition {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Transition pour les éléments interactifs */
-.interactive-transition {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===== CLASSES UTILITAIRES ===== */
