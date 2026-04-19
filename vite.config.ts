@@ -18,6 +18,7 @@ const ARTICLE_SLUGS = [
   'bdnf-augmenter-naturellement-neurosciences',
   'systeme-limbique-cerveau-emotionnel',
   'plasticite-synaptique-apprentissage-cerveau',
+  'empathie-neurones-miroirs-connexion-humaine',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({
@@ -47,6 +48,9 @@ export default defineConfig(({ isSsrBuild }) => ({
         )
     },
   },
+  resolve: {
+    dedupe: ['react', 'react-dom', 'react-helmet-async'],
+  },
   ssr: {
     noExternal: ['react-helmet-async'],
   },
@@ -55,10 +59,14 @@ export default defineConfig(({ isSsrBuild }) => ({
     rollupOptions: {
       output: {
         manualChunks: isSsrBuild ? undefined : {
-          // Vendors React
+          // Core React (always needed)
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // Autres vendors
-          'vendor-ui': ['framer-motion', 'lucide-react'],
+          // Icons (lightweight, used everywhere)
+          'vendor-icons': ['lucide-react'],
+          // Animation library (only loaded by pages using motion)
+          'vendor-motion': ['framer-motion'],
+          // Chart library (only used in Neuro-Journal)
+          'vendor-charts': ['recharts'],
         }
       }
     },

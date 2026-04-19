@@ -154,6 +154,17 @@ export default function SEO({
       : null;
 
   return (
+    <>
+    {/* Schemas JSON-LD injectés directement dans le DOM pour la sérialisation SSG
+        (react-helmet-async n'est pas sérialisé en statique avec vite-react-ssg) */}
+    {hasCustomJsonLd && jsonLd!.filter(Boolean).map((obj, i) => (
+      <script
+        key={`ld-static-${i}`}
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
+      />
+    ))}
     <Helmet prioritizeSeoTags>
       <title>{isHome ? title : `${title} • ${SITE_NAME}`}</title>
       <link rel="canonical" href={url} />
@@ -207,5 +218,6 @@ export default function SEO({
           </script>
         ))}
     </Helmet>
+    </>
   );
 }
