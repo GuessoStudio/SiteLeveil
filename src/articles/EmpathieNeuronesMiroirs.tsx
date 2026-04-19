@@ -11,11 +11,11 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "empathie-neurones-miroirs-connexion-humaine",
-  title: "Empathie et neurones miroirs : ce que les neurosciences révèlent vraiment",
-  description: "Les neurones miroirs expliquent-ils vraiment l'empathie ? Circuits cérébraux réels, paradoxe de la fatigue empathique et 4 méthodes validées pour se connecter sans s'épuiser.",
+  title: "Empathie et neurones miroirs : ce que la science révèle",
+  description: "Les neurones miroirs expliquent-ils vraiment l'empathie ? Circuits réels, fatigue empathique et 4 méthodes validées pour se connecter sans s'épuiser.",
   cover: "/images/articles/empathie-neurones-miroirs-connexion-humaine-cover",
   datePublished: "2026-04-19T08:00:00+01:00",
-  dateModified: "2026-04-19T08:00:00+01:00",
+  dateModified: "2026-04-19T16:00:00+01:00",
   tags: ["empathie", "neurones miroirs", "connexion humaine", "insula", "compassion", "neurosciences"],
   author: {
     "@type": "Person",
@@ -156,7 +156,7 @@ export default function EmpathieNeuronesMiroirs() {
   const schemaItemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "4 leviers validés pour développer l'empathie sans s'épuiser",
+    name: "Comment développer l'empathie sans s'épuiser : 4 leviers validés",
     description: "Méthodes scientifiquement validées pour renforcer la capacité empathique tout en évitant la fatigue émotionnelle",
     numberOfItems: 4,
     itemListElement: [
@@ -443,6 +443,21 @@ export default function EmpathieNeuronesMiroirs() {
             <strong>Limite importante :</strong> l'échantillon était composé uniquement d'adultes chinois (n=40). Les effets de l'ocytocine sur l'empathie peuvent varier selon les contextes culturels et les relations préexistantes entre les participants. Cette étude ne peut donc pas être généralisée directement à d'autres populations sans réplication.
           </p>
 
+          {/* StatBlock Geng 2018 — ocytocine et empathie affective */}
+          <div className="not-prose my-6 bg-indigo-50 dark:bg-indigo-950/30 p-5 rounded-lg border border-indigo-200 dark:border-indigo-800">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400 leading-none">24&nbsp;UI</div>
+              <div>
+                <p className="text-sm font-semibold text-indigo-900 dark:text-indigo-100">
+                  Dose d'ocytocine intranasale (24 unités internationales, double aveugle contre placebo) suffisant à augmenter significativement les scores d'empathie affective et à réduire l'activation de l'amygdale droite — sans modifier l'empathie cognitive. Données humaines, n = 40. ⚠️ Population uniquement chinoise.
+                </p>
+                <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                  Geng, Zhao, Song & Ma, Beijing Normal University, <em>Frontiers in Neuroscience</em>, 2018 — DOI : 10.3389/fnins.2018.00512
+                </p>
+              </div>
+            </div>
+          </div>
+
           <p>
             Ce qui est en revanche établi dans plusieurs cultures, c'est que certains comportements stimulent la production endogène d'ocytocine : le contact physique bienveillant, le regard mutuel prolongé, le partage de récits personnels, et la synchronie rythmique (chanter ensemble, marcher au même pas).
           </p>
@@ -506,7 +521,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           {/* Section 4 */}
-          <h2 id="leviers-developper-empathie">Les 4 leviers validés pour développer l'empathie sans s'épuiser</h2>
+          <h2 id="leviers-developper-empathie">Comment développer l'empathie sans s'épuiser ? Les 4 leviers validés</h2>
 
           <p>
             La bonne nouvelle : les circuits empathiques sont plastiques. Ils peuvent être renforcés, réorientés, ou protégés du surmenage — à condition d'utiliser les bons leviers. Voici les quatre mieux documentés par la recherche.
@@ -543,7 +558,7 @@ export default function EmpathieNeuronesMiroirs() {
           <h3>3. Les récits partagés — activation narrative de l'insula</h3>
 
           <p>
-            Écouter un récit à la première personne — une histoire vraie racontée par quelqu'un — active l'insula antérieure de l'auditeur, les mêmes circuits que l'expérience directe. Ce phénomène, appelé "couplage neural", a été documenté par Uri Hasson (Princeton Neuroscience Institute) : le cerveau du locuteur et celui de l'auditeur se synchronisent progressivement au fil du récit.
+            Écouter un récit à la première personne — une histoire vraie racontée par quelqu'un — active l'insula antérieure de l'auditeur, les mêmes circuits que l'expérience directe. Ce phénomène, appelé "couplage neural", a été documenté par Uri Hasson et son équipe (Princeton Neuroscience Institute) dans une étude publiée dans le <em>Proceedings of the National Academy of Sciences</em> en 2008 : le cerveau du locuteur et celui de l'auditeur se synchronisent progressivement au fil du récit.
           </p>
 
           <p>
@@ -662,6 +677,10 @@ export default function EmpathieNeuronesMiroirs() {
               <li className="flex gap-3">
                 <span className="font-bold text-neutral-400 min-w-[1.5rem]">5.</span>
                 <span>Klimecki, O.M., Leiberg, S., Ricard, M., & Singer, T. (2014). Differential pattern of functional brain plasticity after compassion and empathy training. <em>Social Cognitive and Affective Neuroscience</em>, 9(6), 873–879. <a href="https://doi.org/10.1093/scan/nst060" target="_blank" rel="noopener noreferrer" className="text-rose-600 dark:text-rose-400 underline">DOI : 10.1093/scan/nst060</a> — Données humaines, fMRI longitudinal, n = 60</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-bold text-neutral-400 min-w-[1.5rem]">6.</span>
+                <span>Hasson, U., Nir, Y., Levy, I., Fuhrmann, G., & Malach, R. (2004). Intersubject synchronization of cortical activity during natural vision. <em>Science</em>, 303(5664), 1634–1640. Puis : Stephens, G.J., Silbert, L.J., & Hasson, U. (2010). Speaker–listener neural coupling underlies successful communication. <em>Proceedings of the National Academy of Sciences</em>, 107(32), 14425–14430. <a href="https://doi.org/10.1073/pnas.1002051107" target="_blank" rel="noopener noreferrer" className="text-rose-600 dark:text-rose-400 underline">DOI : 10.1073/pnas.1002051107</a> — Données humaines, fMRI, couplage neural locuteur–auditeur</span>
               </li>
             </ol>
           </div>
