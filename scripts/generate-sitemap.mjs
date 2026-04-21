@@ -1,23 +1,23 @@
 import { writeFileSync } from "fs";
 
 const base = "https://leveilmental.fr";
-const staticRoutes = ["/", "/blog", "/a-propos", "/ressources", "/contact", "/test-personnalite-big-five", "/neuro-journal", "/stress-zero", "/calculateur-sommeil"];
+const staticRoutes = ["/", "/blog/", "/a-propos/", "/ressources/", "/contact/", "/test-personnalite-big-five/", "/neuro-journal/", "/stress-zero/", "/calculateur-sommeil/"];
 const articles = [
-  "/blog/surmonter-rejet-social",
-  "/blog/neuroplasticite-cerveau",
-  "/blog/confiance-en-soi-durable",
-  "/blog/neuro-dopamine-routine",
-  "/blog/rumination-mentale-pensees-obsessionnelles",
-  "/blog/attention-fragmentee-concentration-numerique",
-  "/blog/procrastination-cerveau-agir-neurosciences",
-  "/blog/methode-acr-repondre-aux-bonnes-nouvelles",
-  "/blog/syndrome-imposteur-solutions",
-  "/blog/sommeil-reparateur-7-strategies-validees",
-  "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale",
-  "/blog/bdnf-augmenter-naturellement-neurosciences",
-  "/blog/systeme-limbique-cerveau-emotionnel",
-  "/blog/plasticite-synaptique-apprentissage-cerveau",
-  "/blog/empathie-neurones-miroirs-connexion-humaine"
+  "/blog/surmonter-rejet-social/",
+  "/blog/neuroplasticite-cerveau/",
+  "/blog/confiance-en-soi-durable/",
+  "/blog/neuro-dopamine-routine/",
+  "/blog/rumination-mentale-pensees-obsessionnelles/",
+  "/blog/attention-fragmentee-concentration-numerique/",
+  "/blog/procrastination-cerveau-agir-neurosciences/",
+  "/blog/methode-acr-repondre-aux-bonnes-nouvelles/",
+  "/blog/syndrome-imposteur-solutions/",
+  "/blog/sommeil-reparateur-7-strategies-validees/",
+  "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/",
+  "/blog/bdnf-augmenter-naturellement-neurosciences/",
+  "/blog/systeme-limbique-cerveau-emotionnel/",
+  "/blog/plasticite-synaptique-apprentissage-cerveau/",
+  "/blog/empathie-neurones-miroirs-connexion-humaine/"
 ];
 
 const urls = [...staticRoutes, ...articles]

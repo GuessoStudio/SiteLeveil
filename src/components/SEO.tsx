@@ -24,7 +24,12 @@ const BASE_URL = RAW_BASE_URL.replace(/\/$/, ""); // ✅ no trailing slash
 
 function cleanPath(path?: string) {
   if (!path) return "/";
-  return path.startsWith("/") ? path : `/${path}`;
+  const p = path.startsWith("/") ? path : `/${path}`;
+  // Ajoute le trailing slash pour correspondre au comportement Netlify (dirStyle nested).
+  // Netlify sert /blog/slug/ (200) depuis dist/blog/slug/index.html.
+  // Sans trailing slash dans le canonical → mismatch → GSC "doublon sans canonique" + "erreur redirect".
+  if (p === "/") return p;
+  return p.endsWith("/") ? p : `${p}/`;
 }
 
 function toAbsoluteUrl(input?: string) {

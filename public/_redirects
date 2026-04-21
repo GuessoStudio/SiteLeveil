@@ -7,21 +7,5 @@
 /resources  /ressources    301!
 /resources/ /ressources    301!
 
-# ─── Rewrites 200 : servir le bon HTML sans redirect trailing-slash ───────────
-# Netlify auto-redirect /blog/slug → /blog/slug/ (301) quand dist/blog/slug/
-# existe. Un rewrite 200 est traité AVANT le serving statique → bloque la 301.
-# Sans ces règles : GSC "Erreur liée à des redirections" sur chaque article.
-/blog/*             /blog/:splat/index.html             200
-/a-propos           /a-propos/index.html                200
-/ressources         /ressources/index.html              200
-/contact            /contact/index.html                 200
-/legal              /legal/index.html                   200
-/blog               /blog/index.html                    200
-/neuro-journal      /neuro-journal/index.html           200
-/stress-zero        /stress-zero/index.html             200
-/calculateur-sommeil /calculateur-sommeil/index.html   200
-/test-personnalite-big-five /test-personnalite-big-five/index.html 200
-/merci-inscription  /merci-inscription/index.html       200
-
 # ─── SPA fallback — DOIT être la dernière règle ──────────────────────────────
 /*    /index.html   200

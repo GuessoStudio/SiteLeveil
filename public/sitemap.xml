@@ -7,117 +7,117 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog</loc>
+    <loc>https://leveilmental.fr/blog/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leveilmental.fr/a-propos/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/a-propos</loc>
+    <loc>https://leveilmental.fr/ressources/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/ressources</loc>
+    <loc>https://leveilmental.fr/contact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/contact</loc>
+    <loc>https://leveilmental.fr/test-personnalite-big-five/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/test-personnalite-big-five</loc>
+    <loc>https://leveilmental.fr/neuro-journal/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/neuro-journal</loc>
+    <loc>https://leveilmental.fr/stress-zero/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/stress-zero</loc>
+    <loc>https://leveilmental.fr/calculateur-sommeil/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/calculateur-sommeil</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://leveilmental.fr/blog/surmonter-rejet-social</loc>
+    <loc>https://leveilmental.fr/blog/surmonter-rejet-social/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/neuroplasticite-cerveau</loc>
+    <loc>https://leveilmental.fr/blog/neuroplasticite-cerveau/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/confiance-en-soi-durable</loc>
+    <loc>https://leveilmental.fr/blog/confiance-en-soi-durable/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/neuro-dopamine-routine</loc>
+    <loc>https://leveilmental.fr/blog/neuro-dopamine-routine/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/rumination-mentale-pensees-obsessionnelles</loc>
+    <loc>https://leveilmental.fr/blog/rumination-mentale-pensees-obsessionnelles/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/attention-fragmentee-concentration-numerique</loc>
+    <loc>https://leveilmental.fr/blog/attention-fragmentee-concentration-numerique/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/procrastination-cerveau-agir-neurosciences</loc>
+    <loc>https://leveilmental.fr/blog/procrastination-cerveau-agir-neurosciences/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles</loc>
+    <loc>https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/syndrome-imposteur-solutions</loc>
+    <loc>https://leveilmental.fr/blog/syndrome-imposteur-solutions/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/sommeil-reparateur-7-strategies-validees</loc>
+    <loc>https://leveilmental.fr/blog/sommeil-reparateur-7-strategies-validees/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale</loc>
+    <loc>https://leveilmental.fr/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/bdnf-augmenter-naturellement-neurosciences</loc>
+    <loc>https://leveilmental.fr/blog/bdnf-augmenter-naturellement-neurosciences/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/systeme-limbique-cerveau-emotionnel</loc>
+    <loc>https://leveilmental.fr/blog/systeme-limbique-cerveau-emotionnel/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/plasticite-synaptique-apprentissage-cerveau</loc>
+    <loc>https://leveilmental.fr/blog/plasticite-synaptique-apprentissage-cerveau/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://leveilmental.fr/blog/empathie-neurones-miroirs-connexion-humaine</loc>
+    <loc>https://leveilmental.fr/blog/empathie-neurones-miroirs-connexion-humaine/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
