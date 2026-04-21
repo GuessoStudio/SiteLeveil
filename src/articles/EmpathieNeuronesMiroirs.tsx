@@ -371,7 +371,7 @@ export default function EmpathieNeuronesMiroirs() {
           <h2 id="vrais-circuits-empathie">Comment le cerveau humain ressent-il vraiment la douleur d'autrui ?</h2>
 
           <p>
-            En 2004, la neuroscientifique Tanya Singer (University College London) publie dans <em>Science</em> une étude qui va transformer la compréhension de l'empathie. Elle recrute 16 couples et place chaque partenaire dans un scanner IRMf. L'un reçoit une légère stimulation électrique douloureuse. L'autre observe son partenaire recevoir cette stimulation.
+            En 2004, la neuroscientifique Tania Singer (University College London) publie dans <em>Science</em> une étude qui va transformer la compréhension de l'empathie. Elle recrute 16 couples et place chaque partenaire dans un scanner IRMf. L'un reçoit une légère stimulation électrique douloureuse. L'autre observe son partenaire recevoir cette stimulation.
           </p>
 
           <p>
@@ -414,7 +414,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            En 2011, Claus Lamm (University of Vienna), Jean Decety (University of Chicago) et Tanya Singer (Max Planck Institute, Leipzig) publient dans <em>NeuroImage</em> une méta-analyse de 32 études IRMf sur l'empathie pour la douleur. C'est à ce jour la synthèse la plus rigoureuse sur le sujet.
+            En 2011, Claus Lamm (University of Vienna), Jean Decety (University of Chicago) et Tania Singer (Max Planck Institute, Leipzig) publient dans <em>NeuroImage</em> une méta-analyse de 32 études IRMf sur l'empathie pour la douleur. C'est à ce jour la synthèse la plus rigoureuse sur le sujet.
           </p>
 
           <p>
@@ -505,7 +505,7 @@ export default function EmpathieNeuronesMiroirs() {
           <h3>La compassion comme antidote biologique — circuits opposés prouvés</h3>
 
           <p>
-            Voici le résultat le plus surprenant de l'étude Klimecki. Après l'entraînement à la compassion — qui consiste à développer une bienveillance active ("je veux que tu ailles mieux") plutôt qu'une résonance passive ("je ressens ta douleur") — l'affect négatif était inversé. Les participants rapportaient davantage d'affect positif, et leurs cerveaux montraient une activation du striatum ventral et du gyrus frontal inférieur. Ces régions sont associées à l'affiliation, à la récompense et à la motivation prosociale.
+            Voici le résultat le plus surprenant de l'étude Klimecki. Après l'entraînement à la compassion — qui consiste à développer une bienveillance active ("je veux que tu ailles mieux") plutôt qu'une résonance passive ("je ressens ta douleur") — l'affect négatif était inversé. Les participants rapportaient davantage d'affect positif, et leurs cerveaux montraient une activation du striatum ventral, du cortex cingulaire antérieur prégénual (pgACC) et du cortex orbitofrontal médian. Ces régions sont associées à l'affiliation, à la récompense et à la motivation prosociale.
           </p>
 
           <p>
