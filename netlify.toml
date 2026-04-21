@@ -23,8 +23,4 @@ function = "og"
   [headers.values]
   Cache-Control = "public, max-age=0, s-maxage=600"
 
-# Catch-all redirect for React SPA (doit être en dernier)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Catch-all géré dans public/_redirects (règles dans les deux fichiers créent des conflits)

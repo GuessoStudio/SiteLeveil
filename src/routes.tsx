@@ -46,9 +46,9 @@ export const routes: RouteRecord[] = [
       { path: 'legal', element: <Legal /> },
 
       // Outils & landing pages
-      { path: 'stress-zero/', element: <StressZeroLanding /> },
-      { path: 'calculateur-sommeil/', element: <SleepCalculator /> },
-      { path: 'hydromind/privacy-policy/', element: <HydroMindPrivacy /> },
+      { path: 'stress-zero', element: <StressZeroLanding /> },
+      { path: 'calculateur-sommeil', element: <SleepCalculator /> },
+      { path: 'hydromind/privacy-policy', element: <HydroMindPrivacy /> },
       { path: 'test-personnalite-big-five', element: <BigFiveTest /> },
       { path: 'habit-tracker', element: <HabitTracker /> },
       { path: 'merci-inscription', element: <MerciInscription /> },
