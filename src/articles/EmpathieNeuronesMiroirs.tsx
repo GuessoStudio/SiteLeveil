@@ -65,7 +65,7 @@ const faqData = [
   },
   {
     question: "Pourquoi certaines personnes semblent-elles moins empathiques que d'autres ?",
-    answer: "Plusieurs facteurs modulen la capacité empathique. Génétiquement, des variations dans les récepteurs de l'ocytocine influencent la sensibilité sociale. Environnementalement, un stress chronique élevé réduit la disponibilité des ressources attentionnelles nécessaires à la prise de perspective. Le manque de sommeil altère la lecture des expressions émotionnelles. Enfin, certaines conditions neurologiques — comme les troubles du spectre autistique — affectent préférentiellement l'empathie cognitive, sans nécessairement réduire la résonance affective."
+    answer: "Plusieurs facteurs modulent la capacité empathique. Génétiquement, des variations dans les récepteurs de l'ocytocine influencent la sensibilité sociale. Environnementalement, un stress chronique élevé réduit la disponibilité des ressources attentionnelles nécessaires à la prise de perspective. Le manque de sommeil altère la lecture des expressions émotionnelles. Enfin, certaines conditions neurologiques — comme les troubles du spectre autistique — affectent préférentiellement l'empathie cognitive, sans nécessairement réduire la résonance affective."
   },
   {
     question: "Comment pratiquer la compassion sans s'épuiser émotionnellement ?",
@@ -552,13 +552,13 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliations des deux côtés.
+            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés.
           </p>
 
           <h3>3. Les récits partagés — activation narrative de l'insula</h3>
 
           <p>
-            Écouter un récit à la première personne — une histoire vraie racontée par quelqu'un — active l'insula antérieure de l'auditeur, les mêmes circuits que l'expérience directe. Ce phénomène, appelé "couplage neural", a été documenté par Uri Hasson et son équipe (Princeton Neuroscience Institute) dans une étude publiée dans le <em>Proceedings of the National Academy of Sciences</em> en 2008 : le cerveau du locuteur et celui de l'auditeur se synchronisent progressivement au fil du récit.
+            Écouter un récit à la première personne — une histoire vraie racontée par quelqu'un — active l'insula antérieure de l'auditeur, les mêmes circuits que l'expérience directe. Ce phénomène, appelé "couplage neural", a été documenté par Uri Hasson et son équipe (Princeton Neuroscience Institute) dans une étude publiée dans le <em>Proceedings of the National Academy of Sciences</em> en 2010 : le cerveau du locuteur et celui de l'auditeur se synchronisent progressivement au fil du récit.
           </p>
 
           <p>

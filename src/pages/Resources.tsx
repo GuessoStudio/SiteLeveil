@@ -112,6 +112,18 @@ const Resources = () => {
       downloadUrl: "/downloads/plasticite-synaptique-checklist.pdf"
     },
     {
+      id: 10,
+      title: "Empathie sans épuisement : les 4 leviers validés",
+      description: "Checklist scientifique : 4 protocoles concrets pour développer l'empathie sans fatigue compassionnelle, basés sur les neurosciences (Singer, Klimecki, Keysers).",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/resources/empathie-neurones-miroirs-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/empathie-neurones-miroirs-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",
