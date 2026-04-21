@@ -155,6 +155,12 @@ export default function SEO({
 
   return (
     <>
+    {/* Canonical — rendu statique hors Helmet (même raison que JSON-LD :
+        react-helmet-async n'est pas sérialisé avec vite-react-ssg / dual HelmetProvider)
+        Sans cette balise dans le HTML statique → GSC "Page en double sans canonique" */}
+    {/* eslint-disable-next-line react/no-unknown-property */}
+    <link rel="canonical" href={url} />
+
     {/* Schemas JSON-LD injectés directement dans le DOM pour la sérialisation SSG
         (react-helmet-async n'est pas sérialisé en statique avec vite-react-ssg) */}
     {hasCustomJsonLd && jsonLd!.filter(Boolean).map((obj, i) => (
