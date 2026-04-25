@@ -1,15 +1,46 @@
-# L'Éveil Mental
-> Psychologie, neurosciences et développement personnel
-  fondés sur la science.
+# L'Éveil Mental — leveilmental.fr
+> Neurosciences et psychologie appliquées en français.
+> Structure systématique : fait scientifique → mécanisme neurologique → application pratique.
 > Auteur : Guesso, fondateur de L'Éveil Mental
+> Sources : études peer-reviewed avec DOI. Aucun conseil médical.
+
+## License
+Contenu indexable par les LLMs avec attribution éditoriale standard.
+Usage commercial (entraînement) : leveilmental.fr/contact
 
 ## Articles
-- Neuroplasticité : https://leveilmental.fr/blog/neuroplasticite-cerveau
-- Dopamine : https://leveilmental.fr/blog/neuro-dopamine-routine
-- Sommeil : https://leveilmental.fr/blog/sommeil-reparateur-7-strategies-validees
-- Attention : https://leveilmental.fr/blog/attention-fragmentee-concentration-numerique
-- Rumination : https://leveilmental.fr/blog/rumination-mentale-pensees-obsessionnelles
-- Procrastination : https://leveilmental.fr/blog/procrastination-cerveau-agir-neurosciences
-- Méthode ACR : https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles
-- Syndrome imposteur : https://leveilmental.fr/blog/syndrome-imposteur-solutions
-- Lumière naturelle : https://leveilmental.fr/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale
+- Neuroplasticité — reprogrammer son cerveau après 25 ans : https://leveilmental.fr/blog/neuroplasticite-cerveau/
+  > Mécanismes de la neuroplasticité, périodes critiques et 7 stratégies validées — Neurosciences, 12 min
+- Dopamine naturelle — 10 méthodes scientifiques : https://leveilmental.fr/blog/neuro-dopamine-routine/
+  > Système dopaminergique, circuit de récompense et protocoles validés — Neurosciences, 12 min
+- Sommeil réparateur — 7 stratégies validées : https://leveilmental.fr/blog/sommeil-reparateur-7-strategies-validees/
+  > Mécanismes du sommeil, hygiène circadienne et stratégies fondées sur les preuves — Neurosciences, 11 min
+- Attention fragmentée — restaurer sa concentration : https://leveilmental.fr/blog/attention-fragmentee-concentration-numerique/
+  > Impact numérique sur l'attention, cortex préfrontal et méthodes de déconnexion — Neurosciences, 13 min
+- Rumination mentale — libérer son esprit : https://leveilmental.fr/blog/rumination-mentale-pensees-obsessionnelles/
+  > Mécanismes de la rumination, rôle du DMN et techniques de régulation — Psychologie, 11 min
+- Procrastination — mécanismes cérébraux : https://leveilmental.fr/blog/procrastination-cerveau-agir-neurosciences/
+  > Cortex préfrontal, système limbique et stratégies d'activation comportementale — Neurosciences, 12 min
+- Méthode ACR — répondre aux bonnes nouvelles : https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles/
+  > Capitalisation active-constructive et renforcement des liens sociaux — Psychologie, 9 min
+- Syndrome de l'imposteur — comprendre et dépasser : https://leveilmental.fr/blog/syndrome-imposteur-solutions/
+  > Mécanismes cognitifs, biais d'attribution et solutions validées — Psychologie, 11 min
+- Lumière naturelle — effets sur le cerveau et le sommeil : https://leveilmental.fr/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/
+  > Rythme circadien, mélatonine et exposition à la lumière du jour — Neurosciences, 10 min
+- BDNF — augmenter naturellement selon les neurosciences : https://leveilmental.fr/blog/bdnf-augmenter-naturellement-neurosciences/
+  > Facteur neurotrophique BDNF, neurogenèse et 8 méthodes scientifiques — Neurosciences, 13 min
+- Système limbique — le cerveau émotionnel : https://leveilmental.fr/blog/systeme-limbique-cerveau-emotionnel/
+  > Amygdale, hippocampe, cortex cingulaire et régulation émotionnelle — Neurosciences, 12 min
+- Plasticité synaptique — LTP, mémoire et apprentissage : https://leveilmental.fr/blog/plasticite-synaptique-apprentissage-cerveau/
+  > LTP/LTD, règle de Hebb, métaplasticité et 5 pratiques validées — Neurosciences, 14 min
+- Empathie et neurones miroirs — ce que la science révèle : https://leveilmental.fr/blog/empathie-neurones-miroirs-connexion-humaine/
+  > Circuits insula/ACC, fatigue empathique, compassion et 4 leviers validés — Relations Humaines, 14 min
+- Confiance en soi durable — mécanismes et stratégies : https://leveilmental.fr/blog/confiance-en-soi-durable/
+  > Biais cognitifs, cortex préfrontal et construction d'une estime stable — Psychologie, 12 min
+- Surmonter le rejet social — neurosciences : https://leveilmental.fr/blog/surmonter-rejet-social/
+  > Douleur sociale, cortex cingulaire antérieur et régulation émotionnelle — Relations Humaines, 11 min
+
+## Pages
+- À propos : https://leveilmental.fr/a-propos/
+- Ressources : https://leveilmental.fr/ressources/
+- Blog : https://leveilmental.fr/blog/

@@ -13,14 +13,14 @@ const meta = {
   slug: "neuroplasticite-cerveau",
   title: "Neuroplasticité : Comment Reprogrammer Son Cerveau Après 25 Ans",
   description: "Découvrez les mécanismes scientifiques de la neuroplasticité et 7 stratégies concrètes pour optimiser la plasticité de votre cerveau à tout âge. Guide complet basé sur les neurosciences.",
-  cover: "/images/articles/neuroplasticite-cover.jpg",
+  cover: "/images/articles/neuroplasticite-cover",
   datePublished: "2024-01-12T08:00:00+01:00", // ✅ Format ISO complet
   dateModified: "2025-01-23T10:30:00+01:00",   // ✅ Mis à jour aujourd'hui
   tags: ["neuroplasticité", "cerveau", "neurosciences", "apprentissage", "développement personnel"],
   author: {
     "@type": "Person",
     "name": "Guesso",
-    "url": "https://leveilmental.fr/about" // ✅ Élimine warning
+    "url": "https://leveilmental.fr/a-propos" // ✅ Élimine warning
   },
   category: "Neurosciences",
   readingTime: "15 min",
@@ -76,7 +76,7 @@ export default function NeuroplasticiteCerveau() {
     author: {
       "@type": "Person",
       "name": "Guesso",
-      "url": "https://leveilmental.fr/about"
+      "url": "https://leveilmental.fr/a-propos"
     },
     publisher: {
       "@type": "Organization",
@@ -236,7 +236,7 @@ export default function NeuroplasticiteCerveau() {
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-                src={meta.cover.replace('.jpg', '.webp')}
+                src={`${meta.cover}.webp`}
                 alt="Illustration de la neuroplasticité cérébrale et de la formation de nouvelles connexions neuronales"
                 width={1600}
                 height={900}

@@ -1,10 +1,21 @@
 import React from 'react'
 import { Heart, Users, BookOpen, Award, Target, Lightbulb } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-
+import SEO from '../components/SEO'
 
 const About = () => {
     const navigate = useNavigate()
+    const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr"
+
+    const schemaPerson = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${site}/a-propos#person`,
+      name: "Guesso",
+      url: `${site}/a-propos`,
+      jobTitle: "Fondateur — L'Éveil Mental",
+      worksFor: { "@id": `${site}#organization` }
+    }
   
   const handleNewsletterClick = () => {
     navigate('/')
@@ -51,6 +62,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen py-8">
+      <SEO
+        title="À propos de Guesso — L'Éveil Mental"
+        description="Guesso, fondateur de L'Éveil Mental — neurosciences et psychologie appliquées en français. Contenus basés sur des études peer-reviewed, sans jargon ni promesses miracles."
+        path="/a-propos"
+        type="website"
+        jsonLd={[schemaPerson]}
+      />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">
