@@ -160,14 +160,23 @@ export default function SEO({
 
   return (
     <>
-    {/* Canonical — rendu statique hors Helmet (même raison que JSON-LD :
-        react-helmet-async n'est pas sérialisé avec vite-react-ssg / dual HelmetProvider)
-        Sans cette balise dans le HTML statique → GSC "Page en double sans canonique" */}
-    {/* eslint-disable-next-line react/no-unknown-property */}
+    {/* Balises rendues hors Helmet — sérialisées correctement par vite-react-ssg.
+        react-helmet-async ne propage pas les bonnes props pendant le build SSG. */}
     <link rel="canonical" href={url} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={isHome ? "website" : type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={`${title} - ${SITE_NAME}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`${title} - ${SITE_NAME}`} />
 
-    {/* Schemas JSON-LD injectés directement dans le DOM pour la sérialisation SSG
-        (react-helmet-async n'est pas sérialisé en statique avec vite-react-ssg) */}
+    {/* Schemas JSON-LD injectés directement dans le DOM pour la sérialisation SSG */}
     {hasCustomJsonLd && jsonLd!.filter(Boolean).map((obj, i) => (
       <script
         key={`ld-static-${i}`}
@@ -182,21 +191,6 @@ export default function SEO({
       <meta name="description" content={description} />
       <meta name="robots" content="index,follow" />
 
-      {/* Open Graph */}
-      <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:type" content={isHome ? "website" : type} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:alt" content={`${title} - ${SITE_NAME}`} />
-
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content={`${title} - ${SITE_NAME}`} />
 
       {/* Article specific */}
       {type === "article" && (
