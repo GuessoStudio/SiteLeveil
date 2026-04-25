@@ -1,31 +1,60 @@
-import { writeFileSync } from "fs";
+import { writeFileSync, readFileSync } from "fs";
 
 const base = "https://leveilmental.fr";
-const staticRoutes = ["/", "/blog/", "/a-propos/", "/ressources/", "/contact/", "/test-personnalite-big-five/", "/neuro-journal/", "/stress-zero/", "/calculateur-sommeil/"];
-const articles = [
-  "/blog/surmonter-rejet-social/",
-  "/blog/neuroplasticite-cerveau/",
-  "/blog/confiance-en-soi-durable/",
-  "/blog/neuro-dopamine-routine/",
-  "/blog/rumination-mentale-pensees-obsessionnelles/",
-  "/blog/attention-fragmentee-concentration-numerique/",
-  "/blog/procrastination-cerveau-agir-neurosciences/",
-  "/blog/methode-acr-repondre-aux-bonnes-nouvelles/",
-  "/blog/syndrome-imposteur-solutions/",
-  "/blog/sommeil-reparateur-7-strategies-validees/",
-  "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/",
-  "/blog/bdnf-augmenter-naturellement-neurosciences/",
-  "/blog/systeme-limbique-cerveau-emotionnel/",
-  "/blog/plasticite-synaptique-apprentissage-cerveau/",
-  "/blog/empathie-neurones-miroirs-connexion-humaine/"
+const today = new Date().toISOString().split("T")[0];
+
+// Extraire dateModified depuis un fichier TSX article
+function getDateModified(filePath) {
+  try {
+    const content = readFileSync(filePath, "utf-8");
+    const match = content.match(/dateModified:\s*["']([0-9]{4}-[0-9]{2}-[0-9]{2})/);
+    return match ? match[1] : today;
+  } catch {
+    return today;
+  }
+}
+
+const staticRoutes = [
+  { path: "/", lastmod: today },
+  { path: "/blog/", lastmod: today },
+  { path: "/a-propos/", lastmod: today },
+  { path: "/ressources/", lastmod: today },
+  { path: "/contact/", lastmod: today },
+  { path: "/test-personnalite-big-five/", lastmod: today },
+  { path: "/neuro-journal/", lastmod: today },
+  { path: "/stress-zero/", lastmod: today },
+  { path: "/calculateur-sommeil/", lastmod: today },
 ];
 
-const urls = [...staticRoutes, ...articles]
-  .map((path) => `
+const articles = [
+  { path: "/blog/surmonter-rejet-social/",                          file: "src/articles/RejetSocial.tsx" },
+  { path: "/blog/neuroplasticite-cerveau/",                         file: "src/articles/NeuroplasticiteCerveau.tsx" },
+  { path: "/blog/confiance-en-soi-durable/",                        file: "src/articles/ConfianceEnSoi.tsx" },
+  { path: "/blog/neuro-dopamine-routine/",                          file: "src/articles/NeuroDopamineRoutine.tsx" },
+  { path: "/blog/rumination-mentale-pensees-obsessionnelles/",      file: "src/articles/RuminationMentale.tsx" },
+  { path: "/blog/attention-fragmentee-concentration-numerique/",    file: "src/articles/AttentionFragmenteeArticle.tsx" },
+  { path: "/blog/procrastination-cerveau-agir-neurosciences/",      file: "src/articles/ProcrastinationCerveau.tsx" },
+  { path: "/blog/methode-acr-repondre-aux-bonnes-nouvelles/",       file: "src/articles/MethodeAcrRepondreAuxBonnesNouvelles.tsx" },
+  { path: "/blog/syndrome-imposteur-solutions/",                    file: "src/articles/SyndromeImposteur.tsx" },
+  { path: "/blog/sommeil-reparateur-7-strategies-validees/",        file: "src/articles/SommeilReparateur.tsx" },
+  { path: "/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/", file: "src/articles/LumiereNaturelle.tsx" },
+  { path: "/blog/bdnf-augmenter-naturellement-neurosciences/",      file: "src/articles/BdnfAugmenterNaturellement.tsx" },
+  { path: "/blog/systeme-limbique-cerveau-emotionnel/",             file: "src/articles/SystemeLimbique.tsx" },
+  { path: "/blog/plasticite-synaptique-apprentissage-cerveau/",     file: "src/articles/PlasticiteSynaptique.tsx" },
+  { path: "/blog/empathie-neurones-miroirs-connexion-humaine/",     file: "src/articles/EmpathieNeuronesMiroirs.tsx" },
+];
+
+const allUrls = [
+  ...staticRoutes.map(({ path, lastmod }) => ({ path, lastmod, isArticle: false })),
+  ...articles.map(({ path, file }) => ({ path, lastmod: getDateModified(file), isArticle: true })),
+];
+
+const urls = allUrls.map(({ path, lastmod, isArticle }) => `
   <url>
     <loc>${base}${path}</loc>
-    <changefreq>${path.startsWith("/blog/") ? "monthly" : "weekly"}</changefreq>
-    <priority>${path === "/" ? "1.0" : path.startsWith("/blog/") ? "0.8" : "0.6"}</priority>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${isArticle ? "monthly" : "weekly"}</changefreq>
+    <priority>${path === "/" ? "1.0" : isArticle ? "0.8" : "0.6"}</priority>
   </url>`).join("");
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
