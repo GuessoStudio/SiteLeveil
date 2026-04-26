@@ -169,5 +169,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/empathie-neurones-miroirs-connexion-humaine-cover",
         slug: "empathie-neurones-miroirs-connexion-humaine",
         featured: false
+    },
+    {
+        id: 16,
+        title: "7 Neurotransmetteurs Qui Contrôlent Votre Humeur : Ce que la Science Dit Vraiment",
+        excerpt: "Dopamine, sérotonine, GABA : les 7 neurotransmetteurs qui régulent votre humeur expliqués avec les études PubMed 2022-2024. Mythe du déséquilibre chimique déconstruit.",
+        category: "Neurosciences",
+        readTime: 16,
+        date: "2026-04-25",
+        image: "/images/articles/neurotransmetteurs-humeur-cerveau-cover",
+        slug: "neurotransmetteurs-humeur-cerveau",
+        featured: false
     }
 ];

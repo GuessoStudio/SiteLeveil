@@ -19,6 +19,7 @@ const ARTICLE_SLUGS = [
   'systeme-limbique-cerveau-emotionnel',
   'plasticite-synaptique-apprentissage-cerveau',
   'empathie-neurones-miroirs-connexion-humaine',
+  'neurotransmetteurs-humeur-cerveau',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

@@ -42,6 +42,7 @@ const articles = [
   { path: "/blog/systeme-limbique-cerveau-emotionnel/",             file: "src/articles/SystemeLimbique.tsx" },
   { path: "/blog/plasticite-synaptique-apprentissage-cerveau/",     file: "src/articles/PlasticiteSynaptique.tsx" },
   { path: "/blog/empathie-neurones-miroirs-connexion-humaine/",     file: "src/articles/EmpathieNeuronesMiroirs.tsx" },
+  { path: "/blog/neurotransmetteurs-humeur-cerveau/",               file: "src/articles/NeurotransmetteurHumeur.tsx" },
 ];
 
 const allUrls = [

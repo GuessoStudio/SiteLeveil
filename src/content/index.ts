@@ -17,6 +17,7 @@ import BdnfAugmenterNaturellement from "../articles/BdnfAugmenterNaturellement";
 import SystemeLimbique from "../articles/SystemeLimbique";
 import PlasticiteSynaptique from "../articles/PlasticiteSynaptique";
 import EmpathieNeuronesMiroirs from "../articles/EmpathieNeuronesMiroirs";
+import NeurotransmetteurHumeur from "../articles/NeurotransmetteurHumeur";
 
 // Mappe chaque slug vers le composant de l'article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d'article.
@@ -36,4 +37,5 @@ export const articlesBySlug: Record<string, FC> = {
   "systeme-limbique-cerveau-emotionnel": SystemeLimbique,
   "plasticite-synaptique-apprentissage-cerveau": PlasticiteSynaptique,
   "empathie-neurones-miroirs-connexion-humaine": EmpathieNeuronesMiroirs,
+  "neurotransmetteurs-humeur-cerveau": NeurotransmetteurHumeur,
 };
