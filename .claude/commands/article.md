@@ -268,27 +268,15 @@ c) Vérifier que le CTA est présent dans l'article TSX
 
 ### Étape 5.3 — Repurposing réseaux sociaux
 
-/blog repurpose [fichier généré]
+Suivre `.claude/rules/repurposing.md` pour les specs complètes de chaque canal.
 
 Générer dans l'ordre :
-1. Instagram — carrousel 5 slides
-   Slide 1 : accroche + stat choc
-   Slides 2-4 : une méthode clé par slide
-   Slide 5 : CTA → "Lien en bio"
+1. Instagram — carrousel 5 slides + caption + 12 hashtags + prompt image
+2. TikTok/Reels — script 60 secondes avec timestamps
+3. Facebook — post éducatif 600-800 mots + commentaire épinglé
+4. Twitter/X — thread 8 tweets (Tweet 5 = récapitulatif intermédiaire)
 
-2. TikTok/Reels — script 60 secondes
-   Format : accroche 3 sec + contenu + CTA final
-
-3. Facebook — post éducatif 600-800 mots
-   Format : stat choc → 3-5 points développés →
-   CTA commentaire ("écris BDNF en commentaire
-   pour recevoir le guide")
-   ⚠️ Ne pas mettre de lien externe dans le post Facebook
-
-4. Twitter/X — thread 8 tweets
-   Tweet 1 : stat choc
-   Tweets 2-7 : une idée par tweet
-   Tweet 8 : lien article
+Checklist livraison : `.claude/rules/repurposing.md` section CHECKLIST
 
 ### Étape 5.4 — Résumé de livraison
 Produire un résumé avec :
