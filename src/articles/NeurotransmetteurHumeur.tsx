@@ -815,6 +815,24 @@ export default function NeurotransmetteurHumeur() {
             </ol>
           </div>
 
+          {/* CTA checklist PDF */}
+          <div className="not-prose my-10 bg-violet-50 dark:bg-violet-950/40 rounded-xl p-8 border border-violet-100 dark:border-violet-800">
+            <p className="text-xs font-bold text-violet-600 dark:text-violet-400 uppercase tracking-wide mb-2">Ressource gratuite</p>
+            <h3 className="text-lg font-bold text-violet-900 dark:text-violet-100 mb-2">
+              Télécharge la checklist gratuite : 7 Neurotransmetteurs de l'Humeur
+            </h3>
+            <p className="text-sm text-violet-700 dark:text-violet-300 mb-4">
+              Les 7 molécules qui régulent tes états émotionnels, leurs leviers naturels et le mythe du déséquilibre chimique — condensés en une checklist PDF d'une page.
+            </p>
+            <a
+              href="/downloads/neurotransmetteurs-humeur-checklist.pdf"
+              download
+              className="inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              Télécharger la checklist PDF →
+            </a>
+          </div>
+
           {/* ====================================================== */}
           {/* FAQ */}
           {/* ====================================================== */}
