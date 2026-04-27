@@ -298,6 +298,20 @@ Composants : QuickAnswer, [N]x StatBlock, FAQ [N]Q
 Liens internes : [N] liens vers articles existants
 Mettre à jour blog-articles.ts ✓
 
+### Étape 5.6 — Push et vérification déploiement
+```bash
+git push origin main
+```
+
+⚠️ CRITIQUE — Sans cette étape, Netlify ne déploie pas.
+Google voit le fallback SPA (HTML sans schemas) → Rich Results Test = "Aucun élément détecté".
+
+Après le push (2-3 min) :
+1. Vérifier le build Netlify dans le dashboard
+2. Retester sur search.google.com/test/rich-results avec l'URL de l'article
+   → Résultat attendu : Articles ✅ + Fils d'Ariane ✅ + FAQ ✅
+3. Si GSC "Cette URL ne peut pas être optimisée" → normal, délai 3-7 jours
+
 
 ## Usage
 /project:article "cortisol stress chronique mémoire"
@@ -315,3 +329,4 @@ Mettre à jour blog-articles.ts ✓
 - ❌ Oublier le Quick Answer Block dans les 200 premiers mots
 - ❌ Modifier public/sitemap.xml directement (écrasé au prochain build)
 - ❌ Oublier d'ajouter le slug dans ARTICLE_SLUGS (vite.config.ts) → HTML vide pour Google → erreur GSC "page en double sans canonique"
+- ❌ Oublier le `git push origin main` → Netlify ne déploie pas → Google voit le fallback SPA sans schemas → Rich Results Test = "Aucun élément détecté"
