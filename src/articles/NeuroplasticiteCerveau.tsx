@@ -554,7 +554,7 @@ export default function NeuroplasticiteCerveau() {
                 Syndrome de l'imposteur
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/resources" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/ressources" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Guides d'optimisation cérébrale
               </Link>
               <span className="text-neutral-400">•</span>
