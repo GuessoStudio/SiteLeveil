@@ -8,19 +8,161 @@ export const meta = {
   title: "Lumière naturelle : effets sur le cerveau, le sommeil et la santé mentale",
   description: "Découvrez comment la lumière naturelle influence le cerveau, régule le sommeil et améliore l'humeur, avec 7 stratégies pratiques validées scientifiquement.",
   excerpt: "90% de notre temps passé en intérieur dérègle notre horloge biologique. Explorez les mécanismes neuroscientifiques de la lumière et 7 stratégies pour retrouver un équilibre naturel.",
-  cover: "/images/articles/lumiere-naturelle-cover.webp",
-  datePublished: "2025-09-08",
-  dateModified: "2025-09-08",
+  cover: "/images/articles/lumiere-naturelle-cover",
+  datePublished: "2025-09-08T08:00:00+01:00",
+  dateModified: "2025-09-08T08:00:00+01:00",
   tags: ["lumière naturelle", "rythmes circadiens", "neurosciences", "chronobiologie", "dépression saisonnière"],
-  author: { name: "Guesso" },
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   category: "Neurosciences",
   readingTime: "14 min",
+  version: "1.0",
+  verifiedDate: "Septembre 2025"
 };
 
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "Combien de temps faut-il pour ressentir les effets de la lumière naturelle ?",
+    answer: "Les premiers effets apparaissent dès 3-5 jours : meilleur réveil et endormissement. Les bénéfices complets sur l'humeur et l'énergie se manifestent après 2-3 semaines de pratique régulière d'exposition matinale d'au moins 15 minutes."
+  },
+  {
+    question: "La luminothérapie artificielle remplace-t-elle le soleil ?",
+    answer: "Partiellement. La luminothérapie (10 000 lux) synchronise efficacement l'horloge biologique mais ne produit pas de vitamine D. Elle complète mais ne remplace jamais totalement l'exposition solaire naturelle pour l'ensemble des bénéfices biologiques."
+  },
+  {
+    question: "Peut-on avoir trop de lumière le matin ?",
+    answer: "Très difficile avec la lumière naturelle. Le soleil délivre jusqu'à 100 000 lux sans danger. Attention cependant à la luminothérapie artificielle : ne pas dépasser 1h à 10 000 lux pour éviter maux de tête et agitation selon les recommandations cliniques."
+  },
+  {
+    question: "Comment gérer le travail en open space sombre ?",
+    answer: "Stratégies compensatoires : pauses lumière toutes les 2h, lampe de bureau 5000K, maximiser l'exposition pendant trajet et pause déjeuner. Négocier si possible un poste près d'une fenêtre, ce qui améliore aussi la qualité du sommeil de 46 minutes selon Boubekri et al. (2014)."
+  },
+  {
+    question: "La lumière bleue des écrans est-elle toujours nocive ?",
+    answer: "Non, cela dépend du moment. La lumière bleue est bénéfique le matin pour synchroniser l'horloge biologique via les cellules ipRGC. Elle devient problématique après 19h car elle bloque la production de mélatonine et retarde l'endormissement."
+  },
+  {
+    question: "Qu'est-ce que la dépression saisonnière et comment la lumière l'affecte-t-elle ?",
+    answer: "Le Trouble Affectif Saisonnier (TAS) touche 10-15% des Français entre octobre et mars. Il résulte d'une réduction d'exposition à la lumière qui perturbe la sérotonine et la mélatonine. La luminothérapie à 10 000 lux réduit les symptômes de 60% (Lewy et al., 2006)."
+  },
+  {
+    question: "Quelle est la différence entre lux et lumens pour choisir une lampe de luminothérapie ?",
+    answer: "Les lumens mesurent le flux lumineux total émis par une source. Les lux mesurent l'intensité lumineuse reçue à une distance donnée. Pour la luminothérapie, c'est le lux qui compte : 10 000 lux à 30-50 cm d'utilisation est le standard clinique recommandé."
+  },
+  {
+    question: "Comment les cellules ipRGC régulent-elles l'horloge biologique ?",
+    answer: "Les cellules ganglionnaires intrinsèquement photosensibles (ipRGC), découvertes par David Berson (Université Brown, 2002), détectent la lumière bleue à 480 nm et envoient des signaux directs au noyau suprachiasmatique (SCN) de l'hypothalamus, qui synchronise tous les rythmes biologiques sur 24h."
+  }
+];
+
 export default function LumiereNaturelle() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://siteleveil.netlify.app";
-  const url = `${site}/blog/${meta.slug}`;
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  // ==================== SCHEMAS JSON-LD (7 schemas V2) ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Lumière naturelle matinale — rayons du soleil traversant une fenêtre, symbolisant l'énergie circadienne et la régulation de l'horloge biologique"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Chronobiologie et lumière naturelle",
+      description: "Effets de la lumière naturelle sur le noyau suprachiasmatique, la mélatonine, le cortisol et les rythmes circadiens"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 3600
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "7 stratégies scientifiques pour optimiser la lumière naturelle",
+    description: "Protocoles validés par les neurosciences et la chronobiologie pour synchroniser l'horloge biologique grâce à la lumière",
+    numberOfItems: 7,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "L'exposition matinale programmée", description: "15-30 minutes dans l'heure suivant le réveil pour resynchroniser l'horloge biologique via les cellules ipRGC (Berson, Brown University, 2002)" },
+      { "@type": "ListItem", position: 2, name: "L'aménagement luminocentriste", description: "Repositionner bureau, miroirs et couleurs de l'habitat pour maximiser la lumière naturelle reçue tout au long de la journée" },
+      { "@type": "ListItem", position: 3, name: "La chronothérapie lumineuse avancée", description: "Adapter le timing et l'intensité de l'exposition lumineuse selon le chronotype et les objectifs (réveil, jet-lag, dépression saisonnière)" },
+      { "@type": "ListItem", position: 4, name: "Les micro-expositions dynamiques", description: "Répartir le budget lumineux sur la journée avec trois créneaux : matin, midi et début de soirée pour maintenir la vigilance" },
+      { "@type": "ListItem", position: 5, name: "La luminothérapie technologique intelligente", description: "Lampes 10 000 lux, réveils lumineux, ampoules circadiennes — solutions technologiques pour compenser le manque de lumière naturelle" },
+      { "@type": "ListItem", position: 6, name: "L'écologie lumineuse nocturne", description: "Protocole sunset numérique : réduction progressive de la lumière bleue à partir de 19h pour favoriser la production de mélatonine" },
+      { "@type": "ListItem", position: 7, name: "La mesure et l'optimisation continue", description: "Utiliser luxmètre smartphone, montres connectées et journal circadien pour quantifier et optimiser l'exposition lumineuse quotidienne" }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
 
   return (
     <>
@@ -34,6 +176,7 @@ export default function LumiereNaturelle() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
@@ -723,58 +866,6 @@ export default function LumiereNaturelle() {
         </div>
       </article>
 
-      {/* Données structurées JSON-LD pour la FAQ */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Combien de temps faut-il pour ressentir les effets de la lumière naturelle ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Les premiers effets apparaissent dès 3-5 jours : meilleur réveil et endormissement. Les bénéfices complets sur l'humeur et l'énergie se manifestent après 2-3 semaines de pratique régulière."
-                }
-              },
-              {
-                "@type": "Question", 
-                "name": "La luminothérapie artificielle remplace-t-elle le soleil ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Partiellement. La luminothérapie (10 000 lux) synchronise efficacement l'horloge biologique mais ne produit pas de vitamine D. Elle complète mais ne remplace jamais totalement l'exposition solaire naturelle."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Peut-on avoir trop de lumière le matin ?", 
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Très difficile avec la lumière naturelle. Le soleil délivre jusqu'à 100 000 lux sans danger. Attention cependant à la luminothérapie artificielle : ne pas dépasser 1h à 10 000 lux pour éviter maux de tête et agitation."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Comment gérer le travail en open space sombre ?",
-                "acceptedAnswer": {
-                  "@type": "Answer", 
-                  "text": "Stratégies compensatoires : pauses lumière toutes les 2h, lampe de bureau 5000K, maximiser l'exposition pendant trajet/pause déjeuner. Négocier si possible un poste près d'une fenêtre."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "La lumière bleue des écrans est-elle toujours nocive ?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Non, cela dépend du moment. La lumière bleue est bénéfique le matin pour synchroniser l'horloge biologique. Elle devient problématique après 19h car elle bloque la production de mélatonine et retarde l'endormissement."
-                }
-              }
-            ]
-          })
-        }}
-      />
     </>
   );
 }

@@ -180,5 +180,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/neurotransmetteurs-humeur-cerveau-cover",
         slug: "neurotransmetteurs-humeur-cerveau",
         featured: false
+    },
+    {
+        id: 17,
+        title: "Cortisol et stress chronique : effets réels sur le cerveau et la mémoire",
+        excerpt: "r = −0,44 entre cortisol et volume hippocampique mesuré sur des humains (Dronse 2023). Seuils normaux μg/L, relation en U inversé et 5 stratégies validées — Hedges' g = 0,62.",
+        category: "Neurosciences",
+        readTime: 15,
+        date: "2026-04-27",
+        image: "/images/articles/cortisol-stress-chronique-cerveau-memoire-cover",
+        slug: "cortisol-stress-chronique-cerveau-memoire",
+        featured: false
     }
 ];

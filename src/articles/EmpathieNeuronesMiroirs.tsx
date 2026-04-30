@@ -77,7 +77,7 @@ const faqData = [
 
 export default function EmpathieNeuronesMiroirs() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const url = `${site}/blog/${meta.slug}`;
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
 
   // ==================== SCHEMAS JSON-LD ====================

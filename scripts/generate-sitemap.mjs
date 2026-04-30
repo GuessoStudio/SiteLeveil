@@ -43,6 +43,7 @@ const articles = [
   { path: "/blog/plasticite-synaptique-apprentissage-cerveau/",     file: "src/articles/PlasticiteSynaptique.tsx" },
   { path: "/blog/empathie-neurones-miroirs-connexion-humaine/",     file: "src/articles/EmpathieNeuronesMiroirs.tsx" },
   { path: "/blog/neurotransmetteurs-humeur-cerveau/",               file: "src/articles/NeurotransmetteurHumeur.tsx" },
+  { path: "/blog/cortisol-stress-chronique-cerveau-memoire/",       file: "src/articles/CortisolStressChronique.tsx" },
 ];
 
 const allUrls = [

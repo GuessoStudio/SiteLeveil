@@ -53,65 +53,114 @@ const faqData = [
 
 export default function RejetSocial() {
     const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-    const url = `${site}/blog/${meta.slug}`;
+    const url = `${site}/blog/${meta.slug}/`;
     const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+    const coverImageUrl = `${site}${meta.cover}`;
 
-    // 1. CoverAbs securisé
-    const coverAbs = meta.cover.startsWith("http")
-        ? meta.cover
-        : `${site}${meta.cover.startsWith("/") ? "" : "/"}${meta.cover}`;
+    // ==================== SCHEMAS JSON-LD (7 schemas V2) ====================
 
-    // 1. BlogPosting Schema Enhanced
-    const schemaBlogPosting = {
+    // 1. Person
+    const schemaPerson = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": url,
-        "mainEntityOfPage": { "@type": "WebPage", "@id": url },
-        "headline": meta.title,
-        "description": meta.description,
-        "image": [coverAbs, og], // Updated priority
-        "datePublished": meta.datePublished,
-        "dateModified": meta.dateModified,
-        "author": { "@type": "Person", "name": meta.author.name },
-        "publisher": {
-            "@type": "Organization",
-            "name": "L'Éveil Mental",
-            "url": site,
-            "logo": { "@type": "ImageObject", "url": `${site}/images/logo.webp` }
-        },
-        "inLanguage": "fr-FR",
-        "keywords": meta.tags.join(", "),
-        "articleSection": meta.category,
-        "about": {
-            "@type": "DefinedTerm",
-            "name": "Rejet social",
-            "description": "Expérience d'exclusion sociale activant les circuits cérébraux de la douleur physique"
+        "@type": "Person",
+        "@id": `${site}/a-propos#person`,
+        name: "Guesso",
+        url: `${site}/a-propos`,
+        jobTitle: "Fondateur — L'Éveil Mental",
+        worksFor: { "@id": `${site}#organization` }
+    };
+
+    // 2. Organization
+    const schemaOrganization = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": `${site}#organization`,
+        name: "L'Éveil Mental",
+        url: site,
+        logo: {
+            "@type": "ImageObject",
+            url: `${site}/images/logo.webp`,
+            width: 600,
+            height: 150
         }
     };
 
-    // 2. Breadcrumb Schema
+    // 3. ImageObject
+    const schemaImage = {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "@id": `${url}#primaryimage`,
+        url: coverImageUrl,
+        width: 1200,
+        height: 630,
+        caption: "Illustration neuroscientifique du rejet social — activation de l'amygdale et des circuits de la douleur sociale dans le cerveau humain"
+    };
+
+    // 4. BlogPosting
+    const schemaBlogPosting = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: meta.title,
+        description: meta.description,
+        image: { "@id": `${url}#primaryimage` },
+        datePublished: meta.datePublished,
+        dateModified: meta.dateModified,
+        author: { "@id": `${site}/a-propos#person` },
+        publisher: { "@id": `${site}#organization` },
+        about: {
+            "@type": "DefinedTerm",
+            name: "Rejet social",
+            description: "Expérience d'exclusion sociale activant les circuits cérébraux de la douleur physique — amygdale, insula antérieure et cortex cingulaire antérieur"
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        keywords: meta.tags.join(", "),
+        inLanguage: "fr-FR",
+        articleSection: meta.category,
+        wordCount: 4200
+    };
+
+    // 5. BreadcrumbList (4 niveaux)
     const schemaBreadcrumb = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": site },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${site}/blog` },
-            { "@type": "ListItem", "position": 3, "name": "Rejet social", "item": url }
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+            { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+            { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+            { "@type": "ListItem", position: 4, name: meta.title, item: url }
         ]
     };
 
-    // 3. FAQ Schema
+    // 6. ItemList (7 stratégies)
+    const schemaItemList = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "7 stratégies neuroscientifiques pour surmonter le rejet social",
+        description: "Techniques validées par les neurosciences pour réguler la douleur sociale et reprogrammer l'amygdale",
+        numberOfItems: 7,
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "L'étiquetage émotionnel (Affect Labeling)", description: "Mettre des mots précis sur ses émotions réduit l'activité de l'amygdale et active le cortex préfrontal ventrolatéral (Lieberman, UCLA)" },
+            { "@type": "ListItem", position: 2, name: "La restructuration cognitive (TCC)", description: "Technique d'Aaron Beck qui combat les pensées automatiques négatives en forçant le cerveau rationnel à examiner les preuves contraires" },
+            { "@type": "ListItem", position: 3, name: "La distanciation temporelle", description: "Se projeter dans le futur ('Comment je verrai ça dans 10 ans ?') réduit l'activation des circuits de douleur sociale (Kross, Michigan)" },
+            { "@type": "ListItem", position: 4, name: "L'autocompassion (Self-Compassion)", description: "Se traiter avec bienveillance active le système ocytocique d'apaisement, contrairement à l'autocritique qui active le cortisol (Neff, UT Austin)" },
+            { "@type": "ListItem", position: 5, name: "Diversifier ses investissements sociaux", description: "La complexité de soi (plusieurs rôles sociaux) protège contre la dépression liée au rejet selon Patricia Linville (Yale)" },
+            { "@type": "ListItem", position: 6, name: "L'affirmation de ses valeurs", description: "Écrire 15 minutes sur ses valeurs fondamentales avant un stress social réduit significativement l'élévation du cortisol" },
+            { "@type": "ListItem", position: 7, name: "L'exposition graduelle", description: "S'exposer volontairement à de petits rejets progressifs désensibilise l'amygdale par extinction de la peur (protocole Jia Jiang)" }
+        ]
+    };
+
+    // 7. FAQPage
     const schemaFAQ = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": faqData.map(item => ({
+        mainEntity: faqData.map(item => ({
             "@type": "Question",
-            "name": item.question,
-            "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer }
         }))
     };
-
-    const jsonLd = [schemaBlogPosting, schemaBreadcrumb, schemaFAQ];
 
     return (
         <>
@@ -119,7 +168,7 @@ export default function RejetSocial() {
             <SEO
                 title={meta.title}
                 description={meta.description}
-                image={coverAbs}
+                image={og}
                 type="article"
                 path={`/blog/${meta.slug}`}
                 datePublished={meta.datePublished}
@@ -127,7 +176,7 @@ export default function RejetSocial() {
                 authorName={meta.author?.name}
                 tags={meta.tags}
                 category={meta.category}
-                jsonLd={jsonLd}
+                jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
             />
 
             <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-12">
@@ -792,6 +841,25 @@ export default function RejetSocial() {
                         </div>
                     </div>
                 </section>
+
+                {/* Articles connexes */}
+                <div className="not-prose my-12 p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-700">
+                    <h3 className="text-lg font-semibold mb-4 text-neutral-900 dark:text-neutral-100">
+                        📚 Approfondissez Vos Connaissances
+                    </h3>
+                    <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+                        Explorez nos autres ressources scientifiques sur les relations sociales et la communication.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                        <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
+                            Méthode ACR : renforcer les liens
+                        </Link>
+                        <span className="text-neutral-400">•</span>
+                        <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
+                            Neurones miroirs et empathie
+                        </Link>
+                    </div>
+                </div>
 
                 {/* ============================================ */}
                 {/* CTA FINAL */}

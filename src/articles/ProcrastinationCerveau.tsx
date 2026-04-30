@@ -7,18 +7,161 @@ const meta = {
   title: "Procrastination : comprendre les mécanismes cérébraux pour enfin passer à l'action",
   description: "Découvrez les bases neuroscientifiques de la procrastination et 8 stratégies validées scientifiquement pour surmonter l'évitement comportemental et retrouver la motivation.",
   cover: "/images/articles/procrastination-brain-conflict",
-  datePublished: "2025-08-30",
-  dateModified: "2025-08-30",
+  datePublished: "2025-08-30T08:00:00+01:00",
+  dateModified: "2025-08-30T08:00:00+01:00",
   tags: ["procrastination", "neurosciences", "motivation", "dopamine"],
-  author: { name: "Guesso" },
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   category: "Psychologie",
   readingTime: "13 min",
+  version: "1.0",
+  verifiedDate: "Août 2025"
 };
 
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "La procrastination est-elle réellement un problème médical ou neurologique ?",
+    answer: "La procrastination chronique partage des mécanismes neurologiques avec les troubles du contrôle des impulsions, notamment une hyperactivité limbique et un déficit de contrôle préfrontal. Elle peut justifier une intervention thérapeutique — TCC ou ACT — quand elle impacte significativement la qualité de vie."
+  },
+  {
+    question: "Combien de temps faut-il pour changer ses patterns de procrastination ?",
+    answer: "Les recherches montrent des améliorations mesurables après 3 à 4 semaines d'application systématique des stratégies comportementales. La modification durable des circuits neuronaux nécessite généralement 8 à 12 semaines de pratique, en accord avec les principes de neuroplasticité."
+  },
+  {
+    question: "Peut-on être définitivement guéri de la procrastination chronique ?",
+    answer: "La procrastination dispositionnelle est un trait relativement stable, mais ses manifestations peuvent être drastiquement réduites par des stratégies comportementales appropriées et un entraînement du contrôle exécutif. L'objectif est la gestion efficace, pas l'élimination totale."
+  },
+  {
+    question: "La procrastination peut-elle parfois être adaptive ou utile ?",
+    answer: "La 'procrastination active', où l'on reporte consciemment une tâche pour se concentrer sur une priorité supérieure, peut être adaptative. Cependant, l'évitement pur — motivé par l'aversion émotionnelle à la tâche — reste dysfonctionnel dans tous les contextes étudiés scientifiquement."
+  },
+  {
+    question: "Pourquoi reporter une tâche procure-t-il un soulagement immédiat ?",
+    answer: "Tim Kasser (Knox College) a documenté que l'évitement réduit l'activation du cortex cingulaire antérieur — la même région qui s'active lors de douleur physique. Reporter la tâche soulage littéralement une détresse neuronale réelle, ce qui renforce le comportement d'évitement."
+  },
+  {
+    question: "Quel est le rôle de la dopamine dans la procrastination ?",
+    answer: "Wolfram Schultz (Cambridge) a révélé que la dopamine encode la prédiction d'erreur de récompense. Dans la procrastination, le cerveau anticipe une récompense plus faible et lointaine pour la tâche importante vs les stimuli immédiats, créant un biais dopaminergique vers l'évitement."
+  },
+  {
+    question: "Comment la technique WOOP aide-t-elle à surmonter la procrastination ?",
+    answer: "Gabriele Oettingen (NYU) a développé WOOP (Wish, Outcome, Obstacle, Plan) qui améliore la réalisation d'objectifs de 30 % en moyenne. Cette méthode active les circuits de planification préfrontale tout en préparant des réponses automatisées aux obstacles prévisibles qui déclenchent l'évitement."
+  },
+  {
+    question: "Perfectionnisme et procrastination sont-ils liés neurologiquement ?",
+    answer: "Randy Frost (Smith College) a établi que le perfectionnisme dysfonctionnel corrèle fortement avec la procrastination (r = 0,67). Les perfectionnistes procrastinent pour éviter l'évaluation négative, activant l'amygdale et inhibant le cortex préfrontal, réduisant les capacités de contrôle exécutif."
+  }
+];
+
 export default function ProcrastinationCerveau() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
-  const url = `${site}/blog/${meta.slug}`;
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration du conflit neurobiologique préfrontal-limbique à l'origine de la procrastination et de l'évitement comportemental"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Procrastination",
+      description: "Conflit neurobiologique entre le cortex préfrontal dorsolatéral et le système limbique, impliquant la dysrégulation dopaminergique et l'activation du cortex cingulaire antérieur face aux tâches aversives"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 3200
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "8 stratégies neuroscientifiques anti-procrastination validées",
+    description: "Techniques basées sur les neurosciences comportementales pour surmonter l'évitement et retrouver la motivation en exploitant les mécanismes naturels du cerveau",
+    numberOfItems: 8,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Micro-engagement temporel (règle des 2 minutes optimisée)", description: "Les micro-comportements contournent la résistance préfrontale et activent les circuits de récompense par accomplissement immédiat (BJ Fogg, Stanford)" },
+      { "@type": "ListItem", position: 2, name: "Fractionnement cognitif basé sur la charge mentale", description: "Diviser chaque projet en sous-tâches de 25 minutes maximum avec output tangible pour déclencher la dopamine d'accomplissement (Amabile, Harvard)" },
+      { "@type": "ListItem", position: 3, name: "Pré-engagement par architecture de choix", description: "Planifier les sessions de travail quand on est motivé et créer des friction costs pour l'évitement, exploitant la théorie du choix de Thaler (prix Nobel)" },
+      { "@type": "ListItem", position: 4, name: "Régulation émotionnelle préventive", description: "Traiter l'aversion émotionnelle en amont par breathing regulation (4-7-8) et nommage de l'émotion pour réduire l'activation amygdalienne (James Gross, Stanford)" },
+      { "@type": "ListItem", position: 5, name: "Visualisation prospective motivationnelle (WOOP)", description: "Technique Wish-Outcome-Obstacle-Plan d'Oettingen (NYU) améliorant la réalisation d'objectifs de 30 % en activant planification et réponses automatisées aux obstacles" },
+      { "@type": "ListItem", position: 6, name: "Optimisation chronobiologique", description: "Réserver la fenêtre de contrôle exécutif optimal (9h-11h pour 75 % de la population) aux tâches les plus importantes, selon Foster (Oxford)" },
+      { "@type": "ListItem", position: 7, name: "Accountability social et neurones miroirs", description: "Body doubling et check-ins réguliers exploitant les neurones miroirs (Iacoboni, UCLA) pour activer ses propres circuits moteurs par observation de comportements productifs" },
+      { "@type": "ListItem", position: 8, name: "Récompenses intermittentes calibrées", description: "Système de récompenses aléatoires maintenant l'engagement dopaminergique mieux que les récompenses fixes, avec ratio 70 % de succès pour une motivation optimale (Schultz, Cambridge)" }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
 
   return (
     <>
@@ -32,6 +175,7 @@ export default function ProcrastinationCerveau() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,6 +287,10 @@ export default function ProcrastinationCerveau() {
 
           <p>
             Cette "guerre neuronale" se traduit par une activation simultanée contradictoire : le préfrontal génère l'intention d'agir tandis que l'amygdale déclenche des signaux d'évitement face à la tâche perçue comme aversive.
+          </p>
+
+          <p>
+            Pour comprendre comment l'amygdale et le cortex préfrontal coordonnent nos réponses émotionnelles, notre article sur le <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">système limbique et cerveau émotionnel</Link> détaille les mécanismes de ce conflit neurologique.
           </p>
 
           <h3>Dopamine et gratification différée</h3>
@@ -425,6 +573,18 @@ export default function ProcrastinationCerveau() {
               <span>•</span>
               <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Maîtriser la rumination
+              </Link>
+              <span>•</span>
+              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Lumière naturelle et cerveau
+              </Link>
+              <span>•</span>
+              <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Système limbique
+              </Link>
+              <span>•</span>
+              <Link to="/blog/syndrome-imposteur-solutions" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Syndrome de l'imposteur
               </Link>
               <span>•</span>
               <Link to="/#newsletter" className="text-rose-600 dark:text-rose-400 hover:underline">

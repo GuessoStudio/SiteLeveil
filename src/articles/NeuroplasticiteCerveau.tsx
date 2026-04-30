@@ -14,16 +14,18 @@ const meta = {
   title: "Neuroplasticité : Comment Reprogrammer Son Cerveau Après 25 Ans",
   description: "Découvrez les mécanismes scientifiques de la neuroplasticité et 7 stratégies concrètes pour optimiser la plasticité de votre cerveau à tout âge. Guide complet basé sur les neurosciences.",
   cover: "/images/articles/neuroplasticite-cover",
-  datePublished: "2024-01-12T08:00:00+01:00", // ✅ Format ISO complet
-  dateModified: "2025-01-23T10:30:00+01:00",   // ✅ Mis à jour aujourd'hui
+  datePublished: "2024-01-12T08:00:00+01:00",
+  dateModified: "2025-01-23T10:30:00+01:00",
   tags: ["neuroplasticité", "cerveau", "neurosciences", "apprentissage", "développement personnel"],
   author: {
     "@type": "Person",
     "name": "Guesso",
-    "url": "https://leveilmental.fr/a-propos" // ✅ Élimine warning
+    "url": "https://leveilmental.fr/a-propos"
   },
   category: "Neurosciences",
   readingTime: "15 min",
+  version: "1.0",
+  verifiedDate: "Janvier 2025",
 };
 
 // ==================== FAQ DATA (enrichie pour featured snippets) ====================
@@ -52,6 +54,14 @@ const faqData = [
   {
     question: "La neuroplasticité peut-elle aider dans la récupération après un AVC ?",
     answer: "Absolument. La neuroplasticité joue un rôle crucial dans la récupération post-AVC. La thérapie par contrainte induite, développée par Edward Taub, exploite ce mécanisme en forçant l'utilisation intensive du membre affecté, ce qui stimule la réorganisation des aires motrices cérébrales. Les résultats sont particulièrement significatifs dans les 3 à 6 mois suivant l'AVC, période de plasticité accrue. Même après cette fenêtre critique, un entraînement répétitif et progressif permet encore des améliorations substantielles. La combinaison de rééducation intensive, de stimulation cognitive et d'exercice physique adapté maximise les chances de récupération fonctionnelle."
+  },
+  {
+    question: "Quelle est la différence entre neuroplasticité et neurogénèse ?",
+    answer: "La neuroplasticité désigne la modification des connexions entre neurones existants — renforcement ou affaiblissement des synapses selon l'usage. La neurogénèse, elle, désigne la création de nouveaux neurones. Chez l'adulte, la neurogénèse est limitée à quelques régions comme l'hippocampe, tandis que la neuroplasticité s'étend à l'ensemble du cerveau et constitue le mécanisme principal d'apprentissage."
+  },
+  {
+    question: "Le stress chronique nuit-il à la neuroplasticité ?",
+    answer: "Oui. Un cortisol chroniquement élevé réduit la production de BDNF et diminue la densité dendritique dans l'hippocampe et le cortex préfrontal. Des études de Bruce McEwen (Rockefeller University) montrent qu'un stress prolongé atrophie ces régions en 3 à 6 mois. La bonne nouvelle : ces effets sont partiellement réversibles par la réduction du stress, le sommeil et l'exercice physique régulier."
   }
 ];
 
@@ -59,79 +69,97 @@ const faqData = [
 
 export default function NeuroplasticiteCerveau() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const url = `${site}/blog/${meta.slug}`;
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
 
   // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration de la neuroplasticité cérébrale et de la formation de nouvelles connexions neuronales"
+  };
 
   // Schema BlogPosting (article complet avec publisher)
   const schemaBlogPosting = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${url}#article`,
     headline: meta.title,
     description: meta.description,
-    image: og,
+    image: { "@id": `${url}#primaryimage` },
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
-    author: {
-      "@type": "Person",
-      "name": "Guesso",
-      "url": "https://leveilmental.fr/a-propos"
-    },
-    publisher: {
-      "@type": "Organization",
-      "name": "L'Éveil Mental",
-      "url": site,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${site}/images/logo.webp`,
-        "width": 600,
-        "height": 150
-      }
-    },
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
     about: {
       "@type": "DefinedTerm",
-      "name": "Neuroplasticité et Neurosciences",
-      "description": "Mécanismes scientifiques de la plasticité cérébrale et stratégies d'optimisation cognitive"
+      name: "Neuroplasticité et Neurosciences",
+      description: "Mécanismes scientifiques de la plasticité cérébrale et stratégies d'optimisation cognitive"
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url
-    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3500 // Estimation du contenu
+    wordCount: 3500
   };
 
   // Schema Breadcrumb (fil d'Ariane 4 niveaux)
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: site
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blog",
-        item: `${site}/blog`
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Neurosciences",
-        item: `${site}/blog?category=neurosciences`
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: meta.title
-      }
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog?category=neurosciences` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "7 stratégies scientifiquement validées pour optimiser la neuroplasticité",
+    description: "Méthodes basées sur les neurosciences pour renforcer la plasticité cérébrale à tout âge",
+    numberOfItems: 7,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "L'apprentissage par espacement (spaced repetition)", description: "Exploitation de la courbe d'oubli d'Ebbinghaus pour consolider les apprentissages avec une rétention 200% supérieure (Cepeda et al., 2008)." },
+      { "@type": "ListItem", position: 2, name: "L'exercice physique régulier", description: "L'exercice aérobie augmente le BDNF et stimule la neurogenèse hippocampique ; 30-45 minutes d'activité 3-5 fois par semaine." },
+      { "@type": "ListItem", position: 3, name: "La méditation et la pleine conscience", description: "8 semaines de pratique quotidienne augmentent la densité de matière grise dans le cortex préfrontal (Lazar, Harvard)." },
+      { "@type": "ListItem", position: 4, name: "Le sommeil de qualité", description: "Le sommeil consolide les apprentissages et élimine les connexions inutiles ; 7-9 heures par nuit sont non négociables." },
+      { "@type": "ListItem", position: 5, name: "L'exposition à la nouveauté", description: "Les nouvelles expériences forcent la création de connexions neuronales : langues, instruments, voyages, nouvelles compétences motrices." },
+      { "@type": "ListItem", position: 6, name: "Une nutrition optimale pour le cerveau", description: "Les oméga-3 (DHA), antioxydants et vitamines B soutiennent la synaptogenèse et protègent contre le stress oxydatif." },
+      { "@type": "ListItem", position: 7, name: "La stimulation cognitive progressive", description: "Des tâches calibrées juste au-delà des capacités actuelles (zone proximale de développement) maximisent la formation de connexions." }
     ]
   };
 
@@ -164,7 +192,7 @@ export default function NeuroplasticiteCerveau() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
       {/* Article */}
@@ -508,6 +536,22 @@ export default function NeuroplasticiteCerveau() {
               <span className="text-neutral-400">•</span>
               <Link to="/blog/attention-fragmentee-concentration-numerique" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Restaurer l'attention profonde
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+                Lumière naturelle et cerveau
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+                Le système limbique
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+                Plasticité synaptique
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/syndrome-imposteur-solutions" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+                Syndrome de l'imposteur
               </Link>
               <span className="text-neutral-400">•</span>
               <Link to="/resources" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">

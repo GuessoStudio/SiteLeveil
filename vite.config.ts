@@ -20,6 +20,7 @@ const ARTICLE_SLUGS = [
   'plasticite-synaptique-apprentissage-cerveau',
   'empathie-neurones-miroirs-connexion-humaine',
   'neurotransmetteurs-humeur-cerveau',
+  'cortisol-stress-chronique-cerveau-memoire',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

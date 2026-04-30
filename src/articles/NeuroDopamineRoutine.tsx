@@ -10,91 +10,164 @@ export const meta = {
   description: "Découvrez comment booster naturellement votre dopamine avec 10 techniques validées par les neurosciences. Protocole détox inclus + aliments + exercice. Guide complet 2026.",
   excerpt: "Les 10 méthodes neuroscientifiques pour optimiser votre dopamine naturellement : aliments, exercice, détox complète. Protocole étape par étape avec sources scientifiques.",
   cover: "/images/articles/dopamine-cover",
-  datePublished: "2025-08-13",
-  dateModified: "2026-01-31",
+  datePublished: "2025-08-13T08:00:00+01:00",
+  dateModified: "2026-01-31T08:00:00+01:00",
   tags: ["dopamine", "neurosciences", "motivation", "habitudes", "detox"],
-  author: { name: "Guesso" },
+  author: {
+    "@type": "Person",
+    name: "Guesso",
+    url: "https://leveilmental.fr/a-propos"
+  },
   category: "Neurosciences",
   readingTime: "15 min",
+  version: "1.0",
+  verifiedDate: "Janvier 2026",
 };
+
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "Qu'est-ce que la dopamine naturelle ?",
+    answer: "La dopamine naturelle désigne l'optimisation de ce neurotransmetteur par des méthodes physiologiques : alimentation riche en tyrosine, exercice physique, exposition solaire, sommeil de qualité, et gestion des stimulations. Contrairement aux stimulations artificielles (réseaux sociaux, drogues), ces méthodes restaurent le niveau de base (baseline) de la dopamine de façon durable sans créer de dépendance."
+  },
+  {
+    question: "Quels aliments augmentent naturellement la dopamine ?",
+    answer: "Les aliments riches en tyrosine (précurseur de la dopamine) : amandes, avocats, bananes, œufs, poulet, poisson, produits laitiers, légumineuses, graines de citrouille. Les aliments riches en oméga-3 (saumon, sardines, noix) optimisent les récepteurs dopaminergiques. Éviter les sucres raffinés qui créent des pics suivis de chutes brutales."
+  },
+  {
+    question: "Combien de temps dure une détox dopamine efficace ?",
+    answer: "Une détox dopamine efficace nécessite 7 à 30 jours selon l'objectif. Le protocole minimal (7 jours) permet de resensibiliser les récepteurs et observer des bénéfices. Pour une réinitialisation complète du système de récompense, 30 jours sont recommandés. La neuroplasticité commence dès le 3ème jour, l'automatisation des nouvelles habitudes intervient vers 66 jours."
+  },
+  {
+    question: "Quel type d'exercice optimise la dopamine ?",
+    answer: "L'exercice HIIT (intervalles haute intensité) et l'exercice aérobie modéré augmentent la dopamine de 20 à 40% pendant 1 à 2 heures post-effort. L'exercice régulier (3-5x/semaine) augmente le nombre de récepteurs D2 et améliore la sensibilité dopaminergique. 30 minutes minimum par session pour effets mesurables."
+  },
+  {
+    question: "La dopamine detox fonctionne-t-elle vraiment ?",
+    answer: "Oui, selon les recherches de Stanford (Dr Anna Lembke). La privation temporaire de stimulations intenses (écrans, sucre, porno) permet de rééquilibrer le système plaisir/douleur. Les récepteurs dopaminergiques se resensibilisent en 7-14 jours. Efficace contre l'anhédonie (incapacité à ressentir du plaisir) causée par la surstimulation chronique."
+  },
+  {
+    question: "Comment savoir si mon niveau de dopamine est bas ?",
+    answer: "Symptômes de dopamine baseline basse : manque de motivation chronique, anhédonie (perte de plaisir), procrastination excessive, difficulté à maintenir l'effort, besoin constant de stimulations fortes, fatigue mentale, troubles concentration. Si 3+ symptômes persistent 2+ semaines, protocole détox recommandé."
+  },
+  {
+    question: "Peut-on prendre des suppléments dopamine naturels ?",
+    answer: "Oui, certains suppléments naturels augmentent la dopamine : L-tyrosine (500-2000mg/jour), mucuna pruriens (contient L-DOPA naturel), rhodiola rosea, curcumine, ginkgo biloba. Toujours consulter un médecin avant supplémentation. Les suppléments sont complémentaires, pas substituts aux méthodes comportementales."
+  },
+  {
+    question: "La méditation augmente-t-elle la dopamine ?",
+    answer: "Oui. La méditation de pleine conscience augmente la dopamine de 65% dans le noyau accumbens selon des études PET-scan. La méditation régulière (20min/jour) améliore la régulation émotionnelle via le circuit préfrontal-striatal. Effets cumulatifs après 8 semaines de pratique quotidienne."
+  }
+];
 
 export default function NeuroDopamineRoutine() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const url = `${site}/blog/${meta.slug}`;
+  const url = `${site}/blog/${meta.slug}/`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
 
   // OG image custom (ton système génère auto si tu veux, mais garder custom = mieux)
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
 
-  // ✅ Schemas JSON-LD CUSTOMS (FAQ + HowTo)
+  // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Système dopaminergique cerveau — neurosciences de la motivation et de la récompense"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Dopamine et système dopaminergique",
+      description: "Neurotransmetteur régulant motivation, récompense et anticipation ; optimisation naturelle par alimentation, exercice, méditation et détox comportementale"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 4500
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog?category=neurosciences` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "10 méthodes scientifiques pour optimiser la dopamine naturellement",
+    description: "Protocoles validés par les neurosciences pour restaurer et renforcer le système dopaminergique sans stimulations artificielles",
+    numberOfItems: 10,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Aliments riches en tyrosine", description: "1000-1500mg de tyrosine/jour augmente la synthèse dopaminergique de 20-30% (Fernstrom & Fernstrom, 2007)." },
+      { "@type": "ListItem", position: 2, name: "Exercice HIIT", description: "Le HIIT augmente la dopamine de 50-100% pendant l'effort et maintient +20-30% pendant 2-3h post-exercice (Biddle et al., 2021)." },
+      { "@type": "ListItem", position: 3, name: "Sommeil optimal", description: "Une nuit de privation réduit la disponibilité des récepteurs D2/D3 de 30% (Volkow et al., 2012) ; 7-9h sont non négociables." },
+      { "@type": "ListItem", position: 4, name: "Exposition lumière naturelle matinale", description: "15-30 minutes de lumière naturelle dans l'heure suivant le réveil synchronise le pic dopaminergique matinal (+10-20% baseline, Huberman Lab)." },
+      { "@type": "ListItem", position: 5, name: "Méditation dopaminergique", description: "+65% de dopamine striatale pendant méditation pleine conscience mesurée par PET-scan (Kjaer et al., 2002)." },
+      { "@type": "ListItem", position: 6, name: "Détox dopamine 7-30 jours", description: "Privation contrôlée de stimulations intenses : baseline +14%, densité récepteurs D2 restaurée, régulation émotionnelle +30% (Lembke, Stanford)." },
+      { "@type": "ListItem", position: 7, name: "Musique et circuits de récompense", description: "+9% de dopamine et activation du striatum ventral à l'écoute de musique préférée (Salimpoor et al., Nature Neuroscience, 2011)." },
+      { "@type": "ListItem", position: 8, name: "Système accomplissements progressifs", description: "Chaque micro-tâche complétée génère un pic dopaminergique de +20-30% ; enchaîner 5-10 tâches maintient niveau élevé 2-3h." },
+      { "@type": "ListItem", position: 9, name: "Relations sociales de qualité", description: "Interactions authentiques : +20-40% de dopamine selon qualité (Depue & Morrone-Strupinsky, 2005) ; 5 relations intimes optimales (Dunbar, Oxford)." },
+      { "@type": "ListItem", position: 10, name: "Supplémentation naturelle", description: "L-tyrosine (500-1000mg à jeun), mucuna pruriens (300-500mg), rhodiola rosea (200-400mg) — toujours sous supervision médicale." }
+    ]
+  };
+
   const schemaFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Qu'est-ce que la dopamine naturelle ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La dopamine naturelle désigne l'optimisation de ce neurotransmetteur par des méthodes physiologiques : alimentation riche en tyrosine, exercice physique, exposition solaire, sommeil de qualité, et gestion des stimulations. Contrairement aux stimulations artificielles (réseaux sociaux, drogues), ces méthodes restaurent le niveau de base (baseline) de la dopamine de façon durable sans créer de dépendance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels aliments augmentent naturellement la dopamine ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Les aliments riches en tyrosine (précurseur de la dopamine) : amandes, avocats, bananes, œufs, poulet, poisson, produits laitiers, légumineuses, graines de citrouille. Les aliments riches en oméga-3 (saumon, sardines, noix) optimisent les récepteurs dopaminergiques. Éviter les sucres raffinés qui créent des pics suivis de chutes brutales."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Combien de temps dure une détox dopamine efficace ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Une détox dopamine efficace nécessite 7 à 30 jours selon l'objectif. Le protocole minimal (7 jours) permet de resensibiliser les récepteurs et observer des bénéfices. Pour une réinitialisation complète du système de récompense, 30 jours sont recommandés. La neuroplasticité commence dès le 3ème jour, l'automatisation des nouvelles habitudes intervient vers 66 jours."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel type d'exercice optimise la dopamine ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "L'exercice HIIT (intervalles haute intensité) et l'exercice aérobie modéré augmentent la dopamine de 20 à 40% pendant 1 à 2 heures post-effort. L'exercice régulier (3-5x/semaine) augmente le nombre de récepteurs D2 et améliore la sensibilité dopaminergique. 30 minutes minimum par session pour effets mesurables."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "La dopamine detox fonctionne-t-elle vraiment ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, selon les recherches de Stanford (Dr Anna Lembke). La privation temporaire de stimulations intenses (écrans, sucre, porno) permet de rééquilibrer le système plaisir/douleur. Les récepteurs dopaminergiques se resensibilisent en 7-14 jours. Efficace contre l'anhédonie (incapacité à ressentir du plaisir) causée par la surstimulation chronique."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Comment savoir si mon niveau de dopamine est bas ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Symptômes de dopamine baseline basse : manque de motivation chronique, anhédonie (perte de plaisir), procrastination excessive, difficulté à maintenir l'effort, besoin constant de stimulations fortes, fatigue mentale, troubles concentration. Si 3+ symptômes persistent 2+ semaines, protocole détox recommandé."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Peut-on prendre des suppléments dopamine naturels ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, certains suppléments naturels augmentent la dopamine : L-tyrosine (500-2000mg/jour), mucuna pruriens (contient L-DOPA naturel), rhodiola rosea, curcumine, ginkgo biloba. Toujours consulter un médecin avant supplémentation. Les suppléments sont complémentaires, pas substituts aux méthodes comportementales."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "La méditation augmente-t-elle la dopamine ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui. La méditation de pleine conscience augmente la dopamine de 65% dans le noyau accumbens selon des études PET-scan. La méditation régulière (20min/jour) améliore la régulation émotionnelle via le circuit préfrontal-striatal. Effets cumulatifs après 8 semaines de pratique quotidienne."
-        }
-      }
-    ]
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
   };
 
 
@@ -120,7 +193,7 @@ const NeuroDopamineRoutine = () => {
         authorName={meta.author.name}
         tags={meta.tags}
         category={meta.category}
-        jsonLd={[schemaFAQ]}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -434,6 +507,10 @@ const NeuroDopamineRoutine = () => {
 
           <p>
             <strong>Effet dopamine</strong> : Huberman Lab (Stanford) montre que ce protocole augmente la dopamine baseline de <strong>10-20%</strong> et améliore focus + motivation pour les 6-8h suivantes.
+          </p>
+
+          <p>
+            La lumière naturelle matinale agit simultanément sur la dopamine et sur de nombreux autres systèmes cérébraux. Notre article sur les <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">effets de la lumière naturelle sur le cerveau</Link> détaille ces mécanismes et leur impact sur le sommeil et la santé mentale.
           </p>
 
           <h3 id="meditation-dopamine">5. Méditation dopaminergique : +65% dopamine striatale</h3>
@@ -1070,6 +1147,10 @@ const NeuroDopamineRoutine = () => {
             <span className="text-neutral-400">•</span>
             <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
               Maîtriser la rumination mentale
+            </Link>
+            <span className="text-neutral-400">•</span>
+            <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
+              Plasticité synaptique
             </Link>
           </div>
         </div>

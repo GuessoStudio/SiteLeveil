@@ -3,24 +3,197 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import SocialShare from "../components/SocialShare";
 
+// ==================== MÉTADONNÉES ====================
+
 export const meta = {
   slug: "syndrome-imposteur-solutions",
   title: "Syndrome de l'imposteur : comprendre ses mécanismes et 6 solutions efficaces",
   description: "Découvre les causes du syndrome de l'imposteur et 6 stratégies validées en psychologie et neurosciences pour renforcer ta confiance.",
   excerpt: "70% des personnes vivent le syndrome de l'imposteur. Explore les mécanismes neuroscientifiques de ce phénomène et 6 stratégies concrètes pour t'en libérer définitivement.",
-  cover: "/images/articles/syndrome-imposteur-cover.webp",
-  datePublished: "2025-09-05",
-  dateModified: "2025-09-05",
+  cover: "/images/articles/syndrome-imposteur-cover",
+  datePublished: "2025-09-05T08:00:00+01:00",
+  dateModified: "2025-09-05T08:00:00+01:00",
   tags: ["syndrome de l'imposteur", "manque de confiance", "psychologie", "neurosciences", "confiance en soi", "auto-efficacité"],
-  author: { name: "Guesso" },
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   category: "Psychologie",
   readingTime: "10 min",
+  version: "1.0",
+  verifiedDate: "Septembre 2025"
 };
 
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "Qu'est-ce que le syndrome de l'imposteur exactement ?",
+    answer: "C'est un phénomène psychologique où une personne doute de ses accomplissements et a une peur persistante d'être exposée comme une 'fraude', malgré des preuves externes de sa compétence. Identifié par Clance & Imes en 1978, il touche 70 % des individus au moins une fois dans leur vie et s'accompagne d'une attribution des réussites à la chance plutôt qu'aux compétences réelles."
+  },
+  {
+    question: "Qui est concerné par le syndrome de l'imposteur ?",
+    answer: "70 % des personnes l'expérimentent au moins une fois. Il touche particulièrement les hauts potentiels, les perfectionnistes, et les personnes en transition professionnelle, quel que soit leur niveau d'expertise. La revue systématique de Bravata et al. (2020) confirme sa prévalence dans toutes les professions, y compris chez les experts reconnus."
+  },
+  {
+    question: "Combien de temps faut-il pour vaincre le syndrome de l'imposteur ?",
+    answer: "Avec une approche structurée, les premiers progrès apparaissent après 3-4 semaines. Une transformation durable nécessite généralement 2-3 mois de pratique régulière des stratégies proposées. La thérapie cognitive-comportementale (TCC) est l'approche la plus efficace documentée scientifiquement pour restructurer les pensées dysfonctionnelles liées à ce syndrome."
+  },
+  {
+    question: "Le syndrome de l'imposteur est-il lié au perfectionnisme ?",
+    answer: "Oui, fortement. Le perfectionnisme pathologique maintient des standards impossibles à atteindre, alimentant le sentiment de ne jamais être 'assez bon'. L'amygdale — centre de détection des menaces — déclenche des signaux d'alerte disproportionnés face à toute exposition professionnelle, créant une hypersensibilité aux moindres imperfections via le cortex cingulaire antérieur."
+  },
+  {
+    question: "Quand faut-il consulter un professionnel pour le syndrome de l'imposteur ?",
+    answer: "Si le syndrome interfère significativement avec ton fonctionnement quotidien, génère de l'anxiété chronique, ou s'accompagne de symptômes dépressifs, un accompagnement professionnel est recommandé. La thérapie cognitive-comportementale (TCC), le coaching professionnel et le mentorat sont les trois formes d'accompagnement les plus efficaces documentées."
+  },
+  {
+    question: "Comment le journal des réussites aide-t-il à vaincre le syndrome de l'imposteur ?",
+    answer: "Noter quotidiennement ses victoires, même les plus petites, reprogramme le cerveau à reconnaître ses compétences via la neuroplasticité positive. Cette pratique contrebalance le biais de négativité de l'amygdale en créant de nouvelles associations neuronales entre l'effort personnel et les résultats obtenus, réduisant progressivement l'attribution externe des succès."
+  },
+  {
+    question: "Quelle est la différence entre syndrome de l'imposteur et manque de confiance en soi ?",
+    answer: "Le manque de confiance est un sentiment général de doute sur ses capacités dans un domaine donné. Le syndrome de l'imposteur est plus spécifique : il survient malgré des preuves objectives de compétence, et s'accompagne d'une peur de l'exposition. On peut avoir confiance en soi dans la vie quotidienne et vivre le syndrome dans son domaine d'expertise précis."
+  },
+  {
+    question: "Comment la comparaison sociale amplifie-t-elle le syndrome de l'imposteur ?",
+    answer: "Sur LinkedIn ou Instagram, on est constamment exposé aux 'highlight reels' des autres — leurs succès filtrés, jamais leurs échecs. Ce miroir biaisé amplifie l'impression de ne jamais être à la hauteur. Leon Festinger avait anticipé ce mécanisme avec sa théorie de la comparaison sociale dès 1954, bien avant l'ère numérique et les réseaux sociaux."
+  }
+];
+
 export default function SyndromeImposteur() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://siteleveil.netlify.app";
-  const url = `${site}/blog/${meta.slug}`;
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Personne surmontant le syndrome de l'imposteur en retirant un masque, révélant sa vraie confiance et ses compétences authentiques"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Syndrome de l'imposteur et confiance en soi",
+      description: "Mécanismes neurobiologiques du syndrome de l'imposteur — amygdale, cortex cingulaire antérieur, perfectionnisme, comparaison sociale, auto-efficacité"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 2400
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: "Psychologie", item: `${site}/blog?category=psychologie` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "6 stratégies scientifiquement validées pour dépasser le syndrome de l'imposteur",
+    description: "Stratégies fondées sur la psychologie cognitive, les neurosciences et la thérapie comportementale pour vaincre le syndrome de l'imposteur",
+    numberOfItems: 6,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Reconnaître et normaliser ses pensées",
+        description: "Identifier les pensées d'imposture sans les juger via un journal des pensées — la prise de conscience est thérapeutique en soi"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Tenir un journal de ses réussites",
+        description: "Noter quotidiennement ses victoires reprogramme le cerveau à reconnaître ses compétences via la neuroplasticité positive"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Redéfinir sa réussite personnelle",
+        description: "Abandonner les standards perfectionnistes au profit d'une réussite authentique alignée sur ses valeurs et le progrès continu"
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Demander du feedback constructif",
+        description: "Solliciter des retours extérieurs spécifiques offrant une perspective objective que le cerveau 'imposteur' ne peut distordre facilement"
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "Pratiquer l'auto-compassion",
+        description: "L'auto-compassion de Kristin Neff réduit significativement le stress et renforce la résilience émotionnelle via ses 3 piliers"
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "Se faire accompagner",
+        description: "Thérapie cognitive-comportementale (TCC), coaching professionnel ou mentorat pour déconstruire les croyances limitantes ancrées"
+      }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
 
   return (
     <>
@@ -34,6 +207,7 @@ export default function SyndromeImposteur() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
@@ -535,37 +709,6 @@ export default function SyndromeImposteur() {
             </div>
           </div>
 
-          {/* JSON-LD Schema markup pour les rich snippets */}
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": meta.title,
-              "description": meta.description,
-              "image": `${site}${meta.cover}`,
-              "author": {
-                "@type": "Person",
-                "name": meta.author.name
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "L'Éveil",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": `${site}/logo.png`
-                }
-              },
-              "datePublished": meta.datePublished,
-              "dateModified": meta.dateModified,
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": url
-              },
-              "keywords": meta.tags.join(", "),
-              "articleSection": meta.category,
-              "wordCount": "2400"
-            })}
-          </script>
         </div>
       </article>
     </>

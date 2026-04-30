@@ -1,37 +1,200 @@
 // src/articles/MethodeAcrRepondreAuxBonnesNouvelles.tsx
-import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
+// ==================== MÉTADONNÉES ====================
 
 const meta = {
   slug: "methode-acr-repondre-aux-bonnes-nouvelles",
   title: "La méthode ACR : répondre aux bonnes nouvelles pour renforcer les relations",
-  excerpt: "Découvrez comment la réponse active-constructive (ACR) transforme votre façon de célébrer les bonnes nouvelles et renforce durablement vos liens interpersonnels.",
+  description: "Découvrez comment la réponse active-constructive (ACR) transforme votre façon de célébrer les bonnes nouvelles et renforce durablement vos liens interpersonnels.",
+  cover: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover",
+  datePublished: "2025-08-30T08:00:00+01:00",
+  dateModified: "2025-08-30T08:00:00+01:00",
   category: "Relations Humaines",
-  readTime: 10,
+  readingTime: "10 min",
   date: "2025-08-30",
-  author: "Guesso",
-  image: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover-1600x900",
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   tags: ["relations humaines", "communication", "ACR", "capitalisation", "Gottman", "couples"],
+  version: "1.0",
+  verifiedDate: "Août 2025"
 };
 
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "Qu'est-ce que la méthode ACR (réponse active-constructive) ?",
+    answer: "La réponse active-constructive (ACR) est un style de réaction aux bonnes nouvelles caractérisé par un enthousiasme authentique, des questions ouvertes, le reflet des émotions ressenties et une projection vers l'avenir. Identifié par Shelly Gable (Université de Rochester), c'est le seul style qui améliore simultanément le bien-être du partenaire et la qualité du lien relationnel."
+  },
+  {
+    question: "Pourquoi la façon dont on réagit aux bonnes nouvelles est-elle si importante ?",
+    answer: "Les études de Shelly Gable montrent que la capitalisation — partager une bonne nouvelle et recevoir une réponse appropriée — multiplie les bénéfices émotionnels de l'événement et renforce durablement le lien. Cette dynamique influence la satisfaction relationnelle parfois davantage que le soutien dans les moments difficiles."
+  },
+  {
+    question: "Quels sont les 4 styles de réponse aux bonnes nouvelles selon la recherche ?",
+    answer: "Les chercheurs identifient 4 styles : active-constructive (enthousiasme + questions ouvertes), passive-constructive (réaction brève et polie), active-destructive (souligner les risques) et passive-destructive (ignorer ou changer de sujet). Seul le style active-constructive améliore durablement la qualité relationnelle."
+  },
+  {
+    question: "Comment appliquer la méthode ACR concrètement au quotidien ?",
+    answer: "La méthode ACR se décompose en 4 étapes : 1) célébration explicite avec des formulations directes ('C'est formidable !'), 2) questions ouvertes pour explorer l'expérience ('Qu'est-ce qui t'a le plus marqué ?'), 3) reflet émotionnel pour valider l'état ressenti, et 4) projection future pour ancrer la célébration dans une perspective positive."
+  },
+  {
+    question: "Quelle est la différence entre la réponse active-destructive et passive-destructive ?",
+    answer: "La réponse active-destructive consiste à réagir en soulignant les risques ou en minimisant l'événement ('Attention, tu vas être surchargé'). La réponse passive-destructive consiste à ignorer la bonne nouvelle ou à détourner vers ses propres préoccupations. Les deux érodent progressivement la connexion relationnelle, même quand elles sont bien intentionnées."
+  },
+  {
+    question: "Qu'est-ce que la théorie des bids de connexion de Gottman ?",
+    answer: "Les 'bids' sont les micro-offres de lien émises en permanence : un regard, un message partagé, le partage d'une bonne nouvelle. Face à ces sollicitations, on peut 'tourner vers' (engagement positif), 'détourner' (ignorer) ou 'aller contre' (rejeter). Les couples durables tournent vers ces offres dans 86 % des cas, contre 33 % chez ceux qui divorcent."
+  },
+  {
+    question: "L'ACR fonctionne-t-elle dans les relations professionnelles ?",
+    answer: "Oui. En management, l'ACR transforme la reconnaissance d'une victoire d'équipe en opportunité d'apprentissage organisationnel. Célébrer le succès puis questionner le processus qui l'a produit favorise la motivation individuelle et le développement des compétences collectives, créant un cercle vertueux de partage et d'apprentissage."
+  },
+  {
+    question: "Quelles sont les erreurs les plus courantes à éviter quand on réagit à une bonne nouvelle ?",
+    answer: "Les trois erreurs principales sont : la minimisation préventive (souligner immédiatement les risques), la brièveté excessive (réaction trop courte qui signale un désintérêt), et le recentrage sur soi (ramener la conversation à ses propres expériences avant d'avoir pleinement célébré la réussite de l'autre)."
+  }
+];
+
 export default function MethodeAcrRepondreAuxBonnesNouvelles() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
-  const og = `/images/articles/${meta.slug}-og-1200x630`;
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const url = `${site}/blog/${meta.slug}/`;
+  const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration de la méthode ACR montrant deux personnes en train de célébrer une bonne nouvelle, renforçant leur lien relationnel"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Réponse active-constructive et capitalisation relationnelle",
+      description: "Mécanismes psychologiques de la capitalisation, styles de réponse aux bonnes nouvelles, théorie des bids de connexion de Gottman"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 2100
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: "Relations Humaines", item: `${site}/blog?category=relations-humaines` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "4 étapes de la méthode ACR pour renforcer les relations",
+    description: "Les composantes de la réponse active-constructive validées par les recherches de Shelly Gable",
+    numberOfItems: 4,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Célébration explicite",
+        description: "Exprimer clairement et authentiquement sa joie avec des formulations directes ('C'est merveilleux !')"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Question ouverte",
+        description: "Explorer l'expérience en profondeur avec des questions invitant au développement ('Qu'est-ce qui t'a le plus enthousiasmé ?')"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Reflet émotionnel",
+        description: "Reconnaître et valider l'état émotionnel observable ('Vous devez être très fier de ce résultat')"
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Projection future",
+        description: "Ancrer la célébration dans une perspective d'avenir ('Comment comptez-vous marquer cette réussite ?')"
+      }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
 
   return (
     <>
       <SEO
         title={meta.title}
-        description={meta.excerpt}
+        description={meta.description}
         image={og}
         type="article"
         path={`/blog/${meta.slug}`}
-        datePublished={meta.date}
-        dateModified={meta.date}
-        authorName={meta.author}
+        datePublished={meta.datePublished}
+        dateModified={meta.dateModified}
+        authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
       
       <div className="min-h-screen py-8">
@@ -58,9 +221,9 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
               </h1>
               
               <div className="flex items-center gap-6 text-neutral-600 dark:text-neutral-400 mb-8">
-                <span>Par {meta.author}</span>
+                <span>Par {meta.author.name}</span>
                 <span>{new Date(meta.date).toLocaleDateString('fr-FR')}</span>
-                <span>{meta.readTime} min de lecture</span>
+                <span>{meta.readingTime} de lecture</span>
               </div>
 
               <div className="relative overflow-hidden rounded-2xl mb-12">

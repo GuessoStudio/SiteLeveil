@@ -69,45 +69,64 @@ const faqData = [
 
 export default function SommeilReparateur() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const url = `${site}/blog/${meta.slug}`;
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}`;
 
   // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration scientifique du sommeil réparateur montrant les cycles de sommeil profond et REM et leur rôle dans la récupération cérébrale"
+  };
 
   // Schema BlogPosting
   const schemaBlogPosting = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${url}#article`,
     headline: meta.title,
     description: meta.description,
-    image: og,
+    image: { "@id": `${url}#primaryimage` },
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
-    author: {
-      "@type": "Person",
-      "name": "Guesso",
-      "url": "https://leveilmental.fr/about"
-    },
-    publisher: {
-      "@type": "Organization",
-      "name": "L'Éveil Mental",
-      "url": site,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${site}/images/logo.webp`,
-        "width": 600,
-        "height": 150
-      }
-    },
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
     about: {
       "@type": "DefinedTerm",
       "name": "Sommeil et Neurosciences",
-      "description": "Mécanismes neuroscientifiques du sommeil réparateur et stratégies d'optimisation basées sur la chronobiologie"
+      "description": "Mécanismes neuroscientifiques du sommeil réparateur et stratégies d'optimisation basées sur la chronobiologie et le système glymphatique"
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url
-    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
@@ -118,29 +137,64 @@ export default function SommeilReparateur() {
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog?category=neurosciences` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  // Schema ItemList (7 stratégies)
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "7 stratégies scientifiques pour un sommeil réparateur",
+    description: "Techniques validées par les neurosciences et la chronobiologie pour améliorer la qualité du sommeil et la récupération cognitive",
+    numberOfItems: 7,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: "Accueil",
-        item: site
+        name: "Respecter ses rythmes circadiens",
+        description: "Maintenir des horaires réguliers de sommeil synchronisés avec le noyau suprachiasmatique — l'horloge biologique centrale du cerveau"
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Blog",
-        item: `${site}/blog`
+        name: "Optimiser l'exposition à la lumière",
+        description: "S'exposer à la lumière naturelle intense le matin et bloquer la lumière bleue (450-480nm) 2-3 heures avant le coucher pour préserver la mélatonine"
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Neurosciences",
-        item: `${site}/blog?category=neurosciences`
+        name: "Contrôler la température de la chambre",
+        description: "Maintenir la chambre entre 18-20°C — la baisse de température corporelle est un signal de sommeil clé pour le cerveau"
       },
       {
         "@type": "ListItem",
         position: 4,
-        name: meta.title
+        name: "Pratiquer la sieste stratégique",
+        description: "Siestes courtes de 10-20 minutes entre 13h et 15h améliorent la vigilance de 34% sans perturber le sommeil nocturne (recherches NASA)"
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "Éviter la caféine après 14h",
+        description: "La caféine a une demi-vie de 5-7 heures et bloque les récepteurs d'adénosine responsables de la pression de sommeil"
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "Appliquer le protocole TCC-I pour l'insomnie",
+        description: "Ne pas rester couché éveillé plus de 20-30 minutes — évite le conditionnement négatif du lit et résout 60-70% des insomnies en 4-6 semaines"
+      },
+      {
+        "@type": "ListItem",
+        position: 7,
+        name: "Optimiser le sommeil profond pour le système glymphatique",
+        description: "Le sommeil profond active le système glymphatique qui élimine les déchets métaboliques neuronaux, dont les protéines amyloïdes liées à la maladie d'Alzheimer"
       }
     ]
   };
@@ -175,7 +229,7 @@ export default function SommeilReparateur() {
         authorName={meta.author?.name}
         tags={meta.tags}
         category={meta.category}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
       {/* Article */}
@@ -933,6 +987,10 @@ export default function SommeilReparateur() {
               <span className="text-neutral-400">•</span>
               <Link to="/blog/neuroplasticite-cerveau" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Optimiser la neuroplasticité
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                Plasticité synaptique
               </Link>
               <span className="text-neutral-400">•</span>
               <Link to="/calculateur-sommeil" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">

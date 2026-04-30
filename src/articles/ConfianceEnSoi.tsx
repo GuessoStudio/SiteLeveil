@@ -11,21 +11,21 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "confiance-en-soi-durable",
-  // ✅ TITRE OPTIMISÉ CTR (formule : Chiffres + Bénéfice + Promesse)
   title: "Confiance en Soi : 6 Stratégies Scientifiques pour la Développer Durablement",
-  // ✅ DESCRIPTION OPTIMISÉE CTR (bénéfice + chiffre + CTA)
   description: "Découvrez 6 stratégies scientifiquement validées pour construire une confiance authentique et durable. Basé sur les recherches d'Albert Bandura et les neurosciences. Guide complet + exercices pratiques.",
-  cover: "/images/articles/confiance-soi-cover.jpg",
-  datePublished: "2024-01-10T08:00:00+01:00", // ✅ Format ISO complet
-  dateModified: "2026-01-23T11:00:00+01:00",   // ✅ Mis à jour aujourd'hui
+  cover: "/images/articles/confiance-soi-cover",
+  datePublished: "2024-01-10T08:00:00+01:00",
+  dateModified: "2026-01-23T11:00:00+01:00",
   tags: ["confiance en soi", "estime de soi", "psychologie", "auto-efficacité", "développement personnel", "Albert Bandura"],
   author: {
     "@type": "Person",
     "name": "Guesso",
-    "url": "https://leveilmental.fr/about" // ✅ Élimine warning
+    "url": "https://leveilmental.fr/a-propos"
   },
   category: "Développement Personnel",
   readingTime: "14 min",
+  version: "1.0",
+  verifiedDate: "Janvier 2026",
 };
 
 // ==================== FAQ DATA (enrichie pour featured snippets) ====================
@@ -54,6 +54,14 @@ const faqData = [
   {
     question: "Les exercices de visualisation fonctionnent-ils vraiment pour développer la confiance ?",
     answer: "Absolument, et les preuves scientifiques sont solides. Les recherches en psychologie du sport montrent que la visualisation mentale améliore la performance de 13 à 16% en moyenne. L'efficacité est maximale lorsque vous visualisez le processus complet (chaque étape d'action) plutôt que seulement le résultat final. Une étude de l'Université de Chicago a révélé que des basketteurs qui visualisaient leurs lancers francs amélioraient leur performance presque autant que ceux qui s'entraînaient physiquement. Le mécanisme neurologique : la visualisation active les mêmes régions cérébrales que l'action réelle, créant des traces neuronales similaires. Pour maximiser l'efficacité, pratiquez 10 minutes de visualisation quotidienne en mode 'première personne', en incluant les sensations physiques et les émotions positives associées au succès."
+  },
+  {
+    question: "Comment maintenir la confiance en soi face aux critiques répétées ?",
+    answer: "Les recherches de Carol Dweck (Stanford) sur le mindset de croissance montrent que les personnes qui interprètent les critiques comme des informations plutôt que comme des jugements sur leur valeur maintiennent mieux leur confiance. La clé : distinguer feedback constructif (basé sur des faits) et jugement subjectif. La technique de défusion cognitive de la TCC permet de prendre de la distance avec les critiques intégrées et de les évaluer objectivement avant de les intégrer."
+  },
+  {
+    question: "La neuroplasticité peut-elle aider à changer une confiance durablement faible ?",
+    answer: "Oui. Des études d'IRMf montrent qu'après 8 semaines de pratiques ciblées, la connectivité entre cortex préfrontal ventromédian et amygdale se modifie mesurable. La confiance n'est pas câblée de façon permanente : des exercices répétés de restructuration cognitive, d'exposition graduelle et d'auto-compassion créent de nouvelles voies neuronales. Michael Merzenich (UCSF) confirme que même des patterns bien ancrés peuvent être modifiés avec un entraînement adapté et suffisamment répété."
   }
 ];
 
@@ -61,45 +69,64 @@ const faqData = [
 
 export default function ConfianceEnSoi() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const url = `${site}/blog/${meta.slug}`;
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
 
   // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration du développement de la confiance en soi à travers les stratégies scientifiques d'Albert Bandura"
+  };
 
   // Schema BlogPosting (article complet avec publisher)
   const schemaBlogPosting = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${url}#article`,
     headline: meta.title,
     description: meta.description,
-    image: og,
+    image: { "@id": `${url}#primaryimage` },
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
-    author: {
-      "@type": "Person",
-      "name": "Guesso",
-      "url": "https://leveilmental.fr/about"
-    },
-    publisher: {
-      "@type": "Organization",
-      "name": "L'Éveil Mental",
-      "url": site,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${site}/images/logo.webp`,
-        "width": 600,
-        "height": 150
-      }
-    },
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
     about: {
       "@type": "DefinedTerm",
-      "name": "Confiance en Soi et Auto-Efficacité",
-      "description": "Stratégies scientifiques pour développer une confiance authentique basées sur les travaux d'Albert Bandura"
+      name: "Confiance en Soi et Auto-Efficacité",
+      description: "Stratégies scientifiques pour développer une confiance authentique basées sur les travaux d'Albert Bandura"
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url
-    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
@@ -110,30 +137,28 @@ export default function ConfianceEnSoi() {
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: site
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blog",
-        item: `${site}/blog`
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Développement Personnel",
-        item: `${site}/blog?category=developpement-personnel`
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: meta.title
-      }
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: "Développement Personnel", item: `${site}/blog?category=developpement-personnel` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "6 stratégies scientifiques pour développer la confiance en soi durablement",
+    description: "Méthodes validées empiriquement basées sur l'auto-efficacité de Bandura et les neurosciences cognitives",
+    numberOfItems: 6,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "La technique de restructuration cognitive (méthode ABCDE)", description: "Développée par Albert Ellis ; réduit le manque de confiance chronique dans 75% des cas selon Butler et Beck (2000)." },
+      { "@type": "ListItem", position: 2, name: "L'imagerie mentale optimale (visualisation)", description: "Améliore la performance de 13 à 16% ; les mêmes circuits neuronaux que l'action réelle sont activés (Driskell et al., 1994)." },
+      { "@type": "ListItem", position: 3, name: "L'exposition graduelle systématique", description: "Désensibilisation progressive de Joseph Wolpe ; taux de succès 60-90% selon méta-analyse de 108 études (Wolitzky-Taylor et al., 2008)." },
+      { "@type": "ListItem", position: 4, name: "Le développement de compétences spécifiques (pratique délibérée)", description: "La pratique délibérée d'Anders Ericsson développe une confiance authentique ancrée dans des compétences mesurables." },
+      { "@type": "ListItem", position: 5, name: "La méthode de l'auto-compassion selon Kristin Neff", description: "Réduit la dépression de 47% et l'anxiété de 39% selon méta-analyse de 79 études (MacBeth & Gumley, 2012)." },
+      { "@type": "ListItem", position: 6, name: "Les postures de pouvoir (embodied cognition)", description: "Maintenir des postures expansives 2 minutes avant une situation challengeante modifie l'état mental et réduit le cortisol (Cuddy, Harvard)." }
     ]
   };
 
@@ -167,7 +192,7 @@ export default function ConfianceEnSoi() {
         authorName={meta.author?.name}
         tags={meta.tags}
         category={meta.category}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
       {/* Article */}
@@ -239,7 +264,7 @@ export default function ConfianceEnSoi() {
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-                src={meta.cover.replace('.jpg', '.webp')}
+                src={`${meta.cover}.webp`}
                 alt="Illustration du développement de la confiance en soi à travers les stratégies scientifiques d'Albert Bandura"
                 width={1600}
                 height={900}
@@ -337,6 +362,10 @@ export default function ConfianceEnSoi() {
 
           <p>
             <strong>Application pratique :</strong> Sollicitez des feedbacks constructifs réguliers de personnes compétentes dans votre domaine cible. Entourez-vous de gens qui croient en vous ET qui vous poussent à progresser (pas seulement à vous sentir bien).
+          </p>
+
+          <p>
+            La qualité des encouragements que vous recevez dépend aussi de la façon dont vous répondez aux bonnes nouvelles que partagent vos proches. La <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">méthode ACR</Link>, validée par Shelly Gable (University of California), montre que des réponses actives et constructives renforcent les liens sociaux qui soutiennent la confiance en soi.
           </p>
 
           <h3>4. Les états physiologiques et émotionnels</h3>
@@ -654,6 +683,14 @@ export default function ConfianceEnSoi() {
               <span className="text-neutral-400">•</span>
               <Link to="/blog/neuro-dopamine-routine" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Motivation et dopamine
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+                Méthode ACR
+              </Link>
+              <span className="text-neutral-400">•</span>
+              <Link to="/blog/empathie-neurones-miroirs" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+                Neurones miroirs et empathie
               </Link>
               <span className="text-neutral-400">•</span>
               <Link to="/ressources" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">

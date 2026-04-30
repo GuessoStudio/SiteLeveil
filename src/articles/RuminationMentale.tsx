@@ -7,18 +7,160 @@ const meta = {
   title: "Rumination mentale : comprendre et libérer son esprit des pensées obsessionnelles",
   description: "Découvrez les mécanismes neuroscientifiques de la rumination et 7 stratégies validées scientifiquement pour briser le cycle des pensées répétitives et retrouver la paix mentale.",
   cover: "/images/articles/rumination-cover",
-  datePublished: "2025-08-29",
-  dateModified: "2025-08-29",
+  datePublished: "2025-08-29T08:00:00+01:00",
+  dateModified: "2025-08-29T08:00:00+01:00",
   tags: ["rumination mentale", "pensées obsessionnelles", "anxiété", "neurosciences"],
-  author: { name: "Guesso" },
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   category: "Psychologie",
   readingTime: "11 min",
+  version: "1.0",
+  verifiedDate: "Août 2025"
 };
 
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "Quelle est la différence entre rumination mentale et réflexion normale ?",
+    answer: "La réflexion normale est orientée solution, limitée dans le temps et génère des insights ou des actions concrètes. La rumination est répétitive, passive, centrée sur les problèmes sans progression vers des actions constructives, et entretient la détresse émotionnelle au lieu de la résoudre."
+  },
+  {
+    question: "Combien de temps faut-il pour briser un cycle de rumination chronique ?",
+    answer: "Les interventions structurées montrent des améliorations après 2 à 3 semaines de pratique quotidienne. Une réduction significative nécessite généralement 6 à 8 semaines d'application systématique des techniques validées, notamment la méditation MBCT et l'écriture expressive."
+  },
+  {
+    question: "La rumination mentale peut-elle parfois être utile ?",
+    answer: "La rumination concrète focalisée sur des solutions spécifiques peut être adaptive à court terme. Cependant, la forme abstraite et passive étudiée en psychologie clinique — centrée sur les significations et les implications — est toujours dysfonctionnelle et corrèle avec la dépression."
+  },
+  {
+    question: "Quand faut-il consulter un professionnel pour la rumination mentale ?",
+    answer: "Consultez si la rumination interfère avec le sommeil, le travail ou les relations pendant plus de deux semaines, ou si elle s'accompagne de symptômes dépressifs, d'anxiété généralisée ou d'idées suicidaires. La MBCT et la TCC sont les thérapies les mieux validées."
+  },
+  {
+    question: "Quel est le rôle du réseau du mode par défaut dans la rumination ?",
+    answer: "Marcus Raichle (Washington University) a identifié que le réseau du mode par défaut est hyperactif lors de la rumination. Chez les personnes dépressives, ce réseau présente une connectivité excessive, expliquant la tendance aux pensées auto-centrées et négatives qui tournent en boucle."
+  },
+  {
+    question: "Comment la méditation de pleine conscience réduit-elle la rumination ?",
+    answer: "Huit semaines de MBCT (Mindfulness-Based Cognitive Therapy), développée par Zindel Segal, modifient l'activité du réseau du mode par défaut et réduisent les rechutes dépressives liées à la rumination de 43 %. La pratique apprend à observer ses pensées sans s'y identifier."
+  },
+  {
+    question: "Est-ce que l'exercice physique aide vraiment à stopper les ruminations ?",
+    answer: "Oui. Les recherches de Callaghan (University of Wisconsin) montrent que 30 minutes d'exercice aérobique à 60-70 % de la fréquence cardiaque maximale réduisent l'activité du cortex préfrontal médian impliqué dans la rumination, interrompant les boucles cognitives par compétition attentionnelle."
+  },
+  {
+    question: "Qu'est-ce que la technique du 'worry time' et comment l'appliquer ?",
+    answer: "Développée par Tom Borkovec (Penn State), cette technique consiste à concentrer toutes les ruminations dans une période de 15 minutes quotidiennes à heure fixe. Elle réduit l'inquiétude spontanée de 35 % après 4 semaines en donnant un cadre contenu aux pensées négatives."
+  }
+];
+
 export default function RuminationMentale() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
-  const url = `${site}/blog/${meta.slug}`;
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration scientifique des circuits cérébraux de la rumination mentale et des pensées obsessionnelles"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Rumination mentale",
+      description: "Processus cognitif répétitif et passif impliquant le réseau du mode par défaut, l'amygdale et le cortex préfrontal médian, associé à la dépression et l'anxiété"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 2800
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "7 stratégies scientifiquement validées pour stopper la rumination mentale",
+    description: "Techniques basées sur la recherche empirique pour interrompre les cycles de pensées obsessionnelles et retrouver la paix mentale",
+    numberOfItems: 7,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "La distraction comportementale contrôlée", description: "Activités cognitives exigeantes (puzzles, calculs) mobilisant les ressources attentionnelles pour briser le cycle ruminatif (Lyubomirsky, UC Riverside)" },
+      { "@type": "ListItem", position: 2, name: "La restructuration cognitive spécialisée", description: "Distanciation métacognitive de Teasdale (Oxford) : observer ses pensées comme des événements mentaux plutôt que des vérités, en reformulant 'Je pense que...' en 'J'ai la pensée que...'" },
+      { "@type": "ListItem", position: 3, name: "L'écriture expressive structurée", description: "Protocole Pennebaker (University of Texas) : écrire 15-20 minutes sur ses préoccupations 4 jours consécutifs, réduisant l'activité du cortex cingulaire antérieur de 23 %" },
+      { "@type": "ListItem", position: 4, name: "La méditation de pleine conscience MBCT", description: "Mindfulness-Based Cognitive Therapy de Zindel Segal : 8 semaines de pratique modifiant le réseau du mode par défaut et réduisant les rechutes dépressives de 43 %" },
+      { "@type": "ListItem", position: 5, name: "L'activation comportementale graduée", description: "Engagement dans des activités plaisantes et significatives pour activer les circuits dopaminergiques et interrompre les cycles ruminatifs (Lewinsohn)" },
+      { "@type": "ListItem", position: 6, name: "La technique du 'worry time' optimisée", description: "Concentrer les ruminations dans 15 minutes quotidiennes à heure fixe, réduisant l'inquiétude spontanée de 35 % après 4 semaines (Borkovec, Penn State)" },
+      { "@type": "ListItem", position: 7, name: "L'exercice physique anti-ruminatif", description: "30 minutes d'exercice aérobique à 60-70 % de la fréquence cardiaque maximale pour réduire l'activité du cortex préfrontal médian (Callaghan, University of Wisconsin)" }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
 
   return (
     <>
@@ -32,6 +174,7 @@ export default function RuminationMentale() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">
@@ -313,6 +456,10 @@ export default function RuminationMentale() {
             Les recherches longitudinales identifient les facteurs déclencheurs : stress chronique, isolation sociale, manque de soutien social, et exposition répétée à des stresseurs incontrôlables. La rumination devient alors un mécanisme d'adaptation dysfonctionnel.
           </p>
 
+          <p>
+            L'isolement aggrave la rumination car il prive le cerveau de la régulation émotionnelle que facilitent les relations sociales. Notre article sur les <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">neurones miroirs et l'empathie</Link> explique comment la connexion sociale module notre système de traitement émotionnel.
+          </p>
+
           <h2>Prévention et maintien des gains thérapeutiques</h2>
 
           <h3>Hygiène cognitive quotidienne</h3>
@@ -406,6 +553,22 @@ export default function RuminationMentale() {
               <span>•</span>
               <Link to="/blog/neuroplasticite-cerveau" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Optimiser son cerveau
+              </Link>
+              <span>•</span>
+              <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Méthode ACR
+              </Link>
+              <span>•</span>
+              <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Neurones miroirs et empathie
+              </Link>
+              <span>•</span>
+              <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Système limbique
+              </Link>
+              <span>•</span>
+              <Link to="/blog/syndrome-imposteur-solutions" className="text-rose-600 dark:text-rose-400 hover:underline">
+                Syndrome de l'imposteur
               </Link>
               <span>•</span>
               <Link to="/#newsletter" className="text-rose-600 dark:text-rose-400 hover:underline">

@@ -69,44 +69,63 @@ const faqData = [
 
 export default function BdnfAugmenterNaturellement() {
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
-  const url = `${site}/blog/${meta.slug}`;
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
 
-  // ==================== SCHEMAS JSON-LD ====================
+  // ==================== SCHEMAS JSON-LD (7 schemas V2) ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Illustration scientifique du BDNF et de son rôle dans la formation de nouvelles connexions synaptiques dans l'hippocampe humain"
+  };
 
   const schemaBlogPosting = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${url}#article`,
     headline: meta.title,
     description: meta.description,
-    image: og,
+    image: { "@id": `${url}#primaryimage` },
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
-    author: {
-      "@type": "Person",
-      "name": "Guesso",
-      "url": "https://leveilmental.fr/a-propos"
-    },
-    publisher: {
-      "@type": "Organization",
-      "name": "L'Éveil Mental",
-      "url": site,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${site}/images/logo.webp`,
-        "width": 600,
-        "height": 150
-      }
-    },
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
     about: {
       "@type": "DefinedTerm",
-      "name": "BDNF et Neurotrophines",
-      "description": "Mécanismes du Brain-Derived Neurotrophic Factor et stratégies pour augmenter naturellement la neuroplasticité"
+      name: "BDNF et Neurotrophines",
+      description: "Mécanismes du Brain-Derived Neurotrophic Factor et stratégies pour augmenter naturellement la neuroplasticité"
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url
-    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
@@ -116,11 +135,30 @@ export default function BdnfAugmenterNaturellement() {
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: site },
       { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
-      { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog?category=neurosciences` },
-      { "@type": "ListItem", position: 4, name: meta.title }
+      { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "8 méthodes validées pour augmenter le BDNF naturellement",
+    description: "Stratégies scientifiques pour stimuler le Brain-Derived Neurotrophic Factor et renforcer la neuroplasticité",
+    numberOfItems: 8,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "L'exercice aérobie", description: "30-45 min à 60-70% FC max, 3-5x/semaine : augmentation de 200-300% du BDNF (Cotman & Berchtold, UCI, 2002)" },
+      { "@type": "ListItem", position: 2, name: "Le jeûne intermittent", description: "Protocole 16/8 ou 5:2 : activation des voies SIRT1/AMPK et augmentation de BDNF (Mattson, NIH, 2012)" },
+      { "@type": "ListItem", position: 3, name: "Le sommeil profond", description: "7-9h avec cycles N3 complets : pic de synthèse de BDNF pendant le sommeil lent profond (Walker, UC Berkeley)" },
+      { "@type": "ListItem", position: 4, name: "L'exposition à la lumière naturelle matinale", description: "10-30 min dès le réveil : régulation circadienne et activation de la sérotonine favorisant le BDNF (Huang, Fudan)" },
+      { "@type": "ListItem", position: 5, name: "La méditation et la pleine conscience", description: "30 min/jour pendant 8 semaines : réduction du cortisol et augmentation de 25% du BDNF sérique (Davidson, UW-Madison)" },
+      { "@type": "ListItem", position: 6, name: "L'exposition au froid (cryostimulation)", description: "Douche froide ou immersion : libération de noradrénaline favorisant l'expression du gène BDNF (Shevchuk, VCU, 2008)" },
+      { "@type": "ListItem", position: 7, name: "Les aliments neuroprotecteurs", description: "Curcumine, oméga-3 DHA, myrtilles : activation directe du promoteur du gène BDNF (Gomez-Pinilla, UCLA)" },
+      { "@type": "ListItem", position: 8, name: "L'apprentissage actif et la nouveauté cognitive", description: "Apprentissage de compétences complexes : environnement enrichi stimulant le BDNF cortical (Diamond, UC Berkeley)" }
     ]
   };
 
@@ -148,7 +186,7 @@ export default function BdnfAugmenterNaturellement() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
-        jsonLd={[schemaBlogPosting, schemaBreadcrumb, schemaFAQ]}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">

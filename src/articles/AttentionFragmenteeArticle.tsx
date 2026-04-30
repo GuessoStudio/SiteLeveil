@@ -7,18 +7,161 @@ const meta = {
   title: "Attention fragmentée : restaurer sa concentration profonde à l'ère numérique",
   description: "Découvrez les mécanismes neuroscientifiques de l'attention fragmentée et 8 stratégies scientifiquement validées pour retrouver une concentration profonde face aux distractions numériques.",
   cover: "/images/articles/attention-fragmentee-cover-1200x630",
-  datePublished: "2025-08-28",
-  dateModified: "2025-08-28",
+  datePublished: "2025-08-28T08:00:00+01:00",
+  dateModified: "2025-08-28T08:00:00+01:00",
   tags: ["attention", "concentration", "neurosciences", "distractions numériques"],
-  author: { name: "Guesso" },
+  author: {
+    "@type": "Person",
+    "name": "Guesso",
+    "url": "https://leveilmental.fr/a-propos"
+  },
   category: "Neurosciences",
   readingTime: "12 min",
+  version: "1.0",
+  verifiedDate: "Août 2025"
 };
 
+// ==================== FAQ DATA ====================
+
+const faqData = [
+  {
+    question: "L'attention fragmentée est-elle réversible à l'âge adulte ?",
+    answer: "Oui, grâce à la neuroplasticité. Klingberg (Karolinska Institute, 2010) démontre que l'entraînement attentionnel modifie la connectivité préfrontale même chez les adultes. Les améliorations sont mesurables après 6 à 8 semaines de pratique structurée comme la méditation shamatha."
+  },
+  {
+    question: "Combien de temps par jour faut-il s'entraîner pour restaurer sa concentration ?",
+    answer: "Amishi Jha (University of Miami) recommande 12 à 20 minutes d'entraînement direct par jour — méditation focalisée ou exercices cognitifs — plus l'application des stratégies environnementales. L'effet cumulatif est plus important que la durée des sessions individuelles."
+  },
+  {
+    question: "Les enfants sont-ils plus affectés par l'attention fragmentée que les adultes ?",
+    answer: "Oui. Le cortex préfrontal, siège du contrôle attentionnel, ne mature qu'à 25 ans. Les enfants sont donc particulièrement vulnérables aux effets des distractions numériques sur le développement cognitif, avec des risques plus durables sur la plasticité préfrontale."
+  },
+  {
+    question: "Peut-on complètement éliminer les distractions numériques pour améliorer sa concentration ?",
+    answer: "L'objectif n'est pas l'élimination complète mais le contrôle conscient. Il s'agit de développer la capacité de choisir quand être connecté — via des créneaux fixes de consultation — plutôt que de subir des interruptions constantes qui fragmentent le focus cognitif."
+  },
+  {
+    question: "Qu'est-ce que l'effet de résidu attentionnel et comment l'éviter ?",
+    answer: "Sophie Leroy (University of Washington) a identifié ce phénomène : quand on change de tâche, une partie de l'attention reste 'collée' à la tâche précédente. Pour l'éviter, terminer chaque tâche par une note de clôture avant de passer à la suivante réduit ce résidu cognitif."
+  },
+  {
+    question: "Comment les notifications dopaminergiques fragmentent-elles l'attention ?",
+    answer: "Robert Sapolsky (Stanford) explique que les notifications activent le système dopaminergique par renforcement intermittent — comme les machines à sous. Chaque 'ping' déclenche une anticipation dopaminergique qui interrompt le focus, car le cerveau anticipe une récompense variable."
+  },
+  {
+    question: "Quelle est la durée optimale d'une session de concentration profonde ?",
+    answer: "Cal Newport (Georgetown) recommande de progresser graduellement : 15 minutes la première semaine, jusqu'à 90 minutes après 8 semaines d'entraînement. La recherche indique que 90 minutes correspond à un cycle ultradian naturel de concentration soutenue."
+  },
+  {
+    question: "La marche en nature améliore-t-elle réellement la concentration ?",
+    answer: "Oui. Rachel et Stephen Kaplan (University of Michigan) ont validé la Théorie de la Restauration Attentionnelle : 50 minutes de marche en nature améliorent l'attention sélective de 20 % et réduisent la rumination de 16 %, permettant aux circuits attentionnels épuisés de se régénérer."
+  }
+];
+
 export default function AttentionFragmenteeArticle() {
-  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "";
-  const url = `${site}/blog/${meta.slug}`;
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
+  const coverImageUrl = `${site}${meta.cover}.webp`;
+
+  // ==================== SCHEMAS JSON-LD ====================
+
+  const schemaPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site}/a-propos#person`,
+    name: "Guesso",
+    url: `${site}/a-propos`,
+    jobTitle: "Fondateur — L'Éveil Mental",
+    worksFor: { "@id": `${site}#organization` }
+  };
+
+  const schemaOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}#organization`,
+    name: "L'Éveil Mental",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site}/images/logo.webp`,
+      width: 600,
+      height: 150
+    }
+  };
+
+  const schemaImage = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: coverImageUrl,
+    width: 1200,
+    height: 630,
+    caption: "Représentation scientifique de l'attention fragmentée et des réseaux neuronaux affectés par les distractions numériques"
+  };
+
+  const schemaBlogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: { "@id": `${url}#primaryimage` },
+    datePublished: meta.datePublished,
+    dateModified: meta.dateModified,
+    author: { "@id": `${site}/a-propos#person` },
+    publisher: { "@id": `${site}#organization` },
+    about: {
+      "@type": "DefinedTerm",
+      name: "Attention fragmentée",
+      description: "Incapacité à maintenir un focus cognitif soutenu résultant d'interruptions fréquentes, impliquant le cortex préfrontal dorsolatéral, le réseau du mode par défaut et les circuits dopaminergiques"
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    keywords: meta.tags.join(", "),
+    inLanguage: "fr-FR",
+    articleSection: meta.category,
+    wordCount: 3100
+  };
+
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: site },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
+      { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+      { "@type": "ListItem", position: 4, name: meta.title, item: url }
+    ]
+  };
+
+  const schemaItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "8 stratégies neuroscientifiques pour restaurer l'attention profonde",
+    description: "Interventions validées par la recherche cognitive pour contrer la fragmentation attentionnelle et retrouver une concentration soutenue à l'ère numérique",
+    numberOfItems: 8,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Entraînement attentionnel par méditation (ATT)", description: "12 minutes quotidiennes de méditation shamatha augmentent la capacité de working memory de 30 % et réduisent l'esprit vagabond de 22 % après 8 semaines (Jha, University of Miami)" },
+      { "@type": "ListItem", position: 2, name: "Protocole de concentration progressive (DCP)", description: "Augmentation graduelle des durées de focus sans distraction de 10 à 90 minutes sur 8 semaines, développé par Cal Newport (Georgetown)" },
+      { "@type": "ListItem", position: 3, name: "Architecture cognitive de l'environnement", description: "Modifier l'environnement physique et numérique pour réduire les décisions attentionnelles involontaires : bureau épuré, téléphone hors de portée, applications bloquées" },
+      { "@type": "ListItem", position: 4, name: "Batching temporel stratégique", description: "Regrouper les tâches similaires en blocs dédiés pour minimiser le coût cognitif des changements de tâche, réduisant le cortisol de 23 % comparé à la surveillance continue" },
+      { "@type": "ListItem", position: 5, name: "Restauration attentionnelle par la nature (ART)", description: "50 minutes de marche en nature améliorent l'attention sélective de 20 % et réduisent la rumination de 16 % (Kaplan, University of Michigan)" },
+      { "@type": "ListItem", position: 6, name: "Optimisation circadienne de l'attention", description: "Aligner les tâches cognitives complexes sur les pics attentionnels circadiens (9h-11h) identifiés par Russell Foster (Oxford)" },
+      { "@type": "ListItem", position: 7, name: "Protocole de désintoxication dopaminergique", description: "Périodes structurées sans stimulations numériques pour restaurer la sensibilité du système de récompense, proposées par Anna Lembke (Stanford)" },
+      { "@type": "ListItem", position: 8, name: "Entraînement de la flexibilité cognitive", description: "Exercices de task switching contrôlé pour développer le contrôle exécutif sur l'attention plutôt que de subir les distractions (Klingberg, Karolinska Institute)" }
+    ]
+  };
+
+  const schemaFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
 
   return (
     <>
@@ -32,6 +175,7 @@ export default function AttentionFragmenteeArticle() {
         dateModified={meta.dateModified}
         authorName={meta.author?.name}
         tags={meta.tags}
+        jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
       
       <article className="prose prose-neutral dark:prose-invert mx-auto px-4 sm:px-6 lg:px-8">

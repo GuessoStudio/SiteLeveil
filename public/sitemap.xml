@@ -3,55 +3,55 @@
 
   <url>
     <loc>https://leveilmental.fr/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/blog/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/a-propos/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/ressources/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/contact/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/test-personnalite-big-five/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/neuro-journal/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/stress-zero/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/calculateur-sommeil/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -99,7 +99,7 @@
   </url>
   <url>
     <loc>https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -148,6 +148,12 @@
   <url>
     <loc>https://leveilmental.fr/blog/neurotransmetteurs-humeur-cerveau/</loc>
     <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leveilmental.fr/blog/cortisol-stress-chronique-cerveau-memoire/</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
