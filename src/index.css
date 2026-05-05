@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .hero-section {
     margin-top: 0;
-    padding-top: 4rem;
+    padding-top: 0; /* Suppression du padding qui causait l'espace vide sous le header sticky */
   }
   
   .hero-min-height {
