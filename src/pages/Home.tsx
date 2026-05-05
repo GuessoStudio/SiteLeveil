@@ -6,9 +6,8 @@ import Newsletter from '../components/Newsletter'
 import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
 import SEO from '../components/SEO'
 import { RevealOnScroll } from '../components/ui/animations/RevealOnScroll'
-import { BlurText } from '../components/ui/animations/BlurText'
-import { Magnet } from '../components/ui/animations/Magnet'
 import { TiltCard } from '../components/ui/animations/TiltCard'
+import HeroEveil from '../components/HeroEveil'
 
 /* ========================================
    COMPOSANTS UTILITAIRES
@@ -199,109 +198,7 @@ const Home = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
-        {/* Background Image avec overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-  src="/images/hero-bg.webp"
-  alt=""
-  width="1600"
-  height="900"
-  className="w-full h-full object-cover"
-  loading="eager"
-  decoding="async"
-  fetchPriority="high"
-/>
-          <div className="absolute inset-0 bg-black/35 dark:bg-black/45" />
-        </div>
-
-        {/* Particules animées */}
-        <ParticlesBackground count={24} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Titre principal animé */}
-            <div className="mb-8">
-               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg px-2 flex justify-center items-center flex-wrap gap-3">
-  
-  {/* PARTIE 1 : "Éveillez votre" (Blanc simple) */}
-  <span className="inline-block text-white font-normal">
-    <BlurText text="Éveillez votre" delay={0.3} className="inline-flex" />
-  </span>
-  {'\u00A0'}
-  {/* PARTIE 2 : "POTENTIEL" (Avec Glow Intense & Majuscules) */}
-  <RevealOnScroll direction="fade" delay={0.8} distance={0} className="inline-block">
-    <span className="inline-block relative">
-      {/* L'aura lumineuse derrière */}
-      <span className="absolute inset-0 blur-md bg-yellow-500/50 animate-pulse"></span>
-      
-      {/* Le texte par dessus */}
-      <span className="relative text-yellow-100 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] uppercase tracking-widest font-extrabold">
-        POTENTIEL
-      </span>
-    </span>
-  </RevealOnScroll>
-
-</h1>
-
-              {/* Sous-titre */}
-              <p
-                className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md max-w-3xl mx-auto"
-                style={{ animationDelay: '2000ms', animationFillMode: 'both' }}
-              >
-                Comprenez comment votre cerveau fonctionne.<br />
-                Transformez votre vie avec la science.
-              </p>
-            </div>
-
-            {/* Boutons d'action */}
-            <div
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700"
-              style={{ animationDelay: '2500ms', animationFillMode: 'both' }}
-            >
-              <Magnet padding={40}>
-                <Link
-                  to="/blog"
-                  className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 
-                             text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 
-                             flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl
-                             transform focus-ring backdrop-blur-sm
-                             relative overflow-hidden"
-                  aria-label="Découvrir les articles du blog"
-                >
-                  <span className="relative z-10">Découvrir les articles</span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                  -translate-x-full group-hover:translate-x-full 
-                                  transition-transform duration-700 skew-x-12" />
-                </Link>
-              </Magnet>
-
-              <Magnet padding={40}>
-                <a
-                  href="#newsletter"
-                  className="group bg-sand-50/20 backdrop-blur-sm hover:bg-sand-50/30 text-white 
-                             px-8 py-4 rounded-lg font-semibold transition-all duration-300
-                             border border-white/30 hover:border-white/50 shadow-lg hover:shadow-xl
-                             transform focus-ring
-                             relative overflow-hidden block text-center"
-                  aria-label="Recevoir le guide gratuit par email"
-                >
-                  <span className="relative z-10">Recevoir le guide gratuit</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                                  -translate-x-full group-hover:translate-x-full 
-                                  transition-transform duration-700 skew-x-12" />
-                </a>
-              </Magnet>
-            </div>
-
-            {/* Preuve sociale discrète */}
-            <p className="text-base md:text-lg text-white/90 text-center max-w-2xl mx-auto mt-12 font-light tracking-wide">
-            Rejoignez les esprits curieux qui reprennent le contrôle.
-</p>
-          </div>
-        </div>
-      </section>
+      <HeroEveil />
 
 
       {/* Citation du jour */}
