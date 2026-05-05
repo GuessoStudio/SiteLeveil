@@ -1186,3 +1186,31 @@ strong:hover {
     page-break-after: always;
   }
 }
+
+/* ===== HERO → CITATION TRANSITION (dark mode) ===== */
+.hero-section {
+  position: relative;
+}
+
+.dark .quote-section {
+  position: relative;
+}
+
+.dark .quote-section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, #0d0500 0%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .dark .quote-section::before {
+    height: 80px;
+    top: -40px;
+  }
+}

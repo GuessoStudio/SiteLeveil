@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Quote, Share2, Twitter, Linkedin, Facebook, ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { TiltCard } from './ui/animations/TiltCard'
+import { useTheme } from '../contexts/ThemeContext'
 
 interface QuoteData {
   id: number
@@ -13,6 +16,7 @@ const DailyQuote = () => {
   const [quote, setQuote] = useState<QuoteData | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showShare, setShowShare] = useState(false)
+  const { theme } = useTheme()
 
   const quotes: QuoteData[] = [
     {
@@ -244,64 +248,95 @@ const DailyQuote = () => {
 
   if (!displayQuote) return null
 
+  // Spotlight color adapté au thème
+  const spotlightColor = theme === 'dark'
+    ? "rgba(201,149,58,0.12)"
+    : "rgba(201,149,58,0.06)"
+
   return (
-    <div className="daily-quote bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm rounded-2xl p-8 mb-12 max-w-2xl mx-auto shadow-lg border border-neutral-200 dark:border-neutral-700">
-      <div className="flex items-start gap-4">
-        <Quote className="w-8 h-8 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" />
-        <div className="flex-1">
-          <blockquote className="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 font-medium mb-4 leading-relaxed">
-            "{displayQuote.text}"
-          </blockquote>
-          <div className="flex items-center justify-between mb-4">
-            <cite className="text-neutral-600 dark:text-neutral-400 font-medium">
-              — {displayQuote.author}
-            </cite>
-            <div className="relative">
-              <button
-                onClick={() => setShowShare(!showShare)}
-                className="p-2 text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
-                aria-label="Partager la citation"
-              >
-                <Share2 className="w-5 h-5" />
-              </button>
-              
-              {showShare && (
-                <div className="absolute right-0 top-full mt-2 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 p-2 flex gap-2 z-10">
-                  <button
-                    onClick={() => shareQuote('twitter')}
-                    className="p-2 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
-                    aria-label="Partager sur Twitter"
+    <div className="w-full px-4 sm:px-0 sm:max-w-2xl mx-auto">
+      <TiltCard
+        maxRotation={4}
+        scale={1.02}
+        spotlightColor={spotlightColor}
+        className="bg-white/70 dark:bg-[#0d0500]/70 backdrop-blur-md border border-[#C9953A]/30 dark:border-[#C9953A]/20 rounded-2xl"
+      >
+        <div className="daily-quote p-5 sm:p-8">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="flex items-start gap-4">
+                <Quote className="w-8 h-8 text-[#C9953A] flex-shrink-0 mt-1" />
+                <div className="flex-1">
+                  <blockquote
+                    className="text-lg sm:text-xl text-neutral-800 dark:text-neutral-200 font-medium mb-4 leading-relaxed italic"
+                    style={{ fontFamily: "'Cormorant Garamond', Georgia, 'Times New Roman', serif" }}
                   >
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => shareQuote('linkedin')}
-                    className="p-2 text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
-                    aria-label="Partager sur LinkedIn"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => shareQuote('facebook')}
-                    className="p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
-                    aria-label="Partager sur Facebook"
-                  >
-                    <Facebook className="w-4 h-4" />
-                  </button>
+                    "{displayQuote.text}"
+                  </blockquote>
+
+                  {/* Séparateur or */}
+                  <hr className="border-[#C9953A]/20 mb-4" />
+
+                  <div className="flex items-center justify-between mb-4">
+                    <cite className="text-[#C9953A] tracking-widest uppercase text-sm font-medium not-italic">
+                      — {displayQuote.author}
+                    </cite>
+                    <div className="relative">
+                      <button
+                        onClick={() => setShowShare(!showShare)}
+                        className="p-2 text-neutral-500 hover:text-[#C9953A] transition-colors rounded-lg hover:bg-neutral-100 dark:hover:bg-white/5 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                        aria-label="Partager la citation"
+                      >
+                        <Share2 className="w-5 h-5" />
+                      </button>
+                      
+                      {showShare && (
+                        <div className="absolute right-0 top-full mt-2 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 p-2 flex gap-2 z-10">
+                          <button
+                            onClick={() => shareQuote('twitter')}
+                            className="p-2 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                            aria-label="Partager sur Twitter"
+                          >
+                            <Twitter className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => shareQuote('linkedin')}
+                            className="p-2 text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                            aria-label="Partager sur LinkedIn"
+                          >
+                            <Linkedin className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => shareQuote('facebook')}
+                            className="p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                            aria-label="Partager sur Facebook"
+                          >
+                            <Facebook className="w-4 h-4" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              )}
-            </div>
-          </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
           
           {/* Navigation entre citations */}
           <div className="flex items-center justify-between">
             <button
               onClick={prevQuote}
-              className="flex items-center gap-1 text-sm text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
+              className="flex items-center gap-1 text-sm text-neutral-500 hover:text-[#C9953A] transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-white/5 min-h-[44px] min-w-[44px]"
               aria-label="Citation précédente"
             >
               <ChevronLeft className="w-4 h-4" />
-              Précédente
+              <span className="hidden sm:inline">Précédente</span>
             </button>
             
             <span className="text-xs text-neutral-400">
@@ -310,20 +345,30 @@ const DailyQuote = () => {
             
             <button
               onClick={nextQuote}
-              className="flex items-items gap-1 text-sm text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700"
+              className="flex items-center gap-1 text-sm text-neutral-500 hover:text-[#C9953A] transition-colors p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-white/5 min-h-[44px] min-w-[44px]"
               aria-label="Citation suivante"
             >
-              Suivante
+              <span className="hidden sm:inline">Suivante</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
+
+          {/* Progress bar */}
+          <div className="h-[1.5px] bg-black/10 dark:bg-white/10 rounded-full mt-4 overflow-hidden">
+            <motion.div
+              className="h-full bg-[#C9953A]"
+              animate={{ width: `${((currentIndex + 1) / quotes.length) * 100}%` }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            />
+          </div>
+
+          <div className="mt-5 text-center">
+            <span className="inline-block bg-[#C9953A]/10 text-[#C9953A] px-3 py-1 rounded-full text-sm font-medium">
+              Citation du jour #{currentIndex + 1}
+            </span>
+          </div>
         </div>
-      </div>
-      <div className="mt-6 text-center">
-        <span className="inline-block bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 px-3 py-1 rounded-full text-sm font-medium">
-          Citation du jour #{currentIndex + 1}
-        </span>
-      </div>
+      </TiltCard>
     </div>
   )
 }

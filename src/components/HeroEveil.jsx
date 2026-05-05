@@ -1012,6 +1012,14 @@ export default function HeroEveil() {
         @media (prefers-reduced-motion: reduce) {
           * { transition-duration: 0.01ms !important; }
         }
+
+        /* Scroll indicator dot slide — pulse en haut puis descente lente */
+        @keyframes slideDot {
+          0%   { transform: translateY(0) scale(1.4); box-shadow: 0 0 16px rgba(201,149,58,1); }
+          10%  { transform: translateY(0) scale(1);   box-shadow: 0 0 10px rgba(201,149,58,0.8); }
+          60%  { transform: translateY(40px);          box-shadow: 0 0 10px rgba(201,149,58,0.8); }
+          100% { transform: translateY(0);             box-shadow: 0 0 10px rgba(201,149,58,0.8); }
+        }
       `}</style>
 
       {/* z-0 — fond plein (inline style = bulletproof contre Tailwind config) */}
@@ -1258,57 +1266,83 @@ export default function HeroEveil() {
         </div>
       </div>
 
-      {/* z-30 — Scroll indicator : MINI-NEURONE qui pulse (desktop uniquement)
-          Métaphore directe avec le focus du hero : un neurone activé qui
-          envoie des ondes concentriques. Plus signature qu'une simple
-          pastille descendante.
+      {/* z-30 — Scroll indicator : forme souris animée (desktop uniquement)
+          Disparaît après le premier scroll utilisateur.
           Caché sur mobile : les CTAs occupent déjà la zone basse. */}
-      {!isMobile && (
-        <motion.div
-          initial={prefersReducedMotion ? { opacity: 0.85 } : { opacity: 0 }}
-          animate={{ opacity: 0.85 }}
-          transition={{ delay: 2.0, duration: 1.2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center gap-4"
-          aria-hidden="true"
-        >
-          <span
-            className="uppercase font-medium"
-            style={{
-              color: "rgba(254, 243, 199, 0.7)",
-              fontSize: "0.7rem",
-              letterSpacing: "0.3em",
-            }}
-          >
-            Explorer
-          </span>
-          {/* Scroll indicator simple : un cercle doré qui pulse en
-              opacité et taille. Pas d'ondes propagantes (la version avec
-              ondes a été abandonnée après plusieurs essais infructueux
-              dans le preview Claude.ai). Marche universellement. */}
-          <motion.div
-            animate={
-              prefersReducedMotion
-                ? { opacity: 0.7 }
-                : {
-                    opacity: [0.5, 1, 0.5],
-                    scale: [1, 1.3, 1],
-                  }
-            }
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : { duration: 2, ease: "easeInOut", repeat: Infinity }
-            }
-            style={{
-              width: "10px",
-              height: "10px",
-              borderRadius: "50%",
-              backgroundColor: "#C9953A",
-              boxShadow: "0 0 14px rgba(201, 149, 58, 0.9)",
-            }}
-          />
-        </motion.div>
-      )}
+      {!isMobile && <ScrollIndicator prefersReducedMotion={prefersReducedMotion} />}
     </div>
   );
 }
+
+/* ────────────────────────────────────────────
+   SCROLL INDICATOR — Ligne verticale + dot glissant
+   Se masque quand l'utilisateur scrolle significativement (> 100px).
+   ──────────────────────────────────────────── */
+function ScrollIndicator({ prefersReducedMotion }) {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 100) {
+        setVisible(false);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <div
+      className="absolute bottom-20 left-1/2 z-30 pointer-events-none flex flex-col items-center gap-3"
+      style={{
+        transform: "translateX(-50%)",
+        opacity: visible ? 0.85 : 0,
+        transition: "opacity 0.5s ease",
+      }}
+      aria-hidden="true"
+    >
+      {/* Label */}
+      <span
+        style={{
+          color: "rgba(255, 255, 255, 0.4)",
+          fontSize: "0.65rem",
+          letterSpacing: "0.3em",
+          textTransform: "uppercase",
+          fontWeight: 500,
+        }}
+      >
+        Explorer
+      </span>
+
+      {/* Vertical line + sliding dot */}
+      <div style={{ position: "relative", width: "1px", height: "48px" }}>
+        {/* Line */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(201, 149, 58, 0.3)",
+          }}
+        />
+        {/* Dot — CSS animation pure */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: "50%",
+            marginLeft: "-4px",
+            width: "8px",
+            height: "8px",
+            borderRadius: "50%",
+            backgroundColor: "#C9953A",
+            boxShadow: "0 0 12px rgba(201, 149, 58, 0.9)",
+            animation: prefersReducedMotion
+              ? "none"
+              : "slideDot 3.2s ease-in-out infinite",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+

@@ -198,11 +198,12 @@ const Home = () => {
       />
 
       {/* Hero Section */}
-      <HeroEveil />
-
+      <div className="hero-section">
+        <HeroEveil />
+      </div>
 
       {/* Citation du jour */}
-      <section className="py-12 bg-sand-50 dark:bg-neutral-900">
+      <section className="quote-section relative overflow-visible py-8 sm:py-12 bg-sand-50 dark:bg-[#0d0500]">
         <div className="container mx-auto px-4">
           <DailyQuote />
         </div>

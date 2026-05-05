@@ -6,13 +6,17 @@ interface TiltCardProps {
   className?: string;
   maxRotation?: number; // Max tilt rotation in degrees
   scale?: number;       // Hover scale
+  /** Override the glare/spotlight color. Default: white glare.
+   *  Pass an rgba string like "rgba(201,149,58,0.12)" for a golden spotlight. */
+  spotlightColor?: string;
 }
 
 export function TiltCard({
   children,
   className = '',
   maxRotation = 5,
-  scale = 1.02
+  scale = 1.02,
+  spotlightColor,
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -71,6 +75,25 @@ export function TiltCard({
     setIsHovered(true);
   };
 
+  // Build the glare background transform.
+  // When spotlightColor is provided, use a radial gradient centered on the cursor
+  // instead of the default directional white glare.
+  const glareBackground = useTransform(
+    [smoothX, smoothY],
+    ([latestX, latestY]: any) => {
+      if (spotlightColor) {
+        // Radial spotlight following cursor position
+        const pxPct = ((latestX as number) + 0.5) * 100;
+        const pyPct = ((latestY as number) + 0.5) * 100;
+        return `radial-gradient(circle at ${pxPct}% ${pyPct}%, ${spotlightColor} 0%, transparent 50%)`;
+      }
+      // Default: directional white glare
+      const angle = Math.atan2(latestY, latestX) * (180 / Math.PI);
+      const opacity = (Math.abs(latestX) + Math.abs(latestY)) * 0.3;
+      return `linear-gradient(${angle}deg, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,0) 80%)`;
+    }
+  );
+
   return (
     <motion.div
       ref={ref}
@@ -86,20 +109,14 @@ export function TiltCard({
       }}
       className={`relative ${className}`}
     >
-      {/* Glare effect inside the card */}
+      {/* Glare / spotlight effect inside the card */}
       {!isTouchDevice && (
         <motion.div
           className="pointer-events-none absolute inset-0 z-50 rounded-[inherit]"
           style={{
-            background: useTransform(
-              [smoothX, smoothY],
-              ([latestX, latestY]: any) => {
-                // Determine direction of glare based on mouse position
-                const angle = Math.atan2(latestY, latestX) * (180 / Math.PI);
-                const opacity = (Math.abs(latestX) + Math.abs(latestY)) * 0.3;
-                return `linear-gradient(${angle}deg, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,0) 80%)`;
-              }
-            )
+            background: glareBackground,
+            opacity: isHovered ? 1 : 0,
+            transition: 'opacity 0.3s',
           }}
         />
       )}
