@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "new-post": "node scripts/new-post.js",
     "build-content": "node scripts/build-content.js",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "validate:article": "npx tsx scripts/validate-article.ts"
   },
   "dependencies": {
     "@netlify/functions": "^4.2.2",

@@ -257,7 +257,26 @@ no photograph, no text, no labels, no watermark, 16:9 landscape, 1200x630px
 
 ---
 
-## 10. CHECKLIST AVANT LIVRAISON
+## 10. VALIDATION OBLIGATOIRE AVANT TOUT DÉPLOIEMENT
+
+Après avoir généré un nouvel article, lancer :
+
+```bash
+npm run validate:article [slug-du-nouvel-article]
+```
+
+Toutes les vérifications doivent afficher ✅ avant de commit.
+Ne jamais déployer un article avec un ❌.
+
+Le script vérifie automatiquement :
+- Trailing slash dans la variable `url`
+- Slug enregistré dans `src/content/index.ts`
+- Slug présent dans `ARTICLE_SLUGS` de `vite.config.ts`
+- Au moins 2 liens internes depuis d'autres articles
+
+---
+
+## 11. CHECKLIST AVANT LIVRAISON
 
 **Contenu**
 - [ ] Quick Answer Block dans les 200 premiers mots
