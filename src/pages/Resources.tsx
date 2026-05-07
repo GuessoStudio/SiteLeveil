@@ -124,6 +124,18 @@ const Resources = () => {
       downloadUrl: "/downloads/neurotransmetteurs-humeur-checklist.pdf"
     },
     {
+      id: 19,
+      title: "Carte mémo CNV — Les 4 étapes OSBD",
+      description: "Recto-verso A5 à imprimer : les 4 étapes OSBD avec exemples concrets, les 3 pièges à éviter, et ce que la science dit vraiment sur la CNV (Park 2025, Huang 2025).",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/resources/communication-non-violente-cnv-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/communication-non-violente-cnv-guide.pdf"
+    },
+    {
       id: 10,
       title: "Empathie sans épuisement : les 4 leviers validés",
       description: "Checklist scientifique : 4 protocoles concrets pour développer l'empathie sans fatigue compassionnelle, basés sur les neurosciences (Singer, Klimecki, Keysers).",

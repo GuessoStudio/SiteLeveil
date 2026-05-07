@@ -552,7 +552,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés.
+            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés. La <Link to="/blog/communication-non-violente-cnv" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">communication non violente</Link> s'appuie sur ces mêmes mécanismes empathiques pour structurer l'expression des besoins.
           </p>
 
           <h3>3. Les récits partagés — activation narrative de l'insula</h3>

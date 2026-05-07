@@ -19,6 +19,7 @@ import PlasticiteSynaptique from "../articles/PlasticiteSynaptique";
 import EmpathieNeuronesMiroirs from "../articles/EmpathieNeuronesMiroirs";
 import NeurotransmetteurHumeur from "../articles/NeurotransmetteurHumeur";
 import CortisolStressChronique from "../articles/CortisolStressChronique";
+import CommunicationNonViolente from "../articles/CommunicationNonViolente";
 
 // Mappe chaque slug vers le composant de l'article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d'article.
@@ -40,4 +41,5 @@ export const articlesBySlug: Record<string, FC> = {
   "empathie-neurones-miroirs-connexion-humaine": EmpathieNeuronesMiroirs,
   "neurotransmetteurs-humeur-cerveau": NeurotransmetteurHumeur,
   "cortisol-stress-chronique-cerveau-memoire": CortisolStressChronique,
+  "communication-non-violente-cnv": CommunicationNonViolente,
 };

@@ -21,6 +21,7 @@ const ARTICLE_SLUGS = [
   'empathie-neurones-miroirs-connexion-humaine',
   'neurotransmetteurs-humeur-cerveau',
   'cortisol-stress-chronique-cerveau-memoire',
+  'communication-non-violente-cnv',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

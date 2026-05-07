@@ -191,5 +191,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/cortisol-stress-chronique-cerveau-memoire-cover",
         slug: "cortisol-stress-chronique-cerveau-memoire",
         featured: false
+    },
+    {
+        id: 18,
+        title: "Communication Non-Violente (CNV) : les 4 étapes OSBD validées par la science",
+        excerpt: "Communication non violente : 4 étapes OSBD, RCT 2025 sur empathie et PTSD, tableau CNV vs assertivité. Guide scientifique complet, limites incluses.",
+        category: "Relations Humaines",
+        readTime: 14,
+        date: "2026-05-07",
+        image: "/images/articles/communication-non-violente-cnv-cover",
+        slug: "communication-non-violente-cnv",
+        featured: false
     }
 ];
