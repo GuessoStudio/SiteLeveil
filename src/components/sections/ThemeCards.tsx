@@ -61,15 +61,15 @@ export default function ThemeCards() {
 
           {/* NEUROSCIENCES */}
           <RevealOnScroll direction="up" delay={200}>
-            <Link
-              to="/blog?category=Neurosciences"
-              className="group block h-full enhanced-transition"
-              aria-label="Voir tous les articles de Neurosciences"
+            <MagicCard
+              gradientColor="rgba(201,149,58,0.15)"
+              gradientSize={200}
+              className="h-full rounded-2xl"
             >
-              <MagicCard
-                gradientColor="rgba(201,149,58,0.15)"
-                gradientSize={200}
-                className="h-full rounded-2xl"
+              <Link
+                to="/blog?category=Neurosciences"
+                className="group block h-full enhanced-transition"
+                aria-label="Voir tous les articles de Neurosciences"
               >
                 <div className="relative
                                 bg-gradient-neurosciences-soft dark:bg-[#0d0500]/60
@@ -80,7 +80,7 @@ export default function ThemeCards() {
                                 border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
 
-                                hover:bg-gradient-neurosciences-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                                hover:bg-gradient-neurosciences-hover
 
                                 active:bg-gradient-neurosciences-hover active:scale-95 active:shadow-lg
                                 md:active:scale-100">
@@ -158,21 +158,21 @@ export default function ThemeCards() {
                     </div>
                   </div>
                 </div>
-              </MagicCard>
-            </Link>
+              </Link>
+            </MagicCard>
           </RevealOnScroll>
 
           {/* PSYCHOLOGIE */}
           <RevealOnScroll direction="up" delay={300}>
-            <Link
-              to="/blog?category=Psychologie"
-              className="group block h-full enhanced-transition"
-              aria-label="Voir tous les articles de Psychologie"
+            <MagicCard
+              gradientColor="rgba(201,149,58,0.15)"
+              gradientSize={200}
+              className="h-full rounded-2xl"
             >
-              <MagicCard
-                gradientColor="rgba(201,149,58,0.15)"
-                gradientSize={200}
-                className="h-full rounded-2xl"
+              <Link
+                to="/blog?category=Psychologie"
+                className="group block h-full enhanced-transition"
+                aria-label="Voir tous les articles de Psychologie"
               >
                 <div className="relative
                                 bg-gradient-psychologie-soft dark:bg-[#0d0500]/60
@@ -183,7 +183,7 @@ export default function ThemeCards() {
                                 border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
 
-                                hover:bg-gradient-psychologie-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                                hover:bg-gradient-psychologie-hover
 
                                 active:bg-gradient-psychologie-hover active:scale-95 active:shadow-lg
                                 md:active:scale-100">
@@ -261,21 +261,21 @@ export default function ThemeCards() {
                     </div>
                   </div>
                 </div>
-              </MagicCard>
-            </Link>
+              </Link>
+            </MagicCard>
           </RevealOnScroll>
 
           {/* DÉVELOPPEMENT PERSONNEL */}
           <RevealOnScroll direction="up" delay={400}>
-            <Link
-              to="/blog?category=Développement Personnel"
-              className="group block h-full enhanced-transition"
-              aria-label="Voir tous les articles de Développement Personnel"
+            <MagicCard
+              gradientColor="rgba(201,149,58,0.15)"
+              gradientSize={200}
+              className="h-full rounded-2xl"
             >
-              <MagicCard
-                gradientColor="rgba(201,149,58,0.15)"
-                gradientSize={200}
-                className="h-full rounded-2xl"
+              <Link
+                to="/blog?category=Développement Personnel"
+                className="group block h-full enhanced-transition"
+                aria-label="Voir tous les articles de Développement Personnel"
               >
                 <div className="relative
                                 bg-gradient-developpement-soft dark:bg-[#0d0500]/60
@@ -286,7 +286,7 @@ export default function ThemeCards() {
                                 border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
 
-                                hover:bg-gradient-developpement-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                                hover:bg-gradient-developpement-hover
 
                                 active:bg-gradient-developpement-hover active:scale-95 active:shadow-lg
                                 md:active:scale-100">
@@ -366,21 +366,21 @@ export default function ThemeCards() {
                     </div>
                   </div>
                 </div>
-              </MagicCard>
-            </Link>
+              </Link>
+            </MagicCard>
           </RevealOnScroll>
 
           {/* RELATIONS HUMAINES */}
           <RevealOnScroll direction="up" delay={500}>
-            <Link
-              to="/blog?category=Relations Humaines"
-              className="group block h-full enhanced-transition"
-              aria-label="Voir tous les articles de Relations Humaines"
+            <MagicCard
+              gradientColor="rgba(201,149,58,0.15)"
+              gradientSize={200}
+              className="h-full rounded-2xl"
             >
-              <MagicCard
-                gradientColor="rgba(201,149,58,0.15)"
-                gradientSize={200}
-                className="h-full rounded-2xl"
+              <Link
+                to="/blog?category=Relations Humaines"
+                className="group block h-full enhanced-transition"
+                aria-label="Voir tous les articles de Relations Humaines"
               >
                 <div className="relative
                                 bg-gradient-relations-soft dark:bg-[#0d0500]/60
@@ -391,7 +391,7 @@ export default function ThemeCards() {
                                 border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
 
-                                hover:bg-gradient-relations-hover hover:-translate-y-2 md:hover:-translate-y-4 hover:scale-[1.02] md:hover:scale-105
+                                hover:bg-gradient-relations-hover
 
                                 active:bg-gradient-relations-hover active:scale-95 active:shadow-lg
                                 md:active:scale-100">
@@ -471,8 +471,8 @@ export default function ThemeCards() {
                     </div>
                   </div>
                 </div>
-              </MagicCard>
-            </Link>
+              </Link>
+            </MagicCard>
           </RevealOnScroll>
 
         </div>
