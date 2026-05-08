@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { fileURLToPath, URL } from 'url'
 
 // Slugs des articles — doit rester synchronisé avec src/data/blog-articles.ts
 const ARTICLE_SLUGS = [
@@ -52,6 +53,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     },
   },
   resolve: {
+    alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     dedupe: ['react', 'react-dom', 'react-helmet-async'],
   },
   ssr: {
