@@ -131,7 +131,7 @@ const Resources = () => {
       type: "PDF",
       pages: 1,
       rating: 5.0,
-      image: "/images/articles/communication-non-violente-cnv-cover.webp",
+      image: "/images/resources/communication-non-violente-cnv-cover.webp",
       free: true,
       downloadUrl: "/downloads/communication-non-violente-cnv-guide.pdf"
     },
