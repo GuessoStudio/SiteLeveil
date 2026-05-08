@@ -184,7 +184,7 @@ export const articles: ArticleData[] = [
     {
         id: 17,
         title: "Cortisol et stress chronique : effets réels sur le cerveau et la mémoire",
-        excerpt: "r = −0,44 entre cortisol et volume hippocampique mesuré sur des humains (Dronse 2023). Seuils normaux μg/L, relation en U inversé et 5 stratégies validées — Hedges' g = 0,62.",
+        excerpt: "Le stress chronique rétrécit littéralement le cerveau. Découvrez comment le cortisol détruit la mémoire et 5 stratégies validées pour inverser ce processus.",
         category: "Neurosciences",
         readTime: 15,
         date: "2026-04-27",
