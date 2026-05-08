@@ -6,6 +6,9 @@ dist/
 # Local config Claude Code
 .claude/settings.local.json
 
+# Fichiers temporaires Vite
+vite.config.ts.timestamp-*.mjs
+
 # Dossiers locaux hors projet
 screenshots/
 claude-blog/
