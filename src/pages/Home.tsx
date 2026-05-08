@@ -31,14 +31,15 @@ const Home = () => {
       />
 
       {/* Hero — pas de fade-in, premier élément visible */}
-      <div className="hero-section">
+      <div className="hero-section relative">
         <HeroEveil />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-neutral-900 pointer-events-none z-10" />
       </div>
 
       {/* Citation du jour */}
       <section
         ref={quoteSection.ref}
-        className={`quote-section relative overflow-visible py-8 sm:py-12 bg-sand-50 dark:bg-neutral-900 transition-all duration-700 delay-100 ${
+        className={`quote-section relative z-20 overflow-visible -mt-10 py-8 sm:py-12 bg-sand-50 dark:bg-neutral-900 transition-all duration-700 delay-100 ${
           quoteSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
