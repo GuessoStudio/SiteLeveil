@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import DailyQuote from '../components/DailyQuote'
 import ResumeReading from '../components/ResumeReading'
-import Newsletter from '../components/Newsletter'
+import NewsletterSection from '../components/sections/NewsletterSection'
 import { ArrowRight } from 'lucide-react'
 import SEO from '../components/SEO'
 import HeroEveil from '../components/HeroEveil'
@@ -173,10 +173,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section id="newsletter">
-        <Newsletter />
-      </section>
+      <NewsletterSection />
     </div>
   )
 }

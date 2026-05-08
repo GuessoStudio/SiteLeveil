@@ -7,6 +7,9 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[functions]
+  directory = "netlify/functions"
+
 # Edge Functions
 [[edge_functions]]
 path = "/og"
