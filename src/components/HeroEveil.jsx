@@ -1013,13 +1013,6 @@ export default function HeroEveil() {
           * { transition-duration: 0.01ms !important; }
         }
 
-        /* Scroll indicator dot slide — pulse en haut puis descente lente */
-        @keyframes slideDot {
-          0%   { transform: translateY(0) scale(1.4); box-shadow: 0 0 16px rgba(201,149,58,1); }
-          10%  { transform: translateY(0) scale(1);   box-shadow: 0 0 10px rgba(201,149,58,0.8); }
-          60%  { transform: translateY(40px);          box-shadow: 0 0 10px rgba(201,149,58,0.8); }
-          100% { transform: translateY(0);             box-shadow: 0 0 10px rgba(201,149,58,0.8); }
-        }
       `}</style>
 
       {/* z-0 — fond plein (inline style = bulletproof contre Tailwind config) */}
@@ -1324,8 +1317,8 @@ function ScrollIndicator({ prefersReducedMotion }) {
             backgroundColor: "rgba(201, 149, 58, 0.3)",
           }}
         />
-        {/* Dot — CSS animation pure */}
-        <div
+        {/* Dot — Framer Motion (bypass CSS transition:none !important) */}
+        <motion.div
           style={{
             position: "absolute",
             top: 0,
@@ -1335,10 +1328,22 @@ function ScrollIndicator({ prefersReducedMotion }) {
             height: "8px",
             borderRadius: "50%",
             backgroundColor: "#C9953A",
-            boxShadow: "0 0 12px rgba(201, 149, 58, 0.9)",
-            animation: prefersReducedMotion
-              ? "none"
-              : "slideDot 3.2s ease-in-out infinite",
+          }}
+          animate={{
+            y:         [0,    0,    40,   0  ],
+            scale:     [1.4,  1,    1,    1  ],
+            boxShadow: [
+              "0 0 16px rgba(201,149,58,1)",
+              "0 0 10px rgba(201,149,58,0.8)",
+              "0 0 10px rgba(201,149,58,0.8)",
+              "0 0 10px rgba(201,149,58,0.8)",
+            ],
+          }}
+          transition={{
+            duration: 3.2,
+            ease: "easeInOut",
+            repeat: Infinity,
+            times: [0, 0.1, 0.6, 1],
           }}
         />
       </div>

@@ -18,6 +18,9 @@ const Home = () => {
   const themeSection      = useInView()
   const articlesHeader    = useInView()
   const articlesButton    = useInView()
+  const card1             = useInView()
+  const card2             = useInView()
+  const card3             = useInView()
   const newsletterSection = useInView()
 
   return (
@@ -39,7 +42,7 @@ const Home = () => {
       {/* Citation du jour */}
       <section
         ref={quoteSection.ref}
-        className={`quote-section relative z-20 overflow-hidden -mt-28 sm:-mt-32 pt-12 pb-16 sm:pt-16 sm:pb-20 bg-sand-50 dark:bg-gradient-to-b dark:from-[#0d0500] dark:to-neutral-900 transition-all duration-700 delay-200 ${
+        className={`quote-section relative z-20 overflow-hidden -mt-28 sm:-mt-32 pt-12 pb-8 sm:pt-16 sm:pb-10 bg-sand-50 dark:bg-gradient-to-b dark:from-[#0d0500] dark:to-neutral-900 transition-all duration-700 delay-200 ${
           quoteSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
@@ -61,7 +64,7 @@ const Home = () => {
       {/* Reprendre la lecture */}
       <section
         ref={resumeSection.ref}
-        className={`py-8 bg-white dark:bg-neutral-800 transition-all duration-700 delay-100 ${
+        className={`py-8 bg-sand-50 dark:bg-neutral-900 transition-all duration-700 delay-100 ${
           resumeSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
@@ -84,8 +87,8 @@ const Home = () => {
       <section className="py-20 bg-white dark:bg-neutral-800 relative overflow-hidden">
         {/* Lignes décoratives */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-indigo-500/20 to-transparent animate-pulse" />
-          <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-purple-500/20 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#C9953A]/20 to-transparent animate-pulse" />
+          <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#7C3AED]/20 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -105,9 +108,24 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredArticles.map((article) => (
-              <ArticleCard key={article.id} article={article} variant="featured" />
-            ))}
+            <div
+              ref={card1.ref}
+              className={`transition-all duration-700 delay-[0ms] ${card1.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <ArticleCard article={featuredArticles[0]} variant="featured" />
+            </div>
+            <div
+              ref={card2.ref}
+              className={`transition-all duration-700 delay-[150ms] ${card2.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <ArticleCard article={featuredArticles[1]} variant="featured" />
+            </div>
+            <div
+              ref={card3.ref}
+              className={`transition-all duration-700 delay-[300ms] ${card3.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              <ArticleCard article={featuredArticles[2]} variant="featured" />
+            </div>
           </div>
 
           <div

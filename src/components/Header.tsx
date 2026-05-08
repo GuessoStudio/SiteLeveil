@@ -1,14 +1,16 @@
 // Point 4 : Header amélioré avec micro-interactions
 // Remplace ton components/Header.tsx existant
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Sun, Moon, Search } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
+import SearchOverlay from './SearchOverlay'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
 
@@ -131,7 +133,8 @@ const Header = () => {
 
               {/* Search Button avec animation */}
               <button
-                className="p-2 rounded-lg focus-ring text-neutral-600 dark:text-neutral-300 
+                onClick={() => setIsSearchOpen(true)}
+                className="p-2 rounded-lg focus-ring text-neutral-600 dark:text-neutral-300
                            hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300
                            hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transform hover:scale-110 active:scale-90
                            hover:rotate-12 group"
@@ -237,6 +240,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   )
 }

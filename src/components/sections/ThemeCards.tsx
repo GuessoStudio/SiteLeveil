@@ -24,7 +24,7 @@ function DiscreteParticles({ count = 15 }: { count?: number }) {
 
 export default function ThemeCards() {
   return (
-    <section className="py-20 bg-sand-50 dark:bg-neutral-900 relative overflow-hidden">
+    <section className="pt-10 pb-20 bg-sand-50 dark:bg-neutral-900 relative overflow-hidden">
       {/* Background patterns — pointer-events-none : décoratifs uniquement */}
       <div className="absolute inset-0 opacity-20 md:opacity-30 pointer-events-none">
         <div className="absolute top-10 left-4 md:left-10 w-16 md:w-32 h-16 md:h-32 border border-indigo-200/20 dark:border-indigo-400/10 rounded-full animate-pulse"></div>
