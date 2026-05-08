@@ -88,7 +88,8 @@ function ParticlesBackground({ count = 24 }: { count?: number }) {
 }
 
 
-const featuredArticles = articles.filter(a => a.featured).slice(0, 3)
+const FEATURED_SLUGS = ['neuro-dopamine-routine', 'communication-non-violente-cnv', 'syndrome-imposteur-solutions']
+const featuredArticles = FEATURED_SLUGS.map(slug => articles.find(a => a.slug === slug)).filter(Boolean) as typeof articles
 
 /* ========================================
    COMPOSANT PRINCIPAL

@@ -201,6 +201,6 @@ export const articles: ArticleData[] = [
         date: "2026-05-07",
         image: "/images/articles/communication-non-violente-cnv-cover",
         slug: "communication-non-violente-cnv",
-        featured: false
+        featured: true
     }
 ];
