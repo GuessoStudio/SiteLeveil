@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Brain, Heart, TrendingUp, Users } from 'lucide-react'
-import { RevealOnScroll } from '../ui/animations/RevealOnScroll'
 import { MagicCard } from '../ui/MagicCard'
 
 function DiscreteParticles({ count = 15 }: { count?: number }) {
@@ -10,7 +9,7 @@ function DiscreteParticles({ count = 15 }: { count?: number }) {
       Array.from({ length: count }).map((_, index) => (
         <div
           key={index}
-          className="absolute w-1 h-1 bg-indigo-400/20 rounded-full animate-pulse"
+          className="absolute w-1 h-1 bg-indigo-400/20 rounded-full animate-pulse pointer-events-none"
           style={{
             left: `${(index * 29) % 100}%`,
             top: `${(index * 17) % 100}%`,
@@ -26,16 +25,16 @@ function DiscreteParticles({ count = 15 }: { count?: number }) {
 export default function ThemeCards() {
   return (
     <section className="py-20 bg-sand-50 dark:bg-neutral-900 relative overflow-hidden">
-      {/* Background patterns géométriques - responsive */}
-      <div className="absolute inset-0 opacity-20 md:opacity-30">
+      {/* Background patterns — pointer-events-none : décoratifs uniquement */}
+      <div className="absolute inset-0 opacity-20 md:opacity-30 pointer-events-none">
         <div className="absolute top-10 left-4 md:left-10 w-16 md:w-32 h-16 md:h-32 border border-indigo-200/20 dark:border-indigo-400/10 rounded-full animate-pulse"></div>
         <div className="absolute top-32 md:top-40 right-4 md:right-20 w-12 md:w-24 h-12 md:h-24 border border-purple-200/20 dark:border-purple-400/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-1/4 w-8 md:w-16 h-8 md:h-16 border border-emerald-200/20 dark:border-emerald-400/10 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-32 md:bottom-40 right-1/3 w-10 md:w-20 h-10 md:h-20 border border-pink-200/20 dark:border-pink-400/10 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
-      {/* Particules - réduites sur mobile */}
-      <div className="absolute inset-0">
+      {/* Particules — pointer-events-none : décoratifs uniquement */}
+      <div className="absolute inset-0 pointer-events-none">
         <div className="hidden md:block">
           <DiscreteParticles count={20} />
         </div>
@@ -45,12 +44,11 @@ export default function ThemeCards() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12 md:mb-16 animate-in fade-in duration-700">
-          <RevealOnScroll direction="down" delay={100}>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4">
-              Les thèmes que j'explore
-            </h2>
-          </RevealOnScroll>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4
+                         animate-in fade-in slide-in-from-bottom-4 duration-700">
+            Les thèmes que j'explore
+          </h2>
           <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
             Des contenus basés sur la recherche en psychologie et neurosciences
           </p>
@@ -60,9 +58,10 @@ export default function ThemeCards() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
 
           {/* NEUROSCIENCES */}
-          <RevealOnScroll direction="up" delay={200}>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both h-full"
+               style={{ animationDelay: '200ms' }}>
             <MagicCard
-              gradientColor="rgba(201,149,58,0.15)"
+              gradientColor="#C9953A"
               gradientSize={200}
               className="h-full rounded-2xl"
             >
@@ -73,16 +72,11 @@ export default function ThemeCards() {
               >
                 <div className="relative
                                 bg-gradient-neurosciences-soft dark:bg-[#0d0500]/60
-                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category
-                                hover:shadow-[0_0_30px_rgba(201,149,58,0.25)]
+                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category h-full
                                 transform transition-all duration-300 ease-out
                                 focus-ring overflow-hidden
-                                border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
-
-                                hover:bg-gradient-neurosciences-hover
-
-                                active:bg-gradient-neurosciences-hover active:scale-95 active:shadow-lg
+                                active:scale-95 active:shadow-lg
                                 md:active:scale-100">
 
                   <div className="absolute inset-0 bg-gradient-neurosciences opacity-0
@@ -98,14 +92,12 @@ export default function ThemeCards() {
                     </svg>
                   </div>
 
-                  {/* Icône sans fond */}
                   <div className="relative z-10 mb-6">
                     <div className="relative inline-block overflow-hidden rounded-full">
                       <Brain className="w-8 h-8 text-[#C9953A]
                                        transition-transform duration-300
                                        md:group-hover:scale-110 md:group-hover:animate-glow-pulse
                                        group-active:scale-110 relative z-10" />
-                      {/* Ripple mobile */}
                       <div className="absolute inset-0 bg-[#C9953A]/20 rounded-full scale-0
                                       group-active:scale-150 md:group-active:scale-0
                                       transition-transform duration-300 ease-out pointer-events-none"></div>
@@ -134,12 +126,10 @@ export default function ThemeCards() {
                     </p>
                   </div>
 
-                  {/* Barre de progression */}
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-neurosciences
                                   transition-all duration-500 ease-out
                                   md:group-hover:w-full group-active:w-full"></div>
 
-                  {/* Shimmer */}
                   <div className="absolute inset-0 opacity-0
                                   md:group-hover:opacity-20 group-active:opacity-10
                                   bg-gradient-to-r from-transparent via-white to-transparent
@@ -147,7 +137,6 @@ export default function ThemeCards() {
                                   md:group-hover:translate-x-0 group-active:translate-x-0
                                   transition-transform duration-500 ease-out pointer-events-none"></div>
 
-                  {/* Badge "Voir articles" */}
                   <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0
                                   transition-all duration-300 transform translate-y-2
                                   md:group-hover:opacity-100 md:group-hover:translate-y-0
@@ -160,12 +149,13 @@ export default function ThemeCards() {
                 </div>
               </Link>
             </MagicCard>
-          </RevealOnScroll>
+          </div>
 
           {/* PSYCHOLOGIE */}
-          <RevealOnScroll direction="up" delay={300}>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both h-full"
+               style={{ animationDelay: '300ms' }}>
             <MagicCard
-              gradientColor="rgba(201,149,58,0.15)"
+              gradientColor="#C9953A"
               gradientSize={200}
               className="h-full rounded-2xl"
             >
@@ -176,16 +166,11 @@ export default function ThemeCards() {
               >
                 <div className="relative
                                 bg-gradient-psychologie-soft dark:bg-[#0d0500]/60
-                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category
-                                hover:shadow-[0_0_30px_rgba(196,113,58,0.25)]
+                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category h-full
                                 transform transition-all duration-300 ease-out
                                 focus-ring overflow-hidden
-                                border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
-
-                                hover:bg-gradient-psychologie-hover
-
-                                active:bg-gradient-psychologie-hover active:scale-95 active:shadow-lg
+                                active:scale-95 active:shadow-lg
                                 md:active:scale-100">
 
                   <div className="absolute inset-0 bg-gradient-psychologie opacity-0
@@ -201,14 +186,12 @@ export default function ThemeCards() {
                     </svg>
                   </div>
 
-                  {/* Icône sans fond */}
                   <div className="relative z-10 mb-6">
                     <div className="relative inline-block overflow-hidden rounded-full">
                       <Heart className="w-8 h-8 text-[#C9953A]
                                        transition-transform duration-300
                                        md:group-hover:scale-110 md:group-hover:animate-glow-pulse md:group-hover:animate-pulse
                                        group-active:scale-110 relative z-10" />
-                      {/* Ripple mobile */}
                       <div className="absolute inset-0 bg-[#C9953A]/20 rounded-full scale-0
                                       group-active:scale-150 md:group-active:scale-0
                                       transition-transform duration-300 ease-out pointer-events-none"></div>
@@ -237,12 +220,10 @@ export default function ThemeCards() {
                     </p>
                   </div>
 
-                  {/* Barre de progression */}
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-psychologie
                                   transition-all duration-500 ease-out
                                   md:group-hover:w-full group-active:w-full"></div>
 
-                  {/* Shimmer */}
                   <div className="absolute inset-0 opacity-0
                                   md:group-hover:opacity-20 group-active:opacity-10
                                   bg-gradient-to-r from-transparent via-white to-transparent
@@ -250,7 +231,6 @@ export default function ThemeCards() {
                                   md:group-hover:translate-x-0 group-active:translate-x-0
                                   transition-transform duration-500 ease-out pointer-events-none"></div>
 
-                  {/* Badge "Voir articles" */}
                   <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0
                                   transition-all duration-300 transform translate-y-2
                                   md:group-hover:opacity-100 md:group-hover:translate-y-0
@@ -263,12 +243,13 @@ export default function ThemeCards() {
                 </div>
               </Link>
             </MagicCard>
-          </RevealOnScroll>
+          </div>
 
           {/* DÉVELOPPEMENT PERSONNEL */}
-          <RevealOnScroll direction="up" delay={400}>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both h-full"
+               style={{ animationDelay: '400ms' }}>
             <MagicCard
-              gradientColor="rgba(201,149,58,0.15)"
+              gradientColor="#C9953A"
               gradientSize={200}
               className="h-full rounded-2xl"
             >
@@ -279,16 +260,11 @@ export default function ThemeCards() {
               >
                 <div className="relative
                                 bg-gradient-developpement-soft dark:bg-[#0d0500]/60
-                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category
-                                hover:shadow-[0_0_30px_rgba(166,124,82,0.25)]
+                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category h-full
                                 transform transition-all duration-300 ease-out
                                 focus-ring overflow-hidden
-                                border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
-
-                                hover:bg-gradient-developpement-hover
-
-                                active:bg-gradient-developpement-hover active:scale-95 active:shadow-lg
+                                active:scale-95 active:shadow-lg
                                 md:active:scale-100">
 
                   <div className="absolute inset-0 bg-gradient-developpement opacity-0
@@ -306,14 +282,12 @@ export default function ThemeCards() {
                     </svg>
                   </div>
 
-                  {/* Icône sans fond */}
                   <div className="relative z-10 mb-6">
                     <div className="relative inline-block overflow-hidden rounded-full">
                       <TrendingUp className="w-8 h-8 text-[#C9953A]
                                             transition-transform duration-300
                                             md:group-hover:scale-110 md:group-hover:animate-glow-pulse
                                             group-active:scale-110 relative z-10" />
-                      {/* Ripple mobile */}
                       <div className="absolute inset-0 bg-[#C9953A]/20 rounded-full scale-0
                                       group-active:scale-150 md:group-active:scale-0
                                       transition-transform duration-300 ease-out pointer-events-none"></div>
@@ -342,12 +316,10 @@ export default function ThemeCards() {
                     </p>
                   </div>
 
-                  {/* Barre de progression */}
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-developpement
                                   transition-all duration-500 ease-out
                                   md:group-hover:w-full group-active:w-full"></div>
 
-                  {/* Shimmer */}
                   <div className="absolute inset-0 opacity-0
                                   md:group-hover:opacity-20 group-active:opacity-10
                                   bg-gradient-to-r from-transparent via-white to-transparent
@@ -355,7 +327,6 @@ export default function ThemeCards() {
                                   md:group-hover:translate-x-0 group-active:translate-x-0
                                   transition-transform duration-500 ease-out pointer-events-none"></div>
 
-                  {/* Badge "Voir articles" */}
                   <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0
                                   transition-all duration-300 transform translate-y-2
                                   md:group-hover:opacity-100 md:group-hover:translate-y-0
@@ -368,12 +339,13 @@ export default function ThemeCards() {
                 </div>
               </Link>
             </MagicCard>
-          </RevealOnScroll>
+          </div>
 
           {/* RELATIONS HUMAINES */}
-          <RevealOnScroll direction="up" delay={500}>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both h-full"
+               style={{ animationDelay: '500ms' }}>
             <MagicCard
-              gradientColor="rgba(201,149,58,0.15)"
+              gradientColor="#C9953A"
               gradientSize={200}
               className="h-full rounded-2xl"
             >
@@ -384,16 +356,11 @@ export default function ThemeCards() {
               >
                 <div className="relative
                                 bg-gradient-relations-soft dark:bg-[#0d0500]/60
-                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category
-                                hover:shadow-[0_0_30px_rgba(184,134,11,0.25)]
+                                glass-card-soft p-6 md:p-8 rounded-2xl shadow-category h-full
                                 transform transition-all duration-300 ease-out
                                 focus-ring overflow-hidden
-                                border border-white/10 dark:border-[#C9953A]/15
                                 touch-manipulation
-
-                                hover:bg-gradient-relations-hover
-
-                                active:bg-gradient-relations-hover active:scale-95 active:shadow-lg
+                                active:scale-95 active:shadow-lg
                                 md:active:scale-100">
 
                   <div className="absolute inset-0 bg-gradient-relations opacity-0
@@ -411,14 +378,12 @@ export default function ThemeCards() {
                     </svg>
                   </div>
 
-                  {/* Icône sans fond */}
                   <div className="relative z-10 mb-6">
                     <div className="relative inline-block overflow-hidden rounded-full">
                       <Users className="w-8 h-8 text-[#C9953A]
                                        transition-transform duration-300
                                        md:group-hover:scale-110 md:group-hover:animate-glow-pulse
                                        group-active:scale-110 relative z-10" />
-                      {/* Ripple mobile */}
                       <div className="absolute inset-0 bg-[#C9953A]/20 rounded-full scale-0
                                       group-active:scale-150 md:group-active:scale-0
                                       transition-transform duration-300 ease-out pointer-events-none"></div>
@@ -447,12 +412,10 @@ export default function ThemeCards() {
                     </p>
                   </div>
 
-                  {/* Barre de progression */}
                   <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-relations
                                   transition-all duration-500 ease-out
                                   md:group-hover:w-full group-active:w-full"></div>
 
-                  {/* Shimmer */}
                   <div className="absolute inset-0 opacity-0
                                   md:group-hover:opacity-20 group-active:opacity-10
                                   bg-gradient-to-r from-transparent via-white to-transparent
@@ -460,7 +423,6 @@ export default function ThemeCards() {
                                   md:group-hover:translate-x-0 group-active:translate-x-0
                                   transition-transform duration-500 ease-out pointer-events-none"></div>
 
-                  {/* Badge "Voir articles" */}
                   <div className="absolute top-3 md:top-4 right-3 md:right-4 opacity-0
                                   transition-all duration-300 transform translate-y-2
                                   md:group-hover:opacity-100 md:group-hover:translate-y-0
@@ -473,12 +435,12 @@ export default function ThemeCards() {
                 </div>
               </Link>
             </MagicCard>
-          </RevealOnScroll>
+          </div>
 
         </div>
 
-        {/* Message informatif - responsive */}
-        <div className="text-center mt-8 md:mt-12 animate-in fade-in duration-700" style={{ animationDelay: '800ms' }}>
+        {/* Message informatif */}
+        <div className="text-center mt-8 md:mt-12">
           <p className="text-xs md:text-sm text-neutral-500 dark:text-neutral-400">
             <span className="hidden sm:inline">Cliquez sur une catégorie pour voir tous les articles correspondants</span>
             <span className="sm:hidden">Touchez une catégorie pour voir les articles</span>

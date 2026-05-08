@@ -602,10 +602,7 @@ strong:hover {
 }
 
 .glass-card-soft {
-  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 /* ===== CLASSES OMBRES DYNAMIQUES ===== */
@@ -616,7 +613,6 @@ strong:hover {
 
 .shadow-category:hover {
   box-shadow: var(--shadow-strong);
-  transform: translateY(-4px);
 }
 
 .shadow-glow {
@@ -652,22 +648,6 @@ strong:hover {
   background-clip: text;
 }
 
-/* ===== EFFET GLOW POUR LES CARTES ===== */
-.card-glow-neurosciences:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-}
-
-.card-glow-psychologie:hover {
-  box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
-}
-
-.card-glow-developpement:hover {
-  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
-}
-
-.card-glow-relations:hover {
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
-}
 
 /* ===== AMÉLIORATION DES TRANSITIONS ===== */
 .enhanced-transition {

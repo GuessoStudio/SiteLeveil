@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 
 interface MagicCardProps {
@@ -6,54 +5,40 @@ interface MagicCardProps {
   className?: string
   gradientSize?: number
   gradientColor?: string
+  borderColor?: string
 }
 
 export function MagicCard({
   children,
   className = '',
   gradientSize = 200,
-  gradientColor = 'rgba(201,149,58,0.15)',
+  gradientColor = '#C9953A',
+  borderColor = 'rgba(255,255,255,0.08)',
 }: MagicCardProps) {
   const mouseX = useMotionValue(-gradientSize)
   const mouseY = useMotionValue(-gradientSize)
-  const [isHovered, setIsHovered] = useState(false)
-  const gradientSizeRef = useRef(gradientSize)
-
-  useEffect(() => {
-    gradientSizeRef.current = gradientSize
-  }, [gradientSize])
-
-  const handlePointerMove = useCallback(
-    (e: React.PointerEvent<HTMLDivElement>) => {
-      const rect = e.currentTarget.getBoundingClientRect()
-      mouseX.set(e.clientX - rect.left)
-      mouseY.set(e.clientY - rect.top)
-    },
-    [mouseX, mouseY]
-  )
-
-  const handlePointerLeave = useCallback(() => {
-    setIsHovered(false)
-    mouseX.set(-gradientSizeRef.current)
-    mouseY.set(-gradientSizeRef.current)
-  }, [mouseX, mouseY])
 
   return (
-    <div
-      className={`relative overflow-hidden ${className}`}
-      onPointerMove={handlePointerMove}
-      onPointerEnter={() => setIsHovered(true)}
-      onPointerLeave={handlePointerLeave}
+    <motion.div
+      className={`relative h-full ${className}`}
+      style={{
+        border: '2px solid transparent',
+        background: useMotionTemplate`
+          linear-gradient(transparent 0 0) padding-box,
+          radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, ${borderColor} 100%) border-box
+        `,
+      }}
+      onPointerMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect()
+        mouseX.set(e.clientX - rect.left)
+        mouseY.set(e.clientY - rect.top)
+      }}
+      onPointerLeave={() => {
+        mouseX.set(-gradientSize)
+        mouseY.set(-gradientSize)
+      }}
     >
       {children}
-      <motion.div
-        className="pointer-events-none absolute inset-0 rounded-[inherit]"
-        style={{
-          background: useMotionTemplate`radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)`,
-          opacity: isHovered ? 1 : 0,
-          transition: 'opacity 0.3s ease',
-        }}
-      />
-    </div>
+    </motion.div>
   )
 }
