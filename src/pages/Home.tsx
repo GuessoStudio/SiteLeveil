@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import DailyQuote from '../components/DailyQuote'
 import ResumeReading from '../components/ResumeReading'
 import Newsletter from '../components/Newsletter'
-import { ArrowRight, BookOpen, Brain, Heart, Users, TrendingUp, Star } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import SEO from '../components/SEO'
-import { TiltCard } from '../components/ui/animations/TiltCard'
 import HeroEveil from '../components/HeroEveil'
 import ThemeCards from '../components/sections/ThemeCards'
+import { ArticleCard } from '../components/ui/ArticleCard'
+import { articles } from '../data/blog-articles'
 
 /* ========================================
    COMPOSANTS UTILITAIRES
@@ -87,80 +88,7 @@ function ParticlesBackground({ count = 24 }: { count?: number }) {
 }
 
 
-/* ========================================
-   DONNÉES STATIQUES
-======================================== */
-
-const FEATURED_ARTICLES = [
-  {
-    id: 1,
-    title: "Comment surmonter le rejet social",
-    excerpt: "Découvrez les mécanismes psychologiques du rejet et les stratégies pour développer votre résilience émotionnelle.",
-    category: "Psychologie",
-    readTime: 8,
-    image: "/images/articles/rejet-social-cover",
-    slug: "surmonter-rejet-social"
-  },
-  {
-    id: 2,
-    title: "La neuroplasticité : votre cerveau peut changer",
-    excerpt: "Explorez les dernières découvertes sur la capacité du cerveau à se réorganiser tout au long de la vie.",
-    category: "Neurosciences",
-    readTime: 12,
-    image: "/images/articles/neuroplasticite-cover",
-    slug: "neuroplasticite-cerveau"
-  },
-  {
-    id: 3,
-    title: "Construire une confiance en soi durable",
-    excerpt: "Les fondements scientifiques de l'estime de soi et les techniques pratiques pour la développer.",
-    category: "Développement Personnel",
-    readTime: 10,
-    image: "/images/articles/confiance-soi-cover",
-    slug: "confiance-en-soi-durable"
-  },
-  {
-    id: 4,
-    title: "Dopamine intelligente : 7 micro-actions pour relancer ta motivation",
-    excerpt: "Utilise la dopamine à ton avantage avec 7 micro-actions simples et efficaces.",
-    category: "Psychologie",
-    readTime: 6,
-    image: "/images/articles/dopamine-cover",
-    slug: "neuro-dopamine-routine"
-  }
-]
-const STATS = [
-  { icon: Users, value: 10000, label: "Lecteurs actifs", suffix: "+" },
-  { icon: BookOpen, value: 500, label: "Articles publiés", suffix: "" },
-  { icon: TrendingUp, value: 95, label: "Satisfaction", suffix: "%" },
-  { icon: Heart, value: 50000, label: "Vies transformées", suffix: "+" }
-]
-const CATEGORIES = [
-  {
-    icon: Brain,
-    title: "Neurosciences",
-    description: "Découvrez comment votre cerveau fonctionne et comment l'optimiser",
-    color: "from-blue-500 to-indigo-600"
-  },
-  {
-    icon: Heart,
-    title: "Psychologie",
-    description: "Comprenez vos émotions et développez votre intelligence émotionnelle",
-    color: "from-pink-500 to-rose-600"
-  },
-  {
-    icon: TrendingUp,
-    title: "Développement Personnel",
-    description: "Techniques pratiques pour votre croissance personnelle et professionnelle",
-    color: "from-green-500 to-emerald-600"
-  },
-  {
-    icon: Users,
-    title: "Relations Humaines",
-    description: "Améliorez vos relations et votre communication interpersonnelle",
-    color: "from-purple-500 to-violet-600"
-  }
-]
+const featuredArticles = articles.filter(a => a.featured).slice(0, 3)
 
 /* ========================================
    COMPOSANT PRINCIPAL
@@ -219,83 +147,8 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {FEATURED_ARTICLES.map((article, index) => (
-              <TiltCard key={article.id} maxRotation={3} scale={1.03}>
-                <article
-                  className="group bg-sand-50 dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 relative animate-in slide-in-from-bottom-8 duration-700 h-full"
-                  style={{ animationDelay: `${300 + index * 200}ms` }}
-                >
-                  {/* Image de couverture */}
-                  <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                    <img
-        src={`${article.image}.webp`}   
-        alt={article.title}
-        width="400"
-        height="300"
-        className="w-full h-48 object-cover"
-        loading="lazy"
-        decoding="async"
-      />
-                    
-                    {/* Overlay au hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Badge catégorie */}
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
-                        {article.category}
-                      </span>
-                    </div>
-                    
-                    {/* Étoile featured */}
-                    <div className="absolute top-4 right-4">
-                      <Star className="w-5 h-5 text-amber-400 fill-current drop-shadow-lg animate-pulse" />
-                    </div>
-                    
-                    {/* Effet de brillance au hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                                    -translate-x-full group-hover:translate-x-full 
-                                    transition-transform duration-1000 skew-x-12" />
-                  </div>
-
-                  {/* Contenu de l'article */}
-                  <div className="p-6 flex flex-col justify-between" style={{ height: 'calc(100% - 12rem)' }}>
-                    <div>
-                      <h3 className="text-xl font-semibold text-sand-900 dark:text-sand-50 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2">
-                        {article.title}
-                      </h3>
-                      
-                      <p className="text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 group-hover:text-sand-700 dark:group-hover:text-neutral-200 transition-colors duration-300">
-                        {article.excerpt}
-                      </p>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400 mb-4">
-                        <span className="group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
-                          {article.readTime} min de lecture
-                        </span>
-                      </div>
-
-                      <Link
-                        to={`/blog/${article.slug}`}
-                        aria-label={`Lire l'article : ${article.title}`}
-                        className="inline-flex items-center gap-1 font-medium text-indigo-600 hover:text-indigo-700
-                                  dark:text-indigo-400 dark:hover:text-indigo-300 rounded-lg px-2 py-1 focus-ring
-                                  hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300
-                                  group-hover:translate-x-1"
-                      >
-                        Lire l'article
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Barre de progression au hover */}
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 
-                                  group-hover:w-full transition-all duration-700" />
-                </article>
-              </TiltCard>
+            {featuredArticles.map((article) => (
+              <ArticleCard key={article.id} article={article} variant="featured" />
             ))}
           </div>
 

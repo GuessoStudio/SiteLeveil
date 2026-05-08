@@ -1,6 +1,7 @@
 // src/pages/Blog.tsx
 import React, { useState, useMemo } from 'react'
-import { Search, Filter, Clock, User, Heart } from 'lucide-react'
+import { Search } from 'lucide-react'
+import { ArticleCard } from '../components/ui/ArticleCard'
 import { Link, useSearchParams } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Fuse from 'fuse.js'
@@ -174,99 +175,19 @@ const Blog = () => {
             filteredArticles.map((article) => {
               const isFav = isFavorite(article.id, 'article');
               return (
-                <div
+                <ArticleCard
                   key={article.id}
-                  className="group relative bg-sand-50 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block"
-                >
-                  <Link to={`/blog/${article.slug}`} className="block relative overflow-hidden">
-                    <img
-                      src={`${article.image}.webp`}
-                      alt={article.title}
-                      width="400"
-                      height="240"
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    {article.featured && (
-                      <div className="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium z-10">
-                        À la une
-                      </div>
-                    )}
-                  </Link>
-
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      toggleFavorite({
-                        id: article.id,
-                        title: article.title,
-                        type: 'article',
-                        url: `/blog/${article.slug}`,
-                        image: article.image
-                      });
-                    }}
-                    className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm hover:bg-white dark:hover:bg-black/70 transition-all shadow-sm"
-                    title={isFav ? "Retirer des favoris" : "Ajouter aux favoris"}
-                  >
-                    <Heart
-                      className={`w-5 h-5 transition-colors ${isFav
-                        ? "text-red-500 fill-red-500"
-                        : "text-gray-600 dark:text-gray-300 hover:text-red-500"
-                        }`}
-                    />
-                  </button>
-
-                  <div className="p-6">
-                    <Link to={`/blog/${article.slug}`} className="block">
-                      {/* Category */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span
-                          className={`text-xs font-medium px-3 py-1 rounded-full ${article.category === 'Psychologie'
-                            ? 'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400'
-                            : article.category === 'Neurosciences'
-                              ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400'
-                              : article.category === 'Relations Humaines'
-                                ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400'
-                                : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
-                            }`}
-                        >
-                          {article.category}
-                        </span>
-                        <div className="flex items-center text-neutral-500 dark:text-neutral-400 text-sm">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {article.readTime} min
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-sand-900 dark:text-sand-50 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
-                        {article.title}
-                      </h3>
-
-                      {/* Excerpt */}
-                      <p className="text-neutral-600 dark:text-neutral-300 text-sm mb-4 line-clamp-3">
-                        {article.excerpt}
-                      </p>
-
-                      {/* Meta */}
-                      <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400">
-                        <div className="flex items-center">
-                          <User className="w-4 h-4 mr-1" />
-                          Guesso
-                        </div>
-                        <time dateTime={article.date}>
-                          {new Date(article.date).toLocaleDateString('fr-FR', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
-                          })}
-                        </time>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
+                  article={article}
+                  variant="standard"
+                  isFavorite={isFav}
+                  onFavoriteToggle={() => toggleFavorite({
+                    id: article.id,
+                    title: article.title,
+                    type: 'article',
+                    url: `/blog/${article.slug}`,
+                    image: article.image
+                  })}
+                />
               );
             })
           ) : (
