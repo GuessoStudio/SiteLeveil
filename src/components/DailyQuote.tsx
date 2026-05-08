@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Quote, Share2, Twitter, Linkedin, Facebook, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from './ui/animations/TiltCard'
@@ -259,7 +259,7 @@ const DailyQuote = () => {
         maxRotation={4}
         scale={1.02}
         spotlightColor={spotlightColor}
-        className="bg-white/70 dark:bg-[#0d0500]/70 backdrop-blur-md border border-[#C9953A]/30 dark:border-[#C9953A]/20 rounded-2xl"
+        className="bg-white/70 dark:bg-[#0d0500]/60 backdrop-blur-md border border-[#C9953A]/30 dark:border-[#C9953A]/50 rounded-2xl dark:shadow-[0_0_60px_rgba(201,149,58,0.10),0_0_0_1px_rgba(201,149,58,0.08)]"
       >
         <div className="daily-quote p-5 sm:p-8">
           <AnimatePresence mode="wait">

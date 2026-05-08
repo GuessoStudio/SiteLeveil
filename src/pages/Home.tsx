@@ -33,17 +33,27 @@ const Home = () => {
       {/* Hero — pas de fade-in, premier élément visible */}
       <div className="hero-section relative">
         <HeroEveil />
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-neutral-900 pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-[#0d0500] pointer-events-none z-10" />
       </div>
 
       {/* Citation du jour */}
       <section
         ref={quoteSection.ref}
-        className={`quote-section relative z-20 overflow-visible -mt-10 py-8 sm:py-12 bg-sand-50 dark:bg-neutral-900 transition-all duration-700 delay-100 ${
+        className={`quote-section relative z-20 overflow-hidden -mt-28 sm:-mt-32 pt-12 pb-16 sm:pt-16 sm:pb-20 bg-sand-50 dark:bg-gradient-to-b dark:from-[#0d0500] dark:to-neutral-900 transition-all duration-700 delay-200 ${
           quoteSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="container mx-auto px-4">
+          {/* Ancre visuelle au-dessus de la card */}
+          <div className="flex flex-col items-center gap-3 mb-8">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#C9953A]/60" />
+              <span className="text-[0.65rem] tracking-[0.25em] uppercase font-medium text-[#C9953A]/70">
+                Pensée du jour
+              </span>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#C9953A]/60" />
+            </div>
+          </div>
           <DailyQuote />
         </div>
       </section>
