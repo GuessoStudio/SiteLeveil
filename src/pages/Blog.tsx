@@ -1,12 +1,11 @@
-// src/pages/Blog.tsx
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { Search } from 'lucide-react'
 import { ArticleCard } from '../components/ui/ArticleCard'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import SEO from '../components/SEO'
 import Fuse from 'fuse.js'
-import { useNavigate } from 'react-router-dom'
 import { useNeuroJournal } from '../hooks/useNeuroJournal'
+import { useInView } from '../hooks/useIntersectionObserver'
 import { articles } from '../data/blog-articles'
 
 const Blog = () => {
@@ -15,13 +14,15 @@ const Blog = () => {
 
   const handleNewsletterClick = () => {
     navigate('/')
-    setTimeout(() => {
-      const element = document.getElementById('newsletter')
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 500)
   }
+  const cv0 = useInView()
+  const cv1 = useInView()
+  const cv2 = useInView()
+  const cv3 = useInView()
+  const cv4 = useInView()
+  const cv5 = useInView()
+  const cardViews = [cv0, cv1, cv2, cv3, cv4, cv5]
+
   const [searchParams, setSearchParams] = useSearchParams()
   const [searchQuery, setSearchQuery] = useState("")
 
@@ -34,31 +35,31 @@ const Blog = () => {
     switch (category) {
       case 'Psychologie':
         return {
-          active: 'bg-rose-600 text-white',
-          hover: 'hover:bg-rose-100 hover:text-rose-600 dark:hover:bg-rose-900/20 dark:hover:text-rose-400'
-        };
+          active: 'bg-[#7C3AED] text-white',
+          hover: 'hover:border-[#7C3AED]/60 hover:text-[#7C3AED] dark:hover:text-[#7C3AED]'
+        }
       case 'Neurosciences':
         return {
-          active: 'bg-indigo-600 text-white',
-          hover: 'hover:bg-indigo-100 hover:text-indigo-600 dark:hover:bg-indigo-900/20 dark:hover:text-indigo-400'
-        };
+          active: 'bg-[#C9953A] text-white',
+          hover: 'hover:border-[#C9953A]/60 hover:text-[#C9953A] dark:hover:text-[#C9953A]'
+        }
       case 'Relations Humaines':
         return {
-          active: 'bg-purple-600 text-white',
-          hover: 'hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/20 dark:hover:text-purple-400'
-        };
+          active: 'bg-[#10B981] text-white',
+          hover: 'hover:border-[#10B981]/60 hover:text-[#10B981] dark:hover:text-[#10B981]'
+        }
       case 'Développement Personnel':
         return {
-          active: 'bg-green-600 text-white',
-          hover: 'hover:bg-green-100 hover:text-green-600 dark:hover:bg-green-900/20 dark:hover:text-green-400'
-        };
-      default:
+          active: 'bg-[#0EA5E9] text-white',
+          hover: 'hover:border-[#0EA5E9]/60 hover:text-[#0EA5E9] dark:hover:text-[#0EA5E9]'
+        }
+      default: // Tous
         return {
-          active: 'bg-indigo-600 text-white',
-          hover: 'hover:bg-indigo-100 hover:text-indigo-600 dark:hover:bg-indigo-900/20 dark:hover:text-indigo-400'
-        };
+          active: 'bg-[#C9953A] text-white',
+          hover: 'hover:border-[#C9953A]/60 hover:text-[#C9953A] dark:hover:text-[#C9953A]'
+        }
     }
-  };
+  }
 
   // Synchroniser l'URL quand le filtre change
   const updateFilter = (category: string) => {
@@ -89,10 +90,9 @@ const Blog = () => {
     if (searchQuery.trim()) {
       const fuse = new Fuse(filtered, {
         keys: [
-          { name: 'title', weight: 0.4 },
+          { name: 'title', weight: 0.5 },
           { name: 'excerpt', weight: 0.3 },
           { name: 'category', weight: 0.2 },
-          { name: 'tags', weight: 0.1 } // Si vous avez des tags
         ],
         threshold: 0.3, // Plus tolérant aux fautes de frappe
         ignoreLocation: true,
@@ -107,7 +107,7 @@ const Blog = () => {
   }, [activeFilter, searchQuery]);
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen py-8 bg-sand-50 dark:bg-neutral-900">
       <SEO
         title="Blog"
         description="Nos articles sur la psychologie, les neurosciences et le développement personnel."
@@ -148,10 +148,11 @@ const Blog = () => {
                 <button
                   key={category}
                   onClick={() => updateFilter(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${activeFilter === category
-                    ? colors.active + " shadow-md"
-                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 " + colors.hover
-                    }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer border ${
+                  activeFilter === category
+                    ? colors.active + " shadow-md border-transparent"
+                    : "bg-transparent border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300 " + colors.hover
+                  }`}
                 >
                   {category}
                 </button>
@@ -172,23 +173,30 @@ const Blog = () => {
         {/* Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.length > 0 ? (
-            filteredArticles.map((article) => {
-              const isFav = isFavorite(article.id, 'article');
+            filteredArticles.map((article, index) => {
+              const isFav = isFavorite(article.id, 'article')
+              const view = cardViews[index]
               return (
-                <ArticleCard
+                <div
                   key={article.id}
-                  article={article}
-                  variant="standard"
-                  isFavorite={isFav}
-                  onFavoriteToggle={() => toggleFavorite({
-                    id: article.id,
-                    title: article.title,
-                    type: 'article',
-                    url: `/blog/${article.slug}`,
-                    image: article.image
-                  })}
-                />
-              );
+                  ref={view?.ref}
+                  className={`transition-all duration-700 ${!view || view.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={index < 6 ? { transitionDelay: `${index * 75}ms` } : undefined}
+                >
+                  <ArticleCard
+                    article={article}
+                    variant="standard"
+                    isFavorite={isFav}
+                    onFavoriteToggle={() => toggleFavorite({
+                      id: article.id,
+                      title: article.title,
+                      type: 'article',
+                      url: `/blog/${article.slug}`,
+                      image: article.image
+                    })}
+                  />
+                </div>
+              )
             })
           ) : (
             // Message quand aucun article n'est trouvé
@@ -218,7 +226,7 @@ const Blog = () => {
 
         {/* Newsletter CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-[#C9953A] to-[#7C3AED] rounded-2xl p-8 text-white">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Ne manquez aucun article
             </h2>

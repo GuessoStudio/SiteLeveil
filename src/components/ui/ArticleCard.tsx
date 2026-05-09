@@ -13,10 +13,10 @@ interface ArticleCardProps {
 
 function CategoryBadge({ category }: { category: string }) {
   const colors: Record<string, string> = {
-    'Psychologie':             'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400',
-    'Neurosciences':           'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400',
-    'Relations Humaines':      'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
-    'Développement Personnel': 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
+    'Neurosciences':           'bg-[#C9953A]/15 text-[#C9953A]',
+    'Psychologie':             'bg-[#7C3AED]/15 text-[#7C3AED]',
+    'Relations Humaines':      'bg-[#10B981]/15 text-[#10B981]',
+    'Développement Personnel': 'bg-[#0EA5E9]/15 text-[#0EA5E9]',
   }
   return (
     <span className={`text-xs font-medium px-3 py-1 rounded-full ${colors[category] ?? colors['Neurosciences']}`}>

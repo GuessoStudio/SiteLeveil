@@ -12,8 +12,8 @@ interface SearchOverlayProps {
 const CATEGORY_STYLES: Record<string, string> = {
   'Neurosciences':          'bg-[#C9953A]/15 text-[#C9953A]',
   'Psychologie':            'bg-[#7C3AED]/15 text-[#7C3AED]',
-  'Relations Humaines':     'bg-emerald-500/15 text-emerald-400',
-  'Développement Personnel':'bg-sky-500/15 text-sky-400',
+  'Relations Humaines':     'bg-[#10B981]/15 text-[#10B981]',
+  'Développement Personnel':'bg-[#0EA5E9]/15 text-[#0EA5E9]',
 }
 
 export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
