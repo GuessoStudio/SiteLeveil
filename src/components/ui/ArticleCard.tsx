@@ -130,7 +130,7 @@ function StandardCard({ article, isFavorite = false, onFavoriteToggle }: {
               e.stopPropagation()
               onFavoriteToggle(article)
             }}
-            className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm
+            className="absolute top-3 right-3 z-20 p-2.5 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm
                        hover:bg-white dark:hover:bg-black/70 transition-all shadow-sm"
             aria-label={isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'}
           >

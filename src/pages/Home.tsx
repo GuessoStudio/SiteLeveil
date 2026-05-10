@@ -84,7 +84,7 @@ const Home = () => {
       </div>
 
       {/* Articles à la une */}
-      <section className="py-20 bg-white dark:bg-neutral-800 relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-white dark:bg-neutral-800 relative overflow-hidden">
         {/* Lignes décoratives */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#C9953A]/20 to-transparent animate-pulse" />

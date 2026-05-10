@@ -148,7 +148,7 @@ const Blog = () => {
                 <button
                   key={category}
                   onClick={() => updateFilter(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer border ${
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all cursor-pointer border ${
                   activeFilter === category
                     ? colors.active + " shadow-md border-transparent"
                     : "bg-transparent border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300 " + colors.hover
@@ -226,7 +226,7 @@ const Blog = () => {
 
         {/* Newsletter CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-[#C9953A] to-[#7C3AED] rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-[#C9953A] to-[#7C3AED] rounded-2xl p-6 md:p-8 text-white">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Ne manquez aucun article
             </h2>

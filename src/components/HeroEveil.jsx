@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BrainCircuit } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ROTATING_WORDS = ["POTENTIEL", "CERVEAU", "CONSCIENCE", "CLARTÉ", "LIBERTÉ"];
 const LONGEST_WORD = ROTATING_WORDS.reduce((a, b) => (a.length > b.length ? a : b));
@@ -27,6 +28,7 @@ const BRAIN_IMG_URL = "/brain-cerebral.svg";
 const MASK_MAX = 400; // taille max du mask sur la dimension dominante
 
 export default function HeroEveil() {
+  const navigate = useNavigate();
   const canvasRef = useRef(null);
   const [wordIndex, setWordIndex] = useState(0);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -1075,7 +1077,7 @@ export default function HeroEveil() {
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 backdrop-blur-md mb-10 ts-soft"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 backdrop-blur-md mb-5 lg:mb-10 ts-soft"
           >
             <BrainCircuit className="w-4 h-4 text-amber-300" />
             <span className="text-amber-100 text-xs tracking-[0.18em] uppercase font-medium">
@@ -1107,7 +1109,7 @@ export default function HeroEveil() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.0, duration: 0.6 }}
-            className={`mt-2 mb-8 ${isMobile ? "flex justify-center" : ""}`}
+            className={`mt-2 mb-4 lg:mb-8 ${isMobile ? "flex justify-center" : ""}`}
           >
             <div
               className={`relative ${isMobile ? "inline-block" : ""}`}
@@ -1204,7 +1206,7 @@ export default function HeroEveil() {
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.6 }}
-            className="text-sm italic mb-14 font-display tracking-wide ts-soft"
+            className="text-sm italic mb-8 lg:mb-14 font-display tracking-wide ts-soft"
             style={{ color: "rgba(254, 243, 199, 0.65)" }}
           >
             Rejoignez les esprits curieux qui reprennent le contrôle.
@@ -1223,6 +1225,7 @@ export default function HeroEveil() {
                 Contraste : #0d0500 sur #C9953A = 7.84:1 (WCAG AAA)
                 Look éditorial premium, cohérent avec contour cerveau et mot rotatif */}
             <button
+              onClick={() => navigate("/blog")}
               className="btn-primary focus-ring group rounded-full px-8 py-3 font-semibold text-sm tracking-wide transition-all duration-300"
               style={{
                 backgroundColor: "#C9953A",
@@ -1242,6 +1245,7 @@ export default function HeroEveil() {
             </button>
             {/* Bouton secondaire — bordure or, texte blanc sur fond translucide */}
             <button
+              onClick={() => document.getElementById("newsletter")?.scrollIntoView({ behavior: "smooth" })}
               className="focus-ring rounded-full px-8 py-3 font-medium text-sm tracking-wide transition-all duration-300 ts-soft text-white bg-black/20 backdrop-blur-sm hover:bg-black/30"
               style={{
                 border: "1.5px solid rgba(201, 149, 58, 0.5)",
