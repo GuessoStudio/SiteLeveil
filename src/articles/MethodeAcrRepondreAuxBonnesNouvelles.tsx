@@ -220,7 +220,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
                 {meta.title}
               </h1>
               
-              <div className="flex items-center gap-6 text-neutral-600 dark:text-neutral-400 mb-8">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-neutral-600 dark:text-neutral-400 mb-8">
                 <span>Par {meta.author.name}</span>
                 <span>{new Date(meta.date).toLocaleDateString('fr-FR')}</span>
                 <span>{meta.readingTime} de lecture</span>

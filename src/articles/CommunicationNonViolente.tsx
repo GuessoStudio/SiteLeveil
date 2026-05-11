@@ -213,7 +213,7 @@ export default function CommunicationNonViolente() {
         jsonLd={[schemaPerson, schemaOrganization, schemaImage, schemaBlogPosting, schemaBreadcrumb, schemaItemList, schemaFAQ]}
       />
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Fil d'Ariane */}
         <nav aria-label="Fil d'Ariane" className="text-xs text-neutral-500 dark:text-neutral-400 mb-6">
@@ -412,7 +412,7 @@ export default function CommunicationNonViolente() {
               </table>
             </div>
             <p className="text-xs text-violet-600 dark:text-violet-400 mt-3">
-              Ces approches sont complémentaires, non concurrentes. La CNV intègre des éléments des deux autres.
+              Ces approches sont complémentaires, non concurrentes. La CNV intègre des éléments des deux autres. Pour approfondir les techniques concrètes de Carl Rogers, voir notre guide sur l'<Link to="/blog/ecoute-active-technique-carl-rogers" className="text-violet-700 dark:text-violet-400 underline underline-offset-2">écoute active et ses 5 techniques validées par la science</Link>.
             </p>
           </div>
 
@@ -589,12 +589,14 @@ export default function CommunicationNonViolente() {
 
           {/* FAQ */}
           <h2>Questions fréquentes sur la communication non violente</h2>
+          <div className="not-prose">
           {faqData.map((item, index) => (
             <div key={index} className="mb-6">
               <h3 className="text-base font-bold text-neutral-900 dark:text-neutral-100">{item.question}</h3>
               <p className="text-neutral-700 dark:text-neutral-300 text-sm">{item.answer}</p>
             </div>
           ))}
+          </div>
 
           {/* CTA Lead Magnet */}
           <div className="not-prose my-10 bg-violet-50 dark:bg-violet-950/30 p-6 rounded-xl border border-violet-200 dark:border-violet-800 text-center">

@@ -202,5 +202,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/communication-non-violente-cnv-cover",
         slug: "communication-non-violente-cnv",
         featured: true
+    },
+    {
+        id: 19,
+        title: "Écoute active : 5 techniques de Carl Rogers validées par la science",
+        excerpt: "Écoute active : 5 techniques de Carl Rogers, synchronisation inter-cérébrale fNIRS 2025, différence avec CNV. Guide scientifique complet avec limites.",
+        category: "Relations Humaines",
+        readTime: 13,
+        date: "2026-05-11",
+        image: "/images/articles/ecoute-active-technique-carl-rogers-cover",
+        slug: "ecoute-active-technique-carl-rogers",
+        featured: false
     }
 ];

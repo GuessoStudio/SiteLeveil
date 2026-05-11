@@ -124,6 +124,18 @@ const Resources = () => {
       downloadUrl: "/downloads/neurotransmetteurs-humeur-checklist.pdf"
     },
     {
+      id: 20,
+      title: "Écoute active — Les 5 techniques de Carl Rogers",
+      description: "Guide pratique A5 : les 5 techniques Rogers avec exemples du quotidien, différence avec la CNV, et les 3 obstacles à éviter. Basé sur Wang 2022 (fNIRS) et Kluger 2023 (N=3858).",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/resources/ecoute-active-technique-carl-rogers-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/ecoute-active-technique-carl-rogers-guide.pdf"
+    },
+    {
       id: 19,
       title: "Carte mémo CNV — Les 4 étapes OSBD",
       description: "Recto-verso A5 à imprimer : les 4 étapes OSBD avec exemples concrets, les 3 pièges à éviter, et ce que la science dit vraiment sur la CNV (Park 2025, Huang 2025).",

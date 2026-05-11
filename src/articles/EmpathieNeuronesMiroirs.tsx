@@ -552,7 +552,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés. La <Link to="/blog/communication-non-violente-cnv" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">communication non violente</Link> s'appuie sur ces mêmes mécanismes empathiques pour structurer l'expression des besoins.
+            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés. La <Link to="/blog/communication-non-violente-cnv" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">communication non violente</Link> s'appuie sur ces mêmes mécanismes empathiques pour structurer l'expression des besoins. Et si tu veux aller plus loin dans la posture réceptive elle-même, les <Link to="/blog/ecoute-active-technique-carl-rogers" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">5 techniques d'écoute active de Carl Rogers</Link> offrent un cadre scientifiquement validé pour créer ces conditions de synchronie.
           </p>
 
           <h3>3. Les récits partagés — activation narrative de l'insula</h3>

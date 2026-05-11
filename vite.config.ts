@@ -23,6 +23,7 @@ const ARTICLE_SLUGS = [
   'neurotransmetteurs-humeur-cerveau',
   'cortisol-stress-chronique-cerveau-memoire',
   'communication-non-violente-cnv',
+  'ecoute-active-technique-carl-rogers',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

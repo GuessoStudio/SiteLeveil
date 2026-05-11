@@ -45,6 +45,7 @@ const articles = [
   { path: "/blog/neurotransmetteurs-humeur-cerveau/",               file: "src/articles/NeurotransmetteurHumeur.tsx" },
   { path: "/blog/cortisol-stress-chronique-cerveau-memoire/",       file: "src/articles/CortisolStressChronique.tsx" },
   { path: "/blog/communication-non-violente-cnv/",                  file: "src/articles/CommunicationNonViolente.tsx" },
+  { path: "/blog/ecoute-active-technique-carl-rogers/",             file: "src/articles/EcouteActive.tsx" },
 ];
 
 const allUrls = [
