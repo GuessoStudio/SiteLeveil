@@ -215,10 +215,16 @@ Tweet 8 : CTA avec lien direct vers l'article
 
 ### Règles X
 - Sources : (Auteur, année) — jamais de DOI, jamais de n=
-- Pas de stats trop techniques ("r = 0,748") — garder la conclusion
+- INTERDIT : notations statistiques brutes (r=, d=, p<, β=, IC95%) — toujours traduire en langage courant
+  Ex : ❌ "r = −0,28" → ✅ "les managers qui écoutent ont des équipes moins épuisées"
+  Ex : ❌ "d = 0,85" → ✅ "être bien écouté satisfait plus que recevoir un conseil"
 - Lien article uniquement dans le tweet 8
 - Pas de hashtags dans les tweets 1-7
 - Emojis de couleur autorisés pour les listes : 🔵 🟣 🟢 🔴 🟡
+- ⚠️ LIMITE STRICTE : chaque tweet doit faire MAX 220 caractères (marge de sécurité pour compte gratuit)
+  Compter mentalement avant de valider : titre + emojis + sauts de ligne = caractères réels
+  Tweet 5 (récap) : maximum 4 bullets de 45 chars chacun + titre + transition = ~240 chars total
+  Tweet 7 (techniques) : liste courte uniquement — noms des techniques SANS description inline
 
 ---
 

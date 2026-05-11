@@ -34,6 +34,36 @@ RÈGLES CONCRÈTES :
 - Toujours partir du vécu avant la science :
   "Tu as déjà ressenti X ? Voici pourquoi..."
 
+### NOTATION STATISTIQUE — INTERDIT dans le corps de l'article
+
+Les notations brutes (r=, d=, p<, β=, IC95%, F=, η²) sont incompréhensibles pour le grand public.
+TOUJOURS traduire en langage courant AVANT de mentionner le chiffre (ou ne pas mentionner le chiffre du tout).
+
+❌ "une corrélation de r = −0,28 (p < 0,001)"
+✅ "les managers qui écoutent ont des équipes nettement moins épuisées — un lien confirmé sur 3 858 personnes"
+
+❌ "un effet de taille d = 0,85"
+✅ "l'effet est fort : être bien écouté améliore davantage le sentiment d'autonomie que recevoir un conseil"
+
+❌ "F(1, 120) = 8,540, p = 0,004"
+✅ "le résultat est statistiquement robuste — testé sur 122 participants en situation réelle"
+
+RÈGLE : la conclusion en français d'abord, le chiffre brut entre parenthèses SEULEMENT si indispensable.
+Si le chiffre n'apporte rien à la compréhension → ne pas l'écrire.
+
+### MENTIONS DE CHERCHEURS — accessibles à tous
+
+Nommer le chercheur et l'institution est obligatoire pour l'E-E-A-T, MAIS chaque mention
+doit être suivie d'un contexte qui aide le lecteur à comprendre pourquoi ça compte.
+
+❌ "Itzchakov et al. (2025) ont montré (d = 0,85, p < 0,001)..."
+✅ "Le psychologue Guy Itzchakov (Université de Haïfa, Israël) a montré dans une étude de 2025
+   que les personnes qui se sentent vraiment écoutées se sentent deux fois plus autonomes dans
+   leurs décisions — un effet aussi fort que celui d'une thérapie courte."
+
+Format attendu : Prénom Nom (Institution, Pays) + ce que ça veut dire concrètement.
+L'institution est une preuve de sérieux — pas de la déco. Expliquer brièvement pourquoi on cite ce labo.
+
 TEST MENTAL avant de publier :
 "Est-ce que ma mère sans formation scientifique comprendrait ce paragraphe ?"
 Si non → réécrire.
