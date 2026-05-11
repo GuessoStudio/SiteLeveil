@@ -1,4 +1,4 @@
-// src/articles/EmpathieNeuronesMiroirs.tsx
+﻿// src/articles/EmpathieNeuronesMiroirs.tsx
 // Article optimisé SEO 2026 avec schemas JSON-LD complets
 // Optimisé pour : Featured Snippets, Rich Results, E-E-A-T, GEO
 // Auteur : Guesso | L'Éveil Mental
@@ -226,7 +226,7 @@ export default function EmpathieNeuronesMiroirs() {
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <Link to="/blog?category=relations-humaines" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Relations Humaines</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">{meta.title}</span>
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
 
           {/* Badges */}
@@ -255,15 +255,15 @@ export default function EmpathieNeuronesMiroirs() {
           </div>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span>par {meta.author.name}</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" })}
             </time>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <div className="flex gap-1 flex-wrap">
               {meta.tags.map((tag, i) => (
                 <span key={tag} className="text-rose-600 dark:text-rose-400">

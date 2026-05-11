@@ -134,7 +134,7 @@ const Header = () => {
               {/* Search Button avec animation */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-lg focus-ring text-neutral-600 dark:text-neutral-300
+                className="p-3 rounded-lg focus-ring text-neutral-600 dark:text-neutral-300
                            hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300
                            hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transform hover:scale-110 active:scale-90
                            hover:rotate-12 group"
@@ -146,7 +146,7 @@ const Header = () => {
               {/* Theme Toggle avec animation */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg focus-ring text-neutral-600 dark:text-neutral-300 
+                className="p-3 rounded-lg focus-ring text-neutral-600 dark:text-neutral-300
                            hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300
                            hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transform hover:scale-110 active:scale-90
                            group relative overflow-hidden"

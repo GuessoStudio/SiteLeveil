@@ -99,10 +99,11 @@ export default function Article() {
             url: `/blog/${currentArticle.slug}`,
             image: currentArticle.image
           })}
-          className={`fixed bottom-8 right-8 z-[9999] p-4 rounded-full shadow-lg transition-all transform hover:scale-110 ${isFav
+          className={`fixed right-6 z-[9999] p-4 rounded-full shadow-lg transition-all transform hover:scale-110 ${isFav
             ? "bg-white text-red-500 border-2 border-red-500"
             : "bg-indigo-600 text-white hover:bg-indigo-700"
             }`}
+          style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 1.5rem)' }}
           title={isFav ? "Retirer des favoris" : "Ajouter aux favoris"}
           aria-label="Toggle Favorite"
         >

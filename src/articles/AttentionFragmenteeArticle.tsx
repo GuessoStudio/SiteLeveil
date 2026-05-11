@@ -1,4 +1,4 @@
-// src/articles/AttentionFragmenteeArticle.tsx
+﻿// src/articles/AttentionFragmenteeArticle.tsx
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
@@ -190,7 +190,7 @@ export default function AttentionFragmenteeArticle() {
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">
               {meta.title}
             </span>
           </nav>
@@ -206,11 +206,11 @@ export default function AttentionFragmenteeArticle() {
           </p>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span>par Guesso</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", { 
                 day: "2-digit", 
@@ -218,7 +218,7 @@ export default function AttentionFragmenteeArticle() {
                 year: "numeric" 
               })}
             </time>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <div className="flex gap-1">
               {meta.tags.map((tag, i) => (
                 <span key={tag} className="text-indigo-600 dark:text-indigo-400">
@@ -528,15 +528,15 @@ export default function AttentionFragmenteeArticle() {
               <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Neuroplasticité et apprentissage
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Optimiser la dopamine
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Maîtriser la rumination
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/#newsletter" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Newsletter neurosciences
               </Link>

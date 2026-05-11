@@ -1,4 +1,4 @@
-// src/articles/LumiereNaturelle.tsx
+﻿// src/articles/LumiereNaturelle.tsx
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import SocialShare from "../components/SocialShare";
@@ -191,7 +191,7 @@ export default function LumiereNaturelle() {
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">
               {meta.title}
             </span>
           </nav>
@@ -207,11 +207,11 @@ export default function LumiereNaturelle() {
           </p>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span>par {meta.author.name}</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", { 
                 day: "numeric", 

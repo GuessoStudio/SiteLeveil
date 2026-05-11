@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import SocialShare from "../components/SocialShare";
 import SmartImg from "../components/SmartImg";
@@ -212,7 +212,7 @@ const NeuroDopamineRoutine = () => {
               Neurosciences
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 font-medium">
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 font-medium truncate max-w-[180px] sm:max-w-none">
               Dopamine Naturelle
             </span>
           </nav>
@@ -228,11 +228,11 @@ const NeuroDopamineRoutine = () => {
           </p>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span className="font-medium">par {meta.author.name}</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.dateModified}>
               Mis à jour le {new Date(meta.dateModified).toLocaleDateString("fr-FR", {
                 day: "2-digit",

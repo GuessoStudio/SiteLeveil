@@ -1,4 +1,4 @@
-// src/articles/NeuroplasticiteCerveau.tsx
+﻿// src/articles/NeuroplasticiteCerveau.tsx
 // Article optimisé SEO 2025-2026 avec schemas JSON-LD complets
 // Optimisé pour : Featured Snippets, Rich Results, E-E-A-T
 // Auteur : Guesso | L'Éveil Mental
@@ -218,7 +218,7 @@ export default function NeuroplasticiteCerveau() {
               Neurosciences
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">
               {meta.title}
             </span>
           </nav>
@@ -234,11 +234,11 @@ export default function NeuroplasticiteCerveau() {
           </p>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span>par {meta.author.name}</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", {
                 day: "2-digit",
@@ -246,11 +246,11 @@ export default function NeuroplasticiteCerveau() {
                 year: "numeric"
               })}
             </time>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.dateModified} className="text-xs">
               Mis à jour le {new Date(meta.dateModified).toLocaleDateString("fr-FR")}
             </time>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <div className="flex gap-1">
               {meta.tags.map((tag, i) => (
                 <span key={tag} className="text-indigo-600 dark:text-indigo-400">

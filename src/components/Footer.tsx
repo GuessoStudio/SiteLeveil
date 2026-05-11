@@ -93,7 +93,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className="text-sm text-sand-700 dark:text-gray-400 hover:text-[#C9953A] transition-colors flex items-center gap-2 group/link w-fit"
+                    className="text-sm text-sand-700 dark:text-gray-400 hover:text-[#C9953A] transition-colors flex items-center gap-2 group/link w-fit py-1.5"
                   >
                     <span className="w-2 h-2 rounded-full bg-neutral-600 group-hover/link:bg-[#C9953A] transition-all group-hover/link:w-4 duration-200 flex-shrink-0" />
                     {item.name}
@@ -120,7 +120,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className="text-sm text-sand-700 dark:text-gray-400 hover:text-[#C9953A] transition-colors flex items-center gap-2 group/link w-fit"
+                    className="text-sm text-sand-700 dark:text-gray-400 hover:text-[#C9953A] transition-colors flex items-center gap-2 group/link w-fit py-1.5"
                   >
                     <span className="w-2 h-2 rounded-full bg-neutral-600 group-hover/link:bg-[#C9953A] transition-all group-hover/link:w-4 duration-200 flex-shrink-0" />
                     {item.name}
@@ -146,7 +146,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className="text-sm text-sand-700 dark:text-gray-400 hover:text-[#C9953A] transition-colors flex items-center gap-2 group/link w-fit"
+                    className="text-sm text-sand-700 dark:text-gray-400 hover:text-[#C9953A] transition-colors flex items-center gap-2 group/link w-fit py-1.5"
                   >
                     <span className="w-2 h-2 rounded-full bg-neutral-600 group-hover/link:bg-[#C9953A] transition-all group-hover/link:w-4 duration-200 flex-shrink-0" />
                     {item.name}

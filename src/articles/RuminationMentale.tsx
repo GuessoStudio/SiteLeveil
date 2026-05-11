@@ -1,4 +1,4 @@
-// src/articles/RuminationMentale.tsx
+﻿// src/articles/RuminationMentale.tsx
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
@@ -189,7 +189,7 @@ export default function RuminationMentale() {
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">
               {meta.title}
             </span>
           </nav>
@@ -205,11 +205,11 @@ export default function RuminationMentale() {
           </p>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span>par Guesso</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", { 
                 day: "2-digit", 
@@ -217,7 +217,7 @@ export default function RuminationMentale() {
                 year: "numeric" 
               })}
             </time>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <div className="flex gap-1">
               {meta.tags.map((tag, i) => (
                 <span key={tag} className="text-rose-600 dark:text-rose-400">
@@ -546,31 +546,31 @@ export default function RuminationMentale() {
               <Link to="/blog/surmonter-rejet-social" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Gestion du rejet social
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/confiance-en-soi-durable" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Confiance authentique
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/neuroplasticite-cerveau" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Optimiser son cerveau
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Méthode ACR
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Neurones miroirs et empathie
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Système limbique
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/blog/syndrome-imposteur-solutions" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Syndrome de l'imposteur
               </Link>
-              <span>•</span>
+              <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
               <Link to="/#newsletter" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Newsletter psychologie
               </Link>

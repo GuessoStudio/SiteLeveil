@@ -1,4 +1,4 @@
-// src/articles/PlasticiteSynaptique.tsx
+﻿// src/articles/PlasticiteSynaptique.tsx
 // Article optimisé SEO 2026 avec schemas JSON-LD complets
 // Optimisé pour : Featured Snippets, Rich Results, E-E-A-T, GEO
 // Auteur : Guesso | L'Éveil Mental
@@ -224,7 +224,7 @@ export default function PlasticiteSynaptique() {
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300">{meta.title}</span>
+            <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
 
           {/* Badges */}
@@ -253,15 +253,15 @@ export default function PlasticiteSynaptique() {
           </div>
 
           {/* Métadonnées */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
             <span>par {meta.author.name}</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <span>{meta.readingTime} de lecture</span>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <time dateTime={meta.datePublished}>
               {new Date(meta.datePublished).toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" })}
             </time>
-            <span>•</span>
+            <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
             <div className="flex gap-1 flex-wrap">
               {meta.tags.map((tag, i) => (
                 <span key={tag} className="text-indigo-600 dark:text-indigo-400">
@@ -659,7 +659,7 @@ export default function PlasticiteSynaptique() {
             <a
               href="/downloads/plasticite-synaptique-checklist.pdf"
               download
-              className="inline-flex items-center px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium rounded-lg transition-colors"
+              className="inline-flex items-center px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium rounded-lg transition-colors"
             >
               Télécharger la checklist PDF →
             </a>
@@ -691,7 +691,7 @@ export default function PlasticiteSynaptique() {
             </p>
             <Link
               to="/ressources"
-              className="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-colors"
+              className="inline-flex items-center px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-colors"
             >
               Accéder aux ressources gratuites →
             </Link>
