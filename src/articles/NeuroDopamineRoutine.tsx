@@ -648,7 +648,7 @@ const NeuroDopamineRoutine = () => {
               {/* Image Cover - placeholder pour ton workbook */}
               <div className="flex-shrink-0 w-full md:w-40">
                 <img
-                  src="/images/workbooks/detox-dopamine-cover.jpg"
+                  src="/images/workbooks/detox-dopamine-cover.webp"
                   alt="Workbook Détox Dopamine 30 jours"
                   className="w-40 h-auto rounded-lg shadow-xl"
                   width="400"

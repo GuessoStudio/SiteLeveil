@@ -88,7 +88,9 @@ export default function Article() {
   return (
     <>
       <ReadingProgressBar />
+      <React.Suspense fallback={<div className="min-h-screen bg-neutral-50 dark:bg-neutral-900" />}>
       <Component />
+      </React.Suspense>
       {/* Guard SSR : createPortal requiert document.body (browser uniquement) */}
       {typeof document !== 'undefined' && currentArticle && ReactDOM.createPortal(
         <button

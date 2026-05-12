@@ -1,26 +1,27 @@
 // src/content/index.ts
-import type { FC } from "react";
+import React, { type FC } from "react";
 
-// ⚠️ Les chemins et les noms doivent correspondre EXACTEMENT aux fichiers
-import NeuroDopamineRoutine from "../articles/NeuroDopamineRoutine";
-import RejetSocial from "../pages/Blog/RejetSocial";
-import ConfianceEnSoi from "../articles/ConfianceEnSoi";
-import NeuroplasticiteCerveau from "../articles/NeuroplasticiteCerveau";
-import AttentionFragmenteeArticle from "../articles/AttentionFragmenteeArticle";
-import RuminationMentale from "../articles/RuminationMentale";
-import ProcrastinationCerveau from "../articles/ProcrastinationCerveau";
-import MethodeAcrRepondreAuxBonnesNouvelles from "../articles/MethodeAcrRepondreAuxBonnesNouvelles";
-import SyndromeImposteur from "../articles/SyndromeImposteur";
-import SommeilReparateur from "../articles/SommeilReparateur";
-import LumiereNaturelle from "../articles/LumiereNaturelle";
-import BdnfAugmenterNaturellement from "../articles/BdnfAugmenterNaturellement";
-import SystemeLimbique from "../articles/SystemeLimbique";
-import PlasticiteSynaptique from "../articles/PlasticiteSynaptique";
-import EmpathieNeuronesMiroirs from "../articles/EmpathieNeuronesMiroirs";
-import NeurotransmetteurHumeur from "../articles/NeurotransmetteurHumeur";
-import CortisolStressChronique from "../articles/CortisolStressChronique";
-import CommunicationNonViolente from "../articles/CommunicationNonViolente";
-import EcouteActive from "../articles/EcouteActive";
+// Dynamic imports — chaque article devient un chunk séparé chargé à la demande.
+// Gain bundle : chunk index 1,6 MB → ~200-300 kB.
+const NeuroDopamineRoutine = React.lazy(() => import("../articles/NeuroDopamineRoutine"));
+const RejetSocial = React.lazy(() => import("../pages/Blog/RejetSocial"));
+const ConfianceEnSoi = React.lazy(() => import("../articles/ConfianceEnSoi"));
+const NeuroplasticiteCerveau = React.lazy(() => import("../articles/NeuroplasticiteCerveau"));
+const AttentionFragmenteeArticle = React.lazy(() => import("../articles/AttentionFragmenteeArticle"));
+const RuminationMentale = React.lazy(() => import("../articles/RuminationMentale"));
+const ProcrastinationCerveau = React.lazy(() => import("../articles/ProcrastinationCerveau"));
+const MethodeAcrRepondreAuxBonnesNouvelles = React.lazy(() => import("../articles/MethodeAcrRepondreAuxBonnesNouvelles"));
+const SyndromeImposteur = React.lazy(() => import("../articles/SyndromeImposteur"));
+const SommeilReparateur = React.lazy(() => import("../articles/SommeilReparateur"));
+const LumiereNaturelle = React.lazy(() => import("../articles/LumiereNaturelle"));
+const BdnfAugmenterNaturellement = React.lazy(() => import("../articles/BdnfAugmenterNaturellement"));
+const SystemeLimbique = React.lazy(() => import("../articles/SystemeLimbique"));
+const PlasticiteSynaptique = React.lazy(() => import("../articles/PlasticiteSynaptique"));
+const EmpathieNeuronesMiroirs = React.lazy(() => import("../articles/EmpathieNeuronesMiroirs"));
+const NeurotransmetteurHumeur = React.lazy(() => import("../articles/NeurotransmetteurHumeur"));
+const CortisolStressChronique = React.lazy(() => import("../articles/CortisolStressChronique"));
+const CommunicationNonViolente = React.lazy(() => import("../articles/CommunicationNonViolente"));
+const EcouteActive = React.lazy(() => import("../articles/EcouteActive"));
 
 // Mappe chaque slug vers le composant de l'article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d'article.

@@ -271,9 +271,9 @@ export default function RuminationMentale() {
   src="/images/articles/rumination-brain-mechanisms.webp"
   alt={meta.title}
   width="1600"
-  height="900" 
+  height="900"
   className="w-full h-auto rounded-2xl"
-  loading="eager"
+  loading="lazy"
   decoding="async"
 />
 
@@ -391,9 +391,9 @@ export default function RuminationMentale() {
   src="/images/articles/rumination-liberation.webp"
   alt={meta.title}
   width="1600"
-  height="900" 
+  height="900"
   className="w-full h-auto rounded-2xl"
-  loading="eager"
+  loading="lazy"
   decoding="async"
             />
           </div>

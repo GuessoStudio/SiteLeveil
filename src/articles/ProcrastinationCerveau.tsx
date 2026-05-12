@@ -272,9 +272,9 @@ export default function ProcrastinationCerveau() {
   src="/images/articles/procrastination-brain-conflict.webp"
   alt={meta.title}
   width="1600"
-  height="900" 
+  height="900"
   className="w-full h-auto rounded-2xl"
-  loading="eager"
+  loading="lazy"
   decoding="async"
 />
           </div>
@@ -395,9 +395,9 @@ export default function ProcrastinationCerveau() {
               src="/images/articles/procrastination-action-motivation.webp"
   alt={meta.title}
   width="1600"
-  height="900" 
+  height="900"
   className="w-full h-auto rounded-2xl"
-  loading="eager"
+  loading="lazy"
   decoding="async"
 />
           </div>
