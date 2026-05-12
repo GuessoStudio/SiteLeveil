@@ -321,6 +321,7 @@ Le script vérifie automatiquement :
 
 **Technique**
 - [ ] Images WebP uniquement — pas de .jpg/.png dans les articles
+- [ ] Cover 1200×630px, **80 kB max** — recompresser si dépassé (Squoosh ou cwebp)
 - [ ] `loading="eager"` sur la cover, `loading="lazy"` sur toutes les autres `<img>`
 - [ ] Dynamic import via `React.lazy()` dans `src/content/index.ts` — jamais import statique
 - [ ] 7 schemas JSON-LD via composant SEO (voir template-v2.md)
