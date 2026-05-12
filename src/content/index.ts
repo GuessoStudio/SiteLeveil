@@ -1,6 +1,12 @@
 // src/content/index.ts
 import React, { type FC } from "react";
 
+// ⚠️ RÈGLE ABSOLUE — NE PAS MODIFIER CE PATTERN
+// Tous les articles DOIVENT être importés via React.lazy()
+// Un import statique ici fait regonfler le bundle de +800kB sans warning
+// Pattern obligatoire :
+// const MonArticle = React.lazy(() => import('../articles/MonArticle'))
+
 // Dynamic imports — chaque article devient un chunk séparé chargé à la demande.
 // Gain bundle : chunk index 1,6 MB → ~200-300 kB.
 const NeuroDopamineRoutine = React.lazy(() => import("../articles/NeuroDopamineRoutine"));

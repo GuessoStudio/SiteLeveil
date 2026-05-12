@@ -320,6 +320,9 @@ Le script vérifie automatiquement :
 - [ ] Minimum 3 liens internes contextuels
 
 **Technique**
+- [ ] Images WebP uniquement — pas de .jpg/.png dans les articles
+- [ ] `loading="eager"` sur la cover, `loading="lazy"` sur toutes les autres `<img>`
+- [ ] Dynamic import via `React.lazy()` dans `src/content/index.ts` — jamais import statique
 - [ ] 7 schemas JSON-LD via composant SEO (voir template-v2.md)
 - [ ] Fil d'Ariane 4 niveaux + BreadcrumbList schema
 - [ ] Image WebP présente dans `/public/images/articles/[slug]-cover.webp`
