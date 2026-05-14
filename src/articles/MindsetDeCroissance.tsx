@@ -312,7 +312,7 @@ export default function MindsetDeCroissance() {
 
           <h3>Fixed mindset et growth mindset — deux théories implicites de l'intelligence</h3>
           <p>
-            Carol Dweck travaillait dans les années 1970 à Columbia University (New York, États-Unis) quand elle a remarqué quelque chose d'étrange chez les enfants : certains aimaient les défis, d'autres les fuyaient systématiquement. La différence ne tenait pas à leur intelligence réelle. Elle tenait à ce qu'ils croyaient de leur intelligence.
+            Carol Dweck a commencé ses travaux à l'Université de l'Illinois à Urbana-Champaign, avant de rejoindre Columbia University (New York, États-Unis) dans les années 1980. C'est là, en observant des enfants face aux difficultés scolaires, qu'elle a remarqué quelque chose d'étrange : certains aimaient les défis, d'autres les fuyaient systématiquement. La différence ne tenait pas à leur intelligence réelle. Elle tenait à ce qu'ils croyaient de leur intelligence.
           </p>
           <p>
             Elle a formalisé deux positions opposées. Le <strong>mindset fixe</strong> — ou fixed mindset : la conviction que l'intelligence est innée, stable, et qu'on ne peut pas vraiment la changer. Le <strong>mindset de croissance</strong> : la conviction que l'intelligence est malléable, qu'elle se développe par l'effort, les bonnes stratégies et l'apprentissage.
@@ -349,7 +349,7 @@ export default function MindsetDeCroissance() {
             Les chercheurs mesurent deux signaux électriques précis. Le premier, appelé ERN (Error-Related Negativity), est une réaction automatique que tout le monde produit dans les 100 millisecondes après une erreur — le cerveau la détecte avant même qu'on en soit conscient. Le second, appelé Pe (Error Positivity), est différent : il reflète l'attention consciente qu'on accorde à l'erreur après l'avoir faite.
           </p>
           <p>
-            Résultat : les personnes à mindset de croissance montraient une activité Pe nettement plus forte. En clair — leur cerveau allouait plus d'attention à l'erreur pour en tirer des informations utiles. Et elles faisaient effectivement moins d'erreurs par la suite.
+            Résultat : les personnes à mindset de croissance montraient une activité Pe nettement plus forte. En clair — leur cerveau allouait plus d'attention à l'erreur pour en tirer des informations utiles. Et elles faisaient effectivement moins d'erreurs par la suite. Note : cette étude pilote portait sur 25 participants — des travaux ultérieurs ont confirmé la direction de l'effet sur des échantillons plus larges.
           </p>
 
           {/* StatBlock 2 — indigo */}
@@ -410,7 +410,7 @@ export default function MindsetDeCroissance() {
             Mais l'histoire ne s'arrête pas là. Macnamara et Burgoyne identifient des conditions modératrices importantes. Les effets sont plus forts : pour les élèves issus de milieux socio-économiques défavorisés, dans les contextes à risque élevé (précarité, discriminations), et quand l'intervention est fidèlement mise en oeuvre par des enseignants formés. La qualité de l'implémentation compte autant que le contenu.
           </p>
           <p>
-            Et les effets sur le <em>bien-être psychologique</em> — mesurés par Wang et al. en 2025 — sont nettement plus robustes que sur les notes. Le mindset de croissance semble aider davantage à persévérer et à se sentir mieux qu'à produire des performances scolaires immédiates.
+            Et les effets sur le <em>bien-être psychologique</em> — mesurés par Wang W. et al. sur 1 142 adolescents en 2025 — sont nettement plus robustes que sur les notes. Le mindset de croissance semble aider davantage à persévérer et à se sentir mieux qu'à produire des performances scolaires immédiates.
           </p>
 
           <h3>La limite sous pression intense — l'étude de 2025</h3>
@@ -497,7 +497,7 @@ export default function MindsetDeCroissance() {
             <ul className="space-y-2 text-sm text-neutral-800 dark:text-neutral-200">
               <li>✅ <strong>Deux croyances opposées :</strong> mindset fixe (intelligence innée, figée) vs mindset de croissance (intelligence malléable, développable par l'effort) — Dweck, Stanford, 30 ans de recherche</li>
               <li>✅ <strong>Preuve neurologique :</strong> les personnes à growth mindset montrent une activité cérébrale Pe plus forte après une erreur — leur cerveau alloue plus d'attention à l'apprentissage — Moser et al., Michigan State, 2011</li>
-              <li>✅ <strong>Bien-être documenté :</strong> le growth mindset prédit le bien-être psychologique via la persévérance et l'engagement (β=0,66) — Wang et al., BMC Psychology, 2025</li>
+              <li>✅ <strong>Bien-être documenté :</strong> le growth mindset prédit le bien-être psychologique via la persévérance et l'engagement — lien fort confirmé sur 1 142 adolescents — Wang W. et al., BMC Psychology, 2025</li>
               <li>⚠️ <strong>Limites réelles :</strong> effet faible sur les notes scolaires (d=0,05 après correction du biais, 97 672 élèves) — plus fort pour les populations défavorisées et quand l'intervention est bien mise en oeuvre — Macnamara &amp; Burgoyne, 2023</li>
               <li>⚠️ <strong>Sous forte pression :</strong> face à une accumulation d'événements stressants, l'effet direct s'atténue — le mindset de croissance n'est pas une solution universelle — Goran &amp; Jiang, Temple University, 2025</li>
               <li>🔑 <strong>Commencer par :</strong> ajouter "encore" à chaque limite que tu t'imposes ("je ne suis pas encore capable de X") — la pratique la plus simple et la mieux documentée pour démarrer le changement</li>
@@ -549,7 +549,7 @@ export default function MindsetDeCroissance() {
               [5] Macnamara B.N., Burgoyne A.P. — <em>Do growth mindset interventions impact students' academic achievement? A systematic review and meta-analysis with recommendations for best practices</em> — <em>Psychological Bulletin</em>, 149(3-4), 133-173, 2023 — DOI : <a href="https://doi.org/10.1037/bul0000352" className="underline" target="_blank" rel="noopener noreferrer">10.1037/bul0000352</a>
             </li>
             <li>
-              [6] Wang Y., Liu X., Zhang Y., Li C. — <em>The influence of growth mindset on psychological well-being among college students: The mediating roles of grit and academic engagement</em> — <em>BMC Psychology</em>, 13, 467, nov. 2025 — DOI : <a href="https://doi.org/10.1186/s40359-025-03609-9" className="underline" target="_blank" rel="noopener noreferrer">10.1186/s40359-025-03609-9</a>
+              [6] Wang W., Liu X., Zhang Y., Li C. — <em>The influence of growth mindset on psychological well-being among college students: The mediating roles of grit and academic engagement</em> — <em>BMC Psychology</em>, 13, 467, nov. 2025 — DOI : <a href="https://doi.org/10.1186/s40359-025-03609-9" className="underline" target="_blank" rel="noopener noreferrer">10.1186/s40359-025-03609-9</a>
             </li>
             <li>
               [7] Goran L., Jiang Y. — <em>Growth mindset, stress, and life satisfaction: A moderated mediation model</em> — <em>Healthcare (Basel)</em>, 13(22), 2985, 2025 — DOI : <a href="https://doi.org/10.3390/healthcare13222985" className="underline" target="_blank" rel="noopener noreferrer">10.3390/healthcare13222985</a>
