@@ -21,6 +21,7 @@ import NeurotransmetteurHumeur from "../articles/NeurotransmetteurHumeur";
 import CortisolStressChronique from "../articles/CortisolStressChronique";
 import CommunicationNonViolente from "../articles/CommunicationNonViolente";
 import EcouteActive from "../articles/EcouteActive";
+import MindsetDeCroissance from "../articles/MindsetDeCroissance";
 
 // Mappe chaque slug vers le composant de l'article correspondant.
 // ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d'article.
@@ -44,4 +45,5 @@ export const articlesBySlug: Record<string, FC> = {
   "cortisol-stress-chronique-cerveau-memoire": CortisolStressChronique,
   "communication-non-violente-cnv": CommunicationNonViolente,
   "ecoute-active-technique-carl-rogers": EcouteActive,
+  "mindset-de-croissance-psychologie-dweck": MindsetDeCroissance,
 };

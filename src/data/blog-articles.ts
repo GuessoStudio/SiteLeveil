@@ -213,5 +213,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/ecoute-active-technique-carl-rogers-cover",
         slug: "ecoute-active-technique-carl-rogers",
         featured: false
+    },
+    {
+        id: 20,
+        title: "Mindset de croissance : la psychologie de Dweck expliquée",
+        excerpt: "Mindset de croissance selon Carol Dweck : mécanismes cérébraux, méta-analyse 97 672 sujets, nuance stress. Guide scientifique avec limites incluses.",
+        category: "Psychologie",
+        readTime: 12,
+        date: "2026-05-12",
+        image: "/images/articles/mindset-de-croissance-psychologie-dweck-cover",
+        slug: "mindset-de-croissance-psychologie-dweck",
+        featured: false
     }
 ];

@@ -365,6 +365,10 @@ export default function ConfianceEnSoi() {
           </p>
 
           <p>
+            Cette posture face aux feedbacks est précisément ce que Carol Dweck (Stanford University) appelle le <Link to="/blog/mindset-de-croissance-psychologie-dweck" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">mindset de croissance</Link> — la conviction que les capacités se développent par l'effort, qui transforme chaque retour critique en opportunité d'apprentissage plutôt qu'en menace identitaire.
+          </p>
+
+          <p>
             La qualité des encouragements que vous recevez dépend aussi de la façon dont vous répondez aux bonnes nouvelles que partagent vos proches. La <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">méthode ACR</Link>, validée par Shelly Gable (University of California), montre que des réponses actives et constructives renforcent les liens sociaux qui soutiennent la confiance en soi.
           </p>
 

@@ -46,6 +46,7 @@ const articles = [
   { path: "/blog/cortisol-stress-chronique-cerveau-memoire/",       file: "src/articles/CortisolStressChronique.tsx" },
   { path: "/blog/communication-non-violente-cnv/",                  file: "src/articles/CommunicationNonViolente.tsx" },
   { path: "/blog/ecoute-active-technique-carl-rogers/",             file: "src/articles/EcouteActive.tsx" },
+  { path: "/blog/mindset-de-croissance-psychologie-dweck/",         file: "src/articles/MindsetDeCroissance.tsx" },
 ];
 
 const allUrls = [

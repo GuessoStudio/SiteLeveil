@@ -483,7 +483,7 @@ export default function SyndromeImposteur() {
           </ol>
 
           <p>
-            Cette approche complète parfaitement les techniques pour <Link to="/blog/confiance-en-soi-durable" className="text-green-600 dark:text-green-400 hover:underline font-medium">construire une confiance en soi durable</Link>.
+            Cette approche complète parfaitement les techniques pour <Link to="/blog/confiance-en-soi-durable" className="text-green-600 dark:text-green-400 hover:underline font-medium">construire une confiance en soi durable</Link>. Elle s'articule aussi avec les travaux de Carol Dweck sur le <Link to="/blog/mindset-de-croissance-psychologie-dweck" className="text-green-600 dark:text-green-400 hover:underline font-medium">mindset de croissance</Link> — réorienter l'identité du résultat vers le processus d'apprentissage est précisément l'antidote au sentiment d'imposture.
           </p>
 
           <h3>6. Te faire accompagner (thérapie, coaching, mentorat)</h3>

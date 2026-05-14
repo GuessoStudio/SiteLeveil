@@ -24,6 +24,7 @@ const ARTICLE_SLUGS = [
   'cortisol-stress-chronique-cerveau-memoire',
   'communication-non-violente-cnv',
   'ecoute-active-technique-carl-rogers',
+  'mindset-de-croissance-psychologie-dweck',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({
