@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { generateInsights } from '../../lib/neuro-insights';
 import { generatePDFReport } from '../../lib/pdf-generator';
 import InsightCard from '../../components/neuro-journal/InsightCard';
-const WeeklyChart = React.lazy(() => import('../../components/neuro-journal/charts/WeeklyChart'));
+import WeeklyChart from '../../components/neuro-journal/charts/WeeklyChart';
 import CalendarHeatmap from '../../components/neuro-journal/charts/CalendarHeatmap';
 
 const Dashboard = () => {
@@ -122,9 +122,7 @@ const Dashboard = () => {
 
                     {/* --- CHARTS SECTION (New Phase 4) --- */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <React.Suspense fallback={<div className="h-48 bg-gray-100 dark:bg-neutral-800 rounded-xl animate-pulse" />}>
-                            <WeeklyChart entries={entries} />
-                        </React.Suspense>
+                        <WeeklyChart entries={entries} />
                         <CalendarHeatmap entries={entries} />
                     </div>
 

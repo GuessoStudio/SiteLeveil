@@ -279,7 +279,6 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
                 width="1200"
                 height="675"
                 className="w-full h-auto rounded-lg"
-                loading="lazy"
               />
             </div>
 
@@ -395,7 +394,6 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
                 width="1200"
                 height="675"
                 className="w-full h-auto rounded-lg"
-                loading="lazy"
               />
             </div>
 

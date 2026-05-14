@@ -64,24 +64,15 @@ export default defineConfig(({ isSsrBuild }) => ({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: isSsrBuild ? undefined : (id) => {
-          // Recharts en premier — avant le test react-dom, sinon Rollup
-          // peut co-bundler recharts dans le chunk Dashboard lazy
-          if (id.includes('node_modules/recharts') || id.includes('node_modules/victory-vendor')) {
-            return 'vendor-charts'
-          }
-          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
-            return 'vendor-react'
-          }
-          if (id.includes('node_modules/react/')) {
-            return 'vendor-react'
-          }
-          if (id.includes('node_modules/lucide-react')) {
-            return 'vendor-icons'
-          }
-          if (id.includes('node_modules/framer-motion')) {
-            return 'vendor-motion'
-          }
+        manualChunks: isSsrBuild ? undefined : {
+          // Core React (always needed)
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          // Icons (lightweight, used everywhere)
+          'vendor-icons': ['lucide-react'],
+          // Animation library (only loaded by pages using motion)
+          'vendor-motion': ['framer-motion'],
+          // Chart library (only used in Neuro-Journal)
+          'vendor-charts': ['recharts'],
         }
       }
     },

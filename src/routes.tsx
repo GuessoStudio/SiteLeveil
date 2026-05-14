@@ -1,9 +1,7 @@
 import type { RouteRecord } from 'vite-react-ssg'
-import React, { Suspense } from 'react'
 import App from './App'
 import { articles } from './data/blog-articles'
 
-// Pages critiques — chargées immédiatement (above-the-fold ou navigation principale)
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Article from './pages/Article'
@@ -11,24 +9,20 @@ import About from './pages/About'
 import Resources from './pages/Resources'
 import Contact from './pages/Contact'
 import Legal from './pages/Legal'
+import HabitTracker from './pages/HabitTracker'
+import OGTest from './pages/OGTest'
+import EmailDashboard from './pages/EmailDashboard'
+import BigFiveTest from './pages/BigFiveTest'
+import SleepCalculator from './pages/SleepCalculator'
+import HydroMindPrivacy from './pages/HydroMindPrivacy'
+import MerciInscription from './pages/MerciInscription'
 import NotFound from './pages/NotFound'
-
-// Pages secondaires — lazy-loadées (réduisent le bundle initial)
-const HabitTracker = React.lazy(() => import('./pages/HabitTracker'))
-const OGTest = React.lazy(() => import('./pages/OGTest'))
-const EmailDashboard = React.lazy(() => import('./pages/EmailDashboard'))
-const BigFiveTest = React.lazy(() => import('./pages/BigFiveTest'))
-const SleepCalculator = React.lazy(() => import('./pages/SleepCalculator'))
-const HydroMindPrivacy = React.lazy(() => import('./pages/HydroMindPrivacy'))
-const MerciInscription = React.lazy(() => import('./pages/MerciInscription'))
-const StressZeroLanding = React.lazy(() => import('./pages/StressZeroLanding'))
-const NeuroJournalLanding = React.lazy(() => import('./pages/NeuroJournalLanding'))
-const NeuroJournalLayout = React.lazy(() => import('./pages/NeuroJournal/NeuroJournalLayout'))
-const Onboarding = React.lazy(() => import('./pages/NeuroJournal/Onboarding'))
-const Dashboard = React.lazy(() => import('./pages/NeuroJournal/Dashboard'))
-const DailyCheckIn = React.lazy(() => import('./pages/NeuroJournal/DailyCheckIn'))
-
-const Fallback = () => <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900" />
+import NeuroJournalLanding from './pages/NeuroJournalLanding'
+import StressZeroLanding from './pages/StressZeroLanding'
+import NeuroJournalLayout from './pages/NeuroJournal/NeuroJournalLayout'
+import Onboarding from './pages/NeuroJournal/Onboarding'
+import Dashboard from './pages/NeuroJournal/Dashboard'
+import DailyCheckIn from './pages/NeuroJournal/DailyCheckIn'
 
 export const routes: RouteRecord[] = [
   {
@@ -51,36 +45,34 @@ export const routes: RouteRecord[] = [
       { path: 'contact', element: <Contact /> },
       { path: 'legal', element: <Legal /> },
 
-      // Outils & landing pages — lazy-loadées
-      { path: 'stress-zero', element: <Suspense fallback={<Fallback />}><StressZeroLanding /></Suspense> },
-      { path: 'calculateur-sommeil', element: <Suspense fallback={<Fallback />}><SleepCalculator /></Suspense> },
-      { path: 'hydromind/privacy-policy', element: <Suspense fallback={<Fallback />}><HydroMindPrivacy /></Suspense> },
-      { path: 'test-personnalite-big-five', element: <Suspense fallback={<Fallback />}><BigFiveTest /></Suspense> },
-      { path: 'habit-tracker', element: <Suspense fallback={<Fallback />}><HabitTracker /></Suspense> },
-      { path: 'merci-inscription', element: <Suspense fallback={<Fallback />}><MerciInscription /></Suspense> },
+      // Outils & landing pages
+      { path: 'stress-zero', element: <StressZeroLanding /> },
+      { path: 'calculateur-sommeil', element: <SleepCalculator /> },
+      { path: 'hydromind/privacy-policy', element: <HydroMindPrivacy /> },
+      { path: 'test-personnalite-big-five', element: <BigFiveTest /> },
+      { path: 'habit-tracker', element: <HabitTracker /> },
+      { path: 'merci-inscription', element: <MerciInscription /> },
 
       // Pages admin/dev — exclues du pré-rendu via ssgOptions.includedRoutes
-      { path: 'og-test', element: <Suspense fallback={<Fallback />}><OGTest /></Suspense> },
-      { path: 'admin/emails', element: <Suspense fallback={<Fallback />}><EmailDashboard /></Suspense> },
+      { path: 'og-test', element: <OGTest /> },
+      { path: 'admin/emails', element: <EmailDashboard /> },
 
       // NeuroJournal : landing page (index) + sous-routes de l'application
       {
         path: 'neuro-journal',
         children: [
-          { index: true, element: <Suspense fallback={<Fallback />}><NeuroJournalLanding /></Suspense> },
+          { index: true, element: <NeuroJournalLanding /> },
           {
             // Layout pathless : s'applique uniquement aux sous-routes dashboard/checkin
             element: (
-              <Suspense fallback={<Fallback />}>
-                <div className="bg-gray-50 dark:bg-neutral-900 min-h-screen">
-                  <NeuroJournalLayout />
-                </div>
-              </Suspense>
+              <div className="bg-gray-50 dark:bg-neutral-900 min-h-screen">
+                <NeuroJournalLayout />
+              </div>
             ),
             children: [
-              { path: 'onboarding', element: <Suspense fallback={<Fallback />}><Onboarding /></Suspense> },
-              { path: 'dashboard', element: <Suspense fallback={<Fallback />}><Dashboard /></Suspense> },
-              { path: 'checkin', element: <Suspense fallback={<Fallback />}><DailyCheckIn /></Suspense> },
+              { path: 'onboarding', element: <Onboarding /> },
+              { path: 'dashboard', element: <Dashboard /> },
+              { path: 'checkin', element: <DailyCheckIn /> },
             ],
           },
         ],
