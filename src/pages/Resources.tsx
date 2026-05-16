@@ -160,6 +160,18 @@ const Resources = () => {
       downloadUrl: "/downloads/empathie-neurones-miroirs-checklist.pdf"
     },
     {
+      id: 21,
+      title: "Carte mémo Mindset de croissance — Les 5 pratiques de Dweck",
+      description: "Recto-verso A5 à imprimer : les 5 pratiques validées, tableau fixe vs croissance, ce que la science dit vraiment (Moser 2011, Macnamara & Burgoyne 2023, Goran & Jiang 2025) et les pièges classiques à éviter.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/resources/mindset-de-croissance-psychologie-dweck-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/mindset-de-croissance-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",
