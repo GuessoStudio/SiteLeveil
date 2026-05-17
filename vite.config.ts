@@ -25,6 +25,7 @@ const ARTICLE_SLUGS = [
   'communication-non-violente-cnv',
   'ecoute-active-technique-carl-rogers',
   'mindset-de-croissance-psychologie-dweck',
+  'routine-matinale-scientifique-cerveau',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

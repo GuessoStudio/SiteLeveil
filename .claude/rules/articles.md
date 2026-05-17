@@ -13,6 +13,8 @@ INTERDIT :
 - Promesses floues sans base scientifique
 - Études non citées (toujours : Auteur, Institution, Année)
 - HowTo schema (déprécié Google septembre 2023)
+- Tiret long (—) partout : articles, repurposing, cartes mémo, tout contenu
+  Remplacer par virgule, parenthèses ou deux-points selon le contexte
 
 ## NIVEAU DE VULGARISATION — RÈGLE ABSOLUE
 

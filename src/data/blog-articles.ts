@@ -224,5 +224,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/mindset-de-croissance-psychologie-dweck-cover",
         slug: "mindset-de-croissance-psychologie-dweck",
         featured: false
+    },
+    {
+        id: 21,
+        title: "Routine matinale : ce que la neurologie dit des 90 premières minutes",
+        excerpt: "Routine matinale scientifique : CAR, lumière circadienne, BDNF. Ce que la neurologie dit des 90 premières minutes après le réveil. Guide 2026 avec sources.",
+        category: "Développement Personnel",
+        readTime: 13,
+        date: "2026-05-17",
+        image: "/images/articles/routine-matinale-scientifique-cerveau-cover",
+        slug: "routine-matinale-scientifique-cerveau",
+        featured: false
     }
 ];

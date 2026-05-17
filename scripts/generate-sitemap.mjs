@@ -47,6 +47,7 @@ const articles = [
   { path: "/blog/communication-non-violente-cnv/",                  file: "src/articles/CommunicationNonViolente.tsx" },
   { path: "/blog/ecoute-active-technique-carl-rogers/",             file: "src/articles/EcouteActive.tsx" },
   { path: "/blog/mindset-de-croissance-psychologie-dweck/",         file: "src/articles/MindsetDeCroissance.tsx" },
+  { path: "/blog/routine-matinale-scientifique-cerveau/",           file: "src/articles/RoutineMatinaleScientifique.tsx" },
 ];
 
 const allUrls = [

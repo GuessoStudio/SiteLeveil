@@ -172,6 +172,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/mindset-de-croissance-guide.pdf"
     },
     {
+      id: 22,
+      title: "Protocole des 90 Premières Minutes",
+      description: "Le protocole neurologique complet du matin : CAR, lumière circadienne, BDNF et focus profond. Basé sur les études Stalder & Foster.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/resources/routine-matinale-scientifique-cerveau-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/routine-matinale-scientifique-cerveau-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",
