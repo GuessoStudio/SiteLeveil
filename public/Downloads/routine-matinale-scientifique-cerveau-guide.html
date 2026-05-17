@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocole des 90 Premières Minutes — L'Éveil Mental</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1a1a2e;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background-image: url('../images/articles/routine-matinale-pdf-header.webp');
+      background-size: cover;
+      background-position: center top;
+
+      padding: 28px 36px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 111, 247, 0.25) 0%, transparent 70%);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #7C6FF7;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .header .subtitle {
+      color: #A8A3C7;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .header .source-line {
+      color: #7C6FF7;
+      font-size: 9px;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ── STAT BANNER ── */
+    .stat-banner {
+      background: #F0EFFE;
+      border-left: 4px solid #7C6FF7;
+      padding: 14px 36px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 900;
+      color: #7C6FF7;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .stat-text {
+      font-size: 11px;
+      color: #3d3d6b;
+      line-height: 1.5;
+    }
+
+    .stat-text strong {
+      color: #1a1a2e;
+      font-weight: 700;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      padding: 0 36px 24px;
+    }
+
+    /* ── BLOC ── */
+    .bloc {
+      margin-top: 18px;
+    }
+
+    .bloc-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .bloc-number {
+      background: #7C6FF7;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .bloc-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #1a1a2e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .bloc-time {
+      font-size: 9px;
+      font-weight: 600;
+      color: #7C6FF7;
+      background: #F0EFFE;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: auto;
+    }
+
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 12px;
+      background: #F8F7FF;
+      border-radius: 8px;
+      border: 1px solid #E8E5FF;
+    }
+
+    .step-icon {
+      font-size: 14px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+    }
+
+    .step-desc {
+      font-size: 10px;
+      color: #555577;
+      line-height: 1.4;
+    }
+
+    .step-science {
+      font-size: 9px;
+      color: #7C6FF7;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    /* ── ERREURS SECTION ── */
+    .errors-section {
+      margin-top: 18px;
+      background: #FFF5F5;
+      border: 1px solid #FFD5D5;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .errors-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #C0392B;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .error-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 10px;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .error-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .error-x {
+      color: #C0392B;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, #7C6FF7 0%, transparent 100%);
+      margin: 18px 0;
+      opacity: 0.3;
+    }
+
+    /* ── CAR BOX ── */
+    .car-box {
+      background: linear-gradient(135deg, #0F0B2E, #1A1145);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 18px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .car-graph {
+      flex-shrink: 0;
+    }
+
+    .car-graph svg {
+      width: 80px;
+      height: 50px;
+    }
+
+    .car-text {
+      flex: 1;
+    }
+
+    .car-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: #A8A3C7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .car-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .car-desc {
+      font-size: 9px;
+      color: #A8A3C7;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0F0B2E;
+      padding: 12px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .footer-sources {
+      color: #A8A3C7;
+      font-size: 8px;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body {
+        width: 100%;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="badge">NEUROSCIENCES · LEVEILMENTAL.FR</div>
+    <h1>Les 90 Premières Minutes<br>Protocole Neurologique du Matin</h1>
+    <p class="subtitle">Ce que votre cerveau fait au réveil — et comment travailler avec lui,<br>pas contre lui.</p>
+    <p class="source-line">Basé sur : Stalder et al., Endocrine Reviews 2025 · Foster, Interface Focus 2020 · Craft,
+      Primary Care Companion 2004</p>
+  </div>
+
+  <!-- STAT BANNER -->
+  <div class="stat-banner">
+    <div class="stat-number">+50–150%</div>
+    <div class="stat-text">
+      <strong>Hausse naturelle du cortisol dans les 30 premières minutes après le réveil.</strong><br>
+      Ce pic s'appelle la <em>Cortisol Awakening Response</em> (CAR). C'est votre moteur naturel d'énergie, de
+      motivation et de décision. Il dure ~45 minutes. Il ne revient pas.
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- CAR BOX -->
+    <div class="car-box">
+      <div class="car-graph">
+        <svg viewBox="0 0 80 50" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="4,44 10,38 20,14 32,8 44,12 56,24 68,32 76,36" fill="none" stroke="#7C6FF7"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="32" cy="8" r="3" fill="#7C6FF7" />
+          <line x1="32" y1="8" x2="32" y2="44" stroke="#7C6FF7" stroke-width="1" stroke-dasharray="3,2" opacity="0.5" />
+          <text x="4" y="49" fill="#A8A3C7" font-size="6" font-family="Inter">Réveil</text>
+          <text x="22" y="49" fill="#A8A3C7" font-size="6" font-family="Inter">30 min</text>
+          <text x="58" y="49" fill="#A8A3C7" font-size="6" font-family="Inter">90 min</text>
+        </svg>
+      </div>
+      <div class="car-text">
+        <div class="car-label">Cortisol Awakening Response</div>
+        <div class="car-title">Votre fenêtre d'énergie maximale</div>
+        <div class="car-desc">
+          Pilotée par le noyau suprachiasmatique — votre horloge biologique interne.
+          Ne pas la gâcher avec des tâches passives (scroll, emails, actualités).
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- BLOC 1 -->
+    <div class="bloc">
+      <div class="bloc-header">
+        <div class="bloc-number">1</div>
+        <div class="bloc-title">Au réveil</div>
+        <div class="bloc-time">0 – 15 min</div>
+      </div>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-icon">☀️</div>
+          <div class="step-content">
+            <div class="step-name">Lumière naturelle dans les 5 premières minutes</div>
+            <div class="step-desc">Ouvrir les volets ou sortir brièvement. Les cellules ipRGC de la rétine envoient un
+              signal direct à l'horloge biologique — bloque la mélatonine résiduelle.</div>
+            <div class="step-science">Foster R.G., Université d'Oxford, Interface Focus, 2020</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-icon">📵</div>
+          <div class="step-content">
+            <div class="step-name">Pas d'écran avant 20 minutes</div>
+            <div class="step-desc">Le cortex préfrontal (partie rationnelle) n'est pas encore en ligne. L'amygdale est
+              en alerte maximale. Consulter les notifications active les circuits de stress sans bénéfice.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-icon">💧</div>
+          <div class="step-content">
+            <div class="step-name">500 ml d'eau avant toute caféine</div>
+            <div class="step-desc">La déshydratation nocturne réduit la concentration cognitive. Réhydrater d'abord.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- BLOC 2 -->
+    <div class="bloc">
+      <div class="bloc-header">
+        <div class="bloc-number">2</div>
+        <div class="bloc-title">Utiliser le pic de cortisol</div>
+        <div class="bloc-time">15 – 45 min</div>
+      </div>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-icon">🧠</div>
+          <div class="step-content">
+            <div class="step-name">Tâche cognitive difficile ou décision importante</div>
+            <div class="step-desc">La CAR est votre pic de lucidité et de motivation naturel. C'est le meilleur moment
+              pour écrire, créer, décider — pas pour répondre à des emails.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-icon">🏃</div>
+          <div class="step-content">
+            <div class="step-name">OU exercice léger 20–30 min</div>
+            <div class="step-desc">Marche rapide, yoga, course. Libère le BDNF — la protéine qui renforce les connexions
+              cérébrales. Améliore mémoire et apprentissage pour les 4–6h suivantes.</div>
+            <div class="step-science">Craft L.L., Northwestern University, Primary Care Companion, 2004</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- BLOC 3 -->
+    <div class="bloc">
+      <div class="bloc-header">
+        <div class="bloc-number">3</div>
+        <div class="bloc-title">Installation du focus</div>
+        <div class="bloc-time">45 – 90 min</div>
+      </div>
+      <ul class="step-list">
+        <li class="step-item">
+          <div class="step-icon">☕</div>
+          <div class="step-content">
+            <div class="step-name">Caféine après 90 minutes — pas avant</div>
+            <div class="step-desc">La caféine bloque l'adénosine. Prise trop tôt, elle interfère avec le cortisol
+              naturel et accélère la tolérance. Résultat : crash à 11h, dépendance croissante.</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-icon">🎯</div>
+          <div class="step-content">
+            <div class="step-name">1 seule tâche de focus profond, sans notification</div>
+            <div class="step-desc">La fenêtre 60–90 min après le réveil est votre pic de productivité cognitive. Une
+              tâche, en plein écran, notifications coupées.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ERREURS -->
+    <div class="errors-section">
+      <div class="errors-title">Les 3 erreurs qui sabotent votre matinée</div>
+      <div class="error-item">
+        <span class="error-x">✕</span>
+        <span><strong>Téléphone dans les 20 premières minutes</strong> — active les circuits de stress avant que le
+          cortex préfrontal soit opérationnel</span>
+      </div>
+      <div class="error-item">
+        <span class="error-x">✕</span>
+        <span><strong>Caféine avant 90 minutes</strong> — casse le pic de cortisol naturel et accélère la tolérance à la
+          caféine</span>
+      </div>
+      <div class="error-item">
+        <span class="error-x">✕</span>
+        <span><strong>Rideaux fermés</strong> — prive les cellules ipRGC de leur signal de synchronisation
+          circadienne</span>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">leveilmental.fr — Version 1.0, Mai 2026</div>
+    <div class="footer-sources">
+      Stalder T. et al., <em>Endocrine Reviews</em>, 2025 &nbsp;·&nbsp;
+      Foster R.G., <em>Interface Focus</em>, 2020<br>
+      Craft L.L., <em>Primary Care Companion</em>, 2004
+    </div>
+  </div>
+
+</body>
+
+</html>
