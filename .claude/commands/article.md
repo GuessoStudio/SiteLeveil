@@ -348,7 +348,8 @@ c) Vérifier que le CTA dans l'article TSX pointe vers la bonne URL
 Suivre `.claude/rules/repurposing.md` pour les specs complètes de chaque canal.
 
 Générer dans l'ordre :
-1. Instagram — carrousel 5 slides + caption + 12 hashtags + prompt image
+1. Instagram — texte 5 slides + 5 prompts fond AI + 5 prompts overlay + caption + 12 hashtags
+   ⚠️ Workflow validé : ChatGPT Image (fond AI → overlay texte) — voir repurposing.md section 1
 2. TikTok/Reels — script 60 secondes avec timestamps
 3. Facebook — post éducatif 600-800 mots + commentaire épinglé
 4. Twitter/X — thread 8 tweets (Tweet 5 = récapitulatif intermédiaire)

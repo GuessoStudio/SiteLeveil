@@ -31,7 +31,7 @@
 
 ### Format
 - 5 slides exactement
-- Taille : 1080×1350 px
+- Taille : 1080×1350 px (portrait 4:5)
 - Maximum 30 mots par slide
 - Une seule idée par slide
 
@@ -44,29 +44,53 @@ Slide 4 — Solution / leviers pratiques
 Slide 5 — CTA (chiffres clés + "Lien en bio" + leveilmental.fr)
 ```
 
-### Charte visuelle (specs Canva)
+### Workflow de production validé (ChatGPT Image)
+
+⚠️ NE PAS utiliser Canva ou HTML seul — le workflow ChatGPT Image produit
+un résultat professionnel plus rapide avec des visuels uniques par article.
+
+**Étape A — Claude génère (automatique)**
+1. Texte exact des 5 slides (contenu + structure)
+2. 5 prompts de fond distincts (portrait 4:5, très sombre, pas de texte)
+3. 5 prompts de texte overlay (un par slide)
+4. Caption + 12 hashtags
+
+**Étape B — Utilisateur génère les fonds (ChatGPT Image)**
+Contexte à coller UNE FOIS au début :
 ```
-Fond : image de fond neuronale L'Éveil (neural-background.png)
-       Si indisponible : dégradé #0F0B2E → #1A1145
+Style for all background images:
+Very dark background (deep violet #0F0B2E or near-black),
+main glowing element centered or bottom-centered,
+top 60% must stay very dark (white text will overlay there),
+cinematic atmospheric lighting, no text, no letters, no UI, no watermark,
+portrait format 4:5, 1080x1350px, dark sci-fi scientific visualization
+```
+→ Générer 1 fond par slide avec le prompt spécifique à chaque slide
+
+**Étape C — Utilisateur ajoute le texte (ChatGPT Image)**
+→ Uploader le fond généré + coller le prompt texte overlay de chaque slide
+→ ChatGPT Image ajoute badge, numéro, headline, cards, footer
+
+**Étape D — Export et post**
+→ Télécharger chaque slide → poster le carrousel avec caption + hashtags
+
+### Charte visuelle (respectée automatiquement par les prompts)
+```
+Fond : image AI unique par article (portrait 4:5, très sombre)
 Couleur titres : #FFFFFF (blanc pur)
 Couleur accent : #7C6FF7 (violet L'Éveil)
 Couleur sous-texte : #A8A3C7 (gris lavande)
 Encadrés : fond #1E1750, bordure gauche 3px #7C6FF7
-Typo titre : Inter Bold ou Montserrat Bold, 36-42px
-Typo corps : Inter Regular, 20-22px
-Typo source : Inter Light Italic, 14px, couleur #7C6FF7
-Badge haut gauche : pill arrondi #7C6FF7, texte blanc
-                    "NEUROSCIENCES • LEVEILMENTAL.FR" 12px
-Numéro slide : coin haut droit, #7C6FF7, 32px bold
-Logo bas : barre #1E1750 pleine largeur,
-           "leveilmental.fr" centré blanc 16px
-Marges : 60px latérales, 80px haut/bas
+Badge haut gauche : pill arrondi #7C6FF7 "NEUROSCIENCES • LEVEILMENTAL.FR"
+Numéro slide : coin haut droit, #7C6FF7, bold large
+Logo bas : barre #1E1750, "leveilmental.fr" centré blanc
 ```
 
-### Sortie attendue
+### Sortie attendue de Claude
 Pour chaque slide, fournir :
-1. Le texte exact (avec indication de ce qui est en couleur accent)
-2. Le texte alternatif d'accessibilité (1 ligne descriptive)
+1. Le texte exact structuré (headline, cards, stats, CTA)
+2. Le prompt de fond AI (portrait 4:5, élément thématique unique)
+3. Le prompt texte overlay (instructions précises pour ChatGPT Image)
 
 ### Caption Instagram
 ```
