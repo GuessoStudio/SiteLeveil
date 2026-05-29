@@ -457,7 +457,7 @@ export default function RuminationMentale() {
           </p>
 
           <p>
-            L'isolement aggrave la rumination car il prive le cerveau de la régulation émotionnelle que facilitent les relations sociales. Notre article sur les <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">neurones miroirs et l'empathie</Link> explique comment la connexion sociale module notre système de traitement émotionnel.
+            L'isolement aggrave la rumination car il prive le cerveau de la régulation émotionnelle que facilitent les relations sociales. Notre article sur les <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">neurones miroirs et l'empathie</Link> explique comment la connexion sociale module notre système de traitement émotionnel.
           </p>
 
           <h2>Prévention et maintien des gains thérapeutiques</h2>
@@ -559,7 +559,7 @@ export default function RuminationMentale() {
                 Méthode ACR
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Neurones miroirs et empathie
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>

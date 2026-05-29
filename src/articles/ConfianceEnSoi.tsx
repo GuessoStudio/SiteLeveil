@@ -693,7 +693,7 @@ export default function ConfianceEnSoi() {
                 Méthode ACR
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/empathie-neurones-miroirs" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Neurones miroirs et empathie
               </Link>
               <span className="text-neutral-400">•</span>

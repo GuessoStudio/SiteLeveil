@@ -6,6 +6,8 @@
 /about/     /a-propos      301!
 /resources  /ressources    301!
 /resources/ /ressources    301!
+/blog/empathie-neurones-miroirs  /blog/empathie-neurones-miroirs-connexion-humaine/  301!
+/blog/empathie-neurones-miroirs/ /blog/empathie-neurones-miroirs-connexion-humaine/  301!
 
 # ─── SPA fallback — DOIT être la dernière règle ──────────────────────────────
 /*    /index.html   200
