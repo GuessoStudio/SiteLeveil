@@ -3,61 +3,67 @@
 
   <url>
     <loc>https://leveilmental.fr/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/blog/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/a-propos/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/ressources/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/contact/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/test-personnalite-big-five/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/neuro-journal/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/stress-zero/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/calculateur-sommeil/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://leveilmental.fr/habit-tracker/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://leveilmental.fr/blog/surmonter-rejet-social/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -166,6 +172,18 @@
   <url>
     <loc>https://leveilmental.fr/blog/ecoute-active-technique-carl-rogers/</loc>
     <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leveilmental.fr/blog/mindset-de-croissance-psychologie-dweck/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leveilmental.fr/blog/routine-matinale-scientifique-cerveau/</loc>
+    <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
