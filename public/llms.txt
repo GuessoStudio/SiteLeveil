@@ -48,7 +48,22 @@ Usage commercial (entraînement) : leveilmental.fr/contact
 - Mindset de croissance — le guide complet de Carol Dweck : https://leveilmental.fr/blog/mindset-de-croissance-psychologie-dweck/
   > Pe↑ EEG Moser 2011 (Michigan State), d=0,05 méta-analyse Macnamara & Burgoyne 2023 (97 672 élèves), nuance stress Goran & Jiang 2025 — Psychologie, 12 min
 
+- Routine matinale scientifique — protocoles validés par les neurosciences : https://leveilmental.fr/blog/routine-matinale-scientifique-cerveau/
+  > Cortisol awakening response, lumière bleue, thermogenèse et 6 pratiques fondées sur les preuves — Développement Personnel, 12 min
+- Cortisol et stress chronique — cerveau et mémoire : https://leveilmental.fr/blog/cortisol-stress-chronique-cerveau-memoire/
+  > Axe HPA, hippocampe, cortex préfrontal et 7 stratégies de régulation du cortisol — Neurosciences, 13 min
+
 ## Pages
+- Accueil : https://leveilmental.fr/
 - À propos : https://leveilmental.fr/a-propos/
-- Ressources : https://leveilmental.fr/ressources/
 - Blog : https://leveilmental.fr/blog/
+- Ressources : https://leveilmental.fr/ressources/
+- Contact : https://leveilmental.fr/contact/
+
+## Outils
+- Test de Personnalité Big Five (OCEAN) — 30 questions scientifiques : https://leveilmental.fr/test-personnalite-big-five/
+  > Test psychométrique gratuit basé sur l'IPIP-NEO — résultats immédiats sur 5 dimensions (Ouverture, Conscience, Extraversion, Agréabilité, Névrosisme)
+- NeuroJournal — mood tracker basé sur les neurosciences : https://leveilmental.fr/neuro-journal/
+  > Suivi quotidien humeur/sommeil/énergie, insights IA, architecture Local-First (données 100% privées)
+- Calculateur de sommeil : https://leveilmental.fr/calculateur-sommeil/
+  > Calcule les cycles de sommeil optimaux selon votre heure de réveil cible
