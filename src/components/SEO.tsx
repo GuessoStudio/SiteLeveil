@@ -15,7 +15,8 @@ type SEOProps = {
   jsonLd?: any[];
 };
 
-const SITE_NAME = "L'Éveil";
+const SITE_NAME = "L'Éveil Mental";
+const TWITTER_HANDLE = "@leveilmental";
 const DEFAULT_DESC =
   "Psychologie, neurosciences et développement personnel fondés sur la science.";
 
@@ -169,8 +170,13 @@ export default function SEO({
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`${title} - ${SITE_NAME}`} />
+    <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={TWITTER_HANDLE} />
+    <meta name="twitter:creator" content={TWITTER_HANDLE} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
