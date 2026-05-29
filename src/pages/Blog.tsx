@@ -109,15 +109,15 @@ const Blog = () => {
   return (
     <div className="min-h-screen py-8 bg-sand-50 dark:bg-neutral-900">
       <SEO
-        title="Blog"
-        description="Nos articles sur la psychologie, les neurosciences et le développement personnel."
+        title="Blog — Psychologie, Neurosciences & Développement Personnel"
+        description="Explorez nos articles scientifiques sur la psychologie cognitive, les neurosciences appliquées et le développement personnel. Contenus basés sur des études peer-reviewed, accessibles à tous."
         path="/blog"
       />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-sand-900 dark:text-sand-50 mb-4">
-            Blog L'Éveil
+            Blog L'Éveil Mental
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
             Explorez la psychologie, les neurosciences et le développement personnel fondés sur la science

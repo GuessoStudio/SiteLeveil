@@ -10,9 +10,9 @@ const About = () => {
     const schemaPerson = {
       "@context": "https://schema.org",
       "@type": "Person",
-      "@id": `${site}/a-propos#person`,
+      "@id": `${site}/a-propos/#person`,
       name: "Guesso",
-      url: `${site}/a-propos`,
+      url: `${site}/a-propos/`,
       jobTitle: "Fondateur — L'Éveil Mental",
       worksFor: { "@id": `${site}#organization` }
     }
