@@ -27,8 +27,8 @@ const Home = () => {
     <div className="min-h-screen">
       <SEO
         isHome
-        title="Psychologie, Neurosciences & Développement Personnel"
-        description="Articles quotidiens, outils et ressources pour comprendre l'esprit humain et transformer votre vie."
+        title="L'Éveil Mental | Neurosciences, Psychologie & Développement Personnel"
+        description="Neurosciences et psychologie appliquées : articles scientifiques, outils pratiques et protocoles validés pour comprendre votre cerveau et transformer votre vie. Sources peer-reviewed."
         path="/"
         image="/images/og-default.jpg"
       />
