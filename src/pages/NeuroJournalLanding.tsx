@@ -15,7 +15,7 @@ const NeuroJournalLanding = () => {
             "@type": "SoftwareApplication",
             "name": "NeuroJournal",
             "description": "Application web gratuite de suivi du bien-être mental avec insights basés sur les neurosciences",
-            "url": "https://leveilmental.fr/neuro-journal",
+            "url": "https://leveilmental.fr/neuro-journal/",
             "applicationCategory": "HealthApplication",
             "operatingSystem": "Web Browser",
             "offers": {
@@ -117,11 +117,11 @@ const NeuroJournalLanding = () => {
                 <meta name="title" content="NeuroJournal - Mood Tracker Français Basé sur les Neurosciences | Gratuit" />
                 <meta name="description" content="Suivez votre humeur, sommeil et énergie avec le NeuroJournal. Insights IA basés sur les neurosciences. 100% gratuit, privé et sans inscription." />
                 <meta name="keywords" content="journal humeur, mood tracker français, suivi bien-être mental, tracking sommeil, application santé mentale gratuite, neurosciences" />
-                <link rel="canonical" href="https://leveilmental.fr/neuro-journal" />
+                <link rel="canonical" href="https://leveilmental.fr/neuro-journal/" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://leveilmental.fr/neuro-journal" />
+                <meta property="og:url" content="https://leveilmental.fr/neuro-journal/" />
                 <meta property="og:title" content="NeuroJournal - Comprends Ton Cerveau en 2 Minutes Par Jour" />
                 <meta property="og:description" content="Le seul mood tracker français avec insights IA basés sur les neurosciences. Gratuit, privé, scientifique." />
                 <meta property="og:image" content="https://leveilmental.fr/images/resources/neuro-journal-cover.webp" />

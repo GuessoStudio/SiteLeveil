@@ -16,7 +16,7 @@ const Legal = () => {
     <Helmet>
       <title>Mentions légales & Politique de confidentialité | L'Éveil Mental</title>
       <meta name="robots" content="noindex, follow" />
-      <link rel="canonical" href="https://leveilmental.fr/legal" />
+      <link rel="canonical" href="https://leveilmental.fr/legal/" />
     </Helmet>
     <div className="min-h-screen py-8">
       <div className="container mx-auto px-4">

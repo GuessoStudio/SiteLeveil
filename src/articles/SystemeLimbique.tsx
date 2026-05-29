@@ -20,7 +20,7 @@ const meta = {
   author: {
     "@type": "Person",
     "name": "Guesso",
-    "url": "https://leveilmental.fr/a-propos"
+    "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Neurosciences",
   readingTime: "13 min",
@@ -85,7 +85,7 @@ export default function SystemeLimbique() {
     author: {
       "@type": "Person",
       "name": "Guesso",
-      "url": "https://leveilmental.fr/a-propos"
+      "url": "https://leveilmental.fr/a-propos/"
     },
     publisher: {
       "@type": "Organization",
@@ -115,8 +115,8 @@ export default function SystemeLimbique() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: site },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
-      { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog?category=neurosciences` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog/` },
+      { "@type": "ListItem", position: 3, name: "Neurosciences", item: `${site}/blog/?category=neurosciences` },
       { "@type": "ListItem", position: 4, name: meta.title }
     ]
   };

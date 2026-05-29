@@ -17,7 +17,7 @@ const meta = {
   author: {
     "@type": "Person",
     "name": "Guesso",
-    "url": "https://leveilmental.fr/a-propos"
+    "url": "https://leveilmental.fr/a-propos/"
   },
   tags: ["relations humaines", "communication", "ACR", "capitalisation", "Gottman", "couples"],
   version: "1.0",
@@ -72,9 +72,9 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
   const schemaPerson = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${site}/a-propos#person`,
+    "@id": `${site}/a-propos/#person`,
     name: "Guesso",
-    url: `${site}/a-propos`,
+    url: `${site}/a-propos/`,
     jobTitle: "Fondateur — L'Éveil Mental",
     worksFor: { "@id": `${site}#organization` }
   };
@@ -112,7 +112,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
     image: { "@id": `${url}#primaryimage` },
     datePublished: meta.datePublished,
     dateModified: meta.dateModified,
-    author: { "@id": `${site}/a-propos#person` },
+    author: { "@id": `${site}/a-propos/#person` },
     publisher: { "@id": `${site}#organization` },
     about: {
       "@type": "DefinedTerm",
@@ -132,8 +132,8 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
     "@id": `${url}#breadcrumb`,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: site },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
-      { "@type": "ListItem", position: 3, name: "Relations Humaines", item: `${site}/blog?category=relations-humaines` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog/` },
+      { "@type": "ListItem", position: 3, name: "Relations Humaines", item: `${site}/blog/?category=relations-humaines` },
       { "@type": "ListItem", position: 4, name: meta.title, item: url }
     ]
   };

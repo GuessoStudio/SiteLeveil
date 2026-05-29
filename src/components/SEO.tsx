@@ -149,7 +149,7 @@ export default function SEO({
                 "@type": "ListItem",
                 position: 2,
                 name: "Blog",
-                item: `${BASE_URL}/blog`,
+                item: `${BASE_URL}/blog/`,
               },
               { "@type": "ListItem", position: 3, name: title, item: url },
             ]
