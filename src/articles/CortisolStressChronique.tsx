@@ -530,7 +530,7 @@ export default function CortisolStressChronique() {
           <h3>3. Le sommeil réparateur</h3>
 
           <p>
-            Le cortisol suit un rythme circadien précis. Il atteint son pic naturel entre 6h et 9h du matin — ce qui t'aide à te réveiller. Il est presque nul en fin de soirée pour te permettre de t'endormir. Quand le sommeil est insuffisant ou de mauvaise qualité, ce rythme dérègle.
+            Le cortisol suit un rythme circadien précis. Il atteint son pic naturel entre 6h et 9h du matin — ce qu'on appelle le pic de cortisol du réveil, et qui t'aide à te lever. C'est précisément ce pic qu'une <Link to="/blog/routine-matinale-scientifique-cerveau">routine matinale fondée sur les neurosciences</Link> cherche à exploiter plutôt qu'à perturber. Il est presque nul en fin de soirée pour te permettre de t'endormir. Quand le sommeil est insuffisant ou de mauvaise qualité, ce rythme dérègle.
           </p>
 
           <p>

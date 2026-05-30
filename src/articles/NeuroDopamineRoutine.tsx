@@ -510,7 +510,7 @@ const NeuroDopamineRoutine = () => {
           </p>
 
           <p>
-            La lumière naturelle matinale agit simultanément sur la dopamine et sur de nombreux autres systèmes cérébraux. Notre article sur les <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">effets de la lumière naturelle sur le cerveau</Link> détaille ces mécanismes et leur impact sur le sommeil et la santé mentale.
+            La lumière naturelle matinale agit simultanément sur la dopamine et sur de nombreux autres systèmes cérébraux. Notre article sur les <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">effets de la lumière naturelle sur le cerveau</Link> détaille ces mécanismes et leur impact sur le sommeil et la santé mentale. Pour structurer ces leviers heure par heure, consulte notre <Link to="/blog/routine-matinale-scientifique-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">routine matinale fondée sur les neurosciences</Link>.
           </p>
 
           <h3 id="meditation-dopamine">5. Méditation dopaminergique : +65% dopamine striatale</h3>

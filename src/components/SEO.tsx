@@ -108,6 +108,12 @@ export default function SEO({
     name: SITE_NAME,
     url: BASE_URL,
     logo: `${BASE_URL}/images/logo.webp`,
+    sameAs: [
+      "https://www.instagram.com/leveil.officiel/",
+      "https://www.facebook.com/profile.php?id=61572902135677",
+      "https://x.com/leveilmental",
+      "https://www.tiktok.com/@leveil_mental",
+    ],
   };
 
   // ✅ Default Article schema (uniquement si pas de jsonLd custom)
@@ -191,6 +197,25 @@ export default function SEO({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
       />
     ))}
+
+    {/* Schemas filet de sécurité — hors Helmet pour sérialisation SSG.
+        Uniquement actifs quand aucun jsonLd custom n'est passé (homepage, pages simples). */}
+    {breadcrumbLd && (
+      // eslint-disable-next-line react/no-danger
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+    )}
+    {isHome && (
+      <>
+        {/* eslint-disable-next-line react/no-danger */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }} />
+        {/* eslint-disable-next-line react/no-danger */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
+      </>
+    )}
+    {articleLd && (
+      // eslint-disable-next-line react/no-danger
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+    )}
     <Helmet prioritizeSeoTags>
       <title>{isHome ? title : `${title} • ${SITE_NAME}`}</title>
       <link rel="canonical" href={url} />
@@ -210,15 +235,7 @@ export default function SEO({
         </>
       )}
 
-      {/* Default JSON-LD (filet de sécurité) */}
-      {breadcrumbLd && <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>}
-      {isHome && (
-        <>
-          <script type="application/ld+json">{JSON.stringify(websiteLd)}</script>
-          <script type="application/ld+json">{JSON.stringify(orgLd)}</script>
-        </>
-      )}
-      {articleLd && <script type="application/ld+json">{JSON.stringify(articleLd)}</script>}
+      {/* Schemas filet de sécurité rendus hors Helmet (voir plus haut) pour la sérialisation SSG */}
 
       {/* Custom JSON-LD : rendu uniquement via dangerouslySetInnerHTML (hors Helmet)
           pour éviter les doublons — les scripts statiques sont déjà dans le HTML SSG */}

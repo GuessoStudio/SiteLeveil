@@ -392,7 +392,7 @@ export default function LumiereNaturelle() {
           </ul>
 
           <p>
-            Cette orchestration hormonale influence directement ton <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">système de motivation dopaminergique</Link>. Une exposition lumineuse optimale booste ta dopamine diurne et améliore ton <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">sommeil réparateur</Link> nocturne.
+            Cette orchestration hormonale influence directement ton <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">système de motivation dopaminergique</Link>. Une exposition lumineuse optimale booste ta dopamine diurne et améliore ton <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">sommeil réparateur</Link> nocturne. C'est pourquoi l'exposition au soleil dès le réveil est le pilier d'une <Link to="/blog/routine-matinale-scientifique-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">routine matinale validée par les neurosciences</Link>.
           </p>
 
           <div className="not-prose my-6 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border-l-4 border-amber-500">

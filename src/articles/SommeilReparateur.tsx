@@ -395,7 +395,7 @@ export default function SommeilReparateur() {
           </p>
 
           <p>
-            Cette horloge régule non seulement le cycle veille-sommeil, mais aussi la température corporelle, la sécrétion hormonale (cortisol le matin, mélatonine le soir), et même l'efficacité de votre système immunitaire. Dérégler cette horloge a des conséquences métaboliques et cognitives majeures.
+            Cette horloge régule non seulement le cycle veille-sommeil, mais aussi la température corporelle, la sécrétion hormonale (cortisol le matin, mélatonine le soir), et même l'efficacité de votre système immunitaire. Dérégler cette horloge a des conséquences métaboliques et cognitives majeures : un sommeil insuffisant maintient le cortisol élevé le lendemain, un mécanisme que détaille notre article sur le <Link to="/blog/cortisol-stress-chronique-cerveau-memoire">cortisol, le stress chronique et la mémoire</Link>.
           </p>
 
           {/* Encadré méthode */}

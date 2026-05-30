@@ -24,6 +24,7 @@ const staticRoutes = [
   { path: "/neuro-journal/", lastmod: today },
   { path: "/stress-zero/", lastmod: today },
   { path: "/calculateur-sommeil/", lastmod: today },
+  { path: "/habit-tracker/", lastmod: today },
 ];
 
 const articles = [
