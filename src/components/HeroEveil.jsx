@@ -980,7 +980,8 @@ export default function HeroEveil() {
       }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;700;900&display=swap');
+        /* Polices Cormorant Garamond + Outfit chargées via <link> dans index.html
+           (l'@import ici était échappé par React au build SSG → CSS invalide). */
         .font-display { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
         .font-body { font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif; }
         /* Text shadows pour garantir la lisibilité par-dessus le canvas glowing */
