@@ -13,8 +13,23 @@ const About = () => {
       "@id": `${site}/a-propos/#person`,
       name: "Guesso",
       url: `${site}/a-propos/`,
+      image: `${site}/images/guesso-silhouette.webp`,
       jobTitle: "Fondateur — L'Éveil Mental",
-      worksFor: { "@id": `${site}#organization` }
+      description: "Fondateur de L'Éveil Mental, média francophone de vulgarisation en neurosciences et psychologie. Traduit les études peer-reviewed en applications pratiques, sans jargon ni promesses miracles.",
+      knowsAbout: [
+        "Neurosciences",
+        "Psychologie",
+        "Neuroplasticité",
+        "Développement personnel",
+        "Sciences cognitives"
+      ],
+      worksFor: { "@id": `${site}#organization` },
+      sameAs: [
+        "https://www.instagram.com/leveil.officiel/",
+        "https://www.facebook.com/profile.php?id=61572902135677",
+        "https://x.com/leveilmental",
+        "https://www.tiktok.com/@leveil_mental"
+      ]
     }
   
   const handleNewsletterClick = () => {
@@ -55,7 +70,7 @@ const About = () => {
     {
       name: "Guesso", 
     role: "Fondateur de L'Éveil", 
-    description: "Passionné par la psychologie et les neurosciences depuis 2020, j'ai créé L'Éveil pour partager ce qui m'a aidé à mieux comprendre mon propre fonctionnement. Mon approche : traduire la science en conseils simples et actionnables, sans promesses miracles ni jargon complexe.",
+    description: "Passionné par la psychologie et les neurosciences depuis 2020, j'ai créé L'Éveil Mental pour partager ce qui m'a aidé à mieux comprendre mon propre fonctionnement. Ma méthode est systématique : partir d'un fait scientifique établi, expliquer le mécanisme neurologique concerné, puis en tirer une application pratique concrète. Chaque article s'appuie sur des études peer-reviewed citées avec leur auteur, leur institution et leur année, et nomme explicitement les chercheurs et les structures cérébrales en jeu. Pas de pseudoscience, pas de promesses miracles, pas de jargon laissé sans explication.",
     image: "/images/guesso-silhouette.webp" 
     }
   ]
