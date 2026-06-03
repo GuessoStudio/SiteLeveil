@@ -15,6 +15,7 @@ import EmailDashboard from './pages/EmailDashboard'
 import BigFiveTest from './pages/BigFiveTest'
 import SleepCalculator from './pages/SleepCalculator'
 import HydroMindPrivacy from './pages/HydroMindPrivacy'
+import HydroMindDeleteAccount from './pages/HydroMindDeleteAccount'
 import MerciInscription from './pages/MerciInscription'
 import NotFound from './pages/NotFound'
 import NeuroJournalLanding from './pages/NeuroJournalLanding'
@@ -49,6 +50,7 @@ export const routes: RouteRecord[] = [
       { path: 'stress-zero', element: <StressZeroLanding /> },
       { path: 'calculateur-sommeil', element: <SleepCalculator /> },
       { path: 'hydromind/privacy-policy', element: <HydroMindPrivacy /> },
+      { path: 'hydromind/delete-account', element: <HydroMindDeleteAccount /> },
       { path: 'test-personnalite-big-five', element: <BigFiveTest /> },
       { path: 'habit-tracker', element: <HabitTracker /> },
       { path: 'merci-inscription', element: <MerciInscription /> },
