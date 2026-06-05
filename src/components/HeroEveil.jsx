@@ -121,6 +121,7 @@ export default function HeroEveil() {
     let pulses = [];
     let frame = 0;
     let raf = 0;
+    let idleHandle; // handle du démarrage différé (requestIdleCallback / setTimeout)
     let revealOpacity = 0; // fade-in du cerveau quand l'image est prête
 
     // ─── COUCHE AMBIANCE ─── (poussière neuronale dérivante vers le cerveau)
@@ -242,8 +243,11 @@ export default function HeroEveil() {
     const initBrain = () => {
       neurons = [];
       let attempts = 0;
-      // Densité adaptée : 750 desktop / 300 mobile (-60% pour batterie/perf)
-      const target = MOBILE_MODE ? 300 : 750;
+      // Densité adaptée : 500 desktop / 300 mobile.
+      // Desktop abaissé de 750 à 500 : le coût par frame (projection + tracé des
+      // connexions, ces dernières ~en carré de la densité) plombait le TBT desktop
+      // mesuré par Lighthouse (boucle rAF continue). 500 reste visuellement dense.
+      const target = MOBILE_MODE ? 300 : 500;
       const halfW = MASK_W / 2;
       const halfH = MASK_H / 2;
 
@@ -923,7 +927,26 @@ export default function HeroEveil() {
       );
     };
 
-    brainImg.src = BRAIN_IMG_URL;
+    // Démarrage différé du cerveau : on attend le chargement de la page + un
+    // moment d'inactivité avant de lancer brainImg.src (qui déclenche initBrain,
+    // en O(n²), puis la boucle d'animation). Objectif : sortir ce gros travail JS
+    // de la fenêtre critique d'interactivité mesurée par Lighthouse (TBT/TTI).
+    // Le hero reste visible (fond sombre + texte framer-motion) ; le cerveau
+    // apparaît en fondu (revealOpacity) juste après. L'image SVG est déjà
+    // préchargée dans index.html → aucune latence réseau ajoutée.
+    const requestIdle =
+      window.requestIdleCallback || ((cb) => window.setTimeout(() => cb(), 200));
+    const startBrain = () => {
+      if (!cancelled) brainImg.src = BRAIN_IMG_URL;
+    };
+    const onWindowLoad = () => {
+      idleHandle = requestIdle(startBrain, { timeout: 1500 });
+    };
+    if (document.readyState === "complete") {
+      onWindowLoad();
+    } else {
+      window.addEventListener("load", onWindowLoad, { once: true });
+    }
 
     // ──────────────────────────────────────────────
     // PAUSE ANIMATION QUAND ONGLET INACTIF
@@ -958,6 +981,9 @@ export default function HeroEveil() {
     return () => {
       cancelled = true;
       cancelAnimationFrame(raf);
+      const cancelIdle = window.cancelIdleCallback || window.clearTimeout;
+      if (idleHandle !== undefined) cancelIdle(idleHandle);
+      window.removeEventListener("load", onWindowLoad);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseleave", onMouseLeave);
