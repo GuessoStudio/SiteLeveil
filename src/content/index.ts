@@ -1,51 +1,36 @@
 // src/content/index.ts
-import type { FC } from "react";
+import { lazy, type ComponentType, type LazyExoticComponent } from "react";
 
-// ⚠️ Les chemins et les noms doivent correspondre EXACTEMENT aux fichiers
-import NeuroDopamineRoutine from "../articles/NeuroDopamineRoutine";
-import RejetSocial from "../pages/Blog/RejetSocial";
-import ConfianceEnSoi from "../articles/ConfianceEnSoi";
-import NeuroplasticiteCerveau from "../articles/NeuroplasticiteCerveau";
-import AttentionFragmenteeArticle from "../articles/AttentionFragmenteeArticle";
-import RuminationMentale from "../articles/RuminationMentale";
-import ProcrastinationCerveau from "../articles/ProcrastinationCerveau";
-import MethodeAcrRepondreAuxBonnesNouvelles from "../articles/MethodeAcrRepondreAuxBonnesNouvelles";
-import SyndromeImposteur from "../articles/SyndromeImposteur";
-import SommeilReparateur from "../articles/SommeilReparateur";
-import LumiereNaturelle from "../articles/LumiereNaturelle";
-import BdnfAugmenterNaturellement from "../articles/BdnfAugmenterNaturellement";
-import SystemeLimbique from "../articles/SystemeLimbique";
-import PlasticiteSynaptique from "../articles/PlasticiteSynaptique";
-import EmpathieNeuronesMiroirs from "../articles/EmpathieNeuronesMiroirs";
-import NeurotransmetteurHumeur from "../articles/NeurotransmetteurHumeur";
-import CortisolStressChronique from "../articles/CortisolStressChronique";
-import CommunicationNonViolente from "../articles/CommunicationNonViolente";
-import EcouteActive from "../articles/EcouteActive";
-import MindsetDeCroissance from "../articles/MindsetDeCroissance";
-import RoutineMatinaleScientifique from "../articles/RoutineMatinaleScientifique";
-
-// Mappe chaque slug vers le composant de l'article correspondant.
-// ➜ le slug ici DOIT être identique à meta.slug dans chaque fichier d'article.
-export const articlesBySlug: Record<string, FC> = {
-  "neuro-dopamine-routine": NeuroDopamineRoutine,
-  "surmonter-rejet-social": RejetSocial,
-  "confiance-en-soi-durable": ConfianceEnSoi,
-  "neuroplasticite-cerveau": NeuroplasticiteCerveau,
-  "attention-fragmentee-concentration-numerique": AttentionFragmenteeArticle,
-  "rumination-mentale-pensees-obsessionnelles": RuminationMentale,
-  "procrastination-cerveau-agir-neurosciences": ProcrastinationCerveau,
-  "methode-acr-repondre-aux-bonnes-nouvelles": MethodeAcrRepondreAuxBonnesNouvelles,
-  "syndrome-imposteur-solutions": SyndromeImposteur,
-  "sommeil-reparateur-7-strategies-validees": SommeilReparateur,
-  "lumiere-naturelle-cerveau-sommeil-sante-mentale": LumiereNaturelle,
-  "bdnf-augmenter-naturellement-neurosciences": BdnfAugmenterNaturellement,
-  "systeme-limbique-cerveau-emotionnel": SystemeLimbique,
-  "plasticite-synaptique-apprentissage-cerveau": PlasticiteSynaptique,
-  "empathie-neurones-miroirs-connexion-humaine": EmpathieNeuronesMiroirs,
-  "neurotransmetteurs-humeur-cerveau": NeurotransmetteurHumeur,
-  "cortisol-stress-chronique-cerveau-memoire": CortisolStressChronique,
-  "communication-non-violente-cnv": CommunicationNonViolente,
-  "ecoute-active-technique-carl-rogers": EcouteActive,
-  "mindset-de-croissance-psychologie-dweck": MindsetDeCroissance,
-  "routine-matinale-scientifique-cerveau": RoutineMatinaleScientifique,
+// ⚠️ Les chemins et les noms doivent correspondre EXACTEMENT aux fichiers.
+//
+// Code-splitting : chaque article est chargé en import dynamique (React.lazy).
+// Sans ça, les 21 articles étaient bundlés dans le chunk app-*.js (~1,67 Mo)
+// chargé sur TOUTES les pages (home comprise). Désormais chaque article a son
+// propre chunk, chargé uniquement quand on visite /blog/<slug>.
+//
+// Le pré-rendu SSG reste complet : vite-react-ssg rend via renderToPipeableStream
+// + onAllReady, qui attend la résolution de toutes les frontières Suspense avant
+// d'émettre le HTML. Le HTML pré-rendu contient donc l'article entier (SEO intact).
+export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> = {
+  "neuro-dopamine-routine": lazy(() => import("../articles/NeuroDopamineRoutine")),
+  "surmonter-rejet-social": lazy(() => import("../pages/Blog/RejetSocial")),
+  "confiance-en-soi-durable": lazy(() => import("../articles/ConfianceEnSoi")),
+  "neuroplasticite-cerveau": lazy(() => import("../articles/NeuroplasticiteCerveau")),
+  "attention-fragmentee-concentration-numerique": lazy(() => import("../articles/AttentionFragmenteeArticle")),
+  "rumination-mentale-pensees-obsessionnelles": lazy(() => import("../articles/RuminationMentale")),
+  "procrastination-cerveau-agir-neurosciences": lazy(() => import("../articles/ProcrastinationCerveau")),
+  "methode-acr-repondre-aux-bonnes-nouvelles": lazy(() => import("../articles/MethodeAcrRepondreAuxBonnesNouvelles")),
+  "syndrome-imposteur-solutions": lazy(() => import("../articles/SyndromeImposteur")),
+  "sommeil-reparateur-7-strategies-validees": lazy(() => import("../articles/SommeilReparateur")),
+  "lumiere-naturelle-cerveau-sommeil-sante-mentale": lazy(() => import("../articles/LumiereNaturelle")),
+  "bdnf-augmenter-naturellement-neurosciences": lazy(() => import("../articles/BdnfAugmenterNaturellement")),
+  "systeme-limbique-cerveau-emotionnel": lazy(() => import("../articles/SystemeLimbique")),
+  "plasticite-synaptique-apprentissage-cerveau": lazy(() => import("../articles/PlasticiteSynaptique")),
+  "empathie-neurones-miroirs-connexion-humaine": lazy(() => import("../articles/EmpathieNeuronesMiroirs")),
+  "neurotransmetteurs-humeur-cerveau": lazy(() => import("../articles/NeurotransmetteurHumeur")),
+  "cortisol-stress-chronique-cerveau-memoire": lazy(() => import("../articles/CortisolStressChronique")),
+  "communication-non-violente-cnv": lazy(() => import("../articles/CommunicationNonViolente")),
+  "ecoute-active-technique-carl-rogers": lazy(() => import("../articles/EcouteActive")),
+  "mindset-de-croissance-psychologie-dweck": lazy(() => import("../articles/MindsetDeCroissance")),
+  "routine-matinale-scientifique-cerveau": lazy(() => import("../articles/RoutineMatinaleScientifique")),
 };

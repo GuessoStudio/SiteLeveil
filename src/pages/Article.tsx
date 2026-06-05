@@ -1,5 +1,5 @@
 // src/pages/Article.tsx
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { useParams, Link } from "react-router-dom";
 import { articlesBySlug } from "../content/index";
@@ -88,7 +88,13 @@ export default function Article() {
   return (
     <>
       <ReadingProgressBar />
-      <Component />
+      {/* Suspense : l'article est chargé en chunk dynamique (code-splitting).
+          En SSG, onAllReady attend la résolution → HTML pré-rendu complet.
+          Le fallback ne s'affiche qu'au tout premier chargement client si le
+          chunk n'est pas encore en cache (SW précache tous les .js). */}
+      <Suspense fallback={<div className="container mx-auto px-4 py-12 min-h-screen" aria-busy="true" />}>
+        <Component />
+      </Suspense>
       {/* Guard SSR : createPortal requiert document.body (browser uniquement) */}
       {typeof document !== 'undefined' && currentArticle && ReactDOM.createPortal(
         <button
