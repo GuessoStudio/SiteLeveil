@@ -619,7 +619,7 @@ export default function RegulationEmotionnelle() {
               Une fiche condensée avec les 8 techniques, leur niveau d'efficacité, le bon moment pour les utiliser et une application pratique pour chacune. À garder sous la main.
             </p>
             <a
-              href="/downloads/regulation-emotionnelle-techniques-psychologie-guide.pdf"
+              href="/Downloads/regulation-emotionnelle-techniques-psychologie-guide.html"
               className="inline-block bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche (PDF gratuit)
