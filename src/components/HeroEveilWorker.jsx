@@ -249,7 +249,9 @@ export default function HeroEveilWorker() {
           </motion.div>
 
           <motion.h1
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            // initial={false} : visible des le pre-rendu, pas de re-animation a
+            // l'hydratation (sinon le texte LCP attend hydratation + delay).
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.7, ease: "easeOut" }}
             className="font-display italic font-light text-white leading-[1.05] ts-strong"
@@ -259,7 +261,9 @@ export default function HeroEveilWorker() {
           </motion.h1>
 
           <motion.div
-            initial={{ opacity: 0 }}
+            // Conteneur du mot rotatif : initial={false} sinon il repasse a
+            // opacity:0 a l'hydratation et masque le mot (candidat above-the-fold).
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.0, duration: 0.6 }}
             className={`mt-2 mb-4 lg:mb-8 ${isMobile ? "flex justify-center" : ""}`}
@@ -310,6 +314,10 @@ export default function HeroEveilWorker() {
                     color: "#C9953A",
                     fontFamily: "Outfit, sans-serif",
                     left: 0,
+                    // Sur mobile, le conteneur a la largeur du mot le plus long ;
+                    // on etire le span (right:0) + centre le texte pour que les mots
+                    // courts (CLARTÉ, LIBERTÉ…) restent centres et pas colles a gauche.
+                    ...(isMobile ? { right: 0, textAlign: "center" } : {}),
                     top: "0.05em",
                     lineHeight: 1.1,
                     fontSize: "clamp(2.5rem, 6vw, 7rem)",
@@ -323,7 +331,9 @@ export default function HeroEveilWorker() {
           </motion.div>
 
           <motion.p
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            // Element LCP mobile : initial={false} pour qu'il se peigne des le CSS
+            // (sinon re-animation a l'hydratation + delay 1.1s => LCP ~4,2s).
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.6 }}
             className={`text-white/85 max-w-xl leading-relaxed mb-4 font-light ts-soft ${isMobile ? "mx-auto" : ""}`}
@@ -335,7 +345,8 @@ export default function HeroEveilWorker() {
           </motion.p>
 
           <motion.p
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            // Texte critique above-the-fold : visible des le pre-rendu.
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.6 }}
             className="text-sm italic mb-8 lg:mb-14 font-display tracking-wide ts-soft"
