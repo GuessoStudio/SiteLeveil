@@ -235,5 +235,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/routine-matinale-scientifique-cerveau-cover",
         slug: "routine-matinale-scientifique-cerveau",
         featured: false
+    },
+    {
+        id: 22,
+        title: "Régulation émotionnelle : 8 techniques validées par la psychologie (2026)",
+        excerpt: "Régulation émotionnelle : 8 techniques classées par efficacité selon 306 études. Modèle de Gross, circuit amygdale-CPF, affect labeling. Guide 2026.",
+        category: "Psychologie",
+        readTime: 12,
+        date: "2026-06-05",
+        image: "/images/articles/regulation-emotionnelle-techniques-psychologie-cover",
+        slug: "regulation-emotionnelle-techniques-psychologie",
+        featured: false
     }
 ];

@@ -26,6 +26,7 @@ const ARTICLE_SLUGS = [
   'ecoute-active-technique-carl-rogers',
   'mindset-de-croissance-psychologie-dweck',
   'routine-matinale-scientifique-cerveau',
+  'regulation-emotionnelle-techniques-psychologie',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

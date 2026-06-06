@@ -44,53 +44,117 @@ Slide 4 — Solution / leviers pratiques
 Slide 5 — CTA (chiffres clés + "Lien en bio" + leveilmental.fr)
 ```
 
-### Workflow de production validé (ChatGPT Image)
+### Workflow de production validé (ChatGPT Image) — 4 étapes
 
 ⚠️ NE PAS utiliser Canva ou HTML seul — le workflow ChatGPT Image produit
-un résultat professionnel plus rapide avec des visuels uniques par article.
+un résultat professionnel en 2 passes par slide (fond → overlay texte).
 
 **Étape A — Claude génère (automatique)**
-1. Texte exact des 5 slides (contenu + structure)
-2. 5 prompts de fond distincts (portrait 4:5, très sombre, pas de texte)
-3. 5 prompts de texte overlay (un par slide)
-4. Caption + 12 hashtags
+1. 1 prompt global contexte (brand + style pilier + 5 descriptions de fond)
+2. 5 prompts texte overlay (un par slide)
+3. Caption + 12 hashtags
 
-**Étape B — Utilisateur génère les fonds (ChatGPT Image)**
-Contexte à coller UNE FOIS au début :
-```
-Style for all background images:
-Very dark background (deep violet #0F0B2E or near-black),
-main glowing element centered or bottom-centered,
-top 60% must stay very dark (white text will overlay there),
-cinematic atmospheric lighting, no text, no letters, no UI, no watermark,
-portrait format 4:5, 1080x1350px, dark sci-fi scientific visualization
-```
-→ Générer 1 fond par slide avec le prompt spécifique à chaque slide
+**Étape B — Utilisateur génère les 5 fonds (ChatGPT Image)**
+→ Coller le prompt global contexte UNE SEULE FOIS au début d'une session ChatGPT Image
+→ ChatGPT génère les 5 fonds en séquence — même session, même cohérence visuelle
 
-**Étape C — Utilisateur ajoute le texte (ChatGPT Image)**
-→ Uploader le fond généré + coller le prompt texte overlay de chaque slide
-→ ChatGPT Image ajoute badge, numéro, headline, cards, footer
+**Étape C — Utilisateur ajoute le texte overlay (ChatGPT Image)**
+→ Pour chaque slide : uploader le fond généré + coller le prompt overlay correspondant
+→ ChatGPT Image ajoute badge, numéro, headline, encadrés, source, footer
 
 **Étape D — Export et post**
-→ Télécharger chaque slide → poster le carrousel avec caption + hashtags
+→ Télécharger chaque slide finalisée → poster le carrousel avec caption + hashtags
 
-### Charte visuelle (respectée automatiquement par les prompts)
+---
+
+### Prompt global contexte — structure type
+
+Le prompt global contexte se compose de :
+1. **Intro brand** (identique pour tous les articles)
+2. **Règles communes** (identiques pour tous les articles)
+3. **5 descriptions de fond** spécifiques à l'article (thème + couleurs dominantes)
+
+**Style des fonds selon le pilier éditorial :**
+
+| Pilier | Style fond | Tons dominants |
+|--------|-----------|----------------|
+| Neurosciences | dark sci-fi scientific visualization | violet froid + or/teal |
+| Psychologie | dark emotional abstract art | violet + rouge/ambre chaud |
+| Relations Humaines | dark human connection art | indigo + cyan doux |
+| Développement Personnel | dark conceptual illustration | violet + or/émeraude |
+
+**Template intro brand (à adapter selon pilier) :**
+```
+You are creating background images for Instagram carousel slides about
+[sujet article]. Brand: L'Éveil Mental (French neuroscience blog)
+
+Rules for ALL images:
+- Very dark background (deep violet #0F0B2E or near-black)
+- Main glowing element centered or bottom-centered
+- Top 60% of image must stay very dark (white text will overlay there)
+- Cinematic atmospheric lighting
+- No text, no letters, no UI, no watermark
+- Portrait format 4:5 ratio, 1080x1350px
+- Style: [style pilier selon tableau ci-dessus]
+
+Slide 1
+[Description visuelle du fond — élément thématique unique, position bottom]
+
+Slide 2
+[Description visuelle du fond]
+
+Slide 3
+[Description visuelle du fond]
+
+Slide 4
+[Description visuelle du fond]
+
+Slide 5
+[Description visuelle du fond]
+```
+
+---
+
+### Prompt texte overlay — structure type
+
+Pour chaque slide, le prompt overlay doit spécifier :
+```
+Add text overlay on this dark background image.
+Top-left: small pill badge purple #7C6FF7, white text → [PILIER] • LEVEILMENTAL.FR
+Top-right: number "[0N]" in #7C6FF7, bold large
+Eyebrow: "[label section]" small purple uppercase
+[Contenu principal : stat géante / headline / cards / questions selon slide]
+Source italic tiny purple: "[Auteur, Institution, Année]"
+Bottom bar: dark #1E1750 full width, "leveilmental.fr" centered white
+```
+
+**Hiérarchie typographique obligatoire dans les overlays :**
+- Stat choc / accent : #7C6FF7 ou #ff6b6b (erreur), 80-90px bold
+- Headline principale : #FFFFFF bold large
+- Sous-texte / descriptions : #A8A3C7 lavender medium
+- Encadrés : fond #1E1750, bordure gauche #7C6FF7
+- Source : purple italic tiny
+
+---
+
+### Charte visuelle (invariante)
 ```
 Fond : image AI unique par article (portrait 4:5, très sombre)
-Couleur titres : #FFFFFF (blanc pur)
 Couleur accent : #7C6FF7 (violet L'Éveil)
+Couleur titres : #FFFFFF (blanc pur)
 Couleur sous-texte : #A8A3C7 (gris lavande)
+Couleur erreur/mythe : #ff6b6b (rouge-rose)
 Encadrés : fond #1E1750, bordure gauche 3px #7C6FF7
-Badge haut gauche : pill arrondi #7C6FF7 "NEUROSCIENCES • LEVEILMENTAL.FR"
+Badge haut gauche : pill arrondi #7C6FF7 "[PILIER] • LEVEILMENTAL.FR"
 Numéro slide : coin haut droit, #7C6FF7, bold large
 Logo bas : barre #1E1750, "leveilmental.fr" centré blanc
 ```
 
-### Sortie attendue de Claude
-Pour chaque slide, fournir :
-1. Le texte exact structuré (headline, cards, stats, CTA)
-2. Le prompt de fond AI (portrait 4:5, élément thématique unique)
-3. Le prompt texte overlay (instructions précises pour ChatGPT Image)
+### Sortie attendue de Claude (Phase 5.3)
+Livrer en bloc unique :
+1. **Prompt global contexte** (intro brand + règles + 5 descriptions de fond)
+2. **5 prompts texte overlay** numérotés (Slide 1 à 5)
+3. **Caption** + 12 hashtags
 
 ### Caption Instagram
 ```

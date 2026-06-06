@@ -33,4 +33,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "ecoute-active-technique-carl-rogers": lazy(() => import("../articles/EcouteActive")),
   "mindset-de-croissance-psychologie-dweck": lazy(() => import("../articles/MindsetDeCroissance")),
   "routine-matinale-scientifique-cerveau": lazy(() => import("../articles/RoutineMatinaleScientifique")),
+  "regulation-emotionnelle-techniques-psychologie": lazy(() => import("../articles/RegulationEmotionnelle")),
 };

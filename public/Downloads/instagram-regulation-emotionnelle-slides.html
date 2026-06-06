@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Slides — Régulation Émotionnelle</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      padding: 32px;
+    }
+
+    .label {
+      color: #888;
+      font-size: 13px;
+      font-family: monospace;
+      margin-bottom: -20px;
+      align-self: flex-start;
+      margin-left: calc(50% - 270px);
+    }
+
+    /* ── SLIDE ── */
+    .slide {
+      width: 540px;
+      height: 675px;
+      background: linear-gradient(160deg, #0F0B2E 0%, #1A1145 55%, #1E1060 100%);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Grain texture overlay */
+    .slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Glow bg */
+    .slide::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,111,247,0.18) 0%, transparent 70%);
+      top: -80px; right: -80px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .slide-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      background: #7C6FF7;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .slide-num {
+      color: #7C6FF7;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    /* ── CONTENT AREA ── */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1E1750;
+      margin: 0 -30px -30px;
+      padding: 10px 30px;
+      text-align: center;
+    }
+
+    .footer-text {
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .eyebrow {
+      color: #7C6FF7;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .headline {
+      color: #fff;
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .headline .accent { color: #7C6FF7; }
+    .headline .danger { color: #ff6b6b; }
+
+    .body-text {
+      color: #A8A3C7;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .source {
+      color: #7C6FF7;
+      font-size: 9px;
+      font-style: italic;
+      margin-top: 14px;
+    }
+
+    /* ── STAT BOX ── */
+    .stat-box {
+      background: rgba(124,111,247,0.12);
+      border: 1px solid rgba(124,111,247,0.3);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+    }
+
+    .stat-number {
+      color: #fff;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: #A8A3C7;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* ── CARD ENCADRÉ ── */
+    .card {
+      background: #1E1750;
+      border-left: 3px solid #7C6FF7;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+    }
+
+    .card.red {
+      border-left-color: #ff6b6b;
+    }
+
+    .card.blue {
+      border-left-color: #60a5fa;
+    }
+
+    .card-title {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-body {
+      color: #A8A3C7;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* ── MYTH BOX ── */
+    .myth-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+
+    .myth-label {
+      color: #ff6b6b;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .myth-text {
+      color: #A8A3C7;
+      font-size: 12px;
+      line-height: 1.5;
+      text-decoration: line-through;
+      text-decoration-color: rgba(255,107,107,0.5);
+      margin-bottom: 8px;
+    }
+
+    .truth-label {
+      color: #7C6FF7;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .truth-text {
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    /* ── BRAIN MODES (slide 2) ── */
+    .brain-modes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .brain-mode {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(124,111,247,0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .brain-mode-icon {
+      font-size: 20px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .brain-mode-content {}
+
+    .brain-mode-title {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .brain-mode-desc {
+      color: #A8A3C7;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    /* ── PERSPECTIVE CARD (slide 4) ── */
+    .perspective-tag {
+      display: inline-block;
+      background: rgba(124,111,247,0.2);
+      color: #7C6FF7;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .question-card {
+      background: #1E1750;
+      border: 1px solid rgba(124,111,247,0.4);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+    }
+
+    .question-icon {
+      color: #7C6FF7;
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .question-text {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* ── CTA SLIDE ── */
+    .cta-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cta-stat {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(124,111,247,0.1);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .cta-stat-num {
+      color: #7C6FF7;
+      font-size: 20px;
+      font-weight: 900;
+      white-space: nowrap;
+      min-width: 80px;
+    }
+
+    .cta-stat-label {
+      color: #A8A3C7;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .cta-button {
+      background: #7C6FF7;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px;
+      border-radius: 10px;
+      margin-top: 6px;
+    }
+
+    .save-hint {
+      color: rgba(168,163,199,0.6);
+      font-size: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* ── PRINT / SCREENSHOT HELPER ── */
+    .screenshot-hint {
+      background: #333;
+      color: #aaa;
+      font-size: 11px;
+      font-family: monospace;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-align: center;
+      margin-top: -16px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <p style="color:#888;font-family:monospace;font-size:12px;text-align:center;max-width:600px">
+    Chaque slide fait 540×675px (= 1080×1350px à ×2). Pour exporter :
+    Chrome DevTools (F12) → icône mobile → 540×675 → screenshot.
+    Ou zoom 200% + screenshot plein écran de chaque slide.
+  </p>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 1 — ACCROCHE                     -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="label">Slide 1 / 5 — Accroche</div>
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="top-bar">
+        <div class="badge">Psychologie • leveilmental.fr</div>
+        <div class="slide-num">01</div>
+      </div>
+      <div class="content">
+        <div class="eyebrow">Régulation émotionnelle</div>
+        <div class="stat-box">
+          <div class="stat-number" style="font-size:40px;color:#ff6b6b">Effet nul.</div>
+          <div class="stat-label">C'est l'impact réel de la suppression émotionnelle<br>sur ton état interne — Webb et al., Sheffield, 306 études</div>
+        </div>
+        <div class="headline">Supprimer une émotion<br>la rend <span class="danger">encore plus</span><br>présente.</div>
+        <div class="body-text">La stratégie que la plupart utilisent par défaut est la moins efficace qui existe.</div>
+      </div>
+      <div class="footer"><span class="footer-text">leveilmental.fr</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 2 — MÉCANISME                    -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="label">Slide 2 / 5 — Mécanisme</div>
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="top-bar">
+        <div class="badge">Psychologie • leveilmental.fr</div>
+        <div class="slide-num">02</div>
+      </div>
+      <div class="content">
+        <div class="eyebrow">Comment ça marche</div>
+        <div class="headline">Ton cerveau a<br>2 modes en combat.</div>
+        <div class="brain-modes">
+          <div class="brain-mode">
+            <div class="brain-mode-icon">🔴</div>
+            <div class="brain-mode-content">
+              <div class="brain-mode-title">Amygdale — l'alarme</div>
+              <div class="brain-mode-desc">Réagit en 80ms. Avant que tu aies le temps de réfléchir. Déclenche colère, peur, anxiété.</div>
+            </div>
+          </div>
+          <div class="brain-mode">
+            <div class="brain-mode-icon">🔵</div>
+            <div class="brain-mode-content">
+              <div class="brain-mode-title">Cortex préfrontal — le frein</div>
+              <div class="brain-mode-desc">S'active quand tu régules consciemment. Envoie un signal de freinage à l'amygdale — mesurable en IRM.</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">La règle d'or</div>
+          <div class="card-body">Toute technique efficace = activer le frein <strong style="color:#7C6FF7">avant</strong> que l'alarme soit au pic. Après, c'est trop tard.</div>
+        </div>
+      </div>
+      <div class="footer"><span class="footer-text">leveilmental.fr</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 3 — MYTHE DÉCONSTRUIT            -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="label">Slide 3 / 5 — Mythe déconstruit</div>
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="top-bar">
+        <div class="badge">Psychologie • leveilmental.fr</div>
+        <div class="slide-num">03</div>
+      </div>
+      <div class="content">
+        <div class="eyebrow">Idée reçue</div>
+        <div class="headline">"Concentre-toi sur<br>ce que tu <span class="danger">ressens."</span></div>
+        <div class="myth-box">
+          <div class="myth-label">❌ Ce qu'on croit</div>
+          <div class="myth-text">Se concentrer sur son émotion aide à la lâcher et à mieux la comprendre.</div>
+          <div class="truth-label">✓ Ce que dit la science</div>
+          <div class="truth-text">Ça amplifie l'état émotionnel. La concentration intense sur l'émotion figure parmi les stratégies les plus contre-productives.</div>
+        </div>
+        <div class="source">Webb, Miles, Sheeran — Université de Sheffield — Psychological Bulletin, 2012</div>
+        <div class="body-text" style="margin-top:14px">Les techniques les plus intuitives ne sont pas les plus efficaces.</div>
+      </div>
+      <div class="footer"><span class="footer-text">leveilmental.fr</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 4 — SOLUTION                     -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="label">Slide 4 / 5 — Solution</div>
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="top-bar">
+        <div class="badge">Psychologie • leveilmental.fr</div>
+        <div class="slide-num">04</div>
+      </div>
+      <div class="content">
+        <div class="eyebrow">Technique n°1</div>
+        <div class="headline">La méthode <span class="accent">×11</span><br>plus efficace que<br>la suppression.</div>
+        <div class="perspective-tag">Prise de perspective</div>
+        <div class="question-card">
+          <div class="question-icon">"</div>
+          <div class="question-text">Comment verrai-je cette situation dans 6 mois ?</div>
+        </div>
+        <div class="question-card">
+          <div class="question-icon">"</div>
+          <div class="question-text">Qu'est-ce qu'un observateur neutre penserait de ça ?</div>
+        </div>
+        <div class="body-text" style="margin-top: 14px">30 secondes. Agis avant la montée — pas après le pic.</div>
+      </div>
+      <div class="footer"><span class="footer-text">leveilmental.fr</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SLIDE 5 — CTA                          -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="label">Slide 5 / 5 — CTA</div>
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="top-bar">
+        <div class="badge">Psychologie • leveilmental.fr</div>
+        <div class="slide-num">05</div>
+      </div>
+      <div class="content">
+        <div class="eyebrow">Ce que tu retiens</div>
+        <div class="headline">8 techniques.<br>1 tableau.<br><span class="accent">Classées par efficacité.</span></div>
+        <div class="cta-stats">
+          <div class="cta-stat">
+            <div class="cta-stat-num">306</div>
+            <div class="cta-stat-label">études expérimentales analysées par Webb et al.</div>
+          </div>
+          <div class="cta-stat">
+            <div class="cta-stat-num">×11</div>
+            <div class="cta-stat-label">écart entre prise de perspective et suppression</div>
+          </div>
+          <div class="cta-stat">
+            <div class="cta-stat-num">8</div>
+            <div class="cta-stat-label">techniques + fiche PDF gratuite à télécharger</div>
+          </div>
+        </div>
+        <div class="cta-button">Article complet + Fiche PDF → Lien en bio</div>
+        <div class="save-hint">🧠 Sauvegarde ce post pour t'en souvenir</div>
+      </div>
+      <div class="footer"><span class="footer-text">leveilmental.fr</span></div>
+    </div>
+  </div>
+
+</body>
+</html>
