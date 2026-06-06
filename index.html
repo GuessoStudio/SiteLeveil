@@ -31,14 +31,25 @@
   <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="Agygcte7BCfG7g5TP-UBhkCwpikIAgUCr8jHvAxS5mg" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X04TK20VY6"></script>
+  <!-- Google tag (gtag.js) — chargé après le rendu (window.load + idle) pour
+       ne pas concurrencer le chemin critique mobile. La file dataLayer est
+       constituée immédiatement, le script lourd est injecté en différé. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-X04TK20VY6');
+    (function () {
+      function loadGtag() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-X04TK20VY6';
+        document.head.appendChild(s);
+      }
+      var idle = window.requestIdleCallback || function (cb) { return window.setTimeout(cb, 1); };
+      if (document.readyState === 'complete') idle(loadGtag, { timeout: 3000 });
+      else window.addEventListener('load', function () { idle(loadGtag, { timeout: 3000 }); }, { once: true });
+    })();
   </script>
 
   <!-- SEO Meta Tags de base -->
@@ -63,12 +74,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Polices Hero (Cormorant Garamond + Outfit) — chargées ici car l'@import dans le <style> SSG était échappé -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;700;900&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;700;900&display=swap">
-  </noscript>
+  <!-- Polices Hero (Cormorant Garamond + Outfit) : self-hostées en same-origin
+       (voir @font-face dans src/index.css). Le preload des 2 variantes
+       above-the-fold est injecté sur la home uniquement par onPageRendered
+       (vite.config.ts) pour ne pas charger ces polices sur les articles. -->
 
   <!-- Brevo Newsletter Form -->
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" media="print" onload="this.media='all'">

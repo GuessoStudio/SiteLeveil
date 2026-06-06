@@ -56,16 +56,16 @@ export default defineConfig(({ isSsrBuild }) => ({
         )
     },
     // Preload des polices du hero UNIQUEMENT sur la home. Cormorant Garamond +
-    // Outfit ne servent que sur la page d'accueil (hero + DailyQuote) ; les
-    // précharger globalement gaspillerait 71 Ko sur chaque article. Ici on les
-    // injecte au rendu SSG de la home seule → corrige le CLS de font-swap sans
-    // pénaliser les autres pages. Sous-ensemble latin ; si Google fait tourner
-    // ces URLs v21/v15, le navigateur ignore le preload (dégradation propre).
+    // Outfit servent surtout sur la page d'accueil (hero + DailyQuote) ; les
+    // précharger globalement gaspillerait du transfert sur chaque article. Ici
+    // on les injecte au rendu SSG de la home seule → corrige le CLS de font-swap
+    // sans pénaliser les autres pages. Polices self-hostées (same-origin), donc
+    // le preload matche toujours le fichier réellement chargé (cf. src/index.css).
     onPageRendered(route: string, html: string) {
       if (route !== '/' && route !== '') return html
       const preloads =
-        '<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSqn7B6D.woff2">' +
-        '<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2">'
+        '<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/cormorant-garamond-italic.woff2">' +
+        '<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/outfit-variable.woff2">'
       return html.replace('</head>', preloads + '</head>')
     },
   },
