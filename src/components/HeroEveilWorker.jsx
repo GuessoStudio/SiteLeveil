@@ -11,6 +11,10 @@ export default function HeroEveilWorker() {
   const navigate = useNavigate();
   const canvasRef = useRef(null);
   const [wordIndex, setWordIndex] = useState(0);
+  // Reste false jusqu'au 1er changement de mot. Permet de rendre le premier mot
+  // (candidat LCP) visible dès le HTML pré-rendu via initial={false}, au lieu de
+  // l'animer depuis opacity:0 après l'hydratation React (LCP mobile ~4,3s).
+  const [hasRotated, setHasRotated] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -44,6 +48,7 @@ export default function HeroEveilWorker() {
 
   useEffect(() => {
     const id = setInterval(() => {
+      setHasRotated(true);
       setWordIndex((i) => (i + 1) % ROTATING_WORDS.length);
     }, 2800);
     return () => clearInterval(id);
@@ -281,7 +286,13 @@ export default function HeroEveilWorker() {
               <AnimatePresence mode="wait">
                 <motion.span
                   key={wordIndex}
-                  initial={prefersReducedMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                  initial={
+                    !hasRotated
+                      ? false
+                      : prefersReducedMotion
+                        ? { opacity: 0 }
+                        : { y: "100%", opacity: 0 }
+                  }
                   animate={{
                     y: 0,
                     opacity: 1,
