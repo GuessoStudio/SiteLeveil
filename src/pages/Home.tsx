@@ -42,8 +42,8 @@ const Home = () => {
       {/* Citation du jour */}
       <section
         ref={quoteSection.ref}
-        className={`quote-section relative z-20 overflow-hidden -mt-28 sm:-mt-32 pt-12 pb-8 sm:pt-16 sm:pb-10 bg-sand-50 dark:bg-gradient-to-b dark:from-[#0d0500] dark:to-neutral-900 transition-all duration-700 delay-200 ${
-          quoteSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        className={`quote-section relative z-20 overflow-hidden -mt-28 sm:-mt-32 pt-12 pb-8 sm:pt-16 sm:pb-10 bg-sand-50 dark:bg-gradient-to-b dark:from-[#0d0500] dark:to-neutral-900 transition-all duration-300 delay-200 ${
+          quoteSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -64,8 +64,8 @@ const Home = () => {
       {/* Reprendre la lecture */}
       <section
         ref={resumeSection.ref}
-        className={`py-8 bg-sand-50 dark:bg-neutral-900 transition-all duration-700 delay-100 ${
-          resumeSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        className={`py-8 bg-sand-50 dark:bg-neutral-900 transition-all duration-300 delay-100 ${
+          resumeSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -76,8 +76,8 @@ const Home = () => {
       {/* ThemeCards */}
       <div
         ref={themeSection.ref}
-        className={`transition-all duration-700 delay-100 ${
-          themeSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        className={`transition-all duration-300 delay-100 ${
+          themeSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
         }`}
       >
         <ThemeCards />
@@ -95,8 +95,8 @@ const Home = () => {
 
           <div
             ref={articlesHeader.ref}
-            className={`text-center mb-16 transition-all duration-700 delay-100 ${
-              articlesHeader.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`text-center mb-16 transition-all duration-300 delay-100 ${
+              articlesHeader.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-sand-900 dark:text-sand-50 mb-4">
@@ -110,19 +110,19 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div
               ref={card1.ref}
-              className={`transition-all duration-700 delay-[0ms] ${card1.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`transition-all duration-300 delay-[0ms] ${card1.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
             >
               <ArticleCard article={featuredArticles[0]} variant="featured" />
             </div>
             <div
               ref={card2.ref}
-              className={`transition-all duration-700 delay-[150ms] ${card2.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`transition-all duration-300 delay-[80ms] ${card2.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
             >
               <ArticleCard article={featuredArticles[1]} variant="featured" />
             </div>
             <div
               ref={card3.ref}
-              className={`transition-all duration-700 delay-[300ms] ${card3.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`transition-all duration-300 delay-[160ms] ${card3.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
             >
               <ArticleCard article={featuredArticles[2]} variant="featured" />
             </div>
@@ -130,8 +130,8 @@ const Home = () => {
 
           <div
             ref={articlesButton.ref}
-            className={`text-center transition-all duration-700 delay-100 ${
-              articlesButton.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`text-center transition-all duration-300 delay-100 ${
+              articlesButton.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
           >
             <Link
@@ -155,8 +155,8 @@ const Home = () => {
       {/* Newsletter */}
       <div
         ref={newsletterSection.ref}
-        className={`transition-all duration-700 delay-100 ${
-          newsletterSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        className={`transition-all duration-300 delay-100 ${
+          newsletterSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
         }`}
       >
         <NewsletterSection />
