@@ -182,7 +182,11 @@ export default function HeroEveilWorker() {
       className="relative w-full overflow-hidden font-body hero-root"
       style={{ backgroundColor: "#0d0500" }}
     >
-      <style>{`
+      {/* dangerouslySetInnerHTML : evite que React n'echappe les quotes (') en
+          &#x27; dans le contenu du <style>. Un <style> est un "raw text element"
+          (les entites n'y sont pas decodees), donc l'echappement casserait le CSS
+          cote parsing critique (Beasties/postcss au build SSG). */}
+      <style dangerouslySetInnerHTML={{ __html: `
         .font-display { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
         .font-body { font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif; }
         .ts-soft { text-shadow: 0 1px 8px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5); }
@@ -225,7 +229,7 @@ export default function HeroEveilWorker() {
         @media (prefers-reduced-motion: reduce) {
           * { transition-duration: 0.01ms !important; }
         }
-      `}</style>
+      ` }} />
 
       <div className="absolute inset-0 z-0" style={{ backgroundColor: "#0d0500" }} />
 

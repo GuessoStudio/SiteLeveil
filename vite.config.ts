@@ -33,6 +33,23 @@ export default defineConfig(({ isSsrBuild }) => ({
   ssgOptions: {
     mock: true,
     dirStyle: 'nested',
+    // Critical CSS : vite-react-ssg lance `beasties` pendant le SSG (vrai DOM
+    // pré-rendu) pour inliner le CSS critique dans le <head> et basculer le bundle
+    // CSS (~150KB) en chargement asynchrone. Supprime le render-blocking qui
+    // plombait FCP/LCP mobile.
+    //   preload:'media' : <link rel=stylesheet media=print onload=this.media='all'>
+    //     + <noscript> de secours. Pattern non-bloquant éprouvé (la stratégie 'swap'
+    //     laissait rel=stylesheet => restait render-blocking).
+    //   pruneSource:false : le CSS chargé en async reste complet
+    //   inlineFonts/preloadFonts:false : on gère le preload des polices nous-mêmes
+    //     (onPageRendered ci-dessous, home only)
+    beastiesOptions: {
+      preload: 'media',
+      pruneSource: false,
+      inlineFonts: false,
+      preloadFonts: false,
+      logLevel: 'silent',
+    },
     includedRoutes(paths: string[]) {
       const EXCLUDE = ['/og-test', '/habit-tracker']
       const EXCLUDE_PREFIX = [

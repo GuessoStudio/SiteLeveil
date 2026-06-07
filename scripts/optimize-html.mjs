@@ -20,6 +20,11 @@ const htmlFiles = findHtmlFiles(distDir);
 
 console.log(`🔄 Optimizing ${htmlFiles.length} HTML file(s)...`);
 
+// Note : l'inline du CSS critique + le chargement async du bundle CSS sont gérés
+// nativement par vite-react-ssg (via `beasties`, configuré dans vite.config.ts
+// `ssgOptions.beastiesOptions`). Ce script ne s'occupe plus du CSS — il applique
+// les optimisations restantes (fetchpriority LCP + neutralisation du loader manifest).
+
 let totalOptimized = 0;
 
 for (const filePath of htmlFiles) {
@@ -27,24 +32,13 @@ for (const filePath of htmlFiles) {
     let html = fs.readFileSync(filePath, 'utf-8');
     let changed = false;
 
-    // 1. Rendre le CSS principal asynchrone
-    const linkRegex = /<link rel="stylesheet" crossorigin href="\/assets\/[^"]+\.css">/;
-    const match = html.match(linkRegex);
-    if (match) {
-      const originalLink = match[0];
-      const asyncLink = originalLink.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"');
-      const noscriptLink = `<noscript>${originalLink}</noscript>`;
-      html = html.replace(originalLink, `${asyncLink}${noscriptLink}`);
-      changed = true;
-    }
-
-    // 2. fetchpriority sur l'image LCP
+    // 1. fetchpriority sur l'image LCP
     if (!html.includes('fetchpriority="high"') && html.includes('loading="eager"')) {
       html = html.replace('loading="eager"', 'loading="eager" fetchpriority="high"');
       changed = true;
     }
 
-    // 3. Neutraliser le loader vite-react-ssg qui fetch un manifest JSON inexistant
+    // 2. Neutraliser le loader vite-react-ssg qui fetch un manifest JSON inexistant
     // Problème : vite-react-ssg injecte un loader sur toutes les routes SSR qui tente de
     // fetcher `static-loader-data-manifest-{RANDOM_HASH}.json`. Le hash change à chaque build.
     // Après un nouveau déploiement, l'ancien hash en cache SW pointe vers un fichier supprimé.
