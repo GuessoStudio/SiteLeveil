@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",
-    "prebuild": "npm run sitemap",
+    "images": "node scripts/generate-image-variants.mjs",
+    "prebuild": "npm run sitemap && npm run images",
     "dev": "vite",
     "build": "tsc && vite-react-ssg build && node scripts/optimize-html.mjs",
     "preview": "vite preview",
@@ -39,6 +40,7 @@
     "autoprefixer": "^10.4.21",
     "beasties": "^0.1.0",
     "postcss": "^8.5.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.0.2",

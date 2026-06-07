@@ -39,7 +39,9 @@ function FeaturedCard({ article }: { article: ArticleData }) {
             {/* Image */}
             <div className="relative overflow-hidden aspect-video">
               <img
-                src={`${article.image}.webp`}
+                src={`${article.image}-800.webp`}
+                srcSet={`${article.image}-400.webp 400w, ${article.image}-800.webp 800w`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                 alt={article.title}
                 width="600"
                 height="338"
@@ -106,7 +108,9 @@ function StandardCard({ article, isFavorite = false, onFavoriteToggle }: {
         {/* Image */}
         <Link to={`/blog/${article.slug}`} className="block relative overflow-hidden shrink-0">
           <img
-            src={`${article.image}.webp`}
+            src={`${article.image}-800.webp`}
+            srcSet={`${article.image}-400.webp 400w, ${article.image}-800.webp 800w`}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
             alt={article.title}
             width="400"
             height="240"
