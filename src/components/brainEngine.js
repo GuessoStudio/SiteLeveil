@@ -88,7 +88,9 @@ export function startBrainEngine(canvas, { isMobile, prefersReducedMotion }) {
 
   // ── Helpers ───────────────────────────────────────────────────────────────
   const computeBrainTransform = () => {
-    if (MOBILE_MODE) {
+    // Basé sur la largeur réelle (même seuil que le CSS .lg et matchMedia) pour
+    // garder le cerveau cohérent avec le layout, indépendamment de MOBILE_MODE.
+    if (width < 1024) {
       brainScale = (height * 0.55) / MASK_H;
       brainCenterX = width / 2;
       brainCenterY = height * 0.32;

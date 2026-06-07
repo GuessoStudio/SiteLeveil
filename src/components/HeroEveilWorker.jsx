@@ -179,12 +179,8 @@ export default function HeroEveilWorker() {
 
   return (
     <div
-      className="relative w-full overflow-hidden font-body"
-      style={{
-        backgroundColor: "#0d0500",
-        height: isMobile ? "100svh" : "100vh",
-        minHeight: isMobile ? "600px" : "100vh",
-      }}
+      className="relative w-full overflow-hidden font-body hero-root"
+      style={{ backgroundColor: "#0d0500" }}
     >
       <style>{`
         .font-display { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
@@ -198,6 +194,34 @@ export default function HeroEveilWorker() {
           outline: 3px solid #C9953A;
           outline-offset: 4px;
         }
+
+        /* Layout responsive en CSS (pas en JS) : le pre-rendu SSG et le client
+           rendent le meme HTML, le bon layout est choisi par le viewport reel.
+           Evite la bascule desktop->mobile a l'hydratation (cause du CLS).
+           Breakpoint mobile = <1024px (base) ; desktop = >=1024px (.lg). */
+        .hero-root { height: 100svh; min-height: 600px; }
+        .hero-overlay { background: radial-gradient(ellipse 80% 50% at 50% 32%, transparent 0%, rgba(13,5,0,0.5) 100%); }
+        .hero-inner { align-items: flex-end; justify-content: center; padding-left: clamp(1.5rem,6vw,2rem); padding-right: clamp(1.5rem,6vw,2rem); padding-bottom: 4rem; padding-top: 58vh; }
+        .hero-text { max-width: calc(100vw - 3rem); text-align: center; }
+        .hero-wordwrap { display: flex; justify-content: center; }
+        .hero-word { display: inline-block; }
+        .hero-rotating { right: 0; text-align: center; }
+        .hero-para { margin-left: auto; margin-right: auto; }
+        .hero-btns { align-items: center; justify-content: center; }
+        .hero-scroll { display: none; }
+        @media (min-width: 1024px) {
+          .hero-root { height: 100vh; min-height: 100vh; }
+          .hero-overlay { background: radial-gradient(ellipse 70% 60% at 78% 50%, transparent 0%, rgba(13,5,0,0.5) 100%); }
+          .hero-inner { align-items: center; justify-content: flex-start; padding-left: clamp(1.5rem,6vw,8rem); padding-right: clamp(1.5rem,8vw,10rem); padding-bottom: 0; padding-top: 0; }
+          .hero-text { max-width: min(50rem, calc(100vw - 3rem)); text-align: left; }
+          .hero-wordwrap { display: block; }
+          .hero-word { display: block; }
+          .hero-rotating { right: auto; text-align: left; }
+          .hero-para { margin-left: 0; margin-right: 0; }
+          .hero-btns { align-items: stretch; justify-content: flex-start; }
+          .hero-scroll { display: flex; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           * { transition-duration: 0.01ms !important; }
         }
@@ -211,31 +235,10 @@ export default function HeroEveilWorker() {
         style={{ pointerEvents: "none" }}
       />
 
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: isMobile
-            ? "radial-gradient(ellipse 80% 50% at 50% 32%, transparent 0%, rgba(13,5,0,0.5) 100%)"
-            : "radial-gradient(ellipse 70% 60% at 78% 50%, transparent 0%, rgba(13,5,0,0.5) 100%)",
-        }}
-      />
+      <div className="absolute inset-0 z-10 pointer-events-none hero-overlay" />
 
-      <div
-        className={`relative z-20 h-full flex ${
-          isMobile
-            ? "items-end justify-center pb-16 pt-[58vh]"
-            : "items-center"
-        }`}
-        style={
-          isMobile
-            ? { paddingLeft: "clamp(1.5rem, 6vw, 2rem)", paddingRight: "clamp(1.5rem, 6vw, 2rem)" }
-            : { paddingLeft: "clamp(1.5rem, 6vw, 8rem)", paddingRight: "clamp(1.5rem, 8vw, 10rem)" }
-        }
-      >
-        <div
-          className={`w-full ${isMobile ? "text-center" : "text-left"}`}
-          style={{ maxWidth: isMobile ? "calc(100vw - 3rem)" : "min(50rem, calc(100vw - 3rem))" }}
-        >
+      <div className="relative z-20 h-full flex hero-inner">
+        <div className="w-full hero-text">
           <motion.div
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -266,10 +269,10 @@ export default function HeroEveilWorker() {
             initial={false}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.0, duration: 0.6 }}
-            className={`mt-2 mb-4 lg:mb-8 ${isMobile ? "flex justify-center" : ""}`}
+            className="mt-2 mb-4 lg:mb-8 hero-wordwrap"
           >
             <div
-              className={`relative ${isMobile ? "inline-block" : ""}`}
+              className="relative hero-word"
               style={{ overflow: "hidden", paddingTop: "0.05em", paddingBottom: "0.15em" }}
             >
               <span
@@ -309,15 +312,14 @@ export default function HeroEveilWorker() {
                       ? { opacity: 0, transition: { duration: 0.3 } }
                       : { y: "-100%", opacity: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } }
                   }
-                  className="absolute font-black tracking-wide whitespace-nowrap"
+                  // .hero-rotating gere le centrage responsive : sur mobile le
+                  // conteneur a la largeur du mot le plus long, on etire le span
+                  // (right:0) + text-center pour centrer les mots courts.
+                  className="absolute font-black tracking-wide whitespace-nowrap hero-rotating"
                   style={{
                     color: "#C9953A",
                     fontFamily: "Outfit, sans-serif",
                     left: 0,
-                    // Sur mobile, le conteneur a la largeur du mot le plus long ;
-                    // on etire le span (right:0) + centre le texte pour que les mots
-                    // courts (CLARTÉ, LIBERTÉ…) restent centres et pas colles a gauche.
-                    ...(isMobile ? { right: 0, textAlign: "center" } : {}),
                     top: "0.05em",
                     lineHeight: 1.1,
                     fontSize: "clamp(2.5rem, 6vw, 7rem)",
@@ -336,7 +338,7 @@ export default function HeroEveilWorker() {
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.6 }}
-            className={`text-white/85 max-w-xl leading-relaxed mb-4 font-light ts-soft ${isMobile ? "mx-auto" : ""}`}
+            className="text-white/85 max-w-xl leading-relaxed mb-4 font-light ts-soft hero-para"
             style={{ fontSize: "clamp(1rem, 1.25vw, 1.375rem)" }}
           >
             Comprenez comment votre cerveau fonctionne.
@@ -359,7 +361,7 @@ export default function HeroEveilWorker() {
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.6 }}
-            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 ${isMobile ? "items-center justify-center" : ""}`}
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-btns"
           >
             <button
               onClick={() => navigate("/blog")}
@@ -384,7 +386,9 @@ export default function HeroEveilWorker() {
         </div>
       </div>
 
-      {!isMobile && <ScrollIndicator prefersReducedMotion={prefersReducedMotion} />}
+      {/* Toujours rendu, masque en mobile via CSS (.hero-scroll) pour eviter
+          un re-render JS a l'hydratation. Element absolu = aucun impact CLS. */}
+      <ScrollIndicator prefersReducedMotion={prefersReducedMotion} />
     </div>
   );
 }
@@ -400,7 +404,7 @@ function ScrollIndicator({ prefersReducedMotion }) {
 
   return (
     <div
-      className="absolute bottom-20 left-1/2 z-30 pointer-events-none flex flex-col items-center gap-3"
+      className="absolute bottom-20 left-1/2 z-30 pointer-events-none hero-scroll flex-col items-center gap-3"
       style={{ transform: "translateX(-50%)", opacity: visible ? 0.85 : 0, transition: "opacity 0.5s ease" }}
       aria-hidden="true"
     >

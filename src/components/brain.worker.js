@@ -50,7 +50,7 @@ self.onmessage = async ({ data }) => {
       MOBILE_MODE = data.isMobile; prefersReducedMotion = data.prefersReducedMotion;
       if (started && mobileChanged && maskData) {
         cancelFrame(raf);
-        buildParticleClasses(); initBrain(); initAmbientParticles(); animate();
+        computeBrainTransform(); buildParticleClasses(); initBrain(); initAmbientParticles(); animate();
       }
       break;
     }
@@ -106,7 +106,11 @@ function buildParticleClasses() {
 }
 
 function computeBrainTransform() {
-  if (MOBILE_MODE) {
+  // Position/taille basees sur la largeur reelle (meme seuil que le CSS .lg et
+  // matchMedia) plutot que sur le flag MOBILE_MODE, qui peut se desynchroniser
+  // du viewport (timing du demarrage differe / resize). Garantit la coherence
+  // cerveau <-> layout.
+  if (width < 1024) {
     brainScale = (height * 0.55) / MASK_H;
     brainCenterX = width / 2; brainCenterY = height * 0.32;
   } else {
