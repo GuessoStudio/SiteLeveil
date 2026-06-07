@@ -164,12 +164,32 @@ export default function HeroEveilWorker() {
     };
     const onMouseMove = (e) => workerRef.current?.postMessage({ type: "mouse", x: e.clientX, y: e.clientY });
     const onMouseLeave = () => workerRef.current?.postMessage({ type: "mouseout" });
-    const onVisibility = () => workerRef.current?.postMessage({ type: "visibility", state: document.visibilityState });
+
+    // Pause de l'animation quand le hero n'est pas affichable, pour deux raisons :
+    //  - onglet en arriere-plan (visibilitychange)
+    //  - hero scrolle hors de l'ecran (IntersectionObserver)
+    // Sans ca, le canvas plein ecran continue de tourner (rAF + compositing) pendant
+    // tout le scroll de la page => saccades meme dans les sections du bas.
+    let pageVisible = document.visibilityState === "visible";
+    let heroInView = true;
+    const syncRunState = () => workerRef.current?.postMessage({
+      type: "visibility",
+      state: pageVisible && heroInView ? "visible" : "hidden",
+    });
+    const onVisibility = () => { pageVisible = document.visibilityState === "visible"; syncRunState(); };
+
+    const io = new IntersectionObserver(
+      ([entry]) => { heroInView = entry.isIntersecting; syncRunState(); },
+      { threshold: 0 }
+    );
+    io.observe(canvas);
+
     window.addEventListener("resize", onResize);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseleave", onMouseLeave);
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
+      io.disconnect();
       window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseleave", onMouseLeave);
