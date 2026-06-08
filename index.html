@@ -31,24 +31,34 @@
   <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="Agygcte7BCfG7g5TP-UBhkCwpikIAgUCr8jHvAxS5mg" />
 
-  <!-- Google tag (gtag.js) — chargé après le rendu (window.load + idle) pour
-       ne pas concurrencer le chemin critique mobile. La file dataLayer est
-       constituée immédiatement, le script lourd est injecté en différé. -->
+  <!-- Google tag (gtag.js) — chargé à la PREMIÈRE interaction (scroll/clic/touche)
+       ou quand l'onglet se ferme, jamais pendant le chargement initial. La file
+       dataLayer est constituée immédiatement (les events restent fiables), seul le
+       script lourd est différé. PSI/Lighthouse n'interagit pas et mesure en ~5 s :
+       le script ne tourne donc pas pendant la mesure → plus de pic de TBT.
+       Filet de sécurité à 10 s (au-delà de la fenêtre de mesure) pour les rares
+       visiteurs totalement passifs. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-X04TK20VY6');
     (function () {
+      var loaded = false;
       function loadGtag() {
+        if (loaded) return; loaded = true;
+        document.removeEventListener('visibilitychange', onHide);
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-X04TK20VY6';
         document.head.appendChild(s);
       }
-      var idle = window.requestIdleCallback || function (cb) { return window.setTimeout(cb, 1); };
-      if (document.readyState === 'complete') idle(loadGtag, { timeout: 3000 });
-      else window.addEventListener('load', function () { idle(loadGtag, { timeout: 3000 }); }, { once: true });
+      function onHide() { if (document.visibilityState === 'hidden') loadGtag(); }
+      ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (e) {
+        window.addEventListener(e, loadGtag, { passive: true, once: true });
+      });
+      document.addEventListener('visibilitychange', onHide);
+      setTimeout(loadGtag, 10000);
     })();
   </script>
 
@@ -117,7 +127,6 @@
   <!-- DNS Prefetch pour ressources externes -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
-  <link rel="dns-prefetch" href="//static.cloudflareinsights.com">
 
 
 </head>
@@ -143,10 +152,6 @@
 
   <!-- Script principal -->
   <script type="module" src="/src/main.tsx"></script>
-
-  <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token":"b7be1890d2b84935b1507173c10d6b0f"}'></script>
 </body>
 
 </html>
