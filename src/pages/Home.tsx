@@ -76,7 +76,7 @@ const Home = () => {
       {/* ThemeCards */}
       <div
         ref={themeSection.ref}
-        className={`transition-all duration-300 delay-100 ${
+        className={`cv-auto transition-all duration-300 delay-100 ${
           themeSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
         }`}
       >
@@ -84,7 +84,7 @@ const Home = () => {
       </div>
 
       {/* Articles à la une */}
-      <section className="py-12 md:py-20 bg-white dark:bg-neutral-800 relative overflow-hidden">
+      <section className="cv-auto py-12 md:py-20 bg-white dark:bg-neutral-800 relative overflow-hidden">
         {/* Lignes décoratives */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#C9953A]/20 to-transparent animate-pulse" />
@@ -155,7 +155,7 @@ const Home = () => {
       {/* Newsletter */}
       <div
         ref={newsletterSection.ref}
-        className={`transition-all duration-300 delay-100 ${
+        className={`cv-auto transition-all duration-300 delay-100 ${
           newsletterSection.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
         }`}
       >

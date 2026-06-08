@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { cn } from "@/lib/utils";
 
 export interface SocialItem {
@@ -16,8 +15,6 @@ export interface SocialTooltipProps extends React.HTMLAttributes<HTMLUListElemen
 
 const SocialTooltip = React.forwardRef<HTMLUListElement, SocialTooltipProps>(
   ({ className, items, ...props }, ref) => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
     return (
       <ul
         ref={ref}
@@ -32,21 +29,13 @@ const SocialTooltip = React.forwardRef<HTMLUListElement, SocialTooltipProps>(
               className="relative flex items-center justify-center w-12 h-12 rounded-full bg-neutral-800 overflow-hidden group-hover:shadow-lg"
               target={item.href.startsWith('mailto') ? undefined : "_blank"}
               rel="noopener noreferrer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <motion.div
-                style={{
-                  backgroundColor: item.color,
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  originY: 1,
-                }}
-                animate={{ scaleY: hoveredIndex === index ? 1 : 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              {/* Remplissage couleur au survol : scaleY 0→1 en CSS pur
+                  (origine bas), remplace l'ancien motion.div framer. */}
+              <span
+                aria-hidden="true"
+                className="absolute bottom-0 left-0 w-full h-full origin-bottom scale-y-0 transition-transform duration-300 ease-in-out group-hover:scale-y-100"
+                style={{ backgroundColor: item.color }}
               />
               <span className="relative z-10 w-7 h-7 flex items-center justify-center text-neutral-400 group-hover:text-white transition-colors duration-300">
                 {item.icon}

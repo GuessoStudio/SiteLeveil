@@ -1,4 +1,5 @@
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
+import { useRef } from 'react'
+import type { CSSProperties } from 'react'
 
 interface MagicCardProps {
   children?: React.ReactNode
@@ -8,6 +9,10 @@ interface MagicCardProps {
   borderColor?: string
 }
 
+// Bordure dégradée qui suit le curseur — version CSS (variables --mx/--my mises
+// à jour directement sur l'élément, sans re-render). Remplace framer-motion
+// (useMotionTemplate) pour sortir le chunk framer du chemin critique. Effet
+// strictement desktop (survol souris) : aucun coût sur mobile.
 export function MagicCard({
   children,
   className = '',
@@ -15,30 +20,39 @@ export function MagicCard({
   gradientColor = '#C9953A',
   borderColor = 'rgba(255,255,255,0.08)',
 }: MagicCardProps) {
-  const mouseX = useMotionValue(-gradientSize)
-  const mouseY = useMotionValue(-gradientSize)
+  const ref = useRef<HTMLDivElement>(null)
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const el = ref.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    el.style.setProperty('--mx', `${e.clientX - rect.left}px`)
+    el.style.setProperty('--my', `${e.clientY - rect.top}px`)
+  }
+
+  const handlePointerLeave = () => {
+    const el = ref.current
+    if (!el) return
+    el.style.setProperty('--mx', `-${gradientSize}px`)
+    el.style.setProperty('--my', `-${gradientSize}px`)
+  }
+
+  const style = {
+    border: '2px solid transparent',
+    '--mx': `-${gradientSize}px`,
+    '--my': `-${gradientSize}px`,
+    background: `linear-gradient(transparent 0 0) padding-box, radial-gradient(${gradientSize}px circle at var(--mx) var(--my), ${gradientColor}, ${borderColor} 100%) border-box`,
+  } as CSSProperties
 
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={`relative h-full ${className}`}
-      style={{
-        border: '2px solid transparent',
-        background: useMotionTemplate`
-          linear-gradient(transparent 0 0) padding-box,
-          radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, ${borderColor} 100%) border-box
-        `,
-      }}
-      onPointerMove={(e) => {
-        const rect = e.currentTarget.getBoundingClientRect()
-        mouseX.set(e.clientX - rect.left)
-        mouseY.set(e.clientY - rect.top)
-      }}
-      onPointerLeave={() => {
-        mouseX.set(-gradientSize)
-        mouseY.set(-gradientSize)
-      }}
+      style={style}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }

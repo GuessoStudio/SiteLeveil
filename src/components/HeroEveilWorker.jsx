@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { BrainCircuit } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { startBrainEngine } from "./brainEngine.js";
@@ -11,10 +10,10 @@ export default function HeroEveilWorker() {
   const navigate = useNavigate();
   const canvasRef = useRef(null);
   const [wordIndex, setWordIndex] = useState(0);
-  // Reste false jusqu'au 1er changement de mot. Permet de rendre le premier mot
-  // (candidat LCP) visible dès le HTML pré-rendu via initial={false}, au lieu de
-  // l'animer depuis opacity:0 après l'hydratation React (LCP mobile ~4,3s).
-  const [hasRotated, setHasRotated] = useState(false);
+  // prevIndex reste null jusqu'au 1er changement de mot : le mot entrant est alors
+  // rendu SANS animation, donc visible dès le HTML pré-rendu (candidat LCP). Après
+  // la 1re rotation, prevIndex pilote la couche sortante (slide CSS en 2 couches).
+  const [prevIndex, setPrevIndex] = useState(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -48,8 +47,10 @@ export default function HeroEveilWorker() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setHasRotated(true);
-      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length);
+      setWordIndex((i) => {
+        setPrevIndex(i);
+        return (i + 1) % ROTATING_WORDS.length;
+      });
     }, 2800);
     return () => clearInterval(id);
   }, []);
@@ -246,8 +247,34 @@ export default function HeroEveilWorker() {
           .hero-scroll { display: flex; }
         }
 
+        /* Animations d'entrée en CSS (remplacent framer-motion). Les éléments
+           critiques LCP (h1, mot rotatif, paragraphes) n'ont AUCUNE animation
+           d'entrée : ils sont peints immédiatement. Seuls le badge et les boutons
+           font un léger fondu montant. */
+        @keyframes heroFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+        .hero-anim-badge { animation: heroFadeUp 0.6s ease-out 0.4s both; }
+        .hero-anim-btns  { animation: heroFadeUp 0.6s ease-out 0.7s both; }
+
+        /* Mot rotatif : 2 couches (entrante + sortante) qui glissent verticalement,
+           rendu très proche du ressort framer d'origine. overflow:hidden clippe. */
+        @keyframes heroWordIn  { from { opacity: 0; transform: translateY(80%); }  to { opacity: 1; transform: translateY(0); } }
+        @keyframes heroWordOut { from { opacity: 1; transform: translateY(0); }    to { opacity: 0; transform: translateY(-80%); } }
+        .hero-word-in  { animation: heroWordIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+        .hero-word-out { animation: heroWordOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+        /* Indicateur de scroll (desktop only) : boucle CSS remplaçant framer. */
+        @keyframes heroScrollDot {
+          0%   { transform: translateY(0) scale(1.4); box-shadow: 0 0 16px rgba(201,149,58,1); }
+          10%  { transform: translateY(0) scale(1);   box-shadow: 0 0 10px rgba(201,149,58,0.8); }
+          60%  { transform: translateY(40px) scale(1); box-shadow: 0 0 10px rgba(201,149,58,0.8); }
+          100% { transform: translateY(0) scale(1);   box-shadow: 0 0 10px rgba(201,149,58,0.8); }
+        }
+        .hero-scroll-dot { animation: heroScrollDot 3.2s ease-in-out infinite; }
+
         @media (prefers-reduced-motion: reduce) {
           * { transition-duration: 0.01ms !important; }
+          .hero-anim-badge, .hero-anim-btns,
+          .hero-word-in, .hero-word-out, .hero-scroll-dot { animation: none !important; }
         }
       ` }} />
 
@@ -263,42 +290,29 @@ export default function HeroEveilWorker() {
 
       <div className="relative z-20 h-full flex hero-inner">
         <div className="w-full hero-text">
-          <motion.div
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 backdrop-blur-md mb-5 lg:mb-10 ts-soft"
+          <div
+            className="hero-anim-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 backdrop-blur-md mb-5 lg:mb-10 ts-soft"
           >
             <BrainCircuit className="w-4 h-4 text-amber-300" />
             <span className="text-amber-100 text-xs tracking-[0.18em] uppercase font-medium">
               Neurosciences & Performance
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            // initial={false} : visible des le pre-rendu, pas de re-animation a
-            // l'hydratation (sinon le texte LCP attend hydratation + delay).
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.7, ease: "easeOut" }}
+          {/* Pas d'animation : peint dès le pré-rendu (chemin LCP). */}
+          <h1
             className="font-display italic font-light text-white leading-[1.05] ts-strong"
             style={{ fontSize: "clamp(2.5rem, 5.5vw, 6.25rem)" }}
           >
             Éveillez votre
-          </motion.h1>
+          </h1>
 
-          <motion.div
-            // Conteneur du mot rotatif : initial={false} sinon il repasse a
-            // opacity:0 a l'hydratation et masque le mot (candidat above-the-fold).
-            initial={false}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.6 }}
-            className="mt-2 mb-4 lg:mb-8 hero-wordwrap"
-          >
+          <div className="mt-2 mb-4 lg:mb-8 hero-wordwrap">
             <div
               className="relative hero-word"
               style={{ overflow: "hidden", paddingTop: "0.05em", paddingBottom: "0.15em" }}
             >
+              {/* Spacer invisible : fixe la hauteur/largeur sur le mot le plus long */}
               <span
                 aria-hidden="true"
                 className="block font-black tracking-wide whitespace-nowrap"
@@ -314,32 +328,12 @@ export default function HeroEveilWorker() {
                 {LONGEST_WORD}
               </span>
 
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={wordIndex}
-                  initial={
-                    !hasRotated
-                      ? false
-                      : prefersReducedMotion
-                        ? { opacity: 0 }
-                        : { y: "100%", opacity: 0 }
-                  }
-                  animate={{
-                    y: 0,
-                    opacity: 1,
-                    transition: prefersReducedMotion
-                      ? { duration: 0.3 }
-                      : { type: "spring", stiffness: 60, damping: 16 },
-                  }}
-                  exit={
-                    prefersReducedMotion
-                      ? { opacity: 0, transition: { duration: 0.3 } }
-                      : { y: "-100%", opacity: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } }
-                  }
-                  // .hero-rotating gere le centrage responsive : sur mobile le
-                  // conteneur a la largeur du mot le plus long, on etire le span
-                  // (right:0) + text-center pour centrer les mots courts.
-                  className="absolute font-black tracking-wide whitespace-nowrap hero-rotating"
+              {/* Couche sortante : n'existe qu'après la 1re rotation (slide vers le haut). */}
+              {prevIndex !== null && (
+                <span
+                  key={`out-${prevIndex}`}
+                  aria-hidden="true"
+                  className="absolute font-black tracking-wide whitespace-nowrap hero-rotating hero-word-out"
                   style={{
                     color: "#C9953A",
                     fontFamily: "Outfit, sans-serif",
@@ -350,42 +344,51 @@ export default function HeroEveilWorker() {
                     textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.6)",
                   }}
                 >
-                  {ROTATING_WORDS[wordIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </div>
-          </motion.div>
+                  {ROTATING_WORDS[prevIndex]}
+                </span>
+              )}
 
-          <motion.p
-            // Element LCP mobile : initial={false} pour qu'il se peigne des le CSS
-            // (sinon re-animation a l'hydratation + delay 1.1s => LCP ~4,2s).
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
+              {/* Couche entrante. Au 1er rendu (prevIndex null) : aucune animation
+                  → mot visible immédiatement (candidat LCP). Ensuite : slide montant.
+                  .hero-rotating gère le centrage responsive (mobile centré, desktop gauche). */}
+              <span
+                key={`in-${wordIndex}`}
+                className={`absolute font-black tracking-wide whitespace-nowrap hero-rotating ${prevIndex !== null ? "hero-word-in" : ""}`}
+                style={{
+                  color: "#C9953A",
+                  fontFamily: "Outfit, sans-serif",
+                  left: 0,
+                  top: "0.05em",
+                  lineHeight: 1.1,
+                  fontSize: "clamp(2.5rem, 6vw, 7rem)",
+                  textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.6)",
+                }}
+              >
+                {ROTATING_WORDS[wordIndex]}
+              </span>
+            </div>
+          </div>
+
+          {/* Élément LCP mobile : peint dès le pré-rendu, aucune animation. */}
+          <p
             className="text-white/85 max-w-xl leading-relaxed mb-4 font-light ts-soft hero-para"
             style={{ fontSize: "clamp(1rem, 1.25vw, 1.375rem)" }}
           >
             Comprenez comment votre cerveau fonctionne.
             <br />
             Transformez votre vie avec la science.
-          </motion.p>
+          </p>
 
-          <motion.p
-            // Texte critique above-the-fold : visible des le pre-rendu.
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3, duration: 0.6 }}
+          {/* Texte critique above-the-fold : visible dès le pré-rendu. */}
+          <p
             className="text-sm italic mb-8 lg:mb-14 font-display tracking-wide ts-soft"
             style={{ color: "rgba(254, 243, 199, 0.65)" }}
           >
             Rejoignez les esprits curieux qui reprennent le contrôle.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-btns"
+          <div
+            className="hero-anim-btns flex flex-col sm:flex-row gap-3 sm:gap-4 hero-btns"
           >
             <button
               onClick={() => navigate("/blog")}
@@ -406,18 +409,18 @@ export default function HeroEveilWorker() {
             >
               Recevoir le guide gratuit
             </button>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Toujours rendu, masque en mobile via CSS (.hero-scroll) pour eviter
           un re-render JS a l'hydratation. Element absolu = aucun impact CLS. */}
-      <ScrollIndicator prefersReducedMotion={prefersReducedMotion} />
+      <ScrollIndicator />
     </div>
   );
 }
 
-function ScrollIndicator({ prefersReducedMotion }) {
+function ScrollIndicator() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -446,7 +449,8 @@ function ScrollIndicator({ prefersReducedMotion }) {
 
       <div style={{ position: "relative", width: "1px", height: "48px" }}>
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(201, 149, 58, 0.3)" }} />
-        <motion.div
+        <div
+          className="hero-scroll-dot"
           style={{
             position: "absolute",
             top: 0,
@@ -457,17 +461,6 @@ function ScrollIndicator({ prefersReducedMotion }) {
             borderRadius: "50%",
             backgroundColor: "#C9953A",
           }}
-          animate={{
-            y:         [0,    0,    40,   0  ],
-            scale:     [1.4,  1,    1,    1  ],
-            boxShadow: [
-              "0 0 16px rgba(201,149,58,1)",
-              "0 0 10px rgba(201,149,58,0.8)",
-              "0 0 10px rgba(201,149,58,0.8)",
-              "0 0 10px rgba(201,149,58,0.8)",
-            ],
-          }}
-          transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity, times: [0, 0.1, 0.6, 1] }}
         />
       </div>
     </div>

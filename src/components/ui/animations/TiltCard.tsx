@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import type { CSSProperties } from 'react';
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -11,6 +11,14 @@ interface TiltCardProps {
   spotlightColor?: string;
 }
 
+/**
+ * Carte avec tilt 3D + reflet qui suit le curseur — version CSS pure.
+ * Les coordonnées pilotent des variables CSS (--rx/--ry/--sc/--gx/--gy/--gop)
+ * mises à jour directement sur l'élément (aucun re-render). Le lissage du
+ * mouvement est assuré par `transition: transform` (remplace le spring framer).
+ * Désactivé sur écran tactile → strictement desktop, aucun coût sur mobile.
+ * Remplace framer-motion pour sortir le chunk framer du chemin critique.
+ */
 export function TiltCard({
   children,
   className = '',
@@ -19,109 +27,76 @@ export function TiltCard({
   spotlightColor,
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Disable on touch devices
   useEffect(() => {
-    setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches);
   }, []);
 
-  // Motion values for X and Y coordinates
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const setVar = (k: string, v: string) => ref.current?.style.setProperty(k, v);
 
-  // Smooth the motion values
-  const springConfig = { damping: 20, stiffness: 200, mass: 0.5 };
-  const smoothX = useSpring(x, springConfig);
-  const smoothY = useSpring(y, springConfig);
-
-  // Transform coordinates to rotation values
-  // We flip the rotation axes (Y controls X rotation, X controls Y rotation) for a realistic tilt
-  const rotateX = useTransform(smoothY, [-0.5, 0.5], [maxRotation, -maxRotation]);
-  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-maxRotation, maxRotation]);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current || isTouchDevice) return;
-
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (isTouchDevice || !ref.current) return;
     const rect = ref.current.getBoundingClientRect();
-    
-    // Calculate normalized position from -0.5 to 0.5
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    // Mouse coords relative to element
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    
-    // Normalize string from -0.5 to 0.5
-    const normalizedX = (mouseX - centerX) / rect.width;
-    const normalizedY = (mouseY - centerY) / rect.height;
-
-    x.set(normalizedX);
-    y.set(normalizedY);
+    const nx = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 .. 0.5
+    const ny = (e.clientY - rect.top) / rect.height - 0.5;
+    // Mêmes axes que la version framer (Y pilote rotateX, X pilote rotateY).
+    setVar('--rx', `${-ny * 2 * maxRotation}deg`);
+    setVar('--ry', `${nx * 2 * maxRotation}deg`);
+    setVar('--gx', `${(nx + 0.5) * 100}%`);
+    setVar('--gy', `${(ny + 0.5) * 100}%`);
   };
 
-  const handleMouseLeave = () => {
+  const handlePointerEnter = () => {
     if (isTouchDevice) return;
-    setIsHovered(false);
-    // Reset to center
-    x.set(0);
-    y.set(0);
+    setVar('--sc', String(scale));
+    setVar('--gop', '1');
   };
 
-  const handleMouseEnter = () => {
+  const handlePointerLeave = () => {
     if (isTouchDevice) return;
-    setIsHovered(true);
+    setVar('--rx', '0deg');
+    setVar('--ry', '0deg');
+    setVar('--sc', '1');
+    setVar('--gop', '0');
   };
 
-  // Build the glare background transform.
-  // When spotlightColor is provided, use a radial gradient centered on the cursor
-  // instead of the default directional white glare.
-  const glareBackground = useTransform(
-    [smoothX, smoothY],
-    ([latestX, latestY]: any) => {
-      if (spotlightColor) {
-        // Radial spotlight following cursor position
-        const pxPct = ((latestX as number) + 0.5) * 100;
-        const pyPct = ((latestY as number) + 0.5) * 100;
-        return `radial-gradient(circle at ${pxPct}% ${pyPct}%, ${spotlightColor} 0%, transparent 50%)`;
-      }
-      // Default: directional white glare
-      const angle = Math.atan2(latestY, latestX) * (180 / Math.PI);
-      const opacity = (Math.abs(latestX) + Math.abs(latestY)) * 0.3;
-      return `linear-gradient(${angle}deg, rgba(255,255,255,${opacity}) 0%, rgba(255,255,255,0) 80%)`;
-    }
-  );
+  const baseStyle = {
+    '--rx': '0deg',
+    '--ry': '0deg',
+    '--sc': '1',
+    '--gx': '50%',
+    '--gy': '50%',
+    '--gop': '0',
+    transform: 'perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--sc))',
+    transformStyle: 'preserve-3d',
+    transition: 'transform 0.15s ease-out',
+  } as CSSProperties;
+
+  const glareColor = spotlightColor ?? 'rgba(255,255,255,0.25)';
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      animate={{ scale: isHovered && !isTouchDevice ? scale : 1 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      style={{
-        rotateX: isTouchDevice ? 0 : rotateX,
-        rotateY: isTouchDevice ? 0 : rotateY,
-        transformStyle: "preserve-3d",
-      }}
+      onPointerMove={handlePointerMove}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      style={baseStyle}
       className={`relative ${className}`}
     >
-      {/* Glare / spotlight effect inside the card */}
       {!isTouchDevice && (
-        <motion.div
+        <div
+          aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-50 rounded-[inherit]"
           style={{
-            background: glareBackground,
-            opacity: isHovered ? 1 : 0,
+            background: `radial-gradient(circle at var(--gx) var(--gy), ${glareColor} 0%, transparent 50%)`,
+            opacity: 'var(--gop)',
             transition: 'opacity 0.3s',
           }}
         />
       )}
-      
+
       {children}
-    </motion.div>
+    </div>
   );
 }

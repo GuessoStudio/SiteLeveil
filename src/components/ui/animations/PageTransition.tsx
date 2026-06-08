@@ -1,42 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 
 interface PageTransitionProps {
   children: React.ReactNode
 }
 
+/**
+ * Transition de page en CSS (remplace framer-motion pour sortir le chunk
+ * framer du chemin critique de la home).
+ *
+ * Hydratation : le serveur SSG rend `<div class="w-full">` (aucune animation).
+ * Le 1er rendu client doit produire EXACTEMENT le même markup, sinon mismatch
+ * (#418/#423/#425). On lit donc un ref `mounted` (qui ne déclenche PAS de
+ * re-render) : au 1er rendu il vaut false → pas de classe d'anim → identique au
+ * serveur, et aucun flash sur la page d'atterrissage. À chaque navigation,
+ * `useLocation` provoque un re-render avec mounted=true ; le `key={pathname}`
+ * remonte le div, la classe `.page-transition` est appliquée et l'animation
+ * rejoue (cf. @keyframes pageIn dans index.css).
+ */
 export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   const location = useLocation()
+  const mounted = useRef(false)
 
-  // Le serveur SSG rend le wrapper a l'etat "animate" (opacity:1, transform:none).
-  // Si le 1er render client appliquait l'animation d'entree (initial opacity:0), le style
-  // serialise differerait du HTML serveur -> mismatch d'hydratation (#418/#423/#425) sur tout
-  // l'arbre de page. On desactive donc l'animation d'entree au 1er render (hydrated=false,
-  // identique au serveur), puis on l'active pour les navigations client suivantes.
-  const [hydrated, setHydrated] = useState(false)
   useEffect(() => {
-    setHydrated(true)
+    mounted.current = true
   }, [])
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={location.pathname}
-        initial={hydrated ? { opacity: 0, y: 20, scale: 0.99 } : false}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{
-          duration: 0.4,
-          ease: [0.25, 0.46, 0.45, 0.94]
-        }}
-        className="w-full"
-        style={{
-          willChange: 'transform, opacity'
-        }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div
+      key={location.pathname}
+      className={mounted.current ? 'page-transition w-full' : 'w-full'}
+    >
+      {children}
+    </div>
   )
 }

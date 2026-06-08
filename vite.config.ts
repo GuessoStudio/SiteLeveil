@@ -97,15 +97,25 @@ export default defineConfig(({ isSsrBuild }) => ({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: isSsrBuild ? undefined : {
-          // Core React (always needed)
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // Icons (lightweight, used everywhere)
-          'vendor-icons': ['lucide-react'],
-          // Animation library (only loaded by pages using motion)
-          'vendor-motion': ['framer-motion'],
-          // Chart library (only used in Neuro-Journal)
-          'vendor-charts': ['recharts'],
+        // Fonction (et non objet) : la forme objet `{ 'vendor-motion': ['framer-motion'] }`
+        // laissait Rollup ranger `react/jsx-runtime` (importé par framer) dans
+        // vendor-motion. Comme TOUT le JSX de l'app importe le jsx-runtime, le chunk
+        // framer (117 KB) devenait une dépendance eager de CHAQUE page → preload inutile
+        // qui bloquait l'hydratation/LCP.
+        //
+        // Règle : on ne force en chunks nommés QUE les fondations eager (React + son
+        // écosystème, icônes). framer-motion / recharts / d3 ne sont PAS listés : ils
+        // ne sont importés que par des pages lazy, donc Rollup les place tout seul dans
+        // des chunks async (chargés à la demande), jamais en eager sur la home.
+        // Ne jamais router un gros lib lazy dans un chunk nommé : si une fondation
+        // partagée (jsx-runtime, react-is…) y atterrit, elle traîne tout le lib en eager.
+        manualChunks: isSsrBuild ? undefined : (id) => {
+          if (!id.includes('node_modules')) return
+          if (/[\\/]react[\\/]/.test(id) || id.includes('react/jsx-runtime') ||
+              /[\\/]react-dom[\\/]/.test(id) || /[\\/]scheduler[\\/]/.test(id) ||
+              id.includes('react-router') || /[\\/]react-is[\\/]/.test(id) ||
+              id.includes('react-helmet')) return 'vendor-react'
+          if (id.includes('lucide-react')) return 'vendor-icons'
         }
       }
     },

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Quote, Share2, Twitter, Linkedin, Facebook, ChevronLeft, ChevronRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from './ui/animations/TiltCard'
 import { useTheme } from '../contexts/ThemeContext'
 
@@ -262,14 +261,8 @@ const DailyQuote = () => {
         className="bg-white/70 dark:bg-[#0d0500]/60 backdrop-blur-md border border-[#C9953A]/30 dark:border-[#C9953A]/50 rounded-2xl dark:shadow-[0_0_60px_rgba(201,149,58,0.10),0_0_0_1px_rgba(201,149,58,0.08)]"
       >
         <div className="daily-quote p-5 sm:p-8">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            >
+          {/* key={currentIndex} : le remount rejoue le fondu CSS .daily-quote-fade */}
+          <div key={currentIndex} className="daily-quote-fade">
               <div className="flex items-start gap-4">
                 <Quote className="w-8 h-8 text-[#C9953A] flex-shrink-0 mt-1" />
                 <div className="flex-1">
@@ -325,9 +318,8 @@ const DailyQuote = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
-          
+          </div>
+
           {/* Navigation entre citations */}
           <div className="flex items-center justify-between">
             <button
@@ -355,10 +347,12 @@ const DailyQuote = () => {
 
           {/* Progress bar */}
           <div className="h-[1.5px] bg-black/10 dark:bg-white/10 rounded-full mt-4 overflow-hidden">
-            <motion.div
+            <div
               className="h-full bg-[#C9953A]"
-              animate={{ width: `${((currentIndex + 1) / quotes.length) * 100}%` }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                width: `${((currentIndex + 1) / quotes.length) * 100}%`,
+                transition: 'width 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
             />
           </div>
 

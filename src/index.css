@@ -31,6 +31,47 @@
   src: url('/fonts/outfit-variable.woff2') format('woff2');
 }
 
+/* ──────────────────────────────────────────────────────────────────────────
+   content-visibility: saute le rendu (style + layout + paint) des sections
+   hors écran tant qu'elles n'approchent pas du viewport. Sur la home, tout le
+   contenu sous le hero est pré-rendu (SSG) : sans ça le navigateur calcule le
+   layout de TOUTE la page avant le premier paint, ce qui bloque FCP/LCP mobile
+   (Style & Layout ~3,8 s mesuré). `contain-intrinsic-size: auto <h>` réserve
+   une hauteur estimée (puis mémorise la vraie) → aucun saut de scroll / CLS.
+   À n'appliquer QUE sur des sections réellement sous la ligne de flottaison.
+   ────────────────────────────────────────────────────────────────────────── */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Animations CSS remplaçant framer-motion sur le chemin critique de la home.
+   Objectif : sortir le chunk framer-motion (119 KB) du chargement eager pour
+   débloquer le paint du texte LCP (l'hydratation framer bloquait ~4 s).
+   Le rendu visuel reste très proche. prefers-reduced-motion neutralise tout.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Transition de page (PageTransition) — ne joue qu'aux navigations client,
+   jamais au 1er rendu (sinon mismatch hydratation + flash). */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+.page-transition { animation: pageIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+/* Citation du jour — fondu à chaque changement de citation. */
+@keyframes quoteIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.daily-quote-fade { animation: quoteIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .daily-quote-fade { animation: none; }
+}
+
 /* Variables CSS pour les thèmes */
 :root {
   /* Mode clair */
