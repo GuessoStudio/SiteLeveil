@@ -342,7 +342,9 @@ export default function RuminationMentale() {
               Interventions basées sur la recherche empirique
             </h3>
             <p className="text-rose-800 dark:text-rose-200 text-sm">
-              Ces techniques exploitent les mécanismes naturels de régulation émotionnelle pour interrompre les cycles de rumination destructrice.
+              Ces techniques exploitent les mécanismes naturels de{" "}
+              <Link to="/blog/regulation-emotionnelle-techniques-psychologie" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">régulation émotionnelle</Link>{" "}
+              pour interrompre les cycles de rumination destructrice.
             </p>
           </div>
 

@@ -452,6 +452,14 @@ export default function SystemeLimbique() {
             James Gross (Stanford University) a identifié cette stratégie comme l'une des plus efficaces et des moins coûteuses pour le cerveau. En IRM, le recadrage active le cortex préfrontal ventrolatéral gauche et réduit l'activité de l'amygdale — exactement le pattern documenté par Berboth & Morawetz (2021). Contrairement à la suppression émotionnelle, il ne génère pas de rebond émotionnel différé.
           </p>
 
+          <p>
+            Le recadrage est la plus documentée, mais ce n'est pas la seule stratégie qui mobilise ce circuit. Notre{" "}
+            <Link to="/blog/regulation-emotionnelle-techniques-psychologie" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              guide sur les 8 techniques de régulation émotionnelle classées par efficacité
+            </Link>{" "}
+            détaille comment l'affect labeling, la prise de perspective et la cohérence cardiaque agissent chacune sur ce même axe amygdale–cortex préfrontal.
+          </p>
+
           <div className="not-prose my-6 bg-neutral-100 dark:bg-neutral-800/50 p-5 rounded-lg">
             <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Application pratique — protocole de recadrage en 3 étapes</p>
             <ol className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1 list-decimal list-inside">
