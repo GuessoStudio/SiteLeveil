@@ -6,14 +6,15 @@
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",
     "images": "node scripts/generate-image-variants.mjs",
-    "prebuild": "npm run sitemap && npm run images",
+    "prebuild": "npm run validate:links && npm run sitemap && npm run images",
     "dev": "vite",
     "build": "tsc && vite-react-ssg build && node scripts/optimize-html.mjs",
     "preview": "vite preview",
     "new-post": "node scripts/new-post.js",
     "build-content": "node scripts/build-content.js",
     "deploy": "node scripts/deploy.js",
-    "validate:article": "npx tsx scripts/validate-article.ts"
+    "validate:article": "npx tsx scripts/validate-article.ts",
+    "validate:links": "node scripts/validate-links.mjs"
   },
   "dependencies": {
     "@netlify/functions": "^4.2.2",

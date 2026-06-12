@@ -234,9 +234,9 @@ export default function NeurotransmetteurHumeur() {
           <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
             <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Accueil</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
+            <Link to="/blog/?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
@@ -342,7 +342,7 @@ export default function NeurotransmetteurHumeur() {
 
           <p>
             Dans cet article, tu vas comprendre ce que font vraiment ces 7 molécules — et pourquoi la réalité est plus fascinante que les mythes.{" "}
-            <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               Les mécanismes du système limbique qui orchestrent ces signaux chimiques
             </Link>{" "}
             offrent un éclairage complémentaire indispensable.
@@ -528,7 +528,7 @@ export default function NeurotransmetteurHumeur() {
 
           <p>
             C'est pourquoi le défilement compulsif sur les réseaux sociaux est si difficile à arrêter. Ton cerveau anticipe en permanence une nouvelle récompense (un like, une information intéressante, une surprise). C'est la dopamine qui alimente cette anticipation. Le plaisir ressenti lui-même implique d'autres circuits, notamment les opioïdes endogènes.{" "}
-            <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/neuro-dopamine-routine/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               Le rôle de la dopamine dans les routines et les habitudes
             </Link>{" "}
             est développé en détail dans notre article dédié.
@@ -624,7 +624,7 @@ export default function NeurotransmetteurHumeur() {
 
           <p>
             L'excès de glutamate, à l'inverse, est neurotoxique. C'est l'excitotoxicité : trop de stimulation des récepteurs NMDA entraîne une entrée massive de calcium dans les neurones, qui peut les tuer. Ce mécanisme est impliqué dans certaines lésions cérébrales post-traumatiques.{" "}
-            <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/plasticite-synaptique-apprentissage-cerveau/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               Les mécanismes de plasticité synaptique qui dépendent du glutamate
             </Link>{" "}
             sont détaillés dans notre article sur la LTP et la LTD.
@@ -692,7 +692,7 @@ export default function NeurotransmetteurHumeur() {
 
           <p>
             Le mécanisme implique une augmentation du tryptophane libre dans le plasma (précurseur de la sérotonine), une activation des circuits dopaminergiques de récompense, et une production de BDNF dans l'hippocampe. Ces trois effets combinés améliorent l'humeur, la motivation et la capacité d'apprentissage.{" "}
-            <Link to="/blog/bdnf-augmenter-naturellement-neurosciences" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               Ce mécanisme BDNF est détaillé dans notre article sur l'augmentation naturelle du BDNF
             </Link>.
           </p>
@@ -735,7 +735,7 @@ export default function NeurotransmetteurHumeur() {
 
           <p>
             Sara Lazar (Harvard Medical School) a montré dès 2005 que des méditants réguliers présentent une épaisseur corticale supérieure dans les zones d'attention et de régulation émotionnelle (<em>NeuroReport</em>, 2005). L'augmentation du GABA dans le cortex cingulaire antérieur, elle, a été documentée par Streeter et al. (Boston University, <em>Journal of Alternative and Complementary Medicine</em>, 2010) : une séance de yoga de 60 minutes suffit à augmenter le GABA de 27 % dans ces régions, un effet comparable à celui des anxiolytiques légers à long terme. Ces modifications de la connectivité fronto-limbique se superposent aux circuits mobilisés par{" "}
-            <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               l'empathie et les neurones miroirs — qui font appel aux mêmes systèmes sérotoninergiques
             </Link>.
           </p>

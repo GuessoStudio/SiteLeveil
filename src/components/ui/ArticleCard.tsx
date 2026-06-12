@@ -30,7 +30,7 @@ function FeaturedCard({ article }: { article: ArticleData }) {
     <TiltCard maxRotation={3} scale={1.03}>
       <MagicCard gradientColor="#C9953A" gradientSize={250} className="rounded-2xl h-full">
         <Link
-          to={`/blog/${article.slug}`}
+          to={`/blog/${article.slug}/`}
           aria-label={`Lire l'article : ${article.title}`}
           className="group block h-full"
         >
@@ -106,7 +106,7 @@ function StandardCard({ article, isFavorite = false, onFavoriteToggle }: {
                       hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
 
         {/* Image */}
-        <Link to={`/blog/${article.slug}`} className="block relative overflow-hidden shrink-0">
+        <Link to={`/blog/${article.slug}/`} className="block relative overflow-hidden shrink-0">
           <img
             src={`${article.image}-800.webp`}
             srcSet={`${article.image}-400.webp 400w, ${article.image}-800.webp 800w`}
@@ -144,7 +144,7 @@ function StandardCard({ article, isFavorite = false, onFavoriteToggle }: {
 
         {/* Contenu */}
         <div className="p-6 flex flex-col flex-1">
-          <Link to={`/blog/${article.slug}`} className="flex flex-col flex-1">
+          <Link to={`/blog/${article.slug}/`} className="flex flex-col flex-1">
             <div className="flex items-center justify-between mb-3">
               <CategoryBadge category={article.category} />
               <span className="flex items-center gap-1 text-xs text-neutral-500 dark:text-neutral-400">

@@ -218,9 +218,9 @@ export default function RoutineMatinaleScientifique() {
           <ol className="flex flex-wrap gap-1 items-center">
             <li><Link to="/" className="hover:underline">Accueil</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/blog/" className="hover:underline">Blog</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog?category=developpement-personnel" className="hover:underline">Développement Personnel</Link></li>
+            <li><Link to="/blog/?category=developpement-personnel" className="hover:underline">Développement Personnel</Link></li>
             <li className="mx-1">›</li>
             <li className="text-neutral-700 dark:text-neutral-300 truncate max-w-[200px]">Routine matinale scientifique</li>
           </ol>
@@ -330,7 +330,7 @@ export default function RoutineMatinaleScientifique() {
             Beaucoup de gens évitent tout ce qui touche au cortisol, comme s'il était toujours néfaste. C'est une confusion fréquente. Il existe deux types d'élévation du cortisol.
           </p>
           <p>
-            La CAR est une élévation <em>adaptative</em> : programmée, limitée dans le temps, et bénéfique. Elle mobilise l'énergie, affûte l'attention et prépare le système immunitaire. Le stress chronique, lui, produit une élévation <em>réactive</em> et prolongée, qui finit par endommager le cerveau, notamment l'hippocampe (la zone de la mémoire). Pour aller plus loin sur cette distinction, l'article sur <Link to="/blog/cortisol-stress-chronique-cerveau-memoire" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">les effets du cortisol chronique sur le cerveau et la mémoire</Link> couvre les mécanismes précis.
+            La CAR est une élévation <em>adaptative</em> : programmée, limitée dans le temps, et bénéfique. Elle mobilise l'énergie, affûte l'attention et prépare le système immunitaire. Le stress chronique, lui, produit une élévation <em>réactive</em> et prolongée, qui finit par endommager le cerveau, notamment l'hippocampe (la zone de la mémoire). Pour aller plus loin sur cette distinction, l'article sur <Link to="/blog/cortisol-stress-chronique-cerveau-memoire/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">les effets du cortisol chronique sur le cerveau et la mémoire</Link> couvre les mécanismes précis.
           </p>
           <p>
             En résumé : la montée du cortisol au réveil est un signal de santé, pas un signal d'alarme.
@@ -377,7 +377,7 @@ export default function RoutineMatinaleScientifique() {
             Les notifications sociales, les emails et les actualités activent ton <strong>amygdale</strong> (une petite structure en forme d'amande au centre du cerveau, qui détecte les menaces). L'amygdale déclenche une réponse de stress réactif : montée d'adrénaline et de cortisol "d'alarme", avant que la CAR adaptative ait terminé son travail de préparation.
           </p>
           <p>
-            Résultat : ton cortex préfrontal, la zone de décision et de concentration, se retrouve en mode réactif avant d'avoir établi son mode exécutif. Tu passes la matinée à répondre au monde extérieur au lieu de travailler sur ce qui compte. L'<Link to="/blog/attention-fragmentee-concentration-numerique" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">attention fragmentée par les écrans numériques</Link> commence souvent dès les premières secondes du réveil.
+            Résultat : ton cortex préfrontal, la zone de décision et de concentration, se retrouve en mode réactif avant d'avoir établi son mode exécutif. Tu passes la matinée à répondre au monde extérieur au lieu de travailler sur ce qui compte. L'<Link to="/blog/attention-fragmentee-concentration-numerique/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">attention fragmentée par les écrans numériques</Link> commence souvent dès les premières secondes du réveil.
           </p>
           <p>
             La règle : pas d'écran pendant les 30 premières minutes. Pas parce que c'est une bonne habitude en général. Parce que le mécanisme biologique de préparation cognitive n'a pas encore terminé son cycle.
@@ -391,7 +391,7 @@ export default function RoutineMatinaleScientifique() {
             L'exercice aérobie déclenche la sécrétion de <strong>BDNF</strong> (Brain-Derived Neurotrophic Factor, ou facteur neurotrophique dérivé du cerveau). C'est une protéine qui agit comme un engrais pour les neurones : elle renforce les connexions entre cellules nerveuses, notamment dans le cortex préfrontal, la zone du cerveau qui contrôle l'attention, la prise de décision et la régulation émotionnelle.
           </p>
           <p>
-            Cet effet cognitif dure plusieurs heures après l'effort. Pour comprendre les 8 façons d'augmenter naturellement le BDNF, l'article sur <Link to="/blog/bdnf-augmenter-naturellement-neurosciences" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">le BDNF et la neurogenèse</Link> détaille les protocoles validés.
+            Cet effet cognitif dure plusieurs heures après l'effort. Pour comprendre les 8 façons d'augmenter naturellement le BDNF, l'article sur <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">le BDNF et la neurogenèse</Link> détaille les protocoles validés.
           </p>
           <p>
             Bonne nouvelle : l'effet ne nécessite pas une séance intense. 10 à 20 minutes de marche rapide, de vélo ou de yoga dynamique suffisent à déclencher une sécrétion mesurable de BDNF. L'intensité modérée est aussi efficace que l'intensité élevée pour cet effet cognitif spécifique.
@@ -446,7 +446,7 @@ export default function RoutineMatinaleScientifique() {
             C'est le facteur le plus simple et le plus souvent ignoré dans les discussions sur la routine matinale. La CAR n'est pas indépendante de la nuit qui précède.
           </p>
           <p>
-            Une nuit courte ou fragmentée réduit directement l'amplitude de la CAR du lendemain. Le pic est moins élevé, plus court, et moins efficace pour préparer les ressources cognitives. Une <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">qualité de sommeil réparateur</Link> est donc la première chose à corriger avant toute routine matinale.
+            Une nuit courte ou fragmentée réduit directement l'amplitude de la CAR du lendemain. Le pic est moins élevé, plus court, et moins efficace pour préparer les ressources cognitives. Une <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">qualité de sommeil réparateur</Link> est donc la première chose à corriger avant toute routine matinale.
           </p>
           <p>
             Une routine matinale impeccable ne compensera jamais un sommeil structurellement insuffisant. L'ordre des priorités : d'abord le sommeil, ensuite la routine.
@@ -479,7 +479,7 @@ export default function RoutineMatinaleScientifique() {
             Pas besoin d'une séance complète. 10 à 20 minutes de marche rapide, de mobilité articulaire ou de vélo léger suffisent à déclencher une sécrétion mesurable de BDNF et à activer le cortex préfrontal.
           </p>
           <p>
-            L'exercice matinal a aussi un avantage pratique : il est moins susceptible d'être annulé par les imprévus de la journée que l'exercice planifié le soir. Sur le lien entre mouvement et dopamine, l'article sur <Link to="/blog/neuro-dopamine-routine" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">la dopamine naturelle et les protocoles d'activation</Link> couvre les mécanismes de renforcement motivationnel.
+            L'exercice matinal a aussi un avantage pratique : il est moins susceptible d'être annulé par les imprévus de la journée que l'exercice planifié le soir. Sur le lien entre mouvement et dopamine, l'article sur <Link to="/blog/neuro-dopamine-routine/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">la dopamine naturelle et les protocoles d'activation</Link> couvre les mécanismes de renforcement motivationnel.
           </p>
 
           <h3>4. Différer le café de 90 minutes</h3>

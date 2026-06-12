@@ -207,12 +207,12 @@ export default function NeuroplasticiteCerveau() {
               Accueil
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
               Blog
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <Link
-              to="/blog?category=neurosciences"
+              to="/blog/?category=neurosciences"
               className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400"
             >
               Neurosciences
@@ -498,7 +498,11 @@ export default function NeuroplasticiteCerveau() {
           </p>
 
           <p>
-            Les sept stratégies présentées constituent un programme scientifiquement validé pour optimiser cette plasticité : apprentissage espacé, exercice physique, méditation, sommeil de qualité, exposition à la nouveauté, nutrition ciblée et stimulation cognitive progressive. Intégrées de manière cohérente dans votre quotidien, elles transforment littéralement la structure de votre cerveau.
+            Les sept stratégies présentées constituent un programme scientifiquement validé pour optimiser cette plasticité : apprentissage espacé, exercice physique, méditation, sommeil de qualité, exposition à la nouveauté, nutrition ciblée et stimulation cognitive progressive. Intégrées de manière cohérente dans votre quotidien, elles transforment littéralement la structure de votre cerveau. Cette malléabilité cérébrale est aussi le fondement biologique de l'{" "}
+            <Link to="/blog/mindset-de-croissance-psychologie-dweck/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              état d'esprit de croissance étudié par Carol Dweck
+            </Link>{" "}
+            : croire que ses capacités peuvent progresser n'est pas une simple posture mentale, c'est le reflet d'un cerveau qui se reconfigure réellement avec l'effort.
           </p>
 
           {/* FAQ enrichie */}
@@ -526,35 +530,35 @@ export default function NeuroplasticiteCerveau() {
               Explorez d'autres aspects fascinants du fonctionnement cérébral avec nos ressources scientifiques spécialisées.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/neuro-dopamine-routine/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Optimiser la dopamine
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Maîtriser la rumination mentale
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/attention-fragmentee-concentration-numerique" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/attention-fragmentee-concentration-numerique/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Restaurer l'attention profonde
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Lumière naturelle et cerveau
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Le système limbique
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/plasticite-synaptique-apprentissage-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Plasticité synaptique
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/syndrome-imposteur-solutions" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/blog/syndrome-imposteur-solutions/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Syndrome de l'imposteur
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/ressources" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
+              <Link to="/ressources/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">
                 Guides d'optimisation cérébrale
               </Link>
               <span className="text-neutral-400">•</span>

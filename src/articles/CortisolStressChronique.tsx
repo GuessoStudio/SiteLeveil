@@ -228,9 +228,9 @@ export default function CortisolStressChronique() {
           <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
             <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Accueil</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
+            <Link to="/blog/?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
@@ -412,7 +412,7 @@ export default function CortisolStressChronique() {
           </p>
 
           <p>
-            Résultat dans les modèles rongeurs : atrophie des dendrites — les "antennes" du neurone qui captent les signaux entrants — et blocage du cycle cellulaire. C'est aussi ce mécanisme qui perturbe la plasticité synaptique — la capacité du cerveau à renforcer ses connexions pour apprendre et mémoriser, comme le détaille notre article sur <Link to="/blog/plasticite-synaptique-apprentissage-cerveau">la plasticité synaptique et l'apprentissage</Link>.
+            Résultat dans les modèles rongeurs : atrophie des dendrites — les "antennes" du neurone qui captent les signaux entrants — et blocage du cycle cellulaire. C'est aussi ce mécanisme qui perturbe la plasticité synaptique — la capacité du cerveau à renforcer ses connexions pour apprendre et mémoriser, comme le détaille notre article sur <Link to="/blog/plasticite-synaptique-apprentissage-cerveau/">la plasticité synaptique et l'apprentissage</Link>.
           </p>
 
           <p>
@@ -470,7 +470,7 @@ export default function CortisolStressChronique() {
           </p>
 
           <p>
-            Dans les phases avancées de burn-out, certaines personnes ne ressentent plus de stress aigu. Elles sont émotionnellement éteintes. Mais leurs performances cognitives restent dégradées. Le cortisol chroniquement bas n'est pas un état de repos — c'est un état de défaillance de régulation. Le <Link to="/blog/systeme-limbique-cerveau-emotionnel">système limbique</Link> — qui gère aussi bien les émotions que la réponse au stress — reste dérégulé même quand le cortisol est bas.
+            Dans les phases avancées de burn-out, certaines personnes ne ressentent plus de stress aigu. Elles sont émotionnellement éteintes. Mais leurs performances cognitives restent dégradées. Le cortisol chroniquement bas n'est pas un état de repos — c'est un état de défaillance de régulation. Le <Link to="/blog/systeme-limbique-cerveau-emotionnel/">système limbique</Link> — qui gère aussi bien les émotions que la réponse au stress — reste dérégulé même quand le cortisol est bas.
           </p>
 
           <p>
@@ -520,7 +520,7 @@ export default function CortisolStressChronique() {
           </p>
 
           <p>
-            Le mécanisme passe notamment par l'augmentation du BDNF — le facteur neurotrophique dérivé du cerveau qui protège et nourrit les neurones hippocampiques. Nous détaillons ce mécanisme dans notre article sur <Link to="/blog/bdnf-augmenter-naturellement-neurosciences">les 8 méthodes pour augmenter le BDNF naturellement</Link>. Le BDNF est en quelque chose comme l'engrais de tes neurones : plus il est élevé, plus l'hippocampe résiste aux effets du cortisol chronique.
+            Le mécanisme passe notamment par l'augmentation du BDNF — le facteur neurotrophique dérivé du cerveau qui protège et nourrit les neurones hippocampiques. Nous détaillons ce mécanisme dans notre article sur <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/">les 8 méthodes pour augmenter le BDNF naturellement</Link>. Le BDNF est en quelque chose comme l'engrais de tes neurones : plus il est élevé, plus l'hippocampe résiste aux effets du cortisol chronique.
           </p>
 
           <p>
@@ -530,11 +530,11 @@ export default function CortisolStressChronique() {
           <h3>3. Le sommeil réparateur</h3>
 
           <p>
-            Le cortisol suit un rythme circadien précis. Il atteint son pic naturel entre 6h et 9h du matin — ce qu'on appelle le pic de cortisol du réveil, et qui t'aide à te lever. C'est précisément ce pic qu'une <Link to="/blog/routine-matinale-scientifique-cerveau">routine matinale fondée sur les neurosciences</Link> cherche à exploiter plutôt qu'à perturber. Il est presque nul en fin de soirée pour te permettre de t'endormir. Quand le sommeil est insuffisant ou de mauvaise qualité, ce rythme dérègle.
+            Le cortisol suit un rythme circadien précis. Il atteint son pic naturel entre 6h et 9h du matin — ce qu'on appelle le pic de cortisol du réveil, et qui t'aide à te lever. C'est précisément ce pic qu'une <Link to="/blog/routine-matinale-scientifique-cerveau/">routine matinale fondée sur les neurosciences</Link> cherche à exploiter plutôt qu'à perturber. Il est presque nul en fin de soirée pour te permettre de t'endormir. Quand le sommeil est insuffisant ou de mauvaise qualité, ce rythme dérègle.
           </p>
 
           <p>
-            Un manque de sommeil chronique — même 1 à 2 heures en moins par nuit — augmente le cortisol basal le lendemain. Sur plusieurs semaines, c'est une source d'hypercortisolémie chronique à part entière. La boucle devient vicieuse : le cortisol élevé perturbe aussi l'endormissement — notamment en activant l'amygdale et en inhibant le système parasympathique nécessaire à la détente. Notre article sur <Link to="/blog/sommeil-reparateur-7-strategies-validees">les stratégies pour un sommeil réparateur</Link> détaille les leviers pratiques pour briser ce cycle.
+            Un manque de sommeil chronique — même 1 à 2 heures en moins par nuit — augmente le cortisol basal le lendemain. Sur plusieurs semaines, c'est une source d'hypercortisolémie chronique à part entière. La boucle devient vicieuse : le cortisol élevé perturbe aussi l'endormissement — notamment en activant l'amygdale et en inhibant le système parasympathique nécessaire à la détente. Notre article sur <Link to="/blog/sommeil-reparateur-7-strategies-validees/">les stratégies pour un sommeil réparateur</Link> détaille les leviers pratiques pour briser ce cycle.
           </p>
 
           <p>
@@ -566,7 +566,7 @@ export default function CortisolStressChronique() {
           </p>
 
           <p>
-            <strong>Important :</strong> ces effets alimentaires sont plus modestes que la méditation ou l'exercice. L'alimentation et les adaptogènes seuls ne compensent pas un stress chronique structurel — ils optimisent la régulation de l'axe HPA en complément des autres leviers. La rumination mentale prolongée, qui maintient l'axe HPA en état d'alerte, mérite d'être adressée directement — notre article sur <Link to="/blog/rumination-mentale-pensees-obsessionnelles">la rumination mentale</Link> détaille les mécanismes et les approches validées.
+            <strong>Important :</strong> ces effets alimentaires sont plus modestes que la méditation ou l'exercice. L'alimentation et les adaptogènes seuls ne compensent pas un stress chronique structurel — ils optimisent la régulation de l'axe HPA en complément des autres leviers. La rumination mentale prolongée, qui maintient l'axe HPA en état d'alerte, mérite d'être adressée directement — notre article sur <Link to="/blog/rumination-mentale-pensees-obsessionnelles/">la rumination mentale</Link> détaille les mécanismes et les approches validées.
           </p>
 
           {/* À retenir */}
@@ -604,11 +604,11 @@ export default function CortisolStressChronique() {
           <h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
 
           <p>
-            Les effets du cortisol chronique s'inscrivent dans un écosystème neurologique plus large. Pour comprendre comment le cerveau gère l'apprentissage et la mémoire sous stress, notre article sur la <Link to="/blog/neuroplasticite-cerveau">neuroplasticité et les mécanismes de reprogrammation cérébrale</Link> détaille comment l'expérience — positive ou négative — remodèle la structure même du cerveau adulte.
+            Les effets du cortisol chronique s'inscrivent dans un écosystème neurologique plus large. Pour comprendre comment le cerveau gère l'apprentissage et la mémoire sous stress, notre article sur la <Link to="/blog/neuroplasticite-cerveau/">neuroplasticité et les mécanismes de reprogrammation cérébrale</Link> détaille comment l'expérience — positive ou négative — remodèle la structure même du cerveau adulte.
           </p>
 
           <p>
-            Si tu veux comprendre comment le BDNF — la protéine qui protège les neurones hippocampiques contre le cortisol — peut être augmenté naturellement, notre analyse des <Link to="/blog/bdnf-augmenter-naturellement-neurosciences">8 méthodes validées pour augmenter le BDNF</Link> présente les données humaines disponibles avec les tailles d'effet précises.
+            Si tu veux comprendre comment le BDNF — la protéine qui protège les neurones hippocampiques contre le cortisol — peut être augmenté naturellement, notre analyse des <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/">8 méthodes validées pour augmenter le BDNF</Link> présente les données humaines disponibles avec les tailles d'effet précises.
           </p>
 
           {/* CTA */}

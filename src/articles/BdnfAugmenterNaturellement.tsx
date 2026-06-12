@@ -198,9 +198,9 @@ export default function BdnfAugmenterNaturellement() {
           <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
             <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Accueil</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
+            <Link to="/blog/?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
@@ -545,11 +545,11 @@ export default function BdnfAugmenterNaturellement() {
 
           <p>
             Le BDNF est l'un des mécanismes centraux qui explique pourquoi{" "}
-            <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/neuroplasticite-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               la neuroplasticité cérébrale reste active tout au long de la vie
             </Link>{" "}
             — y compris après 25 ans, contrairement aux croyances populaires. La neurogenèse hippocampique stimulée par le BDNF est également un pilier essentiel de{" "}
-            <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               l'optimisation du sommeil réparateur
             </Link>
             , période pendant laquelle la synthèse de BDNF atteint son pic nocturne.
@@ -557,11 +557,11 @@ export default function BdnfAugmenterNaturellement() {
 
           <p>
             Sur le plan comportemental, la sédentarité et le stress chronique — deux suppresseurs majeurs du BDNF — sont souvent liés à des patterns de{" "}
-            <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               procrastination dont les mécanismes neuroscientifiques
             </Link>{" "}
             sont aujourd'hui bien documentés. Comprendre ces interactions permet d'adopter des stratégies de changement mieux ciblées. Les déficits chroniques de BDNF participent également aux mécanismes de la{" "}
-            <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               rumination mentale et des pensées obsessionnelles
             </Link>
             , en fragilisant les circuits de régulation émotionnelle du cortex préfrontal.
@@ -576,7 +576,7 @@ export default function BdnfAugmenterNaturellement() {
               Chaque semaine, un mécanisme neurologique décrypté avec ses applications pratiques validées.
             </p>
             <Link
-              to="/ressources"
+              to="/ressources/"
               className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded-lg hover:bg-indigo-50 transition-colors text-sm"
             >
               Accéder aux ressources gratuites

@@ -54,7 +54,7 @@ const NotFound = () => {
                     </Link>
 
                     <Link
-                        to="/blog"
+                        to="/blog/"
                         className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white rounded-xl font-bold shadow-md border border-neutral-100 dark:border-neutral-700 hover:scale-105 transition-all w-full sm:w-auto text-center justify-center"
                     >
                         <BookOpen className="w-5 h-5 text-indigo-500" />
@@ -62,7 +62,7 @@ const NotFound = () => {
                     </Link>
 
                     <Link
-                        to="/ressources"
+                        to="/ressources/"
                         className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white rounded-xl font-bold shadow-md border border-neutral-100 dark:border-neutral-700 hover:scale-105 transition-all w-full sm:w-auto text-center justify-center"
                     >
                         <Layout className="w-5 h-5 text-indigo-500" />

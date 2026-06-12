@@ -252,7 +252,7 @@ const Dashboard = () => {
                                         <p className="text-xs text-gray-500 dark:text-neutral-400 mb-4">
                                             Ajoutez des articles en favoris via le Blog.
                                         </p>
-                                        <Link to="/blog">
+                                        <Link to="/blog/">
                                             <button className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 hover:underline">
                                                 Explorer le Blog &rarr;
                                             </button>

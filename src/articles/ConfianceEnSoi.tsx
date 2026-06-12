@@ -207,12 +207,12 @@ export default function ConfianceEnSoi() {
               Accueil
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
               Blog
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <Link
-              to="/blog?category=developpement-personnel"
+              to="/blog/?category=developpement-personnel"
               className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400"
             >
               Développement Personnel
@@ -365,11 +365,11 @@ export default function ConfianceEnSoi() {
           </p>
 
           <p>
-            Cette posture face aux feedbacks est précisément ce que Carol Dweck (Stanford University) appelle le <Link to="/blog/mindset-de-croissance-psychologie-dweck" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">mindset de croissance</Link> — la conviction que les capacités se développent par l'effort, qui transforme chaque retour critique en opportunité d'apprentissage plutôt qu'en menace identitaire.
+            Cette posture face aux feedbacks est précisément ce que Carol Dweck (Stanford University) appelle le <Link to="/blog/mindset-de-croissance-psychologie-dweck/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">mindset de croissance</Link> — la conviction que les capacités se développent par l'effort, qui transforme chaque retour critique en opportunité d'apprentissage plutôt qu'en menace identitaire.
           </p>
 
           <p>
-            La qualité des encouragements que vous recevez dépend aussi de la façon dont vous répondez aux bonnes nouvelles que partagent vos proches. La <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">méthode ACR</Link>, validée par Shelly Gable (University of California), montre que des réponses actives et constructives renforcent les liens sociaux qui soutiennent la confiance en soi.
+            La qualité des encouragements que vous recevez dépend aussi de la façon dont vous répondez aux bonnes nouvelles que partagent vos proches. La <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">méthode ACR</Link>, validée par Shelly Gable (University of California), montre que des réponses actives et constructives renforcent les liens sociaux qui soutiennent la confiance en soi.
           </p>
 
           <h3>4. Les états physiologiques et émotionnels</h3>
@@ -673,31 +673,31 @@ export default function ConfianceEnSoi() {
               Explorez nos autres ressources scientifiques pour optimiser votre bien-être psychologique et votre croissance personnelle.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog/surmonter-rejet-social" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/surmonter-rejet-social/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Surmonter le rejet social
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/neuroplasticite-cerveau" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/neuroplasticite-cerveau/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Optimiser la neuroplasticité
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/syndrome-imposteur-solutions" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/syndrome-imposteur-solutions/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Vaincre le syndrome de l'imposteur
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/neuro-dopamine-routine" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/neuro-dopamine-routine/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Motivation et dopamine
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Méthode ACR
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Neurones miroirs et empathie
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/ressources" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+              <Link to="/ressources/" className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
                 Tous les guides gratuits
               </Link>
               <span className="text-neutral-400">•</span>

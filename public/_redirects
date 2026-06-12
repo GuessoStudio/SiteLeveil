@@ -2,10 +2,10 @@
 # https://docs.netlify.com/routing/redirects/
 
 # ─── Redirections SEO 301 (URLs EN → FR) ─────────────────────────────────────
-/about      /a-propos      301!
-/about/     /a-propos      301!
-/resources  /ressources    301!
-/resources/ /ressources    301!
+/about      /a-propos/     301!
+/about/     /a-propos/     301!
+/resources  /ressources/   301!
+/resources/ /ressources/   301!
 /blog/empathie-neurones-miroirs  /blog/empathie-neurones-miroirs-connexion-humaine/  301!
 /blog/empathie-neurones-miroirs/ /blog/empathie-neurones-miroirs-connexion-humaine/  301!
 

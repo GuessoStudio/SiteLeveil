@@ -186,7 +186,7 @@ export default function AttentionFragmenteeArticle() {
               Accueil
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span> 
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
@@ -525,15 +525,15 @@ export default function AttentionFragmenteeArticle() {
               Découvrez comment d'autres aspects des neurosciences peuvent améliorer votre quotidien et votre bien-être mental.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              <Link to="/blog/neuroplasticite-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Neuroplasticité et apprentissage
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              <Link to="/blog/neuro-dopamine-routine/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Optimiser la dopamine
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
                 Maîtriser la rumination
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>

@@ -185,7 +185,7 @@ export default function RuminationMentale() {
               Accueil
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span> 
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
@@ -343,7 +343,7 @@ export default function RuminationMentale() {
             </h3>
             <p className="text-rose-800 dark:text-rose-200 text-sm">
               Ces techniques exploitent les mécanismes naturels de{" "}
-              <Link to="/blog/regulation-emotionnelle-techniques-psychologie" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">régulation émotionnelle</Link>{" "}
+              <Link to="/blog/regulation-emotionnelle-techniques-psychologie/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">régulation émotionnelle</Link>{" "}
               pour interrompre les cycles de rumination destructrice.
             </p>
           </div>
@@ -459,7 +459,7 @@ export default function RuminationMentale() {
           </p>
 
           <p>
-            L'isolement aggrave la rumination car il prive le cerveau de la régulation émotionnelle que facilitent les relations sociales. Notre article sur les <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">neurones miroirs et l'empathie</Link> explique comment la connexion sociale module notre système de traitement émotionnel.
+            L'isolement aggrave la rumination car il prive le cerveau de la régulation émotionnelle que facilitent les relations sociales. Notre article sur les <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">neurones miroirs et l'empathie</Link> explique comment la connexion sociale module notre système de traitement émotionnel.
           </p>
 
           <h2>Prévention et maintien des gains thérapeutiques</h2>
@@ -545,31 +545,31 @@ export default function RuminationMentale() {
               Explorez d'autres aspects fascinants du fonctionnement psychologique avec nos ressources scientifiques.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog/surmonter-rejet-social" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/surmonter-rejet-social/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Gestion du rejet social
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/confiance-en-soi-durable" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/confiance-en-soi-durable/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Confiance authentique
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/neuroplasticite-cerveau" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/neuroplasticite-cerveau/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Optimiser son cerveau
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Méthode ACR
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Neurones miroirs et empathie
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Système limbique
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/syndrome-imposteur-solutions" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/syndrome-imposteur-solutions/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Syndrome de l'imposteur
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>

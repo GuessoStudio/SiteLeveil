@@ -222,9 +222,9 @@ export default function EmpathieNeuronesMiroirs() {
           <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
             <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Accueil</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog?category=relations-humaines" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Relations Humaines</Link>
+            <Link to="/blog/?category=relations-humaines" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Relations Humaines</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
@@ -426,7 +426,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Pour mieux comprendre pourquoi ces circuits émotionnels jouent un rôle aussi central, tu peux lire notre article sur <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">le système limbique et ses circuits émotionnels</Link>.
+            Pour mieux comprendre pourquoi ces circuits émotionnels jouent un rôle aussi central, tu peux lire notre article sur <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">le système limbique et ses circuits émotionnels</Link>.
           </p>
 
           <h3>L'ocytocine : le neuromodulateur de la connexion affective</h3>
@@ -517,7 +517,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Les personnes qui ont vécu le rejet ou l'exclusion sociale savent à quel point ces circuits peuvent être activés de façon douloureuse : notre article sur <Link to="/blog/surmonter-rejet-social" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">surmonter le rejet social et ses mécanismes neuroscientifiques</Link> explore ces circuits en détail.
+            Les personnes qui ont vécu le rejet ou l'exclusion sociale savent à quel point ces circuits peuvent être activés de façon douloureuse : notre article sur <Link to="/blog/surmonter-rejet-social/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">surmonter le rejet social et ses mécanismes neuroscientifiques</Link> explore ces circuits en détail.
           </p>
 
           {/* Section 4 */}
@@ -552,7 +552,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés. La <Link to="/blog/communication-non-violente-cnv" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">communication non violente</Link> s'appuie sur ces mêmes mécanismes empathiques pour structurer l'expression des besoins. Et si tu veux aller plus loin dans la posture réceptive elle-même, les <Link to="/blog/ecoute-active-technique-carl-rogers" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">5 techniques d'écoute active de Carl Rogers</Link> offrent un cadre scientifiquement validé pour créer ces conditions de synchronie.
+            Application pratique : lors d'une conversation difficile, maintenir un contact visuel doux (pas fixe), adopter une posture ouverte (épaules relâchées, corps orienté vers l'autre), et ajuster ton rythme de parole au sien. Ces comportements signalent la sécurité relationnelle et activent les circuits d'affiliation des deux côtés. La <Link to="/blog/communication-non-violente-cnv/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">communication non violente</Link> s'appuie sur ces mêmes mécanismes empathiques pour structurer l'expression des besoins. Et si tu veux aller plus loin dans la posture réceptive elle-même, les <Link to="/blog/ecoute-active-technique-carl-rogers/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">5 techniques d'écoute active de Carl Rogers</Link> offrent un cadre scientifiquement validé pour créer ces conditions de synchronie.
           </p>
 
           <h3>3. Les récits partagés — activation narrative de l'insula</h3>
@@ -566,7 +566,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Pour approfondir comment répondre aux récits partagés de façon à renforcer les liens, notre article sur <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">la méthode ACR pour répondre aux bonnes nouvelles</Link> propose un protocole précis.
+            Pour approfondir comment répondre aux récits partagés de façon à renforcer les liens, notre article sur <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">la méthode ACR pour répondre aux bonnes nouvelles</Link> propose un protocole précis.
           </p>
 
           <h3>4. La "distance compassionnelle" — moduler par le cortex préfrontal</h3>
@@ -580,11 +580,11 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Pour les personnes dont le travail implique une exposition régulière à la souffrance d'autrui, les rituels de décompression sont également essentiels : noter en fin de journée les émotions résiduelles, créer une transition physique (se changer, marcher dehors), et préserver des plages de récupération. Le <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">sommeil réparateur</Link> joue ici un rôle de premier plan : il consolide la régulation émotionnelle et restaure la capacité de résonance du lendemain.
+            Pour les personnes dont le travail implique une exposition régulière à la souffrance d'autrui, les rituels de décompression sont également essentiels : noter en fin de journée les émotions résiduelles, créer une transition physique (se changer, marcher dehors), et préserver des plages de récupération. Le <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">sommeil réparateur</Link> joue ici un rôle de premier plan : il consolide la régulation émotionnelle et restaure la capacité de résonance du lendemain.
           </p>
 
           <p>
-            La <Link to="/blog/neuroplasticite-cerveau" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">neuroplasticité du cerveau adulte</Link> garantit que ces quatre leviers peuvent modifier durablement les circuits empathiques — même après 30, 40 ou 50 ans.
+            La <Link to="/blog/neuroplasticite-cerveau/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">neuroplasticité du cerveau adulte</Link> garantit que ces quatre leviers peuvent modifier durablement les circuits empathiques — même après 30, 40 ou 50 ans.
           </p>
 
           {/* À retenir */}

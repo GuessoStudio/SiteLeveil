@@ -135,7 +135,7 @@ const Home = () => {
             }`}
           >
             <Link
-              to="/blog"
+              to="/blog/"
               className="group bg-gold-500 hover:bg-[#7C3AED] dark:hover:bg-[#7C3AED] text-sand-900 dark:bg-gold-400 px-8 py-3 rounded-lg font-semibold
                          transition-all duration-300 inline-flex items-center gap-2 focus-ring
                          hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl

@@ -218,7 +218,7 @@ export default function SyndromeImposteur() {
               Accueil
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span> 
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
@@ -362,7 +362,7 @@ export default function SyndromeImposteur() {
           </p>
 
           <p>
-            Cette dynamique est explorée en profondeur dans notre guide sur <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="text-green-600 dark:text-green-400 hover:underline font-medium">les mécanismes cérébraux de la procrastination</Link>.
+            Cette dynamique est explorée en profondeur dans notre guide sur <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-green-600 dark:text-green-400 hover:underline font-medium">les mécanismes cérébraux de la procrastination</Link>.
           </p>
 
           <h3>Impact sur ta carrière et ton estime de soi</h3>
@@ -403,7 +403,7 @@ export default function SyndromeImposteur() {
           </p>
 
           <p>
-            Pour approfondir la gestion des pensées intrusives, consulte notre article sur <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-green-600 dark:text-green-400 hover:underline font-medium">la rumination mentale et les pensées obsessionnelles</Link>.
+            Pour approfondir la gestion des pensées intrusives, consulte notre article sur <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-green-600 dark:text-green-400 hover:underline font-medium">la rumination mentale et les pensées obsessionnelles</Link>.
           </p>
 
           <h3>2. Tenir un journal de tes réussites</h3>
@@ -483,7 +483,7 @@ export default function SyndromeImposteur() {
           </ol>
 
           <p>
-            Cette approche complète parfaitement les techniques pour <Link to="/blog/confiance-en-soi-durable" className="text-green-600 dark:text-green-400 hover:underline font-medium">construire une confiance en soi durable</Link>. Elle s'articule aussi avec les travaux de Carol Dweck sur le <Link to="/blog/mindset-de-croissance-psychologie-dweck" className="text-green-600 dark:text-green-400 hover:underline font-medium">mindset de croissance</Link> — réorienter l'identité du résultat vers le processus d'apprentissage est précisément l'antidote au sentiment d'imposture.
+            Cette approche complète parfaitement les techniques pour <Link to="/blog/confiance-en-soi-durable/" className="text-green-600 dark:text-green-400 hover:underline font-medium">construire une confiance en soi durable</Link>. Elle s'articule aussi avec les travaux de Carol Dweck sur le <Link to="/blog/mindset-de-croissance-psychologie-dweck/" className="text-green-600 dark:text-green-400 hover:underline font-medium">mindset de croissance</Link> — réorienter l'identité du résultat vers le processus d'apprentissage est précisément l'antidote au sentiment d'imposture.
           </p>
 
           <h3>6. Te faire accompagner (thérapie, coaching, mentorat)</h3>
@@ -645,7 +645,7 @@ export default function SyndromeImposteur() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <Link to="/blog/confiance-en-soi-durable" className="group block p-6 bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
+              <Link to="/blog/confiance-en-soi-durable/" className="group block p-6 bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
@@ -659,7 +659,7 @@ export default function SyndromeImposteur() {
                 </div>
               </Link>
               
-              <Link to="/blog/surmonter-rejet-social" className="group block p-6 bg-gradient-to-br from-rose-500 to-pink-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
+              <Link to="/blog/surmonter-rejet-social/" className="group block p-6 bg-gradient-to-br from-rose-500 to-pink-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
@@ -673,7 +673,7 @@ export default function SyndromeImposteur() {
                 </div>
               </Link>
               
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="group block p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="group block p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">

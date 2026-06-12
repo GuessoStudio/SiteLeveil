@@ -204,11 +204,11 @@ const NeuroDopamineRoutine = () => {
               Accueil
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 transition-colors">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 transition-colors">
               Blog
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
-            <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 transition-colors">
+            <Link to="/blog/?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 transition-colors">
               Neurosciences
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
@@ -481,7 +481,7 @@ const NeuroDopamineRoutine = () => {
           </div>
 
           <p>
-            Pour aller plus loin sur l'optimisation sommeil, consultez notre <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">guide complet sur le sommeil réparateur</Link> avec calculateur de cycles inclus.
+            Pour aller plus loin sur l'optimisation sommeil, consultez notre <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">guide complet sur le sommeil réparateur</Link> avec calculateur de cycles inclus.
           </p>
 
           <h3 id="lumiere-dopamine">4. Exposition lumière naturelle matinale : Synchronisation circadienne</h3>
@@ -510,7 +510,7 @@ const NeuroDopamineRoutine = () => {
           </p>
 
           <p>
-            La lumière naturelle matinale agit simultanément sur la dopamine et sur de nombreux autres systèmes cérébraux. Notre article sur les <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">effets de la lumière naturelle sur le cerveau</Link> détaille ces mécanismes et leur impact sur le sommeil et la santé mentale. Pour structurer ces leviers heure par heure, consulte notre <Link to="/blog/routine-matinale-scientifique-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">routine matinale fondée sur les neurosciences</Link>.
+            La lumière naturelle matinale agit simultanément sur la dopamine et sur de nombreux autres systèmes cérébraux. Notre article sur les <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">effets de la lumière naturelle sur le cerveau</Link> détaille ces mécanismes et leur impact sur le sommeil et la santé mentale. Pour structurer ces leviers heure par heure, consulte notre <Link to="/blog/routine-matinale-scientifique-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">routine matinale fondée sur les neurosciences</Link>.
           </p>
 
           <h3 id="meditation-dopamine">5. Méditation dopaminergique : +65% dopamine striatale</h3>
@@ -1133,23 +1133,23 @@ const NeuroDopamineRoutine = () => {
             Explorez d'autres aspects des neurosciences appliquées pour optimiser votre cerveau et votre bien-être :
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
+            <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
               Sommeil réparateur : 7 stratégies validées
             </Link>
             <span className="text-neutral-400">•</span>
-            <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
+            <Link to="/blog/neuroplasticite-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
               Neuroplasticité après 25 ans
             </Link>
             <span className="text-neutral-400">•</span>
-            <Link to="/blog/attention-fragmentee-concentration-numerique" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
+            <Link to="/blog/attention-fragmentee-concentration-numerique/" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
               Restaurer concentration profonde
             </Link>
             <span className="text-neutral-400">•</span>
-            <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
+            <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
               Maîtriser la rumination mentale
             </Link>
             <span className="text-neutral-400">•</span>
-            <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
+            <Link to="/blog/plasticite-synaptique-apprentissage-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm">
               Plasticité synaptique
             </Link>
           </div>
@@ -1254,7 +1254,7 @@ const NeuroDopamineRoutine = () => {
                   📬 Newsletter Hebdo Gratuite
                 </a>
                 <Link
-                  to="/blog"
+                  to="/blog/"
                   className="inline-flex items-center justify-center bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
                 >
                   📚 Tous les Articles

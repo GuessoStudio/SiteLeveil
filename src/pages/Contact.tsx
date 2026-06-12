@@ -111,14 +111,14 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/blog"
+                href="/blog/"
                 className="inline-flex items-center gap-2 bg-sand-50 dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-sand-900 dark:text-sand-50 px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
               >
                 Lire les articles
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="/ressources"
+                href="/ressources/"
                 className="inline-flex items-center gap-2 bg-sand-50 dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-sand-900 dark:text-sand-50 px-6 py-3 rounded-lg font-semibold transition-colors border border-neutral-200 dark:border-neutral-700"
               >
                 Télécharger les guides

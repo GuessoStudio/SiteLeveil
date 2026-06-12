@@ -326,7 +326,7 @@ const NeuroJournalLanding = () => {
                                 </p>
                                 <div className="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
                                     <p className="text-sm text-indigo-800 dark:text-indigo-300 font-medium italic">
-                                        Voir l'article : <Link to="/blog/neuroplasticite-cerveau" className="underline hover:text-indigo-600">Comprendre la neuroplasticité</Link>
+                                        Voir l'article : <Link to="/blog/neuroplasticite-cerveau/" className="underline hover:text-indigo-600">Comprendre la neuroplasticité</Link>
                                     </p>
                                 </div>
                                 <p className="text-xs text-gray-500 dark:text-neutral-500 uppercase tracking-widest font-semibold flex items-center gap-2 mt-4">
@@ -342,7 +342,7 @@ const NeuroJournalLanding = () => {
                                 </p>
                                 <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
                                     <p className="text-sm text-purple-800 dark:text-purple-300 font-medium italic">
-                                        Voir l'article : <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="underline hover:text-purple-600">Les 7 stratégies pour un sommeil réparateur</Link>
+                                        Voir l'article : <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="underline hover:text-purple-600">Les 7 stratégies pour un sommeil réparateur</Link>
                                     </p>
                                 </div>
                                 <p className="text-xs text-gray-500 dark:text-neutral-500 uppercase tracking-widest font-semibold flex items-center gap-2 mt-4">
@@ -358,7 +358,7 @@ const NeuroJournalLanding = () => {
                                 </p>
                                 <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg">
                                     <p className="text-sm text-amber-800 dark:text-amber-300 font-medium italic">
-                                        Voir l'article : <Link to="/blog/neuro-dopamine-routine" className="underline hover:text-amber-600">Dopamine et Motivation</Link>
+                                        Voir l'article : <Link to="/blog/neuro-dopamine-routine/" className="underline hover:text-amber-600">Dopamine et Motivation</Link>
                                     </p>
                                 </div>
                                 <p className="text-xs text-gray-500 dark:text-neutral-500 uppercase tracking-widest font-semibold flex items-center gap-2 mt-4">
@@ -499,15 +499,15 @@ const NeuroJournalLanding = () => {
                         <div className="mt-16 pt-8 border-t border-gray-200 dark:border-neutral-800 max-w-4xl mx-auto">
                             <p className="text-sm font-semibold text-gray-500 mb-4 uppercase tracking-wider">Explorer nos ressources</p>
                             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-indigo-600 dark:text-indigo-400">
-                                <Link to="/blog/surmonter-rejet-social" className="hover:underline">Rejet Social</Link>
+                                <Link to="/blog/surmonter-rejet-social/" className="hover:underline">Rejet Social</Link>
                                 <span className="text-gray-300">•</span>
-                                <Link to="/blog/confiance-en-soi-durable" className="hover:underline">Confiance en Soi</Link>
+                                <Link to="/blog/confiance-en-soi-durable/" className="hover:underline">Confiance en Soi</Link>
                                 <span className="text-gray-300">•</span>
-                                <Link to="/blog/attention-fragmentee-concentration-numerique" className="hover:underline">Attention Fragmentée</Link>
+                                <Link to="/blog/attention-fragmentee-concentration-numerique/" className="hover:underline">Attention Fragmentée</Link>
                                 <span className="text-gray-300">•</span>
-                                <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="hover:underline">Vaincre la Procrastination</Link>
+                                <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="hover:underline">Vaincre la Procrastination</Link>
                                 <span className="text-gray-300">•</span>
-                                <Link to="/ressources" className="hover:underline">Toutes les Ressources</Link>
+                                <Link to="/ressources/" className="hover:underline">Toutes les Ressources</Link>
                             </div>
                         </div>
                     </div>

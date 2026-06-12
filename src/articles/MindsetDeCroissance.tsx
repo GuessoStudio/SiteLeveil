@@ -226,9 +226,9 @@ export default function MindsetDeCroissance() {
           <ol className="flex flex-wrap gap-1 items-center">
             <li><Link to="/" className="hover:underline">Accueil</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/blog/" className="hover:underline">Blog</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog?category=psychologie" className="hover:underline">Psychologie</Link></li>
+            <li><Link to="/blog/?category=psychologie" className="hover:underline">Psychologie</Link></li>
             <li className="mx-1">›</li>
             <li className="text-neutral-700 dark:text-neutral-300 truncate max-w-[200px]">Mindset de croissance</li>
           </ol>
@@ -378,7 +378,7 @@ export default function MindsetDeCroissance() {
             Avec un mindset fixe, l'erreur active un signal de danger identitaire : "cette erreur prouve que je suis limité". Le cortex préfrontal engage alors des stratégies d'évitement. Avec un mindset de croissance, l'erreur active une réponse d'apprentissage : "cette erreur contient une information utile". Le cerveau s'y attarde, l'analyse, et ajuste.
           </p>
           <p>
-            C'est pourquoi la <Link to="/blog/neuroplasticite-cerveau" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">neuroplasticité — la capacité du cerveau à se recâbler tout au long de la vie</Link> — est le fondement biologique du mindset de croissance. Ce n'est pas une métaphore inspirante. C'est le mécanisme réel.
+            C'est pourquoi la <Link to="/blog/neuroplasticite-cerveau/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">neuroplasticité — la capacité du cerveau à se recâbler tout au long de la vie</Link> — est le fondement biologique du mindset de croissance. Ce n'est pas une métaphore inspirante. C'est le mécanisme réel.
           </p>
 
           {/* H2 — Méta-analyse */}
@@ -465,12 +465,12 @@ export default function MindsetDeCroissance() {
             Pratique concrète : après chaque travail important, demander explicitement à quelqu'un de confiance ce qui aurait pu être mieux. Ne pas se défendre. Juste noter et réfléchir. La résistance initiale à cette pratique est souvent le meilleur indicateur que le mindset fixe est actif.
           </p>
           <p>
-            Ce comportement est aussi directement lié au <Link to="/blog/confiance-en-soi-durable" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">développement d'une confiance en soi durable</Link> : une confiance qui repose sur la capacité à apprendre, pas sur la protection de l'image.
+            Ce comportement est aussi directement lié au <Link to="/blog/confiance-en-soi-durable/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">développement d'une confiance en soi durable</Link> : une confiance qui repose sur la capacité à apprendre, pas sur la protection de l'image.
           </p>
 
           <h3>5. Relier l'effort à la biologie</h3>
           <p>
-            Chaque fois que tu travailles quelque chose de difficile, ton cerveau crée de nouvelles connexions neuronales. Ce n'est pas une métaphore. C'est ce que documente la recherche sur la <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">plasticité synaptique — le mécanisme par lequel le cerveau se reconfigure par l'apprentissage</Link>.
+            Chaque fois que tu travailles quelque chose de difficile, ton cerveau crée de nouvelles connexions neuronales. Ce n'est pas une métaphore. C'est ce que documente la recherche sur la <Link to="/blog/plasticite-synaptique-apprentissage-cerveau/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">plasticité synaptique — le mécanisme par lequel le cerveau se reconfigure par l'apprentissage</Link>.
           </p>
           <p>
             Se rappeler ce fait concret pendant un effort difficile donne un sens biologique à la persévérance. Ce n'est pas "je dois me forcer". C'est "je suis en train de recâbler mon cerveau". La nuance change le rapport à l'effort.
@@ -482,10 +482,10 @@ export default function MindsetDeCroissance() {
             Le mindset fixe est un terrain fertile pour deux phénomènes psychologiques bien documentés. Les comprendre ensemble permet de mieux agir sur chacun.
           </p>
           <p>
-            Le <Link to="/blog/syndrome-imposteur-solutions" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">syndrome de l'imposteur — cette conviction persistante de ne pas mériter ses succès</Link> — est alimenté directement par la croyance que l'intelligence est fixe. Si tu penses que le talent est inné, chaque réussite soulève une question : "est-ce que j'ai vraiment ce talent, ou est-ce que les gens vont finir par voir que non ?" L'imposteur et le mindset fixe partagent la même peur fondamentale : être "démasqué".
+            Le <Link to="/blog/syndrome-imposteur-solutions/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">syndrome de l'imposteur — cette conviction persistante de ne pas mériter ses succès</Link> — est alimenté directement par la croyance que l'intelligence est fixe. Si tu penses que le talent est inné, chaque réussite soulève une question : "est-ce que j'ai vraiment ce talent, ou est-ce que les gens vont finir par voir que non ?" L'imposteur et le mindset fixe partagent la même peur fondamentale : être "démasqué".
           </p>
           <p>
-            La procrastination suit le même mécanisme. Quand on a un mindset fixe, commencer une tâche difficile comporte un risque réel : découvrir qu'on n'est "pas assez intelligent" pour la réussir. L'évitement devient alors une stratégie de protection identitaire. Si je ne commence pas, je ne peux pas échouer. Ce schéma est au coeur de ce que la recherche a documenté sur <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">la procrastination vue par les neurosciences</Link>.
+            La procrastination suit le même mécanisme. Quand on a un mindset fixe, commencer une tâche difficile comporte un risque réel : découvrir qu'on n'est "pas assez intelligent" pour la réussir. L'évitement devient alors une stratégie de protection identitaire. Si je ne commence pas, je ne peux pas échouer. Ce schéma est au coeur de ce que la recherche a documenté sur <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">la procrastination vue par les neurosciences</Link>.
           </p>
           <p>
             Dans les deux cas, le même antidote : réorienter l'identité du résultat vers le processus. On n'est pas "quelqu'un d'intelligent ou non". On est "quelqu'un qui apprend".

@@ -220,9 +220,9 @@ export default function PlasticiteSynaptique() {
           <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
             <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Accueil</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
+            <Link to="/blog/?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
@@ -516,7 +516,7 @@ export default function PlasticiteSynaptique() {
 
           <p>
             Le résultat concret : après une période de stress intense ou prolongée, apprendre devient plus difficile. L'information ne "colle" plus aussi bien. Ce n'est pas une question de motivation ou de volonté — c'est une modification biologique réelle des mécanismes synaptiques. Pour approfondir ce mécanisme, notre article sur la{" "}
-            <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/neuroplasticite-cerveau/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               neuroplasticité du cerveau adulte
             </Link>{" "}
             explique comment ces changements peuvent être inversés.
@@ -558,7 +558,7 @@ export default function PlasticiteSynaptique() {
               Wrann et al. (2013, <em>Cell Metabolism</em>)
             </a>{" "}
             ont identifié le mécanisme exact : l'exercice active la voie PGC-1α → FNDC5 → BDNF dans l'hippocampe. L'effet est mesurable après 20 à 30 minutes d'effort aérobie modéré et reste maximal dans les 1 à 2 heures suivant l'exercice — ce qui fait de l'entraînement matinal un levier particulièrement efficace avant une session d'apprentissage. Notre article sur les{" "}
-            <Link to="/blog/bdnf-augmenter-naturellement-neurosciences" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               8 méthodes scientifiques pour augmenter le BDNF
             </Link>{" "}
             détaille tous les protocoles disponibles.
@@ -572,7 +572,7 @@ export default function PlasticiteSynaptique() {
 
           <p>
             Concrètement : les nouvelles connexions formées pendant la journée (E-LTP) sont consolidées en mémoire durable (L-LTP) pendant le sommeil. Stickgold & Walker (2013, <em>Nature Neuroscience</em>) ont montré que ce processus de consolidation repose sur la stabilisation active des connexions synaptiques formées dans la journée — le manque de sommeil interrompt directement cette stabilisation. Ce n'est pas de la fatigue — c'est une altération directe des mécanismes de plasticité synaptique. Notre article sur le{" "}
-            <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               sommeil profond et la consolidation de la mémoire
             </Link>{" "}
             explore ces protocoles en détail.
@@ -600,7 +600,7 @@ export default function PlasticiteSynaptique() {
 
           <p>
             Quand tu apprends quelque chose de nouveau de façon active (en testant, en générant des hypothèses, en faisant des erreurs et en les corrigeant), les circuits dopaminergiques s'activent plus fortement qu'en lecture passive. Ces circuits renforcent la fenêtre de plasticité synaptique — ils élèvent le "plafond" de la métaplasticité. Notre article sur la{" "}
-            <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            <Link to="/blog/neuro-dopamine-routine/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               dopamine naturelle et les mécanismes de motivation
             </Link>{" "}
             détaille comment utiliser ce levier au quotidien.
@@ -690,7 +690,7 @@ export default function PlasticiteSynaptique() {
               Exercice, sommeil, répétition espacée, alimentation et méditation — les protocoles scientifiques condensés en une checklist PDF d'une page.
             </p>
             <Link
-              to="/ressources"
+              to="/ressources/"
               className="inline-flex items-center px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-colors"
             >
               Accéder aux ressources gratuites →

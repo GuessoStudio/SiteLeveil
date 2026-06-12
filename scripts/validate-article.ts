@@ -75,7 +75,7 @@ check(
   `Dans vite.config.ts, ajouter au tableau ARTICLE_SLUGS :\n     '${slug}',`
 );
 
-// ── 4. LIENS INTERNES (min 2 autres articles) ────────────────────────────────
+// ── 4. LIENS INTERNES (min 3 autres articles) ────────────────────────────────
 const linkTarget = `/blog/${slug}`;
 const linkers = tsxFiles
   .filter(f => f !== articleFile)
@@ -85,10 +85,24 @@ const linkers = tsxFiles
   });
 
 check(
-  `Liens internes : ${linkers.length}/2 article(s) pointent vers /blog/${slug}`,
-  linkers.length >= 2,
-  `Ajouter un lien contextuel vers /blog/${slug} dans ${2 - linkers.length} article(s) existant(s)\n` +
+  `Liens internes : ${linkers.length}/3 article(s) pointent vers /blog/${slug}`,
+  linkers.length >= 3,
+  `Ajouter un lien contextuel vers /blog/${slug} dans ${Math.max(0, 3 - linkers.length)} article(s) existant(s)\n` +
   `   Actuellement lié depuis : ${linkers.length > 0 ? linkers.join(", ") : "aucun"}`
+);
+
+// ── 5. TRAILING SLASH SUR LES <Link to> INTERNES ─────────────────────────────
+// Tout lien interne sans slash final déclenche un 301 Netlify (page servie en
+// /path/index.html). Googlebot suit le lien → redirection → "Page avec redirection"
+// dans la GSC. On interdit les liens internes sans slash dans CE fichier.
+const NOSLASH_LINK = /to="\/(?:blog\/[a-z0-9-]+|blog|a-propos|ressources)"/g;
+const offendingLinks = articleContent.match(NOSLASH_LINK) || [];
+const uniqueOffenders = [...new Set(offendingLinks)];
+check(
+  `Liens internes avec trailing slash (0 lien sans slash)`,
+  uniqueOffenders.length === 0,
+  `Ajouter le slash final aux liens suivants dans ${articleFile} :\n` +
+  uniqueOffenders.map(l => `     ${l}  →  ${l.replace(/"$/, '/"')}`).join("\n")
 );
 
 // ── Résultat final ────────────────────────────────────────────────────────────

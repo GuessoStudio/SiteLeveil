@@ -66,7 +66,7 @@ export default function ThemeCards() {
               className="h-full rounded-2xl"
             >
               <Link
-                to="/blog?category=Neurosciences"
+                to="/blog/?category=Neurosciences"
                 className="group block h-full enhanced-transition"
                 aria-label="Voir tous les articles de Neurosciences"
               >
@@ -160,7 +160,7 @@ export default function ThemeCards() {
               className="h-full rounded-2xl"
             >
               <Link
-                to="/blog?category=Psychologie"
+                to="/blog/?category=Psychologie"
                 className="group block h-full enhanced-transition"
                 aria-label="Voir tous les articles de Psychologie"
               >
@@ -254,7 +254,7 @@ export default function ThemeCards() {
               className="h-full rounded-2xl"
             >
               <Link
-                to="/blog?category=Développement Personnel"
+                to="/blog/?category=Développement Personnel"
                 className="group block h-full enhanced-transition"
                 aria-label="Voir tous les articles de Développement Personnel"
               >
@@ -350,7 +350,7 @@ export default function ThemeCards() {
               className="h-full rounded-2xl"
             >
               <Link
-                to="/blog?category=Relations Humaines"
+                to="/blog/?category=Relations Humaines"
                 className="group block h-full enhanced-transition"
                 aria-label="Voir tous les articles de Relations Humaines"
               >

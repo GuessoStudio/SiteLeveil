@@ -220,7 +220,7 @@ const About = () => {
     </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/blog"
+                href="/blog/"
                 className="bg-sand-50  text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
               >
                 Découvrir nos articles

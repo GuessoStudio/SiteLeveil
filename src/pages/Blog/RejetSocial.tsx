@@ -63,9 +63,9 @@ export default function RejetSocial() {
     const schemaPerson = {
         "@context": "https://schema.org",
         "@type": "Person",
-        "@id": `${site}/a-propos#person`,
+        "@id": `${site}/a-propos/#person`,
         name: "Guesso",
-        url: `${site}/a-propos`,
+        url: `${site}/a-propos/`,
         jobTitle: "Fondateur — L'Éveil Mental",
         worksFor: { "@id": `${site}#organization` }
     };
@@ -106,7 +106,7 @@ export default function RejetSocial() {
         image: { "@id": `${url}#primaryimage` },
         datePublished: meta.datePublished,
         dateModified: meta.dateModified,
-        author: { "@id": `${site}/a-propos#person` },
+        author: { "@id": `${site}/a-propos/#person` },
         publisher: { "@id": `${site}#organization` },
         about: {
             "@type": "DefinedTerm",
@@ -127,8 +127,8 @@ export default function RejetSocial() {
         "@id": `${url}#breadcrumb`,
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Accueil", item: site },
-            { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog` },
-            { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog?category=${meta.category.toLowerCase()}` },
+            { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog/` },
+            { "@type": "ListItem", position: 3, name: meta.category, item: `${site}/blog/?category=${meta.category.toLowerCase()}` },
             { "@type": "ListItem", position: 4, name: meta.title, item: url }
         ]
     };
@@ -192,7 +192,7 @@ export default function RejetSocial() {
                             Accueil
                         </Link>
                         <span className="text-neutral-400" aria-hidden>›</span>
-                        <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors">
+                        <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors">
                             Blog
                         </Link>
                         <span className="text-neutral-400" aria-hidden>›</span>
@@ -831,7 +831,7 @@ export default function RejetSocial() {
                                 basés sur des recherches peer-reviewed et des sources scientifiques vérifiables.
                             </p>
                             <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                                <Link to="/a-propos" className="px-4 py-2 bg-white dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors border border-indigo-200 dark:border-indigo-800">
+                                <Link to="/a-propos/" className="px-4 py-2 bg-white dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors border border-indigo-200 dark:border-indigo-800">
                                     En savoir plus
                                 </Link>
                                 <Link to="/contact" className="px-4 py-2 bg-transparent text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold hover:bg-indigo-100/50 transition-colors border border-transparent hover:border-indigo-200">
@@ -851,11 +851,11 @@ export default function RejetSocial() {
                         Explorez nos autres ressources scientifiques sur les relations sociales et la communication.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                        <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
+                        <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
                             Méthode ACR : renforcer les liens
                         </Link>
                         <span className="text-neutral-400">•</span>
-                        <Link to="/blog/empathie-neurones-miroirs" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
+                        <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
                             Neurones miroirs et empathie
                         </Link>
                     </div>

@@ -187,7 +187,7 @@ export default function LumiereNaturelle() {
               Accueil
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span> 
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden="true">›</span>
@@ -392,7 +392,7 @@ export default function LumiereNaturelle() {
           </ul>
 
           <p>
-            Cette orchestration hormonale influence directement ton <Link to="/blog/neuro-dopamine-routine" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">système de motivation dopaminergique</Link>. Une exposition lumineuse optimale booste ta dopamine diurne et améliore ton <Link to="/blog/sommeil-reparateur-7-strategies-validees" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">sommeil réparateur</Link> nocturne. C'est pourquoi l'exposition au soleil dès le réveil est le pilier d'une <Link to="/blog/routine-matinale-scientifique-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">routine matinale validée par les neurosciences</Link>.
+            Cette orchestration hormonale influence directement ton <Link to="/blog/neuro-dopamine-routine/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">système de motivation dopaminergique</Link>. Une exposition lumineuse optimale booste ta dopamine diurne et améliore ton <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">sommeil réparateur</Link> nocturne. C'est pourquoi l'exposition au soleil dès le réveil est le pilier d'une <Link to="/blog/routine-matinale-scientifique-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">routine matinale validée par les neurosciences</Link>.
           </p>
 
           <div className="not-prose my-6 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border-l-4 border-amber-500">
@@ -417,7 +417,7 @@ export default function LumiereNaturelle() {
           </p>
 
           <p>
-            Cette désynchronisation ressemble aux mécanismes que nous explorons dans notre <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">article sur la rumination mentale</Link>. Le manque de lumière amplifie l'anxiété et les pensées négatives en soirée.
+            Cette désynchronisation ressemble aux mécanismes que nous explorons dans notre <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">article sur la rumination mentale</Link>. Le manque de lumière amplifie l'anxiété et les pensées négatives en soirée.
           </p>
 
           <h3>Le sabotage hormonal silencieux</h3>
@@ -448,11 +448,11 @@ export default function LumiereNaturelle() {
           </p>
 
           <p>
-            L'amygdale devient hyperactive (+40%), expliquant l'irritabilité et l'<Link to="/blog/attention-fragmentee-concentration-numerique" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">attention fragmentée</Link> caractéristiques du manque de lumière.
+            L'amygdale devient hyperactive (+40%), expliquant l'irritabilité et l'<Link to="/blog/attention-fragmentee-concentration-numerique/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">attention fragmentée</Link> caractéristiques du manque de lumière.
           </p>
 
           <p>
-            De plus, la fatigue cognitive favorise la <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">procrastination</Link>. Ton cortex préfrontal affaibli peine à maintenir l'effort soutenu.
+            De plus, la fatigue cognitive favorise la <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">procrastination</Link>. Ton cortex préfrontal affaibli peine à maintenir l'effort soutenu.
           </p>
 
           <h3>La dépression saisonnière : quand l'hiver s'installe dans le cerveau</h3>

@@ -156,9 +156,9 @@ export default function SystemeLimbique() {
           <nav aria-label="Fil d'Ariane" className="text-sm mb-6">
             <Link to="/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Accueil</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Blog</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
+            <Link to="/blog/?category=neurosciences" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">Neurosciences</Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <span aria-current="page" className="text-neutral-700 dark:text-neutral-300 truncate max-w-[180px] sm:max-w-none">{meta.title}</span>
           </nav>
@@ -454,7 +454,7 @@ export default function SystemeLimbique() {
 
           <p>
             Le recadrage est la plus documentée, mais ce n'est pas la seule stratégie qui mobilise ce circuit. Notre{" "}
-            <Link to="/blog/regulation-emotionnelle-techniques-psychologie" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/regulation-emotionnelle-techniques-psychologie/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               guide sur les 8 techniques de régulation émotionnelle classées par efficacité
             </Link>{" "}
             détaille comment l'affect labeling, la prise de perspective et la cohérence cardiaque agissent chacune sur ce même axe amygdale–cortex préfrontal.
@@ -537,7 +537,7 @@ export default function SystemeLimbique() {
 
           <p>
             La plasticité du réseau limbique repose en grande partie sur le BDNF — la protéine de croissance neuronale dont le rôle dans l'hippocampe et l'amygdale est aujourd'hui bien documenté. Notre article sur{" "}
-            <Link to="/blog/bdnf-augmenter-naturellement-neurosciences" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               les 8 méthodes validées pour augmenter naturellement le BDNF
             </Link>{" "}
             détaille précisément les leviers biologiques qui sous-tendent les changements structurels décrits ici.
@@ -545,15 +545,15 @@ export default function SystemeLimbique() {
 
           <p>
             L'hyperactivité amygdalienne documentée dans la dépression et le trouble bipolaire est étroitement liée aux mécanismes de la{" "}
-            <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               rumination mentale et des pensées obsessionnelles
             </Link>
             , qui entretiennent précisément cette boucle limbique en l'absence de régulation préfrontale efficace. Par ailleurs, la réorganisation synaptique que produit la méditation sur le réseau fronto-limbique s'inscrit dans les mécanismes plus larges de{" "}
-            <Link to="/blog/neuroplasticite-cerveau" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/neuroplasticite-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               la neuroplasticité cérébrale adulte
             </Link>
             — démontrant que le cerveau émotionnel reste modifiable à tout âge. Enfin, la dégradation du cortex préfrontal par le stress chronique — et son effet sur la régulation limbique — est l'un des mécanismes neurobiologiques qui explique pourquoi{" "}
-            <Link to="/blog/procrastination-cerveau-agir-neurosciences" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+            <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               la procrastination résiste aux approches purement volontaristes
             </Link>.
           </p>
@@ -567,7 +567,7 @@ export default function SystemeLimbique() {
               Chaque semaine, un mécanisme neurologique décrypté avec ses applications pratiques validées.
             </p>
             <Link
-              to="/ressources"
+              to="/ressources/"
               className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded-lg hover:bg-indigo-50 transition-colors text-sm"
             >
               Accéder aux ressources gratuites

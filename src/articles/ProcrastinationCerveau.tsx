@@ -186,7 +186,7 @@ export default function ProcrastinationCerveau() {
               Accueil
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span> 
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
               Blog
             </Link> 
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
@@ -290,7 +290,7 @@ export default function ProcrastinationCerveau() {
           </p>
 
           <p>
-            Pour comprendre comment l'amygdale et le cortex préfrontal coordonnent nos réponses émotionnelles, notre article sur le <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">système limbique et cerveau émotionnel</Link> détaille les mécanismes de ce conflit neurologique.
+            Pour comprendre comment l'amygdale et le cortex préfrontal coordonnent nos réponses émotionnelles, notre article sur le <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">système limbique et cerveau émotionnel</Link> détaille les mécanismes de ce conflit neurologique.
           </p>
 
           <h3>Dopamine et gratification différée</h3>
@@ -563,27 +563,27 @@ export default function ProcrastinationCerveau() {
               Découvrez comment d'autres mécanismes psychologiques influencent votre efficacité et votre bien-être au quotidien.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog/attention-fragmentee-concentration-numerique" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/attention-fragmentee-concentration-numerique/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Concentration et attention
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/neuro-dopamine-routine" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/neuro-dopamine-routine/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Optimiser la motivation
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Maîtriser la rumination
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Lumière naturelle et cerveau
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Système limbique
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>
-              <Link to="/blog/syndrome-imposteur-solutions" className="text-rose-600 dark:text-rose-400 hover:underline">
+              <Link to="/blog/syndrome-imposteur-solutions/" className="text-rose-600 dark:text-rose-400 hover:underline">
                 Syndrome de l'imposteur
               </Link>
               <span className="hidden sm:inline text-neutral-400" aria-hidden>•</span>

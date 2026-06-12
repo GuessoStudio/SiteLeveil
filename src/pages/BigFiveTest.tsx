@@ -509,7 +509,7 @@ export default function BigFiveTest() {
                                 Téléchargez votre analyse détaillée au format PDF pour la conserver et découvrir comment utiliser vos forces.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="/blog" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold shadow-sm hover:shadow-md transition-all border border-neutral-200 dark:border-neutral-700">
+                                <a href="/blog/" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white font-semibold shadow-sm hover:shadow-md transition-all border border-neutral-200 dark:border-neutral-700">
                                     Lire nos articles
                                 </a>
                                 <button

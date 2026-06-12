@@ -226,9 +226,9 @@ export default function EcouteActive() {
           <ol className="flex flex-wrap gap-1 items-center">
             <li><Link to="/" className="hover:underline">Accueil</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/blog/" className="hover:underline">Blog</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog?category=relations-humaines" className="hover:underline">Relations Humaines</Link></li>
+            <li><Link to="/blog/?category=relations-humaines" className="hover:underline">Relations Humaines</Link></li>
             <li className="mx-1">›</li>
             <li className="text-neutral-700 dark:text-neutral-300 truncate max-w-[200px]">Écoute active</li>
           </ol>
@@ -350,7 +350,7 @@ export default function EcouteActive() {
             Quand cette zone se synchronise entre deux cerveaux, cela indique que les deux personnes traitent l'information de façon coordonnée — elles sont, au sens neurologique, "sur la même longueur d'onde". Cette coordination correspond à ce que les gens décrivent quand ils disent "je me suis vraiment senti compris".
           </p>
           <p>
-            Le <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique — centre du traitement émotionnel</Link> — joue également un rôle indirect : une écoute de qualité réduit l'activation de l'amygdale chez l'orateur, ce qui ouvre l'espace pour un dialogue plus fluide.
+            Le <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique — centre du traitement émotionnel</Link> — joue également un rôle indirect : une écoute de qualité réduit l'activation de l'amygdale chez l'orateur, ce qui ouvre l'espace pour un dialogue plus fluide.
           </p>
 
           {/* H2 — Écoute ordinaire */}
@@ -380,7 +380,7 @@ export default function EcouteActive() {
             Le cerveau ne stocke pas tout ce qu'il entend. Il filtre activement l'information selon ses croyances préexistantes. Dans une conversation, cela signifie qu'on entend ce qui confirme notre image de l'autre — et on rate ce qui la contredit. Ce biais est particulièrement actif dans les relations proches où les schémas relationnels sont bien établis.
           </p>
           <p>
-            Les personnes qui <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">ruminent fréquemment</Link> sont particulièrement exposées à ce biais : leur dialogue intérieur occupe une partie de la bande passante cognitive, réduisant la capacité d'attention disponible pour vraiment entendre l'autre.
+            Les personnes qui <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">ruminent fréquemment</Link> sont particulièrement exposées à ce biais : leur dialogue intérieur occupe une partie de la bande passante cognitive, réduisant la capacité d'attention disponible pour vraiment entendre l'autre.
           </p>
 
           {/* H2 — 5 techniques */}
@@ -490,7 +490,7 @@ export default function EcouteActive() {
           {/* H2 — CNV vs écoute active */}
           <h2>Écoute active et CNV : complémentaires ou redondantes ?</h2>
           <p>
-            Oui, elles sont complémentaires — mais elles opèrent dans des directions opposées : l'écoute active est réceptive (centrée sur la compréhension de l'autre), la CNV est expressive (centrée sur l'expression de soi sans jugement). L'écoute active et la <Link to="/blog/communication-non-violente-cnv" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">communication non violente (CNV de Marshall Rosenberg)</Link> sont souvent présentées ensemble, parfois confondues. Elles partagent des valeurs communes — empathie, non-jugement, attention à l'expérience de l'autre — mais leur posture et leur direction sont différentes.
+            Oui, elles sont complémentaires — mais elles opèrent dans des directions opposées : l'écoute active est réceptive (centrée sur la compréhension de l'autre), la CNV est expressive (centrée sur l'expression de soi sans jugement). L'écoute active et la <Link to="/blog/communication-non-violente-cnv/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">communication non violente (CNV de Marshall Rosenberg)</Link> sont souvent présentées ensemble, parfois confondues. Elles partagent des valeurs communes — empathie, non-jugement, attention à l'expérience de l'autre — mais leur posture et leur direction sont différentes.
           </p>
 
           {/* Encart violet comparatif */}
@@ -555,7 +555,7 @@ export default function EcouteActive() {
             La CNV entre en jeu quand on veut exprimer quelque chose soi-même sans déclencher de réaction défensive chez l'autre. Les deux approches se combinent naturellement dans une conversation équilibrée : on écoute activement, puis on s'exprime selon les principes CNV.
           </p>
           <p>
-            Selon les emprunts théoriques de Rosenberg lui-même, la CNV est construite sur les fondations de Rogers : sans une réelle qualité d'écoute, les 4 étapes OSBD restent un exercice formel sans résonance émotionnelle. Les <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">circuits cérébraux impliqués dans l'empathie et la connexion humaine</Link> fonctionnent dans les deux cas.
+            Selon les emprunts théoriques de Rosenberg lui-même, la CNV est construite sur les fondations de Rogers : sans une réelle qualité d'écoute, les 4 étapes OSBD restent un exercice formel sans résonance émotionnelle. Les <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">circuits cérébraux impliqués dans l'empathie et la connexion humaine</Link> fonctionnent dans les deux cas.
           </p>
 
           {/* H2 — Limites */}

@@ -235,9 +235,9 @@ export default function RegulationEmotionnelle() {
           <ol className="flex flex-wrap gap-1 items-center">
             <li><Link to="/" className="hover:underline">Accueil</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/blog/" className="hover:underline">Blog</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog?category=psychologie" className="hover:underline">Psychologie</Link></li>
+            <li><Link to="/blog/?category=psychologie" className="hover:underline">Psychologie</Link></li>
             <li className="mx-1">›</li>
             <li className="text-neutral-700 dark:text-neutral-300 truncate max-w-[200px]">Régulation émotionnelle</li>
           </ol>
@@ -344,7 +344,7 @@ export default function RegulationEmotionnelle() {
             Quand tu vis une émotion forte, une petite structure au centre de ton cerveau s'active en premier : l'<strong>amygdale</strong>. Environ de la taille d'une amande, elle fait partie du système limbique — la région du cerveau spécialisée dans les émotions et la mémoire émotionnelle.
           </p>
           <p>
-            L'amygdale fonctionne comme une alarme incendie : elle détecte les stimuli émotionnellement importants et déclenche une réponse rapide, avant même que tu aies le temps de réfléchir. Ce mécanisme est utile pour survivre à un danger immédiat. Il devient problématique quand il s'emballe dans des situations sociales ordinaires, des conflits mineurs ou des inquiétudes chroniques. L'article sur le <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique et le cerveau émotionnel</Link> détaille les cinq structures impliquées dans ce circuit.
+            L'amygdale fonctionne comme une alarme incendie : elle détecte les stimuli émotionnellement importants et déclenche une réponse rapide, avant même que tu aies le temps de réfléchir. Ce mécanisme est utile pour survivre à un danger immédiat. Il devient problématique quand il s'emballe dans des situations sociales ordinaires, des conflits mineurs ou des inquiétudes chroniques. L'article sur le <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique et le cerveau émotionnel</Link> détaille les cinq structures impliquées dans ce circuit.
           </p>
           <p>
             C'est là qu'intervient le <strong>cortex préfrontal ventrolatéral gauche</strong> — une région à l'avant du cerveau, juste derrière le front. Quand tu pratiques une technique de régulation consciemment (recadrage, affect labeling, prise de perspective), cette région s'active et envoie un signal de freinage à l'amygdale.
@@ -402,7 +402,7 @@ export default function RegulationEmotionnelle() {
             Quand on supprime activement une pensée, le cerveau doit mobiliser une partie de son attention pour surveiller si la pensée revient — pour la détecter si elle réapparaît. Ce processus de surveillance maintient la pensée présente en mémoire de travail. Résultat : la suppression augmente la disponibilité mentale de ce qu'on cherche à ignorer.
           </p>
           <p>
-            Appliqué aux émotions : supprimer sa colère en réunion ne la dissout pas. Elle ressurgit plus tard, parfois de façon disproportionnée par rapport au déclencheur. Les personnes qui suppriment chroniquement leurs émotions présentent aussi une réactivité aux récompenses plus faible dans le temps, ce qui peut contribuer à des états dépressifs. Cette dynamique de suppression qui alimente les pensées récurrentes est au cœur du mécanisme de <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">rumination mentale</Link>.
+            Appliqué aux émotions : supprimer sa colère en réunion ne la dissout pas. Elle ressurgit plus tard, parfois de façon disproportionnée par rapport au déclencheur. Les personnes qui suppriment chroniquement leurs émotions présentent aussi une réactivité aux récompenses plus faible dans le temps, ce qui peut contribuer à des états dépressifs. Cette dynamique de suppression qui alimente les pensées récurrentes est au cœur du mécanisme de <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">rumination mentale</Link>.
           </p>
 
           <h3>La fenêtre temporelle d'action : intervenir tôt change tout</h3>
@@ -478,7 +478,7 @@ export default function RegulationEmotionnelle() {
             Matthew Lieberman (University of California, Los Angeles, États-Unis) a montré en IRM fonctionnelle que cette simple verbalisation réduit l'activation de l'amygdale. Le mécanisme : nommer une émotion engage le cortex préfrontal (qui traite le langage) dans une interaction avec l'amygdale (qui traite les émotions brutes), activant automatiquement le circuit de freinage.
           </p>
           <p>
-            L'effet est comparable au recadrage cognitif complet, mais ne demande aucun raisonnement complexe. C'est la technique la plus accessible dans un état de forte activation. Elle est aussi utile dans les contextes de douleur sociale — nommer explicitement ce qu'on ressent lors d'un <Link to="/blog/surmonter-rejet-social" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">rejet social</Link> réduit l'intensité de la souffrance ressentie.
+            L'effet est comparable au recadrage cognitif complet, mais ne demande aucun raisonnement complexe. C'est la technique la plus accessible dans un état de forte activation. Elle est aussi utile dans les contextes de douleur sociale — nommer explicitement ce qu'on ressent lors d'un <Link to="/blog/surmonter-rejet-social/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">rejet social</Link> réduit l'intensité de la souffrance ressentie.
           </p>
 
           <h3>6. Pleine conscience — observation sans jugement</h3>
@@ -545,7 +545,7 @@ export default function RegulationEmotionnelle() {
             Les trois approches produisent des réductions comparables de la dysrégulation émotionnelle. Aucune n'est universellement supérieure — le choix dépend du profil, du type de difficulté et du contexte clinique.
           </p>
           <p>
-            Un point important : ce ne sont pas seulement les pensées qui changent pendant la thérapie. Ce sont d'abord les stratégies de régulation. Les stratégies de désengagement (suppression, évitement) diminuent dans 95% des cas quand des stratégies plus efficaces les remplacent. Ce changement de stratégie précède souvent l'amélioration de l'humeur. La dysrégulation émotionnelle prolongée est d'ailleurs l'un des mécanismes qui entretient le <Link to="/blog/cortisol-stress-chronique-cerveau-memoire" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">stress chronique et la surproduction de cortisol</Link>.
+            Un point important : ce ne sont pas seulement les pensées qui changent pendant la thérapie. Ce sont d'abord les stratégies de régulation. Les stratégies de désengagement (suppression, évitement) diminuent dans 95% des cas quand des stratégies plus efficaces les remplacent. Ce changement de stratégie précède souvent l'amélioration de l'humeur. La dysrégulation émotionnelle prolongée est d'ailleurs l'un des mécanismes qui entretient le <Link to="/blog/cortisol-stress-chronique-cerveau-memoire/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">stress chronique et la surproduction de cortisol</Link>.
           </p>
 
           <h3>TCC vs MBSR : lequel choisir selon son profil ?</h3>

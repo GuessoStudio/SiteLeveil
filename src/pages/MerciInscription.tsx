@@ -38,7 +38,7 @@ const MerciInscription = () => {
                 Comment booster naturellement ton BDNF — le facteur de croissance neuronal — en 7 habitudes validées par la recherche.
               </p>
               <Link
-                to="/blog/bdnf-augmenter-naturellement-neurosciences"
+                to="/blog/bdnf-augmenter-naturellement-neurosciences/"
                 className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium text-sm hover:underline"
               >
                 Lire l'article complet
@@ -62,7 +62,7 @@ const MerciInscription = () => {
                 Neurosciences, psychologie, habitudes — tous les articles sont gratuits et sourcés scientifiquement.
               </p>
               <Link
-                to="/blog"
+                to="/blog/"
                 className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 font-medium text-sm hover:underline"
               >
                 Voir tous les articles

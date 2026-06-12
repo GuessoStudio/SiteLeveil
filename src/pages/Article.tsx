@@ -78,7 +78,7 @@ export default function Article() {
     return (
       <main className="container mx-auto px-4 py-12">
         <p className="mb-6">Article introuvable.</p>
-        <Link to="/blog" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+        <Link to="/blog/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
           ← Retour au blog
         </Link>
       </main>

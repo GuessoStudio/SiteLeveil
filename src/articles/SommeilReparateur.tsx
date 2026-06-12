@@ -244,12 +244,12 @@ export default function SommeilReparateur() {
               Accueil
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
-            <Link to="/blog" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
+            <Link to="/blog/" className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400">
               Blog
             </Link>
             <span className="mx-2 text-neutral-400" aria-hidden>›</span>
             <Link
-              to="/blog?category=neurosciences"
+              to="/blog/?category=neurosciences"
               className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400"
             >
               Neurosciences
@@ -395,7 +395,7 @@ export default function SommeilReparateur() {
           </p>
 
           <p>
-            Cette horloge régule non seulement le cycle veille-sommeil, mais aussi la température corporelle, la sécrétion hormonale (cortisol le matin, mélatonine le soir), et même l'efficacité de votre système immunitaire. Dérégler cette horloge a des conséquences métaboliques et cognitives majeures : un sommeil insuffisant maintient le cortisol élevé le lendemain, un mécanisme que détaille notre article sur le <Link to="/blog/cortisol-stress-chronique-cerveau-memoire">cortisol, le stress chronique et la mémoire</Link>.
+            Cette horloge régule non seulement le cycle veille-sommeil, mais aussi la température corporelle, la sécrétion hormonale (cortisol le matin, mélatonine le soir), et même l'efficacité de votre système immunitaire. Dérégler cette horloge a des conséquences métaboliques et cognitives majeures : un sommeil insuffisant maintient le cortisol élevé le lendemain, un mécanisme que détaille notre article sur le <Link to="/blog/cortisol-stress-chronique-cerveau-memoire/">cortisol, le stress chronique et la mémoire</Link>.
           </p>
 
           {/* Encadré méthode */}
@@ -973,23 +973,23 @@ export default function SommeilReparateur() {
               Explorez nos autres ressources scientifiques pour optimiser votre bien-être psychologique et physique.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <Link to="/blog/lumiere-naturelle-cerveau-sommeil-sante-mentale/" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Lumière naturelle et cerveau
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/confiance-en-soi-durable" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <Link to="/blog/confiance-en-soi-durable/" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Développer confiance en soi
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Gérer la rumination mentale
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/neuroplasticite-cerveau" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <Link to="/blog/neuroplasticite-cerveau/" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Optimiser la neuroplasticité
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/blog/plasticite-synaptique-apprentissage-cerveau" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <Link to="/blog/plasticite-synaptique-apprentissage-cerveau/" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Plasticité synaptique
               </Link>
               <span className="text-neutral-400">•</span>

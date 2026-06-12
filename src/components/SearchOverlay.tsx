@@ -103,7 +103,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                   {results.map(article => (
                     <li key={article.id}>
                       <Link
-                        to={`/blog/${article.slug}`}
+                        to={`/blog/${article.slug}/`}
                         onClick={onClose}
                         className="flex items-center gap-4 px-5 py-4 hover:bg-neutral-800/60 transition-colors group border-b border-neutral-800/40 last:border-0"
                       >

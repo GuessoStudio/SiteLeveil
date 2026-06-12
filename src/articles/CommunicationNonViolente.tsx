@@ -220,9 +220,9 @@ export default function CommunicationNonViolente() {
           <ol className="flex flex-wrap gap-1 items-center">
             <li><Link to="/" className="hover:underline">Accueil</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/blog/" className="hover:underline">Blog</Link></li>
             <li className="mx-1">›</li>
-            <li><Link to="/blog?category=relations-humaines" className="hover:underline">Relations Humaines</Link></li>
+            <li><Link to="/blog/?category=relations-humaines" className="hover:underline">Relations Humaines</Link></li>
             <li className="mx-1">›</li>
             <li className="text-neutral-700 dark:text-neutral-300 truncate max-w-[200px]">CNV</li>
           </ol>
@@ -306,7 +306,7 @@ export default function CommunicationNonViolente() {
             Marshall Rosenberg (1934-2015) a développé la CNV dans les années 1960, au contact de Carl Rogers dont il a directement intégré les travaux sur l'écoute empathique. Il a obtenu son doctorat à l'Université du Wisconsin–Madison (1961), où Rogers enseignait alors. Il publie <em>Les mots sont des fenêtres (ou des murs)</em> en 1999, qui deviendra le texte de référence mondial de la méthode.
           </p>
           <p>
-            L'idée centrale est simple : nous communiquons souvent de manière <strong>aliénante</strong> — jugements, critiques, comparaisons, exigences — sans le vouloir. Ce langage déclenche automatiquement des mécanismes défensifs dans le cerveau de l'interlocuteur. Le <Link to="/blog/systeme-limbique-cerveau-emotionnel" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique activé en état de menace</Link> ferme la capacité d'écoute réelle.
+            L'idée centrale est simple : nous communiquons souvent de manière <strong>aliénante</strong> — jugements, critiques, comparaisons, exigences — sans le vouloir. Ce langage déclenche automatiquement des mécanismes défensifs dans le cerveau de l'interlocuteur. Le <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique activé en état de menace</Link> ferme la capacité d'écoute réelle.
           </p>
           <p>
             La CNV propose une alternative : remplacer ce langage par une expression centrée sur les <strong>observations factuelles</strong>, les <strong>émotions</strong> et les <strong>besoins</strong>.
@@ -346,7 +346,7 @@ export default function CommunicationNonViolente() {
             <li>✅ <em>"Je me sens frustré et peu entendu."</em> → je décris mon expérience intérieure</li>
           </ul>
           <p>
-            Attention à ne pas confondre sentiment et pensée. <em>"Je me sens ignoré"</em> est une pensée déguisée en sentiment. <em>"Je me sens triste"</em> est un vrai sentiment. Les personnes qui <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">ruminent fréquemment</Link> confondent souvent les deux.
+            Attention à ne pas confondre sentiment et pensée. <em>"Je me sens ignoré"</em> est une pensée déguisée en sentiment. <em>"Je me sens triste"</em> est un vrai sentiment. Les personnes qui <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">ruminent fréquemment</Link> confondent souvent les deux.
           </p>
 
           <h3>3. Besoin — identifier ce qui manque</h3>
@@ -412,7 +412,7 @@ export default function CommunicationNonViolente() {
               </table>
             </div>
             <p className="text-xs text-violet-600 dark:text-violet-400 mt-3">
-              Ces approches sont complémentaires, non concurrentes. La CNV intègre des éléments des deux autres. Pour approfondir les techniques concrètes de Carl Rogers, voir notre guide sur l'<Link to="/blog/ecoute-active-technique-carl-rogers" className="text-violet-700 dark:text-violet-400 underline underline-offset-2">écoute active et ses 5 techniques validées par la science</Link>.
+              Ces approches sont complémentaires, non concurrentes. La CNV intègre des éléments des deux autres. Pour approfondir les techniques concrètes de Carl Rogers, voir notre guide sur l'<Link to="/blog/ecoute-active-technique-carl-rogers/" className="text-violet-700 dark:text-violet-400 underline underline-offset-2">écoute active et ses 5 techniques validées par la science</Link>.
             </p>
           </div>
 
@@ -440,7 +440,7 @@ export default function CommunicationNonViolente() {
             Ces résultats rejoignent les travaux antérieurs de Wacker & Dziobek (Freie Universität Berlin, 2018) qui avaient documenté des réductions de conflits chez des professionnels de santé après une formation CNV structurée.
           </p>
           <p>
-            La CNV agit directement sur la <Link to="/blog/empathie-neurones-miroirs-connexion-humaine" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">capacité d'empathie et de connexion humaine</Link> — un effet cohérent avec les mécanismes neurologiques de l'insula antérieure.
+            La CNV agit directement sur la <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">capacité d'empathie et de connexion humaine</Link> — un effet cohérent avec les mécanismes neurologiques de l'insula antérieure.
           </p>
 
           <h3>Le paradoxe du stress — ce que Park et al. 2025 révèle</h3>
@@ -477,7 +477,7 @@ export default function CommunicationNonViolente() {
             Chez les participants avec un score CNV faible (NVCBS ≤15 environ), le PTSD prédit significativement la dépression à 3 mois (B=0,149, p=0,019). Chez ceux affichant un score plus élevé, ce lien perd sa significativité (p=0,595).
           </p>
           <p>
-            La CNV n'est pas un traitement du PTSD. Elle agit sur la manière dont la personne traite ses expériences relationnelles — ce qui modère l'impact psychologique du trauma sur la dépression. La <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">qualité des échanges relationnels quotidiens</Link> joue un rôle protecteur documenté.
+            La CNV n'est pas un traitement du PTSD. Elle agit sur la manière dont la personne traite ses expériences relationnelles — ce qui modère l'impact psychologique du trauma sur la dépression. La <Link to="/blog/methode-acr-repondre-aux-bonnes-nouvelles/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">qualité des échanges relationnels quotidiens</Link> joue un rôle protecteur documenté.
           </p>
 
           {/* H2 — Neurologie */}
@@ -560,7 +560,7 @@ export default function CommunicationNonViolente() {
 
           <h3>3. La méconnaissance de ses propres besoins</h3>
           <p>
-            Identifier un besoin universel sous-jacent à une émotion est difficile pour beaucoup d'adultes — surtout ceux qui ont grandi dans des environnements où les besoins émotionnels n'étaient pas nommés. Cette étape peut nécessiter un travail personnel en dehors des échanges CNV. Les personnes sujettes à la <Link to="/blog/rumination-mentale-pensees-obsessionnelles" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">rumination mentale</Link> ont souvent du mal à identifier leurs besoins profonds sous le bruit des pensées répétitives.
+            Identifier un besoin universel sous-jacent à une émotion est difficile pour beaucoup d'adultes — surtout ceux qui ont grandi dans des environnements où les besoins émotionnels n'étaient pas nommés. Cette étape peut nécessiter un travail personnel en dehors des échanges CNV. Les personnes sujettes à la <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">rumination mentale</Link> ont souvent du mal à identifier leurs besoins profonds sous le bruit des pensées répétitives.
           </p>
 
           <h3>4. L'urgence émotionnelle</h3>
