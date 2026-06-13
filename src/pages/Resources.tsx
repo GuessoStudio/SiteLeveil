@@ -184,6 +184,18 @@ const Resources = () => {
       downloadUrl: "/downloads/routine-matinale-scientifique-cerveau-guide.pdf"
     },
     {
+      id: 23,
+      title: "6 Méthodes pour Résoudre un Conflit",
+      description: "Fiche de référence : fenêtre d'inhibition, 4 Cavaliers de Gottman, méthode Harvard, CNV. Classées par phase d'intervention avec application pratique.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/resoudre-un-conflit-methodes-psychologie-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/resoudre-un-conflit-methodes-psychologie-guide.html"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

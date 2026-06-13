@@ -50,6 +50,7 @@ const articles = [
   { path: "/blog/mindset-de-croissance-psychologie-dweck/",         file: "src/articles/MindsetDeCroissance.tsx" },
   { path: "/blog/routine-matinale-scientifique-cerveau/",           file: "src/articles/RoutineMatinaleScientifique.tsx" },
   { path: "/blog/regulation-emotionnelle-techniques-psychologie/",  file: "src/articles/RegulationEmotionnelle.tsx" },
+  { path: "/blog/resoudre-un-conflit-methodes-psychologie/",         file: "src/articles/ResoudreUnConflit.tsx" },
 ];
 
 const allUrls = [

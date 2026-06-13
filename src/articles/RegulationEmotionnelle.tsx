@@ -416,7 +416,7 @@ export default function RegulationEmotionnelle() {
             C'est pourquoi la même technique peut sembler inefficace dans un état de forte activation et très efficace dans un état calme ou de légère anxiété. Ce n'est pas que la technique est mauvaise — c'est qu'elle est utilisée trop tard.
           </p>
           <p>
-            La règle pratique : identifier les signaux précoces (légère tension musculaire, légère accélération cardiaque, pensée récurrente qui commence à tourner) et intervenir à ce stade, pas quand l'émotion est déjà à son maximum.
+            La règle pratique : identifier les signaux précoces (légère tension musculaire, légère accélération cardiaque, pensée récurrente qui commence à tourner) et intervenir à ce stade, pas quand l'émotion est déjà à son maximum. Ce même principe fonde les <Link to="/blog/resoudre-un-conflit-methodes-psychologie/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">méthodes pour résoudre un conflit</Link> : attendre que l'activation physiologique redescende avant de reprendre le dialogue.
           </p>
 
           <h2>Quelles sont les 8 techniques de régulation émotionnelle validées par la science ?</h2>

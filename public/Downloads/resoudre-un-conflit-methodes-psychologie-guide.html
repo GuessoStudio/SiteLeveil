@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>6 Méthodes pour Résoudre un Conflit — L'Éveil Mental</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+
+    @page { size: A4 portrait; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .print-hint {
+      font-family: 'Inter', monospace;
+      font-size: 12px;
+      color: #888;
+      background: #111;
+      text-align: center;
+      padding: 10px;
+    }
+    @media print { .print-hint { display: none; } }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #09071D;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #09071D;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 11mm 13mm 9mm;
+    }
+
+    .page-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(9,7,29,0.80) 0%, transparent 100%),
+        linear-gradient(180deg,
+          rgba(9,7,29,0.0)  0%,
+          rgba(9,7,29,0.30) 25%,
+          rgba(9,7,29,0.60) 40%,
+          rgba(9,7,29,0.70) 65%,
+          rgba(9,7,29,0.35) 85%,
+          rgba(9,7,29,0.0)  100%
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 0;
+    }
+
+    /* ══ HEADER ══ */
+    .header { flex-shrink: 0; }
+
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5mm;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+    }
+
+    .brand-dot {
+      width: 2mm;
+      height: 2mm;
+      border-radius: 50%;
+      background: #7C6FF7;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 7pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7C6FF7;
+    }
+
+    .brand-url {
+      font-size: 6pt;
+      color: rgba(124,111,247,0.45);
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .h-rule {
+      height: 1px;
+      background: linear-gradient(90deg, #7C6FF7 0%, rgba(124,111,247,0.06) 100%);
+      margin-bottom: 3.5mm;
+    }
+
+    .eyebrow {
+      font-size: 6pt;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(124,111,247,0.7);
+      margin-bottom: 1.5mm;
+    }
+
+    .main-title {
+      font-size: 19pt;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      color: #fff;
+      margin-bottom: 1.5mm;
+    }
+
+    .main-title .accent { color: #7C6FF7; }
+
+    .subtitle {
+      font-size: 6.5pt;
+      color: #7A7499;
+      line-height: 1.5;
+    }
+
+    .subtitle strong {
+      color: #A89FF5;
+      font-weight: 600;
+    }
+
+    .h-rule-light {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(124,111,247,0.2) 0%, transparent 100%);
+      margin-top: 3mm;
+    }
+
+    /* ══ GRID 2 × 3 ══ */
+    .grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      padding: 3.5mm 0 2.5mm;
+      min-height: 0;
+    }
+
+    .card {
+      background: rgba(9,7,29,0.65);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(124,111,247,0.22);
+      border-radius: 2.5mm;
+      padding: 3.5mm 4mm 3mm;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0.75mm;
+      background: linear-gradient(180deg, #7C6FF7 0%, rgba(124,111,247,0.25) 100%);
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-num {
+      font-size: 7.5pt;
+      font-weight: 900;
+      color: rgba(124,111,247,0.45);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .card-phase {
+      font-size: 5pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(124,111,247,0.6);
+      background: rgba(124,111,247,0.1);
+      padding: 0.5mm 1.5mm;
+      border-radius: 10mm;
+    }
+
+    .card-name {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+
+    .card-when {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5mm;
+      margin-top: 0.3mm;
+    }
+
+    .when-pill {
+      font-size: 5pt;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #7C6FF7;
+      background: rgba(124,111,247,0.12);
+      padding: 0.5mm 1.5mm;
+      border-radius: 10mm;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .when-text {
+      font-size: 6pt;
+      color: #7A7499;
+      line-height: 1.4;
+    }
+
+    .card-app {
+      font-size: 6.5pt;
+      color: #C0BAE0;
+      line-height: 1.55;
+      font-style: italic;
+      background: rgba(255,255,255,0.03);
+      border-radius: 1.5mm;
+      padding: 1.5mm 2mm;
+      margin-top: 0.5mm;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* ══ FOOTER ══ */
+    .footer { flex-shrink: 0; }
+
+    .footer-rule {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(124,111,247,0.2) 0%, transparent 100%);
+      margin-bottom: 2.5mm;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5mm;
+      align-items: start;
+    }
+
+    .rappel-box {
+      background: rgba(9,7,29,0.6);
+      border: 1px solid rgba(124,111,247,0.22);
+      border-radius: 2mm;
+      padding: 2.5mm 3mm;
+    }
+
+    .box-label {
+      font-size: 5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #7C6FF7;
+      margin-bottom: 1.5mm;
+    }
+
+    .rappel-text {
+      font-size: 6pt;
+      color: #A8A3C7;
+      line-height: 1.6;
+    }
+
+    .rappel-text strong { color: #E0DCF5; font-weight: 700; }
+
+    .circuit-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+
+    .circuit-flow {
+      display: flex;
+      align-items: center;
+      gap: 1.5mm;
+      flex-wrap: wrap;
+    }
+
+    .c-node {
+      font-size: 5.5pt;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(124,111,247,0.15);
+      border: 1px solid rgba(124,111,247,0.3);
+      padding: 1mm 2mm;
+      border-radius: 10mm;
+      white-space: nowrap;
+    }
+
+    .c-arrow {
+      font-size: 7pt;
+      color: rgba(124,111,247,0.6);
+    }
+
+    .circuit-sub {
+      font-size: 5.5pt;
+      color: #5E597A;
+      line-height: 1.5;
+    }
+
+    .source-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2mm;
+    }
+
+    .source-text {
+      font-size: 5.5pt;
+      color: rgba(124,111,247,0.35);
+      letter-spacing: 0.3px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <p class="print-hint">
+    Chrome : Imprimer → Enregistrer en PDF | Papier : A4 | Marges : Aucune | Cocher "Graphiques d'arrière-plan"
+  </p>
+
+  <div class="page">
+    <img class="page-bg" src="../images/articles/resoudre-un-conflit-methodes-psychologie-cover.webp" alt="">
+    <div class="page-inner">
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="top-row">
+          <div class="brand">
+            <div class="brand-dot"></div>
+            <span class="brand-name">L'Éveil Mental</span>
+          </div>
+          <span class="brand-url">leveilmental.fr</span>
+        </div>
+        <div class="h-rule"></div>
+        <div class="eyebrow">Fiche de référence · Relations Humaines</div>
+        <h1 class="main-title">6 méthodes pour<br><span class="accent">résoudre un conflit</span></h1>
+        <p class="subtitle">Classées par phase d'intervention · <strong>Gottman, Fisher &amp; Ury, Seehausen et al., 2013</strong> · Psychologie sociale et neurosciences</p>
+        <div class="h-rule-light"></div>
+      </header>
+
+      <!-- GRID 2 x 3 -->
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">01</span>
+            <span class="card-phase">Phase préalable</span>
+          </div>
+          <div class="card-name">Fenêtre d'inhibition</div>
+          <div class="card-when">
+            <span class="when-pill">Quand</span>
+            <span class="when-text">Dès le début de la montée émotionnelle</span>
+          </div>
+          <div class="card-app">Se retirer 20 à 30 min minimum. Ni fuir ni réprimer : laisser le cortisol redescendre avant toute discussion. Revenir avec un signal convenu.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">02</span>
+            <span class="card-phase">Phase préalable</span>
+          </div>
+          <div class="card-name">Éviter les 4 Cavaliers</div>
+          <div class="card-when">
+            <span class="when-pill">Quand</span>
+            <span class="when-text">Avant et pendant toute conversation difficile</span>
+          </div>
+          <div class="card-app">Bannir : critique (attaque de la personne), mépris (rouler les yeux), défensivité (contre-attaque), obstruction (mutisme). Gottman prédit la rupture à 86 % sur ces 4 signaux.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">03</span>
+            <span class="card-phase">Phase dialogue</span>
+          </div>
+          <div class="card-name">Écoute active (Rogers)</div>
+          <div class="card-when">
+            <span class="when-pill">Quand</span>
+            <span class="when-text">Dès l'ouverture de la discussion</span>
+          </div>
+          <div class="card-app">Reformuler sans juger : "Si je comprends bien, tu ressens..." Synchronisation cérébrale mesurée en fNIRS : les cerveaux de deux interlocuteurs qui s'écoutent vraiment s'alignent.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">04</span>
+            <span class="card-phase">Phase dialogue</span>
+          </div>
+          <div class="card-name">Communication Non-Violente</div>
+          <div class="card-when">
+            <span class="when-pill">Quand</span>
+            <span class="when-text">Pour exprimer son propre vécu</span>
+          </div>
+          <div class="card-app">4 étapes OSBD : Observation (faits neutres) · Sentiment (émotion sans accusation) · Besoin (profond) · Demande (concrète et négociable).</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">05</span>
+            <span class="card-phase">Phase dialogue</span>
+          </div>
+          <div class="card-name">Méthode Harvard</div>
+          <div class="card-when">
+            <span class="when-pill">Quand</span>
+            <span class="when-text">Pour trouver un accord durable</span>
+          </div>
+          <div class="card-app">Séparer personnes et problème. Identifier les besoins sous-jacents (pas les positions). Générer plusieurs options avant de trancher. Utiliser des critères objectifs.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">06</span>
+            <span class="card-phase">Phase consolidation</span>
+          </div>
+          <div class="card-name">Protocole 3 phases</div>
+          <div class="card-when">
+            <span class="when-pill">Quand</span>
+            <span class="when-text">Pour ancrer la résolution dans le temps</span>
+          </div>
+          <div class="card-app">1. Préparation (anticiper séparément ses besoins). 2. Dialogue (écoute + CNV + Harvard). 3. Consolidation (reformuler l'accord, fixer un point de suivi à J+7).</div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-rule"></div>
+        <div class="footer-grid">
+
+          <div class="rappel-box">
+            <div class="box-label">Rappel clé</div>
+            <p class="rappel-text">
+              <strong>Méthodes 1-2</strong> : agir <strong>avant</strong> le dialogue. L'amygdale en hyperactivation bloque le cortex préfrontal, rendant tout accord impossible.<br>
+              <strong>Méthodes 3-6</strong> : techniques de <strong>dialogue</strong> et de <strong>consolidation</strong>. Inutiles sans la fenêtre d'inhibition préalable.
+            </p>
+          </div>
+
+          <div class="circuit-col">
+            <div class="box-label">Circuit neurologique</div>
+            <div class="circuit-flow">
+              <span class="c-node">Amygdale</span>
+              <span class="c-arrow">→</span>
+              <span class="c-node">Inhibition 20 min</span>
+              <span class="c-arrow">→</span>
+              <span class="c-node">CPF actif</span>
+            </div>
+            <p class="circuit-sub">Le dmPFC s'active lors de la résolution de conflits sociaux — mesurable en IRMf.<br>Seehausen et al., <em>NeuroImage</em>, 2013 ; Wang et al., <em>Cereb. Cortex</em>, 2023</p>
+          </div>
+
+        </div>
+        <div class="source-row">
+          <span class="source-text">leveilmental.fr/blog/resoudre-un-conflit-methodes-psychologie</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -27,6 +27,7 @@ const ARTICLE_SLUGS = [
   'mindset-de-croissance-psychologie-dweck',
   'routine-matinale-scientifique-cerveau',
   'regulation-emotionnelle-techniques-psychologie',
+  'resoudre-un-conflit-methodes-psychologie',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

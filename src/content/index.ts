@@ -34,4 +34,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "mindset-de-croissance-psychologie-dweck": lazy(() => import("../articles/MindsetDeCroissance")),
   "routine-matinale-scientifique-cerveau": lazy(() => import("../articles/RoutineMatinaleScientifique")),
   "regulation-emotionnelle-techniques-psychologie": lazy(() => import("../articles/RegulationEmotionnelle")),
+  "resoudre-un-conflit-methodes-psychologie": lazy(() => import("../articles/ResoudreUnConflit")),
 };

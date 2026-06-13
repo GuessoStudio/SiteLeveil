@@ -246,5 +246,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/regulation-emotionnelle-techniques-psychologie-cover",
         slug: "regulation-emotionnelle-techniques-psychologie",
         featured: false
+    },
+    {
+        id: 23,
+        title: "Résoudre un conflit : mécanismes cérébraux et 6 méthodes validées par la psychologie sociale",
+        excerpt: "Résoudre un conflit efficacement : fenêtre d'inhibition de 20 min, 4 Cavaliers de Gottman, méthode Harvard. 6 méthodes validées par la psychologie sociale.",
+        category: "Relations Humaines",
+        readTime: 12,
+        date: "2026-06-09",
+        image: "/images/articles/resoudre-un-conflit-methodes-psychologie-cover",
+        slug: "resoudre-un-conflit-methodes-psychologie",
+        featured: false
     }
 ];

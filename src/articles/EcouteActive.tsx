@@ -549,7 +549,7 @@ export default function EcouteActive() {
 
           <h3>Dans quelle situation utiliser l'une plutôt que l'autre ?</h3>
           <p>
-            L'écoute active est particulièrement utile quand l'autre a besoin d'être entendu — dans les situations de détresse, de conflit émotionnel fort, ou quand quelqu'un cherche avant tout à exprimer quelque chose. Elle ne demande pas à l'écoutant de s'exposer.
+            L'écoute active est particulièrement utile quand l'autre a besoin d'être entendu — dans les situations de détresse, de conflit émotionnel fort, ou quand quelqu'un cherche avant tout à exprimer quelque chose. Elle ne demande pas à l'écoutant de s'exposer. C'est l'un des leviers les plus efficaces pour <Link to="/blog/resoudre-un-conflit-methodes-psychologie/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">résoudre un conflit</Link> avant qu'il ne s'envenime.
           </p>
           <p>
             La CNV entre en jeu quand on veut exprimer quelque chose soi-même sans déclencher de réaction défensive chez l'autre. Les deux approches se combinent naturellement dans une conversation équilibrée : on écoute activement, puis on s'exprime selon les principes CNV.
