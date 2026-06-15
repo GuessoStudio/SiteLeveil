@@ -39,19 +39,81 @@ Aucun compte concurrent ne peut copier cette signature.
 
 ## 3. Vocabulaire d'émotions du Petit Éveillé
 
-Émotions exprimées SANS visage, via les éléments déjà présents dans le SVG master :
+Le mascot n'a pas de visage. Ses émotions passent donc par une combinaison de
+**canaux d'expression** déjà présents dans le SVG master. C'est sa signature :
+son mental est littéralement visible, ce qu'aucun concurrent ne peut copier.
 
-| État / émotion | Comment on le montre |
-|----------------|----------------------|
-| Réflexion intense | spirale tête tourne plus vite + bulles qui montent (`bubbles-head`) |
-| Calme / apaisé | spirale lente + respiration ample (`#character` breathe) |
-| Surprise / révélation | halo (`head-glow`) qui pulse fort d'un coup |
-| Confusion | bulles désordonnées au-dessus de la tête |
-| Émotion / cœur | `mode-emotions` : spirale torse s'allume (`torso-spiral` + `torso-glow`) |
-| Concentration mentale | `mode-neuro` : spirale tête dominante |
-| Éveil complet | `mode-eveil` : tête + torse allumés |
+### 3.1 Les canaux d'expression (les « curseurs » disponibles)
 
-### Poses corporelles à construire (vocabulaire cible)
+| Canal | ID(s) SVG | Plage de jeu |
+|-------|-----------|--------------|
+| Vitesse spirale tête | `head-spiral` | lente ↔ rapide (et arrêt) |
+| Vitesse spirale torse | `torso-spiral` | lente ↔ rapide (et arrêt) |
+| Sens de rotation | `head-spiral` / `torso-spiral` | horaire ↔ antihoraire (inversion = bascule mentale) |
+| Intensité halo tête | `head-glow` | éteint → faible → fort → pulse |
+| Intensité halo torse | `torso-glow` | éteint → faible → fort → pulse |
+| Bulles tête | `bubbles-head` | nombre, vitesse de montée, ordre/chaos |
+| Bulles torse | `bubbles-torso` | nombre, montée |
+| Respiration | `#character` (breathe) | ample/lente ↔ courte/rapide ↔ figée |
+| Inclinaison du corps (lean) | `#character` | avant (insistance) ↔ arrière (recul) ↔ tilt latéral |
+| Rebond / tremblement | `#character` | bounce (joie) / shake (peur, colère, surcharge) |
+| Échelle globale | `#character` | léger zoom (emphase) ↔ recroquevillement |
+| Bras | `left-arm` / `right-arm` | voir §3.4 (poses) |
+| Mode global | classe sur `#petit-eveille` | `mode-emotions` / `mode-neuro` / `mode-eveil` |
+
+> Une émotion = une **recette** combinant plusieurs curseurs. Exemple : la peur =
+> spirales rapides + halo qui clignote + shake + lean arrière + respiration courte.
+
+### 3.2 États cognitifs (cœur du contenu neurosciences)
+
+| État | Recette (combinaison de canaux) |
+|------|----------------------------------|
+| Réflexion intense | spirale tête rapide + bulles qui montent en ordre + lean avant léger |
+| Concentration / focus | spirale tête régulière + halo tête stable et fort + bulles rares + corps figé |
+| Curiosité | spirale tête qui accélère doucement + halo qui monte + tilt de tête |
+| Doute / incertitude | spirale tête qui ralentit puis repart + 1-2 bulles hésitantes + lean arrière léger |
+| Confusion / perte | bulles désordonnées et nombreuses au-dessus de la tête + spirale irrégulière |
+| Surcharge mentale (overwhelm) | spirales très rapides + bulles en excès + léger shake + halo saturé |
+| Révélation / insight (« aha ») | halo tête qui pulse fort d'un coup + spirale qui s'emballe une seconde + petit bounce |
+| Compréhension / clic mental | spirale tête qui se stabilise net + 1 pulse de halo + retour au calme |
+| Rumination (boucle obsessionnelle) | spirale tête qui tourne en boucle serrée + mêmes bulles qui remontent en cycle |
+| Distraction / attention fragmentée | spirale tête qui change de sens par à-coups + bulles éparses qui partent sur les côtés |
+| Mémorisation / encodage | bulles tête qui descendent vers le torse (transfert) + halo torse qui monte |
+
+### 3.3 États émotionnels et énergétiques
+
+| État | Recette |
+|------|---------|
+| Calme / sérénité | spirales lentes + respiration ample et lente + halos doux |
+| Joie / enthousiasme | bounce léger + halos vifs + spirales rapides + lean avant |
+| Émotion / tendresse (cœur) | `mode-emotions` : spirale torse s'allume + halo torse qui pulse doucement |
+| Empathie / connexion | halo torse stable et chaud + lean avant léger (vers l'autre/le spectateur) |
+| Stress / anxiété | spirales rapides irrégulières + respiration courte + micro-shake |
+| Peur / alerte | halo qui clignote + shake + lean arrière + spirales emballées |
+| Tristesse / abattement | spirales très lentes + halos faibles + lean avant + épaules basses + échelle réduite |
+| Colère / frustration | shake sec + halo rouge/saturé + spirale torse rapide + lean avant marqué |
+| Fierté / confiance | corps redressé + halos forts et stables + respiration ample + bras ouverts |
+| Honte / repli (syndrome imposteur) | recroquevillement (scale ↓) + halos faibles + bras croisés + lean arrière |
+| Soulagement | longue respiration + halos qui redescendent en douceur + relâchement du lean |
+| Fatigue / épuisement | spirales qui ralentissent jusqu'à presque s'arrêter + halos vacillants + lean avant lourd |
+| Énergie / réveil | spirales qui accélèrent depuis l'arrêt + halos qui montent + petit bounce |
+| Endormissement / sommeil | spirales qui s'arrêtent + halos qui s'éteignent + respiration très lente |
+| Éveil complet (signature) | `mode-eveil` : tête + torse allumés, spirales synchronisées, halos pleins |
+
+### 3.4 États narratifs et gestuels (storytelling face caméra)
+
+| Intention | Recette (surtout bras + lean, voir poses §3.5) |
+|-----------|------------------------------------------------|
+| Salutation / accueil | entrée depuis le bord + un bras qui se lève |
+| Présentation (montre un élément) | pose `point` vers le titre ou un visuel + halo stable |
+| Questionnement (interpelle le spectateur) | pose `shrug` + bulles tête + tilt |
+| Affirmation / insistance | lean avant + pose `point` vers le spectateur + halo qui pulse sur le mot clé |
+| Négation / correction de mythe | shake horizontal léger + bras croisés (`mode-emotions` off) |
+| Approbation / validation | petit bounce + halo qui pulse + bras ouverts |
+| Conclusion / synthèse | retour `idle` + `mode-eveil` + respiration ample |
+| Sortie de scène | pose `point`/`open` puis glisse vers le bord |
+
+### 3.5 Poses corporelles à construire (vocabulaire cible)
 
 - **idle** : planté, bras le long du corps, respiration (état actuel)
 - **point** : un bras qui pointe (vers le titre, vers le spectateur, vers l'autre perso)
@@ -66,12 +128,56 @@ Aucun compte concurrent ne peut copier cette signature.
 
 ---
 
-## 4. Workflow cible
+## 4. La scène : se différencier de Humain Penseur
+
+**Le risque réel** : fond bleu nuit + sol + gros titre blanc = c'est LE format
+Humain Penseur. Reproduit tel quel, on passe pour un clone.
+
+**Le bon constat** : ce format est un *genre* (comme « fond vert » au cinéma),
+pas une propriété. Des dizaines de comptes l'utilisent. Ce qui distingue, ce
+n'est pas d'éviter le format (il marche, il est prouvé, lisible sur mobile),
+c'est de **l'habiter avec une identité forte**. Et l'identité, on l'a déjà.
+
+### Ce qui nous rend reconnaissables (à exploiter)
+
+| Levier | Humain Penseur | Le Petit Éveillé |
+|--------|----------------|------------------|
+| Personnage | bonhomme blanc plat, opaque | mascotte **lumineuse** (spirales + halos) |
+| Couleur | bleu/gris générique | **violet L'Éveil `#7C6FF7` sur `#0F0B2E`** (notre charte) |
+| Le « sol » | simple ligne grise | horizon violet qui **réagit à l'état mental** |
+| Le mental | montré par le visage (`!?`) | montré par les spirales = **invisible chez les autres** |
+
+### Recommandations concrètes pour la scène (à valider en Phase 2)
+
+1. **S'approprier la couleur** : fond dégradé `#0F0B2E → #1A1145` (notre charte
+   réseaux), accents `#7C6FF7`. On *possède* le violet, on ne fait pas du bleu Humain Penseur.
+2. **Le sol lumineux** : pas une ligne grise plate, mais un horizon qui **émet une
+   lueur violette**. Comme le perso est lumineux, il projette un **reflet / halo au
+   sol** sous ses pieds. Humain Penseur ne peut pas faire ça (perso opaque). C'est
+   notre signature gratuite.
+3. **Fond réactif à l'état** : la teinte ambiante glisse selon le mode
+   (`mode-neuro` = froid violet/teal, `mode-emotions` = chaud rouge/ambre,
+   `mode-eveil` = équilibré). Le décor *raconte* l'émotion avec le perso.
+4. **Champ de particules / bulles ambiantes** en fond très discret, qui s'animent
+   doucement (réseau neuronal lointain). Donne de la profondeur sans distraire.
+5. **Vignette + profondeur** : coins assombris pour concentrer l'œil au centre,
+   comme la réf, mais en violet.
+6. **Typo de marque** pour les titres (police L'Éveil, pas l'Helvetica bold générique).
+
+> Verdict : on garde la *structure* (fond sombre + sol + titre + voix off) parce
+> qu'elle est efficace et lisible, mais le **perso lumineux + le violet de marque +
+> le sol qui réagit** suffisent largement à ne pas ressembler à un clone.
+> La ressemblance de format est même un atout : on surfe sur un code que l'audience
+> connaît déjà, avec une patte qui nous est propre.
+
+---
+
+## 5. Workflow cible
 
 ```
-Article blog  →  Claude Code génère :
-   • le script TikTok (déjà le cas)
-   • les balises de scène : [titre] + [pose] + [émotion] + [timing]
+Article blog  →  Claude Code génère (Phase 5.3 du /article) :
+   • le script TikTok timestampé (déjà le cas — voir repurposing.md §2)
+   • LA COUCHE SCÈNE : pour chaque bloc, [titre] + [pose] + [émotion] + [mode]
         ↓
 La "scène" HTML joue le script (perso + poses + titres) en plein écran 1080×1920
         ↓
@@ -84,19 +190,76 @@ TikTok
 
 **Valeur clé** : un seul prompt sort le script ET la mise en scène animée.
 
-### Format des balises de cue (brouillon, à figer en Phase 3)
+---
+
+## 6. Intégration au workflow article → script (les balises cue)
+
+### 6.1 Où ça se branche dans le process existant
+
+Le script TikTok est déjà produit en **Phase 5.3 du `/article`**
+(`/.claude/commands/article.md`, étape 5.3 point 2), en suivant
+`.claude/rules/repurposing.md` §2. Format actuel, timestampé :
 
 ```
-[TITRE] La tendresse
-[00:00] pose:idle      | mode:eveil     | "Texte voix off..."
-[00:03] pose:point     | emotion:reveal | "Le moment fort..."
-[00:08] pose:think     | mode:neuro     | "La partie scientifique..."
-[00:15] pose:open      | mode:emotions  | "La conclusion..."
+[0-3s]   ACCROCHE
+[3-45s]  CONTENU (3 points)
+[45-60s] CTA FINAL
 ```
+
+La couche scène **ne remplace rien** : elle **ajoute** à chaque bloc déjà existant
+une ligne de mise en scène. Le texte voix off reste tel quel.
+
+### 6.2 Format des balises cue (brouillon, à figer en Phase 3)
+
+Chaque bloc du script reçoit une ligne `>> scene:` juste sous le texte :
+
+```
+[0-3s]   [ACCROCHE — dire avec conviction]
+         "La dopamine n'est pas l'hormone du bonheur."
+         >> scene: titre="LA DOPAMINE" | pose=point | emotion=reveal | mode=neuro
+
+[3-15s]  [POINT 1 — ton pédagogique]
+         "C'est l'hormone de la motivation, pas de la récompense..."
+         >> scene: pose=think | emotion=focus | mode=neuro
+
+[15-28s] [POINT 2 — ton surpris/révélateur]
+         "Ton cerveau en produit AVANT la récompense, pas après."
+         >> scene: pose=open | emotion=insight | mode=neuro
+
+[28-42s] [POINT 3 — ton pratique]
+         "Donc la motivation vient de l'action, pas l'inverse."
+         >> scene: pose=point | emotion=affirmation | mode=eveil
+
+[42-55s] [CTA — ton direct]
+         "L'article complet est sur leveilmental.fr. Lien en bio."
+         >> scene: pose=open | emotion=calme | mode=eveil
+```
+
+Vocabulaire autorisé dans les balises :
+- `titre=` : texte du gros titre à l'écran (optionnel, surtout sur l'accroche)
+- `pose=` : une des poses du §3.5 (`idle`, `point`, `open`, `think`, `shrug`, `lean`, `enter`, `exit`)
+- `emotion=` : un état des §3.2 / §3.3 / §3.4 (`focus`, `reveal`, `insight`, `confusion`, `calme`, `affirmation`…)
+- `mode=` : `emotions` / `neuro` / `eveil`
+
+### 6.3 Comment l'expliquer à Claude Code (instruction à ajouter au /article)
+
+Une fois le système de poses construit (Phase 1) et le format figé, ajouter ceci
+à `repurposing.md` §2 (TikTok) et à l'étape 5.3 du `/article` :
+
+> Après avoir écrit le script TikTok timestampé, ajouter sous chaque bloc une ligne
+> `>> scene:` qui met en scène Le Petit Éveillé. Régler `pose`, `emotion` et `mode`
+> selon le ton du bloc (réflexion → `think/focus/neuro`, révélation → `open/insight`,
+> émotion humaine → `mode=emotions`, conclusion → `mode=eveil`). Mettre un `titre=`
+> uniquement sur l'accroche et les transitions fortes. Se référer au vocabulaire
+> complet dans `docs/video-petit-eveille-workflow.md` §3.
+
+> ⚠️ À FAIRE quand Phases 1-3 validées : reporter le format cue définitif dans
+> `repurposing.md` §2 et dans l'étape 5.3 du `/article`, pour que la génération
+> soit automatique à chaque nouvel article.
 
 ---
 
-## 5. Roadmap de construction (ordre logique)
+## 7. Roadmap de construction (ordre logique)
 
 > Le goulot d'étranglement n'est PAS le choix OBS vs Remotion.
 > C'est que le mascot ne sait faire qu'une seule chose (idle).
@@ -112,7 +275,7 @@ TikTok
 
 3. **Phase 3 — Timeline piloté par script**
    Lecteur JS qui lit les balises de cue → enchaîne poses + titres + émotions dans le temps.
-   Définir le format de balises exact (voir §4).
+   Définir le format de balises exact (voir §6).
 
 4. **Phase 4 — Rendu**
    - Court terme : **OBS** (source navigateur, record écran 1080×1920) sous Windows.
@@ -126,7 +289,7 @@ TikTok
 
 ---
 
-## 6. Contraintes techniques
+## 8. Contraintes techniques
 
 - **OS** : Windows (OBS natif, source « Navigateur » locale).
 - **Base** : `public/petit-eveille-statique.html` (SVG master inline, déjà structuré pour l'animation : IDs uniques, groupes `head-group`/`torso-group`/`arms-group`/`legs-group`, 3 modes CSS, démo d'animation).
@@ -135,7 +298,7 @@ TikTok
 
 ---
 
-## 7. État d'avancement
+## 9. État d'avancement
 
 - [x] SVG master du personnage (statique + 3 modes + démo anim) — `public/petit-eveille-statique.html`
 - [x] Décisions de cadrage (ce document)
