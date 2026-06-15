@@ -498,7 +498,7 @@ export default function RoutineMatinaleScientifique() {
             Avant d'ouvrir ton téléphone, ton email ou tes réseaux sociaux : note une seule phrase. "Aujourd'hui, la priorité est [X]."
           </p>
           <p>
-            Ce geste active le cortex préfrontal en mode <em>proactif</em> plutôt qu'en mode <em>réactif</em>. Au lieu de laisser le monde extérieur définir ton agenda cognitif, tu le définis toi-même. Les ressources d'attention disponibles pendant la matinée sont alors orientées vers ta priorité, au lieu d'être dispersées dans les demandes entrantes.
+            Ce geste active le cortex préfrontal en mode <em>proactif</em> plutôt qu'en mode <em>réactif</em>. Au lieu de laisser le monde extérieur définir ton agenda cognitif, tu le définis toi-même. Les ressources d'attention disponibles pendant la matinée sont alors orientées vers ta priorité, au lieu d'être dispersées dans les demandes entrantes. Pour formuler cette priorité de façon vraiment efficace, l'article sur <Link to="/blog/objectifs-smart-methode-neurosciences/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">les objectifs SMART décryptés par les neurosciences</Link> explique pourquoi un but précis active mieux le cerveau qu'une intention vague.
           </p>
 
           {/* H2 — À retenir */}

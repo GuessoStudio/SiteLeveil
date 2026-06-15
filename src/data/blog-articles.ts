@@ -257,5 +257,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/resoudre-un-conflit-methodes-psychologie-cover",
         slug: "resoudre-un-conflit-methodes-psychologie",
         featured: false
+    },
+    {
+        id: 24,
+        title: "Objectifs SMART : ce que les neurosciences disent vraiment de la méthode",
+        excerpt: "Objectifs SMART décryptés par les neurosciences : pourquoi la spécificité active le cortex préfrontal, les plans si/alors validés sur 94 études, et les limites réelles de la méthode.",
+        category: "Développement Personnel",
+        readTime: 13,
+        date: "2026-06-15",
+        image: "/images/articles/objectifs-smart-methode-neurosciences-cover",
+        slug: "objectifs-smart-methode-neurosciences",
+        featured: false
     }
 ];

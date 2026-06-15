@@ -196,6 +196,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/resoudre-un-conflit-methodes-psychologie-guide.html"
     },
     {
+      id: 24,
+      title: "Fiche Objectif SMART+ — le modèle en 4 leviers",
+      description: "Formuler un objectif que ton cerveau tient vraiment : cible précise et difficile, alignement, plan si/alors et calibration à 85 %. Sources : Locke & Latham, Gollwitzer, Höpfner & Keith.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/objectifs-smart-methode-neurosciences-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/objectifs-smart-methode-neurosciences-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

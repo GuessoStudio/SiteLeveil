@@ -454,7 +454,7 @@ export default function MindsetDeCroissance() {
             Dans tes conversations avec toi-même et avec les autres, orienter l'attention vers l'effort, la méthode, la progression — pas vers le résultat final. "J'ai mis en place une nouvelle approche" plutôt que "j'ai réussi". "Tu as bien persévéré" plutôt que "tu es fort".
           </p>
           <p>
-            Ce changement de focalisation crée une résistance plus grande face aux inévitables mauvais résultats. Si ton identité est liée à ta méthode plutôt qu'à tes résultats, un échec ne remet pas en question ton identité entière.
+            Ce changement de focalisation crée une résistance plus grande face aux inévitables mauvais résultats. Si ton identité est liée à ta méthode plutôt qu'à tes résultats, un échec ne remet pas en question ton identité entière. C'est exactement pourquoi la façon de <Link to="/blog/objectifs-smart-methode-neurosciences/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">fixer ses objectifs SMART selon les neurosciences</Link> compte autant : un objectif vécu comme un défi d'apprentissage protège l'estime de soi mieux qu'une cible tout ou rien.
           </p>
 
           <h3>4. Chercher le feedback difficile</h3>

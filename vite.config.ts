@@ -28,6 +28,7 @@ const ARTICLE_SLUGS = [
   'routine-matinale-scientifique-cerveau',
   'regulation-emotionnelle-techniques-psychologie',
   'resoudre-un-conflit-methodes-psychologie',
+  'objectifs-smart-methode-neurosciences',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

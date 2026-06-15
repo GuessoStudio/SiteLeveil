@@ -387,7 +387,7 @@ export default function ProcrastinationCerveau() {
           </p>
 
           <p>
-            <strong>Application pratique :</strong> Pour chaque tâche importante : visualisez le résultat accompli (activation dopaminergique), anticipez l'obstacle principal (préparation préfrontale), planifiez la réponse "si-alors" (automatisation comportementale).
+            <strong>Application pratique :</strong> Pour chaque tâche importante : visualisez le résultat accompli (activation dopaminergique), anticipez l'obstacle principal (préparation préfrontale), planifiez la réponse "si-alors" (automatisation comportementale). Cette logique du plan "si-alors" est au cœur d'une bonne fixation d'objectifs : l'article sur <Link to="/blog/objectifs-smart-methode-neurosciences/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">les objectifs SMART décryptés par les neurosciences</Link> détaille comment l'utiliser pour passer de l'intention à l'action.
           </p>
 
           <div className="not-prose my-8">
