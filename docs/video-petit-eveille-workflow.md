@@ -302,7 +302,8 @@ Une fois le système de poses construit (Phase 1) et le format figé, ajouter ce
 
 - [x] SVG master du personnage (statique + 3 modes + démo anim) — `public/petit-eveille-statique.html`
 - [x] Décisions de cadrage (ce document)
-- [ ] Phase 1 — Système de poses + émotions
+- [~] Phase 1 — Système de poses + émotions — **banc d'essai livré, en attente de validation** : `public/petit-eveille-poses.html`
+      (6 poses, 13 émotions, 3 modes, bulles, entrée/sortie ; 3 canaux qui se combinent)
 - [ ] Phase 2 — La scène
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)
