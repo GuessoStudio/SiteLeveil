@@ -303,9 +303,12 @@ Une fois le système de poses construit (Phase 1) et le format figé, ajouter ce
 - [x] SVG master du personnage (statique + 3 modes + démo anim) — `public/petit-eveille-statique.html`
 - [x] Décisions de cadrage (ce document)
 - [~] Phase 1 — Système de poses + émotions — **banc d'essai livré, en attente de validation** : `public/petit-eveille-poses.html`
-      (6 poses, 13 émotions, 3 modes, bulles, entrée/sortie ; 3 canaux qui se combinent)
-      v2 : bras = bibliothèque de **tracés dessinés** ancrés à l'épaule (fin de la couture
-      due à la rotation d'un bras figé). Pencher = inclinaison du corps entier.
+      (8 poses, 13 émotions, 3 modes, bulles, entrée/sortie ; 3 canaux qui se combinent)
+      v3 (Route A validée) : bras = **capsules qui pivotent à l'épaule** + cache d'épaule
+      (cercle) qui masque le raccord à tout angle. Une pose = deux angles, donc poses
+      illimitées. 8 poses : idle, pointer, ouvrir, réfléchir, hausser, pencher,
+      **bras croisés** (corrections de mythe), **saluer** (intros).
+      Compromis assumé : petite articulation d'épaule visible.
 - [ ] Phase 2 — La scène
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)

@@ -44,8 +44,11 @@
   #head-glow    { transform-box: view-box; transform-origin: 200px 141px; }
   #torso-glow   { transform-box: view-box; transform-origin: 200px 328px; }
   #head-group   { transform-box: view-box; transform-origin: 200px 236px; }
-  #left-arm     { transform-box: view-box; transform-origin: 83px 305px; }
-  #right-arm    { transform-box: view-box; transform-origin: 317px 305px; }
+  /* Bras = capsules qui PIVOTENT autour de l'épaule (pivot = centre du cache d'épaule).
+     La pose = deux angles (--la / --ra). 0deg = horizontal vers l'intérieur,
+     90deg = le long du corps (idle), 270deg = vers le haut. */
+  #left-arm  { transform-box: view-box; transform-origin: 92px 260px;  transform: rotate(var(--la, 90deg)); transition: transform .35s cubic-bezier(.22,.61,.36,1); }
+  #right-arm { transform-box: view-box; transform-origin: 308px 260px; transform: rotate(var(--ra, 90deg)); transition: transform .35s cubic-bezier(.22,.61,.36,1); }
   #left-leg     { transform-box: view-box; transform-origin: 157px 435px; }
   #right-leg    { transform-box: view-box; transform-origin: 243px 435px; }
   .bubble       { transform-box: view-box; }
@@ -60,11 +63,8 @@
   /* #body : motricité d'émotion (respiration / shake / bounce) */
   #body { transform-box: view-box; transform-origin: 200px 360px; }
 
-  /* Transitions douces : opacités d'état + échange de pose des bras */
+  /* Transitions douces des opacités d'état (les transitions des bras sont définies plus haut) */
   #head-spiral, #torso-spiral, #head-glow, #torso-glow { transition: opacity .6s ease; }
-  /* Les bras changent de POSE par échange du tracé "d" (bibliothèque dessinée, en JS).
-     Échange quasi instantané facultativement adouci là où le navigateur sait animer "d". */
-  #left-arm, #right-arm { transition: d .28s ease; }
 
   /* ============================== MODES (quoi est allumé) ============================== */
   .mode-emotions #torso-spiral { opacity: 1; }
@@ -79,10 +79,10 @@
   .mode-eveil #torso-glow,   .mode-eveil #head-glow   { opacity: .9; }
 
   /* ============================== POSES ==============================
-     Bras = bibliothèque de tracés DESSINÉS, échangés en JS (attribut "d").
-     Chaque pose est ancrée à l'épaule (arche + aisselle) pour un raccord
-     propre, sans la couture qu'avait la rotation d'un bras figé.
-     Lean = inclinaison du corps entier (seul geste sans articulation). */
+     Bras = capsules (rectangles arrondis) qui PIVOTENT autour de l'épaule.
+     Un cache d'épaule (cercle) par-dessus masque le raccord à tout angle.
+     Une pose = deux angles (--la / --ra), définis dans le JS. Aucune couture.
+     Lean = inclinaison du corps entier. */
   .pose-lean #character { --lean: -6deg; }
 
   /* ============================== ÉMOTIONS (dynamique) ============================== */
@@ -216,14 +216,6 @@
             fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
     </g>
 
-    <!-- ============ BRAS ============ -->
-    <g id="arms-group">
-      <path id="left-arm"  d="M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292"
-            fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-      <path id="right-arm" d="M342 318 C344 352 340 395 330 421 A 19 19 0 0 1 292 418 L292 301.5 A 9.5 9.5 0 0 0 282.5 292"
-            fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-
     <!-- ============ TORSE ============ -->
     <g id="torso-group">
       <path id="torso-outline" d="M58 320 C58 258 108 222 200 222 C292 222 342 258 342 320
@@ -238,6 +230,21 @@
         <circle id="torso-dot"  cx="200" cy="328" r="8"  fill="#FFFFFF"/>
       </g>
       <g id="bubbles-torso"></g>
+    </g>
+
+    <!-- ============ BRAS (capsules qui pivotent à l'épaule) ============
+         Dessinés APRÈS le torse (devant), avec un cache d'épaule par-dessus
+         qui masque le raccord quel que soit l'angle. La pose = rotation.
+         Base : capsule horizontale dont le bout rond gauche est sur le pivot. -->
+    <g id="arms-group">
+      <rect id="left-arm"  x="70"  y="238" width="176" height="44" rx="22" ry="22"
+            fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11" stroke-linejoin="round"/>
+      <rect id="right-arm" x="286" y="238" width="176" height="44" rx="22" ry="22"
+            fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11" stroke-linejoin="round"/>
+    </g>
+    <g id="shoulder-caps">
+      <circle id="left-cap"  cx="92"  cy="260" r="22" fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11"/>
+      <circle id="right-cap" cx="308" cy="260" r="22" fill="#0D0B1E" stroke="#FFFFFF" stroke-width="11"/>
     </g>
 
     <!-- ============ TÊTE (devant) ============ -->
@@ -275,6 +282,8 @@
       <button data-pose="think">Réfléchir</button>
       <button data-pose="shrug">Hausser</button>
       <button data-pose="lean">Pencher</button>
+      <button data-pose="cross">Croiser</button>
+      <button data-pose="wave">Saluer</button>
     </div>
   </div>
 
@@ -318,8 +327,8 @@
   <p class="hint">
     Les 3 canaux se <b>combinent</b> : une émotion réelle = pose + dynamique + mode.
     Ex. <b>révélation</b> = pose <i>Ouvrir</i> + émotion <i>Révélation</i> + mode <i>Éveil</i>.
-    Les bras sont désormais des <b>tracés dessinés</b> (un par pose), ancrés à l'épaule :
-    raccord propre, plus de couture. <i>Pencher</i> reste une inclinaison du corps entier.
+    Les bras sont des <b>capsules qui pivotent à l'épaule</b> (un cache d'épaule rend le
+    raccord propre à tout angle). Toute pose = deux angles. <i>Pencher</i> incline le corps entier.
   </p>
 </div>
 
@@ -328,8 +337,6 @@
     var svg = document.getElementById('petit-eveille');
     var character = document.getElementById('character');
     var bubblesHead = document.getElementById('bubbles-head');
-    var leftArm = document.getElementById('left-arm');
-    var rightArm = document.getElementById('right-arm');
 
     // ----- Bascule générique par groupe (emo / mode) -----
     function bindGroup(group) {
@@ -349,26 +356,23 @@
     bindGroup('emo');
     bindGroup('mode');
 
-    // ----- POSES : bibliothèque de tracés de bras dessinés (échange du "d") -----
-    // Chaque pose est ancrée à l'épaule (arche + aisselle) -> raccord propre.
-    var ARMS = {
-      idle:  { L: "M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292",
-               R: "M342 318 C344 352 340 395 330 421 A 19 19 0 0 1 292 418 L292 301.5 A 9.5 9.5 0 0 0 282.5 292" },
-      point: { L: "M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292",
-               R: "M336 315 L397.6 331.3 A 22 22 0 0 1 374.4 368.7 L297 299" },
-      open:  { L: "M64 315 L10.7 394.5 A 22 22 0 0 1 49.3 415.5 L103 299",
-               R: "M336 315 L389.3 394.5 A 22 22 0 0 0 350.7 415.5 L297 299" },
-      think: { L: "M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292",
-               R: "M336 315 L268.7 188.4 A 22 22 0 0 1 231.3 211.6 L297 299" },
-      shrug: { L: "M64 315 L35.7 265.6 A 22 22 0 0 1 74.3 244.4 L103 299",
-               R: "M336 315 L364.3 265.6 A 22 22 0 0 0 325.7 244.4 L297 299" }
+    // ----- POSES : chaque bras est une capsule qui PIVOTE à l'épaule.
+    // Une pose = [angle bras gauche, angle bras droit] en degrés.
+    // 0 = horizontal vers l'intérieur, 90 = le long du corps (idle), 270 = vers le haut.
+    var POSES = {
+      idle:  [90, 90],
+      point: [90, 32],    // bras droit pointe vers le bas-droite
+      open:  [122, 58],   // bras ouverts en V
+      think: [90, 238],   // bras droit remonte vers la tête
+      shrug: [228, 312],  // épaules / je sais pas
+      lean:  [90, 90],    // + inclinaison du corps
+      cross: [12, 168],   // bras croisés (corrections de mythe)
+      wave:  [88, 302]    // saluer (intros)
     };
-    ARMS.lean = ARMS.idle;   // Pencher = bras au repos + inclinaison du corps
-
     function applyPose(name) {
-      var p = ARMS[name] || ARMS.idle;
-      leftArm.setAttribute('d', p.L);
-      rightArm.setAttribute('d', p.R);
+      var p = POSES[name] || POSES.idle;
+      svg.style.setProperty('--la', p[0] + 'deg');
+      svg.style.setProperty('--ra', p[1] + 'deg');
       svg.classList.toggle('pose-lean', name === 'lean');
     }
     var poseBtns = document.querySelectorAll('button[data-pose]');
@@ -379,6 +383,7 @@
         applyPose(b.dataset.pose);
       });
     });
+    applyPose('idle');   // état initial
 
     // ----- Bulles de pensée (générées selon l'émotion) -----
     // specs : [count, chaos(px), durée(s)]
