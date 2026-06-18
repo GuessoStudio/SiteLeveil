@@ -304,6 +304,8 @@ Une fois le système de poses construit (Phase 1) et le format figé, ajouter ce
 - [x] Décisions de cadrage (ce document)
 - [~] Phase 1 — Système de poses + émotions — **banc d'essai livré, en attente de validation** : `public/petit-eveille-poses.html`
       (6 poses, 13 émotions, 3 modes, bulles, entrée/sortie ; 3 canaux qui se combinent)
+      v2 : bras = bibliothèque de **tracés dessinés** ancrés à l'épaule (fin de la couture
+      due à la rotation d'un bras figé). Pencher = inclinaison du corps entier.
 - [ ] Phase 2 — La scène
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)

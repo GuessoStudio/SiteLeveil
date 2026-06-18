@@ -60,9 +60,11 @@
   /* #body : motricité d'émotion (respiration / shake / bounce) */
   #body { transform-box: view-box; transform-origin: 200px 360px; }
 
-  /* Transitions douces : opacités d'état + rotations de bras */
+  /* Transitions douces : opacités d'état + échange de pose des bras */
   #head-spiral, #torso-spiral, #head-glow, #torso-glow { transition: opacity .6s ease; }
-  #left-arm, #right-arm { transition: transform .4s cubic-bezier(.22,.61,.36,1); }
+  /* Les bras changent de POSE par échange du tracé "d" (bibliothèque dessinée, en JS).
+     Échange quasi instantané facultativement adouci là où le navigateur sait animer "d". */
+  #left-arm, #right-arm { transition: d .28s ease; }
 
   /* ============================== MODES (quoi est allumé) ============================== */
   .mode-emotions #torso-spiral { opacity: 1; }
@@ -76,16 +78,12 @@
   .mode-eveil #torso-spiral, .mode-eveil #head-spiral { opacity: 1; }
   .mode-eveil #torso-glow,   .mode-eveil #head-glow   { opacity: .9; }
 
-  /* ============================== POSES (bras + lean) ============================== */
-  /* Bras gauche : rotation positive = lève vers l'extérieur (gauche).
-     Bras droit  : rotation négative = lève vers l'extérieur (droite). */
-  .pose-point  #right-arm { transform: rotate(-62deg); }   /* pointe vers l'extérieur droit */
-  .pose-open   #left-arm  { transform: rotate(28deg); }    /* bras ouverts, accueil */
-  .pose-open   #right-arm { transform: rotate(-28deg); }
-  .pose-think  #left-arm  { transform: rotate(118deg); }   /* main remontée vers la tête (approx.) */
-  .pose-shrug  #left-arm  { transform: rotate(24deg); }    /* épaules / je sais pas */
-  .pose-shrug  #right-arm { transform: rotate(-24deg); }
-  .pose-lean   #character { --lean: -6deg; }               /* léger tilt d'insistance */
+  /* ============================== POSES ==============================
+     Bras = bibliothèque de tracés DESSINÉS, échangés en JS (attribut "d").
+     Chaque pose est ancrée à l'épaule (arche + aisselle) pour un raccord
+     propre, sans la couture qu'avait la rotation d'un bras figé.
+     Lean = inclinaison du corps entier (seul geste sans articulation). */
+  .pose-lean #character { --lean: -6deg; }
 
   /* ============================== ÉMOTIONS (dynamique) ============================== */
   @keyframes spin-cw      { to { transform: rotate(360deg); } }
@@ -271,12 +269,12 @@
   <div class="row">
     <span class="label">Pose (bras + corps)</span>
     <div class="btns">
-      <button data-group="pose" data-cls="" class="active">Idle</button>
-      <button data-group="pose" data-cls="pose-point">Pointer</button>
-      <button data-group="pose" data-cls="pose-open">Ouvrir</button>
-      <button data-group="pose" data-cls="pose-think">Réfléchir</button>
-      <button data-group="pose" data-cls="pose-shrug">Hausser</button>
-      <button data-group="pose" data-cls="pose-lean">Pencher</button>
+      <button data-pose="idle" class="active">Idle</button>
+      <button data-pose="point">Pointer</button>
+      <button data-pose="open">Ouvrir</button>
+      <button data-pose="think">Réfléchir</button>
+      <button data-pose="shrug">Hausser</button>
+      <button data-pose="lean">Pencher</button>
     </div>
   </div>
 
@@ -320,8 +318,8 @@
   <p class="hint">
     Les 3 canaux se <b>combinent</b> : une émotion réelle = pose + dynamique + mode.
     Ex. <b>révélation</b> = pose <i>Ouvrir</i> + émotion <i>Révélation</i> + mode <i>Éveil</i>.
-    Les bras (Réfléchir, Pointer) sont des approximations à valider : leur épaule étant
-    une pièce séparée, les grandes rotations montreront une légère couture à raffiner.
+    Les bras sont désormais des <b>tracés dessinés</b> (un par pose), ancrés à l'épaule :
+    raccord propre, plus de couture. <i>Pencher</i> reste une inclinaison du corps entier.
   </p>
 </div>
 
@@ -330,8 +328,10 @@
     var svg = document.getElementById('petit-eveille');
     var character = document.getElementById('character');
     var bubblesHead = document.getElementById('bubbles-head');
+    var leftArm = document.getElementById('left-arm');
+    var rightArm = document.getElementById('right-arm');
 
-    // ----- Bascule générique par groupe (pose / emo / mode) -----
+    // ----- Bascule générique par groupe (emo / mode) -----
     function bindGroup(group) {
       var btns = svg.ownerDocument.querySelectorAll('button[data-group="' + group + '"]');
       btns.forEach(function (b) {
@@ -346,9 +346,39 @@
         });
       });
     }
-    bindGroup('pose');
     bindGroup('emo');
     bindGroup('mode');
+
+    // ----- POSES : bibliothèque de tracés de bras dessinés (échange du "d") -----
+    // Chaque pose est ancrée à l'épaule (arche + aisselle) -> raccord propre.
+    var ARMS = {
+      idle:  { L: "M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292",
+               R: "M342 318 C344 352 340 395 330 421 A 19 19 0 0 1 292 418 L292 301.5 A 9.5 9.5 0 0 0 282.5 292" },
+      point: { L: "M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292",
+               R: "M336 315 L397.6 331.3 A 22 22 0 0 1 374.4 368.7 L297 299" },
+      open:  { L: "M64 315 L10.7 394.5 A 22 22 0 0 1 49.3 415.5 L103 299",
+               R: "M336 315 L389.3 394.5 A 22 22 0 0 0 350.7 415.5 L297 299" },
+      think: { L: "M58 318 C56 352 60 395 70 421 A 19 19 0 0 0 108 418 L108 301.5 A 9.5 9.5 0 0 1 117.5 292",
+               R: "M336 315 L268.7 188.4 A 22 22 0 0 1 231.3 211.6 L297 299" },
+      shrug: { L: "M64 315 L35.7 265.6 A 22 22 0 0 1 74.3 244.4 L103 299",
+               R: "M336 315 L364.3 265.6 A 22 22 0 0 0 325.7 244.4 L297 299" }
+    };
+    ARMS.lean = ARMS.idle;   // Pencher = bras au repos + inclinaison du corps
+
+    function applyPose(name) {
+      var p = ARMS[name] || ARMS.idle;
+      leftArm.setAttribute('d', p.L);
+      rightArm.setAttribute('d', p.R);
+      svg.classList.toggle('pose-lean', name === 'lean');
+    }
+    var poseBtns = document.querySelectorAll('button[data-pose]');
+    poseBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        poseBtns.forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        applyPose(b.dataset.pose);
+      });
+    });
 
     // ----- Bulles de pensée (générées selon l'émotion) -----
     // specs : [count, chaos(px), durée(s)]
@@ -394,10 +424,10 @@
       setTx(0);
       svg.className.baseVal = 'mode-eveil emo-calme';
       updateBubbles('emo-calme');
-      svg.ownerDocument.querySelectorAll('button[data-group]').forEach(function (b) {
-        var on = (b.dataset.cls === '' && b.dataset.group === 'pose') ||
-                 b.dataset.cls === 'emo-calme' || b.dataset.cls === 'mode-eveil';
-        b.classList.toggle('active', on);
+      applyPose('idle');
+      poseBtns.forEach(function (b) { b.classList.toggle('active', b.dataset.pose === 'idle'); });
+      document.querySelectorAll('button[data-group]').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.cls === 'emo-calme' || b.dataset.cls === 'mode-eveil');
       });
     });
   })();
