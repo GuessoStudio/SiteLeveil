@@ -273,6 +273,7 @@ const html = `<!DOCTYPE html>
     <button data-demo="neuro">▶ Neurosciences</button>
     <button data-demo="psy">▶ Psychologie</button>
     <button data-demo="dev">▶ Dév perso</button>
+    <button data-demo="habitudes">▶ Habitudes</button>
     <button id="demo-stop">⏹ Stop</button>
   </div></div>
 </div>
@@ -403,6 +404,27 @@ const html = `<!DOCTYPE html>
         {d:3000, title:"",                    sub:"L'action vient AVANT l'envie.",             pose:"point", emo:"emo-insight",   mode:"mode-neuro"},
         {d:3000, title:"",                    sub:"Le premier pas crée la dopamine.",          pose:"open",  emo:"emo-joie",      mode:"mode-eveil"},
         {d:3400, title:"COMMENCE PETIT",      sub:"Article complet → lien en bio",             pose:"wave",  emo:"emo-eveil",     mode:"mode-eveil"}
+      ],
+      habitudes: [
+        // [0-3s] ACCROCHE
+        {d:3000,  title:"21 JOURS ?",          sub:"Ce chiffre est faux.",                                      pose:"point", emo:"emo-insight",   mode:"mode-neuro"},
+        // [3-15s] POINT 1 — la vraie durée
+        {d:4000,  title:"66 JOURS",            sub:"La seule vraie étude : University College London.",         pose:"think", emo:"emo-focus",     mode:"mode-neuro"},
+        {d:4000,  title:"",                    sub:"De 18 à 254 jours selon le comportement.",                  pose:"open",  emo:"emo-confusion", mode:"mode-neuro"},
+        {d:4000,  title:"",                    sub:"Le chiffre unique n'existe pas. Mais ce n'est pas le sujet.", pose:"shrug", emo:"emo-reflexion", mode:"mode-neuro"},
+        // [15-32s] POINT 2 — le striatum
+        {d:4200,  title:"LE STRIATUM",         sub:"Ton habitude vit dans ton cerveau, pas dans ta volonté.",   pose:"point", emo:"emo-insight",   mode:"mode-neuro"},
+        {d:4500,  title:"",                    sub:"Le contrôle passe du cortex préfrontal au striatum.",       pose:"think", emo:"emo-focus",     mode:"mode-neuro"},
+        {d:4200,  title:"",                    sub:"Le striatum automatise. Ta volonté n'est plus aux commandes.", pose:"cross", emo:"emo-surcharge", mode:"mode-neuro"},
+        {d:4100,  title:"",                    sub:"C'est pour ça que « décider » d'arrêter ne marche pas.",    pose:"shrug", emo:"emo-fatigue",   mode:"mode-neuro"},
+        // [32-48s] POINT 3 — le contexte (Wendy Wood)
+        {d:4000,  title:"CHANGE LE CONTEXTE",  sub:"On arrête de compter sur la motivation.",                   pose:"point", emo:"emo-eveil",     mode:"mode-eveil"},
+        {d:4000,  title:"",                    sub:"Une habitude = un contexte qui déclenche une action.",      pose:"open",  emo:"emo-insight",   mode:"mode-eveil"},
+        {d:4000,  title:"",                    sub:"Wendy Wood : change l'environnement, l'habitude cède.",     pose:"think", emo:"emo-focus",     mode:"mode-eveil"},
+        {d:4000,  title:"",                    sub:"Range les biscuits. Téléphone dans une autre pièce.",       pose:"point", emo:"emo-joie",      mode:"mode-eveil"},
+        // [48-60s] CTA
+        {d:6000,  title:"3 LEVIERS",           sub:"Contexte · Empilement · Friction",                         pose:"open",  emo:"emo-fierte",    mode:"mode-eveil"},
+        {d:6000,  title:"LIEN EN BIO",         sub:"Article complet sur leveilmental.fr",                      pose:"wave",  emo:"emo-calme",     mode:"mode-eveil"}
       ]
     };
     var demoTimers = [];
