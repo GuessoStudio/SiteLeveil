@@ -166,6 +166,12 @@ const html = `<!DOCTYPE html>
     <button data-group="mode" data-cls="mode-neuro">Neurosciences</button>
     <button data-group="mode" data-cls="mode-eveil" class="active">Éveil complet</button>
   </div></div>
+  <div class="row"><span class="label">Démo — exemple de vidéo (lecture auto)</span><div class="btns">
+    <button data-demo="neuro">▶ Neurosciences</button>
+    <button data-demo="psy">▶ Psychologie</button>
+    <button data-demo="dev">▶ Dév perso</button>
+    <button id="demo-stop">⏹ Stop</button>
+  </div></div>
 </div>
 
 <script>
@@ -176,36 +182,85 @@ const html = `<!DOCTYPE html>
     var silhouette = document.getElementById('silhouette');
     var reflSil = document.getElementById('refl-silhouette');
 
+    var titleEl = document.getElementById('title');
+    var subEl   = document.getElementById('subtitle');
+    var inTitle = document.getElementById('in-title');
+    var inSub   = document.getElementById('in-subtitle');
+    var poseBtns = document.querySelectorAll('button[data-pose]');
+    var emoBtns  = document.querySelectorAll('button[data-group="emo"]');
+    var modeBtns = document.querySelectorAll('button[data-group="mode"]');
+
     var POSE_PATHS = ${pathsJson};
-    function applyPose(name) {
+    function markActive(list, attr, val) { list.forEach(function (x) { x.classList.toggle('active', x.dataset[attr] === val); }); }
+    function setPose(name) {
       var d = POSE_PATHS[name] || POSE_PATHS.idle;
       silhouette.setAttribute('d', d);
       reflSil.setAttribute('d', d);
       svg.classList.toggle('pose-lean', name === 'lean');
+      markActive(poseBtns, 'pose', name);
     }
-    document.querySelectorAll('button[data-pose]').forEach(function (b) {
-      b.addEventListener('click', function () {
-        document.querySelectorAll('button[data-pose]').forEach(function (x) { x.classList.remove('active'); });
-        b.classList.add('active');
-        applyPose(b.dataset.pose);
+    function setEmo(cls) {
+      emoBtns.forEach(function (x) { svg.classList.remove(x.dataset.cls); });
+      svg.classList.add(cls); markActive(emoBtns, 'cls', cls); updateBubbles(cls);
+    }
+    function setMode(cls) {
+      modeBtns.forEach(function (x) { svg.classList.remove(x.dataset.cls); frame.classList.remove(x.dataset.cls); });
+      svg.classList.add(cls); frame.classList.add(cls); markActive(modeBtns, 'cls', cls);
+    }
+    function setTitle(t) { titleEl.textContent = t; inTitle.value = t; }
+    function setSub(t)   { subEl.textContent = t; inSub.value = t; }
+
+    poseBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); setPose(b.dataset.pose); }); });
+    emoBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); setEmo(b.dataset.cls); }); });
+    modeBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); setMode(b.dataset.cls); }); });
+    inTitle.addEventListener('input', function (e) { titleEl.textContent = e.target.value; });
+    inSub.addEventListener('input', function (e) { subEl.textContent = e.target.value; });
+    setPose('idle');
+
+    // ----- DÉMO : mini-scripts qui se jouent tout seuls (avant-goût Phase 3) -----
+    var DEMOS = {
+      neuro: [
+        {d:2600, title:"TON CERVEAU TE MENT", sub:"Tu crois être multitâche ?",               pose:"point", emo:"emo-insight",   mode:"mode-neuro"},
+        {d:3000, title:"",                    sub:"Il ne fait jamais deux choses à la fois.",  pose:"think", emo:"emo-focus",     mode:"mode-neuro"},
+        {d:3000, title:"",                    sub:"Il bascule sans arrêt, et ça épuise.",      pose:"shrug", emo:"emo-surcharge", mode:"mode-neuro"},
+        {d:3000, title:"",                    sub:"Une notif = 23 min pour vraiment revenir.", pose:"open",  emo:"emo-confusion", mode:"mode-neuro"},
+        {d:3400, title:"REPRENDS LA MAIN",    sub:"Article complet → lien en bio",             pose:"wave",  emo:"emo-eveil",     mode:"mode-eveil"}
+      ],
+      psy: [
+        {d:2600, title:"LA TENDRESSE",        sub:"Pourquoi un mot doux apaise vraiment",      pose:"open",  emo:"emo-calme",     mode:"mode-emotions"},
+        {d:3000, title:"",                    sub:"Un geste tendre libère de l'ocytocine.",    pose:"think", emo:"emo-reflexion", mode:"mode-emotions"},
+        {d:3000, title:"",                    sub:"Le cerveau émotionnel se calme.",           pose:"idle",  emo:"emo-fierte",    mode:"mode-emotions"},
+        {d:3400, title:"OFFRE-LA",            sub:"Article complet → lien en bio",             pose:"wave",  emo:"emo-joie",      mode:"mode-eveil"}
+      ],
+      dev: [
+        {d:2600, title:"LA MOTIVATION MENT",  sub:"Tu attends d'avoir envie ?",                pose:"shrug", emo:"emo-confusion", mode:"mode-eveil"},
+        {d:3000, title:"",                    sub:"L'action vient AVANT l'envie.",             pose:"point", emo:"emo-insight",   mode:"mode-neuro"},
+        {d:3000, title:"",                    sub:"Le premier pas crée la dopamine.",          pose:"open",  emo:"emo-joie",      mode:"mode-eveil"},
+        {d:3400, title:"COMMENCE PETIT",      sub:"Article complet → lien en bio",             pose:"wave",  emo:"emo-eveil",     mode:"mode-eveil"}
+      ]
+    };
+    var demoTimers = [];
+    function stopDemo() { demoTimers.forEach(clearTimeout); demoTimers = []; }
+    function playDemo(key) {
+      stopDemo();
+      var shots = DEMOS[key]; if (!shots) return;
+      var t = 0;
+      shots.forEach(function (s) {
+        demoTimers.push(setTimeout(function () {
+          setTitle(s.title); setSub(s.sub); setPose(s.pose); setEmo(s.emo); setMode(s.mode);
+        }, t));
+        t += s.d;
       });
+      demoTimers.push(setTimeout(function () { setPose('idle'); setEmo('emo-calme'); }, t + 600));
+    }
+    document.querySelectorAll('button[data-demo]').forEach(function (b) {
+      b.addEventListener('click', function () { playDemo(b.dataset.demo); });
     });
-    applyPose('idle');
-
-    var emoBtns = document.querySelectorAll('button[data-group="emo"]');
-    emoBtns.forEach(function (b) { b.addEventListener('click', function () {
-      emoBtns.forEach(function (x) { svg.classList.remove(x.dataset.cls); x.classList.remove('active'); });
-      svg.classList.add(b.dataset.cls); b.classList.add('active'); updateBubbles(b.dataset.cls);
-    }); });
-
-    var modeBtns = document.querySelectorAll('button[data-group="mode"]');
-    modeBtns.forEach(function (b) { b.addEventListener('click', function () {
-      modeBtns.forEach(function (x) { svg.classList.remove(x.dataset.cls); frame.classList.remove(x.dataset.cls); x.classList.remove('active'); });
-      svg.classList.add(b.dataset.cls); frame.classList.add(b.dataset.cls); b.classList.add('active');
-    }); });
-
-    document.getElementById('in-title').addEventListener('input', function (e) { document.getElementById('title').textContent = e.target.value; });
-    document.getElementById('in-subtitle').addEventListener('input', function (e) { document.getElementById('subtitle').textContent = e.target.value; });
+    document.getElementById('demo-stop').addEventListener('click', function () {
+      stopDemo();
+      setTitle('LE CERVEAU MENT'); setSub('Pourquoi ton attention te trahit (et comment la reprendre)');
+      setPose('idle'); setEmo('emo-calme'); setMode('mode-eveil');
+    });
 
     var BUBBLE_SPECS = { 'emo-reflexion':[3,6,2.6], 'emo-confusion':[6,26,2.2], 'emo-surcharge':[8,30,1.6] };
     function updateBubbles(emoCls) {

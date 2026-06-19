@@ -346,6 +346,8 @@ de vraies vidéos (ne pas sur-construire avant) :
       éveil équilibré), emplacements titre + sous-titre éditables. Réutilise le
       personnage (silhouette + spirales + poses + émotions) du fichier poses.
       Build reproductible : `tools/petit-eveille/build-scene.mjs`.
+      Inclut un **lecteur de démo** : 3 mini-scripts auto-joués (neuro / psycho / dév perso)
+      qui enchaînent titre + pose + émotion + mode dans le temps — amorce concrète de la Phase 3.
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)
 - [ ] Phase 5 — Duo
