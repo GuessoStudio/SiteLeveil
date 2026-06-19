@@ -68,15 +68,15 @@
   /* ============================== ÉMOTIONS (dynamique) ============================== */
   @keyframes spin-cw      { to { transform: rotate(360deg); } }
   @keyframes spin-ccw     { to { transform: rotate(-360deg); } }
-  @keyframes wobble       { 0%{transform:rotate(0)} 25%{transform:rotate(20deg)} 75%{transform:rotate(-20deg)} 100%{transform:rotate(0)} }
-  @keyframes breathe      { 0%,100%{transform:scale(1)}       50%{transform:scale(1.018)} }
-  @keyframes breathe-ample{ 0%,100%{transform:scale(1)}       50%{transform:scale(1.028)} }
-  @keyframes breathe-low  { 0%,100%{transform:scale(.965) translateY(5px)} 50%{transform:scale(.972) translateY(5px)} }
-  @keyframes shake        { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
-  @keyframes bounce       { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-9px)} }
-  @keyframes glow-pulse   { 0%,100%{transform:scale(1)}       50%{transform:scale(1.7)} }
-  @keyframes glow-soft    { 0%,100%{transform:scale(1)}       50%{transform:scale(1.25)} }
-  @keyframes glow-flicker { 0%,100%{transform:scale(1)}       50%{transform:scale(.55)} }
+  @keyframes wobble       { 0%{transform:rotate(0)} 25%{transform:rotate(24deg)} 75%{transform:rotate(-24deg)} 100%{transform:rotate(0)} }
+  @keyframes breathe      { 0%,100%{transform:scale(1)}       50%{transform:scale(1.045)} }
+  @keyframes breathe-ample{ 0%,100%{transform:scale(1)}       50%{transform:scale(1.065)} }
+  @keyframes breathe-low  { 0%,100%{transform:scale(.94) translateY(9px)} 50%{transform:scale(.955) translateY(9px)} }
+  @keyframes shake        { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+  @keyframes bounce       { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-16px)} }
+  @keyframes glow-pulse   { 0%,100%{transform:scale(1)}       50%{transform:scale(2.2)} }
+  @keyframes glow-soft    { 0%,100%{transform:scale(1)}       50%{transform:scale(1.55)} }
+  @keyframes glow-flicker { 0%,100%{transform:scale(1)}       50%{transform:scale(.4)} }
   @keyframes rise         { 0%{transform:translateY(0); opacity:0} 18%{opacity:.9} 100%{transform:translateY(-56px); opacity:0} }
 
   .emo-calme #head-spiral  { animation: spin-cw  60s linear infinite; }
@@ -84,8 +84,9 @@
   .emo-calme #body         { animation: breathe-ample 7s ease-in-out infinite; }
   .emo-reflexion #head-spiral { animation: spin-cw 7s linear infinite; }
   .emo-reflexion #body        { animation: breathe 5s ease-in-out infinite; }
-  .emo-focus #head-spiral { animation: spin-cw 16s linear infinite; }
+  .emo-focus #head-spiral { animation: spin-cw 10s linear infinite; }
   .emo-focus #head-glow   { animation: glow-soft 4s ease-in-out infinite; }
+  .emo-focus #body        { animation: breathe 6s ease-in-out infinite; }
   .emo-insight #head-spiral { animation: spin-cw 4s linear infinite; }
   .emo-insight #head-glow   { animation: glow-pulse 1.1s ease-in-out infinite; }
   .emo-insight #body        { animation: bounce 1.1s ease-in-out infinite; }
@@ -119,9 +120,9 @@
   .emo-eveil #torso-glow   { animation: glow-soft 4.5s ease-in-out infinite; }
   .emo-eveil #body         { animation: breathe 5s ease-in-out infinite; }
 
-  @media (prefers-reduced-motion: reduce) {
-    #petit-eveille *, .bubble { animation: none !important; }
-  }
+  /* NB : pas de coupure sur prefers-reduced-motion ici — l'animation EST le
+     contenu de ce banc d'essai (et de la future vidéo). Si tu ne vois rien
+     bouger, vérifie que « réduire les animations » est désactivé côté OS. */
 
   /* ============================== UI ============================== */
   .panel { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 14px; }
