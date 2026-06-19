@@ -60,9 +60,20 @@
 
   .vignette { background:radial-gradient(ellipse 75% 60% at 50% 44%, transparent 55%, rgba(4,2,14,.65) 100%); }
 
-  .particles span { position:absolute; width:3px; height:3px; border-radius:50%;
-    background:var(--tint); opacity:0; animation:float 9s ease-in-out infinite; }
-  @keyframes float { 0%{opacity:0; transform:translateY(8px)} 25%{opacity:.5} 75%{opacity:.4} 100%{opacity:0; transform:translateY(-14px)} }
+  /* Étoiles d'ambiance (fond, discrètes) — taille/durée fixées en JS */
+  .particles span { position:absolute; border-radius:50%;
+    background:var(--tint); opacity:0; animation:float linear infinite; }
+  @keyframes float { 0%{opacity:0; transform:translateY(8px)} 25%{opacity:.28} 75%{opacity:.2} 100%{opacity:0; transform:translateY(-14px)} }
+
+  /* Particules d'émanation : naissent de la tête (neuro) / du torse (émotions) /
+     des deux (éveil). Couleur, vitesse, direction et densité propres au mode (JS). */
+  .emitp { position:absolute; border-radius:50%; pointer-events:none;
+    transform:translate(-50%,-50%); animation:emit ease-out forwards; }
+  @keyframes emit {
+    0%   { opacity:0; transform:translate(-50%,-50%) scale(.3); }
+    15%  { opacity:.95; }
+    100% { opacity:0; transform:translate(-50%,-50%) translate(var(--dx,0), var(--dy,0)) scale(1); }
+  }
 
   /* =========================== ICÔNES & MÉTÉO (FX activables) =========================== */
   .fx { position:absolute; opacity:0; transition:opacity .5s ease; pointer-events:none; }
@@ -272,6 +283,7 @@
   <div class="title" id="title">LE CERVEAU MENT</div>
   <div class="subtitle" id="subtitle">Pourquoi ton attention te trahit (et comment la reprendre)</div>
   <div class="layer particles" id="particles"></div>
+  <div class="layer emit" id="emit"></div>
   <div class="layer vignette"></div>
 </div>
 
@@ -498,15 +510,70 @@
       }
     }
 
+    // ----- Étoiles d'ambiance (fond, discrètes) -----
     var pc = document.getElementById('particles');
-    for (var i = 0; i < 14; i++) {
+    for (var i = 0; i < 22; i++) {
       var s = document.createElement('span');
-      s.style.left = (8 + Math.random()*84) + '%';
-      s.style.top  = (12 + Math.random()*64) + '%';
+      var sz = (1.6 + Math.random()*2.2).toFixed(1);
+      s.style.width = sz + 'px'; s.style.height = sz + 'px';
+      s.style.left = (5 + Math.random()*90) + '%';
+      s.style.top  = (8 + Math.random()*72) + '%';
       s.style.animationDelay = (Math.random()*9).toFixed(1) + 's';
-      s.style.transform = 'scale(' + (0.6 + Math.random()*1.2).toFixed(2) + ')';
+      s.style.animationDuration = (8 + Math.random()*6).toFixed(1) + 's';
       pc.appendChild(s);
     }
+
+    // ----- Particules d'émanation selon le mode -----
+    //   neuro  -> tête : bleu, rapides, courtes, toutes directions (synapses)
+    //   émotions -> torse : rose, lentes, qui montent doucement (ressenti)
+    //   éveil  -> tête + torse : violet, nombreuses, qui rayonnent (conscience)
+    // Origines en % du cadre, calées sur les spirales (tête ~56.5%, torse ~64%).
+    var emitLayer = document.getElementById('emit');
+    var EMIT = {
+      'mode-neuro':    { color:'#8fb0ff', src:[[50,56.5]],         rate:130, size:[2,4], dur:[0.6,1.1], dist:[6,13],  angle:[0,360],   glow:7 },
+      'mode-emotions': { color:'#ff93c4', src:[[50,64]],           rate:240, size:[3,6], dur:[2.2,3.4], dist:[10,20], angle:[248,292], glow:9 },
+      'mode-eveil':    { color:'#b9a3ff', src:[[50,56.5],[50,64]], rate:110, size:[2,5], dur:[1.4,2.6], dist:[12,26], angle:[0,360],   glow:8 }
+    };
+    function rnd(a, b) { return a + Math.random() * (b - a); }
+    function curMode() {
+      if (frame.classList.contains('mode-neuro')) return 'mode-neuro';
+      if (frame.classList.contains('mode-emotions')) return 'mode-emotions';
+      return 'mode-eveil';
+    }
+    // décalage horizontal de l'acteur (marche) pour que les particules le suivent
+    function actorShiftPct() {
+      var t = getComputedStyle(actor).transform;
+      var m = (t && t.indexOf('matrix') === 0) ? t.match(/matrix(([^)]+))/) : null;
+      if (!m) return 0;
+      return (parseFloat(m[1].split(',')[4]) / (frame.clientWidth || 1)) * 100;
+    }
+    var lastEmit = 0;
+    setInterval(function () {
+      var conf = EMIT[curMode()]; if (!conf) return;
+      var now = (window.performance ? performance.now() : Date.now());
+      if (now - lastEmit < conf.rate) return;
+      lastEmit = now;
+      var H = frame.clientHeight; if (!H) return;
+      var src = conf.src[(Math.random() * conf.src.length) | 0];
+      var shift = actor.classList.contains('walking') ? actorShiftPct() : 0;
+      var ang = rnd(conf.angle[0], conf.angle[1]) * Math.PI / 180;
+      var dist = rnd(conf.dist[0], conf.dist[1]) / 100 * H;
+      var sz = rnd(conf.size[0], conf.size[1]);
+      var dur = rnd(conf.dur[0], conf.dur[1]);
+      var p = document.createElement('span');
+      p.className = 'emitp';
+      p.style.left = (src[0] + shift + rnd(-2.2, 2.2)).toFixed(2) + '%';
+      p.style.top  = (src[1] + rnd(-2, 2)).toFixed(2) + '%';
+      p.style.width = sz.toFixed(1) + 'px';
+      p.style.height = sz.toFixed(1) + 'px';
+      p.style.background = conf.color;
+      p.style.boxShadow = '0 0 ' + conf.glow + 'px ' + conf.color;
+      p.style.setProperty('--dx', (Math.cos(ang) * dist).toFixed(1) + 'px');
+      p.style.setProperty('--dy', (Math.sin(ang) * dist).toFixed(1) + 'px');
+      p.style.animationDuration = dur.toFixed(2) + 's';
+      emitLayer.appendChild(p);
+      setTimeout(function () { p.remove(); }, dur * 1000 + 80);
+    }, 45);
   })();
 </script>
 
