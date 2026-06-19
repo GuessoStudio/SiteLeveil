@@ -304,11 +304,15 @@ Une fois le système de poses construit (Phase 1) et le format figé, ajouter ce
 - [x] Décisions de cadrage (ce document)
 - [~] Phase 1 — Système de poses + émotions — **banc d'essai livré, en attente de validation** : `public/petit-eveille-poses.html`
       (8 poses, 13 émotions, 3 modes, bulles, entrée/sortie ; 3 canaux qui se combinent)
-      v3 (Route A validée) : bras = **capsules qui pivotent à l'épaule** + cache d'épaule
-      (cercle) qui masque le raccord à tout angle. Une pose = deux angles, donc poses
-      illimitées. 8 poses : idle, pointer, ouvrir, réfléchir, hausser, pencher,
-      **bras croisés** (corrections de mythe), **saluer** (intros).
-      Compromis assumé : petite articulation d'épaule visible.
+      v4 (solution finale) : le corps est une **silhouette unifiée** par pose, obtenue par
+      **fusion booléenne** (tête + torse + bras + jambes). Plus aucun trait superposé aux
+      articulations — le problème des bras est réglé par construction. Spirales/halos/bulles
+      posés par-dessus. Passage de pose = cut net (style Humain Penseur). Lean = inclinaison.
+      Générateur reproductible : `tools/petit-eveille/generate-poses.mjs` (dép. dev `polygon-clipping`).
+      8 poses : idle, pointer, ouvrir, réfléchir, hausser, pencher, bras croisés, saluer.
+      Historique des tentatives (rotation d'un bras figé, tracés dessinés, capsules+cache)
+      → toutes recalées : un monoligne creux ne supporte pas des pièces séparées qui se
+      chevauchent. La fusion est la seule voie propre en code.
 - [ ] Phase 2 — La scène
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)
