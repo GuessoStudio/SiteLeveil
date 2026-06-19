@@ -82,13 +82,11 @@ const html = `<!DOCTYPE html>
     background:radial-gradient(ellipse at center, var(--tint), transparent 68%);
     filter:blur(7px); opacity:.55; transition:background .6s; }
 
-  .reflection { position:absolute; left:50%; top:76.5%; height:57%; width:auto;
-    transform:translateX(-50%) scaleY(-1); transform-origin:top center;
-    opacity:.16; filter:blur(3px);
-    -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 55%);
-            mask-image:linear-gradient(to bottom, transparent 0%, #000 55%); }
+  .reflection { position:absolute; left:50%; top:39.5%; height:45%; width:auto;
+    transform:translateX(-50%) scaleY(-1); transform-origin:50% 82%;
+    opacity:.14; filter:blur(4px); }
 
-  #petit-eveille { position:absolute; left:50%; top:29.5%; height:57%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
+  #petit-eveille { position:absolute; left:50%; top:39.5%; height:45%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
 
   .title { position:absolute; top:6%; left:0; right:0; text-align:center; padding:0 7%;
     color:#fff; font-weight:800; font-size:clamp(20px,5.4vw,34px); line-height:1.05;
