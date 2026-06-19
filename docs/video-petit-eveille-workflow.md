@@ -259,6 +259,32 @@ Une fois le système de poses construit (Phase 1) et le format figé, ajouter ce
 
 ---
 
+## 6 bis. Backlog poses & émotions (à faire plus tard)
+
+Validé sur le principe, à implémenter quand le besoin se confirmera en montant
+de vraies vidéos (ne pas sur-construire avant) :
+
+**Poses ciblées par pilier**
+- [ ] **Pointer vers sa propre tête** (neurosciences) : le perso désigne sa
+      spirale-cognition. Signature unique, idéal quand on parle du cerveau.
+- [ ] **Main sur le plexus / le cœur** (psychologie) : le bras se pose sur la
+      spirale du torse. Lien direct avec « émotions = spirale du ventre ».
+- [ ] **Facepalm (main sur le front)** : « l'erreur que tout le monde fait ».
+
+**Émotions — améliorer plutôt qu'ajouter**
+- [ ] **Zoom de spirale** : la spirale qui se resserre (concentration) ou se
+      déploie (idée qui s'ouvre), en plus de la rotation. Le geste le plus *neuro*.
+- [ ] **Inversion du sens de rotation** sur un mot clé = « changer d'avis ».
+- [ ] **Curiosité** : spirale qui accélère doucement depuis le calme + halo qui
+      monte (état d'accroche de début de vidéo).
+
+> Implémentation poses : ajouter l'angle/le tracé dans `tools/petit-eveille/generate-poses.mjs`
+> (pour tête/cœur/facepalm il faudra des bras pliés à 2 segments, donc une
+> capsule supplémentaire « avant-bras » dans le générateur).
+> Le zoom de spirale = une keyframe `scale` combinée à la rotation sur `#head-spiral`.
+
+---
+
 ## 7. Roadmap de construction (ordre logique)
 
 > Le goulot d'étranglement n'est PAS le choix OBS vs Remotion.
@@ -313,7 +339,13 @@ Une fois le système de poses construit (Phase 1) et le format figé, ajouter ce
       Historique des tentatives (rotation d'un bras figé, tracés dessinés, capsules+cache)
       → toutes recalées : un monoligne creux ne supporte pas des pièces séparées qui se
       chevauchent. La fusion est la seule voie propre en code.
-- [ ] Phase 2 — La scène
+- [~] Phase 2 — La scène — **banc d'essai livré, en attente de validation** : `public/petit-eveille-scene.html`
+      Décor TikTok 9:16 : fond violet nuit (charte `#140d36→#0a0720`), sol lumineux +
+      halo au sol sous les pieds (perso lumineux = signature), reflet, particules
+      d'ambiance, vignette, teinte réactive au mode (neuro froid / émotions chaud /
+      éveil équilibré), emplacements titre + sous-titre éditables. Réutilise le
+      personnage (silhouette + spirales + poses + émotions) du fichier poses.
+      Build reproductible : `tools/petit-eveille/build-scene.mjs`.
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)
 - [ ] Phase 5 — Duo

@@ -39,3 +39,19 @@ l'objet `BODY` du script.
 
 > Les spirales, halos et bulles ne sont PAS dans la silhouette : ils sont posés
 > par-dessus dans le HTML (inchangés selon les poses).
+
+## `build-scene.mjs`
+
+Génère `public/petit-eveille-scene.html` (la scène TikTok 9:16) en réutilisant
+le personnage de `public/petit-eveille-poses.html` (CSS émotions/poses, tracés
+des silhouettes, spirales) et en l'habillant d'un décor : fond violet nuit, sol
+lumineux + halo au sol, reflet, particules, vignette, teinte réactive au mode,
+emplacements titre + sous-titre éditables.
+
+```bash
+node tools/petit-eveille/build-scene.mjs
+```
+
+> `petit-eveille-poses.html` est la source de vérité du personnage (le « labo »).
+> Après toute évolution du perso, relancer ce script pour mettre la scène à jour.
+
