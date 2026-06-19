@@ -40,11 +40,11 @@
   .actor.walking { animation: walk-glide 8s ease-in-out infinite; }
   @keyframes walk-glide { 0%{transform:translateX(-15%)} 50%{transform:translateX(15%)} 100%{transform:translateX(-15%)} }
 
-  .reflection { position:absolute; left:50%; top:45.5%; height:36%; width:auto;
+  .reflection { position:absolute; left:50%; top:50.6%; height:30%; width:auto;
     transform:translateX(-50%) scaleY(-1); transform-origin:50% 82%;
     opacity:.14; filter:blur(4px); }
 
-  #petit-eveille { position:absolute; left:50%; top:45.5%; height:36%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
+  #petit-eveille { position:absolute; left:50%; top:50.6%; height:30%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
   /* nom unique "actor-bob" : le labo (charCSS, inséré plus bas) définit aussi un
      @keyframes walk-bob SANS translateX(-50%) ; s'il gagnait, le perso perdait son
      centrage et se décalait à droite de son reflet pendant la marche. */
@@ -113,14 +113,14 @@
 
   /* Idée : ampoule au-dessus de la tête — overlay plein cadre, ampoule en % du cadre */
   .fx-idea { inset:0; }
-  .fx-idea .bulb { position:absolute; left:50%; top:21%; width:11%; transform:translateX(-50%);
+  .fx-idea .bulb { position:absolute; left:50%; top:44%; width:11%; transform:translateX(-50%);
     filter:drop-shadow(0 0 9px rgba(255,212,94,.8)); animation:idea-pop 2.2s ease-in-out infinite; }
   .fx-idea svg { display:block; width:100%; }
   @keyframes idea-pop { 0%,100%{transform:translateX(-50%) scale(.94)} 35%{transform:translateX(-50%) scale(1.09)} }
 
   /* Bulle de discussion — overlay plein cadre ; texte éditable depuis le panneau */
   .fx-bubble { inset:0; }
-  .fx-bubble .box { position:absolute; left:57%; top:28%; max-width:36%; background:#fff; color:#1b1330; border-radius:14px;
+  .fx-bubble .box { position:absolute; left:60%; top:46%; max-width:34%; background:#fff; color:#1b1330; border-radius:14px;
     padding:9px 13px; font-size:clamp(11px,2.6vw,15px); font-weight:600; line-height:1.25; box-shadow:0 6px 22px rgba(0,0,0,.35); }
   .fx-bubble .box::after { content:""; position:absolute; left:-9px; top:18px;
     border:8px solid transparent; border-right-color:#fff; }
