@@ -29,6 +29,7 @@ const ARTICLE_SLUGS = [
   'regulation-emotionnelle-techniques-psychologie',
   'resoudre-un-conflit-methodes-psychologie',
   'objectifs-smart-methode-neurosciences',
+  'formation-habitudes-cerveau-neurosciences',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

@@ -208,6 +208,18 @@ const Resources = () => {
       downloadUrl: "/downloads/objectifs-smart-methode-neurosciences-guide.pdf"
     },
     {
+      id: 25,
+      title: "Fiche Changer une Habitude — le protocole en 4 étapes",
+      description: "Agir sur le cerveau, pas sur la volonté : repérer le signal, modifier le contexte, empiler sur un déclencheur stable, tenir dans la durée. Sources : Lally (UCL), Tricomi (Caltech), Wood (USC), Graybiel (MIT).",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/formation-habitudes-cerveau-neurosciences-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

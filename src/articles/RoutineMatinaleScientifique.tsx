@@ -455,7 +455,7 @@ export default function RoutineMatinaleScientifique() {
           {/* H2 — Les 5 pratiques */}
           <h2>Quelles sont les 5 pratiques matinales validées par la neurobiologie ?</h2>
           <p>
-            Ces cinq pratiques sont directement dérivées des mécanismes décrits ci-dessus. Chacune peut être adoptée seule. Ensemble, elles forment une fenêtre de 30 à 45 minutes qui optimise la CAR et prépare le cortex préfrontal pour la journée.
+            Ces cinq pratiques sont directement dérivées des mécanismes décrits ci-dessus. Chacune peut être adoptée seule. Ensemble, elles forment une fenêtre de 30 à 45 minutes qui optimise la CAR et prépare le cortex préfrontal pour la journée. Répétées chaque matin, elles finissent par s'automatiser : c'est tout le principe de <Link to="/blog/formation-habitudes-cerveau-neurosciences/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">la formation des habitudes dans le cerveau</Link>, où le contrôle passe progressivement de la volonté au striatum.
           </p>
 
           <h3>1. Lumière naturelle dans les 15 premières minutes</h3>

@@ -36,4 +36,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "regulation-emotionnelle-techniques-psychologie": lazy(() => import("../articles/RegulationEmotionnelle")),
   "resoudre-un-conflit-methodes-psychologie": lazy(() => import("../articles/ResoudreUnConflit")),
   "objectifs-smart-methode-neurosciences": lazy(() => import("../articles/ObjectifsSmart")),
+  "formation-habitudes-cerveau-neurosciences": lazy(() => import("../articles/FormationHabitudes")),
 };

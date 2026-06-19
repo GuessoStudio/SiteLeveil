@@ -268,5 +268,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/objectifs-smart-methode-neurosciences-cover",
         slug: "objectifs-smart-methode-neurosciences",
         featured: false
+    },
+    {
+        id: 25,
+        title: "Formation des habitudes dans le cerveau : ce que disent les neurosciences",
+        excerpt: "Comment le cerveau forme les habitudes : le circuit du striatum, le transfert dorsomédial vers dorsolatéral, le mythe des 21 jours et 3 leviers validés pour les changer.",
+        category: "Développement Personnel",
+        readTime: 14,
+        date: "2026-06-19",
+        image: "/images/articles/formation-habitudes-cerveau-neurosciences-cover",
+        slug: "formation-habitudes-cerveau-neurosciences",
+        featured: false
     }
 ];

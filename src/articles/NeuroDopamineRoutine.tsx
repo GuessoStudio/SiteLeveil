@@ -895,7 +895,7 @@ const NeuroDopamineRoutine = () => {
             Combien de temps faut-il pour restaurer un système dopaminergique dysfonctionnel ?
           </summary>
           <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300">
-            La neuroplasticité dopaminergique nécessite 14-90 jours selon le degré de dysfonction. Les changements initiaux (sensibilité) apparaissent en 7-14 jours, mais l'automatisation complète prend 66 jours en moyenne (Lally et al., 2010). Les protocoles détox de 30 jours montrent des résultats mesurables en imagerie cérébrale.
+            La neuroplasticité dopaminergique nécessite 14-90 jours selon le degré de dysfonction. Les changements initiaux (sensibilité) apparaissent en 7-14 jours, mais l'automatisation complète prend 66 jours en moyenne (Lally et al., 2010). Les protocoles détox de 30 jours montrent des résultats mesurables en imagerie cérébrale. Pour comprendre comment le cerveau grave ces nouveaux comportements, voir <Link to="/blog/formation-habitudes-cerveau-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">la formation des habitudes dans le cerveau</Link>.
           </p>
         </details>
 
