@@ -45,8 +45,11 @@
     opacity:.14; filter:blur(4px); }
 
   #petit-eveille { position:absolute; left:50%; top:45.5%; height:36%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
-  @keyframes walk-bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-1.8%)} }
-  .actor.walking #petit-eveille { animation: walk-bob .5s ease-in-out infinite; }
+  /* nom unique "actor-bob" : le labo (charCSS, inséré plus bas) définit aussi un
+     @keyframes walk-bob SANS translateX(-50%) ; s'il gagnait, le perso perdait son
+     centrage et se décalait à droite de son reflet pendant la marche. */
+  @keyframes actor-bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-1.8%)} }
+  .actor.walking #petit-eveille { animation: actor-bob .5s ease-in-out infinite; }
 
   .title { position:absolute; top:6%; left:0; right:0; text-align:center; padding:0 7%;
     color:#fff; font-weight:800; font-size:clamp(20px,5.4vw,34px); line-height:1.05;
@@ -68,9 +71,11 @@
   .frame.fx-idea .fx-idea, .frame.fx-bubble .fx-bubble { opacity:1; }
   .frame.fx-storm .fx-storm { opacity:1; }
 
-  /* Soleil : noyau chaud + rayons tournants */
-  .fx-sun { right:8%; top:12%; width:118px; height:118px; }
-  .fx-sun .core { position:absolute; inset:32px; border-radius:50%;
+  /* Soleil : noyau chaud + rayons tournants — overlay plein cadre (inset:0) pour
+     ne JAMAIS influer sur la mise en page ; taille du disque relative au cadre. */
+  .fx-sun { inset:0; }
+  .fx-sun .disc { position:absolute; top:10%; right:7%; width:21%; aspect-ratio:1; }
+  .fx-sun .core { position:absolute; inset:27%; border-radius:50%;
     background:radial-gradient(circle,#fff7da 0%,#ffce5a 60%,transparent 74%);
     box-shadow:0 0 38px 12px rgba(255,200,80,.45); animation:sun-pulse 4s ease-in-out infinite; }
   .fx-sun .rays { position:absolute; inset:0; border-radius:50%;
@@ -106,16 +111,17 @@
   @keyframes storm-flash { 0%,100%{opacity:0} 3%{opacity:.5} 5%{opacity:0} 8%{opacity:.32} 10%{opacity:0} }
   @keyframes storm-bolt  { 0%,100%{opacity:0} 3%{opacity:1} 9%{opacity:0} }
 
-  /* Idée : ampoule au-dessus de la tête (scale seul -> pas de conflit d'opacité) */
-  .fx-idea { left:50%; top:30%; width:60px; transform:translateX(-50%);
+  /* Idée : ampoule au-dessus de la tête — overlay plein cadre, ampoule en % du cadre */
+  .fx-idea { inset:0; }
+  .fx-idea .bulb { position:absolute; left:50%; top:21%; width:11%; transform:translateX(-50%);
     filter:drop-shadow(0 0 9px rgba(255,212,94,.8)); animation:idea-pop 2.2s ease-in-out infinite; }
   .fx-idea svg { display:block; width:100%; }
   @keyframes idea-pop { 0%,100%{transform:translateX(-50%) scale(.94)} 35%{transform:translateX(-50%) scale(1.09)} }
 
-  /* Bulle de discussion (texte éditable depuis le panneau) */
-  .fx-bubble { left:57%; top:33%; max-width:34%; }
-  .fx-bubble .box { position:relative; background:#fff; color:#1b1330; border-radius:14px;
-    padding:9px 13px; font-size:13px; font-weight:600; line-height:1.25; box-shadow:0 6px 22px rgba(0,0,0,.35); }
+  /* Bulle de discussion — overlay plein cadre ; texte éditable depuis le panneau */
+  .fx-bubble { inset:0; }
+  .fx-bubble .box { position:absolute; left:57%; top:28%; max-width:36%; background:#fff; color:#1b1330; border-radius:14px;
+    padding:9px 13px; font-size:clamp(11px,2.6vw,15px); font-weight:600; line-height:1.25; box-shadow:0 6px 22px rgba(0,0,0,.35); }
   .fx-bubble .box::after { content:""; position:absolute; left:-9px; top:18px;
     border:8px solid transparent; border-right-color:#fff; }
 
@@ -256,12 +262,12 @@
       </g></g>
     </svg>
   </div>
-  <div class="fx fx-sun"><div class="rays"></div><div class="core"></div></div>
+  <div class="fx fx-sun"><div class="disc"><div class="rays"></div><div class="core"></div></div></div>
   <div class="fx fx-rain" id="rain"></div>
   <div class="fx fx-snow" id="snow"></div>
   <div class="fx fx-hearts" id="hearts"></div>
   <div class="fx fx-storm"><div class="flash"></div><svg class="bolt" viewBox="0 0 40 80" aria-hidden="true"><path d="M24 2 L7 46 L19 46 L14 78 L37 32 L23 32 Z" fill="#eef3ff"/></svg></div>
-  <div class="fx fx-idea"><svg viewBox="0 0 64 80" aria-hidden="true"><path d="M32 6 a22 22 0 0 1 13 39 c-3 3 -4 6 -4 10 H23 c0 -4 -1 -7 -4 -10 A22 22 0 0 1 32 6 Z" fill="#fff4c2" fill-opacity="0.20" stroke="#ffe08a" stroke-width="4" stroke-linejoin="round"/><line x1="24" y1="62" x2="40" y2="62" stroke="#ffe08a" stroke-width="4" stroke-linecap="round"/><line x1="26" y1="70" x2="38" y2="70" stroke="#ffe08a" stroke-width="4" stroke-linecap="round"/></svg></div>
+  <div class="fx fx-idea"><div class="bulb"><svg viewBox="0 0 64 80" aria-hidden="true"><path d="M32 6 a22 22 0 0 1 13 39 c-3 3 -4 6 -4 10 H23 c0 -4 -1 -7 -4 -10 A22 22 0 0 1 32 6 Z" fill="#fff4c2" fill-opacity="0.20" stroke="#ffe08a" stroke-width="4" stroke-linejoin="round"/><line x1="24" y1="62" x2="40" y2="62" stroke="#ffe08a" stroke-width="4" stroke-linecap="round"/><line x1="26" y1="70" x2="38" y2="70" stroke="#ffe08a" stroke-width="4" stroke-linecap="round"/></svg></div></div>
   <div class="fx fx-bubble"><div class="box" id="bubble-box">Hmm…</div></div>
   <div class="title" id="title">LE CERVEAU MENT</div>
   <div class="subtitle" id="subtitle">Pourquoi ton attention te trahit (et comment la reprendre)</div>
