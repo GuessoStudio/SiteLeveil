@@ -82,11 +82,18 @@ const html = `<!DOCTYPE html>
     background:radial-gradient(ellipse at center, var(--tint), transparent 68%);
     filter:blur(7px); opacity:.55; transition:background .6s; }
 
-  .reflection { position:absolute; left:50%; top:39.5%; height:45%; width:auto;
+  /* L'acteur (perso + reflet) : conteneur déplaçable pour la marche */
+  .actor { position:absolute; inset:0; pointer-events:none; }
+  .actor.walking { animation: walk-glide 8s ease-in-out infinite; }
+  @keyframes walk-glide { 0%{transform:translateX(-15%)} 50%{transform:translateX(15%)} 100%{transform:translateX(-15%)} }
+
+  .reflection { position:absolute; left:50%; top:45.5%; height:36%; width:auto;
     transform:translateX(-50%) scaleY(-1); transform-origin:50% 82%;
     opacity:.14; filter:blur(4px); }
 
-  #petit-eveille { position:absolute; left:50%; top:39.5%; height:45%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
+  #petit-eveille { position:absolute; left:50%; top:45.5%; height:36%; width:auto; transform:translateX(-50%); display:block; overflow:visible; }
+  @keyframes walk-bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-1.8%)} }
+  .actor.walking #petit-eveille { animation: walk-bob .5s ease-in-out infinite; }
 
   .title { position:absolute; top:6%; left:0; right:0; text-align:center; padding:0 7%;
     color:#fff; font-weight:800; font-size:clamp(20px,5.4vw,34px); line-height:1.05;
@@ -100,6 +107,64 @@ const html = `<!DOCTYPE html>
   .particles span { position:absolute; width:3px; height:3px; border-radius:50%;
     background:var(--tint); opacity:0; animation:float 9s ease-in-out infinite; }
   @keyframes float { 0%{opacity:0; transform:translateY(8px)} 25%{opacity:.5} 75%{opacity:.4} 100%{opacity:0; transform:translateY(-14px)} }
+
+  /* =========================== ICÔNES & MÉTÉO (FX activables) =========================== */
+  .fx { position:absolute; opacity:0; transition:opacity .5s ease; pointer-events:none; }
+  .frame.fx-sun .fx-sun, .frame.fx-rain .fx-rain, .frame.fx-storm .fx-rain,
+  .frame.fx-snow .fx-snow, .frame.fx-hearts .fx-hearts,
+  .frame.fx-idea .fx-idea, .frame.fx-bubble .fx-bubble { opacity:1; }
+  .frame.fx-storm .fx-storm { opacity:1; }
+
+  /* Soleil : noyau chaud + rayons tournants */
+  .fx-sun { right:8%; top:12%; width:118px; height:118px; }
+  .fx-sun .core { position:absolute; inset:32px; border-radius:50%;
+    background:radial-gradient(circle,#fff7da 0%,#ffce5a 60%,transparent 74%);
+    box-shadow:0 0 38px 12px rgba(255,200,80,.45); animation:sun-pulse 4s ease-in-out infinite; }
+  .fx-sun .rays { position:absolute; inset:0; border-radius:50%;
+    background:repeating-conic-gradient(from 0deg, rgba(255,206,90,0) 0 7deg, rgba(255,206,90,.34) 7deg 9deg);
+    -webkit-mask:radial-gradient(circle, transparent 33%, #000 35%, transparent 62%);
+            mask:radial-gradient(circle, transparent 33%, #000 35%, transparent 62%);
+    animation:spin-cw 24s linear infinite; }
+  @keyframes sun-pulse { 0%,100%{transform:scale(1); opacity:.95} 50%{transform:scale(1.06); opacity:1} }
+
+  /* Pluie */
+  .fx-rain { inset:0; overflow:hidden; }
+  .fx-rain i { position:absolute; top:-8%; width:2px; height:16px; border-radius:2px;
+    background:linear-gradient(transparent,#bcd0ff); animation:rain-fall linear infinite; }
+  @keyframes rain-fall { to { transform:translateY(98vh); } }
+
+  /* Neige */
+  .fx-snow { inset:0; overflow:hidden; }
+  .fx-snow i { position:absolute; top:-4%; border-radius:50%; background:#eaf0ff;
+    animation:snow-fall linear infinite; }
+  @keyframes snow-fall { 0%{transform:translateY(0) translateX(0)} 100%{transform:translateY(96vh) translateX(22px)} }
+
+  /* Cœurs qui montent */
+  .fx-hearts { inset:0; overflow:hidden; }
+  .fx-hearts span { position:absolute; bottom:22%; color:#ff7eb0; opacity:0;
+    text-shadow:0 0 10px rgba(255,107,157,.6); animation:heart-rise 4s ease-in infinite; }
+  @keyframes heart-rise { 0%{opacity:0; transform:translateY(0) scale(.6)} 18%{opacity:.95} 100%{opacity:0; transform:translateY(-170px) scale(1.15)} }
+
+  /* Orage : flash + éclair */
+  .fx-storm { inset:0; }
+  .fx-storm .flash { position:absolute; inset:0; background:#dfe6ff; opacity:0; animation:storm-flash 5s steps(1) infinite; }
+  .fx-storm .bolt  { position:absolute; left:46%; top:7%; width:13%; opacity:0;
+    filter:drop-shadow(0 0 8px #cfe0ff); animation:storm-bolt 5s steps(1) infinite; }
+  @keyframes storm-flash { 0%,100%{opacity:0} 3%{opacity:.5} 5%{opacity:0} 8%{opacity:.32} 10%{opacity:0} }
+  @keyframes storm-bolt  { 0%,100%{opacity:0} 3%{opacity:1} 9%{opacity:0} }
+
+  /* Idée : ampoule au-dessus de la tête (scale seul -> pas de conflit d'opacité) */
+  .fx-idea { left:50%; top:30%; width:60px; transform:translateX(-50%);
+    filter:drop-shadow(0 0 9px rgba(255,212,94,.8)); animation:idea-pop 2.2s ease-in-out infinite; }
+  .fx-idea svg { display:block; width:100%; }
+  @keyframes idea-pop { 0%,100%{transform:translateX(-50%) scale(.94)} 35%{transform:translateX(-50%) scale(1.09)} }
+
+  /* Bulle de discussion (texte éditable depuis le panneau) */
+  .fx-bubble { left:57%; top:33%; max-width:34%; }
+  .fx-bubble .box { position:relative; background:#fff; color:#1b1330; border-radius:14px;
+    padding:9px 13px; font-size:13px; font-weight:600; line-height:1.25; box-shadow:0 6px 22px rgba(0,0,0,.35); }
+  .fx-bubble .box::after { content:""; position:absolute; left:-9px; top:18px;
+    border:8px solid transparent; border-right-color:#fff; }
 
   /* === réutilisé du personnage (pivots, modes, poses, émotions) === */
   ${charCSS}
@@ -123,8 +188,17 @@ const html = `<!DOCTYPE html>
   <div class="layer glow-bg"></div>
   <div class="floor"></div>
   <div class="layer"><div class="pool"></div></div>
-  ${reflSVG}
-  ${charSVG}
+  <div class="actor" id="actor">
+    ${reflSVG}
+    ${charSVG}
+  </div>
+  <div class="fx fx-sun"><div class="rays"></div><div class="core"></div></div>
+  <div class="fx fx-rain" id="rain"></div>
+  <div class="fx fx-snow" id="snow"></div>
+  <div class="fx fx-hearts" id="hearts"></div>
+  <div class="fx fx-storm"><div class="flash"></div><svg class="bolt" viewBox="0 0 40 80" aria-hidden="true"><path d="M24 2 L7 46 L19 46 L14 78 L37 32 L23 32 Z" fill="#eef3ff"/></svg></div>
+  <div class="fx fx-idea"><svg viewBox="0 0 64 80" aria-hidden="true"><path d="M32 6 a22 22 0 0 1 13 39 c-3 3 -4 6 -4 10 H23 c0 -4 -1 -7 -4 -10 A22 22 0 0 1 32 6 Z" fill="#fff4c2" fill-opacity="0.20" stroke="#ffe08a" stroke-width="4" stroke-linejoin="round"/><line x1="24" y1="62" x2="40" y2="62" stroke="#ffe08a" stroke-width="4" stroke-linecap="round"/><line x1="26" y1="70" x2="38" y2="70" stroke="#ffe08a" stroke-width="4" stroke-linecap="round"/></svg></div>
+  <div class="fx fx-bubble"><div class="box" id="bubble-box">Hmm…</div></div>
   <div class="title" id="title">LE CERVEAU MENT</div>
   <div class="subtitle" id="subtitle">Pourquoi ton attention te trahit (et comment la reprendre)</div>
   <div class="layer particles" id="particles"></div>
@@ -164,6 +238,19 @@ const html = `<!DOCTYPE html>
     <button data-group="mode" data-cls="mode-neuro">Neurosciences</button>
     <button data-group="mode" data-cls="mode-eveil" class="active">Éveil complet</button>
   </div></div>
+  <div class="row"><span class="label">Déplacement</span><div class="btns">
+    <button id="btn-walk">🚶 Marcher</button>
+  </div></div>
+  <div class="row"><span class="label">Icônes &amp; météo (active / coupe — cumulables)</span><div class="btns">
+    <button data-fx="sun">☀ Soleil</button>
+    <button data-fx="rain">🌧 Pluie</button>
+    <button data-fx="storm">⛈ Orage</button>
+    <button data-fx="snow">❄ Neige</button>
+    <button data-fx="hearts">❤ Cœurs</button>
+    <button data-fx="idea">💡 Idée</button>
+    <button data-fx="bubble">💬 Bulle</button>
+  </div></div>
+  <div class="row"><span class="label">Texte de la bulle</span><input type="text" id="in-bubble" value="Hmm…"></div>
   <div class="row"><span class="label">Démo — exemple de vidéo (lecture auto)</span><div class="btns">
     <button data-demo="neuro">▶ Neurosciences</button>
     <button data-demo="psy">▶ Psychologie</button>
@@ -176,9 +263,12 @@ const html = `<!DOCTYPE html>
   (function () {
     var svg = document.getElementById('petit-eveille');
     var frame = document.querySelector('.frame');
+    var actor = document.getElementById('actor');
     var bubblesHead = document.getElementById('bubbles-head');
     var silhouette = document.getElementById('silhouette');
     var reflSil = document.getElementById('refl-silhouette');
+    var bubbleBox = document.getElementById('bubble-box');
+    var inBubble = document.getElementById('in-bubble');
 
     var titleEl = document.getElementById('title');
     var subEl   = document.getElementById('subtitle');
@@ -208,12 +298,72 @@ const html = `<!DOCTYPE html>
     function setTitle(t) { titleEl.textContent = t; inTitle.value = t; }
     function setSub(t)   { subEl.textContent = t; inSub.value = t; }
 
-    poseBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); setPose(b.dataset.pose); }); });
+    poseBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); stopWalk(); setPose(b.dataset.pose); }); });
     emoBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); setEmo(b.dataset.cls); }); });
     modeBtns.forEach(function (b) { b.addEventListener('click', function () { stopDemo(); setMode(b.dataset.cls); }); });
     inTitle.addEventListener('input', function (e) { titleEl.textContent = e.target.value; });
     inSub.addEventListener('input', function (e) { subEl.textContent = e.target.value; });
     setPose('idle');
+
+    // ----- Marche : glisse sur le sol + balancement + alternance walkA/walkB -----
+    var walkBtn = document.getElementById('btn-walk');
+    var walkTimer = null, walkPhase = 0;
+    function stopWalk() {
+      if (!walkTimer) return;
+      clearInterval(walkTimer); walkTimer = null;
+      actor.classList.remove('walking'); walkBtn.classList.remove('active');
+    }
+    function startWalk() {
+      stopDemo();
+      actor.classList.add('walking'); walkBtn.classList.add('active'); walkPhase = 0;
+      setPose('walkA');
+      walkTimer = setInterval(function () {
+        walkPhase ^= 1;
+        var d = POSE_PATHS[walkPhase ? 'walkB' : 'walkA'];
+        silhouette.setAttribute('d', d); reflSil.setAttribute('d', d);
+      }, 250);
+    }
+    walkBtn.addEventListener('click', function () {
+      if (walkTimer) { stopWalk(); setPose('idle'); } else startWalk();
+    });
+
+    // ----- Icônes & météo : interrupteurs cumulables (combinables avec tout le reste) -----
+    document.querySelectorAll('button[data-fx]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        b.classList.toggle('active', frame.classList.toggle('fx-' + b.dataset.fx));
+      });
+    });
+    inBubble.addEventListener('input', function (e) { bubbleBox.textContent = e.target.value; });
+
+    // ----- Remplissage des particules météo -----
+    function fill(host, n, make) { if (!host) return; for (var i = 0; i < n; i++) host.appendChild(make(i)); }
+    fill(document.getElementById('rain'), 48, function () {
+      var d = document.createElement('i'), dur = 0.5 + Math.random() * 0.5;
+      d.style.left = (Math.random() * 100) + '%';
+      d.style.height = (12 + Math.random() * 10).toFixed(0) + 'px';
+      d.style.opacity = (0.4 + Math.random() * 0.4).toFixed(2);
+      d.style.animationDuration = dur.toFixed(2) + 's';
+      d.style.animationDelay = (-Math.random() * dur).toFixed(2) + 's';
+      return d;
+    });
+    fill(document.getElementById('snow'), 36, function () {
+      var d = document.createElement('i'), dur = 4 + Math.random() * 4, sz = 4 + Math.random() * 5;
+      d.style.left = (Math.random() * 100) + '%';
+      d.style.width = sz.toFixed(1) + 'px'; d.style.height = sz.toFixed(1) + 'px';
+      d.style.opacity = (0.5 + Math.random() * 0.5).toFixed(2);
+      d.style.animationDuration = dur.toFixed(2) + 's';
+      d.style.animationDelay = (-Math.random() * dur).toFixed(2) + 's';
+      return d;
+    });
+    fill(document.getElementById('hearts'), 8, function () {
+      var s = document.createElement('span'), dur = 3 + Math.random() * 2.5;
+      s.textContent = '❤';
+      s.style.left = (30 + Math.random() * 40) + '%';
+      s.style.fontSize = (16 + Math.random() * 16).toFixed(0) + 'px';
+      s.style.animationDuration = dur.toFixed(2) + 's';
+      s.style.animationDelay = (-Math.random() * dur).toFixed(2) + 's';
+      return s;
+    });
 
     // ----- DÉMO : mini-scripts qui se jouent tout seuls (avant-goût Phase 3) -----
     var DEMOS = {
@@ -240,7 +390,7 @@ const html = `<!DOCTYPE html>
     var demoTimers = [];
     function stopDemo() { demoTimers.forEach(clearTimeout); demoTimers = []; }
     function playDemo(key) {
-      stopDemo();
+      stopDemo(); stopWalk();
       var shots = DEMOS[key]; if (!shots) return;
       var t = 0;
       shots.forEach(function (s) {
@@ -255,7 +405,7 @@ const html = `<!DOCTYPE html>
       b.addEventListener('click', function () { playDemo(b.dataset.demo); });
     });
     document.getElementById('demo-stop').addEventListener('click', function () {
-      stopDemo();
+      stopDemo(); stopWalk();
       setTitle('LE CERVEAU MENT'); setSub('Pourquoi ton attention te trahit (et comment la reprendre)');
       setPose('idle'); setEmo('emo-calme'); setMode('mode-eveil');
     });

@@ -23,13 +23,13 @@ construction. Contrepartie : le passage d'une pose à l'autre est un *cut* net
 # dépendance DEV uniquement (NE PAS ajouter aux dépendances du site)
 npm i polygon-clipping
 
-# produit les tracés des 8 poses
+# produit les tracés des poses (8 poses + walkA/walkB pour la marche)
 node tools/petit-eveille/generate-poses.mjs > pose-paths.json
 ```
 
-1. Pour ajouter une pose : ajouter une entrée `nom: [angleBrasGauche, angleBrasDroit]`
-   dans l'objet `POSES` du script (0 = horizontal vers l'intérieur, 90 = le long
-   du corps, 270 = vers le haut).
+1. Pour ajouter une pose : ajouter une entrée `nom: [brasG, brasD]` (et
+   optionnellement `, jambeG, jambeD` pour écarter les jambes, cf. `walkA`/`walkB`)
+   dans l'objet `POSES` du script (90 = le long du corps, <90 = avance, >90 = recule).
 2. Régénérer le JSON.
 3. Copier le tracé voulu dans l'objet `POSE_PATHS` de
    `public/petit-eveille-poses.html`, et ajouter un bouton `data-pose="nom"`.
@@ -47,6 +47,12 @@ le personnage de `public/petit-eveille-poses.html` (CSS émotions/poses, tracés
 des silhouettes, spirales) et en l'habillant d'un décor : fond violet nuit, sol
 lumineux + halo au sol, reflet, particules, vignette, teinte réactive au mode,
 emplacements titre + sous-titre éditables.
+
+La scène ajoute aussi : le perso **dézoomé** (place pour un 2ᵉ perso + props), la
+**marche** (bouton Marcher : foulée walkA/walkB + balancement + glissement au sol),
+et un **système d'icônes/météo** activables et cumulables (soleil, pluie, orage,
+neige, cœurs, idée, bulle de discussion éditable). Voir
+`docs/video-petit-eveille-workflow.md` §3.6 et §4 bis.
 
 ```bash
 node tools/petit-eveille/build-scene.mjs

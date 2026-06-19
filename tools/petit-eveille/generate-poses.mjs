@@ -59,15 +59,16 @@ const ringArea = (r) => { let a = 0; for (let i = 0; i < r.length; i++) { const 
 const BODY = {
   head: [200, 141, 95],
   trunk: [136, 230, 128, 216, 40],
-  legL: [[170, 438], 90, 150, 50],
-  legR: [[230, 438], 90, 150, 50],
+  legPivotL: [170, 438], legPivotR: [230, 438], legLen: 150, legW: 50,
   armPivotL: [150, 250],
   armPivotR: [250, 250],
   armLen: 150,
   armW: 46,
 };
 
-// ---- les 8 poses : [angle bras gauche, angle bras droit] ----
+// ---- poses : [bras G, bras D, jambe G?, jambe D?] (angles en degrés) ----
+//   bras/jambe : 90 = le long du corps (vertical), <90 = avance, >90 = recule.
+//   Les jambes restent à 90 par défaut ; walkA/walkB les écartent pour la foulée.
 const POSES = {
   idle:  [100, 80],
   point: [100, 35],
@@ -77,14 +78,20 @@ const POSES = {
   cross: [22, 158],
   wave:  [100, 300],
   lean:  [100, 80], // + inclinaison du corps (gérée par transform dans le HTML)
+  // marche : cycle en 2 images = deux appuis en Λ, en miroir. L'appui (la jambe
+  // la plus écartée) passe de gauche à droite -> le poids bascule, ça se lit
+  // comme un pas. Bras en légère opposition. Renforcé par le balancement
+  // vertical + le glissement au sol gérés dans la scène.
+  walkA: [88, 100, 104, 86],  // appui jambe gauche (pied gauche écarté)
+  walkB: [100, 88, 94, 76],   // appui jambe droite (miroir)
 };
 
-function silhouette(la, ra) {
+function silhouette(la, ra, ll = 90, rl = 90) {
   const parts = [
     circle(...BODY.head),
     roundRect(...BODY.trunk),
-    capsule(...BODY.legL),
-    capsule(...BODY.legR),
+    capsule(BODY.legPivotL, ll, BODY.legLen, BODY.legW),
+    capsule(BODY.legPivotR, rl, BODY.legLen, BODY.legW),
     capsule(BODY.armPivotL, la, BODY.armLen, BODY.armW),
     capsule(BODY.armPivotR, ra, BODY.armLen, BODY.armW),
   ];
@@ -100,5 +107,5 @@ function silhouette(la, ra) {
 }
 
 const paths = {};
-for (const [name, [la, ra]] of Object.entries(POSES)) paths[name] = silhouette(la, ra);
+for (const [name, a] of Object.entries(POSES)) paths[name] = silhouette(a[0], a[1], a[2], a[3]);
 process.stdout.write(JSON.stringify(paths, null, 0));

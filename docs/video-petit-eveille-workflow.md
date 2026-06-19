@@ -121,10 +121,31 @@ son mental est littéralement visible, ce qu'aucun concurrent ne peut copier.
 - **think** : un bras replié vers la tête (réflexion)
 - **shrug** : épaules haussées (doute, « je sais pas »)
 - **lean** : corps penché en avant (insistance) ou en arrière (recul/surprise)
+- **cross** : bras croisés (négation, repli)
+- **wave** : un bras qui salue
 - **enter / exit** : glisse depuis le bord (entrée/sortie de scène)
+- **walkA / walkB** : les deux appuis de la **marche** (foulée en Λ, en miroir).
+  On ne les choisit pas à la main : le bouton **Marcher** les alterne tout seul.
 
-> Chaque pose = position figée des `#left-arm` / `#right-arm` (+ léger lean du `#character`).
-> Transition douce entre poses (~0,3 s) plutôt qu'animation continue.
+> Chaque pose = position figée des bras (+ jambes pour la marche) fondue dans la
+> silhouette unique. Transition douce/cut entre poses plutôt qu'animation continue.
+
+### 3.6 Déplacement : la marche
+
+Le perso peut **marcher** (bouton « Marcher » dans le labo et la scène). Trois
+ingrédients combinés donnent l'illusion d'un vrai pas, sans rig complexe :
+
+1. **Foulée** : la silhouette alterne `walkA` ↔ `walkB` toutes les 0,25 s. Ce sont
+   deux appuis en Λ, en miroir (le poids bascule de la jambe gauche à la droite).
+   Générées par fusion booléenne comme les autres poses (jambes paramétrées dans
+   `generate-poses.mjs`), donc aucune couture.
+2. **Balancement** : léger `translateY` vertical du corps (`walk-bob`), synchronisé
+   avec la foulée.
+3. **Glissement au sol** (scène uniquement) : l'ensemble perso + reflet glisse de
+   gauche à droite (`walk-glide` sur le conteneur `.actor`).
+
+> Combinable avec tout le reste : on peut marcher **en même temps** qu'une émotion
+> (ex. marcher + `focus`) ou un mode. Choisir une pose fixe stoppe la marche.
 
 ---
 
@@ -169,6 +190,36 @@ c'est de **l'habiter avec une identité forte**. Et l'identité, on l'a déjà.
 > le sol qui réagit** suffisent largement à ne pas ressembler à un clone.
 > La ressemblance de format est même un atout : on surfe sur un code que l'audience
 > connaît déjà, avec une patte qui nous est propre.
+
+---
+
+## 4 bis. Icônes & météo (props animés)
+
+Pour « jouer » avec le perso comme Humain Penseur (qui pose des fenêtres, des
+bulles, des objets autour du bonhomme), la scène a un **système de props
+activables**, cumulables, et combinables avec les poses/émotions/marche. Chacun
+est une couche CSS posée par-dessus le décor, allumée par une classe `fx-*` sur
+`.frame` (bouton dédié dans le panneau).
+
+| Prop | Classe | Effet | Usage éditorial type |
+|------|--------|-------|----------------------|
+| ☀ Soleil | `fx-sun` | noyau chaud + rayons qui tournent | énergie, réveil, lumière naturelle |
+| 🌧 Pluie | `fx-rain` | gouttes qui tombent | baisse de moral, charge, stress |
+| ⛈ Orage | `fx-storm` | pluie + flash + éclair | surcharge, alerte, pic émotionnel |
+| ❄ Neige | `fx-snow` | flocons lents qui dérivent | calme, ralentissement, sommeil |
+| ❤ Cœurs | `fx-hearts` | cœurs qui montent | tendresse, lien, ocytocine |
+| 💡 Idée | `fx-idea` | ampoule qui « pop » au-dessus de la tête | insight, « aha », solution |
+| 💬 Bulle | `fx-bubble` | bulle de discussion, **texte éditable** | dialogue, question, citation |
+
+Particules (pluie/neige/cœurs) générées en JS (densité + vitesses aléatoires).
+Le texte de la bulle se règle dans le panneau (champ « Texte de la bulle »).
+
+> Backlog props (à ajouter au besoin, même mécanique) : fenêtre/écran (notif,
+> scroll), nuage de pensée, point d'interrogation/exclamation, flèches, compteur,
+> ✕ rouge pour la correction de mythe. Tous = une couche `fx-*` + un bouton.
+
+> Piste Phase 3 : exposer ces props dans les **balises cue** (`fx=rain,idea`) pour
+> qu'un script de vidéo les déclenche automatiquement sur la timeline.
 
 ---
 
@@ -348,6 +399,10 @@ de vraies vidéos (ne pas sur-construire avant) :
       Build reproductible : `tools/petit-eveille/build-scene.mjs`.
       Inclut un **lecteur de démo** : 3 mini-scripts auto-joués (neuro / psycho / dév perso)
       qui enchaînent titre + pose + émotion + mode dans le temps — amorce concrète de la Phase 3.
+      Ajouts (juin 2026) : perso **dézoomé** (36 % de la hauteur — place pour un 2ᵉ perso
+      et les props), **marche** (foulée walkA/walkB + balancement + glissement au sol),
+      et **système d'icônes/météo** (soleil, pluie, orage, neige, cœurs, idée, bulle
+      éditable — voir §4 bis), tous cumulables et combinables.
 - [ ] Phase 3 — Timeline piloté par script
 - [ ] Phase 4 — Rendu (OBS puis Remotion)
 - [ ] Phase 5 — Duo
