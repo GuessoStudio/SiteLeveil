@@ -5,6 +5,9 @@ import { Reflection } from "../decor/Reflection";
 import { PetitEveille } from "../character/PetitEveille";
 import { CameraRig } from "./CameraRig";
 import { KeywordText } from "./KeywordText";
+import { Stars } from "../fx/Stars";
+import { Particles } from "../fx/Particles";
+import { Burst } from "../fx/Burst";
 import { MODES } from "../data/emotions";
 import type { Position, ResolvedScene } from "../data/script";
 
@@ -24,6 +27,7 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
       {/* décor + perso : soumis à la caméra */}
       <CameraRig camera={scene.camera} durationInFrames={scene.durationInFrames}>
         <Background tint={tint} />
+        <Stars tint={tint} />
         <AbsoluteFill style={{ transform: POSITION_OFFSET[scene.position] }}>
           <Reflection pose={scene.pose} tint={tint} />
           <PetitEveille
@@ -33,6 +37,8 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
             emotion={scene.emotion}
             mode={scene.mode}
           />
+          <Particles mode={scene.mode} />
+          <Burst burst={scene.burst} mode={scene.mode} />
         </AbsoluteFill>
         <Vignette />
       </CameraRig>
