@@ -1,0 +1,25 @@
+{
+  "name": "petit-eveille-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Moteur vidéo Remotion — Le Petit Éveillé (TikTok). Isolé du site.",
+  "scripts": {
+    "studio": "remotion studio src/Root.tsx",
+    "render": "remotion render src/Root.tsx Habitudes out/habitudes.mp4 --props=src/data/scripts/habitudes.json",
+    "render:court": "remotion render src/Root.tsx Habitudes out/habitudes-court.mp4 --props=src/data/scripts/habitudes-court.json",
+    "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
+    "ensure": "remotion browser ensure"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.290",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.290"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  }
+}
