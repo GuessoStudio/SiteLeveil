@@ -2,6 +2,7 @@
   "fps": 30,
   "width": 1080,
   "height": 1920,
+  "audio": "habitudes-court.mp3",
   "defaults": {
     "pose": "idle",
     "emotion": "calme",
