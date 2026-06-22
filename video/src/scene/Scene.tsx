@@ -8,6 +8,7 @@ import { KeywordText } from "./KeywordText";
 import { Stars } from "../fx/Stars";
 import { Particles } from "../fx/Particles";
 import { Burst } from "../fx/Burst";
+import { SceneFlash } from "../fx/SceneFlash";
 import { MODES } from "../data/emotions";
 import type { Position, ResolvedScene } from "../data/script";
 
@@ -43,8 +44,8 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
         <Vignette />
       </CameraRig>
 
-      {/* texte : stable, hors caméra */}
       <KeywordText keyword={scene.keyword} subtitle={scene.subtitle} accent={scene.accent} />
+      <SceneFlash accent={scene.accent} />
     </AbsoluteFill>
   );
 };

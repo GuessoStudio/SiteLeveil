@@ -1,8 +1,6 @@
 import React from "react";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 
-// Texte géant centré dans le tiers supérieur (hors zone morte TikTok du bas, où
-// iront les sous-titres CapCut). Le keyword « pop » avec un ressort + halo accent.
 export const KeywordText: React.FC<{
   keyword?: string;
   subtitle?: string;
@@ -11,10 +9,14 @@ export const KeywordText: React.FC<{
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const pop = spring({ frame, fps, config: { damping: 14, mass: 0.6 }, durationInFrames: 18 });
-  const kwScale = interpolate(pop, [0, 1], [0.7, 1]);
-  const kwOpacity = interpolate(pop, [0, 1], [0, 1]);
-  const subOpacity = interpolate(frame, [6, 16], [0, 1], { extrapolateRight: "clamp" });
+  const pop = spring({ frame, fps, config: { damping: 10, mass: 0.5, stiffness: 280 }, durationInFrames: 14 });
+  const kwScale = interpolate(pop, [0, 1], [0, 1]);
+  const kwOpacity = frame < 1 ? 0 : 1;
+
+  const subPop = spring({ frame: Math.max(0, frame - 4), fps, config: { damping: 14, mass: 0.6, stiffness: 200 }, durationInFrames: 12 });
+  const subScale = interpolate(subPop, [0, 1], [0.6, 1]);
+  const subTy = interpolate(subPop, [0, 1], [18, 0]);
+  const subOpacity = frame < 4 ? 0 : interpolate(subPop, [0, 0.3], [0, 1], { extrapolateRight: "clamp" });
 
   return (
     <div
@@ -37,9 +39,9 @@ export const KeywordText: React.FC<{
             lineHeight: 1.02,
             letterSpacing: "0.01em",
             textTransform: "uppercase",
-            transform: `scale(${kwScale})`,
+            transform: `scale(${kwScale.toFixed(3)})`,
             opacity: kwOpacity,
-            textShadow: `0 0 38px ${accent}, 0 0 14px ${accent}, 0 4px 26px rgba(0,0,0,.55)`,
+            textShadow: `0 0 48px ${accent}, 0 0 18px ${accent}, 0 0 6px ${accent}, 0 4px 26px rgba(0,0,0,.7)`,
           }}
         >
           {keyword}
@@ -53,8 +55,9 @@ export const KeywordText: React.FC<{
             fontWeight: 600,
             fontSize: 46,
             lineHeight: 1.25,
+            transform: `scale(${subScale.toFixed(3)}) translateY(${subTy.toFixed(1)}px)`,
             opacity: subOpacity,
-            textShadow: "0 2px 16px rgba(0,0,0,.7)",
+            textShadow: "0 2px 20px rgba(0,0,0,.85)",
           }}
         >
           {subtitle}
