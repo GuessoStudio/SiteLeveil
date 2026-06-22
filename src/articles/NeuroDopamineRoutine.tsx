@@ -311,7 +311,7 @@ const NeuroDopamineRoutine = () => {
           </p>
 
           <p>
-            Ton cerveau n'est plus sous ton contrôle. Il est sous celui des algorithmes. Chaque notification, chaque like, chaque vidéo courte déclenche un micro-pic de dopamine. Sans effort. Sans satisfaction durable. Juste un flash chimique qui te laisse vide... et en redemande.
+            Ton cerveau n'est plus sous ton contrôle. Il est sous celui des algorithmes. Chaque notification, chaque like, chaque vidéo courte déclenche un micro-pic de dopamine. Sans effort. Sans satisfaction durable. Juste un flash chimique qui te laisse vide... et en redemande. C'est exactement ce qui détruit ta <Link to="/blog/concentration-profonde-deep-work-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">concentration profonde</Link> : chaque interruption fait s'effondrer l'opposition entre tes réseaux cérébraux de l'attention.
           </p>
 
           <p>

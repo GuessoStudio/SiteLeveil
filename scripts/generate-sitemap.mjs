@@ -53,6 +53,7 @@ const articles = [
   { path: "/blog/resoudre-un-conflit-methodes-psychologie/",         file: "src/articles/ResoudreUnConflit.tsx" },
   { path: "/blog/objectifs-smart-methode-neurosciences/",            file: "src/articles/ObjectifsSmart.tsx" },
   { path: "/blog/formation-habitudes-cerveau-neurosciences/",        file: "src/articles/FormationHabitudes.tsx" },
+  { path: "/blog/concentration-profonde-deep-work-neurosciences/",   file: "src/articles/ConcentrationProfonde.tsx" },
 ];
 
 const allUrls = [

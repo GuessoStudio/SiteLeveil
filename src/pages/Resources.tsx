@@ -220,6 +220,18 @@ const Resources = () => {
       downloadUrl: "/downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
     },
     {
+      id: 26,
+      title: "Fiche Deep Work — le protocole de concentration en 4 étapes",
+      description: "Retrouver un focus profond par le mécanisme du cerveau : choisir la tâche, créer le vide, tenir un bloc, clôturer sans attention résiduelle. Sources : Mark (UC Irvine), Leroy (Minnesota), Kelly & Milham (NYU).",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/concentration-profonde-deep-work-neurosciences-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/concentration-profonde-deep-work-neurosciences-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

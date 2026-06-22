@@ -357,7 +357,7 @@ export default function ProcrastinationCerveau() {
           </p>
 
           <p>
-            <strong>Application pratique :</strong> Divisez chaque projet en sous-tâches de maximum 25 minutes (limite de la concentration soutenue). Chaque fragment doit avoir un output tangible et mesurable pour déclencher la satisfaction d'accomplissement.
+            <strong>Application pratique :</strong> Divisez chaque projet en sous-tâches de maximum 25 minutes (limite de la concentration soutenue). Chaque fragment doit avoir un output tangible et mesurable pour déclencher la satisfaction d'accomplissement. Pour aller plus loin sur le focus, l'article sur <Link to="/blog/concentration-profonde-deep-work-neurosciences/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">la concentration profonde et le deep work</Link> explique pourquoi le multitâche dégrade la performance.
           </p>
 
           <h3>3. Pré-engagement par architecture de choix</h3>

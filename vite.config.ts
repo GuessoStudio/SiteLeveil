@@ -30,6 +30,7 @@ const ARTICLE_SLUGS = [
   'resoudre-un-conflit-methodes-psychologie',
   'objectifs-smart-methode-neurosciences',
   'formation-habitudes-cerveau-neurosciences',
+  'concentration-profonde-deep-work-neurosciences',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

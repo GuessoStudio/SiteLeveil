@@ -355,7 +355,7 @@ export default function AttentionFragmenteeArticle() {
           <h3>2. Protocole de concentration progressive (DCP)</h3>
           
           <p>
-            Cal Newport (Georgetown) a développé le "Deep Concentration Protocol" : augmentation graduelle des durées de focus sans distraction. L'entraînement débute à 10 minutes et progresse vers 90 minutes de concentration continue.
+            Cal Newport (Georgetown) a développé le "Deep Concentration Protocol" : augmentation graduelle des durées de focus sans distraction. L'entraînement débute à 10 minutes et progresse vers 90 minutes de concentration continue. Pour comprendre le mécanisme cérébral qui sous-tend cet état, l'article sur <Link to="/blog/concentration-profonde-deep-work-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline">la concentration profonde et le deep work</Link> détaille l'opposition entre les réseaux attentionnel et par défaut.
           </p>
 
           <p>

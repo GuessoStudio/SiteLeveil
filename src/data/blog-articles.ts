@@ -279,5 +279,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/formation-habitudes-cerveau-neurosciences-cover",
         slug: "formation-habitudes-cerveau-neurosciences",
         featured: false
+    },
+    {
+        id: 26,
+        title: "Concentration profonde : ce que les neurosciences révèlent sur le deep work",
+        excerpt: "Concentration profonde et deep work : le mécanisme cérébral DMN/DAN, le mythe des 23 minutes, l'attention résiduelle de Leroy et 4 leviers validés pour retrouver le focus.",
+        category: "Développement Personnel",
+        readTime: 13,
+        date: "2026-06-20",
+        image: "/images/articles/concentration-profonde-deep-work-neurosciences-cover",
+        slug: "concentration-profonde-deep-work-neurosciences",
+        featured: false
     }
 ];
