@@ -34,11 +34,12 @@ type FieldConf = {
   size: [number, number];
   distPct: [number, number];
   glow: number;
+  jitter?: number;      // gigue horizontale nerveuse (direction "up")
 };
 
 export const EMIT_FIELD: Record<string, FieldConf> = {
-  dopamine_molecules: { origin: "head", direction: "up", speed: "medium", shape: "molecule", gravity: 0.25, count: 18, size: [6, 11], distPct: [16, 30], glow: 10 },
-  melatonin_rain: { origin: "top", direction: "down", speed: "slow", shape: "dot", color: "#6E8BFF", gravity: 0.5, count: 26, size: [3, 6], distPct: [60, 90], glow: 6 },
+  dopamine_molecules: { origin: "head", direction: "up", speed: "medium", shape: "molecule", gravity: 0.25, count: 24, size: [6, 11], distPct: [16, 32], glow: 11, jitter: 3 },
+  melatonin_rain: { origin: "top", direction: "down", speed: "slow", shape: "dot", color: "#9DB4FF", gravity: 0.5, count: 28, size: [4, 7], distPct: [60, 90], glow: 11 },
   adrenaline_burst: { origin: "torso", direction: "radial", speed: "fast", shape: "shard", color: "#FFC247", gravity: 0.1, count: 22, size: [4, 9], distPct: [22, 40], glow: 10 },
   flow_state: { origin: "center", direction: "converge", speed: "fast", shape: "shard", gravity: 0, count: 20, size: [3, 7], distPct: [30, 55], glow: 8 },
   rumination_loop: { origin: "head", direction: "orbit", speed: "medium", shape: "dot", gravity: 0, count: 14, size: [3, 6], distPct: [10, 16], glow: 7 },
@@ -77,7 +78,8 @@ export const EmitField: React.FC<{
         let dx = 0;
         let dy = 0;
         if (conf.direction === "up") {
-          dx = (r(5) - 0.5) * 10;
+          // gigue de base + oscillation nerveuse frame-driven (agitation neuronale)
+          dx = (r(5) - 0.5) * 8 + (conf.jitter ?? 0) * Math.sin(frame / 5 + i);
           dy = -dist * t;
         } else if (conf.direction === "down") {
           dx = (r(5) - 0.5) * 40;
