@@ -1,5 +1,6 @@
 import type { PoseName } from "./petit-eveille";
 import type { EmotionName, ModeName } from "./emotions";
+import { resolveAccent } from "./palette";
 
 export type CameraMove = "drift" | "zoom-in" | "zoom-out" | "punch-head" | "static";
 export type Position = "left" | "center" | "right";
@@ -15,7 +16,8 @@ export type SceneInput = {
   mode?: ModeName;
   position?: Position;
   camera?: CameraMove;
-  fx?: string;
+  fx?: string;          // effet continu (collant)
+  transition?: string;  // rupture ponctuelle en début de plan
   bubbleText?: string;
   accent?: string;
   burst?: Burst;
@@ -49,6 +51,7 @@ export type ResolvedScene = {
   subtitle?: string;
   bubbleText?: string;
   burst: Burst;
+  transition?: string;
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
@@ -82,13 +85,14 @@ export function resolveScenes(script: Script): ResolvedScene[] {
       subtitle: s.subtitle,
       bubbleText: s.bubbleText,
       burst: s.burst ?? false,
+      transition: s.transition, // ponctuel : ne se propage pas
       pose: sticky.pose,
       emotion: sticky.emotion,
       mode: sticky.mode,
       position: sticky.position,
       camera: sticky.camera,
       fx: sticky.fx,
-      accent: sticky.accent,
+      accent: resolveAccent(sticky.accent),
     });
     from += durationInFrames;
   }

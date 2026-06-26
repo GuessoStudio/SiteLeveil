@@ -9,6 +9,8 @@ import { Stars } from "../fx/Stars";
 import { Particles } from "../fx/Particles";
 import { Burst } from "../fx/Burst";
 import { SceneFlash } from "../fx/SceneFlash";
+import { FxOverlay } from "../fx/FxOverlay";
+import { Transition } from "../fx/Transition";
 import { MODES } from "../data/emotions";
 import type { Position, ResolvedScene } from "../data/script";
 
@@ -26,7 +28,11 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
   return (
     <AbsoluteFill>
       {/* décor + perso : soumis à la caméra */}
-      <CameraRig camera={scene.camera} durationInFrames={scene.durationInFrames}>
+      <CameraRig
+        camera={scene.camera}
+        transition={scene.transition}
+        durationInFrames={scene.durationInFrames}
+      >
         <Background tint={tint} />
         <Stars tint={tint} />
         <AbsoluteFill style={{ transform: POSITION_OFFSET[scene.position] }}>
@@ -39,6 +45,7 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
             mode={scene.mode}
           />
           <Particles mode={scene.mode} />
+          <FxOverlay fx={scene.fx} accent={scene.accent} durationInFrames={scene.durationInFrames} />
           <Burst burst={scene.burst} mode={scene.mode} />
         </AbsoluteFill>
         <Vignette />
@@ -46,6 +53,7 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
 
       <KeywordText keyword={scene.keyword} subtitle={scene.subtitle} accent={scene.accent} />
       <SceneFlash accent={scene.accent} />
+      <Transition transition={scene.transition} accent={scene.accent} />
     </AbsoluteFill>
   );
 };

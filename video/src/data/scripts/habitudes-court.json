@@ -14,12 +14,12 @@
     "burst": false
   },
   "scenes": [
-    { "duration": 3.5, "keyword": "21 JOURS ?", "subtitle": "Ce chiffre est faux.", "pose": "point", "emotion": "insight", "mode": "neuro", "camera": "punch-head", "burst": "head", "accent": "#6c7bff" },
+    { "duration": 3.5, "keyword": "21 JOURS ?", "subtitle": "Ce chiffre est faux.", "pose": "point", "emotion": "insight", "mode": "neuro", "camera": "punch-head", "transition": "flash_reverse", "burst": "head", "accent": "neuro" },
     { "duration": 4.5, "keyword": "66 JOURS", "subtitle": "La seule vraie étude : University College London.", "pose": "think", "emotion": "focus", "position": "left" },
-    { "duration": 4.5, "keyword": "LE STRIATUM", "subtitle": "Ton habitude vit dans ton cerveau, pas dans ta volonté.", "pose": "point", "emotion": "insight", "camera": "punch-head", "burst": "head", "position": "right" },
-    { "duration": 4.5, "subtitle": "Le contrôle passe du cortex préfrontal au striatum.", "pose": "cross", "emotion": "surcharge", "position": "center" },
-    { "duration": 4.5, "keyword": "CHANGE LE CONTEXTE", "subtitle": "Change l'environnement, l'habitude cède. (Wendy Wood)", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "#9b7cff", "camera": "zoom-in" },
+    { "duration": 4.5, "keyword": "LE STRIATUM", "subtitle": "Ton habitude vit dans ton cerveau, pas dans ta volonté.", "pose": "point", "emotion": "insight", "camera": "punch-head", "transition": "zoom_smash", "fx": "brain_highlight_head", "position": "right" },
+    { "duration": 4.5, "subtitle": "Le contrôle passe du cortex préfrontal au striatum.", "pose": "cross", "emotion": "surcharge", "fx": "brain_transfer", "position": "center" },
+    { "duration": 4.5, "keyword": "CHANGE LE CONTEXTE", "subtitle": "Change l'environnement, l'habitude cède. (Wendy Wood)", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "camera": "zoom-in", "transition": "color_shift", "fx": "none" },
     { "duration": 4, "keyword": "3 LEVIERS", "subtitle": "Contexte · Empilement · Friction", "pose": "open", "emotion": "fierte", "camera": "zoom-out" },
-    { "duration": 4.5, "keyword": "LIEN EN BIO", "subtitle": "Article complet sur leveilmental.fr", "pose": "wave", "emotion": "calme" }
+    { "duration": 4.5, "keyword": "LIEN EN BIO", "subtitle": "Article complet sur leveilmental.fr", "pose": "wave", "emotion": "calme", "fx": "gratitude_glow" }
   ]
 }

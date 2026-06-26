@@ -4,9 +4,10 @@ import type { CameraMove } from "../data/script";
 
 export const CameraRig: React.FC<{
   camera: CameraMove;
+  transition?: string;
   durationInFrames: number;
   children: React.ReactNode;
-}> = ({ camera, durationInFrames, children }) => {
+}> = ({ camera, transition, durationInFrames, children }) => {
   const frame = useCurrentFrame();
   const p = interpolate(frame, [0, durationInFrames], [0, 1], {
     extrapolateRight: "clamp",
@@ -49,6 +50,12 @@ export const CameraRig: React.FC<{
       tx = 0.4 * Math.sin((frame / 45) * Math.PI);
       break;
     }
+  }
+
+  // zoom_smash (canal transition) : démarre zoomé (140%) et se résorbe vite —
+  // « coup de poing » de révélation, ajouté par-dessus le mouvement de base.
+  if (transition === "zoom_smash") {
+    scale += 0.4 * Math.exp(-frame / 3);
   }
 
   return (
