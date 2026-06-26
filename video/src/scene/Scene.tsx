@@ -11,6 +11,7 @@ import { Burst } from "../fx/Burst";
 import { SceneFlash } from "../fx/SceneFlash";
 import { FxOverlay } from "../fx/FxOverlay";
 import { Transition } from "../fx/Transition";
+import { SfxPlayer } from "../audio/SfxPlayer";
 import { MODES } from "../data/emotions";
 import type { Position, ResolvedScene } from "../data/script";
 
@@ -54,6 +55,7 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
       <KeywordText keyword={scene.keyword} subtitle={scene.subtitle} accent={scene.accent} />
       <SceneFlash accent={scene.accent} />
       <Transition transition={scene.transition} accent={scene.accent} />
+      <SfxPlayer transition={scene.transition} fx={scene.fx} sfx={scene.sfx} />
     </AbsoluteFill>
   );
 };

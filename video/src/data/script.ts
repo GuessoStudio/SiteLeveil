@@ -18,6 +18,7 @@ export type SceneInput = {
   camera?: CameraMove;
   fx?: string;          // effet continu (collant)
   transition?: string;  // rupture ponctuelle en début de plan
+  sfx?: string;         // bruitage forcé ("none" coupe, sinon une clé du registre)
   bubbleText?: string;
   accent?: string;
   burst?: Burst;
@@ -38,7 +39,8 @@ export type Script = {
   fps: number;
   width: number;
   height: number;
-  audio?: string;
+  audio?: string;       // voix off (public/)
+  ambience?: string;    // nappe d'ambiance globale (clé du registre SFX, ex: "dark_drone")
   defaults: ScriptDefaults;
   scenes: SceneInput[];
 };
@@ -52,6 +54,7 @@ export type ResolvedScene = {
   bubbleText?: string;
   burst: Burst;
   transition?: string;
+  sfx?: string;
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
@@ -86,6 +89,7 @@ export function resolveScenes(script: Script): ResolvedScene[] {
       bubbleText: s.bubbleText,
       burst: s.burst ?? false,
       transition: s.transition, // ponctuel : ne se propage pas
+      sfx: s.sfx,               // ponctuel
       pose: sticky.pose,
       emotion: sticky.emotion,
       mode: sticky.mode,
