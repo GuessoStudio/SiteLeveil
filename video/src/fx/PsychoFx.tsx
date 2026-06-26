@@ -149,15 +149,18 @@ export const PsychoFx: React.FC<{
     }
 
     case "momentum_trail": {
-      // traînée de comète derrière le perso, de plus en plus longue (élan)
+      // traînée de comète derrière le perso, de plus en plus longue (élan).
+      // Ancrée à hauteur du torse (~63%) pour passer DERRIÈRE le corps, pas en
+      // travers de la tête (tête ≈ 56,5%).
       const len = interpolate(p, [0, 1], [6, 46]);
+      const trailY = "63%";
       return (
         <AbsoluteFill style={{ opacity: intro, mixBlendMode: "screen" }}>
           <div
             style={{
               position: "absolute",
               left: `${50 - len}%`,
-              top: "57%",
+              top: trailY,
               width: `${len}%`,
               height: "3%",
               transform: "translateY(-50%)",
@@ -170,7 +173,7 @@ export const PsychoFx: React.FC<{
             style={{
               position: "absolute",
               left: "50%",
-              top: "57%",
+              top: trailY,
               width: "4%",
               height: "4%",
               transform: "translate(-50%,-50%)",
