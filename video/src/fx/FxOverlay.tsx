@@ -1,9 +1,11 @@
 import React from "react";
 import { ZoneGlow, ZONE_GLOW } from "./ZoneGlow";
+import { EmitField, EMIT_FIELD } from "./EmitField";
+import { RadialWave, RADIAL_WAVE } from "./RadialWave";
 
 // Dispatcher des effets CONTINUS (champ "fx", collant). Aiguille vers le bon
 // moteur paramétré selon le nom du fx. Point d'extension : brancher ici les
-// futurs moteurs (EmitField, RadialWave, SineWave, NodeGraph).
+// futurs moteurs (SineWave, NodeGraph).
 export const FxOverlay: React.FC<{
   fx: string;
   accent: string;
@@ -14,7 +16,13 @@ export const FxOverlay: React.FC<{
   if (fx in ZONE_GLOW) {
     return <ZoneGlow fx={fx} accent={accent} durationInFrames={durationInFrames} />;
   }
+  if (fx in EMIT_FIELD) {
+    return <EmitField fx={fx} accent={accent} durationInFrames={durationInFrames} />;
+  }
+  if (fx in RADIAL_WAVE) {
+    return <RadialWave fx={fx} accent={accent} durationInFrames={durationInFrames} />;
+  }
 
-  // moteurs à venir : EmitField, RadialWave, SineWave, NodeGraph
+  // moteurs à venir : SineWave, NodeGraph
   return null;
 };
