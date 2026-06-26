@@ -19,6 +19,7 @@ export type SceneInput = {
   fx?: string;          // effet continu (collant)
   transition?: string;  // rupture ponctuelle en début de plan
   sfx?: string;         // bruitage forcé ("none" coupe, sinon une clé du registre)
+  icon?: string;        // icône pop au-dessus de la tête (clé du jeu d'icônes)
   bubbleText?: string;
   accent?: string;
   burst?: Burst;
@@ -55,6 +56,7 @@ export type ResolvedScene = {
   burst: Burst;
   transition?: string;
   sfx?: string;
+  icon?: string;
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
@@ -90,6 +92,7 @@ export function resolveScenes(script: Script): ResolvedScene[] {
       burst: s.burst ?? false,
       transition: s.transition, // ponctuel : ne se propage pas
       sfx: s.sfx,               // ponctuel
+      icon: s.icon,             // ponctuel
       pose: sticky.pose,
       emotion: sticky.emotion,
       mode: sticky.mode,

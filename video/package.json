@@ -11,6 +11,7 @@
     "render:fx": "remotion render src/Root.tsx Habitudes out/fx-sprint2.mp4 --props=src/data/scripts/fx-sprint2.json",
     "render:fx3": "remotion render src/Root.tsx Habitudes out/fx-sprint3.mp4 --props=src/data/scripts/fx-sprint3.json",
     "render:tier2": "remotion render src/Root.tsx Habitudes out/fx-tier2.mp4 --props=src/data/scripts/fx-tier2.json",
+    "render:icons": "remotion render src/Root.tsx Habitudes out/fx-icons.mp4 --props=src/data/scripts/fx-icons.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },

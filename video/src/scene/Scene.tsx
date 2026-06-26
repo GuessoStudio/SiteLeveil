@@ -10,6 +10,7 @@ import { Particles } from "../fx/Particles";
 import { Burst } from "../fx/Burst";
 import { SceneFlash } from "../fx/SceneFlash";
 import { FxOverlay } from "../fx/FxOverlay";
+import { IconPop } from "../fx/IconPop";
 import { Transition } from "../fx/Transition";
 import { SfxPlayer } from "../audio/SfxPlayer";
 import { MODES } from "../data/emotions";
@@ -47,6 +48,7 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
           />
           <Particles mode={scene.mode} />
           <FxOverlay fx={scene.fx} accent={scene.accent} durationInFrames={scene.durationInFrames} />
+          <IconPop icon={scene.icon} accent={scene.accent} />
           <Burst burst={scene.burst} mode={scene.mode} />
         </AbsoluteFill>
         <Vignette />
