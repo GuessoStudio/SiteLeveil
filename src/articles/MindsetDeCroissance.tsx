@@ -318,7 +318,7 @@ export default function MindsetDeCroissance() {
             Elle a formalisé deux positions opposées. Le <strong>mindset fixe</strong> — ou fixed mindset : la conviction que l'intelligence est innée, stable, et qu'on ne peut pas vraiment la changer. Le <strong>mindset de croissance</strong> : la conviction que l'intelligence est malléable, qu'elle se développe par l'effort, les bonnes stratégies et l'apprentissage.
           </p>
           <p>
-            Ces deux positions ne sont pas conscientes. Ce sont des "théories implicites" — des croyances automatiques qui pilotent les comportements sans qu'on s'en rende compte. C'est précisément pourquoi elles ont autant d'impact.
+            Ces deux positions ne sont pas conscientes. Ce sont des "théories implicites" — des croyances automatiques qui pilotent les comportements sans qu'on s'en rende compte, à la manière des <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">biais cognitifs qui déforment nos jugements</Link>. C'est précisément pourquoi elles ont autant d'impact.
           </p>
 
           <h3>L'expérience fondatrice — l'éloge qui fragilise</h3>

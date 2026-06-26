@@ -232,6 +232,18 @@ const Resources = () => {
       downloadUrl: "/downloads/concentration-profonde-deep-work-neurosciences-guide.pdf"
     },
     {
+      id: 27,
+      title: "Les 12 biais cognitifs + le réflexe anti-biais",
+      description: "La liste des 12 biais les plus courants avec leur origine experimentale, plus les 4 questions du réflexe anti-biais à se poser avant toute décision. Sources : Tversky & Kahneman, De Martino, Nature Human Behaviour 2025.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/biais-cognitifs-liste-psychologie-cover.webp",
+      free: true,
+      downloadUrl: "/downloads/biais-cognitifs-liste-psychologie-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

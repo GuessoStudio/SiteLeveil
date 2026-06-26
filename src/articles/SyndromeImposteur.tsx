@@ -304,7 +304,7 @@ export default function SyndromeImposteur() {
           <h2>Qu'est-ce que le syndrome de l'imposteur ?</h2>
           
           <p>
-            Le syndrome de l'imposteur est un <strong>biais cognitif</strong> caractérisé par une tendance persistante à attribuer ses réussites à des facteurs externes (chance, erreurs des autres, timing favorable) plutôt qu'à ses propres compétences et efforts.
+            Le syndrome de l'imposteur est un <strong>biais cognitif</strong> caractérisé par une tendance persistante à attribuer ses réussites à des facteurs externes (chance, erreurs des autres, timing favorable) plutôt qu'à ses propres compétences et efforts. Il fait partie d'une famille plus large d'erreurs de jugement détaillées dans <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">la liste des 12 biais cognitifs les plus courants</Link>, dont l'effet Dunning-Kruger, son exact opposé.
           </p>
 
           <p>

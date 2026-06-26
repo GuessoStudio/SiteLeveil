@@ -282,7 +282,7 @@ export default function ProcrastinationCerveau() {
           <h3>Le conflit préfrontal-limbique : guerre neuronale</h3>
           
           <p>
-            Matthew Lieberman (UCLA) a utilisé l'IRMf pour cartographier le conflit procrastination. Le cortex préfrontal dorsolatéral, siège du contrôle exécutif et de la planification future, entre en opposition directe avec le système limbique qui privilégie les récompenses immédiates et l'évitement de l'inconfort.
+            Matthew Lieberman (UCLA) a utilisé l'IRMf pour cartographier le conflit procrastination. Le cortex préfrontal dorsolatéral, siège du contrôle exécutif et de la planification future, entre en opposition directe avec le système limbique qui privilégie les récompenses immédiates et l'évitement de l'inconfort. C'est le même affrontement entre pensée lente et pensée rapide qui produit la plupart des <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">biais cognitifs qui faussent nos décisions</Link>.
           </p>
 
           <p>

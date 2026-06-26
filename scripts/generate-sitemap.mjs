@@ -54,6 +54,7 @@ const articles = [
   { path: "/blog/objectifs-smart-methode-neurosciences/",            file: "src/articles/ObjectifsSmart.tsx" },
   { path: "/blog/formation-habitudes-cerveau-neurosciences/",        file: "src/articles/FormationHabitudes.tsx" },
   { path: "/blog/concentration-profonde-deep-work-neurosciences/",   file: "src/articles/ConcentrationProfonde.tsx" },
+  { path: "/blog/biais-cognitifs-liste-psychologie/",                file: "src/articles/BiaisCognitifs.tsx" },
 ];
 
 const allUrls = [

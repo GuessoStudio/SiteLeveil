@@ -290,5 +290,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/concentration-profonde-deep-work-neurosciences-cover",
         slug: "concentration-profonde-deep-work-neurosciences",
         featured: false
+    },
+    {
+        id: 27,
+        title: "Biais cognitifs : la liste des 12 plus courants (et comment les contrer)",
+        excerpt: "Les 12 biais cognitifs les plus courants avec leur origine expérimentale (Kahneman, Tversky, Wason), le mécanisme Système 1 et les stratégies validées pour les réduire.",
+        category: "Psychologie",
+        readTime: 15,
+        date: "2026-06-22",
+        image: "/images/articles/biais-cognitifs-liste-psychologie-cover",
+        slug: "biais-cognitifs-liste-psychologie",
+        featured: false
     }
 ];

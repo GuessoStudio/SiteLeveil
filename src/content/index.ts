@@ -38,4 +38,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "objectifs-smart-methode-neurosciences": lazy(() => import("../articles/ObjectifsSmart")),
   "formation-habitudes-cerveau-neurosciences": lazy(() => import("../articles/FormationHabitudes")),
   "concentration-profonde-deep-work-neurosciences": lazy(() => import("../articles/ConcentrationProfonde")),
+  "biais-cognitifs-liste-psychologie": lazy(() => import("../articles/BiaisCognitifs")),
 };

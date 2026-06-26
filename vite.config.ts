@@ -31,6 +31,7 @@ const ARTICLE_SLUGS = [
   'objectifs-smart-methode-neurosciences',
   'formation-habitudes-cerveau-neurosciences',
   'concentration-profonde-deep-work-neurosciences',
+  'biais-cognitifs-liste-psychologie',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({
