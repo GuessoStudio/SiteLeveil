@@ -5,7 +5,7 @@ import { random, useCurrentFrame, useVideoConfig } from "remotion";
 // perso, voyageant selon une direction. Couvre dopamine, mélatonine, adrénaline,
 // flow, rumination, hippocampus. Tout en % du cadre → indépendant de la résolution.
 type Origin = "head" | "torso" | "top" | "bottom" | "center";
-type Direction = "up" | "down" | "radial" | "converge" | "orbit";
+type Direction = "up" | "down" | "radial" | "converge" | "orbit" | "chaos";
 type Shape = "dot" | "molecule" | "shard";
 type Speed = "slow" | "medium" | "fast";
 
@@ -44,6 +44,7 @@ export const EMIT_FIELD: Record<string, FieldConf> = {
   flow_state: { origin: "center", direction: "converge", speed: "fast", shape: "shard", gravity: 0, count: 20, size: [3, 7], distPct: [30, 55], glow: 8 },
   rumination_loop: { origin: "head", direction: "orbit", speed: "medium", shape: "dot", gravity: 0, count: 14, size: [3, 6], distPct: [10, 16], glow: 7 },
   hippocampus_replay: { origin: "head", direction: "converge", speed: "slow", shape: "molecule", gravity: 0, count: 16, size: [4, 8], distPct: [24, 44], glow: 8 },
+  cognitive_overload: { origin: "head", direction: "chaos", speed: "fast", shape: "dot", gravity: 0, count: 30, size: [3, 6], distPct: [14, 26], glow: 7 },
 };
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -99,6 +100,12 @@ export const EmitField: React.FC<{
           const rad = dist * (0.7 + 0.3 * r(6));
           dx = Math.cos(a) * rad;
           dy = Math.sin(a) * rad * 0.6;
+        } else if (conf.direction === "chaos") {
+          // mouvement erratique haute fréquence (surcharge cognitive)
+          const a = r(0) * Math.PI * 2;
+          const wob = 0.5 + 0.5 * Math.sin(frame / 4 + i);
+          dx = Math.cos(a + frame / 8) * dist * (0.4 + 0.6 * wob);
+          dy = Math.sin(a + frame / 7) * dist * (0.4 + 0.6 * wob);
         }
         // gravité : terme parabolique qui accélère vers le bas
         dy += conf.gravity * dist * t * t;

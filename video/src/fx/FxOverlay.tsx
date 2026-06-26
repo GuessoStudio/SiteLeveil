@@ -4,6 +4,7 @@ import { EmitField, EMIT_FIELD } from "./EmitField";
 import { RadialWave, RADIAL_WAVE } from "./RadialWave";
 import { SineWave, SINE_WAVE } from "./SineWave";
 import { NodeGraph, NODE_GRAPH } from "./NodeGraph";
+import { PsychoFx, PSYCHO_FX } from "./PsychoFx";
 
 // Dispatcher des effets CONTINUS (champ "fx", collant). Aiguille vers le bon
 // moteur paramétré selon le nom du fx. Les 6 moteurs génériques sont branchés ici.
@@ -28,6 +29,9 @@ export const FxOverlay: React.FC<{
   }
   if (fx in NODE_GRAPH) {
     return <NodeGraph fx={fx} accent={accent} durationInFrames={durationInFrames} />;
+  }
+  if (PSYCHO_FX.has(fx)) {
+    return <PsychoFx fx={fx} accent={accent} durationInFrames={durationInFrames} />;
   }
 
   return null;
