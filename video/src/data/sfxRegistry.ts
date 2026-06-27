@@ -19,15 +19,15 @@ export type SfxKey =
 
 // null = pas encore de fichier → son ignoré. Mets le chemin pour activer.
 export const SFX_FILES: Record<SfxKey, string | null> = {
-  impact_heavy: null,   // ex: "sfx/impact-heavy.mp3"  — zoom_smash, blackout, adrénaline
-  whoosh_clean: null,   // ex: "sfx/whoosh-clean.mp3"  — flash_reverse
-  whoosh_soft: null,    // ex: "sfx/whoosh-soft.mp3"   — color_shift
-  glitch: null,         // ex: "sfx/glitch.mp3"        — static_noise
-  sub_pulse: null,      // ex: "sfx/sub-pulse.mp3"     — cortisol/empathie (BOUCLE = battement)
-  spark_trigger: null,  // ex: "sfx/spark.mp3"         — synapses, neuroplasticité, gamma
-  space_suction: null,  // ex: "sfx/suction.mp3"       — flow_state
-  shimmer: null,        // ex: "sfx/shimmer.mp3"       — dopamine
-  dark_drone: null,     // ex: "sfx/dark-drone.mp3"    — nappe d'ambiance globale (BOUCLE)
+  impact_heavy: "sfx/impact-heavy.mp3",  // zoom_smash, blackout, adrénaline
+  whoosh_clean: "sfx/whoosh-clean.mp3",  // flash_reverse
+  whoosh_soft: "sfx/whoosh-soft.mp3",    // color_shift
+  glitch: "sfx/glitch.mp3",              // static_noise
+  sub_pulse: "sfx/sub-pulse.mp3",        // cortisol/empathie (BOUCLE = battement)
+  spark_trigger: "sfx/spark.mp3",        // synapses, neuroplasticité, gamma
+  space_suction: "sfx/suction.mp3",      // flow_state
+  shimmer: "sfx/shimmer.mp3",            // dopamine
+  dark_drone: "sfx/dark-drone.mp3",      // nappe d'ambiance globale (BOUCLE)
 };
 
 // Volume par son (0 → 1).

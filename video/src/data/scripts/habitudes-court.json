@@ -3,6 +3,7 @@
   "width": 1080,
   "height": 1920,
   "audio": "habitudes-court.mp3",
+  "ambience": "dark_drone",
   "defaults": {
     "pose": "idle",
     "emotion": "calme",
