@@ -8,7 +8,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
 |---|---|---|---|---|---|---|---|
 | habitudes-court | Le mythe des 21 jours | Neuro / Dev perso | 30s | 🔊 (voix+sons OK, sous-titres en attente) | — | — | [fiche](habitudes-court.md) |
-| biais-cognitifs | Ton cerveau a un bug (ancrage + confirmation) | Psychologie | 32s | 🎬 (voix/sous-titres en attente) | — | — | [fiche](biais-cognitifs.md) |
+| biais-cognitifs | Ton cerveau a un bug (ancrage + confirmation) | Psychologie | 32s | 🔊 (voix+sons OK, sous-titres en attente) | — | — | [fiche](biais-cognitifs.md) |
 
 ---
 

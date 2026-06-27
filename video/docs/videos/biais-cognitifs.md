@@ -11,7 +11,7 @@
 ## Fichiers
 
 - Script JSON : `src/data/scripts/biais-cognitifs.json`
-- Voix off : (à venir — `public/biais-cognitifs.mp3`)
+- Voix off : `public/biais-cognitifs.mp3` (~29 s — ElevenLabs FR)
 - Rendu : `out/biais-cognitifs.mp4`
 - Commande : `npm run render:biais`
 
@@ -24,9 +24,9 @@
 ## Statut
 
 - [x] Script écrit
-- [ ] Voix off générée
+- [x] Voix off générée (mp3 calé via champ `audio` du JSON)
 - [x] FX / icônes calés (toute la palette + 9 icônes)
-- [x] Rendu MP4
+- [x] Rendu MP4 (avec voix + ambiance + SFX)
 - [x] SFX actifs (transitions + ambiance)
 - [ ] Sous-titres CapCut
 - [ ] Publié
@@ -42,7 +42,9 @@
 
 ## ⚠️ Ce qui manque / à améliorer
 
-- **Voix off** à générer (durées calées pour lecture ; à réajuster sur le mp3).
+- **Sync voix/plans** : voix ~29 s vs vidéo 32 s. Les ~3 s d'écart tombent sur
+  le plan CTA final (souhaitable). Si un mot tombe à côté de son plan, ajuster
+  les `duration` plan par plan et re-rendre.
 - **Autorité E-E-A-T** : aucun chercheur nommé. Optionnel mais fort : citer
   Kahneman / Tversky (ancrage) et Peter Wason (biais de confirmation).
 - **Sous-titres karaoké** (CapCut) à poser.
