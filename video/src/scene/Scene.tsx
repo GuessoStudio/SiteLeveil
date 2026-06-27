@@ -22,7 +22,7 @@ const POSITION_OFFSET: Record<Position, string> = {
   right: "translateX(16%)",
 };
 
-export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
+export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number> }> = ({ scene, sfxVolume }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const tint = MODES[scene.mode].tint;
@@ -57,7 +57,7 @@ export const Scene: React.FC<{ scene: ResolvedScene }> = ({ scene }) => {
       <KeywordText keyword={scene.keyword} subtitle={scene.subtitle} accent={scene.accent} />
       <SceneFlash accent={scene.accent} />
       <Transition transition={scene.transition} accent={scene.accent} />
-      <SfxPlayer transition={scene.transition} fx={scene.fx} sfx={scene.sfx} />
+      <SfxPlayer transition={scene.transition} fx={scene.fx} sfx={scene.sfx} volumeOverride={sfxVolume} />
     </AbsoluteFill>
   );
 };

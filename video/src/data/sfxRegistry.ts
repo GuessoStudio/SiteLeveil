@@ -32,8 +32,8 @@ export const SFX_FILES: Record<SfxKey, string | null> = {
 
 // Volume par son (0 → 1).
 export const SFX_VOLUME: Record<SfxKey, number> = {
-  impact_heavy: 0.42,
-  whoosh_clean: 0.55,
+  impact_heavy: 0.26,
+  whoosh_clean: 0.38,
   whoosh_soft: 0.4,
   glitch: 0.5,
   sub_pulse: 0.6,

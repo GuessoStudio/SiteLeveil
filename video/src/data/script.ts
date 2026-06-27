@@ -42,6 +42,7 @@ export type Script = {
   height: number;
   audio?: string;       // voix off (public/)
   audioVolume?: number; // gain de la voix off (défaut 1 ; >1 = amplifie)
+  sfxVolume?: Record<string, number>; // override LOCAL du volume d'un SFX (clé → 0..1), juste pour ce script
   ambience?: string;    // nappe d'ambiance globale (clé du registre SFX, ex: "dark_drone")
   defaults: ScriptDefaults;
   scenes: SceneInput[];

@@ -3,7 +3,8 @@
   "width": 1080,
   "height": 1920,
   "audio": "biais-cognitifs.mp3",
-  "audioVolume": 3.5,
+  "audioVolume": 3.7,
+  "sfxVolume": { "spark_trigger": 0.28 },
   "ambience": "dark_drone",
   "defaults": {
     "pose": "idle",

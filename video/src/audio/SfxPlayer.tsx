@@ -18,7 +18,8 @@ export const SfxPlayer: React.FC<{
   transition?: string;
   fx?: string;
   sfx?: string;
-}> = ({ transition, fx, sfx }) => {
+  volumeOverride?: Record<string, number>; // baisse/monte un SFX juste pour ce script
+}> = ({ transition, fx, sfx, volumeOverride }) => {
   if (sfx === "none") return null;
 
   const keys = new Set<SfxKey>();
@@ -35,7 +36,7 @@ export const SfxPlayer: React.FC<{
           <Audio
             key={k}
             src={staticFile(file)}
-            volume={SFX_VOLUME[k] ?? 0.6}
+            volume={volumeOverride?.[k] ?? SFX_VOLUME[k] ?? 0.6}
             loop={SFX_LOOP[k] ?? false}
           />
         );

@@ -21,7 +21,7 @@ export const Video: React.FC<Script> = (script) => {
       <Series>
         {scenes.map((scene, i) => (
           <Series.Sequence key={i} durationInFrames={scene.durationInFrames}>
-            <Scene scene={scene} />
+            <Scene scene={scene} sfxVolume={script.sfxVolume} />
           </Series.Sequence>
         ))}
       </Series>
