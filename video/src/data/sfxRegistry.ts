@@ -32,7 +32,7 @@ export const SFX_FILES: Record<SfxKey, string | null> = {
 
 // Volume par son (0 → 1).
 export const SFX_VOLUME: Record<SfxKey, number> = {
-  impact_heavy: 0.55,
+  impact_heavy: 0.42,
   whoosh_clean: 0.55,
   whoosh_soft: 0.4,
   glitch: 0.5,
@@ -40,7 +40,7 @@ export const SFX_VOLUME: Record<SfxKey, number> = {
   spark_trigger: 0.45,
   space_suction: 0.6,
   shimmer: 0.4,
-  dark_drone: 0.42,
+  dark_drone: 0.52,
 };
 
 // Sons qui bouclent pendant tout le plan (rythme cardiaque, nappe). Les autres
