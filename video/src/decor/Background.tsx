@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { LAYOUT } from "../data/layout";
 
 export const Background: React.FC<{ tint: string }> = ({ tint }) => {
   const frame = useCurrentFrame();
@@ -23,7 +24,7 @@ export const Background: React.FC<{ tint: string }> = ({ tint }) => {
           position: "absolute",
           left: "-12%",
           right: "-12%",
-          top: "76.5%",
+          top: `${LAYOUT.floorTopPct}%`,
           height: 0,
           borderTop: `2px solid ${tint}`,
           opacity: 0.65,
@@ -34,7 +35,7 @@ export const Background: React.FC<{ tint: string }> = ({ tint }) => {
         style={{
           position: "absolute",
           left: "50%",
-          top: "76.5%",
+          top: `${LAYOUT.floorTopPct}%`,
           width: "64%",
           height: "11%",
           transform: "translate(-50%,-46%)",

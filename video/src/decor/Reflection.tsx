@@ -1,4 +1,5 @@
 import React from "react";
+import { LAYOUT } from "../data/layout";
 import { POSE_PATHS, VIEWBOX } from "../data/petit-eveille";
 import type { PoseName } from "../data/petit-eveille";
 
@@ -7,14 +8,14 @@ import type { PoseName } from "../data/petit-eveille";
 export const Reflection: React.FC<{ pose: PoseName; tint: string; heightPct?: number }> = ({
   pose,
   tint,
-  heightPct = 30,
+  heightPct = LAYOUT.characterHeightPct,
 }) => (
   <svg
     viewBox={`0 0 ${VIEWBOX.width} ${VIEWBOX.height}`}
     style={{
       position: "absolute",
       left: "50%",
-      top: "50.6%",
+      top: `${LAYOUT.characterTopPct}%`,
       height: `${heightPct}%`,
       width: "auto",
       transform: "translateX(-50%) scaleY(-1)",

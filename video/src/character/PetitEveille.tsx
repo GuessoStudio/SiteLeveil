@@ -1,4 +1,5 @@
 import React from "react";
+import { LAYOUT } from "../data/layout";
 import { COLORS, HEAD_SPIRAL, PIVOT, POSE_PATHS, TORSO_SPIRAL, VIEWBOX } from "../data/petit-eveille";
 import type { PoseName } from "../data/petit-eveille";
 import { EMOTIONS, MODES } from "../data/emotions";
@@ -11,7 +12,7 @@ type Props = {
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
-  /** hauteur du perso en % de la hauteur du cadre (défaut 30, cf. lab) */
+  /** hauteur du perso en % de la hauteur du cadre (défaut : LAYOUT.characterHeightPct) */
   heightPct?: number;
 };
 
@@ -22,7 +23,7 @@ const vb = (x: number, y: number, transform: string): React.CSSProperties => ({
   transform,
 });
 
-export const PetitEveille: React.FC<Props> = ({ frame, fps, pose, emotion, mode, heightPct = 30 }) => {
+export const PetitEveille: React.FC<Props> = ({ frame, fps, pose, emotion, mode, heightPct = LAYOUT.characterHeightPct }) => {
   const emo = EMOTIONS[emotion];
   const m = MODES[mode];
   const lean = pose === "lean" ? -6 : 0;
@@ -39,7 +40,7 @@ export const PetitEveille: React.FC<Props> = ({ frame, fps, pose, emotion, mode,
       style={{
         position: "absolute",
         left: "50%",
-        top: "50.6%",
+        top: `${LAYOUT.characterTopPct}%`,
         height: `${heightPct}%`,
         width: "auto",
         transform: "translateX(-50%)",

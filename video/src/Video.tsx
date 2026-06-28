@@ -3,6 +3,7 @@ import { AbsoluteFill, Audio, Series, staticFile } from "remotion";
 import { resolveScenes } from "./data/script";
 import type { Script } from "./data/script";
 import { Scene } from "./scene/Scene";
+import { SafeZoneGuide } from "./scene/SafeZoneGuide";
 import { SFX_FILES, SFX_VOLUME, type SfxKey } from "./data/sfxRegistry";
 
 // Composition pilotée par le JSON : résout les plans (héritage + défauts),
@@ -25,6 +26,7 @@ export const Video: React.FC<Script> = (script) => {
           </Series.Sequence>
         ))}
       </Series>
+      {script.guides ? <SafeZoneGuide /> : null}
     </AbsoluteFill>
   );
 };
