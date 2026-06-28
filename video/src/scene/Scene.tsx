@@ -54,7 +54,7 @@ export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, 
         <Vignette />
       </CameraRig>
 
-      <KeywordText keyword={scene.keyword} subtitle={scene.subtitle} accent={scene.accent} />
+      <KeywordText keyword={scene.keyword} accent={scene.accent} keywordFx={scene.keywordFx} />
       <SceneFlash accent={scene.accent} />
       <Transition transition={scene.transition} accent={scene.accent} />
       <SfxPlayer transition={scene.transition} fx={scene.fx} sfx={scene.sfx} volumeOverride={sfxVolume} />

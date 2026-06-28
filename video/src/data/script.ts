@@ -10,7 +10,8 @@ export type Burst = boolean | "head" | "torso";
 export type SceneInput = {
   duration: number; // secondes (requis)
   keyword?: string;
-  subtitle?: string;
+  keywordFx?: string;   // effet ponctuel sur le mot-clé : "glitch" | "shake"
+  subtitle?: string;    // source du texte parlé (karaoké CapCut) — plus rendu à l'écran
   pose?: PoseName;
   emotion?: EmotionName;
   mode?: ModeName;
@@ -53,6 +54,7 @@ export type ResolvedScene = {
   durationInFrames: number;
   from: number; // frame de départ dans la timeline globale
   keyword?: string;
+  keywordFx?: string;
   subtitle?: string;
   bubbleText?: string;
   burst: Burst;
@@ -89,6 +91,7 @@ export function resolveScenes(script: Script): ResolvedScene[] {
       durationInFrames,
       from,
       keyword: s.keyword,
+      keywordFx: s.keywordFx, // ponctuel : ne se propage pas
       subtitle: s.subtitle,
       bubbleText: s.bubbleText,
       burst: s.burst ?? false,
