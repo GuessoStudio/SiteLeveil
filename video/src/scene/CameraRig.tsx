@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { LAYOUT } from "../data/layout";
 import type { CameraMove } from "../data/script";
 
 export const CameraRig: React.FC<{
@@ -34,14 +35,16 @@ export const CameraRig: React.FC<{
       break;
     }
     case "punch-head": {
-      const punch = interpolate(frame, [0, 8], [1.0, 1.28], {
+      // Zoom ancré au sol (cf. transformOrigin) → les pieds restent plantés et le
+      // perso grandit vers le HAUT. Pas de push vers le bas (sinon il entrait dans
+      // la bande sous-titres). Amplitude réduite pour rester dans le cadre.
+      const punch = interpolate(frame, [0, 8], [1.0, 1.18], {
         extrapolateRight: "clamp",
       });
       const settle = frame > 8
         ? 0.04 * Math.exp(-(frame - 8) / 12) * Math.sin((frame - 8) * 0.6)
         : 0;
       scale = punch + settle;
-      ty = interpolate(frame, [0, 8], [0, 10], { extrapolateRight: "clamp" });
       tx = settle * 8;
       break;
     }
@@ -52,17 +55,20 @@ export const CameraRig: React.FC<{
     }
   }
 
-  // zoom_smash (canal transition) : démarre zoomé (140%) et se résorbe vite —
-  // « coup de poing » de révélation, ajouté par-dessus le mouvement de base.
+  // zoom_smash (canal transition) : démarre zoomé et se résorbe vite — « coup de
+  // poing » de révélation, ajouté par-dessus le mouvement de base. Amplitude
+  // réduite (0,25) pour ne pas projeter le perso hors de sa zone au démarrage.
   if (transition === "zoom_smash") {
-    scale += 0.4 * Math.exp(-frame / 3);
+    scale += 0.25 * Math.exp(-frame / 3);
   }
 
   return (
     <AbsoluteFill
       style={{
         transform: `scale(${scale.toFixed(4)}) translate(${tx.toFixed(2)}%, ${ty.toFixed(2)}%)`,
-        transformOrigin: "50% 42%",
+        // Point d'ancrage du zoom = ligne de sol → pieds plantés, le perso grandit
+        // vers le haut et ne descend jamais dans la bande sous-titres.
+        transformOrigin: `50% ${LAYOUT.floorTopPct}%`,
       }}
     >
       {children}

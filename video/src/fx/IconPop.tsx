@@ -1,6 +1,14 @@
 import React from "react";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { LAYOUT } from "../data/layout";
 import { ICONS, ICON_VIEWBOX } from "../data/icons";
+
+// Position verticale de la tête, dérivée du layout (centre tête ≈ 19,6% du viewBox
+// 400x720). Ainsi l'icône reste calée sur la tête même si on bouge le perso.
+const HEAD_CENTER_PCT = LAYOUT.characterTopPct + 0.196 * LAYOUT.characterHeightPct;
+const ICON_CENTER_PCT = HEAD_CENTER_PCT - 13; // remontée dans l'espace libre (~30%)
+const CONNECTOR_TOP_PCT = ICON_CENTER_PCT + 3; // sous l'icône
+const CONNECTOR_HEIGHT_PCT = HEAD_CENTER_PCT - 3 - CONNECTOR_TOP_PCT; // jusqu'au haut de la tête
 
 // Moteur IconPop : une icône line-art surgit au-dessus de la tête, reliée par un
 // fil de synapse, traitée Dark Premium (trait blanc + lueur d'accent). L'icône
@@ -27,9 +35,9 @@ export const IconPop: React.FC<{ icon?: string; accent: string }> = ({ icon, acc
         style={{
           position: "absolute",
           left: "50%",
-          top: "44%",
+          top: `${CONNECTOR_TOP_PCT}%`,
           width: 2,
-          height: "7%",
+          height: `${CONNECTOR_HEIGHT_PCT}%`,
           transform: `translateX(-50%) scaleY(${lineGrow.toFixed(3)})`,
           transformOrigin: "top",
           background: `linear-gradient(180deg, ${accent}, transparent)`,
@@ -42,7 +50,7 @@ export const IconPop: React.FC<{ icon?: string; accent: string }> = ({ icon, acc
         style={{
           position: "absolute",
           left: "50%",
-          top: "37%",
+          top: `${ICON_CENTER_PCT}%`,
           width: iconSize,
           aspectRatio: "1 / 1",
           transform: `translate(-50%, calc(-50% + ${floatY.toFixed(1)}px)) scale(${scale.toFixed(3)})`,
