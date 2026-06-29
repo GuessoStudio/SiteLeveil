@@ -22,14 +22,17 @@ n'affecte pas le build Netlify).
 {
   "fps": 30, "width": 1080, "height": 1920,
   "audio": "mon-sujet.mp3",            // optionnel (voix off, public/)
+  "audioVolume": 2,                    // optionnel (gain voix, défaut 1 ; >1 amplifie)
   "ambience": "dark_drone",            // optionnel (nappe globale, clé SFX)
+  "sfxVolume": { "impact_heavy": 0.3 }, // optionnel (override volume d'un SFX, ce script)
+  "guides": false,                     // optionnel (repère caption-safe studio, cf. plus bas)
   "defaults": {                         // valeurs de départ
     "pose": "idle", "emotion": "calme", "mode": "eveil",
     "position": "center", "camera": "drift", "fx": "none",
     "accent": "eveil", "burst": false
   },
   "scenes": [
-    { "duration": 3, "keyword": "...", "subtitle": "...",
+    { "duration": 3, "keyword": "...", "keywordFx": "glitch", "subtitle": "...",
       "pose": "point", "emotion": "insight", "mode": "neuro",
       "position": "left", "camera": "punch-head",
       "fx": "dopamine_molecules", "transition": "flash_reverse",
@@ -41,9 +44,13 @@ n'affecte pas le build Netlify).
 
 **Héritage** : les champs d'état (`pose`, `emotion`, `mode`, `position`,
 `camera`, `fx`, `accent`) sont *collants* — non redéfinis, ils gardent la
-valeur du plan précédent. Les champs ponctuels (`keyword`, `subtitle`,
-`bubbleText`, `burst`, `transition`, `sfx`) se réinitialisent à chaque plan.
-Un plan minimal = `{ "duration": 4, "subtitle": "..." }`.
+valeur du plan précédent. Les champs ponctuels (`keyword`, `keywordFx`,
+`subtitle`, `bubbleText`, `burst`, `transition`, `sfx`) se réinitialisent à
+chaque plan. Un plan minimal = `{ "duration": 4, "keyword": "..." }`.
+
+⚠️ `subtitle` n'est **plus affiché** à l'écran : il sert de **source de texte**
+pour le karaoké CapCut (le mot-clé géant reste, lui, à l'écran). Voir la zone
+caption-safe plus bas.
 
 ### Vocabulaire
 
@@ -56,6 +63,9 @@ Un plan minimal = `{ "duration": 4, "subtitle": "..." }`.
 - **camera** : `drift` (Ken Burns) · `zoom-in` · `zoom-out` ·
   `punch-head` (hook) · `static`
 - **burst** : `false | true | "head" | "torso"` (éclat d'accent)
+- **keywordFx** : `glitch` (jitter + aberration chromatique, ex. « BUG ») ·
+  `shake` (tremblement, stress/danger). Par défaut le mot-clé fait juste un pop +
+  s'allume dans sa couleur d'accent puis vire au blanc.
 
 ### Effets `fx` (continu) — 6 moteurs
 
@@ -82,6 +92,34 @@ Un plan minimal = `{ "duration": 4, "subtitle": "..." }`.
 `"sfx": "none"` coupe un plan ; `"sfx": "spark_trigger"` en force un. Voir
 `public/sfx/README.txt` : le moteur reste silencieux tant qu'aucun fichier
 n'est déposé.
+
+### Niveaux audio
+
+- `audioVolume` (top-level) : gain de la voix off. Défaut `1`. `>1` amplifie
+  (ex. `3.7` si la voix est faible sous l'ambiance). Attention à la saturation.
+- `sfxVolume` (top-level) : override **local** du volume d'un SFX, juste pour ce
+  script — ex. `{ "spark_trigger": 0.28 }`. Ne touche pas les autres vidéos.
+  Pour baisser un SFX **partout**, éditer `src/data/sfxRegistry.ts` (`SFX_VOLUME`).
+
+## Mise en page & zone sous-titres (caption-safe)
+
+Tous les repères verticaux (perso, sol, reflet, bande sous-titres) sont
+centralisés dans **`src/data/layout.ts`** — une seule source de vérité.
+
+```
+~9–25%   mot-clé géant (keyword)
+~38–63%  Le Petit Éveillé + sol à 60%
+64–77%   BANDE CAPTION-SAFE → karaoké CapCut (aucun élément moteur ici)
+~82–100% UI TikTok (pseudo, légende, boutons) — hors-jeu
+```
+
+- Les zooms caméra sont **ancrés au sol** : les pieds restent plantés, le perso
+  grandit vers le haut → il n'entre jamais dans la bande sous-titres.
+- `"guides": true` dans le JSON affiche un **repère studio** (bande sous-titres
+  verte + zones UI TikTok rouges). À laisser `false` pour la version publiable.
+- **Karaoké CapCut** : importer le MP4, sous-titres auto (sync voix), style
+  mot-à-mot dans le tiers bas. Blanc + mot actif violet `#7C6FF7`, contour noir.
+  Police gratuite (Montserrat/Inter Bold). La source texte = champ `subtitle`.
 
 ## Source du personnage
 

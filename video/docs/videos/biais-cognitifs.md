@@ -57,14 +57,8 @@
 - P5 `tunnel_vision` : le masque est centré alors que le perso est à gauche →
   léger déséquilibre. Acceptable, à surveiller si gênant.
 
-## 🧱 Acquis moteur (réutilisables par toutes les vidéos)
-
-- `audioVolume` (gain voix) + `sfxVolume` (override SFX par script).
-- `keywordFx` : `glitch` | `shake` ; mot-clé qui s'allume en couleur puis blanc.
-- `src/data/layout.ts` : repères verticaux centralisés + bande caption-safe.
-- `guides: true` dans le JSON : repère studio (zone sous-titres + UI TikTok),
-  invisible en prod.
-- Caméra ancrée au sol : les zooms gardent les pieds plantés.
+> Capacités moteur réutilisables (audioVolume, sfxVolume, keywordFx, guides,
+> caption-safe, caméra ancrée) → documentées dans `video/README.md`.
 
 ## 📊 Performance (après publication)
 
