@@ -28,7 +28,10 @@
 - [x] FX / icônes calés (toute la palette + 9 icônes)
 - [x] Rendu MP4 (avec voix + ambiance + SFX)
 - [x] SFX actifs (transitions + ambiance)
-- [ ] Sous-titres CapCut
+- [x] Mix audio réglé (voix ×3,7 ; impact_heavy/whoosh_clean baissés base ; spark local)
+- [x] Mot-clé sans sous-titre + flash couleur + glitch (BUG) / shake (BIAIS)
+- [x] Zone caption-safe + perso remonté/réduit + caméra ancrée au sol
+- [ ] Sous-titres karaoké CapCut (zone du tiers bas)
 - [ ] Publié
 
 ## ✅ Ce qui marche
@@ -42,15 +45,26 @@
 
 ## ⚠️ Ce qui manque / à améliorer
 
+- **Sous-titres karaoké CapCut** : seule étape restante avant publication.
+  Importer `out/biais-cognitifs.mp4`, sous-titres auto (sync sur la voix),
+  style karaoké mot-à-mot, **placés dans le tiers bas (zone caption-safe ~64-77%)**.
+  Couleurs : blanc + mot actif violet `#7C6FF7`, contour noir + ombre légère.
+  Police gratuite (Montserrat/Inter Bold, sans couronne Pro).
 - **Sync voix/plans** : voix ~29 s vs vidéo 32 s. Les ~3 s d'écart tombent sur
-  le plan CTA final (souhaitable). Si un mot tombe à côté de son plan, ajuster
-  les `duration` plan par plan et re-rendre.
+  le plan CTA final (souhaitable).
 - **Autorité E-E-A-T** : aucun chercheur nommé. Optionnel mais fort : citer
   Kahneman / Tversky (ancrage) et Peter Wason (biais de confirmation).
-- **Sous-titres karaoké** (CapCut) à poser.
-- Vérifier le mix final une fois la voix ajoutée (ambiance sous la voix).
 - P5 `tunnel_vision` : le masque est centré alors que le perso est à gauche →
   léger déséquilibre. Acceptable, à surveiller si gênant.
+
+## 🧱 Acquis moteur (réutilisables par toutes les vidéos)
+
+- `audioVolume` (gain voix) + `sfxVolume` (override SFX par script).
+- `keywordFx` : `glitch` | `shake` ; mot-clé qui s'allume en couleur puis blanc.
+- `src/data/layout.ts` : repères verticaux centralisés + bande caption-safe.
+- `guides: true` dans le JSON : repère studio (zone sous-titres + UI TikTok),
+  invisible en prod.
+- Caméra ancrée au sol : les zooms gardent les pieds plantés.
 
 ## 📊 Performance (après publication)
 
