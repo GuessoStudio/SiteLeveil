@@ -13,6 +13,7 @@
     "render:tier2": "remotion render src/Root.tsx Habitudes out/fx-tier2.mp4 --props=src/data/scripts/fx-tier2.json",
     "render:icons": "remotion render src/Root.tsx Habitudes out/fx-icons.mp4 --props=src/data/scripts/fx-icons.json",
     "render:biais": "remotion render src/Root.tsx Habitudes out/biais-cognitifs.mp4 --props=src/data/scripts/biais-cognitifs.json",
+    "render:anxiete": "remotion render src/Root.tsx Habitudes out/anxiete-amygdale.mp4 --props=src/data/scripts/anxiete-amygdale.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },
