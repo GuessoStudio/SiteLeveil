@@ -52,7 +52,7 @@ un résultat professionnel en 2 passes par slide (fond → overlay texte).
 **Étape A — Claude génère (automatique)**
 1. 1 prompt global contexte (brand + style pilier + 5 descriptions de fond)
 2. 5 prompts texte overlay (un par slide)
-3. Caption + 12 hashtags
+3. Caption + 5 hashtags (cap Instagram 2026)
 
 **Étape B — Utilisateur génère les 5 fonds (ChatGPT Image)**
 → Coller le prompt global contexte UNE SEULE FOIS au début d'une session ChatGPT Image
@@ -154,7 +154,7 @@ Logo bas : barre #1E1750, "leveilmental.fr" centré blanc
 Livrer en bloc unique :
 1. **Prompt global contexte** (intro brand + règles + 5 descriptions de fond)
 2. **5 prompts texte overlay** numérotés (Slide 1 à 5)
-3. **Caption** + 12 hashtags
+3. **Caption** + 5 hashtags (cap Instagram 2026)
 
 ### Caption Instagram
 ```
@@ -164,8 +164,16 @@ Structure :
 - Corps : 3-4 points clés avec → comme puce
 - Avant-dernière ligne : CTA "Article complet → lien en bio"
 - Dernière ligne : "Sauvegarde ce post pour t'en souvenir. 💾"
-- Hashtags : 12 max (4 reach + 4 niche + 2 thématique + 2 brandé)
+- Hashtags : 5 MAX (cap Instagram 2026) — privilégier le niche au volume
+  Ex. : 2 broad + 2 niche + 1 brandé (#leveilmental)
 ```
+
+⚠️ MAJ 2026 — nombre de hashtags par plateforme :
+- Instagram / Reels : 5 max (plafond imposé par la plateforme)
+- TikTok : 3 à 5 (mélange broad + niche, le niche performe mieux)
+- YouTube Shorts : 3 à 5 dans la DESCRIPTION (jamais le titre), #Shorts inclus
+- Facebook : aucun hashtag
+- Le « dump de 30 hashtags » est mort : peu, mais pertinents.
 
 ---
 
@@ -316,6 +324,37 @@ Tweet 8 : CTA avec lien direct vers l'article
 
 ---
 
+## 5. YOUTUBE SHORTS — TITRE + DESCRIPTION
+
+Le Short réutilise le MP4 vertical (même fichier que TikTok/Reels). Pas de
+nouveau montage : seuls le titre, la description et les hashtags changent.
+
+### Format
+- **Titre** : 40-70 caractères, le mot-clé/hook en premier. Pas de hashtag dans
+  le titre (YouTube les ignore là). Curiosité ou bénéfice clair.
+- **Description** : 2-4 phrases. Résumé du mécanisme + 1 chercheur cité
+  (auteur, institution), puis le lien article en clair.
+- **Hashtags** : 3 à 5 DANS la description, `#Shorts` inclus (les 3 premiers
+  s'affichent au-dessus du titre). Jamais de DOI.
+
+### Structure obligatoire
+```
+Titre : [hook/mot-clé d'abord] — ex: "Ton anxiété n'est PAS ton amygdale"
+
+Description :
+[1-2 phrases : le fait + le mécanisme, vulgarisé]
+[1 phrase : chercheur + institution]
+Article complet : https://leveilmental.fr
+#Shorts #[broad] #[niche] #[niche]
+```
+
+### Règles YouTube Shorts
+- Lien article EN CLAIR dans la description (contrairement à Facebook).
+- Le titre est searchable : y mettre le terme que les gens tapent.
+- Ton identique aux autres canaux (professeur, tutoiement, sourcé).
+
+---
+
 ## PROMPT IMAGE POUR CARROUSEL
 
 Quand les 5 slides sont finalisées en texte, générer le prompt Canva/ChatGPT Image :
@@ -343,10 +382,11 @@ Slide 5 : [texte exact]"
 
 ## CHECKLIST AVANT LIVRAISON
 
-- [ ] Instagram : 5 slides texte + textes alt + caption + 12 hashtags + prompt image
+- [ ] Instagram : 5 slides texte + textes alt + caption + 5 hashtags + prompt image
 - [ ] TikTok : script complet avec timestamps + pauses (55-65 sec)
 - [ ] Facebook : post 600-800 mots formaté + commentaire épinglé + indication image (cover article)
 - [ ] X : 8 tweets formatés avec sauts de ligne + lien dans tweet 8
+- [ ] YouTube Shorts : titre (mot-clé d'abord) + description + 3-5 hashtags (#Shorts) + lien
 - [ ] Aucune faute d'accent
 - [ ] Au moins 1 étude citée par canal (auteur, institution, année)
 - [ ] Aucun DOI sur les réseaux
