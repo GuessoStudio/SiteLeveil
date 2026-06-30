@@ -45,6 +45,7 @@ export type Script = {
   audioVolume?: number; // gain de la voix off (défaut 1 ; >1 = amplifie)
   sfxVolume?: Record<string, number>; // override LOCAL du volume d'un SFX (clé → 0..1), juste pour ce script
   ambience?: string;    // nappe d'ambiance globale (clé du registre SFX, ex: "dark_drone")
+  ambienceVolume?: number; // volume de l'ambiance pour ce script (défaut : SFX_VOLUME de la clé)
   guides?: boolean;     // affiche les repères caption-safe + zones TikTok (preview uniquement)
   defaults: ScriptDefaults;
   scenes: SceneInput[];

@@ -17,7 +17,7 @@ export const Video: React.FC<Script> = (script) => {
     <AbsoluteFill style={{ backgroundColor: "#0a0720" }}>
       {script.audio ? <Audio src={staticFile(script.audio)} volume={script.audioVolume ?? 1} /> : null}
       {ambienceFile ? (
-        <Audio src={staticFile(ambienceFile)} loop volume={SFX_VOLUME[script.ambience as SfxKey] ?? 0.22} />
+        <Audio src={staticFile(ambienceFile)} loop volume={script.ambienceVolume ?? SFX_VOLUME[script.ambience as SfxKey] ?? 0.22} />
       ) : null}
       <Series>
         {scenes.map((scene, i) => (

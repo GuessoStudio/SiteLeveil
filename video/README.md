@@ -24,6 +24,7 @@ n'affecte pas le build Netlify).
   "audio": "mon-sujet.mp3",            // optionnel (voix off, public/)
   "audioVolume": 2,                    // optionnel (gain voix, défaut 1 ; >1 amplifie)
   "ambience": "dark_drone",            // optionnel (nappe globale, clé SFX)
+  "ambienceVolume": 0.7,               // optionnel (volume ambiance ce script ; défaut = SFX_VOLUME)
   "sfxVolume": { "impact_heavy": 0.3 }, // optionnel (override volume d'un SFX, ce script)
   "guides": false,                     // optionnel (repère caption-safe studio, cf. plus bas)
   "defaults": {                         // valeurs de départ
@@ -100,6 +101,9 @@ n'est déposé.
 - `sfxVolume` (top-level) : override **local** du volume d'un SFX, juste pour ce
   script — ex. `{ "spark_trigger": 0.28 }`. Ne touche pas les autres vidéos.
   Pour baisser un SFX **partout**, éditer `src/data/sfxRegistry.ts` (`SFX_VOLUME`).
+- `ambienceVolume` (top-level) : volume de la nappe d'ambiance pour ce script.
+  Défaut = la valeur `SFX_VOLUME` de la clé (`dark_drone` = 0,52). À caler une
+  fois la voix ajoutée (l'ambiance doit rester **sous** la voix).
 
 ## Mise en page & zone sous-titres (caption-safe)
 
