@@ -55,6 +55,16 @@ export default function HeroEveilWorker() {
     return () => clearInterval(id);
   }, []);
 
+  // Retire la couche sortante du DOM ~0.65s apres son apparition (duree de
+  // l'animation heroWordOut). Filet de securite : si l'animation CSS ne se
+  // termine pas (onglet en arriere-plan, throttling navigateur), le mot
+  // precedent ne reste pas superpose en permanence au mot courant.
+  useEffect(() => {
+    if (prevIndex === null) return;
+    const t = setTimeout(() => setPrevIndex(null), 650);
+    return () => clearTimeout(t);
+  }, [prevIndex, wordIndex]);
+
   // ── Canvas engine ─────────────────────────────────────────────────────────
   // Ref persistants (survivent aux re-renders)
   const workerRef = useRef(null);
@@ -328,8 +338,10 @@ export default function HeroEveilWorker() {
                 {LONGEST_WORD}
               </span>
 
-              {/* Couche sortante : n'existe qu'après la 1re rotation (slide vers le haut). */}
-              {prevIndex !== null && (
+              {/* Couche sortante : n'existe qu'après la 1re rotation (slide vers le haut).
+                  Jamais rendue en reduced-motion : sans animation (animation:none),
+                  elle resterait opaque et superposee au mot courant => illisible. */}
+              {prevIndex !== null && !prefersReducedMotion && (
                 <span
                   key={`out-${prevIndex}`}
                   aria-hidden="true"
