@@ -14,6 +14,8 @@ type Props = {
   mode: ModeName;
   /** hauteur du perso en % de la hauteur du cadre (défaut : LAYOUT.characterHeightPct) */
   heightPct?: number;
+  /** position verticale du bord haut (défaut : LAYOUT.characterTopPct) */
+  topPct?: number;
 };
 
 // view-box transform helper (origine en coordonnées viewBox, comme dans le lab)
@@ -23,7 +25,7 @@ const vb = (x: number, y: number, transform: string): React.CSSProperties => ({
   transform,
 });
 
-export const PetitEveille: React.FC<Props> = ({ frame, fps, pose, emotion, mode, heightPct = LAYOUT.characterHeightPct }) => {
+export const PetitEveille: React.FC<Props> = ({ frame, fps, pose, emotion, mode, heightPct = LAYOUT.characterHeightPct, topPct = LAYOUT.characterTopPct }) => {
   const emo = EMOTIONS[emotion];
   const m = MODES[mode];
   const lean = pose === "lean" ? -6 : 0;
@@ -40,7 +42,7 @@ export const PetitEveille: React.FC<Props> = ({ frame, fps, pose, emotion, mode,
       style={{
         position: "absolute",
         left: "50%",
-        top: `${LAYOUT.characterTopPct}%`,
+        top: `${topPct}%`,
         height: `${heightPct}%`,
         width: "auto",
         transform: "translateX(-50%)",

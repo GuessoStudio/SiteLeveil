@@ -5,17 +5,18 @@ import type { PoseName } from "../data/petit-eveille";
 
 // Reflet au sol : silhouette miroir teintée, floue et très transparente
 // (lab : fill var(--tint), scaleY(-1), opacity .14, blur 4). Suit la pose.
-export const Reflection: React.FC<{ pose: PoseName; tint: string; heightPct?: number }> = ({
+export const Reflection: React.FC<{ pose: PoseName; tint: string; heightPct?: number; topPct?: number }> = ({
   pose,
   tint,
   heightPct = LAYOUT.characterHeightPct,
+  topPct = LAYOUT.characterTopPct,
 }) => (
   <svg
     viewBox={`0 0 ${VIEWBOX.width} ${VIEWBOX.height}`}
     style={{
       position: "absolute",
       left: "50%",
-      top: `${LAYOUT.characterTopPct}%`,
+      top: `${topPct}%`,
       height: `${heightPct}%`,
       width: "auto",
       transform: "translateX(-50%) scaleY(-1)",

@@ -20,6 +20,8 @@ export type CoverProps = {
   mode: ModeName;
   badge?: string; // pastille pilier en haut
   brand?: string; // marque en bas (défaut leveilmental.fr)
+  characterHeightPct?: number; // taille du perso (défaut 40 ; vidéo = 25)
+  characterTopPct?: number; // position verticale du perso (défaut 40)
 };
 
 export const Cover: React.FC<CoverProps> = ({
@@ -31,6 +33,8 @@ export const Cover: React.FC<CoverProps> = ({
   mode,
   badge = "PSYCHOLOGIE",
   brand = "leveilmental.fr",
+  characterHeightPct = 40,
+  characterTopPct = 40,
 }) => {
   const acc = resolveAccent(accent);
   const tint = MODES[mode].tint;
@@ -39,8 +43,8 @@ export const Cover: React.FC<CoverProps> = ({
   return (
     <AbsoluteFill style={{ backgroundColor: "#0a0720", fontFamily: "Inter, system-ui, sans-serif" }}>
       <Background tint={tint} />
-      <Reflection pose={pose} tint={tint} />
-      <PetitEveille frame={0} fps={30} pose={pose} emotion={emotion} mode={mode} />
+      <Reflection pose={pose} tint={tint} heightPct={characterHeightPct} topPct={characterTopPct} />
+      <PetitEveille frame={0} fps={30} pose={pose} emotion={emotion} mode={mode} heightPct={characterHeightPct} topPct={characterTopPct} />
       <Vignette />
 
       {/* Pastille pilier */}
