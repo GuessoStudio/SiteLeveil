@@ -1,12 +1,25 @@
-import { Composition, registerRoot } from "remotion";
+import { Composition, registerRoot, Still } from "remotion";
 import { Smoke } from "./Smoke";
 import { Demo1 } from "./Demo1";
 import { Video } from "./Video";
+import { Cover } from "./Cover";
+import type { CoverProps } from "./Cover";
 import type { Script } from "./data/script";
 import { totalDurationInFrames } from "./data/script";
 import habitudes from "./data/scripts/habitudes.json";
 
 const defaultScript = habitudes as Script;
+
+const defaultCover: CoverProps = {
+  eyebrow: "Ton anxiété",
+  title: "CE N'EST PAS\nL'AMYGDALE",
+  accent: "neuro",
+  pose: "point",
+  emotion: "insight",
+  mode: "neuro",
+  badge: "PSYCHOLOGIE",
+  brand: "leveilmental.fr",
+};
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -26,6 +39,14 @@ export const RemotionRoot: React.FC = () => {
         component={Demo1}
         durationInFrames={90}
         fps={30}
+        width={1080}
+        height={1920}
+      />
+      {/* Couverture / miniature TikTok (still). --props=<slug>.cover.json */}
+      <Still
+        id="Cover"
+        component={Cover}
+        defaultProps={defaultCover}
         width={1080}
         height={1920}
       />
