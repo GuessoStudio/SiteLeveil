@@ -55,6 +55,7 @@ const articles = [
   { path: "/blog/formation-habitudes-cerveau-neurosciences/",        file: "src/articles/FormationHabitudes.tsx" },
   { path: "/blog/concentration-profonde-deep-work-neurosciences/",   file: "src/articles/ConcentrationProfonde.tsx" },
   { path: "/blog/biais-cognitifs-liste-psychologie/",                file: "src/articles/BiaisCognitifs.tsx" },
+  { path: "/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/", file: "src/articles/AnxieteMecanismes.tsx" },
 ];
 
 const allUrls = [

@@ -39,4 +39,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "formation-habitudes-cerveau-neurosciences": lazy(() => import("../articles/FormationHabitudes")),
   "concentration-profonde-deep-work-neurosciences": lazy(() => import("../articles/ConcentrationProfonde")),
   "biais-cognitifs-liste-psychologie": lazy(() => import("../articles/BiaisCognitifs")),
+  "anxiete-mecanismes-neurologiques-solutions-scientifiques": lazy(() => import("../articles/AnxieteMecanismes")),
 };

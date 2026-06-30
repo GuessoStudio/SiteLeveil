@@ -32,6 +32,7 @@ const ARTICLE_SLUGS = [
   'formation-habitudes-cerveau-neurosciences',
   'concentration-profonde-deep-work-neurosciences',
   'biais-cognitifs-liste-psychologie',
+  'anxiete-mecanismes-neurologiques-solutions-scientifiques',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

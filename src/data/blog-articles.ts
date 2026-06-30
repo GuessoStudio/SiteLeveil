@@ -301,5 +301,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/biais-cognitifs-liste-psychologie-cover",
         slug: "biais-cognitifs-liste-psychologie",
         featured: false
+    },
+    {
+        id: 28,
+        title: "Anxiété : les mécanismes neurologiques et 10 solutions validées par la science",
+        excerpt: "Anxiété et neurosciences : circuits amygdale-BNST-mPFC, hypoconnectivité préfrontale, et 10 solutions classées par niveau de preuve. Guide 2026 avec sources.",
+        category: "Psychologie",
+        readTime: 15,
+        date: "2026-06-28",
+        image: "/images/articles/anxiete-mecanismes-neurologiques-solutions-scientifiques-cover",
+        slug: "anxiete-mecanismes-neurologiques-solutions-scientifiques",
+        featured: false
     }
 ];

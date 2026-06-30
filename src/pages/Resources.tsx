@@ -244,6 +244,18 @@ const Resources = () => {
       downloadUrl: "/downloads/biais-cognitifs-liste-psychologie-guide.pdf"
     },
     {
+      id: 28,
+      title: "10 solutions contre l'anxiété classées par niveau de preuve",
+      description: "Les 10 solutions contre l'anxiété avec leur mécanisme cérébral, leur niveau de preuve et un protocole pratique. De la TCC à la cohérence cardiaque. Sources : Chavanne & Robinson 2021, Journal of Anxiety Disorders 2023, Frontiers in Neuroscience 2025.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/anxiete-mecanismes-neurologiques-solutions-scientifiques-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/anxiete-mecanismes-neurologiques-solutions-scientifiques-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",
