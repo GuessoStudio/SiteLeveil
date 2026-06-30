@@ -2,6 +2,8 @@
   "fps": 30,
   "width": 1080,
   "height": 1920,
+  "audio": "anxiete-amygdale.mp3",
+  "audioVolume": 2.5,
   "ambience": "dark_drone",
   "ambienceVolume": 0.7,
   "defaults": {
@@ -15,14 +17,14 @@
     "burst": false
   },
   "scenes": [
-    { "duration": 3.5, "keyword": "PAS TON AMYGDALE", "subtitle": "Ton anxiété, ce n'est pas ton amygdale qui panique. C'est plus subtil.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "punch-head", "transition": "flash_reverse", "fx": "brain_highlight_head", "icon": "brain", "burst": "head", "position": "center" },
-    { "duration": 4.0, "keyword": "L'ALARME", "keywordFx": "shake", "subtitle": "L'amygdale, c'est juste l'alarme : elle réagit au danger immédiat, là, maintenant.", "pose": "cross", "emotion": "peur", "mode": "emotions", "accent": "stress", "fx": "cortisol_spike", "icon": "heart", "camera": "drift", "transition": "color_shift", "position": "left" },
-    { "duration": 4.5, "keyword": "RÉEL OU IMAGINÉ ?", "subtitle": "Le cortex préfrontal, lui, remet du contexte : le danger est réel, ou imaginé ?", "pose": "think", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "fx": "brain_highlight_head", "icon": "eye", "camera": "zoom-in", "transition": "color_shift", "position": "right" },
-    { "duration": 4.5, "keyword": "LA RÉGULATION", "subtitle": "Dans l'anxiété, le souci n'est pas l'alarme. C'est la régulation entre les deux.", "pose": "open", "emotion": "focus", "mode": "eveil", "accent": "eveil", "fx": "brain_transfer", "icon": "link", "camera": "drift", "transition": "color_shift", "position": "center" },
-    { "duration": 5.5, "keyword": "DEUX CIRCUITS", "subtitle": "La peur d'un danger présent et l'angoisse d'une menace floue ne passent pas par le même circuit.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "fx": "synapse_fire", "icon": "bolt", "camera": "drift", "transition": "color_shift", "position": "left" },
-    { "duration": 6.0, "keyword": "LE BNST", "subtitle": "Michael Davis, Université Emory : un second réseau, le BNST, gère cette alerte longue et diffuse.", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "stress", "fx": "empathy_pulse", "icon": "brain", "camera": "punch-head", "transition": "zoom_smash", "burst": "head", "position": "center" },
-    { "duration": 3.5, "keyword": "3 JOURS AVANT", "keywordFx": "shake", "subtitle": "Celle qui te tient en tension trois jours avant un entretien.", "pose": "cross", "emotion": "surcharge", "mode": "emotions", "accent": "stress", "fx": "rumination_loop", "icon": "clock", "camera": "drift", "transition": "color_shift", "position": "right" },
-    { "duration": 5.5, "keyword": "REVENIR AU RÉEL", "subtitle": "L'objectif n'est pas d'éteindre ton cerveau, mais de réentraîner ce circuit à revenir au réel.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "fx": "identity_shift", "icon": "lightbulb", "camera": "zoom-in", "transition": "flash_reverse", "position": "center" },
-    { "duration": 5.0, "keyword": "LIEN EN BIO", "subtitle": "Est-ce un danger maintenant, ou une anticipation ? Article complet sur leveilmental.fr.", "pose": "wave", "emotion": "calme", "mode": "eveil", "accent": "eveil", "fx": "gratitude_glow", "icon": "target", "camera": "zoom-out", "transition": "color_shift", "position": "center" }
+    { "duration": 4.4, "keyword": "PAS TON AMYGDALE", "subtitle": "Ton anxiété, ce n'est pas ton amygdale qui panique. C'est plus subtil.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "punch-head", "transition": "flash_reverse", "fx": "brain_highlight_head", "icon": "brain", "burst": "head", "position": "center" },
+    { "duration": 4.6, "keyword": "L'ALARME", "keywordFx": "shake", "subtitle": "L'amygdale, c'est juste l'alarme : elle réagit au danger immédiat, là, maintenant.", "pose": "cross", "emotion": "peur", "mode": "emotions", "accent": "stress", "fx": "cortisol_spike", "icon": "heart", "camera": "drift", "transition": "color_shift", "position": "left" },
+    { "duration": 4.8, "keyword": "RÉEL OU IMAGINÉ ?", "subtitle": "Le cortex préfrontal, lui, remet du contexte : le danger est réel, ou imaginé ?", "pose": "think", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "fx": "brain_highlight_head", "icon": "eye", "camera": "zoom-in", "transition": "color_shift", "position": "right" },
+    { "duration": 4.3, "keyword": "LA RÉGULATION", "subtitle": "Dans l'anxiété, le souci n'est pas l'alarme. C'est la régulation entre les deux.", "pose": "open", "emotion": "focus", "mode": "eveil", "accent": "eveil", "fx": "brain_transfer", "icon": "link", "camera": "drift", "transition": "color_shift", "position": "center" },
+    { "duration": 7.4, "keyword": "DEUX CIRCUITS", "subtitle": "La peur d'un danger présent et l'angoisse d'une menace floue ne passent pas par le même circuit.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "fx": "synapse_fire", "icon": "bolt", "camera": "drift", "transition": "color_shift", "position": "left" },
+    { "duration": 4.5, "keyword": "LE BNST", "subtitle": "Michael Davis, Université Emory : un second réseau, le BNST, gère cette alerte longue et diffuse.", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "stress", "fx": "empathy_pulse", "icon": "brain", "camera": "punch-head", "transition": "zoom_smash", "burst": "head", "position": "center" },
+    { "duration": 2.9, "keyword": "3 JOURS AVANT", "keywordFx": "shake", "subtitle": "Celle qui te tient en tension trois jours avant un entretien.", "pose": "cross", "emotion": "surcharge", "mode": "emotions", "accent": "stress", "fx": "rumination_loop", "icon": "clock", "camera": "drift", "transition": "color_shift", "position": "right" },
+    { "duration": 5.2, "keyword": "REVENIR AU RÉEL", "subtitle": "L'objectif n'est pas d'éteindre ton cerveau, mais de réentraîner ce circuit à revenir au réel.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "fx": "identity_shift", "icon": "lightbulb", "camera": "zoom-in", "transition": "flash_reverse", "position": "center" },
+    { "duration": 5.3, "keyword": "LIEN EN BIO", "subtitle": "Est-ce un danger maintenant, ou une anticipation ? Article complet sur leveilmental.fr.", "pose": "wave", "emotion": "calme", "mode": "eveil", "accent": "eveil", "fx": "gratitude_glow", "icon": "target", "camera": "zoom-out", "transition": "color_shift", "position": "center" }
   ]
 }
