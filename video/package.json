@@ -15,6 +15,8 @@
     "render:biais": "remotion render src/Root.tsx Habitudes out/biais-cognitifs.mp4 --props=src/data/scripts/biais-cognitifs.json",
     "render:anxiete": "remotion render src/Root.tsx Habitudes out/anxiete-amygdale.mp4 --props=src/data/scripts/anxiete-amygdale.json",
     "cover:anxiete": "remotion still src/Root.tsx Cover out/anxiete-amygdale-cover.png --props=src/data/covers/anxiete-amygdale.cover.json",
+    "render:burnout": "remotion render src/Root.tsx Habitudes out/burnout.mp4 --props=src/data/scripts/burnout.json",
+    "cover:burnout": "remotion still src/Root.tsx Cover out/burnout-cover.png --props=src/data/covers/burnout.cover.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },
