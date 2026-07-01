@@ -256,6 +256,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/anxiete-mecanismes-neurologiques-solutions-scientifiques-guide.pdf"
     },
     {
+      id: 29,
+      title: "Les 7 étapes de récupération après un burn-out",
+      description: "Le parcours de récupération neurobiologique en 7 étapes, avec le mécanisme cérébral de chacune, les signaux d'alerte et les délais réalistes. Sources : revue MRI 2025, Regensburg Burnout Project 2024, EEG 2025.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/burn-out-signaux-neurobiologiques-recuperation-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/burn-out-signaux-neurobiologiques-recuperation-guide.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

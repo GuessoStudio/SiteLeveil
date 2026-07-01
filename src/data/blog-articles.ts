@@ -312,5 +312,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/anxiete-mecanismes-neurologiques-solutions-scientifiques-cover",
         slug: "anxiete-mecanismes-neurologiques-solutions-scientifiques",
         featured: false
+    },
+    {
+        id: 29,
+        title: "Burn-out : les signaux neurobiologiques dans le cerveau et 7 étapes de récupération",
+        excerpt: "Burn-out et cerveau : profil fronto-limbique, mythe du cortisol toujours élevé, réversibilité partielle et 7 étapes de récupération. Guide 2026 avec sources.",
+        category: "Psychologie",
+        readTime: 14,
+        date: "2026-07-01",
+        image: "/images/articles/burn-out-signaux-neurobiologiques-recuperation-cover",
+        slug: "burn-out-signaux-neurobiologiques-recuperation",
+        featured: false
     }
 ];

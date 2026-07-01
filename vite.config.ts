@@ -33,6 +33,7 @@ const ARTICLE_SLUGS = [
   'concentration-profonde-deep-work-neurosciences',
   'biais-cognitifs-liste-psychologie',
   'anxiete-mecanismes-neurologiques-solutions-scientifiques',
+  'burn-out-signaux-neurobiologiques-recuperation',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({
