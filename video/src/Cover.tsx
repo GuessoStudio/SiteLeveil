@@ -36,11 +36,13 @@ export const Cover: React.FC<CoverProps> = ({
   mode,
   badge = "PSYCHOLOGIE",
   brand = "leveilmental.fr",
-  characterHeightPct = 40,
+  // Défauts standard des couvertures : contenu descendu (tiers haut libre pour
+  // éviter le crop UI des réseaux), perso plus grand calé sur un sol abaissé.
+  characterHeightPct = 36,
   characterTopPct = 40,
-  badgeTopPct = 5.5,
-  titleTopPct = 11,
-  floorTopPct,
+  badgeTopPct = 17,
+  titleTopPct = 22,
+  floorTopPct = 71,
 }) => {
   const acc = resolveAccent(accent);
   const tint = MODES[mode].tint;
