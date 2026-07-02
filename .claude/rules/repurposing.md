@@ -352,6 +352,17 @@ Article complet : https://leveilmental.fr
 - Lien article EN CLAIR dans la description (contrairement à Facebook).
 - Le titre est searchable : y mettre le terme que les gens tapent.
 - Ton identique aux autres canaux (professeur, tutoiement, sourcé).
+- **Langue de la vidéo : Français** (à sélectionner à l'upload).
+
+### Tags YouTube (champ « Tags », séparés par des virgules)
+Impact faible sur la visibilité, mais rattachent la chaîne à sa thématique.
+Socle À REMETTRE SUR CHAQUE VIDÉO :
+```
+neurosciences, psychologie, santé mentale, cerveau, neurosciences appliquées, vulgarisation scientifique, développement personnel, bien-être mental, L'Éveil Mental, leveilmental
+```
+Puis ajouter 5-10 tags spécifiques au sujet de la vidéo (ex. burn-out :
+burnout, burn-out, épuisement professionnel, cortisol, stress chronique,
+cortex cingulaire, brouillard mental, stress au travail).
 
 ---
 
