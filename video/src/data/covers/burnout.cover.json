@@ -7,9 +7,9 @@
   "mode": "emotions",
   "badge": "NEUROSCIENCES",
   "brand": "leveilmental.fr",
-  "badgeTopPct": 35,
-  "titleTopPct": 40,
-  "characterTopPct": 50,
+  "badgeTopPct": 24,
+  "titleTopPct": 29,
+  "characterTopPct": 40,
   "characterHeightPct": 36,
-  "floorTopPct": 81
+  "floorTopPct": 71
 }
