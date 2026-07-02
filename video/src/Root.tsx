@@ -4,6 +4,8 @@ import { Demo1 } from "./Demo1";
 import { Video } from "./Video";
 import { Cover } from "./Cover";
 import type { CoverProps } from "./Cover";
+import { Banner } from "./Banner";
+import type { BannerProps } from "./Banner";
 import type { Script } from "./data/script";
 import { totalDurationInFrames } from "./data/script";
 import habitudes from "./data/scripts/habitudes.json";
@@ -18,6 +20,16 @@ const defaultCover: CoverProps = {
   emotion: "insight",
   mode: "neuro",
   badge: "PSYCHOLOGIE",
+  brand: "leveilmental.fr",
+};
+
+const defaultBanner: BannerProps = {
+  title: "L'ÉVEIL\nMENTAL",
+  tagline: "Neurosciences appliquées",
+  accent: "eveil",
+  pose: "open",
+  emotion: "eveil",
+  mode: "eveil",
   brand: "leveilmental.fr",
 };
 
@@ -49,6 +61,14 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={defaultCover}
         width={1080}
         height={1920}
+      />
+      {/* Bannière de chaîne YouTube (still 2560x1440). --props=banner.json */}
+      <Still
+        id="Banner"
+        component={Banner}
+        defaultProps={defaultBanner}
+        width={2560}
+        height={1440}
       />
       {/* Composition principale pilotée par JSON (--props=<script>.json) */}
       <Composition
