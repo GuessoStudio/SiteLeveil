@@ -5,6 +5,8 @@ Vue d'ensemble de la production. Une ligne par vidéo ; fiche détaillée dans
 
 Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-titres · 🚀 publié
 
+📅 Heures de publication par réseau (même planning pour chaque vidéo) : [horaires-publication.md](horaires-publication.md)
+
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
 |---|---|---|---|---|---|---|---|
 | habitudes-court | Le mythe des 21 jours | Neuro / Dev perso | 30s | 🔊 (voix+sons OK, sous-titres en attente) | — | — | [fiche](habitudes-court.md) |
