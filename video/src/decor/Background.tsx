@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { LAYOUT } from "../data/layout";
 
-export const Background: React.FC<{ tint: string }> = ({ tint }) => {
+export const Background: React.FC<{ tint: string; floorTopPct?: number }> = ({ tint, floorTopPct = LAYOUT.floorTopPct }) => {
   const frame = useCurrentFrame();
   const glowPulse = 0.35 + 0.08 * Math.sin((frame / 40) * Math.PI);
 
@@ -24,7 +24,7 @@ export const Background: React.FC<{ tint: string }> = ({ tint }) => {
           position: "absolute",
           left: "-12%",
           right: "-12%",
-          top: `${LAYOUT.floorTopPct}%`,
+          top: `${floorTopPct}%`,
           height: 0,
           borderTop: `2px solid ${tint}`,
           opacity: 0.65,
@@ -35,7 +35,7 @@ export const Background: React.FC<{ tint: string }> = ({ tint }) => {
         style={{
           position: "absolute",
           left: "50%",
-          top: `${LAYOUT.floorTopPct}%`,
+          top: `${floorTopPct}%`,
           width: "64%",
           height: "11%",
           transform: "translate(-50%,-46%)",

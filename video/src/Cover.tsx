@@ -22,6 +22,9 @@ export type CoverProps = {
   brand?: string; // marque en bas (défaut leveilmental.fr)
   characterHeightPct?: number; // taille du perso (défaut 40 ; vidéo = 25)
   characterTopPct?: number; // position verticale du perso (défaut 40)
+  badgeTopPct?: number; // position de la pastille (défaut 5.5)
+  titleTopPct?: number; // position du bloc titre (défaut 11)
+  floorTopPct?: number; // position du sol (défaut LAYOUT.floorTopPct)
 };
 
 export const Cover: React.FC<CoverProps> = ({
@@ -35,6 +38,9 @@ export const Cover: React.FC<CoverProps> = ({
   brand = "leveilmental.fr",
   characterHeightPct = 40,
   characterTopPct = 40,
+  badgeTopPct = 5.5,
+  titleTopPct = 11,
+  floorTopPct,
 }) => {
   const acc = resolveAccent(accent);
   const tint = MODES[mode].tint;
@@ -42,7 +48,7 @@ export const Cover: React.FC<CoverProps> = ({
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#0a0720", fontFamily: "Inter, system-ui, sans-serif" }}>
-      <Background tint={tint} />
+      <Background tint={tint} floorTopPct={floorTopPct} />
       <Reflection pose={pose} tint={tint} heightPct={characterHeightPct} topPct={characterTopPct} />
       <PetitEveille frame={0} fps={30} pose={pose} emotion={emotion} mode={mode} heightPct={characterHeightPct} topPct={characterTopPct} />
       <Vignette />
@@ -51,7 +57,7 @@ export const Cover: React.FC<CoverProps> = ({
       <div
         style={{
           position: "absolute",
-          top: "5.5%",
+          top: `${badgeTopPct}%`,
           left: "50%",
           transform: "translateX(-50%)",
           padding: "10px 22px",
@@ -67,7 +73,7 @@ export const Cover: React.FC<CoverProps> = ({
       </div>
 
       {/* Titre */}
-      <div style={{ position: "absolute", top: "11%", left: 0, right: 0, padding: "0 6%", textAlign: "center" }}>
+      <div style={{ position: "absolute", top: `${titleTopPct}%`, left: 0, right: 0, padding: "0 6%", textAlign: "center" }}>
         {eyebrow ? (
           <div
             style={{

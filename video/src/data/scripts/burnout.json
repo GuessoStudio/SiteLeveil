@@ -5,7 +5,7 @@
   "audio": "Burn-out.mp3",
   "audioVolume": 2.5,
   "ambience": "dark_drone",
-  "ambienceVolume": 0.7,
+  "ambienceVolume": 1.0,
   "defaults": {
     "pose": "idle",
     "emotion": "calme",
