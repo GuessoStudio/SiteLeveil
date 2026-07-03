@@ -6,6 +6,7 @@ import { PetitEveille } from "../character/PetitEveille";
 import { CameraRig } from "./CameraRig";
 import { KeywordText } from "./KeywordText";
 import { CreditTag } from "./CreditTag";
+import { Karaoke } from "./Karaoke";
 import { SplitScreen } from "../fx/SplitScreen";
 import { Stars } from "../fx/Stars";
 import { Particles } from "../fx/Particles";
@@ -25,7 +26,7 @@ const POSITION_OFFSET: Record<Position, string> = {
   right: "translateX(16%)",
 };
 
-export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number>; globalTotal?: number }> = ({ scene, sfxVolume, globalTotal }) => {
+export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number>; globalTotal?: number; karaoke?: boolean }> = ({ scene, sfxVolume, globalTotal, karaoke }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const tint = MODES[scene.mode].tint;
@@ -63,6 +64,9 @@ export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, 
       {scene.split ? <SplitScreen left={scene.split.left} right={scene.split.right} /> : null}
       <KeywordText keyword={scene.keyword} accent={scene.accent} keywordFx={scene.keywordFx} />
       {scene.credit ? <CreditTag credit={scene.credit} accent={scene.accent} /> : null}
+      {karaoke && scene.subtitle && !scene.split ? (
+        <Karaoke subtitle={scene.subtitle} accent={scene.accent} durationInFrames={scene.durationInFrames} />
+      ) : null}
       <SceneFlash accent={scene.accent} />
       <Transition transition={scene.transition} accent={scene.accent} />
       <SfxPlayer transition={scene.transition} fx={scene.fx} sfx={scene.sfx} volumeOverride={sfxVolume} />

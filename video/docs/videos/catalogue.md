@@ -71,6 +71,11 @@ Pastille « SOURCE · Nom · Institution » entre le mot-clé et la tête (E-E-A
 ## 12c. SplitScreen — champ `split: { "left": "...", "right": "..." }` (ponctuel)
 Écran divisé pour comparaisons (rouge à gauche vs violet à droite + « VS »).
 
+## 12d. Karaoké natif — champ `karaoke: true` (haut niveau du script)
+Sous-titres générés depuis les `subtitle`, mot actif illuminé dans la couleur
+d'`accent` du plan (+ contour noir), dans la bande caption-safe. Off par défaut.
+Remplace CapCut ; orthographe parfaite (termes techniques jamais massacrés).
+
 ---
 
 ## 13. Champs du script JSON

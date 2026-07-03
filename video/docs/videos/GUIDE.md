@@ -113,8 +113,11 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
       Ex. `"split": { "left": "Mythe", "right": "Réalité" }`.
 
 ### Tier 2 — productivité / autonomie
-- [ ] **Karaoké intégré (option)** : rendre les sous-titres mot-à-mot dans le moteur
-      à partir des `subtitle`, pour se passer de CapCut (pipeline 100% automatique).
+- [x] **Karaoké intégré** — flag `"karaoke": true` (haut niveau du script). Sous-titres
+      depuis les `subtitle`, mot actif en couleur d'accent, dans la bande caption-safe.
+      Fin de CapCut. (Précision : proportionnel par plan ; les plans étant calés sur
+      les pauses, l'erreur reste dans un groupe de 3-4 mots. Whisper = option future
+      pour du frame-perfect.)
 - [ ] **`render:all`** : batch de tous les scripts en une commande.
 - [ ] **Avatar / photo de profil** (800×800) : composition `Avatar` (tête + spirale).
 

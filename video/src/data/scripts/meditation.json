@@ -6,6 +6,7 @@
   "audioVolume": 2.5,
   "ambience": "dark_drone",
   "ambienceVolume": 0.7,
+  "karaoke": true,
   "defaults": {
     "pose": "idle",
     "emotion": "calme",

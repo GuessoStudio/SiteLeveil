@@ -50,6 +50,7 @@ export type Script = {
   ambience?: string;    // nappe d'ambiance globale (clé du registre SFX, ex: "dark_drone")
   ambienceVolume?: number; // volume de l'ambiance pour ce script (défaut : SFX_VOLUME de la clé)
   guides?: boolean;     // affiche les repères caption-safe + zones TikTok (preview uniquement)
+  karaoke?: boolean;    // sous-titres karaoké natifs (depuis les subtitle), off par défaut
   defaults: ScriptDefaults;
   scenes: SceneInput[];
 };
