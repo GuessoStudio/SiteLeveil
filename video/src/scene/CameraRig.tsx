@@ -7,8 +7,10 @@ export const CameraRig: React.FC<{
   camera: CameraMove;
   transition?: string;
   durationInFrames: number;
+  globalFrom?: number;   // frame de début du plan dans la timeline globale
+  globalTotal?: number;  // durée totale de la vidéo en frames
   children: React.ReactNode;
-}> = ({ camera, transition, durationInFrames, children }) => {
+}> = ({ camera, transition, durationInFrames, globalFrom = 0, globalTotal = 1, children }) => {
   const frame = useCurrentFrame();
   const p = interpolate(frame, [0, durationInFrames], [0, 1], {
     extrapolateRight: "clamp",
@@ -19,6 +21,16 @@ export const CameraRig: React.FC<{
   let ty = 0;
 
   switch (camera) {
+    case "cine": {
+      // Zoom lent CONTINU piloté par le frame global → ne se réinitialise pas à
+      // chaque plan. Le perso reste calme, la caméra « lourde » avance sans à-coup
+      // pendant que les titres flashent au-dessus (look grand studio).
+      const g = globalFrom + frame;
+      scale = interpolate(g, [0, globalTotal], [1.04, 1.16]);
+      tx = 0.9 * Math.sin(g / 130);
+      ty = -0.6 * Math.sin(g / 170);
+      break;
+    }
     case "drift": {
       scale = interpolate(p, [0, 1], [1.03, 1.14]);
       tx = interpolate(p, [0, 1], [-2.5, 2.5]);

@@ -11,6 +11,7 @@ import { Burst } from "../fx/Burst";
 import { SceneFlash } from "../fx/SceneFlash";
 import { FxOverlay } from "../fx/FxOverlay";
 import { IconPop } from "../fx/IconPop";
+import { DigitalTimer } from "../fx/DigitalTimer";
 import { Transition } from "../fx/Transition";
 import { SfxPlayer } from "../audio/SfxPlayer";
 import { MODES } from "../data/emotions";
@@ -22,7 +23,7 @@ const POSITION_OFFSET: Record<Position, string> = {
   right: "translateX(16%)",
 };
 
-export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number> }> = ({ scene, sfxVolume }) => {
+export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number>; globalTotal?: number }> = ({ scene, sfxVolume, globalTotal }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const tint = MODES[scene.mode].tint;
@@ -34,6 +35,8 @@ export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, 
         camera={scene.camera}
         transition={scene.transition}
         durationInFrames={scene.durationInFrames}
+        globalFrom={scene.from}
+        globalTotal={globalTotal}
       >
         <Background tint={tint} />
         <Stars tint={tint} />
@@ -49,6 +52,7 @@ export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, 
           <Particles mode={scene.mode} />
           <FxOverlay fx={scene.fx} accent={scene.accent} durationInFrames={scene.durationInFrames} />
           <IconPop icon={scene.icon} accent={scene.accent} />
+          {scene.timer ? <DigitalTimer accent={scene.accent} /> : null}
           <Burst burst={scene.burst} mode={scene.mode} />
         </AbsoluteFill>
         <Vignette />

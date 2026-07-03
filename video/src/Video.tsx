@@ -12,6 +12,7 @@ import { SFX_FILES, SFX_VOLUME, type SfxKey } from "./data/sfxRegistry";
 export const Video: React.FC<Script> = (script) => {
   const scenes = resolveScenes(script);
   const ambienceFile = script.ambience ? SFX_FILES[script.ambience as SfxKey] : null;
+  const totalInFrames = scenes.reduce((acc, s) => acc + s.durationInFrames, 0);
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#0a0720" }}>
@@ -22,7 +23,7 @@ export const Video: React.FC<Script> = (script) => {
       <Series>
         {scenes.map((scene, i) => (
           <Series.Sequence key={i} durationInFrames={scene.durationInFrames}>
-            <Scene scene={scene} sfxVolume={script.sfxVolume} />
+            <Scene scene={scene} sfxVolume={script.sfxVolume} globalTotal={totalInFrames} />
           </Series.Sequence>
         ))}
       </Series>

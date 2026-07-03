@@ -2,7 +2,7 @@ import type { PoseName } from "./petit-eveille";
 import type { EmotionName, ModeName } from "./emotions";
 import { resolveAccent } from "./palette";
 
-export type CameraMove = "drift" | "zoom-in" | "zoom-out" | "punch-head" | "static";
+export type CameraMove = "drift" | "zoom-in" | "zoom-out" | "punch-head" | "static" | "cine";
 export type Position = "left" | "center" | "right";
 export type Burst = boolean | "head" | "torso";
 
@@ -21,6 +21,7 @@ export type SceneInput = {
   transition?: string;  // rupture ponctuelle en début de plan
   sfx?: string;         // bruitage forcé ("none" coupe, sinon une clé du registre)
   icon?: string;        // icône pop au-dessus de la tête (clé du jeu d'icônes)
+  timer?: boolean;      // affiche le chronomètre numérique (DigitalTimer) sur ce plan
   bubbleText?: string;
   accent?: string;
   burst?: Burst;
@@ -63,6 +64,7 @@ export type ResolvedScene = {
   transition?: string;
   sfx?: string;
   icon?: string;
+  timer?: boolean;
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
@@ -100,6 +102,7 @@ export function resolveScenes(script: Script): ResolvedScene[] {
       transition: s.transition, // ponctuel : ne se propage pas
       sfx: s.sfx,               // ponctuel
       icon: s.icon,             // ponctuel
+      timer: s.timer,           // ponctuel
       pose: sticky.pose,
       emotion: sticky.emotion,
       mode: sticky.mode,
