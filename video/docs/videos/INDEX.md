@@ -7,6 +7,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 
 📅 Heures de publication par réseau (même planning pour chaque vidéo) : [horaires-publication.md](horaires-publication.md)
 📚 Catalogue complet du moteur (poses, FX, SFX, caméras, composants…) : [catalogue.md](catalogue.md)
+📖 Guide de production A→Z (workflow, recettes, feuille de route) : [GUIDE.md](GUIDE.md)
 
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
 |---|---|---|---|---|---|---|---|
