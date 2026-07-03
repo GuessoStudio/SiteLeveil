@@ -6,6 +6,7 @@ Vue d'ensemble de la production. Une ligne par vidéo ; fiche détaillée dans
 Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-titres · 🚀 publié
 
 📅 Heures de publication par réseau (même planning pour chaque vidéo) : [horaires-publication.md](horaires-publication.md)
+📚 Catalogue complet du moteur (poses, FX, SFX, caméras, composants…) : [catalogue.md](catalogue.md)
 
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
 |---|---|---|---|---|---|---|---|
