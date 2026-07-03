@@ -419,7 +419,10 @@ export default function SystemeLimbique() {
           </p>
 
           <p>
-            Plus spécifiquement, Hölzel et al. (Social Cognitive and Affective Neuroscience, 2011) ont mesuré ce qui se passe après 8 semaines de pratique régulière. L'amygdale réduit de volume. Moins de matière grise dans l'amygdale signifie une alarme moins sensible — et donc des réactions de stress moins intenses. Ce changement est visible en IRM et corrélé à une baisse du stress ressenti.
+            Plus spécifiquement, Hölzel et al. (Social Cognitive and Affective Neuroscience, 2011) ont mesuré ce qui se passe après 8 semaines de pratique régulière. L'amygdale réduit de volume. Moins de matière grise dans l'amygdale signifie une alarme moins sensible — et donc des réactions de stress moins intenses. Ce changement est visible en IRM et corrélé à une baisse du stress ressenti. À noter : ce résultat n'est pas retrouvé dans toutes les études, comme le détaille notre analyse des{" "}
+            <Link to="/blog/meditation-effets-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
+              effets réels de la méditation sur le cerveau mesurés par l'IRMf
+            </Link>.
           </p>
 
           <div className="not-prose my-6 bg-neutral-100 dark:bg-neutral-800/50 p-5 rounded-lg">

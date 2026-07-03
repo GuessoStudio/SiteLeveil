@@ -57,6 +57,7 @@ const articles = [
   { path: "/blog/biais-cognitifs-liste-psychologie/",                file: "src/articles/BiaisCognitifs.tsx" },
   { path: "/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/", file: "src/articles/AnxieteMecanismes.tsx" },
   { path: "/blog/burn-out-signaux-neurobiologiques-recuperation/", file: "src/articles/BurnOut.tsx" },
+  { path: "/blog/meditation-effets-cerveau/",                       file: "src/articles/MeditationEffetsCerveau.tsx" },
 ];
 
 const allUrls = [

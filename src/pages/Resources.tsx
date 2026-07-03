@@ -268,6 +268,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/burn-out-signaux-neurobiologiques-recuperation-guide.pdf"
     },
     {
+      id: 30,
+      title: "Checklist : démarrer la méditation en 8 semaines",
+      description: "La structure semaine par semaine du protocole MBSR, les 5 repères pour débuter et ce que chaque étape entraîne dans le cerveau. Sources : Hölzel 2011, Fox 2014, Pernet 2021.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/meditation-effets-cerveau-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/meditation-effets-cerveau-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

@@ -345,7 +345,7 @@ export default function AttentionFragmenteeArticle() {
           <h3>1. Entraînement attentionnel par méditation (ATT)</h3>
           
           <p>
-            Amishi Jha (University of Miami) a validé l'Attention Training Therapy : 12 minutes quotidiennes de méditation focalisée augmentent la capacité de working memory de 30% et réduisent l'esprit vagabond de 22% après 8 semaines.
+            Amishi Jha (University of Miami) a validé l'Attention Training Therapy : 12 minutes quotidiennes de méditation focalisée augmentent la capacité de working memory de 30% et réduisent l'esprit vagabond de 22% après 8 semaines. Ces gains d'attention font partie des <Link to="/blog/meditation-effets-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">effets de la méditation sur le cerveau les mieux documentés par l'imagerie</Link>, davantage que les changements de structure.
           </p>
 
           <p>

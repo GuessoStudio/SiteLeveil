@@ -34,6 +34,7 @@ const ARTICLE_SLUGS = [
   'biais-cognitifs-liste-psychologie',
   'anxiete-mecanismes-neurologiques-solutions-scientifiques',
   'burn-out-signaux-neurobiologiques-recuperation',
+  'meditation-effets-cerveau',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

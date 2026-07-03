@@ -323,5 +323,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/burn-out-signaux-neurobiologiques-recuperation-cover",
         slug: "burn-out-signaux-neurobiologiques-recuperation",
         featured: false
+    },
+    {
+        id: 30,
+        title: "Méditation et cerveau : ses effets prouvés par l'IRMf (protocole 8 semaines)",
+        excerpt: "Méditation et effets sur le cerveau : ce que l'IRMf montre vraiment sur la matière grise, l'attention et ses limites. Protocole MBSR 8 semaines expliqué.",
+        category: "Neurosciences",
+        readTime: 14,
+        date: "2026-07-03",
+        image: "/images/articles/meditation-effets-cerveau-cover",
+        slug: "meditation-effets-cerveau",
+        featured: false
     }
 ];

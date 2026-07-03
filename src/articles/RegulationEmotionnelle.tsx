@@ -489,7 +489,7 @@ export default function RegulationEmotionnelle() {
             Au lieu de "je suis en colère" (identification totale), on passe à "il y a de la colère" (observation). Cette nuance — petite en surface, grande en effet — crée une distance entre toi et l'état émotionnel. C'est l'équivalent psychologique du circuit cortex préfrontal-amygdale.
           </p>
           <p>
-            Les programmes MBSR (Mindfulness-Based Stress Reduction), développés par Jon Kabat-Zinn à l'Université du Massachusetts (États-Unis), produisent après 8 semaines une augmentation mesurable de la matière grise dans le cortex préfrontal et une réduction du volume de l'amygdale. Ce ne sont pas des changements subjectifs — ce sont des modifications anatomiques objectivables en IRM.
+            Les programmes MBSR (Mindfulness-Based Stress Reduction), développés par Jon Kabat-Zinn à l'Université du Massachusetts (États-Unis), produisent après 8 semaines une augmentation mesurable de la matière grise dans le cortex préfrontal et une réduction du volume de l'amygdale. Ce ne sont pas des changements subjectifs — ce sont des modifications anatomiques objectivables en IRM. Ces effets structurels restent toutefois modestes et variables : pour en cerner la portée réelle, voir notre article sur les <Link to="/blog/meditation-effets-cerveau/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">effets prouvés de la méditation sur le cerveau</Link>.
           </p>
 
           <h3>7. Régulation physiologique</h3>
