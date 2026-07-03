@@ -56,26 +56,23 @@ export const Karaoke: React.FC<{ subtitle: string; accent: string; durationInFra
         opacity: appear,
       }}
     >
-      <p style={{ margin: 0, lineHeight: 1.15, fontSize: 56, fontWeight: 800, wordSpacing: "0.12em" }}>
+      <p style={{ margin: 0, lineHeight: 1.3, fontSize: 56, fontWeight: 800, display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: "0.18em", rowGap: "0.15em" }}>
         {chunk.map((w, i) => {
           const isActive = from + i === active;
           return (
-            <React.Fragment key={i}>
-              {i > 0 ? " " : ""}
-              <span
-                style={{
-                  display: "inline-block",
-                  color: isActive ? accent : "#FFFFFF",
-                  opacity: isActive ? 1 : 0.55,
-                  transform: isActive ? "scale(1.08)" : "scale(1)",
-                  textShadow: isActive
-                    ? `0 0 18px ${accent}, -2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 0 3px 12px rgba(0,0,0,.9)`
-                    : "-2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 0 3px 12px rgba(0,0,0,.9)",
-                }}
-              >
-                {w}
-              </span>
-            </React.Fragment>
+            <span
+              key={i}
+              style={{
+                color: isActive ? accent : "#FFFFFF",
+                opacity: isActive ? 1 : 0.55,
+                transform: isActive ? "scale(1.08)" : "scale(1)",
+                textShadow: isActive
+                  ? `0 0 18px ${accent}, -2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 0 3px 12px rgba(0,0,0,.9)`
+                  : "-2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 0 3px 12px rgba(0,0,0,.9)",
+              }}
+            >
+              {w}
+            </span>
           );
         })}
       </p>
