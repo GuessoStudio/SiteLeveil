@@ -65,13 +65,19 @@ Doc de schéma : `README.md`. Ce fichier = la liste exhaustive des valeurs.
 ## 12. Timer — champ `timer: true` (ponctuel)
 Chronomètre néon MM:SS qui défile 00:00 → 10:00 puis se fige net (DigitalTimer).
 
+## 12b. Crédit chercheur — champ `credit: "Nom · Institution"` (ponctuel)
+Pastille « SOURCE · Nom · Institution » entre le mot-clé et la tête (E-E-A-T).
+
+## 12c. SplitScreen — champ `split: { "left": "...", "right": "..." }` (ponctuel)
+Écran divisé pour comparaisons (rouge à gauche vs violet à droite + « VS »).
+
 ---
 
 ## 13. Champs du script JSON
 
 **Haut niveau :** `fps` · `width` · `height` · `audio` (voix off) · `audioVolume` (gain voix) · `ambience` · `ambienceVolume` · `sfxVolume` (override par SFX) · `guides` (repères caption-safe studio) · `defaults` · `scenes`
 
-**Par plan :** `duration` (s, requis) · `keyword` · `keywordFx` · `subtitle` (source karaoké, non affiché) · `pose` · `emotion` · `mode` · `position` (left/center/right) · `camera` · `fx` · `transition` · `sfx` · `icon` · `timer` · `bubbleText` · `accent` · `burst`
+**Par plan :** `duration` (s, requis) · `keyword` · `keywordFx` · `subtitle` (source karaoké, non affiché) · `pose` · `emotion` · `mode` · `position` (left/center/right) · `camera` · `fx` · `transition` · `sfx` · `icon` · `timer` · `credit` · `split` · `bubbleText` · `accent` · `burst`
 
 ---
 

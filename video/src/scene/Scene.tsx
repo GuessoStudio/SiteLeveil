@@ -5,6 +5,8 @@ import { Reflection } from "../decor/Reflection";
 import { PetitEveille } from "../character/PetitEveille";
 import { CameraRig } from "./CameraRig";
 import { KeywordText } from "./KeywordText";
+import { CreditTag } from "./CreditTag";
+import { SplitScreen } from "../fx/SplitScreen";
 import { Stars } from "../fx/Stars";
 import { Particles } from "../fx/Particles";
 import { Burst } from "../fx/Burst";
@@ -58,7 +60,9 @@ export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, 
         <Vignette />
       </CameraRig>
 
+      {scene.split ? <SplitScreen left={scene.split.left} right={scene.split.right} /> : null}
       <KeywordText keyword={scene.keyword} accent={scene.accent} keywordFx={scene.keywordFx} />
+      {scene.credit ? <CreditTag credit={scene.credit} accent={scene.accent} /> : null}
       <SceneFlash accent={scene.accent} />
       <Transition transition={scene.transition} accent={scene.accent} />
       <SfxPlayer transition={scene.transition} fx={scene.fx} sfx={scene.sfx} volumeOverride={sfxVolume} />

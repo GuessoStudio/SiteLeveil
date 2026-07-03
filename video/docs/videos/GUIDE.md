@@ -106,12 +106,11 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
 
 ## 7. À créer ensuite (feuille de route)
 
-### Tier 1 — fort impact, réutilisable
-- [ ] **Lower-third « crédit chercheur »** : bandeau discret `Nom · Institution`
-      (ex. « Tang, Hölzel & Posner · Nature Reviews Neuroscience »). Matérialise
-      l'E-E-A-T à l'écran sur les vidéos sourcées. Champ `credit?: string`.
-- [ ] **SplitScreen** : écran divisé pour les comparaisons (« réaction auto vs
-      pause », « avant vs après », « mythe vs réalité »). Composant + champ `split`.
+### Tier 1 — FAIT ✅
+- [x] **Lower-third « crédit chercheur »** — champ `credit: "Nom · Institution"`.
+      Ex. `"credit": "Tang, Hölzel & Posner · Nature Reviews Neuroscience"`.
+- [x] **SplitScreen** — champ `split: { "left": "...", "right": "..." }`.
+      Ex. `"split": { "left": "Mythe", "right": "Réalité" }`.
 
 ### Tier 2 — productivité / autonomie
 - [ ] **Karaoké intégré (option)** : rendre les sous-titres mot-à-mot dans le moteur

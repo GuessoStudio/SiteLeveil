@@ -20,6 +20,7 @@
     "banner": "remotion still src/Root.tsx Banner out/banner-youtube.png --props=src/data/covers/banner.json",
     "render:meditation": "remotion render src/Root.tsx Habitudes out/meditation.mp4 --props=src/data/scripts/meditation.json",
     "cover:meditation": "remotion still src/Root.tsx Cover out/meditation-cover.png --props=src/data/covers/meditation.cover.json",
+    "render:demo": "remotion render src/Root.tsx Habitudes out/demo-features.mp4 --props=src/data/scripts/demo-features.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },

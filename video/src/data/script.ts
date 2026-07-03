@@ -22,6 +22,8 @@ export type SceneInput = {
   sfx?: string;         // bruitage forcé ("none" coupe, sinon une clé du registre)
   icon?: string;        // icône pop au-dessus de la tête (clé du jeu d'icônes)
   timer?: boolean;      // affiche le chronomètre numérique (DigitalTimer) sur ce plan
+  credit?: string;      // crédit chercheur (lower-third E-E-A-T), ex "Davis · Emory"
+  split?: { left: string; right: string }; // écran divisé (comparaison)
   bubbleText?: string;
   accent?: string;
   burst?: Burst;
@@ -65,6 +67,8 @@ export type ResolvedScene = {
   sfx?: string;
   icon?: string;
   timer?: boolean;
+  credit?: string;
+  split?: { left: string; right: string };
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
@@ -103,6 +107,8 @@ export function resolveScenes(script: Script): ResolvedScene[] {
       sfx: s.sfx,               // ponctuel
       icon: s.icon,             // ponctuel
       timer: s.timer,           // ponctuel
+      credit: s.credit,         // ponctuel
+      split: s.split,           // ponctuel
       pose: sticky.pose,
       emotion: sticky.emotion,
       mode: sticky.mode,
