@@ -1,0 +1,39 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "Méditation.mp3",
+  "audioVolume": 2.5,
+  "ambience": "dark_drone",
+  "ambienceVolume": 0.7,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "drift",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    { "duration": 3.0, "keyword": "NE REPROGRAMME PAS", "subtitle": "La méditation ne reprogramme pas ton cerveau.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "zoom-in", "transition": "flash_reverse", "fx": "brain_highlight_head", "icon": "brain", "burst": "head", "position": "center" },
+    { "duration": 1.5, "keyword": "PAS COMME TU CROIS", "subtitle": "Enfin, pas comme tu crois.", "pose": "think", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "camera": "drift", "transition": "color_shift", "icon": "eye", "position": "left" },
+    { "duration": 1.8, "keyword": "ON TE SIMPLIFIE TROP", "subtitle": "On te simplifie trop le truc.", "pose": "open", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "camera": "drift", "transition": "color_shift", "position": "right" },
+    { "duration": 2.4, "keyword": "STRUCTURE", "subtitle": "Changer le cerveau, ça peut vouloir dire la structure,", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "neuro", "camera": "static", "transition": "color_shift", "fx": "brain_highlight_head", "icon": "brain", "position": "center" },
+    { "duration": 1.1, "keyword": "FONCTIONNEMENT", "subtitle": "le fonctionnement,", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "neuro", "camera": "static", "transition": "color_shift", "fx": "brainwave_beta", "icon": "bolt", "position": "center" },
+    { "duration": 1.5, "keyword": "OU LE STRESS", "subtitle": "ou la biologie du stress.", "pose": "cross", "emotion": "focus", "mode": "emotions", "accent": "stress", "camera": "static", "transition": "color_shift", "fx": "cortisol_spike", "icon": "flame", "position": "center" },
+    { "duration": 2.8, "keyword": "PLUS PRÉCIS", "subtitle": "Mais les études sérieuses montrent quelque chose de plus précis.", "pose": "think", "emotion": "focus", "mode": "neuro", "accent": "neuro", "camera": "drift", "transition": "color_shift", "fx": "brainwave_alpha", "icon": "eye", "position": "left" },
+    { "duration": 1.9, "keyword": "PAS BOOSTÉ PARTOUT", "subtitle": "Pas un cerveau boosté partout.", "pose": "open", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "zoom-out", "transition": "color_shift", "fx": "flow_state", "icon": "target", "position": "right" },
+    { "duration": 1.2, "keyword": "DES EFFETS CIBLÉS", "subtitle": "Des effets ciblés.", "pose": "point", "emotion": "insight", "mode": "eveil", "accent": "eveil", "camera": "zoom-in", "transition": "color_shift", "fx": "brain_highlight_head", "icon": "target", "position": "center" },
+    { "duration": 1.2, "keyword": "L'ATTENTION", "subtitle": "Sur l'attention.", "pose": "think", "emotion": "focus", "mode": "eveil", "accent": "sommeil", "camera": "static", "transition": "color_shift", "fx": "brainwave_gamma", "icon": "eye", "position": "left" },
+    { "duration": 1.7, "keyword": "LE CORPS", "subtitle": "La conscience du corps.", "pose": "open", "emotion": "calme", "mode": "eveil", "accent": "sommeil", "camera": "static", "transition": "color_shift", "fx": "serotonin_flow", "icon": "heart", "position": "center" },
+    { "duration": 1.9, "keyword": "LES ÉMOTIONS", "subtitle": "Et la régulation des émotions.", "pose": "open", "emotion": "calme", "mode": "eveil", "accent": "sommeil", "camera": "static", "transition": "color_shift", "fx": "empathy_pulse", "icon": "leaf", "position": "right" },
+    { "duration": 3.0, "keyword": "PLUS LUCIDE", "subtitle": "Tu ne deviens pas quelqu'un d'autre. Tu deviens plus lucide.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "camera": "drift", "transition": "flash_reverse", "fx": "identity_shift", "icon": "lightbulb", "burst": "head", "position": "center" },
+    { "duration": 2.8, "keyword": "AVANT D'AGIR", "subtitle": "Tu vois tes réactions arriver, avant d'agir.", "pose": "point", "emotion": "insight", "mode": "eveil", "accent": "eveil", "camera": "zoom-in", "transition": "color_shift", "fx": "brain_highlight_head", "icon": "eye", "position": "left" },
+    { "duration": 3.4, "keyword": "RÉGULARITÉ > DURÉE", "subtitle": "Ce n'est pas la durée qui compte le plus. C'est la régularité.", "pose": "open", "emotion": "focus", "mode": "eveil", "accent": "growth", "camera": "drift", "transition": "color_shift", "fx": "flow_state", "icon": "clock", "position": "right" },
+    { "duration": 3.6, "keyword": "10 MIN, TOUS LES JOURS", "subtitle": "Dix minutes par jour, c'est déjà une vraie base. Mais tous les jours.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "growth", "camera": "drift", "transition": "color_shift", "fx": "neuroplasticity", "icon": "clock", "position": "center" },
+    { "duration": 3.6, "keyword": "AVANT DE LE REMARQUER", "subtitle": "Ton mental change, souvent avant même que tu le remarques.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "camera": "zoom-out", "transition": "color_shift", "fx": "gratitude_glow", "icon": "spiral", "position": "center" },
+    { "duration": 2.5, "keyword": "LIEN EN BIO", "subtitle": "Article complet sur leveilmental.fr.", "pose": "wave", "emotion": "calme", "mode": "eveil", "accent": "eveil", "camera": "zoom-out", "transition": "color_shift", "fx": "gratitude_glow", "icon": "target", "position": "center" }
+  ]
+}
