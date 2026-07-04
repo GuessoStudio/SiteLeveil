@@ -381,9 +381,11 @@ Ajouter l'entrée dans `src/pages/Resources.tsx` :
 }
 ```
 
-⚠️ CASSE — le dossier réel est `public/Downloads/` (D majuscule). Netlify est
-sensible à la casse : un lien `/downloads/` (minuscule) renvoie une 404 en prod.
-Toujours écrire `/Downloads/` dans `downloadUrl` ET dans le CTA de l'article TSX.
+⚠️ CASSE — le dossier réel est `public/Downloads/` (D majuscule). Le CDN Netlify
+sert actuellement les deux casses (testé : `/downloads/` et `/Downloads/` renvoient
+le même PDF), donc ce n'est pas un bug bloquant aujourd'hui. Mais par hygiène et
+au cas où la config CDN changerait, aligner `downloadUrl` ET le CTA de l'article TSX
+sur la casse réelle du dossier : `/Downloads/`.
 
 Informer l'utilisateur des actions manuelles restantes :
 a) Mettre en forme sur Canva avec template L'Éveil
@@ -469,4 +471,4 @@ Après le push (2-3 min) :
 - ❌ Oublier les 3 liens ENTRANTS depuis d'autres articles (étape 4.5 bis) → article orphelin → GSC "Explorée, actuellement non indexée"
 - ❌ Écrire un lien interne sans trailing slash (`to="/blog/slug"`) → 301 Netlify → GSC "Page avec redirection"
 - ❌ Sauter `npm run validate:article [slug]` avant commit (il détecte justement l'orphelin et les liens sans slash)
-- ❌ Écrire `downloadUrl` en `/downloads/` minuscule → 404 sur Netlify (le dossier est `/Downloads/`)
+- ❌ Écrire `downloadUrl` avec une casse différente du dossier réel `/Downloads/` (Netlify tolère les deux aujourd'hui, mais rester cohérent par hygiène)
