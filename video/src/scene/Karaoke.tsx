@@ -1,45 +1,43 @@
 import React from "react";
 import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { LAYOUT } from "../data/layout";
+import type { WordTiming } from "../data/script";
 
-// Karaoké natif : affiche le `subtitle` du plan dans la bande caption-safe, par
-// groupes de 3-4 mots, et illumine le mot actif dans la COULEUR D'ACCENT du plan
-// (+ contour blanc pour la lisibilité). Timing proportionnel à la longueur des
-// mots sur la durée du plan (les plans étant déjà calés sur les pauses, l'erreur
-// reste dans un petit groupe → invisible). Style « surlignage » : tout le groupe
-// visible en blanc atténué, mot actif en avant.
+// Karaoké natif : illumine le mot parlé dans la COULEUR D'ACCENT du plan
+// (+ contour noir pour la lisibilité), par groupes de 3-4 mots dans la bande
+// caption-safe.
+//
+// Deux modes de calage :
+//  1. FRAME-PERFECT — si `words` est fourni (timestamps au mot produits par
+//     scripts/transcribe.py). On garde les mots dont le temps tombe dans la
+//     fenêtre absolue du plan et on surligne selon le vrai temps parlé.
+//  2. PROPORTIONNEL (repli) — sinon, on répartit les mots du `subtitle`
+//     proportionnellement à leur longueur sur la durée du plan (les plans étant
+//     calés sur les pauses, l'erreur reste dans un petit groupe).
 const MAX_PER_CHUNK = 4;
 
-export const Karaoke: React.FC<{ subtitle: string; accent: string; durationInFrames: number }> = ({
-  subtitle,
-  accent,
-  durationInFrames,
-}) => {
+export const Karaoke: React.FC<{
+  subtitle?: string;
+  accent: string;
+  durationInFrames: number;
+  words?: WordTiming[];
+  sceneFrom?: number;
+}> = ({ subtitle, accent, durationInFrames, words, sceneFrom }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const words = subtitle.trim().replace(/\s+/g, " ").split(" ").filter(Boolean);
-  if (words.length === 0) return null;
+  // --- Choix du mode : timings au mot si dispo ET si des mots tombent dans ce plan ---
+  const timed = resolveTimed(words, sceneFrom ?? 0, durationInFrames, fps, frame);
+  const proportional = timed ? null : resolveProportional(subtitle, durationInFrames, frame);
 
-  // poids = longueur alphabétique (min 3) → un mot long reste affiché plus longtemps
-  const weights = words.map((w) => Math.max(3, w.replace(/[^0-9A-Za-zÀ-ÿ]/g, "").length));
-  const total = weights.reduce((a, b) => a + b, 0);
-  const spans: Array<[number, number]> = [];
-  let acc = 0;
-  for (const w of weights) {
-    const start = acc / total;
-    acc += w;
-    spans.push([start, acc / total]);
-  }
-
-  const t = Math.min(0.999, Math.max(0, frame / durationInFrames));
-  let active = spans.findIndex(([s, e]) => t >= s && t < e);
-  if (active < 0) active = words.length - 1;
+  const resolved = timed ?? proportional;
+  if (!resolved || resolved.words.length === 0) return null;
+  const { words: displayWords, active } = resolved;
 
   // groupe (chunk) contenant le mot actif
   const chunkIdx = Math.floor(active / MAX_PER_CHUNK);
   const from = chunkIdx * MAX_PER_CHUNK;
-  const chunk = words.slice(from, from + MAX_PER_CHUNK);
+  const chunk = displayWords.slice(from, from + MAX_PER_CHUNK);
 
   const appear = spring({ frame, fps, config: { damping: 18 }, durationInFrames: 8 });
 
@@ -79,3 +77,65 @@ export const Karaoke: React.FC<{ subtitle: string; accent: string; durationInFra
     </div>
   );
 };
+
+type Resolved = { words: string[]; active: number };
+
+// Mode frame-perfect : mots dont la fenêtre temporelle recoupe le plan courant.
+function resolveTimed(
+  words: WordTiming[] | undefined,
+  sceneFrom: number,
+  durationInFrames: number,
+  fps: number,
+  frame: number,
+): Resolved | null {
+  if (!words || words.length === 0) return null;
+
+  const sceneStart = sceneFrom;
+  const sceneEnd = sceneFrom + durationInFrames;
+
+  // mots parlés pendant ce plan (chevauchement de la fenêtre)
+  const inScene = words
+    .map((w) => ({ w: w.w, startF: Math.round(w.start * fps), endF: Math.round(w.end * fps) }))
+    .filter((w) => w.endF > sceneStart && w.startF < sceneEnd);
+
+  if (inScene.length === 0) return null;
+
+  const absFrame = sceneFrom + frame; // useCurrentFrame est relatif au plan (Series.Sequence)
+
+  // mot actif = dernier mot déjà commencé ; dans un silence, on garde le précédent
+  let active = 0;
+  for (let i = 0; i < inScene.length; i++) {
+    if (inScene[i].startF <= absFrame) active = i;
+    else break;
+  }
+
+  return { words: inScene.map((w) => w.w), active };
+}
+
+// Mode proportionnel (repli) : répartition par longueur de mot sur la durée du plan.
+function resolveProportional(
+  subtitle: string | undefined,
+  durationInFrames: number,
+  frame: number,
+): Resolved | null {
+  if (!subtitle) return null;
+  const words = subtitle.trim().replace(/\s+/g, " ").split(" ").filter(Boolean);
+  if (words.length === 0) return null;
+
+  // poids = longueur alphabétique (min 3) → un mot long reste affiché plus longtemps
+  const weights = words.map((w) => Math.max(3, w.replace(/[^0-9A-Za-zÀ-ÿ]/g, "").length));
+  const total = weights.reduce((a, b) => a + b, 0);
+  const spans: Array<[number, number]> = [];
+  let acc = 0;
+  for (const w of weights) {
+    const start = acc / total;
+    acc += w;
+    spans.push([start, acc / total]);
+  }
+
+  const t = Math.min(0.999, Math.max(0, frame / durationInFrames));
+  let active = spans.findIndex(([s, e]) => t >= s && t < e);
+  if (active < 0) active = words.length - 1;
+
+  return { words, active };
+}

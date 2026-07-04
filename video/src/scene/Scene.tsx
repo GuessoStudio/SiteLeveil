@@ -18,7 +18,7 @@ import { DigitalTimer } from "../fx/DigitalTimer";
 import { Transition } from "../fx/Transition";
 import { SfxPlayer } from "../audio/SfxPlayer";
 import { MODES } from "../data/emotions";
-import type { Position, ResolvedScene } from "../data/script";
+import type { Position, ResolvedScene, WordTiming } from "../data/script";
 
 const POSITION_OFFSET: Record<Position, string> = {
   left: "translateX(-16%)",
@@ -26,7 +26,7 @@ const POSITION_OFFSET: Record<Position, string> = {
   right: "translateX(16%)",
 };
 
-export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number>; globalTotal?: number; karaoke?: boolean }> = ({ scene, sfxVolume, globalTotal, karaoke }) => {
+export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, number>; globalTotal?: number; karaoke?: boolean; words?: WordTiming[] }> = ({ scene, sfxVolume, globalTotal, karaoke, words }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const tint = MODES[scene.mode].tint;
@@ -64,8 +64,14 @@ export const Scene: React.FC<{ scene: ResolvedScene; sfxVolume?: Record<string, 
       {scene.split ? <SplitScreen left={scene.split.left} right={scene.split.right} /> : null}
       <KeywordText keyword={scene.keyword} accent={scene.accent} keywordFx={scene.keywordFx} />
       {scene.credit ? <CreditTag credit={scene.credit} accent={scene.accent} /> : null}
-      {karaoke && scene.subtitle && !scene.split ? (
-        <Karaoke subtitle={scene.subtitle} accent={scene.accent} durationInFrames={scene.durationInFrames} />
+      {karaoke && !scene.split && (words?.length || scene.subtitle) ? (
+        <Karaoke
+          subtitle={scene.subtitle}
+          accent={scene.accent}
+          durationInFrames={scene.durationInFrames}
+          words={words}
+          sceneFrom={scene.from}
+        />
       ) : null}
       <SceneFlash accent={scene.accent} />
       <Transition transition={scene.transition} accent={scene.accent} />

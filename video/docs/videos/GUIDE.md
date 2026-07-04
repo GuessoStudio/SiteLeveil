@@ -115,9 +115,13 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
 ### Tier 2 — productivité / autonomie
 - [x] **Karaoké intégré** — flag `"karaoke": true` (haut niveau du script). Sous-titres
       depuis les `subtitle`, mot actif en couleur d'accent, dans la bande caption-safe.
-      Fin de CapCut. (Précision : proportionnel par plan ; les plans étant calés sur
-      les pauses, l'erreur reste dans un groupe de 3-4 mots. Whisper = option future
-      pour du frame-perfect.)
+      Fin de CapCut.
+      **Deux modes de calage** :
+      - *Proportionnel* (par défaut) : répartition par longueur de mot sur la durée du
+        plan. Les plans étant calés sur les pauses, l'erreur reste dans un groupe de 3-4 mots.
+      - *Frame-perfect* (recommandé) : ajoute un champ `words` au script via
+        `scripts/transcribe.py` (Whisper local). Voir §10 ci-dessous.
+- [x] **Karaoké frame-perfect (Whisper local)** — cf. §10.
 - [ ] **`render:all`** : batch de tous les scripts en une commande.
 - [ ] **Avatar / photo de profil** (800×800) : composition `Avatar` (tête + spirale).
 
@@ -149,3 +153,34 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
 - `horaires-publication.md` : heures de publication par réseau.
 - `INDEX.md` : état de chaque vidéo.
 - `_TEMPLATE.md` : gabarit de fiche vidéo.
+
+---
+
+## 10. Karaoké frame-perfect — Whisper local (`scripts/transcribe.py`)
+
+Le calage proportionnel (§7) suffit la plupart du temps, mais pour un karaoké **au
+frame près**, on récupère les vrais temps de chaque mot avec Whisper en local
+(gratuit, pas de compte, pas de clé API).
+
+### Installation (une fois)
+```bash
+cd video
+pip install -r requirements.txt      # faster-whisper (embarque PyAV, tourne sur CPU)
+```
+
+### Générer les timings et les injecter dans le script
+```bash
+python scripts/transcribe.py public/Méditation.mp3 --script src/data/scripts/meditation.json
+```
+Ça remplit le champ `words` du script (`{ "w", "start", "end" }` en secondes).
+Ensuite, rendu normal : `npm run render:meditation`. Le moteur détecte `words` et
+surligne chaque mot **sur son vrai temps parlé** (repli automatique sur le
+proportionnel si `words` est absent). Le flag `"karaoke": true` reste requis.
+
+Options : `--model small` (défaut ; `tiny`/`base` plus rapides, `medium`/`large-v3`
+plus précis mais plus lents), `--lang fr`, `--out fichier.json` (au lieu d'injecter).
+
+### ⚠️ À lancer sur ta machine, pas dans la session Claude web
+Le premier run télécharge le modèle depuis **huggingface.co**, **bloqué par la
+politique réseau** de l'environnement Claude (erreur 403). En local (Mac/PC), aucun
+filtrage : le modèle se télécharge une fois puis reste en cache.

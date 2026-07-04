@@ -27,6 +27,10 @@ n'affecte pas le build Netlify).
   "ambienceVolume": 0.7,               // optionnel (volume ambiance ce script ; défaut = SFX_VOLUME)
   "sfxVolume": { "impact_heavy": 0.3 }, // optionnel (override volume d'un SFX, ce script)
   "guides": false,                     // optionnel (repère caption-safe studio, cf. plus bas)
+  "karaoke": true,                     // optionnel (sous-titres karaoké natifs)
+  "words": [                           // optionnel (timings au mot, cf. scripts/transcribe.py)
+    { "w": "La", "start": 0.10, "end": 0.45 }  // → karaoké frame-perfect si présent
+  ],
   "defaults": {                         // valeurs de départ
     "pose": "idle", "emotion": "calme", "mode": "eveil",
     "position": "center", "camera": "drift", "fx": "none",

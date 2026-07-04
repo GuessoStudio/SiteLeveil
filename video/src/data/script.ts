@@ -29,6 +29,15 @@ export type SceneInput = {
   burst?: Burst;
 };
 
+// Timings au mot produits par scripts/transcribe.py (faster-whisper).
+// Temps ABSOLUS en secondes sur toute la voix off. Quand ils sont présents,
+// le karaoké s'y cale au frame près (au lieu du calage proportionnel par plan).
+export type WordTiming = {
+  w: string;    // le mot
+  start: number; // seconde de début (absolue)
+  end: number;   // seconde de fin (absolue)
+};
+
 export type ScriptDefaults = {
   pose: PoseName;
   emotion: EmotionName;
@@ -51,6 +60,7 @@ export type Script = {
   ambienceVolume?: number; // volume de l'ambiance pour ce script (défaut : SFX_VOLUME de la clé)
   guides?: boolean;     // affiche les repères caption-safe + zones TikTok (preview uniquement)
   karaoke?: boolean;    // sous-titres karaoké natifs (depuis les subtitle), off par défaut
+  words?: WordTiming[]; // timings au mot (transcribe.py) → karaoké frame-perfect si présent
   defaults: ScriptDefaults;
   scenes: SceneInput[];
 };
