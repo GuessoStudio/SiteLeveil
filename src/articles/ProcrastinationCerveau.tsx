@@ -300,7 +300,7 @@ export default function ProcrastinationCerveau() {
           </p>
 
           <p>
-            Cette dysfonction dopaminergique explique pourquoi les procrastinateurs chroniques présentent des patterns d'activation similaires aux personnes avec TDAH ou troubles de l'addiction - tous caractérisés par une hypersensibilité aux récompenses immédiates.
+            Cette dysfonction dopaminergique explique pourquoi les procrastinateurs chroniques présentent des patterns d'activation similaires aux personnes avec TDAH ou troubles de l'addiction - tous caractérisés par une hypersensibilité aux récompenses immédiates. La dopamine n'agit d'ailleurs pas seule : elle fait partie des <Link to="/blog/neurotransmetteurs-humeur-cerveau/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">7 neurotransmetteurs qui régulent l'humeur et la motivation</Link>.
           </p>
 
           <h3>Le cortex cingulaire antérieur et la détresse émotionnelle</h3>

@@ -416,7 +416,7 @@ export default function BdnfAugmenterNaturellement() {
           <h3>4. L'exposition à la lumière naturelle</h3>
 
           <p>
-            La lumière naturelle matinale — en particulier la lumière à haute intensité (supérieure à 1000 lux) — stimule la production de BDNF via plusieurs voies : régulation du rythme circadien, activation de la sérotonine (précurseur indirect du BDNF), et modulation de l'axe HPA qui régule le cortisol. Les travaux de Huang et al. (Fudan University, 2014) ont montré que l'exposition à la lumière vive le matin augmente les niveaux de BDNF dans le noyau suprachiasmatique et l'hippocampe.
+            La lumière naturelle matinale — en particulier la lumière à haute intensité (supérieure à 1000 lux) — stimule la production de BDNF via plusieurs voies : régulation du rythme circadien, activation de la sérotonine (précurseur indirect du BDNF), et modulation de l'axe HPA qui régule le cortisol. Les travaux de Huang et al. (Fudan University, 2014) ont montré que l'exposition à la lumière vive le matin augmente les niveaux de BDNF dans le noyau suprachiasmatique et l'hippocampe. La sérotonine est l'un des <Link to="/blog/neurotransmetteurs-humeur-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">neurotransmetteurs qui contrôlent l'humeur</Link>, aux côtés de la dopamine et de la noradrénaline.
           </p>
 
           <div className="not-prose my-6 bg-neutral-100 dark:bg-neutral-800/50 p-5 rounded-lg">

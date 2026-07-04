@@ -850,7 +850,7 @@ const NeuroDopamineRoutine = () => {
             Quel est le rôle exact de la dopamine dans le cerveau ?
           </summary>
           <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300">
-            La dopamine est un neurotransmetteur clé qui régule la motivation, la récompense et le mouvement. Contrairement à l'idée reçue, elle ne crée pas directement le plaisir mais anticipe la récompense. Les recherches de Wolfram Schultz (Cambridge) montrent qu'elle fonctionne comme un système de prédiction qui guide nos actions vers des objectifs.
+            La dopamine est un neurotransmetteur clé qui régule la motivation, la récompense et le mouvement. Contrairement à l'idée reçue, elle ne crée pas directement le plaisir mais anticipe la récompense. Les recherches de Wolfram Schultz (Cambridge) montrent qu'elle fonctionne comme un système de prédiction qui guide nos actions vers des objectifs. Pour situer la dopamine parmi les autres régulateurs chimiques de l'humeur, voir notre article sur les <Link to="/blog/neurotransmetteurs-humeur-cerveau/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">7 neurotransmetteurs qui contrôlent l'humeur</Link>.
           </p>
         </details>
 
