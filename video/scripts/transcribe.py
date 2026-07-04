@@ -33,9 +33,17 @@ def eprint(*a):
 def transcribe(audio_path, model_name, lang):
     try:
         from faster_whisper import WhisperModel
-    except ImportError:
-        eprint("[erreur] faster-whisper absent. Installe-le :")
-        eprint("         pip install -r video/requirements.txt")
+    except ImportError as e:
+        msg = str(e)
+        if "faster_whisper" in msg and "No module named" in msg:
+            eprint("[erreur] faster-whisper n'est pas installé pour ce Python. Installe-le :")
+            eprint("         py -m pip install -r requirements.txt   (depuis le dossier video)")
+        else:
+            # Paquet présent mais une dépendance native ne charge pas
+            # (DLL bloquée par Windows Defender/SmartScreen, ou wheel incompatible).
+            eprint("[erreur] faster-whisper est installé mais une dépendance native ne se charge pas :")
+            eprint(f"         {msg}")
+            eprint("         Piste : DLL bloquée par Windows (Defender/SmartScreen), ou Python trop récent.")
         sys.exit(2)
 
     if not os.path.isfile(audio_path):
