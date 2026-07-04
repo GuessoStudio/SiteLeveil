@@ -263,18 +263,61 @@ Ajouter l'entrée dans `src/data/blog-articles.ts` :
 }
 ```
 
-### Étape 4.5 — Vérifier les liens internes
+### Étape 4.5 — Liens internes SORTANTS (depuis le nouvel article)
 
 Pour chaque lien interne dans l'article, vérifier que le slug
 existe dans `src/data/blog-articles.ts`.
 Si absent → remplacer par un lien existant.
 
-### Étape 4.6 — Vérifier le build
+⚠️ TRAILING SLASH OBLIGATOIRE — écrire tous les liens internes AVEC slash final :
+`to="/blog/slug/"` (et `/a-propos/`, `/ressources/`, `/blog/`).
+Un lien sans slash déclenche un 301 Netlify → Googlebot le classe
+« Page avec redirection ». Le garde-fou `validate:links` (étape 4.6) bloque le
+build si un lien sans slash subsiste, mais l'écrire correct dès le départ évite l'aller-retour.
+
+### Étape 4.5 bis — Liens internes ENTRANTS (CRITIQUE pour l'indexation)
+
+⚠️ C'EST L'ÉTAPE LA PLUS OUBLIÉE — et la cause n°1 des pages
+« Explorée, actuellement non indexée » dans la GSC.
+
+Les liens SORTANTS (4.5) ne suffisent pas : sans liens ENTRANTS, le nouvel
+article est orphelin. Google le voit dans le sitemap mais n'y arrive par aucun
+chemin de navigation → il ne l'indexe pas.
+
+Action : ajouter **au minimum 3 liens contextuels** vers le nouvel article,
+depuis 3 articles existants **différents et thématiquement proches**.
+- Ancre descriptive (jamais « cliquez ici »), insérée dans une phrase du corps.
+- Slug cible AVEC slash final : `to="/blog/[nouveau-slug]/"`.
+- Style de lien identique à ceux déjà présents dans l'article source.
+- Privilégier la réciprocité (un article que le nouveau cite déjà en retour).
+
+Vérification chiffrée avant de continuer :
+```bash
+grep -rl 'to="/blog/[nouveau-slug]/"' src/articles/ | grep -v [NomNouvelArticle] | wc -l
+# doit afficher 3 ou plus
+```
+
+### Étape 4.6 — Valider puis vérifier le build
+
+D'ABORD lancer le validateur d'article (vérifie trailing slash du canonical,
+enregistrement dans content/index.ts + vite.config.ts, ET les 3 liens entrants) :
+```bash
+npm run validate:article [slug-du-nouvel-article]
+```
+Toutes les lignes doivent afficher ✅. Un ❌ sur « Liens internes : X/3 » signifie
+que l'étape 4.5 bis n'a pas été faite → l'article sera orphelin. Corriger avant de continuer.
+
+Puis le garde-fou global des liens (bloque tout lien interne sans slash dans src/) :
+```bash
+npm run validate:links
+```
+
+Enfin le build (son `prebuild` relance `validate:links` automatiquement) :
 ```bash
 npm run build
 ```
 Corriger toute erreur TypeScript ou import manquant avant de continuer.
-Ne pas committer un article qui ne compile pas.
+Ne jamais committer un article qui échoue `validate:article`, `validate:links` ou le build.
 
 ## PHASE 5 — Livraison
 
@@ -334,14 +377,18 @@ Ajouter l'entrée dans `src/pages/Resources.tsx` :
   rating: 5.0,
   image: "/images/resources/[slug]-cover.webp",
   free: true,
-  downloadUrl: "/downloads/[slug]-checklist.pdf"
+  downloadUrl: "/Downloads/[slug]-checklist.pdf"
 }
 ```
 
+⚠️ CASSE — le dossier réel est `public/Downloads/` (D majuscule). Netlify est
+sensible à la casse : un lien `/downloads/` (minuscule) renvoie une 404 en prod.
+Toujours écrire `/Downloads/` dans `downloadUrl` ET dans le CTA de l'article TSX.
+
 Informer l'utilisateur des actions manuelles restantes :
 a) Mettre en forme sur Canva avec template L'Éveil
-b) Placer le PDF dans /public/downloads/
-c) Vérifier que le CTA dans l'article TSX pointe vers la bonne URL
+b) Placer le PDF dans /public/Downloads/ (D majuscule)
+c) Vérifier que le CTA dans l'article TSX pointe vers la bonne URL (casse `/Downloads/`)
 
 ### Étape 5.3 — Repurposing réseaux sociaux
 
@@ -419,3 +466,7 @@ Après le push (2-3 min) :
 - ❌ Oublier le Quick Answer Block dans les 200 premiers mots
 - ❌ Modifier public/sitemap.xml directement (écrasé au prochain build)
 - ❌ Oublier d'ajouter le slug dans ARTICLE_SLUGS (vite.config.ts) → HTML vide pour Google → erreur GSC "page en double sans canonique"
+- ❌ Oublier les 3 liens ENTRANTS depuis d'autres articles (étape 4.5 bis) → article orphelin → GSC "Explorée, actuellement non indexée"
+- ❌ Écrire un lien interne sans trailing slash (`to="/blog/slug"`) → 301 Netlify → GSC "Page avec redirection"
+- ❌ Sauter `npm run validate:article [slug]` avant commit (il détecte justement l'orphelin et les liens sans slash)
+- ❌ Écrire `downloadUrl` en `/downloads/` minuscule → 404 sur Netlify (le dossier est `/Downloads/`)
