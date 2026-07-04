@@ -479,7 +479,7 @@ export default function SystemeLimbique() {
           </p>
 
           <p>
-            Gevirtz (Applied Psychophysiology and Biofeedback, 2013) a synthétisé les preuves cliniques de cette technique : la pratique régulière améliore la variabilité de la fréquence cardiaque — un indicateur de flexibilité du système nerveux — et réduit les marqueurs d'anxiété. Le protocole 3-6-5 (3 fois par jour, 6 cycles/min, 5 minutes) est la version francophone standardisée. Les effets sur l'anxiété sont mesurables en 4 à 6 semaines.
+            Gevirtz (Applied Psychophysiology and Biofeedback, 2013) a synthétisé les preuves cliniques de cette technique : la pratique régulière améliore la variabilité de la fréquence cardiaque — un indicateur de flexibilité du système nerveux — et réduit les marqueurs d'anxiété. Le protocole 3-6-5 (3 fois par jour, 6 cycles/min, 5 minutes) est la version francophone standardisée. Les effets sur l'anxiété sont mesurables en 4 à 6 semaines. Pour comprendre pourquoi ces marqueurs s'emballent, l'article sur <Link to="/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/" className="text-indigo-600 dark:text-indigo-400 hover:underline">les mécanismes neurologiques de l'anxiété et 10 solutions</Link> détaille le circuit amygdale-cortex préfrontal.
           </p>
 
           {/* À retenir */}

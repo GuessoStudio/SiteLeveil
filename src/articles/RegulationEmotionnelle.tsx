@@ -464,7 +464,7 @@ export default function RegulationEmotionnelle() {
             Cette technique diffère du recadrage du stimulus : au lieu de réinterpréter la situation qui déclenche l'émotion, on modifie l'interprétation de la réponse physiologique elle-même.
           </p>
           <p>
-            Exemple concret : "mon cœur bat vite parce que je suis nerveux" peut devenir "mon cœur bat vite parce que je suis prêt et mobilisé". La sensation physique est identique. L'interprétation change. Cette technique est documentée dans la recherche sur l'anxiété de performance : réinterpréter les symptômes physiologiques de l'anxiété comme des signes d'activation (plutôt que de peur) améliore significativement les performances dans des situations de stress évalué.
+            Exemple concret : "mon cœur bat vite parce que je suis nerveux" peut devenir "mon cœur bat vite parce que je suis prêt et mobilisé". La sensation physique est identique. L'interprétation change. Cette technique est documentée dans la recherche sur l'anxiété de performance : réinterpréter les symptômes physiologiques de l'anxiété comme des signes d'activation (plutôt que de peur) améliore significativement les performances dans des situations de stress évalué. Cette réévaluation est l'un des leviers détaillés dans l'article sur <Link to="/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">les mécanismes de l'anxiété et 10 solutions validées</Link>.
           </p>
 
           <h3>5. Affect labeling — nommer l'émotion</h3>

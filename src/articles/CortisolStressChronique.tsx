@@ -466,7 +466,7 @@ export default function CortisolStressChronique() {
           </p>
 
           <p>
-            Trop élevé : l'hippocampe s'érode, comme on vient de le voir. Trop bas — comme dans l'insuffisance surrénale, ou dans certains états de burn-out avancé où l'axe HPA s'est épuisé — et le cerveau manque de l'activation basale nécessaire pour encoder et récupérer les informations.
+            Trop élevé : l'hippocampe s'érode, comme on vient de le voir. Trop bas — comme dans l'insuffisance surrénale, ou dans certains états de <Link to="/blog/burn-out-signaux-neurobiologiques-recuperation/">burn-out avancé</Link> où l'axe HPA s'est épuisé — et le cerveau manque de l'activation basale nécessaire pour encoder et récupérer les informations.
           </p>
 
           <p>
@@ -618,7 +618,7 @@ export default function CortisolStressChronique() {
               Les 5 stratégies de cet article condensées en une checklist d'une page : indicateurs à surveiller, fréquences recommandées, seuils d'alerte. À imprimer ou garder sur ton téléphone.
             </p>
             <a
-              href="/downloads/cortisol-stress-chronique-checklist.pdf"
+              href="/Downloads/cortisol-stress-chronique-checklist.pdf"
               className="inline-block px-6 py-3 bg-violet-600 text-white text-sm font-semibold rounded-lg hover:bg-violet-700 transition-colors"
             >
               Télécharger la checklist PDF →

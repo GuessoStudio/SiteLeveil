@@ -657,7 +657,7 @@ export default function PlasticiteSynaptique() {
               Exercice, sommeil, répétition espacée, dopamine et méditation — les protocoles scientifiques condensés en une checklist PDF d'une page.
             </p>
             <a
-              href="/downloads/plasticite-synaptique-checklist.pdf"
+              href="/Downloads/plasticite-synaptique-checklist.pdf"
               download
               className="inline-flex items-center px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium rounded-lg transition-colors"
             >

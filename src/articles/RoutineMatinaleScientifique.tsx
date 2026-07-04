@@ -263,7 +263,7 @@ export default function RoutineMatinaleScientifique() {
             <div className="text-3xl font-black text-teal-600 dark:text-teal-400 leading-none">+50<br/>à<br/>+150%</div>
             <div>
               <p className="text-sm font-semibold text-teal-900 dark:text-teal-100">
-                La Cortisol Awakening Response produit une élévation programmée du cortisol de 50 à 150% dans les 30 à 45 premières minutes après le réveil. Ce pic est orchestré par le noyau suprachiasmatique, l'horloge biologique centrale du cerveau. Une CAR aplatie est associée au burnout et aux troubles de l'axe hypothalamo-hypophyso-surrénalien.
+                La Cortisol Awakening Response produit une élévation programmée du cortisol de 50 à 150% dans les 30 à 45 premières minutes après le réveil. Ce pic est orchestré par le noyau suprachiasmatique, l'horloge biologique centrale du cerveau. Une CAR aplatie est associée au <Link to="/blog/burn-out-signaux-neurobiologiques-recuperation/" className="text-teal-700 dark:text-teal-300 underline">burn-out et à ses signaux neurobiologiques</Link>, ainsi qu'aux troubles de l'axe hypothalamo-hypophyso-surrénalien.
               </p>
               <p className="text-xs text-teal-600 dark:text-teal-400 mt-1">
                 Stalder T., Oster H., Abelson J.L. et al., Université de Siegen / Université de Lübeck, <em>Endocrine Reviews</em>, vol. 46(1), févr. 2025 (en ligne août 2024) — DOI : 10.1210/endrev/bnae024
@@ -533,7 +533,7 @@ export default function RoutineMatinaleScientifique() {
               Une fiche A5 à imprimer avec les 5 pratiques, les minutages précis et les mécanismes biologiques en un coup d'oeil. À coller sur ton miroir ou ta table de nuit.
             </p>
             <a
-              href="/downloads/routine-matinale-scientifique-cerveau-guide.pdf"
+              href="/Downloads/routine-matinale-scientifique-cerveau-guide.pdf"
               className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche protocole (PDF gratuit)

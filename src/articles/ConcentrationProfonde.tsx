@@ -480,7 +480,7 @@ export default function ConcentrationProfonde() {
               Une fiche A4 à imprimer : choisir la bonne tâche, créer le vide, tenir un bloc de focus, clôturer sans attention résiduelle. Le tout fondé sur le mécanisme DMN/DAN, en une page.
             </p>
             <a
-              href="/downloads/concentration-profonde-deep-work-neurosciences-guide.pdf"
+              href="/Downloads/concentration-profonde-deep-work-neurosciences-guide.pdf"
               className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche concentration (PDF gratuit)

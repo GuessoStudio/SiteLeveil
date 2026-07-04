@@ -523,7 +523,7 @@ export default function MindsetDeCroissance() {
               Une carte de référence A5 à imprimer avec les 5 techniques, les formulations exactes à utiliser et les pièges classiques du mindset fixe à identifier.
             </p>
             <a
-              href="/downloads/mindset-de-croissance-guide.pdf"
+              href="/Downloads/mindset-de-croissance-guide.pdf"
               className="inline-block bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la carte mémo (PDF gratuit)

@@ -495,7 +495,7 @@ export default function ObjectifsSmart() {
               Une fiche A4 à imprimer pour formuler un objectif qui tient : la grille SMART, la case plan « si/alors », l'alignement sur un but supérieur et la calibration à 85 %. Tout en une page.
             </p>
             <a
-              href="/downloads/objectifs-smart-methode-neurosciences-guide.pdf"
+              href="/Downloads/objectifs-smart-methode-neurosciences-guide.pdf"
               className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche objectif (PDF gratuit)

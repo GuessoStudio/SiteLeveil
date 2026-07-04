@@ -424,7 +424,7 @@ export default function AnxieteMecanismes() {
 
           <h3>4. Respiration lente et cohérence cardiaque</h3>
           <p>
-            La respiration à 6 cycles par minute (inspirer 5 secondes, expirer 5 secondes) stimule le nerf vague, le principal frein du système nerveux sympathique. L'activation vagale réduit directement le cortisol et l'activation de l'axe HPA (hypothalamus-hypophyse-surrénales), le circuit hormonal du stress.
+            La respiration à 6 cycles par minute (inspirer 5 secondes, expirer 5 secondes) stimule le nerf vague, le principal frein du système nerveux sympathique. L'activation vagale réduit directement le cortisol et l'activation de l'axe HPA (hypothalamus-hypophyse-surrénales), le circuit hormonal du stress. Sur-sollicité de façon prolongée, ce même axe est au cœur du <Link to="/blog/burn-out-signaux-neurobiologiques-recuperation/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">burn-out et de ses signaux neurobiologiques</Link>.
           </p>
           <p>
             <strong>En pratique :</strong> 5 minutes de cohérence cardiaque, 3 fois par jour. L'effet aigu (réduction du cortisol) est immédiat. L'effet durable (réduction de la réactivité de base) nécessite une pratique quotidienne sur 4 à 6 semaines.

@@ -606,7 +606,7 @@ export default function CommunicationNonViolente() {
               Une carte de référence A5 à imprimer avec les 4 étapes, les pièges à éviter et des exemples concrets pour chaque étape.
             </p>
             <a
-              href="/downloads/communication-non-violente-cnv-guide.pdf"
+              href="/Downloads/communication-non-violente-cnv-guide.pdf"
               className="inline-block bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la carte mémo (PDF gratuit)

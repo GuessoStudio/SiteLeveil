@@ -825,7 +825,7 @@ export default function NeurotransmetteurHumeur() {
               Les 7 molécules qui régulent tes états émotionnels, leurs leviers naturels et le mythe du déséquilibre chimique — condensés en une checklist PDF d'une page.
             </p>
             <a
-              href="/downloads/neurotransmetteurs-humeur-checklist.pdf"
+              href="/Downloads/neurotransmetteurs-humeur-checklist.pdf"
               download
               className="inline-flex items-center px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium rounded-lg transition-colors"
             >

@@ -109,7 +109,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/resources/plasticite-synaptique-checklist-cover.webp",
       free: true,
-      downloadUrl: "/downloads/plasticite-synaptique-checklist.pdf"
+      downloadUrl: "/Downloads/plasticite-synaptique-checklist.pdf"
     },
     {
       id: 11,
@@ -121,7 +121,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/resources/neurotransmetteurs-humeur-cerveau-cover.webp",
       free: true,
-      downloadUrl: "/downloads/neurotransmetteurs-humeur-checklist.pdf"
+      downloadUrl: "/Downloads/neurotransmetteurs-humeur-checklist.pdf"
     },
     {
       id: 20,
@@ -133,7 +133,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/resources/ecoute-active-technique-carl-rogers-cover.webp",
       free: true,
-      downloadUrl: "/downloads/ecoute-active-technique-carl-rogers-guide.pdf"
+      downloadUrl: "/Downloads/ecoute-active-technique-carl-rogers-guide.pdf"
     },
     {
       id: 19,
@@ -145,7 +145,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/resources/communication-non-violente-cnv-cover.webp",
       free: true,
-      downloadUrl: "/downloads/communication-non-violente-cnv-guide.pdf"
+      downloadUrl: "/Downloads/communication-non-violente-cnv-guide.pdf"
     },
     {
       id: 10,
@@ -157,7 +157,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/resources/empathie-neurones-miroirs-cover.webp",
       free: true,
-      downloadUrl: "/downloads/empathie-neurones-miroirs-checklist.pdf"
+      downloadUrl: "/Downloads/empathie-neurones-miroirs-checklist.pdf"
     },
     {
       id: 21,
@@ -181,7 +181,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/resources/routine-matinale-scientifique-cerveau-cover.webp",
       free: true,
-      downloadUrl: "/downloads/routine-matinale-scientifique-cerveau-guide.pdf"
+      downloadUrl: "/Downloads/routine-matinale-scientifique-cerveau-guide.pdf"
     },
     {
       id: 23,
@@ -205,7 +205,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/articles/objectifs-smart-methode-neurosciences-cover.webp",
       free: true,
-      downloadUrl: "/downloads/objectifs-smart-methode-neurosciences-guide.pdf"
+      downloadUrl: "/Downloads/objectifs-smart-methode-neurosciences-guide.pdf"
     },
     {
       id: 25,
@@ -217,7 +217,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/articles/formation-habitudes-cerveau-neurosciences-cover.webp",
       free: true,
-      downloadUrl: "/downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
+      downloadUrl: "/Downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
     },
     {
       id: 26,
@@ -229,7 +229,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/articles/concentration-profonde-deep-work-neurosciences-cover.webp",
       free: true,
-      downloadUrl: "/downloads/concentration-profonde-deep-work-neurosciences-guide.pdf"
+      downloadUrl: "/Downloads/concentration-profonde-deep-work-neurosciences-guide.pdf"
     },
     {
       id: 27,
@@ -241,7 +241,7 @@ const Resources = () => {
       rating: 5.0,
       image: "/images/articles/biais-cognitifs-liste-psychologie-cover.webp",
       free: true,
-      downloadUrl: "/downloads/biais-cognitifs-liste-psychologie-guide.pdf"
+      downloadUrl: "/Downloads/biais-cognitifs-liste-psychologie-guide.pdf"
     },
     {
       id: 28,

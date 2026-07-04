@@ -489,7 +489,7 @@ export default function BiaisCognitifs() {
               Une fiche A4 à imprimer : les 12 biais avec leur définition et leur origine, plus les 4 questions du réflexe anti-biais à se poser avant toute décision importante.
             </p>
             <a
-              href="/downloads/biais-cognitifs-liste-psychologie-guide.pdf"
+              href="/Downloads/biais-cognitifs-liste-psychologie-guide.pdf"
               className="inline-block bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche biais cognitifs (PDF gratuit)

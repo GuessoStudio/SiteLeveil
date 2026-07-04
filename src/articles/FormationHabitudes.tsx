@@ -480,7 +480,7 @@ export default function FormationHabitudes() {
               Une fiche A4 à imprimer : repérer le signal, agir sur le contexte, empiler sur un déclencheur stable, ajouter de la friction. Le tout fondé sur le circuit du striatum, en une page.
             </p>
             <a
-              href="/downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
+              href="/Downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
               className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche habitude (PDF gratuit)

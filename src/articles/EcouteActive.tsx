@@ -627,7 +627,7 @@ export default function EcouteActive() {
               Une carte de référence A5 à imprimer avec les 5 techniques, les formulations exactes à utiliser et les erreurs les plus fréquentes à éviter.
             </p>
             <a
-              href="/downloads/ecoute-active-technique-carl-rogers-guide.pdf"
+              href="/Downloads/ecoute-active-technique-carl-rogers-guide.pdf"
               className="inline-block bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la carte mémo (PDF gratuit)

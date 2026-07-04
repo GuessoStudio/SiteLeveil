@@ -326,7 +326,7 @@ export default function RuminationMentale() {
           <h3>Impact sur la neuroplasticité</h3>
           
           <p>
-            La rumination chronique altère la structure cérébrale. Les études d'imagerie montrent une réduction de la matière grise dans l'hippocampe et une augmentation de l'activité inflammatoire, particulièrement visible chez les patients avec troubles anxieux généralisés.
+            La rumination chronique altère la structure cérébrale. Les études d'imagerie montrent une réduction de la matière grise dans l'hippocampe et une augmentation de l'activité inflammatoire, particulièrement visible chez les patients avec troubles anxieux généralisés. Ce recoupement avec <Link to="/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">l'anxiété et ses mécanismes neurologiques</Link> explique pourquoi rumination et anxiété s'entretiennent mutuellement.
           </p>
 
           <h3>Dysfonctionnements cognitifs mesurables</h3>
