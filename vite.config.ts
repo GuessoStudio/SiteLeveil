@@ -87,6 +87,27 @@ export default defineConfig(({ isSsrBuild }) => ({
     // sans pénaliser les autres pages. Polices self-hostées (same-origin), donc
     // le preload matche toujours le fichier réellement chargé (cf. src/index.css).
     onPageRendered(route: string, html: string) {
+      // react-helmet-async ne sérialise ni <title> ni meta description pendant le build
+      // SSG (cf. SEO.tsx — toutes les balises critiques sont rendues hors Helmet). Sans
+      // ce swap, TOUTES les pages servent le title + description génériques du template
+      // index.html à Googlebot → signaux de duplication massifs sur ~50 URLs
+      // (GSC « Explorée, non indexée » + « Page en double sans URL canonique »).
+      // Le composant SEO émet un marqueur ssg:title par page ; og:description (hors
+      // Helmet) porte déjà la description par page. On recopie les deux dans le <head>
+      // du template, puis on retire le marqueur.
+      const titleMatch = html.match(/<meta name="ssg:title" content="([^"]*)"\s*\/?>/)
+      if (titleMatch) {
+        html = html
+          .replace(/<title>[^<]*<\/title>/, () => `<title>${titleMatch[1]}</title>`)
+          .replace(titleMatch[0], '')
+      }
+      const descMatch = html.match(/property="og:description" content="([^"]*)"/)
+      if (descMatch) {
+        html = html.replace(
+          /<meta name="description" content="[^"]*"\s*\/?>/,
+          () => `<meta name="description" content="${descMatch[1]}" />`,
+        )
+      }
       if (route !== '/' && route !== '') return html
       const preloads =
         '<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/cormorant-garamond-italic.woff2">' +

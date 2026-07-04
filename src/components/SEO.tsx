@@ -77,6 +77,7 @@ export default function SEO({
 }: SEOProps) {
   const safePath = cleanPath(path);
   const url = `${BASE_URL}${safePath}`;
+  const pageTitle = isHome ? title : `${title} • ${SITE_NAME}`;
 
   // ✅ Auto-switch : si jsonLd est fourni, la page "prend la main"
   const hasCustomJsonLd = Array.isArray(jsonLd) && jsonLd.length > 0;
@@ -169,6 +170,10 @@ export default function SEO({
     <>
     {/* Balises rendues hors Helmet — sérialisées correctement par vite-react-ssg.
         react-helmet-async ne propage pas les bonnes props pendant le build SSG. */}
+    {/* Marqueur title pour le SSG : <title> ne peut pas être rendu dans le body,
+        onPageRendered (vite.config.ts) recopie ce contenu dans le <title> du head
+        puis retire le marqueur. Sans ça, toutes les pages servent le title du template. */}
+    <meta name="ssg:title" content={pageTitle} />
     <link rel="canonical" href={url} />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:type" content={isHome ? "website" : type} />
@@ -217,7 +222,7 @@ export default function SEO({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
     )}
     <Helmet prioritizeSeoTags>
-      <title>{isHome ? title : `${title} • ${SITE_NAME}`}</title>
+      <title>{pageTitle}</title>
       <link rel="canonical" href={url} />
       <meta name="description" content={description} />
       <meta name="robots" content="index,follow" />
