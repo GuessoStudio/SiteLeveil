@@ -177,8 +177,16 @@ Ensuite, rendu normal : `npm run render:meditation`. Le moteur détecte `words` 
 surligne chaque mot **sur son vrai temps parlé** (repli automatique sur le
 proportionnel si `words` est absent). Le flag `"karaoke": true` reste requis.
 
+**Alignement forcé (par défaut)** : Whisper *transcrit* ce qu'il entend et se
+trompe parfois (chiffres, ponctuation, casse — ex. « 18 » au lieu de « 10 »).
+Comme le texte EXACT est déjà dans tes `subtitle`, le script garde **ton texte**
+et n'emprunte à Whisper **que les timings**. Tu obtiens donc des sous-titres
+corrects ET calés au frame. Pour désactiver et garder le texte brut de Whisper :
+`--no-align`.
+
 Options : `--model small` (défaut ; `tiny`/`base` plus rapides, `medium`/`large-v3`
-plus précis mais plus lents), `--lang fr`, `--out fichier.json` (au lieu d'injecter).
+plus précis mais plus lents), `--lang fr`, `--out fichier.json` (au lieu d'injecter),
+`--no-align` (texte brut Whisper).
 
 ### ⚠️ À lancer sur ta machine, pas dans la session Claude web
 Le premier run télécharge le modèle depuis **huggingface.co**, **bloqué par la

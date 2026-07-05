@@ -18,16 +18,32 @@ Modes de sortie (dans l'ordre de priorite) :
   --out <fichier.json>     ecrit { "audio", "words": [...] } dans un fichier
   (aucun)                  imprime le JSON des mots sur la sortie standard
 
+ALIGNEMENT FORCE (par defaut avec --script) : Whisper *transcrit* ce qu'il entend
+et se trompe parfois (mots, ponctuation, chiffres). Comme le texte EXACT est deja
+dans les "subtitle" du script, on garde le texte du script et on n'emprunte a
+Whisper QUE les timings. Resultat : mots corrects + calage au frame. Desactivable
+avec --no-align (texte brut de Whisper).
+
 Chaque mot : { "w": "mot", "start": 1.234, "end": 1.567 }  (secondes, absolues).
 """
 import argparse
+import difflib
 import json
 import os
+import re
 import sys
 
 
 def eprint(*a):
     print(*a, file=sys.stderr)
+
+
+_WORD_RE = re.compile(r"[0-9A-Za-zÀ-ÿ]+")
+
+
+def _norm(token):
+    """Forme comparable : minuscules, sans ponctuation ni espaces (accents gardés)."""
+    return "".join(_WORD_RE.findall(token.lower()))
 
 
 def transcribe(audio_path, model_name, lang):
@@ -88,9 +104,95 @@ def transcribe(audio_path, model_name, lang):
     return words
 
 
-def inject_into_script(script_path, words):
+def extract_ref_tokens(script_data):
+    """Texte EXACT : tous les mots des `subtitle`, dans l'ordre des plans."""
+    toks = []
+    for s in script_data.get("scenes", []):
+        sub = s.get("subtitle")
+        if not sub:
+            continue
+        for w in sub.split():
+            w = w.strip()
+            if w:
+                toks.append(w)
+    return toks
+
+
+def align_to_reference(asr_words, ref_tokens):
+    """Aligne le texte EXACT (ref_tokens) sur les timings Whisper (asr_words).
+
+    On repère les mots identiques (ancres) et on emprunte leur timing ; les mots
+    intermédiaires (là où Whisper s'est trompé) sont répartis dans l'intervalle
+    entre deux ancres. Retour : (words_alignés, nb_ancres) ou (None, 0) si aucune
+    ancre (dans ce cas on garde les timings bruts).
+    """
+    ref_norm = [_norm(t) for t in ref_tokens]
+    asr_norm = [_norm(w["w"]) for w in asr_words]
+
+    sm = difflib.SequenceMatcher(a=ref_norm, b=asr_norm, autojunk=False)
+    anchor = {}  # index ref -> (start, end)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "equal":
+            for k in range(i2 - i1):
+                anchor[i1 + k] = (asr_words[j1 + k]["start"], asr_words[j1 + k]["end"])
+
+    if not anchor:
+        return None, 0
+
+    keys = sorted(anchor)
+    n = len(ref_tokens)
+    EDGE = 0.30  # durée nominale d'un mot hors couverture Whisper (bords)
+    out = []
+    for i in range(n):
+        if i in anchor:
+            st, en = anchor[i]
+        else:
+            prev = max((k for k in keys if k < i), default=None)
+            nxt = min((k for k in keys if k > i), default=None)
+            if prev is None:              # avant la 1re ancre
+                a_st = anchor[nxt][0]
+                st = max(0.0, a_st - EDGE * (nxt - i))
+                en = max(0.0, a_st - EDGE * (nxt - i - 1))
+            elif nxt is None:             # après la dernière ancre
+                p_end = anchor[prev][1]
+                st = p_end + EDGE * (i - prev - 1)
+                en = p_end + EDGE * (i - prev)
+            else:                         # entre deux ancres : répartition régulière
+                p_end = anchor[prev][1]
+                q_start = anchor[nxt][0]
+                seg = max(0.0, q_start - p_end) / (nxt - prev)
+                j = i - prev - 1
+                st = p_end + seg * j
+                en = p_end + seg * (j + 1)
+        out.append({"w": ref_tokens[i], "start": round(max(0.0, st), 3), "end": round(max(0.0, en), 3)})
+
+    # garantit des temps non décroissants
+    for i in range(1, len(out)):
+        if out[i]["start"] < out[i - 1]["start"]:
+            out[i]["start"] = out[i - 1]["start"]
+        if out[i]["end"] < out[i]["start"]:
+            out[i]["end"] = out[i]["start"]
+
+    return out, len(anchor)
+
+
+def inject_into_script(script_path, words, align):
     with open(script_path, "r", encoding="utf-8") as f:
         data = json.load(f)
+
+    if align:
+        ref = extract_ref_tokens(data)
+        if not ref:
+            eprint("[align] aucun \"subtitle\" dans le script — timings Whisper bruts conservés.")
+        else:
+            aligned, n_anchor = align_to_reference(words, ref)
+            if aligned is None:
+                eprint("[align] aucun point d'accroche entre script et audio — timings bruts conservés.")
+            else:
+                eprint(f"[align] texte du script ({len(ref)} mots) calé sur Whisper "
+                       f"via {n_anchor} ancres exactes → ponctuation/chiffres corrigés.")
+                words = aligned
+
     data["words"] = words
     with open(script_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -106,12 +208,14 @@ def main():
     p.add_argument("--lang", default="fr", help="langue (défaut: fr)")
     p.add_argument("--script", help="script JSON dans lequel injecter le champ \"words\"")
     p.add_argument("--out", help="écrit { audio, words } dans ce fichier JSON")
+    p.add_argument("--no-align", action="store_true",
+                   help="ne pas caler le texte du script : garder le texte brut de Whisper")
     args = p.parse_args()
 
     words = transcribe(args.audio, args.model, args.lang)
 
     if args.script:
-        inject_into_script(args.script, words)
+        inject_into_script(args.script, words, align=not args.no_align)
     elif args.out:
         with open(args.out, "w", encoding="utf-8") as f:
             json.dump({"audio": os.path.basename(args.audio), "words": words},
