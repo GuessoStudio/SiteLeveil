@@ -498,7 +498,7 @@ export default function NeurotransmetteurHumeur() {
           </p>
 
           <p>
-            Un fait peu connu : environ 90 % de la sérotonine du corps est produite dans l'intestin, non dans le cerveau. Cette sérotonine intestinale ne traverse pas la barrière hémato-encéphalique — la membrane protectrice qui sépare le sang du cerveau. Elle régule la motilité digestive, pas l'humeur. C'est la sérotonine cérébrale, produite dans les noyaux du raphé du tronc cérébral, qui agit sur les états émotionnels.
+            Un fait peu connu : environ 90 % de la sérotonine du corps est produite dans l'intestin, non dans le cerveau. Cette sérotonine intestinale ne traverse pas la barrière hémato-encéphalique — la membrane protectrice qui sépare le sang du cerveau. Elle régule la motilité digestive, pas l'humeur. C'est la sérotonine cérébrale, produite dans les noyaux du raphé du tronc cérébral, qui agit sur les états émotionnels. Ce dialogue permanent entre le ventre et la tête est détaillé dans l'article sur l'<Link to="/blog/axe-intestin-cerveau-microbiote-humeur/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">axe intestin-cerveau et son influence sur l'humeur</Link>.
           </p>
 
           <p>

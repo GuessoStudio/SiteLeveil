@@ -280,6 +280,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/meditation-effets-cerveau-checklist.pdf"
     },
     {
+      id: 31,
+      title: "Checklist : soutenir son axe intestin-cerveau",
+      description: "Les 4 voies de communication microbiote-cerveau expliquées simplement, les 5 leviers du quotidien et les aliments qui nourrissent un microbiote varié. Sources : Zhuang 2024, Lee 2025, Yano 2015.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/axe-intestin-cerveau-microbiote-humeur-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/axe-intestin-cerveau-microbiote-humeur-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

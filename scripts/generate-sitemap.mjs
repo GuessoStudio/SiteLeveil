@@ -58,6 +58,7 @@ const articles = [
   { path: "/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/", file: "src/articles/AnxieteMecanismes.tsx" },
   { path: "/blog/burn-out-signaux-neurobiologiques-recuperation/", file: "src/articles/BurnOut.tsx" },
   { path: "/blog/meditation-effets-cerveau/",                       file: "src/articles/MeditationEffetsCerveau.tsx" },
+  { path: "/blog/axe-intestin-cerveau-microbiote-humeur/",          file: "src/articles/AxeIntestinCerveau.tsx" },
 ];
 
 const allUrls = [

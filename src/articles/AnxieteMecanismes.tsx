@@ -268,7 +268,7 @@ export default function AnxieteMecanismes() {
         <div className="prose prose-neutral dark:prose-invert max-w-none">
 
           <p>
-            Tu as déjà ressenti cette boule dans le ventre avant un examen, cette tension diffuse sans raison apparente, cette impression que quelque chose de mauvais va arriver sans pouvoir dire quoi ? C'est l'<strong>anxiété</strong>. Et contrairement à ce qu'on lit partout, ce n'est pas simplement « ton amygdale qui s'emballe ».
+            Tu as déjà ressenti cette boule dans le ventre avant un examen, cette tension diffuse sans raison apparente, cette impression que quelque chose de mauvais va arriver sans pouvoir dire quoi ? C'est l'<strong>anxiété</strong>. Et contrairement à ce qu'on lit partout, ce n'est pas simplement « ton amygdale qui s'emballe ». Cette boule au ventre n'est d'ailleurs pas qu'une image : ton intestin et ton cerveau se parlent en permanence, un phénomène décrit dans l'article sur l'<Link to="/blog/axe-intestin-cerveau-microbiote-humeur/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">axe intestin-cerveau et l'humeur</Link>.
           </p>
           <p>
             Les méta-analyses de neuroimagerie publiées entre 2021 et 2025 racontent une histoire plus précise. Les données récentes suggèrent qu'un déséquilibre entre l'amygdale et le cortex préfrontal médian, plutôt qu'une amygdale isolément trop active, contribue à l'anxiété. C'est une nuance qui change la façon de comprendre et d'aborder le problème.

@@ -325,7 +325,7 @@ export default function SystemeLimbique() {
           </p>
 
           <p>
-            Concrètement : l'hypothalamus envoie un signal à l'hypophyse (une glande au bas du cerveau), qui envoie à son tour un signal aux glandes surrénales (situées au-dessus des reins). Ces glandes libèrent alors le <strong>cortisol</strong> — l'hormone du stress. Ce processus prend 15 à 30 minutes. Bien plus lent que la décharge d'adrénaline initiale — mais ses effets durent bien plus longtemps.
+            Concrètement : l'hypothalamus envoie un signal à l'hypophyse (une glande au bas du cerveau), qui envoie à son tour un signal aux glandes surrénales (situées au-dessus des reins). Ces glandes libèrent alors le <strong>cortisol</strong> — l'hormone du stress. Ce processus prend 15 à 30 minutes. Bien plus lent que la décharge d'adrénaline initiale — mais ses effets durent bien plus longtemps. Ce cortisol n'agit pas que sur le cerveau : il perturbe aussi la paroi et la flore de l'intestin, un lien décrit dans l'article sur l'<Link to="/blog/axe-intestin-cerveau-microbiote-humeur/" className="text-indigo-600 dark:text-indigo-400 hover:underline">axe intestin-cerveau</Link>.
           </p>
 
           <p>

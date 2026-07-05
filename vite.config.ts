@@ -35,6 +35,7 @@ const ARTICLE_SLUGS = [
   'anxiete-mecanismes-neurologiques-solutions-scientifiques',
   'burn-out-signaux-neurobiologiques-recuperation',
   'meditation-effets-cerveau',
+  'axe-intestin-cerveau-microbiote-humeur',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

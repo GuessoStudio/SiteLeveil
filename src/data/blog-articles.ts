@@ -334,5 +334,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/meditation-effets-cerveau-cover",
         slug: "meditation-effets-cerveau",
         featured: false
+    },
+    {
+        id: 31,
+        title: "Axe intestin-cerveau : comment votre microbiote influence votre humeur",
+        excerpt: "Axe intestin-cerveau : les 4 voies de communication microbiote-cerveau, ce que prouvent vraiment les études humaines et 5 leviers pour le soutenir. Guide 2026.",
+        category: "Neurosciences",
+        readTime: 14,
+        date: "2026-07-05",
+        image: "/images/articles/axe-intestin-cerveau-microbiote-humeur-cover",
+        slug: "axe-intestin-cerveau-microbiote-humeur",
+        featured: false
     }
 ];
