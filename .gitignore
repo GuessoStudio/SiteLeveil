@@ -13,3 +13,7 @@ vite.config.ts.timestamp-*.mjs
 screenshots/
 claude-blog/
 claude-seo/
+
+# Notes de travail / contexte perso (non versionné)
+context/
+.claude/commands/smart-handoff.md
