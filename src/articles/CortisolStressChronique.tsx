@@ -611,20 +611,6 @@ export default function CortisolStressChronique() {
             Si tu veux comprendre comment le BDNF — la protéine qui protège les neurones hippocampiques contre le cortisol — peut être augmenté naturellement, notre analyse des <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/">8 méthodes validées pour augmenter le BDNF</Link> présente les données humaines disponibles avec les tailles d'effet précises.
           </p>
 
-          {/* CTA */}
-          <div className="not-prose my-10 bg-violet-50 dark:bg-violet-950/30 p-6 rounded-xl border border-violet-200 dark:border-violet-800 text-center">
-            <p className="text-sm font-bold text-violet-900 dark:text-violet-100 mb-1">Protocole Anti-Cortisol — Checklist PDF gratuite</p>
-            <p className="text-sm text-violet-700 dark:text-violet-300 mb-4">
-              Les 5 stratégies de cet article condensées en une checklist d'une page : indicateurs à surveiller, fréquences recommandées, seuils d'alerte. À imprimer ou garder sur ton téléphone.
-            </p>
-            <a
-              href="/Downloads/cortisol-stress-chronique-checklist.pdf"
-              className="inline-block px-6 py-3 bg-violet-600 text-white text-sm font-semibold rounded-lg hover:bg-violet-700 transition-colors"
-            >
-              Télécharger la checklist PDF →
-            </a>
-          </div>
-
           {/* Sources scientifiques */}
           <div className="not-prose mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
             <h2 className="text-base font-bold text-neutral-900 dark:text-white mb-4">Sources scientifiques</h2>
