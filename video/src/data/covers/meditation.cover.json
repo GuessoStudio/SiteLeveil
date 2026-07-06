@@ -1,10 +1,12 @@
 {
   "eyebrow": "Méditation",
+  "eyebrowSize": 84,
   "title": "PAS CE QUE\nTU CROIS",
   "accent": "eveil",
   "pose": "open",
   "emotion": "eveil",
   "mode": "eveil",
-  "badge": "NEUROSCIENCES",
+  "badge": "",
+  "titleTopPct": 17,
   "brand": "leveilmental.fr"
 }

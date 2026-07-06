@@ -18,7 +18,8 @@ export type CoverProps = {
   pose: PoseName;
   emotion: EmotionName;
   mode: ModeName;
-  badge?: string; // pastille pilier en haut
+  badge?: string; // pastille pilier en haut ("" ou omis = pas de pastille)
+  eyebrowSize?: number; // taille du label eyebrow (défaut 44)
   brand?: string; // marque en bas (défaut leveilmental.fr)
   characterHeightPct?: number; // taille du perso (défaut 40 ; vidéo = 25)
   characterTopPct?: number; // position verticale du perso (défaut 40)
@@ -35,6 +36,7 @@ export const Cover: React.FC<CoverProps> = ({
   emotion,
   mode,
   badge = "PSYCHOLOGIE",
+  eyebrowSize = 44,
   brand = "leveilmental.fr",
   // Défauts standard des couvertures : contenu descendu (tiers haut libre pour
   // éviter le crop UI des réseaux), perso plus grand calé sur un sol abaissé.
@@ -55,24 +57,26 @@ export const Cover: React.FC<CoverProps> = ({
       <PetitEveille frame={0} fps={30} pose={pose} emotion={emotion} mode={mode} heightPct={characterHeightPct} topPct={characterTopPct} />
       <Vignette />
 
-      {/* Pastille pilier */}
-      <div
-        style={{
-          position: "absolute",
-          top: `${badgeTopPct}%`,
-          left: "50%",
-          transform: "translateX(-50%)",
-          padding: "10px 22px",
-          borderRadius: 999,
-          background: acc,
-          color: "#0a0720",
-          fontWeight: 800,
-          fontSize: 26,
-          letterSpacing: "0.12em",
-        }}
-      >
-        {badge}
-      </div>
+      {/* Pastille pilier (masquée si badge vide) */}
+      {badge ? (
+        <div
+          style={{
+            position: "absolute",
+            top: `${badgeTopPct}%`,
+            left: "50%",
+            transform: "translateX(-50%)",
+            padding: "10px 22px",
+            borderRadius: 999,
+            background: acc,
+            color: "#0a0720",
+            fontWeight: 800,
+            fontSize: 26,
+            letterSpacing: "0.12em",
+          }}
+        >
+          {badge}
+        </div>
+      ) : null}
 
       {/* Titre */}
       <div style={{ position: "absolute", top: `${titleTopPct}%`, left: 0, right: 0, padding: "0 6%", textAlign: "center" }}>
@@ -81,7 +85,7 @@ export const Cover: React.FC<CoverProps> = ({
             style={{
               color: acc,
               fontWeight: 800,
-              fontSize: 44,
+              fontSize: eyebrowSize,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
               marginBottom: 12,
