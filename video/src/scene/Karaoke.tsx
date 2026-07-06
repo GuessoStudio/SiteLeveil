@@ -54,7 +54,7 @@ export const Karaoke: React.FC<{
         opacity: appear,
       }}
     >
-      <p style={{ margin: 0, lineHeight: 1.3, fontSize: 56, fontWeight: 800, display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: "0.18em", rowGap: "0.15em" }}>
+      <p style={{ margin: 0, lineHeight: 1.3, fontSize: 56, fontWeight: 800, display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: "0.34em", rowGap: "0.15em" }}>
         {chunk.map((w, i) => {
           const isActive = from + i === active;
           return (
