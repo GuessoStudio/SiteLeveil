@@ -36,6 +36,7 @@ const ARTICLE_SLUGS = [
   'burn-out-signaux-neurobiologiques-recuperation',
   'meditation-effets-cerveau',
   'axe-intestin-cerveau-microbiote-humeur',
+  'resilience-psychologique-developper',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

@@ -59,6 +59,7 @@ const articles = [
   { path: "/blog/burn-out-signaux-neurobiologiques-recuperation/", file: "src/articles/BurnOut.tsx" },
   { path: "/blog/meditation-effets-cerveau/",                       file: "src/articles/MeditationEffetsCerveau.tsx" },
   { path: "/blog/axe-intestin-cerveau-microbiote-humeur/",          file: "src/articles/AxeIntestinCerveau.tsx" },
+  { path: "/blog/resilience-psychologique-developper/",             file: "src/articles/ResiliencePsychologique.tsx" },
 ];
 
 const allUrls = [

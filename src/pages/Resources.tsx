@@ -292,6 +292,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/axe-intestin-cerveau-microbiote-humeur-checklist.pdf"
     },
     {
+      id: 32,
+      title: "Checklist : renforcer sa résilience en 5 piliers",
+      description: "Les 5 leviers d'entraînement de la résilience, le mécanisme cérébral de chacun et un exercice concret par pilier. Sources : Davidson & McEwen 2012, Southwick & Charney.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/resilience-psychologique-developper-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/resilience-psychologique-developper-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

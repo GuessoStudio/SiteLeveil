@@ -345,5 +345,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/axe-intestin-cerveau-microbiote-humeur-cover",
         slug: "axe-intestin-cerveau-microbiote-humeur",
         featured: false
+    },
+    {
+        id: 32,
+        title: "Résilience psychologique : les 5 piliers neurobiologiques pour rebondir",
+        excerpt: "Résilience psychologique : comment la développer avec un vrai cadre neurobiologique. Circuit préfrontal-amygdale, récupération du cortisol et 5 piliers validés.",
+        category: "Développement Personnel",
+        readTime: 14,
+        date: "2026-07-07",
+        image: "/images/articles/resilience-psychologique-developper-cover",
+        slug: "resilience-psychologique-developper",
+        featured: false
     }
 ];

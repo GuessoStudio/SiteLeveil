@@ -447,7 +447,7 @@ export default function CortisolStressChronique() {
           </p>
 
           <p>
-            Après traitement chirurgical et normalisation du cortisol, ces patients ont récupéré en moyenne environ +10 % de volume hippocampique. Ce n'est pas une récupération totale. Mais c'est mesurable — et ça indique que l'hippocampe conserve une capacité de restauration si on intervient.
+            Après traitement chirurgical et normalisation du cortisol, ces patients ont récupéré en moyenne environ +10 % de volume hippocampique. Ce n'est pas une récupération totale. Mais c'est mesurable — et ça indique que l'hippocampe conserve une capacité de restauration si on intervient. Cette capacité de récupération du cerveau est le socle biologique de la <Link to="/blog/resilience-psychologique-developper/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">résilience psychologique</Link>.
           </p>
 
           <p>

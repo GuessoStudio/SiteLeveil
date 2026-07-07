@@ -392,7 +392,7 @@ export default function BurnOut() {
             Un point essentiel, souvent oublié : les différents niveaux de récupération ne progressent pas au même rythme. La <strong>récupération subjective</strong> (se sentir moins épuisé) apparaît généralement en premier, en quelques semaines à quelques mois. La <strong>récupération fonctionnelle</strong> (retrouver sa concentration, sa mémoire) prend plus de temps. La <strong>récupération biologique</strong> (normalisation des marqueurs cérébraux et hormonaux) peut demander plusieurs mois.
           </p>
           <p>
-            C'est pourquoi on peut « se sentir mieux » tout en étant encore vulnérable. Reprendre trop vite, avant la récupération fonctionnelle, est la principale cause de rechute. La patience n'est pas une option, c'est une partie du traitement.
+            C'est pourquoi on peut « se sentir mieux » tout en étant encore vulnérable. Reprendre trop vite, avant la récupération fonctionnelle, est la principale cause de rechute. La patience n'est pas une option, c'est une partie du traitement. Cette capacité à récupérer et à se reconstruire après l'épreuve est au cœur de la <Link to="/blog/resilience-psychologique-developper/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">résilience psychologique</Link>.
           </p>
 
           {/* H2 — 7 étapes */}
