@@ -15,7 +15,8 @@ export type SfxKey =
   | "spark_trigger"
   | "space_suction"
   | "shimmer"
-  | "dark_drone";
+  | "dark_drone"
+  | "tape_stop";
 
 // null = pas encore de fichier → son ignoré. Mets le chemin pour activer.
 export const SFX_FILES: Record<SfxKey, string | null> = {
@@ -28,6 +29,7 @@ export const SFX_FILES: Record<SfxKey, string | null> = {
   space_suction: "sfx/suction.mp3",      // flow_state
   shimmer: "sfx/shimmer.mp3",            // dopamine
   dark_drone: "sfx/dark-drone.mp3",      // nappe d'ambiance globale (BOUCLE)
+  tape_stop: null,                       // rupture narrative : coupe net l'ambiance sur "Mais attention…" — dépose sfx/tape-stop.mp3 pour activer
 };
 
 // Volume par son (0 → 1).
@@ -41,6 +43,7 @@ export const SFX_VOLUME: Record<SfxKey, number> = {
   space_suction: 0.6,
   shimmer: 0.4,
   dark_drone: 0.52,
+  tape_stop: 0.5,
 };
 
 // Sons qui bouclent pendant tout le plan (rythme cardiaque, nappe). Les autres

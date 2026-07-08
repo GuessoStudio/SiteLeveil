@@ -28,6 +28,14 @@ shimmer        : scintillement cristallin léger (≈0,6 s)
                  → dopamine
 dark_drone     : nappe grave continue, BOUCLABLE (≈4-8 s)
                  → ambiance globale (champ "ambience": "dark_drone" en tête de JSON)
+tape_stop      : arrêt de bande / vinyl stop (≈0,5 s) — pitch qui chute d'un coup
+                 → rupture narrative : placement MANUEL dans un plan via
+                   "sfx": "tape_stop" (pas d'auto-mapping). Idéal sur le plan
+                   qui coupe le hook : « Mais attention, ce n'est pas si simple. »
+                   Cherche "tape stop" ou "record stop" sur freesound.org.
+                   Ou synthétise-en un en local (ffmpeg complet requis) :
+                   ffmpeg -f lavfi -i "aevalsrc=exprs=0.6*exp(-2.3*t)*sin(2*PI*(520*t-460*t*t)):d=0.55" \
+                     -af "afade=t=out:st=0.40:d=0.15" -ac 1 tape-stop.mp3
 
 CONSEILS
 --------

@@ -54,10 +54,12 @@ Doc de schéma : `README.md`. Ce fichier = la liste exhaustive des valeurs.
 ## 9. Icônes (13) — champ `icon` (ponctuel) — pop au-dessus de la tête
 `brain` · `bolt` · `spiral` · `eye` · `clock` · `target` · `lightbulb` · `heart` · `users` · `link` · `flame` · `leaf` · `moon`
 
-## 10. SFX / sons (9) — `public/sfx/` — champ `sfx` (ponctuel, "none" coupe)
-`impact_heavy` · `whoosh_clean` · `whoosh_soft` · `glitch` · `sub_pulse` (boucle) · `spark_trigger` · `space_suction` · `shimmer` · `dark_drone` (boucle, ambiance)
+## 10. SFX / sons (10) — `public/sfx/` — champ `sfx` (ponctuel, "none" coupe)
+`impact_heavy` · `whoosh_clean` · `whoosh_soft` · `glitch` · `sub_pulse` (boucle) · `spark_trigger` · `space_suction` · `shimmer` · `dark_drone` (boucle, ambiance) · `tape_stop` (rupture)
 > Auto-mapping : une `transition` et un `fx` déclenchent un son automatiquement.
 > `ambience` = nappe globale (ex. `dark_drone`).
+> `tape_stop` = placement manuel (`"sfx": "tape_stop"`) pour couper net l'ambiance
+> sur une rupture (« Mais attention… »). Fichier à déposer dans `public/sfx/` (voir README).
 
 ## 11. Burst — champ `burst` (ponctuel)
 `false` · `true` · `"head"` · `"torso"` (éclat de particules d'accent)
