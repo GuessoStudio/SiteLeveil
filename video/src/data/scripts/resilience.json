@@ -3,9 +3,9 @@
   "width": 1080,
   "height": 1920,
   "audio": "Résilience.mp3",
-  "audioVolume": 2.6,
+  "audioVolume": 1.0,
   "ambience": "dark_drone",
-  "ambienceVolume": 0.6,
+  "ambienceVolume": 1.1,
   "karaoke": true,
   "defaults": {
     "pose": "idle",
@@ -18,17 +18,17 @@
     "burst": false
   },
   "scenes": [
-    { "duration": 4.28, "keyword": "RÉSILIENT ?", "keywordFx": "shake", "subtitle": "La personne la plus résiliente que tu connais ressent la peur autant que toi.", "pose": "think", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "camera": "punch-head", "position": "center", "transition": "flash_reverse", "fx": "attention_spotlight", "burst": "head" },
-    { "duration": 3.07, "keyword": "AILLEURS", "subtitle": "La différence est ailleurs.", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "neuro", "camera": "cine", "position": "right", "fx": "tunnel_vision", "icon": "eye" },
-    { "duration": 3.72, "keyword": "PAS INSENSIBLE", "subtitle": "Être résilient, ce n'est pas être insensible : c'est l'inverse.", "pose": "open", "emotion": "insight", "mode": "emotions", "accent": "emotions", "camera": "cine", "position": "center", "transition": "color_shift", "fx": "empathy_pulse", "icon": "heart" },
-    { "duration": 3.21, "keyword": "LA VITESSE", "subtitle": "Ce qui change, c'est la vitesse à laquelle ton système nerveux revient au calme.", "pose": "cross", "emotion": "calme", "mode": "neuro", "accent": "sommeil", "camera": "cine", "position": "left", "transition": "color_shift", "fx": "reset_breath", "icon": "clock" },
-    { "duration": 2.81, "subtitle": "Une flexibilité, pas une armure.", "pose": "open", "emotion": "insight", "mode": "eveil", "accent": "eveil", "camera": "cine", "position": "center", "fx": "none", "split": { "left": "ARMURE", "right": "FLEXIBILITÉ" } },
-    { "duration": 4.42, "keyword": "LE MYTHE", "keywordFx": "glitch", "subtitle": "Et non, ce qui ne te tue pas ne te rend pas toujours plus fort.", "pose": "shrug", "emotion": "confusion", "mode": "neuro", "accent": "stress", "camera": "cine", "position": "center", "fx": "cognitive_overload", "sfx": "tape_stop", "icon": "spiral" },
-    { "duration": 2.74, "keyword": "LA SCIENCE", "subtitle": "Mark Seery, université de Buffalo, l'a prouvé :", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "cine", "position": "left", "transition": "color_shift", "fx": "brain_highlight_head", "icon": "eye", "credit": "Mark Seery · Université de Buffalo" },
-    { "duration": 3.78, "keyword": "SENSIBILISATION", "subtitle": "un peu d'adversité te solidifie, trop te fragilise en sensibilisant ton cerveau au danger.", "pose": "cross", "emotion": "surcharge", "mode": "neuro", "accent": "stress", "camera": "cine", "position": "right", "transition": "zoom_smash", "fx": "cortisol_spike", "burst": "head" },
-    { "duration": 2.49, "keyword": "UNE DOSE", "subtitle": "C'est une dose, pas un manque de force.", "pose": "lean", "emotion": "calme", "mode": "eveil", "accent": "eveil", "camera": "cine", "position": "center", "fx": "none" },
-    { "duration": 5.34, "keyword": "RÉENTRAÎNABLE", "subtitle": "Bonne nouvelle : ça se réentraîne. Nomme ton émotion avec précision : ça calme l'amygdale, l'alarme de peur du cerveau.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "growth", "camera": "cine", "position": "left", "transition": "color_shift", "fx": "neuroplasticity", "icon": "brain", "credit": "Matthew Lieberman · UCLA", "burst": "head" },
-    { "duration": 2.27, "keyword": "RELIE-TOI", "subtitle": "Reconnecte-toi à un proche fiable. Et bouge.", "pose": "open", "emotion": "joie", "mode": "emotions", "accent": "social", "camera": "cine", "position": "right", "fx": "social_network", "icon": "users", "credit": "James Coan · Univ. de Virginie" },
-    { "duration": 2.65, "keyword": "REBOND", "keywordFx": "shake", "subtitle": "Commente REBOND, je t'envoie le protocole pour récupérer.", "pose": "wave", "emotion": "fierte", "mode": "eveil", "accent": "eveil", "camera": "punch-head", "position": "center", "transition": "blackout", "fx": "gratitude_glow", "icon": "target", "burst": "head" }
+    { "duration": 4.22, "keyword": "RÉSILIENT ?", "keywordFx": "shake", "subtitle": "La personne la plus résiliente que tu connais ressent la peur autant que toi.", "pose": "think", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "camera": "punch-head", "position": "center", "transition": "flash_reverse", "fx": "attention_spotlight", "burst": "head" },
+    { "duration": 1.12, "keyword": "AILLEURS", "subtitle": "La différence est ailleurs.", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "neuro", "camera": "cine", "position": "right", "fx": "tunnel_vision", "icon": "eye" },
+    { "duration": 2.92, "keyword": "PAS INSENSIBLE", "subtitle": "Être résilient, ce n'est pas être insensible : c'est l'inverse.", "pose": "open", "emotion": "insight", "mode": "emotions", "accent": "emotions", "camera": "cine", "position": "center", "transition": "color_shift", "fx": "empathy_pulse", "icon": "heart" },
+    { "duration": 4.13, "keyword": "LA VITESSE", "subtitle": "Ce qui change, c'est la vitesse à laquelle ton système nerveux revient au calme.", "pose": "cross", "emotion": "calme", "mode": "neuro", "accent": "sommeil", "camera": "cine", "position": "left", "transition": "color_shift", "fx": "reset_breath", "icon": "clock" },
+    { "duration": 1.93, "subtitle": "Une flexibilité, pas une armure.", "pose": "open", "emotion": "insight", "mode": "eveil", "accent": "eveil", "camera": "cine", "position": "center", "fx": "none", "split": { "left": "ARMURE", "right": "FLEXIBILITÉ" } },
+    { "duration": 5.22, "keyword": "LE MYTHE", "keywordFx": "glitch", "subtitle": "Et non, ce qui ne te tue pas ne te rend pas toujours plus fort.", "pose": "shrug", "emotion": "confusion", "mode": "neuro", "accent": "stress", "camera": "cine", "position": "center", "fx": "cognitive_overload", "sfx": "tape_stop", "icon": "spiral" },
+    { "duration": 2.01, "keyword": "LA SCIENCE", "subtitle": "Mark Seery, université de Buffalo, l'a prouvé :", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "cine", "position": "left", "transition": "color_shift", "fx": "brain_highlight_head", "icon": "eye", "credit": "Mark Seery · Université de Buffalo" },
+    { "duration": 2.81, "keyword": "SENSIBILISATION", "subtitle": "un peu d'adversité te solidifie, trop te fragilise en sensibilisant ton cerveau au danger.", "pose": "cross", "emotion": "surcharge", "mode": "neuro", "accent": "stress", "camera": "cine", "position": "right", "transition": "zoom_smash", "fx": "cortisol_spike", "burst": "head" },
+    { "duration": 2.31, "keyword": "UNE DOSE", "subtitle": "C'est une dose, pas un manque de force.", "pose": "lean", "emotion": "calme", "mode": "eveil", "accent": "eveil", "camera": "cine", "position": "center", "fx": "none" },
+    { "duration": 6.52, "keyword": "RÉENTRAÎNABLE", "subtitle": "Bonne nouvelle : ça se réentraîne. Nomme ton émotion avec précision : ça calme l'amygdale, l'alarme de peur du cerveau.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "growth", "camera": "cine", "position": "left", "transition": "color_shift", "fx": "neuroplasticity", "icon": "brain", "credit": "Matthew Lieberman · UCLA", "burst": "head" },
+    { "duration": 2.20, "keyword": "RELIE-TOI", "subtitle": "Reconnecte-toi à un proche fiable. Et bouge.", "pose": "open", "emotion": "joie", "mode": "emotions", "accent": "social", "camera": "cine", "position": "right", "fx": "social_network", "icon": "users", "credit": "James Coan · Univ. de Virginie" },
+    { "duration": 2.70, "keyword": "REBOND", "keywordFx": "shake", "subtitle": "Commente REBOND, je t'envoie le protocole pour récupérer.", "pose": "wave", "emotion": "fierte", "mode": "eveil", "accent": "eveil", "camera": "punch-head", "position": "center", "transition": "blackout", "fx": "gratitude_glow", "icon": "target", "burst": "head" }
   ]
 }
