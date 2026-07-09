@@ -4,7 +4,7 @@
 // aucun élément du moteur (perso, mot-clé, FX, icône) ne doit s'y poser.
 //
 // Layout vertical visé :
-//   ~9–25%  : mot-clé géant (la « claque »)
+//   ~12–25% : mot-clé géant (la « claque ») — descendu sous l'UI TikTok (onglets/recherche)
 //   ~38–63% : Le Petit Éveillé + sol à 60%
 //   64–77%  : BANDE CAPTION-SAFE (karaoké CapCut)
 //   ~82–100%: UI TikTok (pseudo, légende, boutons) — hors-jeu

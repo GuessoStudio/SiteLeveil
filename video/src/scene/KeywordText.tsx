@@ -43,7 +43,7 @@ export const KeywordText: React.FC<{
     <div
       style={{
         position: "absolute",
-        top: "9%",
+        top: "12%",
         left: 0,
         right: 0,
         padding: "0 7%",
