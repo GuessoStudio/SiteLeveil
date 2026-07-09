@@ -37,6 +37,7 @@ const ARTICLE_SLUGS = [
   'meditation-effets-cerveau',
   'axe-intestin-cerveau-microbiote-humeur',
   'resilience-psychologique-developper',
+  'intelligence-sociale-competences-relationnelles',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

@@ -356,5 +356,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/resilience-psychologique-developper-cover",
         slug: "resilience-psychologique-developper",
         featured: false
+    },
+    {
+        id: 33,
+        title: "Intelligence sociale : 7 compétences relationnelles clés (Daniel Goleman)",
+        excerpt: "Intelligence sociale : les 7 compétences relationnelles clés du cadre de Daniel Goleman, ce que le cerveau social valide vraiment et comment les développer.",
+        category: "Relations Humaines",
+        readTime: 13,
+        date: "2026-07-09",
+        image: "/images/articles/intelligence-sociale-competences-relationnelles-cover",
+        slug: "intelligence-sociale-competences-relationnelles",
+        featured: false
     }
 ];

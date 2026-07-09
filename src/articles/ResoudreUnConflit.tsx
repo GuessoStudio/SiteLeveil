@@ -455,7 +455,7 @@ export default function ResoudreUnConflit() {
             L'effet de cette technique est documenté en imagerie cérébrale : quand quelqu'un se sent réellement compris, l'amygdale se désactive progressivement et le réseau fronto-pariétal s'active. Ce passage désactive le mode survie et réactive le mode coopération.
           </p>
           <p>
-            La paraphrase n'implique pas d'être d'accord avec l'autre. Elle implique de montrer que tu as compris sa perspective avant de partager la tienne. C'est le fondement de l'écoute active et de la <Link to="/blog/communication-non-violente-cnv/" className="text-indigo-600 dark:text-indigo-400 underline underline-offset-2">communication non violente (CNV)</Link>.
+            La paraphrase n'implique pas d'être d'accord avec l'autre. Elle implique de montrer que tu as compris sa perspective avant de partager la tienne. C'est le fondement de l'écoute active et de la <Link to="/blog/communication-non-violente-cnv/" className="text-indigo-600 dark:text-indigo-400 underline underline-offset-2">communication non violente (CNV)</Link>. Savoir désamorcer une tension de cette façon est aussi l'une des compétences de l'<Link to="/blog/intelligence-sociale-competences-relationnelles/" className="text-indigo-600 dark:text-indigo-400 underline underline-offset-2">intelligence sociale</Link>.
           </p>
 
           <h3>3. Les antidotes aux 4 Cavaliers de Gottman</h3>

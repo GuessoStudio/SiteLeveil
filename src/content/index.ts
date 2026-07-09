@@ -44,4 +44,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "meditation-effets-cerveau": lazy(() => import("../articles/MeditationEffetsCerveau")),
   "axe-intestin-cerveau-microbiote-humeur": lazy(() => import("../articles/AxeIntestinCerveau")),
   "resilience-psychologique-developper": lazy(() => import("../articles/ResiliencePsychologique")),
+  "intelligence-sociale-competences-relationnelles": lazy(() => import("../articles/IntelligenceSociale")),
 };

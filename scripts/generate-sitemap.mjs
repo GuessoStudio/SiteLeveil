@@ -60,6 +60,7 @@ const articles = [
   { path: "/blog/meditation-effets-cerveau/",                       file: "src/articles/MeditationEffetsCerveau.tsx" },
   { path: "/blog/axe-intestin-cerveau-microbiote-humeur/",          file: "src/articles/AxeIntestinCerveau.tsx" },
   { path: "/blog/resilience-psychologique-developper/",             file: "src/articles/ResiliencePsychologique.tsx" },
+  { path: "/blog/intelligence-sociale-competences-relationnelles/", file: "src/articles/IntelligenceSociale.tsx" },
 ];
 
 const allUrls = [

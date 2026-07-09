@@ -304,6 +304,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/resilience-psychologique-developper-checklist.pdf"
     },
     {
+      id: 33,
+      title: "Checklist : les 7 compétences de l'intelligence sociale",
+      description: "Les 7 compétences relationnelles inspirées du cadre de Goleman, le mécanisme cérébral de chacune et un exercice concret par compétence. Sources : Goleman 2006, Saxe & Kanwisher 2003, Dunbar 1993, Holt-Lunstad 2010.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/intelligence-sociale-competences-relationnelles-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/intelligence-sociale-competences-relationnelles-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

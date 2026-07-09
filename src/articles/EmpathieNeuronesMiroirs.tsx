@@ -584,7 +584,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            La <Link to="/blog/neuroplasticite-cerveau/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">neuroplasticité du cerveau adulte</Link> garantit que ces quatre leviers peuvent modifier durablement les circuits empathiques — même après 30, 40 ou 50 ans.
+            La <Link to="/blog/neuroplasticite-cerveau/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">neuroplasticité du cerveau adulte</Link> garantit que ces quatre leviers peuvent modifier durablement les circuits empathiques — même après 30, 40 ou 50 ans. L'empathie n'agit d'ailleurs jamais seule : elle est l'une des sept compétences de l'<Link to="/blog/intelligence-sociale-competences-relationnelles/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">intelligence sociale</Link>, aux côtés de l'écoute et du décodage des intentions d'autrui.
           </p>
 
           {/* À retenir */}
