@@ -7,19 +7,754 @@
   "ambience": "dark_drone",
   "ambienceVolume": 1.1,
   "karaoke": true,
-  "defaults": {"pose":"idle","emotion":"calme","mode":"eveil","position":"center","camera":"cine","fx":"none","accent":"eveil","burst":false},
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "eveil",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "eveil",
+    "burst": false
+  },
   "scenes": [
-    {"duration":4.12,"keyword":"TON CERVEAU","keywordFx":"shake","subtitle":"Ton cerveau ne change pas parce que tu le veux.","pose":"think","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"punch-head","position":"center","transition":"flash_reverse","fx":"attention_spotlight","burst":"head"},
-    {"duration":3.73,"keyword":"LE BON SIGNAL","subtitle":"Il change quand tu lui donnes le bon signal.","pose":"point","emotion":"focus","mode":"neuro","accent":"neuro","camera":"cine","position":"right","fx":"brain_highlight_head","icon":"bolt"},
-    {"duration":4.41,"keyword":"LE BDNF","subtitle":"Ce signal, c'est une protéine que ton cerveau fabrique pour renforcer ses connexions : le BDNF.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift","fx":"synapse_fire","icon":"link"},
-    {"duration":3.31,"keyword":"LA SCIENCE","subtitle":"Carl Cotman, de l'université de Californie à Irvine, l'a démontré le premier.","pose":"point","emotion":"insight","mode":"neuro","accent":"neuro","camera":"cine","position":"left","transition":"color_shift","fx":"brain_highlight_head","icon":"eye","credit":"Carl Cotman · UC Irvine"},
-    {"duration":1.10,"keyword":"JARDIN MENTAL","subtitle":"Imagine un jardin mental :","pose":"open","emotion":"calme","mode":"eveil","accent":"growth","camera":"cine","position":"center","transition":"color_shift","fx":"reset_breath","icon":"leaf"},
-    {"duration":1.93,"keyword":"UN CHEMIN","subtitle":"chaque pensée, chaque habitude trace un chemin.","pose":"point","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"right","fx":"momentum_trail","icon":"leaf"},
-    {"duration":1.93,"keyword":"RENFORCÉ","subtitle":"Le BDNF rend ce chemin plus praticable.","pose":"open","emotion":"insight","mode":"eveil","accent":"growth","camera":"cine","position":"center","fx":"neuroplasticity","icon":"brain","burst":"head"},
-    {"duration":2.74,"keyword":"PAS L'INTENTION","keywordFx":"glitch","subtitle":"Mais il ne répond pas à l'intention.","pose":"shrug","emotion":"confusion","mode":"neuro","accent":"stress","camera":"cine","position":"center","transition":"zoom_smash","fx":"cognitive_overload","sfx":"tape_stop","icon":"spiral"},
-    {"duration":2.85,"keyword":"LA RÉPÉTITION","subtitle":"Il répond à la répétition : bouger, apprendre, dormir, s'exposer à l'effort.","pose":"point","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"left","transition":"color_shift","fx":"habit_chain","icon":"target","burst":"head"},
-    {"duration":1.81,"keyword":"PAS FORCER","subtitle":"Changer, ce n'est pas forcer ton cerveau.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","fx":"none"},
-    {"duration":2.07,"keyword":"SE RECÂBLER","subtitle":"C'est créer les conditions pour qu'il se recâble.","pose":"open","emotion":"eveil","mode":"eveil","accent":"eveil","camera":"cine","position":"center","fx":"neuroplasticity","icon":"spiral","burst":"head"},
-    {"duration":3.37,"keyword":"ENTRAÎNE-LE","keywordFx":"shake","subtitle":"Garde cette vidéo si tu veux entraîner ton cerveau, pas seulement le motiver.","pose":"wave","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"punch-head","position":"center","transition":"blackout","fx":"gratitude_glow","icon":"bolt","burst":"head"}
+    {
+      "duration": 4.12,
+      "keyword": "TON CERVEAU",
+      "keywordFx": "shake",
+      "subtitle": "Ton cerveau ne change pas parce que tu le veux.",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "punch-head",
+      "position": "center",
+      "transition": "flash_reverse",
+      "fx": "attention_spotlight",
+      "burst": "head"
+    },
+    {
+      "duration": 3.73,
+      "keyword": "LE BON SIGNAL",
+      "subtitle": "Il change quand tu lui donnes le bon signal.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "right",
+      "fx": "brain_highlight_head",
+      "icon": "bolt"
+    },
+    {
+      "duration": 4.41,
+      "keyword": "LE BDNF",
+      "subtitle": "Ce signal, c'est une protéine que ton cerveau fabrique pour renforcer ses connexions : le BDNF.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift",
+      "fx": "synapse_fire",
+      "icon": "link"
+    },
+    {
+      "duration": 3.31,
+      "keyword": "LA SCIENCE",
+      "subtitle": "Carl Cotman, de l'université de Californie à Irvine, l'a démontré le premier.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "left",
+      "transition": "color_shift",
+      "fx": "brain_highlight_head",
+      "icon": "eye",
+      "credit": "Carl Cotman · UC Irvine"
+    },
+    {
+      "duration": 1.1,
+      "keyword": "JARDIN MENTAL",
+      "subtitle": "Imagine un jardin mental :",
+      "pose": "open",
+      "emotion": "calme",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift",
+      "fx": "reset_breath",
+      "icon": "leaf"
+    },
+    {
+      "duration": 1.93,
+      "keyword": "UN CHEMIN",
+      "subtitle": "chaque pensée, chaque habitude trace un chemin.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "right",
+      "fx": "momentum_trail",
+      "icon": "leaf"
+    },
+    {
+      "duration": 1.93,
+      "keyword": "RENFORCÉ",
+      "subtitle": "Le BDNF rend ce chemin plus praticable.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "center",
+      "fx": "neuroplasticity",
+      "icon": "brain",
+      "burst": "head"
+    },
+    {
+      "duration": 2.74,
+      "keyword": "PAS L'INTENTION",
+      "keywordFx": "glitch",
+      "subtitle": "Mais il ne répond pas à l'intention.",
+      "pose": "shrug",
+      "emotion": "confusion",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "center",
+      "transition": "zoom_smash",
+      "fx": "cognitive_overload",
+      "sfx": "tape_stop",
+      "icon": "spiral"
+    },
+    {
+      "duration": 2.85,
+      "keyword": "LA RÉPÉTITION",
+      "subtitle": "Il répond à la répétition : bouger, apprendre, dormir, s'exposer à l'effort.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "left",
+      "transition": "color_shift",
+      "fx": "habit_chain",
+      "icon": "target",
+      "burst": "head"
+    },
+    {
+      "duration": 1.81,
+      "keyword": "PAS FORCER",
+      "subtitle": "Changer, ce n'est pas forcer ton cerveau.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "fx": "none"
+    },
+    {
+      "duration": 2.07,
+      "keyword": "SE RECÂBLER",
+      "subtitle": "C'est créer les conditions pour qu'il se recâble.",
+      "pose": "open",
+      "emotion": "eveil",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "fx": "neuroplasticity",
+      "icon": "spiral",
+      "burst": "head"
+    },
+    {
+      "duration": 3.37,
+      "keyword": "ENTRAÎNE-LE",
+      "keywordFx": "shake",
+      "subtitle": "Garde cette vidéo si tu veux entraîner ton cerveau, pas seulement le motiver.",
+      "pose": "wave",
+      "emotion": "fierte",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "position": "center",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "bolt",
+      "burst": "head"
+    }
+  ],
+  "words": [
+    {
+      "w": "Ton",
+      "start": 0.0,
+      "end": 0.16
+    },
+    {
+      "w": "cerveau",
+      "start": 0.16,
+      "end": 0.48
+    },
+    {
+      "w": "ne",
+      "start": 0.48,
+      "end": 0.58
+    },
+    {
+      "w": "change",
+      "start": 0.58,
+      "end": 0.72
+    },
+    {
+      "w": "pas",
+      "start": 0.72,
+      "end": 0.96
+    },
+    {
+      "w": "parce",
+      "start": 0.96,
+      "end": 1.14
+    },
+    {
+      "w": "que",
+      "start": 1.14,
+      "end": 1.26
+    },
+    {
+      "w": "tu",
+      "start": 1.26,
+      "end": 1.36
+    },
+    {
+      "w": "le",
+      "start": 1.36,
+      "end": 1.54
+    },
+    {
+      "w": "veux.",
+      "start": 1.54,
+      "end": 1.68
+    },
+    {
+      "w": "Il",
+      "start": 1.98,
+      "end": 2.14
+    },
+    {
+      "w": "change",
+      "start": 2.14,
+      "end": 2.36
+    },
+    {
+      "w": "quand",
+      "start": 2.36,
+      "end": 2.68
+    },
+    {
+      "w": "tu",
+      "start": 2.68,
+      "end": 2.82
+    },
+    {
+      "w": "lui",
+      "start": 2.82,
+      "end": 2.94
+    },
+    {
+      "w": "donnes",
+      "start": 2.94,
+      "end": 3.04
+    },
+    {
+      "w": "le",
+      "start": 3.04,
+      "end": 3.22
+    },
+    {
+      "w": "bon",
+      "start": 3.22,
+      "end": 3.32
+    },
+    {
+      "w": "signal.",
+      "start": 3.32,
+      "end": 3.62
+    },
+    {
+      "w": "Ce",
+      "start": 4.32,
+      "end": 4.58
+    },
+    {
+      "w": "signal,",
+      "start": 4.58,
+      "end": 4.84
+    },
+    {
+      "w": "c'est",
+      "start": 4.84,
+      "end": 5.01
+    },
+    {
+      "w": "une",
+      "start": 5.18,
+      "end": 5.28
+    },
+    {
+      "w": "protéine",
+      "start": 5.28,
+      "end": 5.62
+    },
+    {
+      "w": "que",
+      "start": 5.62,
+      "end": 5.74
+    },
+    {
+      "w": "ton",
+      "start": 5.74,
+      "end": 5.84
+    },
+    {
+      "w": "cerveau",
+      "start": 5.84,
+      "end": 6.14
+    },
+    {
+      "w": "fabrique",
+      "start": 6.14,
+      "end": 6.44
+    },
+    {
+      "w": "pour",
+      "start": 6.44,
+      "end": 6.66
+    },
+    {
+      "w": "renforcer",
+      "start": 6.66,
+      "end": 7.0
+    },
+    {
+      "w": "ses",
+      "start": 7.0,
+      "end": 7.18
+    },
+    {
+      "w": "connexions",
+      "start": 7.18,
+      "end": 7.62
+    },
+    {
+      "w": ":",
+      "start": 7.62,
+      "end": 7.86
+    },
+    {
+      "w": "le",
+      "start": 8.1,
+      "end": 8.18
+    },
+    {
+      "w": "BDNF.",
+      "start": 8.18,
+      "end": 8.92
+    },
+    {
+      "w": "Carl",
+      "start": 9.28,
+      "end": 9.52
+    },
+    {
+      "w": "Cotman,",
+      "start": 9.52,
+      "end": 9.83
+    },
+    {
+      "w": "de",
+      "start": 10.14,
+      "end": 10.18
+    },
+    {
+      "w": "l'université",
+      "start": 10.18,
+      "end": 10.5
+    },
+    {
+      "w": "de",
+      "start": 10.82,
+      "end": 11.0
+    },
+    {
+      "w": "Californie",
+      "start": 11.0,
+      "end": 11.74
+    },
+    {
+      "w": "à",
+      "start": 12.08,
+      "end": 12.08
+    },
+    {
+      "w": "Irvine,",
+      "start": 12.08,
+      "end": 12.52
+    },
+    {
+      "w": "l'a",
+      "start": 12.52,
+      "end": 12.78
+    },
+    {
+      "w": "démontré",
+      "start": 13.04,
+      "end": 13.36
+    },
+    {
+      "w": "le",
+      "start": 13.36,
+      "end": 13.5
+    },
+    {
+      "w": "premier.",
+      "start": 13.5,
+      "end": 13.76
+    },
+    {
+      "w": "Imagine",
+      "start": 14.06,
+      "end": 14.34
+    },
+    {
+      "w": "un",
+      "start": 14.34,
+      "end": 14.6
+    },
+    {
+      "w": "jardin",
+      "start": 14.6,
+      "end": 14.78
+    },
+    {
+      "w": "mental",
+      "start": 14.78,
+      "end": 15.1
+    },
+    {
+      "w": ":",
+      "start": 15.1,
+      "end": 15.31
+    },
+    {
+      "w": "chaque",
+      "start": 15.52,
+      "end": 15.8
+    },
+    {
+      "w": "pensée,",
+      "start": 15.8,
+      "end": 16.18
+    },
+    {
+      "w": "chaque",
+      "start": 16.38,
+      "end": 16.6
+    },
+    {
+      "w": "habitude",
+      "start": 16.6,
+      "end": 16.92
+    },
+    {
+      "w": "trace",
+      "start": 16.92,
+      "end": 17.2
+    },
+    {
+      "w": "un",
+      "start": 17.2,
+      "end": 17.34
+    },
+    {
+      "w": "chemin.",
+      "start": 17.34,
+      "end": 17.54
+    },
+    {
+      "w": "Le",
+      "start": 18.0,
+      "end": 18.1
+    },
+    {
+      "w": "BDNF",
+      "start": 18.1,
+      "end": 18.7
+    },
+    {
+      "w": "rend",
+      "start": 18.7,
+      "end": 18.92
+    },
+    {
+      "w": "ce",
+      "start": 18.92,
+      "end": 19.06
+    },
+    {
+      "w": "chemin",
+      "start": 19.06,
+      "end": 19.26
+    },
+    {
+      "w": "plus",
+      "start": 19.26,
+      "end": 19.5
+    },
+    {
+      "w": "praticable.",
+      "start": 19.5,
+      "end": 20.2
+    },
+    {
+      "w": "Mais",
+      "start": 20.62,
+      "end": 20.78
+    },
+    {
+      "w": "il",
+      "start": 20.78,
+      "end": 20.84
+    },
+    {
+      "w": "ne",
+      "start": 20.84,
+      "end": 20.96
+    },
+    {
+      "w": "répond",
+      "start": 20.96,
+      "end": 21.04
+    },
+    {
+      "w": "pas",
+      "start": 21.04,
+      "end": 21.24
+    },
+    {
+      "w": "à",
+      "start": 21.24,
+      "end": 21.32
+    },
+    {
+      "w": "l'intention.",
+      "start": 21.32,
+      "end": 21.65
+    },
+    {
+      "w": "Il",
+      "start": 21.98,
+      "end": 22.02
+    },
+    {
+      "w": "répond",
+      "start": 22.02,
+      "end": 22.3
+    },
+    {
+      "w": "à",
+      "start": 22.3,
+      "end": 22.4
+    },
+    {
+      "w": "la",
+      "start": 22.4,
+      "end": 22.5
+    },
+    {
+      "w": "répétition",
+      "start": 22.5,
+      "end": 23.0
+    },
+    {
+      "w": ":",
+      "start": 23.0,
+      "end": 23.16
+    },
+    {
+      "w": "bouger,",
+      "start": 23.32,
+      "end": 23.76
+    },
+    {
+      "w": "apprendre,",
+      "start": 24.06,
+      "end": 24.26
+    },
+    {
+      "w": "dormir,",
+      "start": 24.68,
+      "end": 24.88
+    },
+    {
+      "w": "s'exposer",
+      "start": 24.88,
+      "end": 25.24
+    },
+    {
+      "w": "à",
+      "start": 25.6,
+      "end": 25.74
+    },
+    {
+      "w": "l'effort.",
+      "start": 25.74,
+      "end": 25.99
+    },
+    {
+      "w": "Changer,",
+      "start": 26.24,
+      "end": 26.56
+    },
+    {
+      "w": "ce",
+      "start": 26.76,
+      "end": 26.86
+    },
+    {
+      "w": "n'est",
+      "start": 26.86,
+      "end": 26.91
+    },
+    {
+      "w": "pas",
+      "start": 26.96,
+      "end": 27.08
+    },
+    {
+      "w": "forcer",
+      "start": 27.08,
+      "end": 27.32
+    },
+    {
+      "w": "ton",
+      "start": 27.32,
+      "end": 27.44
+    },
+    {
+      "w": "cerveau.",
+      "start": 27.44,
+      "end": 27.96
+    },
+    {
+      "w": "C'est",
+      "start": 27.96,
+      "end": 28.06
+    },
+    {
+      "w": "créer",
+      "start": 28.16,
+      "end": 28.32
+    },
+    {
+      "w": "les",
+      "start": 28.32,
+      "end": 28.44
+    },
+    {
+      "w": "conditions",
+      "start": 28.44,
+      "end": 28.76
+    },
+    {
+      "w": "pour",
+      "start": 28.76,
+      "end": 29.0
+    },
+    {
+      "w": "qu'il",
+      "start": 29.0,
+      "end": 29.07
+    },
+    {
+      "w": "se",
+      "start": 29.14,
+      "end": 29.3
+    },
+    {
+      "w": "recâble.",
+      "start": 29.3,
+      "end": 29.58
+    },
+    {
+      "w": "Garde",
+      "start": 29.58,
+      "end": 29.86
+    },
+    {
+      "w": "cette",
+      "start": 30.14,
+      "end": 30.22
+    },
+    {
+      "w": "vidéo",
+      "start": 30.22,
+      "end": 30.52
+    },
+    {
+      "w": "si",
+      "start": 30.52,
+      "end": 30.74
+    },
+    {
+      "w": "tu",
+      "start": 30.74,
+      "end": 30.86
+    },
+    {
+      "w": "veux",
+      "start": 30.86,
+      "end": 30.98
+    },
+    {
+      "w": "entraîner",
+      "start": 30.98,
+      "end": 31.05
+    },
+    {
+      "w": "ton",
+      "start": 31.12,
+      "end": 31.3
+    },
+    {
+      "w": "cerveau,",
+      "start": 31.3,
+      "end": 32.04
+    },
+    {
+      "w": "pas",
+      "start": 32.04,
+      "end": 32.28
+    },
+    {
+      "w": "seulement",
+      "start": 32.28,
+      "end": 32.52
+    },
+    {
+      "w": "le",
+      "start": 32.52,
+      "end": 32.68
+    },
+    {
+      "w": "motiver.",
+      "start": 32.68,
+      "end": 32.98
+    }
   ]
 }
