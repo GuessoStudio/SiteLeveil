@@ -24,6 +24,8 @@
     "cover:intestin": "remotion still src/Root.tsx Cover out/intestin-cerveau-cover.png --props=src/data/covers/intestin-cerveau.cover.json",
     "render:resilience": "remotion render src/Root.tsx Habitudes out/resilience.mp4 --props=src/data/scripts/resilience.json",
     "cover:resilience": "remotion still src/Root.tsx Cover out/resilience-cover.png --props=src/data/covers/resilience.cover.json",
+    "render:bdnf": "remotion render src/Root.tsx Habitudes out/bdnf.mp4 --props=src/data/scripts/bdnf.json",
+    "cover:bdnf": "remotion still src/Root.tsx Cover out/bdnf-cover.png --props=src/data/covers/bdnf.cover.json",
     "render:demo": "remotion render src/Root.tsx Habitudes out/demo-features.mp4 --props=src/data/scripts/demo-features.json",
     "words:meditation": "py scripts/transcribe.py public/Méditation.mp3 --script src/data/scripts/meditation.json",
     "words:burnout": "py scripts/transcribe.py public/Burn-out.mp3 --script src/data/scripts/burnout.json",
@@ -32,6 +34,7 @@
     "words:habitudes": "py scripts/transcribe.py public/habitudes-court.mp3 --script src/data/scripts/habitudes-court.json",
     "words:intestin": "py scripts/transcribe.py public/intestin-cerveau.mp3 --script src/data/scripts/intestin-cerveau.json",
     "words:resilience": "py scripts/transcribe.py public/Résilience.mp3 --script src/data/scripts/resilience.json",
+    "words:bdnf": "py scripts/transcribe.py public/BDNF.mp3 --script src/data/scripts/bdnf.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },

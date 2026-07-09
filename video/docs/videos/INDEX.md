@@ -18,6 +18,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | meditation | Méditation : pas ce que tu crois | Dév. perso / Neuro | ~41s | 🔊 (voix+sons OK, sous-titres en attente) | — | — | [fiche](meditation.md) |
 | intestin-cerveau | Axe intestin-cerveau : le mythe du microbiote | Neuro / Psycho | ~35s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](intestin-cerveau.md) |
 | resilience | Résilience : flexibilité biologique, pas armure | Psycho / Neuro | ~41s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](resilience.md) |
+| bdnf | BDNF : entraîner son cerveau, pas le motiver | Neurosciences | ~33s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](bdnf.md) |
 
 ---
 
