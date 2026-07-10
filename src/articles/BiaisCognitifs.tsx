@@ -331,7 +331,7 @@ export default function BiaisCognitifs() {
           </div>
 
           <p>
-            C'est aussi pourquoi le stress et l'anxiété renforcent les biais : ils amplifient le poids de l'amygdale dans la décision. Pour comprendre cette structure, l'article sur <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">le système limbique et le cerveau émotionnel</Link> détaille son rôle.
+            C'est aussi pourquoi le stress et l'anxiété renforcent les biais : ils amplifient le poids de l'amygdale dans la décision. Pour comprendre cette structure, l'article sur <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">le système limbique et le cerveau émotionnel</Link> détaille son rôle. Nos jugements ne sont pas seulement déformés de l'intérieur : la présence d'un groupe pèse aussi lourd, comme le montre le mécanisme du <Link to="/blog/influence-sociale-conformisme/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">conformisme et de l'influence sociale</Link>.
           </p>
 
           <h3>Les biais touchent même l'apprentissage le plus simple</h3>

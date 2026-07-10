@@ -38,6 +38,7 @@ const ARTICLE_SLUGS = [
   'axe-intestin-cerveau-microbiote-humeur',
   'resilience-psychologique-developper',
   'intelligence-sociale-competences-relationnelles',
+  'influence-sociale-conformisme',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

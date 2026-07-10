@@ -302,7 +302,7 @@ export default function ResoudreUnConflit() {
             C'est pourquoi toutes les techniques de résolution de conflit semblent si difficiles à appliquer au moment précis où tu en as besoin. Ce n'est pas parce qu'elles sont mauvaises. C'est parce qu'elles sont utilisées trop tôt.
           </p>
           <p>
-            Cet article couvre les mécanismes neurologiques qui rendent la résolution de conflits difficile, les 4 comportements identifiés par 40 ans de recherche qui détruisent les relations, et 6 méthodes validées pour sortir d'un conflit sans l'aggraver.
+            Cet article couvre les mécanismes neurologiques qui rendent la résolution de conflits difficile, les 4 comportements identifiés par 40 ans de recherche qui détruisent les relations, et 6 méthodes validées pour sortir d'un conflit sans l'aggraver. Un conflit ne se joue d'ailleurs pas toujours qu'à deux : la <Link to="/blog/influence-sociale-conformisme/" className="text-indigo-600 dark:text-indigo-400 underline underline-offset-2">pression du groupe et le conformisme</Link> pèsent souvent sur la façon dont chacun campe sur ses positions.
           </p>
 
           <h2>Qu'est-ce qu'un conflit interpersonnel sur le plan neurologique ?</h2>

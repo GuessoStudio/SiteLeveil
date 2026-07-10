@@ -316,6 +316,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/intelligence-sociale-competences-relationnelles-checklist.pdf"
     },
     {
+      id: 34,
+      title: "Checklist : résister à la pression sociale en 5 leviers",
+      description: "Les 5 leviers pour reprendre la main face au conformisme, le mécanisme psychologique de chacun et une phrase-clé à se dire dans le feu de l'action. Sources : Asch 1955, Deutsch & Gerard 1955, Milgram 1963, Klucharev 2009, Moscovici.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/influence-sociale-conformisme-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/influence-sociale-conformisme-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

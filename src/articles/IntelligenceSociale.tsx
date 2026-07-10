@@ -398,7 +398,7 @@ export default function IntelligenceSociale() {
             C'est la question piège, et elle mérite une réponse nette. Lire finement les autres peut servir à les aider comme à les exploiter. La compétence de décodage est la même. Ce qui change, c'est l'intention.
           </p>
           <p>
-            La manipulation utilise la lecture d'autrui pour l'influencer à son détriment. L'intelligence sociale, telle que Goleman la décrit, inclut au contraire la <strong>sollicitude</strong> : le souci sincère du bien de l'autre. Sans cette dimension éthique, on ne parle plus d'intelligence sociale, mais d'habileté sociale au service de soi seul. Une personne socialement intelligente cherche des interactions où les deux côtés sortent gagnants, pas où l'un se fait avoir.
+            La manipulation utilise la lecture d'autrui pour l'influencer à son détriment. L'intelligence sociale, telle que Goleman la décrit, inclut au contraire la <strong>sollicitude</strong> : le souci sincère du bien de l'autre. Sans cette dimension éthique, on ne parle plus d'intelligence sociale, mais d'habileté sociale au service de soi seul. Une personne socialement intelligente cherche des interactions où les deux côtés sortent gagnants, pas où l'un se fait avoir. À l'échelle d'un groupe entier, cette influence prend une autre forme, celle de la <Link to="/blog/influence-sociale-conformisme/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">pression sociale et du conformisme</Link>.
           </p>
 
           {/* H2 — À retenir */}

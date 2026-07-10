@@ -367,5 +367,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/intelligence-sociale-competences-relationnelles-cover",
         slug: "intelligence-sociale-competences-relationnelles",
         featured: false
+    },
+    {
+        id: 34,
+        title: "Influence sociale et conformisme : Asch, Milgram et la pression sociale",
+        excerpt: "Influence sociale et conformisme : ce que révèlent Asch et Milgram, pourquoi on cède à la pression sociale du groupe et ce que fait vraiment le cerveau.",
+        category: "Relations Humaines",
+        readTime: 13,
+        date: "2026-07-10",
+        image: "/images/articles/influence-sociale-conformisme-cover",
+        slug: "influence-sociale-conformisme",
+        featured: false
     }
 ];

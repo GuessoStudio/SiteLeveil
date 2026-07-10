@@ -858,6 +858,10 @@ export default function RejetSocial() {
                         <Link to="/blog/empathie-neurones-miroirs-connexion-humaine/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
                             Neurones miroirs et empathie
                         </Link>
+                        <span className="text-neutral-400">•</span>
+                        <Link to="/blog/influence-sociale-conformisme/" className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
+                            Influence sociale et conformisme
+                        </Link>
                     </div>
                 </div>
 

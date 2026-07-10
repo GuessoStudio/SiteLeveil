@@ -61,6 +61,7 @@ const articles = [
   { path: "/blog/axe-intestin-cerveau-microbiote-humeur/",          file: "src/articles/AxeIntestinCerveau.tsx" },
   { path: "/blog/resilience-psychologique-developper/",             file: "src/articles/ResiliencePsychologique.tsx" },
   { path: "/blog/intelligence-sociale-competences-relationnelles/", file: "src/articles/IntelligenceSociale.tsx" },
+  { path: "/blog/influence-sociale-conformisme/",                   file: "src/articles/InfluenceSociale.tsx" },
 ];
 
 const allUrls = [
