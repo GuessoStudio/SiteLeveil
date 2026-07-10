@@ -458,6 +458,10 @@ export default function BiaisCognitifs() {
             </ol>
           </div>
 
+          <p>
+            Ces réflexes ne servent pas qu'à déjouer les biais : ils forment le socle de la <Link to="/blog/pensee-critique-developper/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">pensée critique</Link>, l'art d'évaluer une information avant d'y croire.
+          </p>
+
           {/* H2 — À retenir */}
           <h2>À retenir</h2>
           <div className="not-prose my-6 bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg border border-neutral-200 dark:border-neutral-700">

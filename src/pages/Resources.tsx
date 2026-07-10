@@ -328,6 +328,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/influence-sociale-conformisme-checklist.pdf"
     },
     {
+      id: 35,
+      title: "Checklist : penser plus clairement en 6 leviers",
+      description: "Les 6 leviers de la pensée critique, le mécanisme cognitif de chacun et une question-clé à se poser avant de croire ou de partager. Sources : Pennycook 2020, Mercier & Sperber 2011, Stanovich, Wason.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/pensee-critique-developper-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/pensee-critique-developper-checklist.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

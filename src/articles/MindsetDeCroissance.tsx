@@ -301,7 +301,7 @@ export default function MindsetDeCroissance() {
             Le <strong>mindset de croissance</strong> est un concept développé par la psychologue Carol Dweck (Stanford University, États-Unis) à partir de 30 ans de recherches sur la motivation et l'apprentissage. Son idée centrale : l'intelligence n'est pas un plafond fixé à la naissance. C'est une capacité qui se développe — à condition de le croire vraiment.
           </p>
           <p>
-            La nuance critique, celle que beaucoup ratent : ce n'est pas la pensée positive qui produit les résultats. C'est le comportement que cette croyance génère face aux obstacles. Ajouter un seul mot — "encore" — à ta façon de parler de tes échecs peut modifier ta persévérance de façon mesurable. Ce n'est pas de la magie. C'est de la psychologie cognitive.
+            La nuance critique, celle que beaucoup ratent : ce n'est pas la pensée positive qui produit les résultats. C'est le comportement que cette croyance génère face aux obstacles. Ajouter un seul mot — "encore" — à ta façon de parler de tes échecs peut modifier ta persévérance de façon mesurable. Ce n'est pas de la magie. C'est de la psychologie cognitive. Cette lucidité sur ses propres croyances est aussi au cœur de la <Link to="/blog/pensee-critique-developper/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">pensée critique</Link>.
           </p>
           <p>
             Dans cet article, tu vas comprendre les mécanismes cérébraux derrière cette théorie, les limites réelles que la recherche a identifiées, et les cinq pratiques concrètes les mieux documentées.

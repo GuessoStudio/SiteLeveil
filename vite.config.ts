@@ -39,6 +39,7 @@ const ARTICLE_SLUGS = [
   'resilience-psychologique-developper',
   'intelligence-sociale-competences-relationnelles',
   'influence-sociale-conformisme',
+  'pensee-critique-developper',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

@@ -46,4 +46,5 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "resilience-psychologique-developper": lazy(() => import("../articles/ResiliencePsychologique")),
   "intelligence-sociale-competences-relationnelles": lazy(() => import("../articles/IntelligenceSociale")),
   "influence-sociale-conformisme": lazy(() => import("../articles/InfluenceSociale")),
+  "pensee-critique-developper": lazy(() => import("../articles/PenseeCritique")),
 };

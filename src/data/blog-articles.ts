@@ -378,5 +378,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/influence-sociale-conformisme-cover",
         slug: "influence-sociale-conformisme",
         featured: false
+    },
+    {
+        id: 35,
+        title: "Pensée critique : développer son jugement selon la psychologie cognitive",
+        excerpt: "Pensée critique : comment développer son jugement selon la psychologie cognitive, pourquoi notre raisonnement est biaisé et ce qui aide vraiment à mieux penser.",
+        category: "Psychologie",
+        readTime: 13,
+        date: "2026-07-10",
+        image: "/images/articles/pensee-critique-developper-cover",
+        slug: "pensee-critique-developper",
+        featured: false
     }
 ];
