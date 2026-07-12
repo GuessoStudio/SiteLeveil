@@ -19,6 +19,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | intestin-cerveau | Axe intestin-cerveau : le mythe du microbiote | Neuro / Psycho | ~35s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](intestin-cerveau.md) |
 | resilience | Résilience : flexibilité biologique, pas armure | Psycho / Neuro | ~41s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](resilience.md) |
 | bdnf | BDNF : entraîner son cerveau, pas le motiver | Neurosciences | ~33s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](bdnf.md) |
+| pensee-critique | Pensée critique : le biais de confirmation | Psycho / Neuro | ~32s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](pensee-critique.md) |
 
 ---
 
