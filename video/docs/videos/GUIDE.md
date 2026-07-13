@@ -70,13 +70,52 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
 
 ## 4. Caler la synchro voix ↔ plans (déterministe)
 
-1. Durée exacte du mp3 (parseur frames).
-2. Détecter les silences :
-   `npx remotion ffmpeg -i public/<Nom>.mp3 -af silencedetect=noise=-38dB:d=0.35 -f null -`
-3. Chaque **fin de silence** = début d'une phrase → `duration` = intervalle
+### 4.1 Mastering (avant tout calage)
+
+Les prises brutes varient énormément en niveau (vu en pratique : -19 LUFS à -55 LUFS
+selon le micro/la voix). Toujours mesurer et normaliser AVANT de détecter les silences :
+
+```bash
+# 1. Mesurer le niveau brut
+npx remotion ffmpeg -i public/<Nom>.mp3 -af loudnorm=print_format=json -f null - 2>&1 | grep -iE "input_i|input_tp|input_thresh"
+
+# 2. Masteriser à -14 LUFS (standard voix-off, marge avant clipping)
+npx remotion ffmpeg -y -i public/<Nom>.mp3 -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 44100 -c:a libmp3lame -b:a 160k /tmp/norm.mp3
+
+# 3. Remplacer le fichier public/ par la version masterisée
+cp /tmp/norm.mp3 public/<Nom>.mp3
+```
+
+Avec une voix masterisée à -14 LUFS, `audioVolume` reste à **1.0** dans le script
+(plus besoin de deviner un gain 2,5–3,7 sur une voix mal nivelée).
+
+### 4.2 Détection de silence adaptative (pas un seuil fixe)
+
+Un seuil fixe (`-38dB`) ne marche pas sur toutes les voix. Mesurer le seuil réel
+du fichier masterisé via `loudnorm` (`input_thresh`), puis l'utiliser :
+
+```bash
+npx remotion ffmpeg -i public/<Nom>.mp3 -af loudnorm=print_format=json -f null - 2>&1 | grep input_thresh
+# exemple de sortie : "input_thresh" : "-26.3"
+
+npx remotion ffmpeg -i public/<Nom>.mp3 -af silencedetect=noise=-26dB:d=0.25 -f null - 2>&1 | grep -iE "silence_start|silence_end"
+```
+
+(Cette méthode adaptative — mesurer `input_thresh` puis l'injecter dans
+`silencedetect` — vient du skill officiel `remotion-dev/skills`, installé dans
+`video/.agents/skills/remotion-best-practices/rules/silence-detection.md`.)
+
+### 4.3 Construire les plans
+
+1. Chaque **fin de silence** = début d'une phrase → `duration` = intervalle
    entre deux pauses. Le keyword change ainsi PILE sur une pause.
-4. Si tu fournis une **timeline en frames**, convertir en secondes (frames ÷ 30).
-5. La somme des `duration` ≈ durée mp3 (un léger dépassement = hold CTA final).
+2. Un texte dense/rapide génère souvent PLUS de pauses que de scènes voulues :
+   certaines sont internes à une phrase (après une virgule, un point) — les
+   traiter comme des respirations, pas des coupures de plan. Vérifier avec le
+   nombre de mots attendu par scène (mots ÷ durée ≈ 3-5 mots/s en français).
+3. La somme des `duration` doit égaler la durée exacte du mp3 masterisé.
+4. Un premier calage approximatif suffit : le passage Whisper (§10) corrige
+   le karaoké au mot près après coup, sans changer les `duration` de plan.
 
 ---
 
@@ -98,8 +137,10 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
 
 ## 6. Contrôles audio
 
-- `audioVolume` : gain voix (démarrer ~2,5, ajuster à l'oreille).
-- `ambienceVolume` : nappe (0,7 calme → 1,0 présent).
+- `audioVolume` : **1.0** si la voix a été masterisée à -14 LUFS (§4.1, cas standard).
+  Ne pas gonfler ce champ pour compenser une voix mal nivelée : masteriser d'abord.
+- `ambienceVolume` : nappe (0,7 calme → 1,1 présent — 1,1 est le réglage validé
+  sur les dernières vidéos).
 - `sfxVolume` : baisser un son juste pour cette vidéo, ex. `{ "impact_heavy": 0.3 }`.
 
 ---
