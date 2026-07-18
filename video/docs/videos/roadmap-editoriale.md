@@ -61,18 +61,20 @@ Répartition cible sur 20 vidéos : 8 mythes / 5 pièges / 4 mécanismes / 3 mé
 
 ## 5. Pipeline dédupliqué
 
-Déjà produit (NE PAS refaire) : habitudes-court (21 jours), biais-cognitifs, anxiete-amygdale, burnout (cortisol), meditation, intestin-cerveau (sérotonine/microbiote), resilience, bdnf, pensee-critique (QI).
+Déjà produit (NE PAS refaire) : habitudes-court (21 jours), biais-cognitifs, anxiete-amygdale, burnout (cortisol), meditation, intestin-cerveau (sérotonine/microbiote), resilience, bdnf, pensee-critique (QI), **depression-serotonine (Moncrieff — Top 6 #1, rendue + publiée le 2026-07-13)**.
+
+Scripts + voix off prêts, rendu/publication restants : **rejet-social** (#2, Eisenberger), **dopamine-schultz** (#3, Schultz, karaoké fait), **procrastination** (#4, Pychyl, karaoké fait + pack réseaux livré), **effet-projecteur** (#5, Gilovich).
 
 ### 🎯 Top 6 à lancer en priorité
 
-| # | Hook oral (2 s) | Série | Chercheur | Pilier | Article |
-|---|---|---|---|---|---|
-| 1 | « La dépression n'est pas un simple manque de sérotonine. » | LE MYTHE | Joanna Moncrieff (UCL) | Neuro | neurotransmetteurs-humeur |
-| 2 | « Le rejet allume les mêmes zones qu'une brûlure. » | LE PIÈGE | Naomi Eisenberger (UCLA) | Psycho sociale | surmonter-rejet-social |
-| 3 | « La dopamine n'est pas l'hormone du plaisir. C'est celle du manque. » | LE MYTHE | Wolfram Schultz (Cambridge) | Neuro | neuro-dopamine-routine |
-| 4 | « Tu ne procrastines pas par paresse. Tu fuis une émotion. » | CE QUE TON CERVEAU APPREND | Tim Pychyl (Carleton) | Psycho | procrastination-cerveau |
-| 5 | « Personne ne te regarde autant que tu le crois. » | LE PIÈGE | Thomas Gilovich (Cornell) | Psycho sociale | *(article à écrire)* |
-| 6 | « Ton cerveau confond "répété" et "vrai". » | LE PIÈGE | Lisa Fazio (Vanderbilt) | Psycho | pensee-critique (prolonge le carton) |
+| # | Hook oral (2 s) | Série | Chercheur | Pilier | Article | Statut |
+|---|---|---|---|---|---|---|
+| 1 | « La dépression n'est pas un simple manque de sérotonine. » | LE MYTHE | Joanna Moncrieff (UCL) | Neuro | neurotransmetteurs-humeur | ✅ produite (`depression-serotonine`) |
+| 2 | « Le rejet allume les mêmes zones qu'une brûlure. » | LE PIÈGE | Naomi Eisenberger (UCLA) | Psycho sociale | surmonter-rejet-social | 🎙️ script + voix off calée (`rejet-social`) — karaoké/rendu restants |
+| 3 | « La dopamine n'est pas l'hormone du plaisir. C'est celle du manque. » | LE MYTHE | Wolfram Schultz (Cambridge) | Neuro | neuro-dopamine-routine | 🎙️ script + voix off calée (`dopamine-schultz`) — karaoké/rendu restants |
+| 4 | « Tu ne procrastines pas par paresse. Tu fuis une émotion. » | CE QUE TON CERVEAU APPREND | Tim Pychyl (Carleton) | Psycho | procrastination-cerveau | ✅ produite (`procrastination`, prête à publier) |
+| 5 | « Personne ne te regarde autant que tu le crois. » | LE PIÈGE | Thomas Gilovich (Cornell) | Psycho sociale | *(article à écrire)* | 🎙️ script + voix off calée (`effet-projecteur`) — karaoké/rendu restants |
+| 6 | « Ton cerveau confond "répété" et "vrai". » | LE PIÈGE | Lisa Fazio (Vanderbilt) | Psycho | pensee-critique (prolonge le carton) | — |
 
 ### Suite du pipeline (semaines 3+)
 
@@ -143,6 +145,37 @@ Rappel : le burn-out à 7 vues ne prouve rien sans ancienneté ni impressions.
 
 ## 10. Prochaine action
 
-1. Écrire le script de la **#1 (dépression ≠ sérotonine)** avec les garde-fous du §6.
-2. L'enregistrer, la monter (pipeline habituel).
-3. Mesurer à 72 h. Si ça dépasse la médiane → suite immédiate.
+1. ~~Écrire le script de la #1 (dépression ≠ sérotonine) avec les garde-fous du §6.~~
+   ✅ Fait — script, voix off masterisée, karaoké Whisper, rendu et pack réseaux
+   (FB/IG/TikTok/YouTube) livrés le 2026-07-13. Fiche : `depression-serotonine.md`.
+2. Mesurer la #1 à 24 h / 72 h (méthode §8). Si ça dépasse la médiane des vidéos
+   précédentes → publier la suite sous 7 jours au lieu d'attendre le tour normal.
+3. ~~Écrire le script de la #2 (rejet social — Eisenberger).~~
+   ✅ Fait — script (`rejet-social.json`), voix off reçue et masterisée, durées
+   calées sur le mp3 réel (35,32 s). Reste : karaoké Whisper (`npm run words:rejet`),
+   rendu (`npm run render:rejet`), couverture (`npm run cover:rejet`), pack réseaux.
+   Fiche : `rejet-social.md`.
+4. ~~Écrire le script de la #3 (dopamine — Schultz).~~
+   ✅ Fait — script (`dopamine-schultz.json`), voix off reçue et masterisée, durées
+   calées sur le mp3 réel (35,00 s). Reste : karaoké Whisper (`npm run words:dopamine`),
+   rendu, couverture, pack réseaux. Fiche : `dopamine-schultz.md`.
+5. ~~Écrire le script de la #4 (procrastination — Pychyl).~~
+   ✅ Fait — script rédigé par l'utilisateur, revu (2 corrections appliquées :
+   `position` variée anti-diaporama §4.6, mot-clé plan 1 changé pour casser la
+   3ᵉ répétition du préfixe « PAS » §4.5), voix off reçue, masterisée et
+   karaoké Whisper fait. Pack réseaux (FB/IG/TikTok/YouTube) livré le
+   2026-07-17. Reste : rendu MP4, couverture, publication. Fiche : `procrastination.md`.
+6. ~~Écrire le script de la #5 (spotlight effect — Gilovich).~~
+   ✅ Fait — script rédigé par l'utilisateur, revu (position variée §4.6,
+   1 correction appliquée avec accord), voix off reçue et masterisée
+   (attention : vrai clipping à l'upload, +1,20 dBTP, limité par le mastering
+   mais pas réparé), durées calées sur le mp3 réel (33,62 s). **1ʳᵉ vidéo du
+   Top 6 à utiliser le CTA-commentaire à mot unique** (« Commente PROJECTEUR »)
+   — préparer la ressource « résumé » avant publication (condition §4.4).
+   Reste : karaoké Whisper (`npm run words:projecteur`), rendu, couverture,
+   pack réseaux. Fiche : `effet-projecteur.md`.
+7. Cadence cible : 2-3 vidéos/semaine (§4 point 7) — ne pas publier plus vite
+   que la cadence cible même si les scripts sont prêts d'avance. Idéalement
+   viser un mercredi pour la publication (meilleur jour tous réseaux, §1).
+   **5 vidéos (#1-#5) sont prêtes ou publiées** ; mesurer la #1 avant de décider
+   du rythme de sortie des suivantes (méthode §8).

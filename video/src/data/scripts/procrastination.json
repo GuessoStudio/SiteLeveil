@@ -1,0 +1,547 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "Procrastination.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {
+      "duration": 2.26,
+      "keyword": "TU FUIS UNE ÉMOTION",
+      "keywordFx": "shake",
+      "subtitle": "Tu ne procrastines pas par paresse. Tu fuis une émotion.",
+      "pose": "cross",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "center",
+      "transition": "flash_reverse",
+      "fx": "attention_spotlight"
+    },
+    {
+      "duration": 4.29,
+      "keyword": "LA SCIENCE",
+      "subtitle": "Le psychologue Tim Pychyl, de l'université Carleton, étudie la procrastination depuis plus de vingt ans.",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "left",
+      "icon": "eye",
+      "credit": "Tim Pychyl · Université Carleton"
+    },
+    {
+      "duration": 5.17,
+      "keyword": "LE VRAI PROBLÈME",
+      "subtitle": "Sa conclusion : ce n'est pas un problème de gestion du temps. C'est un problème de régulation émotionnelle.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "emotions",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift",
+      "split": {
+        "left": "GÈRE TON TEMPS",
+        "right": "RÉGULE L'ÉMOTION"
+      }
+    },
+    {
+      "duration": 3.07,
+      "keyword": "LE DÉCLENCHEUR",
+      "subtitle": "Une tâche t'ennuie, te stresse, ou te fait douter de toi ?",
+      "pose": "shrug",
+      "emotion": "confusion",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "right",
+      "fx": "rumination_loop",
+      "icon": "flame"
+    },
+    {
+      "duration": 4.02,
+      "keyword": "SOULAGEMENT",
+      "keywordFx": "glitch",
+      "subtitle": "Ton cerveau cherche un soulagement immédiat. Et il le trouve. Ailleurs. Tout de suite.",
+      "pose": "point",
+      "emotion": "surcharge",
+      "mode": "neuro",
+      "accent": "dopamine",
+      "camera": "cine",
+      "position": "left",
+      "transition": "zoom_smash",
+      "fx": "cognitive_overload"
+    },
+    {
+      "duration": 5.7,
+      "keyword": "L'ILLUSION",
+      "subtitle": "Repousser la tâche calme l'émotion sur le moment. Pas le problème.",
+      "pose": "cross",
+      "emotion": "fatigue",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "right",
+      "fx": "ego_depletion",
+      "icon": "clock"
+    },
+    {
+      "duration": 2.59,
+      "keyword": "L'ÉVEIL MENTAL",
+      "keywordFx": "shake",
+      "subtitle": "L'article complet est sur leveilmental.fr.",
+      "pose": "wave",
+      "emotion": "eveil",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "position": "center",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "link"
+    }
+  ],
+  "words": [
+    {
+      "w": "Tu",
+      "start": 0.0,
+      "end": 0.12
+    },
+    {
+      "w": "ne",
+      "start": 0.12,
+      "end": 0.26
+    },
+    {
+      "w": "procrastines",
+      "start": 0.26,
+      "end": 0.59
+    },
+    {
+      "w": "pas",
+      "start": 0.92,
+      "end": 1.18
+    },
+    {
+      "w": "par",
+      "start": 1.18,
+      "end": 1.42
+    },
+    {
+      "w": "paresse.",
+      "start": 1.42,
+      "end": 1.9
+    },
+    {
+      "w": "Tu",
+      "start": 2.24,
+      "end": 2.36
+    },
+    {
+      "w": "fuis",
+      "start": 2.36,
+      "end": 2.6
+    },
+    {
+      "w": "une",
+      "start": 2.6,
+      "end": 2.72
+    },
+    {
+      "w": "émotion.",
+      "start": 2.72,
+      "end": 3.04
+    },
+    {
+      "w": "Le",
+      "start": 3.34,
+      "end": 3.4
+    },
+    {
+      "w": "psychologue",
+      "start": 3.4,
+      "end": 3.8
+    },
+    {
+      "w": "Tim",
+      "start": 3.8,
+      "end": 4.18
+    },
+    {
+      "w": "Pychyl,",
+      "start": 4.18,
+      "end": 4.42
+    },
+    {
+      "w": "de",
+      "start": 4.66,
+      "end": 4.86
+    },
+    {
+      "w": "l'université",
+      "start": 4.86,
+      "end": 5.28
+    },
+    {
+      "w": "Carleton,",
+      "start": 5.7,
+      "end": 6.18
+    },
+    {
+      "w": "étudie",
+      "start": 6.18,
+      "end": 6.9
+    },
+    {
+      "w": "la",
+      "start": 6.9,
+      "end": 7.02
+    },
+    {
+      "w": "procrastination",
+      "start": 7.02,
+      "end": 7.58
+    },
+    {
+      "w": "depuis",
+      "start": 7.58,
+      "end": 7.83
+    },
+    {
+      "w": "plus",
+      "start": 8.08,
+      "end": 8.3
+    },
+    {
+      "w": "de",
+      "start": 8.3,
+      "end": 8.42
+    },
+    {
+      "w": "vingt",
+      "start": 8.42,
+      "end": 8.52
+    },
+    {
+      "w": "ans.",
+      "start": 8.62,
+      "end": 8.8
+    },
+    {
+      "w": "Sa",
+      "start": 9.16,
+      "end": 9.3
+    },
+    {
+      "w": "conclusion",
+      "start": 9.3,
+      "end": 9.62
+    },
+    {
+      "w": ":",
+      "start": 9.62,
+      "end": 9.62
+    },
+    {
+      "w": "ce",
+      "start": 9.62,
+      "end": 10.1
+    },
+    {
+      "w": "n'est",
+      "start": 10.1,
+      "end": 10.16
+    },
+    {
+      "w": "pas",
+      "start": 10.22,
+      "end": 10.36
+    },
+    {
+      "w": "un",
+      "start": 10.36,
+      "end": 10.44
+    },
+    {
+      "w": "problème",
+      "start": 10.44,
+      "end": 10.62
+    },
+    {
+      "w": "de",
+      "start": 10.62,
+      "end": 10.8
+    },
+    {
+      "w": "gestion",
+      "start": 10.8,
+      "end": 11.14
+    },
+    {
+      "w": "du",
+      "start": 11.14,
+      "end": 11.26
+    },
+    {
+      "w": "temps.",
+      "start": 11.26,
+      "end": 11.44
+    },
+    {
+      "w": "C'est",
+      "start": 11.44,
+      "end": 11.82
+    },
+    {
+      "w": "un",
+      "start": 12.2,
+      "end": 12.26
+    },
+    {
+      "w": "problème",
+      "start": 12.26,
+      "end": 12.48
+    },
+    {
+      "w": "de",
+      "start": 12.48,
+      "end": 12.64
+    },
+    {
+      "w": "régulation",
+      "start": 12.64,
+      "end": 13.06
+    },
+    {
+      "w": "émotionnelle.",
+      "start": 13.06,
+      "end": 13.45
+    },
+    {
+      "w": "Une",
+      "start": 13.84,
+      "end": 13.96
+    },
+    {
+      "w": "tâche",
+      "start": 13.96,
+      "end": 14.14
+    },
+    {
+      "w": "t'ennuie,",
+      "start": 14.14,
+      "end": 14.42
+    },
+    {
+      "w": "te",
+      "start": 14.7,
+      "end": 14.84
+    },
+    {
+      "w": "stresse,",
+      "start": 14.84,
+      "end": 14.97
+    },
+    {
+      "w": "ou",
+      "start": 15.1,
+      "end": 15.46
+    },
+    {
+      "w": "te",
+      "start": 15.46,
+      "end": 15.58
+    },
+    {
+      "w": "fait",
+      "start": 15.58,
+      "end": 15.72
+    },
+    {
+      "w": "douter",
+      "start": 15.72,
+      "end": 15.94
+    },
+    {
+      "w": "de",
+      "start": 15.94,
+      "end": 16.14
+    },
+    {
+      "w": "toi",
+      "start": 16.14,
+      "end": 16.34
+    },
+    {
+      "w": "?",
+      "start": 16.34,
+      "end": 16.58
+    },
+    {
+      "w": "Ton",
+      "start": 16.82,
+      "end": 16.88
+    },
+    {
+      "w": "cerveau",
+      "start": 16.88,
+      "end": 17.18
+    },
+    {
+      "w": "cherche",
+      "start": 17.18,
+      "end": 17.36
+    },
+    {
+      "w": "un",
+      "start": 17.36,
+      "end": 17.5
+    },
+    {
+      "w": "soulagement",
+      "start": 17.5,
+      "end": 17.88
+    },
+    {
+      "w": "immédiat.",
+      "start": 17.88,
+      "end": 18.58
+    },
+    {
+      "w": "Et",
+      "start": 18.58,
+      "end": 18.68
+    },
+    {
+      "w": "il",
+      "start": 18.78,
+      "end": 18.88
+    },
+    {
+      "w": "le",
+      "start": 18.88,
+      "end": 19.0
+    },
+    {
+      "w": "trouve.",
+      "start": 19.0,
+      "end": 19.28
+    },
+    {
+      "w": "Ailleurs.",
+      "start": 19.28,
+      "end": 19.96
+    },
+    {
+      "w": "Tout",
+      "start": 19.96,
+      "end": 20.34
+    },
+    {
+      "w": "de",
+      "start": 20.34,
+      "end": 20.5
+    },
+    {
+      "w": "suite.",
+      "start": 20.5,
+      "end": 20.72
+    },
+    {
+      "w": "Repousser",
+      "start": 21.28,
+      "end": 21.72
+    },
+    {
+      "w": "la",
+      "start": 21.72,
+      "end": 21.82
+    },
+    {
+      "w": "tâche",
+      "start": 21.82,
+      "end": 22.04
+    },
+    {
+      "w": "calme",
+      "start": 22.04,
+      "end": 22.36
+    },
+    {
+      "w": "l'émotion",
+      "start": 22.36,
+      "end": 22.57
+    },
+    {
+      "w": "sur",
+      "start": 22.78,
+      "end": 22.98
+    },
+    {
+      "w": "le",
+      "start": 22.98,
+      "end": 23.08
+    },
+    {
+      "w": "moment.",
+      "start": 23.08,
+      "end": 23.34
+    },
+    {
+      "w": "Pas",
+      "start": 23.62,
+      "end": 23.72
+    },
+    {
+      "w": "le",
+      "start": 23.72,
+      "end": 23.84
+    },
+    {
+      "w": "problème.",
+      "start": 23.84,
+      "end": 24.18
+    },
+    {
+      "w": "L'article",
+      "start": 24.18,
+      "end": 24.52
+    },
+    {
+      "w": "complet",
+      "start": 24.86,
+      "end": 25.18
+    },
+    {
+      "w": "est",
+      "start": 25.18,
+      "end": 25.18
+    },
+    {
+      "w": "sur",
+      "start": 25.18,
+      "end": 25.52
+    },
+    {
+      "w": "leveilmental.fr.",
+      "start": 25.52,
+      "end": 25.82
+    }
+  ]
+}

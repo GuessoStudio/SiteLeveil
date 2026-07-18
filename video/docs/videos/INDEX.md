@@ -9,6 +9,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 📚 Catalogue complet du moteur (poses, FX, SFX, caméras, composants…) : [catalogue.md](catalogue.md)
 📖 Guide de production A→Z (workflow, recettes, feuille de route) : [GUIDE.md](GUIDE.md)
 🧭 Feuille de route éditoriale (formule gagnante, 4 séries, pipeline dédupliqué) : [roadmap-editoriale.md](roadmap-editoriale.md)
+📜 Tous les scripts (texte parlé, prêts à lire) en un seul endroit : [SCRIPTS.md](SCRIPTS.md)
 
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
 |---|---|---|---|---|---|---|---|
@@ -21,12 +22,18 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | resilience | Résilience : flexibilité biologique, pas armure | Psycho / Neuro | ~41s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](resilience.md) |
 | bdnf | BDNF : entraîner son cerveau, pas le motiver | Neurosciences | ~33s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](bdnf.md) |
 | pensee-critique | Pensée critique : le biais de confirmation | Psycho / Neuro | ~32s | 🎬💬 (rendu + karaoké natif, à publier) | — | — | [fiche](pensee-critique.md) |
+| depression-serotonine | La dépression n'est pas un simple manque de sérotonine | Neurosciences | 40,05s | 🎬💬 (rendu + karaoké natif, à visionner puis publier) | — | — | [fiche](depression-serotonine.md) |
+| rejet-social | Le rejet allume les mêmes zones qu'une brûlure | Psycho sociale | 35,32s | 🎙️💬 (karaoké Whisper fait — rendu à faire) | — | — | [fiche](rejet-social.md) |
+| dopamine-schultz | La dopamine n'est pas l'hormone du plaisir | Neurosciences | 35,00s | 🎙️💬 (karaoké Whisper fait — rendu à faire) | — | — | [fiche](dopamine-schultz.md) |
+| procrastination | Tu ne procrastines pas par paresse | Psychologie | 27,09s | 🎙️💬 (karaoké Whisper fait, pack réseaux livré — rendu à faire) | — | — | [fiche](procrastination.md) |
+| effet-projecteur | Personne ne te regarde autant que tu le crois | Psycho sociale | 33,62s | 🎙️ (script revu + voix off masterisée + durées calées — karaoké/rendu à faire) | — | — | [fiche](effet-projecteur.md) |
 
 ---
 
 ## Idées de prochaines vidéos (file d'attente)
 
 > Piocher dans les articles du blog (chaque article = 1 à 3 vidéos possibles).
+> Voir aussi le Top 6 priorisé dans [roadmap-editoriale.md](roadmap-editoriale.md#🎯-top-6-à-lancer-en-priorité).
 
 | Idée | Pilier | Angle / hook pressenti | Article source |
 |---|---|---|---|

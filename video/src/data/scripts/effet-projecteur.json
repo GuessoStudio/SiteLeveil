@@ -1,0 +1,699 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "effet de projecteur.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {
+      "duration": 3.79,
+      "keyword": "LE PIÈGE",
+      "keywordFx": "shake",
+      "subtitle": "Personne ne te regarde autant que tu le crois.",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "social",
+      "camera": "cine",
+      "position": "center",
+      "transition": "flash_reverse",
+      "fx": "attention_spotlight"
+    },
+    {
+      "duration": 3.36,
+      "keyword": "PAS DU TOUT",
+      "subtitle": "Vraiment. Pas même quand tu trébuches, ou que tu portes un truc bizarre.",
+      "pose": "shrug",
+      "emotion": "confusion",
+      "mode": "emotions",
+      "accent": "emotions",
+      "camera": "cine",
+      "position": "center",
+      "fx": "spotlight_pressure"
+    },
+    {
+      "duration": 6.68,
+      "keyword": "L'EXPÉRIENCE",
+      "subtitle": "Le psychologue Thomas Gilovich, de l'université Cornell, a fait porter à des étudiants un t-shirt embarrassant devant un groupe.",
+      "credit": "Thomas Gilovich · Université Cornell",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "left",
+      "transition": "color_shift",
+      "icon": "eye"
+    },
+    {
+      "duration": 6.28,
+      "keyword": "L'ESTIMATION",
+      "subtitle": "Ensuite, il leur a demandé : combien de personnes l'ont remarqué ? Les étudiants estimaient presque le double du nombre réel.",
+      "pose": "cross",
+      "emotion": "confusion",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "right",
+      "split": {
+        "left": "ESTIMATION",
+        "right": "RÉALITÉ"
+      }
+    },
+    {
+      "duration": 4.53,
+      "keyword": "EFFET PROJECTEUR",
+      "keywordFx": "glitch",
+      "subtitle": "C'est ce qu'on appelle l'effet de projecteur. Ton cerveau te met au centre de la scène.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "transition": "zoom_smash",
+      "fx": "attention_spotlight",
+      "icon": "lightbulb"
+    },
+    {
+      "duration": 2.76,
+      "keyword": "LA RÉALITÉ",
+      "subtitle": "Mais les autres sont occupés par la même chose : eux-mêmes.",
+      "pose": "cross",
+      "emotion": "calme",
+      "mode": "neuro",
+      "accent": "social",
+      "camera": "cine",
+      "position": "left",
+      "fx": "conformity_wave"
+    },
+    {
+      "duration": 3.76,
+      "keyword": "EN BOUCLE ?",
+      "subtitle": "Ce moment gênant que tu revis en boucle ? Personne d'autre n'y pense.",
+      "pose": "shrug",
+      "emotion": "fatigue",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "right",
+      "fx": "rumination_loop",
+      "icon": "clock"
+    },
+    {
+      "duration": 2.47,
+      "keyword": "PROJECTEUR",
+      "keywordFx": "shake",
+      "subtitle": "L'article complet est sur leveilmental.fr. Commente PROJECTEUR pour recevoir le résumé.",
+      "pose": "wave",
+      "emotion": "fierte",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "position": "center",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "link"
+    }
+  ],
+  "words": [
+    {
+      "w": "Personne",
+      "start": 0.27,
+      "end": 1.05
+    },
+    {
+      "w": "ne",
+      "start": 1.05,
+      "end": 1.19
+    },
+    {
+      "w": "te",
+      "start": 1.19,
+      "end": 1.29
+    },
+    {
+      "w": "regarde",
+      "start": 1.29,
+      "end": 1.53
+    },
+    {
+      "w": "autant",
+      "start": 1.53,
+      "end": 1.79
+    },
+    {
+      "w": "que",
+      "start": 1.79,
+      "end": 1.97
+    },
+    {
+      "w": "tu",
+      "start": 1.97,
+      "end": 2.07
+    },
+    {
+      "w": "le",
+      "start": 2.07,
+      "end": 2.19
+    },
+    {
+      "w": "crois.",
+      "start": 2.19,
+      "end": 2.39
+    },
+    {
+      "w": "Vraiment.",
+      "start": 2.81,
+      "end": 3.21
+    },
+    {
+      "w": "Pas",
+      "start": 3.71,
+      "end": 4.05
+    },
+    {
+      "w": "même",
+      "start": 4.05,
+      "end": 4.19
+    },
+    {
+      "w": "quand",
+      "start": 4.19,
+      "end": 4.35
+    },
+    {
+      "w": "tu",
+      "start": 4.35,
+      "end": 4.47
+    },
+    {
+      "w": "trébuches,",
+      "start": 4.47,
+      "end": 4.75
+    },
+    {
+      "w": "ou",
+      "start": 5.03,
+      "end": 5.23
+    },
+    {
+      "w": "que",
+      "start": 5.23,
+      "end": 5.37
+    },
+    {
+      "w": "tu",
+      "start": 5.37,
+      "end": 5.51
+    },
+    {
+      "w": "portes",
+      "start": 5.51,
+      "end": 5.75
+    },
+    {
+      "w": "un",
+      "start": 5.75,
+      "end": 5.83
+    },
+    {
+      "w": "truc",
+      "start": 5.83,
+      "end": 5.91
+    },
+    {
+      "w": "bizarre.",
+      "start": 5.91,
+      "end": 6.25
+    },
+    {
+      "w": "Le",
+      "start": 7.07,
+      "end": 7.23
+    },
+    {
+      "w": "psychologue",
+      "start": 7.23,
+      "end": 7.63
+    },
+    {
+      "w": "Thomas",
+      "start": 7.63,
+      "end": 7.95
+    },
+    {
+      "w": "Gilovich,",
+      "start": 7.95,
+      "end": 8.55
+    },
+    {
+      "w": "de",
+      "start": 8.55,
+      "end": 9.03
+    },
+    {
+      "w": "l'université",
+      "start": 9.03,
+      "end": 9.27
+    },
+    {
+      "w": "Cornell,",
+      "start": 9.51,
+      "end": 9.89
+    },
+    {
+      "w": "a",
+      "start": 9.89,
+      "end": 10.63
+    },
+    {
+      "w": "fait",
+      "start": 10.63,
+      "end": 10.71
+    },
+    {
+      "w": "porter",
+      "start": 10.71,
+      "end": 10.95
+    },
+    {
+      "w": "à",
+      "start": 10.95,
+      "end": 11.15
+    },
+    {
+      "w": "des",
+      "start": 11.15,
+      "end": 11.33
+    },
+    {
+      "w": "étudiants",
+      "start": 11.33,
+      "end": 11.81
+    },
+    {
+      "w": "un",
+      "start": 11.81,
+      "end": 12.07
+    },
+    {
+      "w": "t-shirt",
+      "start": 12.07,
+      "end": 12.19
+    },
+    {
+      "w": "embarrassant",
+      "start": 12.31,
+      "end": 12.93
+    },
+    {
+      "w": "devant",
+      "start": 12.93,
+      "end": 13.11
+    },
+    {
+      "w": "un",
+      "start": 13.11,
+      "end": 13.31
+    },
+    {
+      "w": "groupe.",
+      "start": 13.31,
+      "end": 13.51
+    },
+    {
+      "w": "Ensuite,",
+      "start": 13.79,
+      "end": 14.09
+    },
+    {
+      "w": "il",
+      "start": 14.31,
+      "end": 14.43
+    },
+    {
+      "w": "leur",
+      "start": 14.43,
+      "end": 14.55
+    },
+    {
+      "w": "a",
+      "start": 14.55,
+      "end": 14.65
+    },
+    {
+      "w": "demandé",
+      "start": 14.65,
+      "end": 15.03
+    },
+    {
+      "w": ":",
+      "start": 15.03,
+      "end": 15.03
+    },
+    {
+      "w": "combien",
+      "start": 15.03,
+      "end": 15.59
+    },
+    {
+      "w": "de",
+      "start": 15.59,
+      "end": 15.75
+    },
+    {
+      "w": "personnes",
+      "start": 15.75,
+      "end": 15.95
+    },
+    {
+      "w": "l'ont",
+      "start": 15.95,
+      "end": 16.06
+    },
+    {
+      "w": "remarqué",
+      "start": 16.17,
+      "end": 16.61
+    },
+    {
+      "w": "?",
+      "start": 16.61,
+      "end": 16.96
+    },
+    {
+      "w": "Les",
+      "start": 17.31,
+      "end": 17.41
+    },
+    {
+      "w": "étudiants",
+      "start": 17.41,
+      "end": 17.81
+    },
+    {
+      "w": "estimaient",
+      "start": 17.81,
+      "end": 18.23
+    },
+    {
+      "w": "presque",
+      "start": 18.23,
+      "end": 18.41
+    },
+    {
+      "w": "le",
+      "start": 18.41,
+      "end": 18.63
+    },
+    {
+      "w": "double",
+      "start": 18.63,
+      "end": 18.91
+    },
+    {
+      "w": "du",
+      "start": 18.91,
+      "end": 19.07
+    },
+    {
+      "w": "nombre",
+      "start": 19.07,
+      "end": 19.25
+    },
+    {
+      "w": "réel.",
+      "start": 19.25,
+      "end": 19.63
+    },
+    {
+      "w": "C'est",
+      "start": 19.63,
+      "end": 19.92
+    },
+    {
+      "w": "ce",
+      "start": 20.21,
+      "end": 20.27
+    },
+    {
+      "w": "qu'on",
+      "start": 20.27,
+      "end": 20.32
+    },
+    {
+      "w": "appelle",
+      "start": 20.37,
+      "end": 20.67
+    },
+    {
+      "w": "l'effet",
+      "start": 20.67,
+      "end": 21.01
+    },
+    {
+      "w": "de",
+      "start": 21.35,
+      "end": 21.45
+    },
+    {
+      "w": "projecteur.",
+      "start": 21.45,
+      "end": 22.03
+    },
+    {
+      "w": "Ton",
+      "start": 22.55,
+      "end": 22.71
+    },
+    {
+      "w": "cerveau",
+      "start": 22.71,
+      "end": 23.05
+    },
+    {
+      "w": "te",
+      "start": 23.05,
+      "end": 23.17
+    },
+    {
+      "w": "met",
+      "start": 23.17,
+      "end": 23.29
+    },
+    {
+      "w": "au",
+      "start": 23.29,
+      "end": 23.39
+    },
+    {
+      "w": "centre",
+      "start": 23.39,
+      "end": 23.65
+    },
+    {
+      "w": "de",
+      "start": 23.65,
+      "end": 23.83
+    },
+    {
+      "w": "la",
+      "start": 23.83,
+      "end": 23.95
+    },
+    {
+      "w": "scène.",
+      "start": 23.95,
+      "end": 24.21
+    },
+    {
+      "w": "Mais",
+      "start": 24.57,
+      "end": 24.73
+    },
+    {
+      "w": "les",
+      "start": 24.73,
+      "end": 24.87
+    },
+    {
+      "w": "autres",
+      "start": 24.87,
+      "end": 25.01
+    },
+    {
+      "w": "sont",
+      "start": 25.01,
+      "end": 25.19
+    },
+    {
+      "w": "occupés",
+      "start": 25.19,
+      "end": 25.49
+    },
+    {
+      "w": "par",
+      "start": 25.49,
+      "end": 25.65
+    },
+    {
+      "w": "la",
+      "start": 25.65,
+      "end": 25.75
+    },
+    {
+      "w": "même",
+      "start": 25.75,
+      "end": 25.95
+    },
+    {
+      "w": "chose",
+      "start": 25.95,
+      "end": 26.29
+    },
+    {
+      "w": ":",
+      "start": 26.29,
+      "end": 26.53
+    },
+    {
+      "w": "eux-mêmes.",
+      "start": 26.53,
+      "end": 26.77
+    },
+    {
+      "w": "Ce",
+      "start": 27.01,
+      "end": 27.49
+    },
+    {
+      "w": "moment",
+      "start": 27.49,
+      "end": 27.67
+    },
+    {
+      "w": "gênant",
+      "start": 27.67,
+      "end": 27.85
+    },
+    {
+      "w": "que",
+      "start": 28.03,
+      "end": 28.17
+    },
+    {
+      "w": "tu",
+      "start": 28.17,
+      "end": 28.31
+    },
+    {
+      "w": "revis",
+      "start": 28.31,
+      "end": 28.46
+    },
+    {
+      "w": "en",
+      "start": 28.61,
+      "end": 28.73
+    },
+    {
+      "w": "boucle",
+      "start": 28.73,
+      "end": 28.99
+    },
+    {
+      "w": "?",
+      "start": 28.99,
+      "end": 29.14
+    },
+    {
+      "w": "Personne",
+      "start": 29.29,
+      "end": 29.65
+    },
+    {
+      "w": "d'autre",
+      "start": 29.65,
+      "end": 29.817
+    },
+    {
+      "w": "n'y",
+      "start": 29.817,
+      "end": 29.983
+    },
+    {
+      "w": "pense.",
+      "start": 30.15,
+      "end": 30.33
+    },
+    {
+      "w": "L'article",
+      "start": 30.33,
+      "end": 31.08
+    },
+    {
+      "w": "complet",
+      "start": 31.83,
+      "end": 31.83
+    },
+    {
+      "w": "est",
+      "start": 31.83,
+      "end": 31.83
+    },
+    {
+      "w": "sur",
+      "start": 31.83,
+      "end": 32.17
+    },
+    {
+      "w": "leveilmental.fr.",
+      "start": 32.17,
+      "end": 32.47
+    },
+    {
+      "w": "Commente",
+      "start": 32.47,
+      "end": 32.77
+    },
+    {
+      "w": "PROJECTEUR",
+      "start": 32.77,
+      "end": 33.07
+    },
+    {
+      "w": "pour",
+      "start": 33.07,
+      "end": 33.37
+    },
+    {
+      "w": "recevoir",
+      "start": 33.37,
+      "end": 33.67
+    },
+    {
+      "w": "le",
+      "start": 33.67,
+      "end": 33.97
+    },
+    {
+      "w": "résumé.",
+      "start": 33.97,
+      "end": 34.27
+    }
+  ]
+}

@@ -1,0 +1,848 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "Depression-Serotonine.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {
+      "duration": 2.55,
+      "keyword": "PAS LA SÉROTONINE",
+      "keywordFx": "shake",
+      "subtitle": "La dépression n'est pas un simple manque de sérotonine.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "punch-head",
+      "transition": "flash_reverse",
+      "fx": "brain_highlight_head",
+      "icon": "brain",
+      "burst": "head",
+      "position": "center"
+    },
+    {
+      "duration": 2.48,
+      "keyword": "DEPUIS LES ANNÉES 60",
+      "subtitle": "On te raconte cette histoire depuis les années 60.",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "rumination_loop",
+      "icon": "clock",
+      "position": "left"
+    },
+    {
+      "duration": 4.1,
+      "keyword": "UN CERVEAU EN MANQUE",
+      "subtitle": "Trop peu de sérotonine dans ton cerveau, donc tu es triste. Voilà l'histoire.",
+      "pose": "point",
+      "emotion": "tristesse",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "serotonin_flow",
+      "icon": "brain",
+      "position": "center"
+    },
+    {
+      "duration": 2.72,
+      "keyword": "MAIS EN 2022",
+      "subtitle": "Mais en 2022,",
+      "pose": "cross",
+      "emotion": "surcharge",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "transition": "zoom_smash",
+      "fx": "cognitive_overload",
+      "sfx": "tape_stop",
+      "icon": "bolt",
+      "burst": "head",
+      "position": "center"
+    },
+    {
+      "duration": 3.31,
+      "keyword": "DES DÉCENNIES DE RECHERCHE",
+      "subtitle": "La psychiatre britannique Joanna Moncrieff a passé en revue des décennies de recherches.",
+      "credit": "Joanna Moncrieff · University College London",
+      "pose": "think",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "fx": "attention_spotlight",
+      "icon": "eye",
+      "position": "left"
+    },
+    {
+      "duration": 4.38,
+      "keyword": "AUCUNE PREUVE SOLIDE",
+      "subtitle": "Résultat : aucune preuve solide que la dépression est causée par un manque de sérotonine.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "color_shift",
+      "fx": "neuroplasticity",
+      "icon": "spiral",
+      "position": "center"
+    },
+    {
+      "duration": 2.15,
+      "keyword": "LES TRAITEMENTS AIDENT",
+      "subtitle": "Ça ne veut pas dire que les traitements ne marchent pas.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "fx": "reset_breath",
+      "icon": "heart",
+      "position": "center"
+    },
+    {
+      "duration": 4.25,
+      "keyword": "JUSTE TROP SIMPLE",
+      "subtitle": "Ça veut dire que l'histoire du simple déséquilibre chimique est trop simple.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "fx": "synapse_fire",
+      "icon": "lightbulb",
+      "position": "right"
+    },
+    {
+      "duration": 4.27,
+      "keyword": "UN ORCHESTRE, PAS UN CHEF",
+      "subtitle": "La vraie explication ? Le stress chronique, le sommeil, l'inflammation, tes gènes, ton environnement.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "fx": "social_network",
+      "icon": "users",
+      "position": "center"
+    },
+    {
+      "duration": 4.18,
+      "keyword": "N'ARRÊTE RIEN SEUL",
+      "keywordFx": "shake",
+      "subtitle": "Si tu suis un traitement, n'y touche jamais sans en parler à ton médecin.",
+      "pose": "cross",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "static",
+      "transition": "blackout",
+      "fx": "none",
+      "icon": "heart",
+      "position": "center"
+    },
+    {
+      "duration": 3.07,
+      "keyword": "COMPRENDRE VRAIMENT",
+      "subtitle": "Comprendre ce que dit vraiment la science, c'est le premier pas.",
+      "pose": "open",
+      "emotion": "eveil",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "color_shift",
+      "fx": "gratitude_glow",
+      "icon": "lightbulb",
+      "position": "center"
+    },
+    {
+      "duration": 2.6,
+      "keyword": "L'ARTICLE COMPLET",
+      "subtitle": "L'article complet, sources incluses, est sur leveilmental.fr.",
+      "pose": "wave",
+      "emotion": "joie",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "brain",
+      "burst": "head",
+      "position": "center"
+    }
+  ],
+  "words": [
+    {
+      "w": "La",
+      "start": 0.0,
+      "end": 0.24
+    },
+    {
+      "w": "dépression",
+      "start": 0.24,
+      "end": 0.6
+    },
+    {
+      "w": "n'est",
+      "start": 0.6,
+      "end": 0.7
+    },
+    {
+      "w": "pas",
+      "start": 0.8,
+      "end": 0.92
+    },
+    {
+      "w": "un",
+      "start": 0.92,
+      "end": 1.0
+    },
+    {
+      "w": "simple",
+      "start": 1.0,
+      "end": 1.26
+    },
+    {
+      "w": "manque",
+      "start": 1.26,
+      "end": 1.46
+    },
+    {
+      "w": "de",
+      "start": 1.46,
+      "end": 1.62
+    },
+    {
+      "w": "sérotonine.",
+      "start": 1.62,
+      "end": 2.04
+    },
+    {
+      "w": "On",
+      "start": 2.46,
+      "end": 2.64
+    },
+    {
+      "w": "te",
+      "start": 2.64,
+      "end": 2.76
+    },
+    {
+      "w": "raconte",
+      "start": 2.76,
+      "end": 2.94
+    },
+    {
+      "w": "cette",
+      "start": 2.94,
+      "end": 3.14
+    },
+    {
+      "w": "histoire",
+      "start": 3.14,
+      "end": 3.42
+    },
+    {
+      "w": "depuis",
+      "start": 3.42,
+      "end": 3.62
+    },
+    {
+      "w": "les",
+      "start": 3.62,
+      "end": 3.84
+    },
+    {
+      "w": "années",
+      "start": 3.84,
+      "end": 4.06
+    },
+    {
+      "w": "60.",
+      "start": 4.06,
+      "end": 4.6
+    },
+    {
+      "w": "Trop",
+      "start": 5.0,
+      "end": 5.16
+    },
+    {
+      "w": "peu",
+      "start": 5.16,
+      "end": 5.32
+    },
+    {
+      "w": "de",
+      "start": 5.32,
+      "end": 5.42
+    },
+    {
+      "w": "sérotonine",
+      "start": 5.42,
+      "end": 5.68
+    },
+    {
+      "w": "dans",
+      "start": 5.94,
+      "end": 6.06
+    },
+    {
+      "w": "ton",
+      "start": 6.06,
+      "end": 6.14
+    },
+    {
+      "w": "cerveau,",
+      "start": 6.14,
+      "end": 6.56
+    },
+    {
+      "w": "donc",
+      "start": 6.84,
+      "end": 7.08
+    },
+    {
+      "w": "tu",
+      "start": 7.08,
+      "end": 7.26
+    },
+    {
+      "w": "es",
+      "start": 7.26,
+      "end": 7.34
+    },
+    {
+      "w": "triste.",
+      "start": 7.34,
+      "end": 7.56
+    },
+    {
+      "w": "Voilà",
+      "start": 7.98,
+      "end": 8.08
+    },
+    {
+      "w": "l'histoire.",
+      "start": 8.08,
+      "end": 8.63
+    },
+    {
+      "w": "Mais",
+      "start": 9.18,
+      "end": 9.28
+    },
+    {
+      "w": "en",
+      "start": 9.28,
+      "end": 9.4
+    },
+    {
+      "w": "2022,",
+      "start": 9.4,
+      "end": 9.86
+    },
+    {
+      "w": "La",
+      "start": 10.34,
+      "end": 10.42
+    },
+    {
+      "w": "psychiatre",
+      "start": 10.42,
+      "end": 10.94
+    },
+    {
+      "w": "britannique",
+      "start": 10.94,
+      "end": 11.52
+    },
+    {
+      "w": "Joanna",
+      "start": 11.52,
+      "end": 11.96
+    },
+    {
+      "w": "Moncrieff",
+      "start": 11.96,
+      "end": 12.4
+    },
+    {
+      "w": "a",
+      "start": 12.84,
+      "end": 12.98
+    },
+    {
+      "w": "passé",
+      "start": 12.98,
+      "end": 13.18
+    },
+    {
+      "w": "en",
+      "start": 13.18,
+      "end": 13.34
+    },
+    {
+      "w": "revue",
+      "start": 13.34,
+      "end": 13.64
+    },
+    {
+      "w": "des",
+      "start": 13.64,
+      "end": 13.76
+    },
+    {
+      "w": "décennies",
+      "start": 13.76,
+      "end": 14.2
+    },
+    {
+      "w": "de",
+      "start": 14.2,
+      "end": 14.36
+    },
+    {
+      "w": "recherches.",
+      "start": 14.36,
+      "end": 14.86
+    },
+    {
+      "w": "Résultat",
+      "start": 15.36,
+      "end": 15.76
+    },
+    {
+      "w": ":",
+      "start": 15.76,
+      "end": 15.93
+    },
+    {
+      "w": "aucune",
+      "start": 16.1,
+      "end": 16.36
+    },
+    {
+      "w": "preuve",
+      "start": 16.36,
+      "end": 16.64
+    },
+    {
+      "w": "solide",
+      "start": 16.64,
+      "end": 16.92
+    },
+    {
+      "w": "que",
+      "start": 16.92,
+      "end": 17.06
+    },
+    {
+      "w": "la",
+      "start": 17.06,
+      "end": 17.14
+    },
+    {
+      "w": "dépression",
+      "start": 17.14,
+      "end": 17.52
+    },
+    {
+      "w": "est",
+      "start": 17.52,
+      "end": 17.72
+    },
+    {
+      "w": "causée",
+      "start": 17.72,
+      "end": 17.98
+    },
+    {
+      "w": "par",
+      "start": 17.98,
+      "end": 18.14
+    },
+    {
+      "w": "un",
+      "start": 18.14,
+      "end": 18.22
+    },
+    {
+      "w": "manque",
+      "start": 18.22,
+      "end": 18.34
+    },
+    {
+      "w": "de",
+      "start": 18.34,
+      "end": 18.46
+    },
+    {
+      "w": "sérotonine.",
+      "start": 18.46,
+      "end": 18.95
+    },
+    {
+      "w": "Ça",
+      "start": 19.44,
+      "end": 19.62
+    },
+    {
+      "w": "ne",
+      "start": 19.62,
+      "end": 19.72
+    },
+    {
+      "w": "veut",
+      "start": 19.72,
+      "end": 19.78
+    },
+    {
+      "w": "pas",
+      "start": 19.78,
+      "end": 19.92
+    },
+    {
+      "w": "dire",
+      "start": 19.92,
+      "end": 20.06
+    },
+    {
+      "w": "que",
+      "start": 20.06,
+      "end": 20.2
+    },
+    {
+      "w": "les",
+      "start": 20.2,
+      "end": 20.327
+    },
+    {
+      "w": "traitements",
+      "start": 20.327,
+      "end": 20.453
+    },
+    {
+      "w": "ne",
+      "start": 20.58,
+      "end": 20.74
+    },
+    {
+      "w": "marchent",
+      "start": 20.74,
+      "end": 20.81
+    },
+    {
+      "w": "pas.",
+      "start": 20.88,
+      "end": 21.18
+    },
+    {
+      "w": "Ça",
+      "start": 21.62,
+      "end": 21.76
+    },
+    {
+      "w": "veut",
+      "start": 21.76,
+      "end": 21.82
+    },
+    {
+      "w": "dire",
+      "start": 21.82,
+      "end": 22.0
+    },
+    {
+      "w": "que",
+      "start": 22.0,
+      "end": 22.12
+    },
+    {
+      "w": "l'histoire",
+      "start": 22.12,
+      "end": 22.24
+    },
+    {
+      "w": "du",
+      "start": 22.36,
+      "end": 22.56
+    },
+    {
+      "w": "simple",
+      "start": 22.56,
+      "end": 22.82
+    },
+    {
+      "w": "déséquilibre",
+      "start": 22.82,
+      "end": 23.38
+    },
+    {
+      "w": "chimique",
+      "start": 23.38,
+      "end": 23.76
+    },
+    {
+      "w": "est",
+      "start": 23.76,
+      "end": 23.98
+    },
+    {
+      "w": "trop",
+      "start": 23.98,
+      "end": 24.14
+    },
+    {
+      "w": "simple.",
+      "start": 24.14,
+      "end": 24.46
+    },
+    {
+      "w": "La",
+      "start": 24.72,
+      "end": 24.86
+    },
+    {
+      "w": "vraie",
+      "start": 24.86,
+      "end": 25.0
+    },
+    {
+      "w": "explication",
+      "start": 25.0,
+      "end": 25.48
+    },
+    {
+      "w": "?",
+      "start": 25.48,
+      "end": 25.59
+    },
+    {
+      "w": "Le",
+      "start": 25.7,
+      "end": 26.06
+    },
+    {
+      "w": "stress",
+      "start": 26.06,
+      "end": 26.18
+    },
+    {
+      "w": "chronique,",
+      "start": 26.18,
+      "end": 26.72
+    },
+    {
+      "w": "le",
+      "start": 26.86,
+      "end": 26.94
+    },
+    {
+      "w": "sommeil,",
+      "start": 26.94,
+      "end": 27.4
+    },
+    {
+      "w": "l'inflammation,",
+      "start": 27.4,
+      "end": 27.83
+    },
+    {
+      "w": "tes",
+      "start": 27.83,
+      "end": 28.26
+    },
+    {
+      "w": "gènes,",
+      "start": 28.26,
+      "end": 28.69
+    },
+    {
+      "w": "ton",
+      "start": 29.12,
+      "end": 29.24
+    },
+    {
+      "w": "environnement.",
+      "start": 29.24,
+      "end": 29.86
+    },
+    {
+      "w": "Si",
+      "start": 30.36,
+      "end": 30.44
+    },
+    {
+      "w": "tu",
+      "start": 30.44,
+      "end": 30.58
+    },
+    {
+      "w": "suis",
+      "start": 30.58,
+      "end": 30.74
+    },
+    {
+      "w": "un",
+      "start": 30.74,
+      "end": 30.8
+    },
+    {
+      "w": "traitement,",
+      "start": 30.8,
+      "end": 31.2
+    },
+    {
+      "w": "n'y",
+      "start": 31.2,
+      "end": 31.44
+    },
+    {
+      "w": "touche",
+      "start": 31.68,
+      "end": 31.92
+    },
+    {
+      "w": "jamais",
+      "start": 31.92,
+      "end": 32.16
+    },
+    {
+      "w": "sans",
+      "start": 32.16,
+      "end": 32.36
+    },
+    {
+      "w": "en",
+      "start": 32.36,
+      "end": 32.48
+    },
+    {
+      "w": "parler",
+      "start": 32.48,
+      "end": 32.68
+    },
+    {
+      "w": "à",
+      "start": 32.68,
+      "end": 32.84
+    },
+    {
+      "w": "ton",
+      "start": 32.84,
+      "end": 33.0
+    },
+    {
+      "w": "médecin.",
+      "start": 33.0,
+      "end": 33.34
+    },
+    {
+      "w": "Comprendre",
+      "start": 33.86,
+      "end": 34.26
+    },
+    {
+      "w": "ce",
+      "start": 34.26,
+      "end": 34.32
+    },
+    {
+      "w": "que",
+      "start": 34.32,
+      "end": 34.4
+    },
+    {
+      "w": "dit",
+      "start": 34.4,
+      "end": 34.5
+    },
+    {
+      "w": "vraiment",
+      "start": 34.5,
+      "end": 34.72
+    },
+    {
+      "w": "la",
+      "start": 34.72,
+      "end": 34.92
+    },
+    {
+      "w": "science,",
+      "start": 34.92,
+      "end": 35.16
+    },
+    {
+      "w": "c'est",
+      "start": 35.16,
+      "end": 35.38
+    },
+    {
+      "w": "le",
+      "start": 35.6,
+      "end": 35.7
+    },
+    {
+      "w": "premier",
+      "start": 35.7,
+      "end": 35.9
+    },
+    {
+      "w": "pas.",
+      "start": 35.9,
+      "end": 36.14
+    },
+    {
+      "w": "L'article",
+      "start": 36.14,
+      "end": 36.56
+    },
+    {
+      "w": "complet,",
+      "start": 36.98,
+      "end": 37.34
+    },
+    {
+      "w": "sources",
+      "start": 37.34,
+      "end": 37.655
+    },
+    {
+      "w": "incluses,",
+      "start": 37.655,
+      "end": 37.97
+    },
+    {
+      "w": "est",
+      "start": 37.97,
+      "end": 38.285
+    },
+    {
+      "w": "sur",
+      "start": 38.6,
+      "end": 38.74
+    },
+    {
+      "w": "leveilmental.fr.",
+      "start": 38.74,
+      "end": 39.04
+    }
+  ]
+}

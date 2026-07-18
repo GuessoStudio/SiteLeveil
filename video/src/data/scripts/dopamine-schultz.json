@@ -1,0 +1,700 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "dopamine, Wolfram Schultz.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {
+      "duration": 2.09,
+      "keyword": "PAS LE PLAISIR",
+      "keywordFx": "shake",
+      "subtitle": "La dopamine n'est pas l'hormone du plaisir.",
+      "pose": "cross",
+      "emotion": "confusion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "punch-head",
+      "transition": "flash_reverse",
+      "fx": "dopamine_molecules",
+      "icon": "bolt",
+      "burst": "head",
+      "position": "center"
+    },
+    {
+      "duration": 1.49,
+      "keyword": "L'HORMONE DU MANQUE",
+      "keywordFx": "shake",
+      "subtitle": "C'est l'hormone du manque.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "dopamine_molecules",
+      "icon": "target",
+      "position": "left"
+    },
+    {
+      "duration": 3.72,
+      "keyword": "WOLFRAM SCHULTZ",
+      "subtitle": "Le neuroscientifique Wolfram Schultz, de l'université de Cambridge,",
+      "credit": "Wolfram Schultz · Université de Cambridge",
+      "pose": "think",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "attention_spotlight",
+      "icon": "eye",
+      "position": "center"
+    },
+    {
+      "duration": 4.31,
+      "keyword": "NEURONES À DOPAMINE",
+      "subtitle": "a enregistré l'activité de neurones à dopamine chez des singes, pendant une tâche simple.",
+      "pose": "open",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "synapse_fire",
+      "icon": "brain",
+      "position": "left"
+    },
+    {
+      "duration": 3.68,
+      "keyword": "IL S'ATTENDAIT À...",
+      "subtitle": "Il s'attendait à voir la dopamine monter au moment de la récompense.",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "goal_beacon",
+      "icon": "target",
+      "position": "right"
+    },
+    {
+      "duration": 3.55,
+      "keyword": "MAIS AVANT",
+      "keywordFx": "shake",
+      "subtitle": "Mais elle montait avant. Au moment où le singe anticipait la récompense.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "zoom_smash",
+      "fx": "goal_beacon",
+      "sfx": "tape_stop",
+      "icon": "bolt",
+      "burst": "head",
+      "position": "center"
+    },
+    {
+      "duration": 3.26,
+      "keyword": "ELLE SIGNALE L'ATTENTE",
+      "subtitle": "La dopamine ne signale pas le plaisir. Elle signale l'attente.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "color_shift",
+      "fx": "synapse_fire",
+      "icon": "lightbulb",
+      "position": "left"
+    },
+    {
+      "duration": 3.03,
+      "keyword": "UN LIKE, UN MAIL",
+      "subtitle": "C'est pour ça qu'un like, une notification, un mail,",
+      "pose": "open",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "dopamine",
+      "camera": "cine",
+      "fx": "dopamine_molecules",
+      "icon": "bolt",
+      "position": "center"
+    },
+    {
+      "duration": 4.23,
+      "keyword": "PLUS QUE LE LIRE",
+      "subtitle": "te fait vérifier ton téléphone plus que le fait de le lire.",
+      "pose": "cross",
+      "emotion": "surcharge",
+      "mode": "eveil",
+      "accent": "dopamine",
+      "camera": "cine",
+      "fx": "habit_chain",
+      "icon": "link",
+      "position": "right"
+    },
+    {
+      "duration": 3.88,
+      "keyword": "L'ATTENTE, PAS LA RÉCOMPENSE",
+      "subtitle": "Ce n'est pas la récompense qui t'accroche. C'est l'attente d'une récompense.",
+      "pose": "open",
+      "emotion": "eveil",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "color_shift",
+      "fx": "synapse_fire",
+      "icon": "lightbulb",
+      "position": "center"
+    },
+    {
+      "duration": 1.76,
+      "keyword": "L'ARTICLE COMPLET",
+      "subtitle": "L'article complet est sur leveilmental.fr.",
+      "pose": "wave",
+      "emotion": "joie",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "brain",
+      "burst": "head",
+      "position": "center"
+    }
+  ],
+  "words": [
+    {
+      "w": "La",
+      "start": 0.0,
+      "end": 0.22
+    },
+    {
+      "w": "dopamine",
+      "start": 0.22,
+      "end": 0.52
+    },
+    {
+      "w": "n'est",
+      "start": 0.52,
+      "end": 0.68
+    },
+    {
+      "w": "pas",
+      "start": 0.84,
+      "end": 0.98
+    },
+    {
+      "w": "l'hormone",
+      "start": 0.98,
+      "end": 1.1
+    },
+    {
+      "w": "du",
+      "start": 1.22,
+      "end": 1.4
+    },
+    {
+      "w": "plaisir.",
+      "start": 1.4,
+      "end": 1.68
+    },
+    {
+      "w": "C'est",
+      "start": 1.68,
+      "end": 1.973
+    },
+    {
+      "w": "l'hormone",
+      "start": 1.973,
+      "end": 2.267
+    },
+    {
+      "w": "du",
+      "start": 2.56,
+      "end": 2.74
+    },
+    {
+      "w": "manque.",
+      "start": 2.74,
+      "end": 3.02
+    },
+    {
+      "w": "Le",
+      "start": 3.02,
+      "end": 3.35
+    },
+    {
+      "w": "neuroscientifique",
+      "start": 3.68,
+      "end": 4.36
+    },
+    {
+      "w": "Wolfram",
+      "start": 4.36,
+      "end": 4.82
+    },
+    {
+      "w": "Schultz,",
+      "start": 4.82,
+      "end": 5.32
+    },
+    {
+      "w": "de",
+      "start": 5.32,
+      "end": 5.52
+    },
+    {
+      "w": "l'université",
+      "start": 5.52,
+      "end": 5.8
+    },
+    {
+      "w": "de",
+      "start": 6.08,
+      "end": 6.22
+    },
+    {
+      "w": "Cambridge,",
+      "start": 6.22,
+      "end": 6.54
+    },
+    {
+      "w": "a",
+      "start": 7.06,
+      "end": 7.48
+    },
+    {
+      "w": "enregistré",
+      "start": 7.48,
+      "end": 7.9
+    },
+    {
+      "w": "l'activité",
+      "start": 7.9,
+      "end": 8.14
+    },
+    {
+      "w": "de",
+      "start": 8.38,
+      "end": 8.5
+    },
+    {
+      "w": "neurones",
+      "start": 8.5,
+      "end": 8.63
+    },
+    {
+      "w": "à",
+      "start": 8.76,
+      "end": 8.88
+    },
+    {
+      "w": "dopamine",
+      "start": 8.88,
+      "end": 9.1
+    },
+    {
+      "w": "chez",
+      "start": 9.1,
+      "end": 9.4
+    },
+    {
+      "w": "des",
+      "start": 9.4,
+      "end": 9.6
+    },
+    {
+      "w": "singes,",
+      "start": 9.6,
+      "end": 9.92
+    },
+    {
+      "w": "pendant",
+      "start": 10.1,
+      "end": 10.38
+    },
+    {
+      "w": "une",
+      "start": 10.38,
+      "end": 10.52
+    },
+    {
+      "w": "tâche",
+      "start": 10.52,
+      "end": 10.72
+    },
+    {
+      "w": "simple.",
+      "start": 10.72,
+      "end": 11.08
+    },
+    {
+      "w": "Il",
+      "start": 11.58,
+      "end": 11.76
+    },
+    {
+      "w": "s'attendait",
+      "start": 11.76,
+      "end": 11.96
+    },
+    {
+      "w": "à",
+      "start": 12.16,
+      "end": 12.28
+    },
+    {
+      "w": "voir",
+      "start": 12.28,
+      "end": 12.34
+    },
+    {
+      "w": "la",
+      "start": 12.34,
+      "end": 12.46
+    },
+    {
+      "w": "dopamine",
+      "start": 12.46,
+      "end": 12.74
+    },
+    {
+      "w": "monter",
+      "start": 12.74,
+      "end": 13.34
+    },
+    {
+      "w": "au",
+      "start": 13.34,
+      "end": 13.74
+    },
+    {
+      "w": "moment",
+      "start": 13.74,
+      "end": 13.94
+    },
+    {
+      "w": "de",
+      "start": 13.94,
+      "end": 14.12
+    },
+    {
+      "w": "la",
+      "start": 14.12,
+      "end": 14.22
+    },
+    {
+      "w": "récompense.",
+      "start": 14.22,
+      "end": 14.8
+    },
+    {
+      "w": "Mais",
+      "start": 15.14,
+      "end": 15.42
+    },
+    {
+      "w": "elle",
+      "start": 15.42,
+      "end": 15.52
+    },
+    {
+      "w": "montait",
+      "start": 15.52,
+      "end": 15.74
+    },
+    {
+      "w": "avant.",
+      "start": 15.74,
+      "end": 15.98
+    },
+    {
+      "w": "Au",
+      "start": 16.28,
+      "end": 16.44
+    },
+    {
+      "w": "moment",
+      "start": 16.44,
+      "end": 16.62
+    },
+    {
+      "w": "où",
+      "start": 16.62,
+      "end": 16.76
+    },
+    {
+      "w": "le",
+      "start": 16.76,
+      "end": 16.9
+    },
+    {
+      "w": "singe",
+      "start": 16.9,
+      "end": 17.14
+    },
+    {
+      "w": "anticipait",
+      "start": 17.14,
+      "end": 17.82
+    },
+    {
+      "w": "la",
+      "start": 17.82,
+      "end": 17.94
+    },
+    {
+      "w": "récompense.",
+      "start": 17.94,
+      "end": 18.46
+    },
+    {
+      "w": "La",
+      "start": 18.76,
+      "end": 18.9
+    },
+    {
+      "w": "dopamine",
+      "start": 18.9,
+      "end": 19.24
+    },
+    {
+      "w": "ne",
+      "start": 19.24,
+      "end": 19.48
+    },
+    {
+      "w": "signale",
+      "start": 19.48,
+      "end": 19.7
+    },
+    {
+      "w": "pas",
+      "start": 19.7,
+      "end": 19.88
+    },
+    {
+      "w": "le",
+      "start": 19.88,
+      "end": 19.98
+    },
+    {
+      "w": "plaisir.",
+      "start": 19.98,
+      "end": 20.28
+    },
+    {
+      "w": "Elle",
+      "start": 20.6,
+      "end": 20.66
+    },
+    {
+      "w": "signale",
+      "start": 20.66,
+      "end": 21.02
+    },
+    {
+      "w": "l'attente.",
+      "start": 21.02,
+      "end": 21.413
+    },
+    {
+      "w": "C'est",
+      "start": 21.413,
+      "end": 21.807
+    },
+    {
+      "w": "pour",
+      "start": 22.2,
+      "end": 22.34
+    },
+    {
+      "w": "ça",
+      "start": 22.34,
+      "end": 22.48
+    },
+    {
+      "w": "qu'un",
+      "start": 22.48,
+      "end": 22.61
+    },
+    {
+      "w": "like,",
+      "start": 22.74,
+      "end": 23.0
+    },
+    {
+      "w": "une",
+      "start": 23.26,
+      "end": 23.32
+    },
+    {
+      "w": "notification,",
+      "start": 23.32,
+      "end": 23.7
+    },
+    {
+      "w": "un",
+      "start": 23.7,
+      "end": 24.16
+    },
+    {
+      "w": "mail,",
+      "start": 24.16,
+      "end": 24.62
+    },
+    {
+      "w": "te",
+      "start": 25.08,
+      "end": 25.18
+    },
+    {
+      "w": "fait",
+      "start": 25.18,
+      "end": 25.3
+    },
+    {
+      "w": "vérifier",
+      "start": 25.3,
+      "end": 25.62
+    },
+    {
+      "w": "ton",
+      "start": 25.62,
+      "end": 25.76
+    },
+    {
+      "w": "téléphone",
+      "start": 25.76,
+      "end": 26.14
+    },
+    {
+      "w": "plus",
+      "start": 26.14,
+      "end": 26.76
+    },
+    {
+      "w": "que",
+      "start": 26.76,
+      "end": 26.94
+    },
+    {
+      "w": "le",
+      "start": 26.94,
+      "end": 27.06
+    },
+    {
+      "w": "fait",
+      "start": 27.06,
+      "end": 27.18
+    },
+    {
+      "w": "de",
+      "start": 27.18,
+      "end": 27.3
+    },
+    {
+      "w": "le",
+      "start": 27.3,
+      "end": 27.4
+    },
+    {
+      "w": "lire.",
+      "start": 27.4,
+      "end": 27.64
+    },
+    {
+      "w": "Ce",
+      "start": 27.64,
+      "end": 28.34
+    },
+    {
+      "w": "n'est",
+      "start": 28.34,
+      "end": 28.39
+    },
+    {
+      "w": "pas",
+      "start": 28.44,
+      "end": 28.56
+    },
+    {
+      "w": "la",
+      "start": 28.56,
+      "end": 28.68
+    },
+    {
+      "w": "récompense",
+      "start": 28.68,
+      "end": 29.08
+    },
+    {
+      "w": "qui",
+      "start": 29.08,
+      "end": 29.24
+    },
+    {
+      "w": "t'accroche.",
+      "start": 29.24,
+      "end": 29.588
+    },
+    {
+      "w": "C'est",
+      "start": 29.588,
+      "end": 29.936
+    },
+    {
+      "w": "l'attente",
+      "start": 29.936,
+      "end": 30.284
+    },
+    {
+      "w": "d'une",
+      "start": 30.284,
+      "end": 30.632
+    },
+    {
+      "w": "récompense.",
+      "start": 30.98,
+      "end": 31.66
+    },
+    {
+      "w": "L'article",
+      "start": 31.66,
+      "end": 32.03
+    },
+    {
+      "w": "complet",
+      "start": 32.4,
+      "end": 32.74
+    },
+    {
+      "w": "est",
+      "start": 32.74,
+      "end": 32.98
+    },
+    {
+      "w": "sur",
+      "start": 33.22,
+      "end": 33.36
+    },
+    {
+      "w": "leveilmental.fr.",
+      "start": 33.36,
+      "end": 33.66
+    }
+  ]
+}
