@@ -110,6 +110,71 @@ l'enregistrement de la voix off).
 
 ---
 
+## 6. La résilience n'est pas de l'insensibilité
+
+- **Slug** : `resilience` · **Série** : LE MYTHE · **Pilier** : Psychologie / Neurosciences
+- **Chercheurs cités** : Mark Seery (Université de Buffalo) · Matthew Lieberman (UCLA, crédit affiché) · James Coan (Univ. de Virginie, crédit affiché)
+- **Durée voix off** : 38,09 s · **Statut** : 🎬💬 rendu + karaoké natif — à publier
+- **Fiche** : [resilience.md](resilience.md)
+
+> La personne la plus résiliente que tu connais ressent la peur autant que toi.
+> La différence est ailleurs.
+> Être résilient, ce n'est pas être insensible : c'est l'inverse.
+> Ce qui change, c'est la vitesse à laquelle ton système nerveux revient au calme.
+> Une flexibilité, pas une armure.
+> Et non, ce qui ne te tue pas ne te rend pas toujours plus fort.
+> Mark Seery, université de Buffalo, l'a prouvé :
+> un peu d'adversité te solidifie, trop te fragilise en sensibilisant ton cerveau au danger.
+> C'est une dose, pas un manque de force.
+> Bonne nouvelle : ça se réentraîne. Nomme ton émotion avec précision : ça calme l'amygdale, l'alarme de peur du cerveau.
+> Reconnecte-toi à un proche fiable. Et bouge.
+> Commente REBOND, je t'envoie le protocole pour récupérer.
+
+---
+
+## 7. Ton cerveau ne change pas par la volonté (BDNF)
+
+- **Slug** : `bdnf` · **Série** : CE QUE TON CERVEAU APPREND · **Pilier** : Neurosciences
+- **Chercheur cité** : Carl Cotman · Université de Californie à Irvine
+- **Durée voix off** : 33,37 s · **Statut** : 🎬💬 rendu + karaoké natif — à publier
+- **Fiche** : [bdnf.md](bdnf.md)
+
+> Ton cerveau ne change pas parce que tu le veux.
+> Il change quand tu lui donnes le bon signal.
+> Ce signal, c'est une protéine que ton cerveau fabrique pour renforcer ses connexions : le BDNF.
+> Carl Cotman, de l'université de Californie à Irvine, l'a démontré le premier.
+> Imagine un jardin mental :
+> chaque pensée, chaque habitude trace un chemin.
+> Le BDNF rend ce chemin plus praticable.
+> Mais il ne répond pas à l'intention.
+> Il répond à la répétition : bouger, apprendre, dormir, s'exposer à l'effort.
+> Changer, ce n'est pas forcer ton cerveau.
+> C'est créer les conditions pour qu'il se recâble.
+> Garde cette vidéo si tu veux entraîner ton cerveau, pas seulement le motiver.
+
+---
+
+## 8. Ton QI ne te protège pas des fausses informations
+
+- **Slug** : `pensee-critique` · **Série** : LE PIÈGE MENTAL · **Pilier** : Psychologie / Neurosciences
+- **Chercheur cité** : Dan Kahan · Université de Yale
+- **Durée voix off** : 38,61 s · **Statut** : 🎬💬 rendu + karaoké natif — à publier (meilleure vidéo à ce jour, ~1,3 k vues YouTube)
+- **Fiche** : [pensee-critique.md](pensee-critique.md)
+
+> Être intelligent ne te protège pas des fausses informations.
+> Ce qui protège vraiment, ce n'est pas juste le QI. C'est la capacité à t'arrêter avant de juger.
+> Parce que ton cerveau ne cherche pas toujours la vérité. Souvent, il cherche ce qui confirme ce que tu crois déjà.
+> C'est le biais de confirmation. Tu vois une info qui va dans ton sens ? Tu la crois plus vite.
+> Tu vois une info qui te contredit ? Tu la rejettes plus vite. Et c'est le dialogue de sourds.
+> Dan Kahan, à l'université de Yale, a prouvé que notre intelligence sert souvent à justifier nos croyances.
+> La vraie pensée critique commence avec une question simple : Est-ce vrai… et comment je le sais ?
+> Avant de partager.
+> Avant de réagir.
+> Avant de juger.
+> Penser clairement, ce n'est pas avoir toujours raison. Commente BIAIS pour recevoir la méthode.
+
+---
+
 ## Prochains scripts (Top 6 restants)
 
 Voir [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeline-dédupliqué) pour
