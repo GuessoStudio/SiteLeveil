@@ -1,0 +1,30 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "biais-cognitifs.mp3",
+  "audioVolume": 3.7,
+  "sfxVolume": { "spark_trigger": 0.28 },
+  "ambience": "dark_drone",
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "drift",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    { "duration": 3.0, "keyword": "TON CERVEAU A UN BUG", "keywordFx": "glitch", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "punch-head", "transition": "flash_reverse", "fx": "brain_highlight_head", "icon": "brain", "burst": "head", "position": "center" },
+    { "duration": 3.5, "keyword": "AVOIR RAISON", "subtitle": "Il préfère avoir raison plutôt que voir vrai.", "accent": "dopamine", "pose": "cross", "emotion": "confusion", "fx": "synapse_fire", "icon": "bolt", "camera": "drift", "transition": "color_shift", "position": "left" },
+    { "duration": 3.5, "keyword": "120 € !", "subtitle": "200 € barré → 120 €. « Bonne affaire ! »", "pose": "joie", "emotion": "joie", "accent": "dopamine", "fx": "dopamine_molecules", "icon": "lightbulb", "camera": "zoom-in", "transition": "zoom_smash", "position": "right" },
+    { "duration": 3.5, "keyword": "ÇA VAUT 80 €", "subtitle": "Ton cerveau vient de se faire piéger.", "pose": "shrug", "emotion": "surcharge", "accent": "stress", "fx": "cognitive_overload", "icon": "eye", "camera": "drift", "transition": "color_shift", "position": "center" },
+    { "duration": 3.5, "keyword": "L'ANCRAGE", "subtitle": "Le premier chiffre vu fausse tout ton jugement.", "pose": "cross", "emotion": "focus", "accent": "stress", "fx": "tunnel_vision", "icon": "target", "camera": "drift", "transition": "color_shift", "position": "left" },
+    { "duration": 3.5, "keyword": "EN DÉBAT…", "subtitle": "Tu retiens surtout ce qui confirme ton avis.", "pose": "think", "emotion": "focus", "accent": "neuro", "fx": "attention_spotlight", "icon": "eye", "camera": "zoom-out", "transition": "color_shift", "position": "right" },
+    { "duration": 3.5, "keyword": "BIAIS DE CONFIRMATION", "keywordFx": "shake", "subtitle": "Tu filtres la réalité pour avoir raison.", "pose": "point", "emotion": "insight", "accent": "stress", "fx": "brain_highlight_head", "icon": "brain", "camera": "punch-head", "transition": "zoom_smash", "position": "center" },
+    { "duration": 4.0, "keyword": "ET SI J'AVAIS TORT ?", "subtitle": "La question qui casse le piège.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "fx": "identity_shift", "icon": "lightbulb", "camera": "zoom-in", "transition": "flash_reverse", "position": "center" },
+    { "duration": 4.0, "keyword": "LIEN EN BIO", "subtitle": "Les 12 biais les plus dangereux → leveilmental.fr", "pose": "wave", "emotion": "calme", "accent": "eveil", "fx": "gratitude_glow", "icon": "target", "camera": "zoom-out", "transition": "color_shift", "position": "center" }
+  ]
+}

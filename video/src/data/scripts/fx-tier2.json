@@ -1,0 +1,26 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "drift",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    { "duration": 3.5, "keyword": "VISION EN TUNNEL", "subtitle": "Le focus extrême rétrécit ton champ de perception.", "pose": "think", "emotion": "focus", "fx": "tunnel_vision", "accent": "neuro", "transition": "flash_reverse" },
+    { "duration": 3.5, "keyword": "SURCHARGE", "subtitle": "Trop d'informations, le cerveau sature.", "pose": "cross", "emotion": "surcharge", "mode": "emotions", "fx": "cognitive_overload", "accent": "stress", "transition": "zoom_smash" },
+    { "duration": 3.5, "keyword": "ATTENTION", "subtitle": "Un seul point éclairé, le reste disparaît.", "pose": "point", "emotion": "focus", "fx": "attention_spotlight", "accent": "neuro", "transition": "color_shift" },
+    { "duration": 3.5, "keyword": "PRESSION SOCIALE", "subtitle": "Le regard des autres comme un projecteur.", "pose": "shrug", "emotion": "peur", "mode": "emotions", "fx": "spotlight_pressure", "accent": "social", "transition": "color_shift" },
+    { "duration": 3.5, "keyword": "ÉPUISEMENT", "subtitle": "La volonté est une ressource qui se vide.", "pose": "idle", "emotion": "fatigue", "fx": "ego_depletion", "accent": "stress", "transition": "color_shift" },
+    { "duration": 3.5, "keyword": "RESPIRE", "subtitle": "Quatre secondes pour réinitialiser le système.", "pose": "open", "emotion": "calme", "mode": "eveil", "fx": "reset_breath", "accent": "sommeil", "transition": "color_shift" },
+    { "duration": 3.5, "keyword": "EFFET DE GROUPE", "subtitle": "L'avis du groupe te traverse sans que tu le saches.", "pose": "shrug", "emotion": "confusion", "fx": "conformity_wave", "accent": "social", "transition": "color_shift" },
+    { "duration": 3.5, "keyword": "TON CAP", "subtitle": "Un objectif clair oriente toute ton énergie.", "pose": "point", "emotion": "fierte", "fx": "goal_beacon", "accent": "growth", "transition": "color_shift" },
+    { "duration": 3.5, "keyword": "L'ÉLAN", "subtitle": "Chaque action nourrit la suivante.", "pose": "wave", "emotion": "joie", "fx": "momentum_trail", "accent": "growth", "transition": "color_shift" }
+  ]
+}

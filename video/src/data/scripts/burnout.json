@@ -1,0 +1,34 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "Burn-out.mp3",
+  "audioVolume": 2.5,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.0,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "drift",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    { "duration": 3.9, "keyword": "PAS QU'UNE HORMONE", "keywordFx": "glitch", "subtitle": "Le burn-out, ce n'est pas juste une histoire d'hormones de stress.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "camera": "punch-head", "transition": "flash_reverse", "fx": "brain_highlight_head", "icon": "brain", "burst": "head", "position": "center" },
+    { "duration": 4.1, "keyword": "UNE ÉTUDE, 2024", "subtitle": "En 2024, le Regensburg Burnout Project, à l'Université de Ratisbonne.", "pose": "think", "emotion": "reflexion", "mode": "neuro", "accent": "neuro", "fx": "synapse_fire", "icon": "clock", "camera": "drift", "transition": "color_shift", "position": "left" },
+    { "duration": 5.6, "keyword": "55 VS 61", "subtitle": "A comparé 55 personnes en burn-out à 61 témoins, sous stress, dans un scanner cérébral.", "pose": "point", "emotion": "focus", "mode": "neuro", "accent": "neuro", "fx": "social_network", "icon": "users", "camera": "zoom-in", "transition": "color_shift", "position": "right" },
+    { "duration": 5.1, "keyword": "PAS LE CORTISOL", "keywordFx": "shake", "subtitle": "Résultat surprenant : pas de différence nette sur le cortisol, l'hormone du stress.", "pose": "cross", "emotion": "surcharge", "mode": "emotions", "accent": "stress", "fx": "cortisol_spike", "icon": "heart", "camera": "drift", "transition": "color_shift", "position": "center" },
+    { "duration": 2.1, "keyword": "LE VRAI SIGNAL", "subtitle": "Le vrai signal était ailleurs.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "fx": "brain_highlight_head", "icon": "eye", "camera": "zoom-out", "transition": "color_shift", "position": "left" },
+    { "duration": 3.8, "keyword": "LE CERVEAU S'APAISE", "subtitle": "Quand le stress se répétait, le cerveau des témoins s'apaisait, il s'habituait.", "pose": "open", "emotion": "focus", "mode": "neuro", "accent": "neuro", "fx": "serotonin_flow", "icon": "leaf", "camera": "drift", "transition": "color_shift", "position": "left" },
+    { "duration": 3.8, "keyword": "EUX, ÇA S'EMBALLE", "keywordFx": "shake", "subtitle": "Celui des personnes en burn-out, non : il s'activait de plus en plus.", "pose": "cross", "emotion": "surcharge", "mode": "emotions", "accent": "stress", "fx": "adrenaline_burst", "icon": "bolt", "camera": "drift", "transition": "zoom_smash", "burst": "torso", "position": "right" },
+    { "duration": 5.6, "keyword": "CORTEX CINGULAIRE", "subtitle": "La zone en cause : le cortex cingulaire antérieur, carrefour de l'attention et des émotions.", "pose": "point", "emotion": "insight", "mode": "neuro", "accent": "neuro", "fx": "brain_highlight_head", "icon": "brain", "camera": "punch-head", "transition": "flash_reverse", "burst": "head", "position": "center" },
+    { "duration": 5.1, "keyword": "RÉGULATION SATURÉE", "subtitle": "Le burn-out ressemble à un système de régulation qui n'arrive plus à lever le pied.", "pose": "open", "emotion": "focus", "mode": "eveil", "accent": "stress", "fx": "brain_transfer", "icon": "link", "camera": "drift", "transition": "color_shift", "position": "center" },
+    { "duration": 2.1, "keyword": "BROUILLARD MENTAL", "subtitle": "D'où ce brouillard mental.", "pose": "shrug", "emotion": "surcharge", "mode": "emotions", "accent": "stress", "fx": "rumination_loop", "icon": "moon", "camera": "zoom-in", "transition": "color_shift", "position": "left" },
+    { "duration": 3.5, "keyword": "PAS \"TENIR ENCORE\"", "subtitle": "La récupération commence rarement par tenir encore.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "fx": "identity_shift", "icon": "lightbulb", "camera": "zoom-in", "transition": "flash_reverse", "position": "center" },
+    { "duration": 4.1, "keyword": "SORTIR, RECONSTRUIRE", "subtitle": "Elle commence par sortir du stress chronique, puis reconstruire.", "pose": "open", "emotion": "eveil", "mode": "eveil", "accent": "eveil", "fx": "flow_state", "icon": "leaf", "camera": "drift", "transition": "color_shift", "position": "right" },
+    { "duration": 2.9, "keyword": "LIEN EN BIO", "subtitle": "Article complet sur leveilmental.fr.", "pose": "wave", "emotion": "calme", "mode": "eveil", "accent": "eveil", "fx": "gratitude_glow", "icon": "target", "camera": "zoom-out", "transition": "color_shift", "position": "center" }
+  ]
+}
