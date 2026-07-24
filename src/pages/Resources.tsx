@@ -340,6 +340,18 @@ const Resources = () => {
       downloadUrl: "/Downloads/pensee-critique-developper-checklist.pdf"
     },
     {
+      id: 36,
+      title: "La carte des 7 compétences relationnelles",
+      description: "Une fiche A4 : les 7 compétences de la communication interpersonnelle (écoute, empathie, CNV, ACR, conflit, influence sociale, intelligence sociale), leur utilité et le premier réflexe pour chacune.",
+      category: "Guides",
+      type: "PDF",
+      pages: 1,
+      rating: 5.0,
+      image: "/images/articles/guide-communication-interpersonnelle-cover.webp",
+      free: true,
+      downloadUrl: "/Downloads/guide-communication-interpersonnelle-carte.pdf"
+    },
+    {
       id: 4,
       title: "Calculateur de Sommeil",
       description: "Découvre ton heure de coucher optimale basée sur les cycles de 90 minutes. Réveille-toi FRAIS chaque matin.",

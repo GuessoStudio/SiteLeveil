@@ -263,7 +263,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
             </p>
 
             <p>
-              Selon les études menées par Shelly Gable à l'Université de Rochester, cette dynamique influence profondément la satisfaction relationnelle, parfois davantage que notre capacité à traverser ensemble les moments difficiles. Pour les moments de désaccord, la <Link to="/blog/communication-non-violente-cnv/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">communication non violente (CNV)</Link> offre un cadre complémentaire structuré en 4 étapes pour exprimer ses besoins sans créer de défense.
+              Selon les études menées par Shelly Gable à l'Université de Rochester, cette dynamique influence profondément la satisfaction relationnelle, parfois davantage que notre capacité à traverser ensemble les moments difficiles. Pour les moments de désaccord, la <Link to="/blog/communication-non-violente-cnv/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">communication non violente (CNV)</Link> offre un cadre complémentaire structuré en 4 étapes pour exprimer ses besoins sans créer de défense. La méthode ACR est l'une des 7 compétences de notre <Link to="/blog/guide-communication-interpersonnelle/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">guide de la communication interpersonnelle</Link>.
             </p>
 
             <h2>Les quatre styles de réponse aux bonnes nouvelles</h2>

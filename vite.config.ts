@@ -40,6 +40,7 @@ const ARTICLE_SLUGS = [
   'intelligence-sociale-competences-relationnelles',
   'influence-sociale-conformisme',
   'pensee-critique-developper',
+  'guide-communication-interpersonnelle',
 ]
 
 export default defineConfig(({ isSsrBuild }) => ({

@@ -269,7 +269,7 @@ export default function InfluenceSociale() {
             Depuis les années 1950, la psychologie a montré que céder au groupe n'est pas un signe de bêtise ou de faiblesse. C'est un mécanisme profondément humain, ancré dans notre besoin d'appartenance, et visible jusque dans le cerveau. Attention toutefois à une confusion fréquente : se conformer à ses pairs, comme dans l'expérience d'Asch, n'est pas la même chose qu'obéir à une autorité, comme dans celle de Milgram. On y reviendra en détail.
           </p>
           <p>
-            Cet article relie trois expériences célèbres, Asch, Milgram et l'influence minoritaire de Moscovici, en une seule histoire claire : ce qu'est le conformisme, pourquoi on y cède, ce que fait le cerveau, et comment reprendre la main. Sans jargon, et sans inventer de « zone du conformisme ».
+            Cet article relie trois expériences célèbres, Asch, Milgram et l'influence minoritaire de Moscovici, en une seule histoire claire : ce qu'est le conformisme, pourquoi on y cède, ce que fait le cerveau, et comment reprendre la main. Sans jargon, et sans inventer de « zone du conformisme ». Ce sujet fait partie de notre <Link to="/blog/guide-communication-interpersonnelle/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">guide de la communication interpersonnelle</Link>.
           </p>
 
           {/* H2 — Définition + Asch */}

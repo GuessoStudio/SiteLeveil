@@ -271,7 +271,7 @@ export default function IntelligenceSociale() {
             On la confond souvent avec le fait d'être sympathique, ou avec l'intelligence émotionnelle. C'est plus précis que ça, et surtout, ça se travaille. Depuis les années 1920, les chercheurs tentent de la définir. Le psychologue Daniel Goleman l'a popularisée en 2006 comme un ensemble de compétences relationnelles concrètes et observables.
           </p>
           <p>
-            Cet article fait ce que la plupart des pages françaises évitent : séparer clairement l'intelligence sociale de l'intelligence émotionnelle, montrer ce que le cerveau fait vraiment quand tu décodes quelqu'un, puis en tirer 7 compétences à développer. Sans slogan, et sans confondre une théorie populaire avec une preuve neurobiologique.
+            Cet article fait ce que la plupart des pages françaises évitent : séparer clairement l'intelligence sociale de l'intelligence émotionnelle, montrer ce que le cerveau fait vraiment quand tu décodes quelqu'un, puis en tirer 7 compétences à développer. Sans slogan, et sans confondre une théorie populaire avec une preuve neurobiologique. L'intelligence sociale est la compétence qui chapeaute notre <Link to="/blog/guide-communication-interpersonnelle/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">guide de la communication interpersonnelle</Link>.
           </p>
 
           {/* H2 — Définition */}

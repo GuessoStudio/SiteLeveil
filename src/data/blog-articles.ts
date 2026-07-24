@@ -389,5 +389,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/pensee-critique-developper-cover",
         slug: "pensee-critique-developper",
         featured: false
+    },
+    {
+        id: 36,
+        title: "Communication interpersonnelle : le guide complet (neurosciences et psychologie)",
+        excerpt: "Le guide complet pour améliorer ses relations : écoute, empathie, CNV, gestion des conflits et intelligence sociale, expliqués par la science. Point d'entrée vers les 7 compétences clés.",
+        category: "Relations Humaines",
+        readTime: 14,
+        date: "2026-07-10",
+        image: "/images/articles/guide-communication-interpersonnelle-cover",
+        slug: "guide-communication-interpersonnelle",
+        featured: true
     }
 ];

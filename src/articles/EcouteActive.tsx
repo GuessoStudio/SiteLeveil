@@ -350,7 +350,7 @@ export default function EcouteActive() {
             Quand cette zone se synchronise entre deux cerveaux, cela indique que les deux personnes traitent l'information de façon coordonnée — elles sont, au sens neurologique, "sur la même longueur d'onde". Cette coordination correspond à ce que les gens décrivent quand ils disent "je me suis vraiment senti compris".
           </p>
           <p>
-            Le <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique — centre du traitement émotionnel</Link> — joue également un rôle indirect : une écoute de qualité réduit l'activation de l'amygdale chez l'orateur, ce qui ouvre l'espace pour un dialogue plus fluide.
+            Le <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">système limbique — centre du traitement émotionnel</Link> — joue également un rôle indirect : une écoute de qualité réduit l'activation de l'amygdale chez l'orateur, ce qui ouvre l'espace pour un dialogue plus fluide. L'écoute active est d'ailleurs l'une des 7 compétences de notre <Link to="/blog/guide-communication-interpersonnelle/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">guide de la communication interpersonnelle</Link>.
           </p>
 
           {/* H2 — Écoute ordinaire */}

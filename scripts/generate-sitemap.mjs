@@ -63,6 +63,7 @@ const articles = [
   { path: "/blog/intelligence-sociale-competences-relationnelles/", file: "src/articles/IntelligenceSociale.tsx" },
   { path: "/blog/influence-sociale-conformisme/",                   file: "src/articles/InfluenceSociale.tsx" },
   { path: "/blog/pensee-critique-developper/",                      file: "src/articles/PenseeCritique.tsx" },
+  { path: "/blog/guide-communication-interpersonnelle/",            file: "src/articles/GuideCommunicationInterpersonnelle.tsx" },
 ];
 
 const allUrls = [

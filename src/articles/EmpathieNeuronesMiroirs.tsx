@@ -426,7 +426,7 @@ export default function EmpathieNeuronesMiroirs() {
           </p>
 
           <p>
-            Pour mieux comprendre pourquoi ces circuits émotionnels jouent un rôle aussi central, tu peux lire notre article sur <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">le système limbique et ses circuits émotionnels</Link>.
+            Pour mieux comprendre pourquoi ces circuits émotionnels jouent un rôle aussi central, tu peux lire notre article sur <Link to="/blog/systeme-limbique-cerveau-emotionnel/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">le système limbique et ses circuits émotionnels</Link>. L'empathie est l'une des 7 compétences de notre <Link to="/blog/guide-communication-interpersonnelle/" className="text-rose-700 dark:text-rose-400 underline hover:no-underline">guide de la communication interpersonnelle</Link>.
           </p>
 
           <h3>L'ocytocine : le neuromodulateur de la connexion affective</h3>
