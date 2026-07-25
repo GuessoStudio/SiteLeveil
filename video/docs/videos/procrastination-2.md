@@ -62,9 +62,9 @@
 - [x] Karaoké frame-perfect (Whisper local, `npm run words:procrastination2`)
 - [x] Rendu MP4 (`npm run render:procrastination2`)
 - [x] Couverture générée (`npm run cover:procrastination2`)
-- [ ] Sous-titres vérifiés
-- [ ] Pack réseaux (FB/IG/TikTok/YouTube)
-- [ ] Publié
+- [x] Sous-titres vérifiés
+- [x] Pack réseaux (FB/IG/TikTok/YouTube)
+- [x] Publié (2026-07-25 — heure exacte à confirmer pour le relevé)
 - [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6
 
 ## ⚠️ Notes

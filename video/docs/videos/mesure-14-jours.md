@@ -104,8 +104,8 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
-| 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — ✅ script + voix off calée (`procrastination-2`, 28,92 s, 9 plans), rendu local fait. 1ᵉʳ script à changer la recette d'ouverture TikTok (`zoom-in`+`static_noise`+`glitch` au lieu du trio `punch-head`+`flash_reverse`+`shake`, décision du 2026-07-23). Voir [procrastination-2.md](procrastination-2.md) |
-| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h |
+| 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — ✅ publié (2026-07-25), relevé en attente. 1ᵉʳ script à changer la recette d'ouverture TikTok (`zoom-in`+`static_noise`+`glitch` au lieu du trio `punch-head`+`flash_reverse`+`shake`, décision du 2026-07-23) — premier point de données sur le changement à surveiller. Voir [procrastination-2.md](procrastination-2.md) |
+| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — ✅ publié (2026-07-25). **Ne pas relever avant le cap des 72h** (2026-07-28) : la question testée est justement la tenue dans la durée, un relevé anticipé n'y répondrait pas. Voir [effet-projecteur.md](effet-projecteur.md) |
 
 ### 25 % — tester un format
 

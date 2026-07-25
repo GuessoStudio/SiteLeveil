@@ -49,15 +49,16 @@ des choix justes, gardés sans modification.
 - [x] Voix off reçue (`effet de projecteur.wav`, renommée proprement par
       l'utilisateur avant upload) + masterisée (-13,17 → -14,35 LUFS, GUIDE.md §4.1)
 - [x] Durées calées sur le mp3 réel (silencedetect fin, GUIDE.md §4.2)
-- [ ] Karaoké frame-perfect (Whisper local, `npm run words:projecteur` — à
-      lancer en local, pas dans Claude web, voir GUIDE.md §10)
-- [ ] Rendu MP4 (`npm run render:projecteur`)
-- [ ] Couverture générée (`npm run cover:projecteur`)
-- [ ] Sous-titres vérifiés (karaoké natif)
-- [ ] **Ressource « résumé » prête à envoyer aux commentaires PROJECTEUR** —
-      condition du CTA-commentaire (roadmap §4.4), à préparer avant publication
-- [ ] Pack réseaux (FB/IG/TikTok/YouTube)
-- [ ] Publié
+- [x] Karaoké frame-perfect (`words` présent dans le JSON)
+- [x] Rendu MP4 (`out/effet-projecteur.mp4` confirmé sur disque)
+- [x] Couverture générée (`out/effet-projecteur-cover.png` confirmé sur disque)
+- [ ] Sous-titres vérifiés (karaoké natif) — à visionner avant publication
+- [x] Ressource « résumé » prête à envoyer aux commentaires PROJECTEUR
+- [x] Pack réseaux (FB/IG/TikTok/YouTube)
+- [x] Publié (2026-07-25)
+- [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6 — c'est le test
+      labo #6, seuil = +3 abonnés cumulés **et** tenue à 72h (pas de relevé
+      anticipé avant le cap des 72h, la question posée est justement la durée)
 
 ## ⚠️ Notes
 
