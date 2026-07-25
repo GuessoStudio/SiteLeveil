@@ -55,10 +55,17 @@ des choix justes, gardés sans modification.
 - [ ] Sous-titres vérifiés (karaoké natif) — à visionner avant publication
 - [x] Ressource « résumé » prête à envoyer aux commentaires PROJECTEUR
 - [x] Pack réseaux (FB/IG/TikTok/YouTube)
-- [x] Publié (2026-07-25)
-- [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6 — c'est le test
-      labo #6, seuil = +3 abonnés cumulés **et** tenue à 72h (pas de relevé
-      anticipé avant le cap des 72h, la question posée est justement la durée)
+- [x] Publié (2026-07-18 — FB 12h30 · IG 18h31 · TikTok 20h00 · YT heure non capturée)
+- [x] Relevé +7j dans `mesure-14-jours.md` §6 (2026-07-25)
+
+## ✅ Verdict — relevé +7j (2026-07-25)
+
+**❌ Hypothèse infirmée.** +1 abonné cumulé (seuil +3), courbes de vues
+plates dès 24-48h sur les 4 réseaux — pas de tenue prolongée particulière.
+Signal positif : meilleure rétention TikTok du labo (42,3 %) et **seule
+vidéo labo sans le décrochage sévère à 0:01** (74 % restants à 0:01, contre
+40-64 % ailleurs) — suggère que le pattern TikTok est lié au contenu/rythme
+plutôt qu'au recipe visuel. Détail complet dans `mesure-14-jours.md` §6-7.
 
 ## ⚠️ Notes
 

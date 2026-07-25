@@ -105,7 +105,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
 | 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — **✅✅✅ CONFIRMÉ, meilleur résultat du labo** (publié 2026-07-24, relevé +19-20h : rétention YT 58,8%, 1 200 vues, +5 abonnés). Détail §6-7 |
-| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — ✅ publié (2026-07-25). **Ne pas relever avant le cap des 72h** (2026-07-28) : la question testée est justement la tenue dans la durée, un relevé anticipé n'y répondrait pas. Voir [effet-projecteur.md](effet-projecteur.md) |
+| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — **❌ ÉCHEC** (publié 2026-07-18, relevé +7j le 2026-07-25 : +1 abonné cumulé seulement, courbes de vues plates dès 24-48h sur les 4 réseaux). Détail §6-7 |
 
 ### 25 % — tester un format
 
@@ -412,6 +412,45 @@ confirmée de façon décisive.**
   interprété.
 - **Instagram** : 62 vues, meilleur chiffre IG du labo, mais 0 interaction
   — pas de changement de diagnostic sur ce canal.
-- **Prochaine action** : relever `rejet-social-2` (test #7, déjà scripté et
-  masterisé) après publication. `effet-projecteur` (test #6) reste en
-  attente de son cap des 72h (2026-07-28).
+### 2026-07-25 — Effet projecteur : hypothèse infirmée, mais 1ʳᵉ vidéo labo sans décrochage TikTok à 0:01
+
+**Verdict test #6** (le sujet tient au-delà de 72h et convertit en
+abonnés) : seuil = +3 abonnés cumulés **et** tenue à 72h. Résultat : **+1
+abonné cumulé** (YouTube seul, 0 sur les 3 autres réseaux) sur 7 jours
+complets — largement sous le seuil. Les 4 courbes de vues s'aplatissent
+dans les 24-48 premières heures, sans signe de tenue prolongée
+particulière par rapport aux autres vidéos du labo. **❌ Hypothèse
+infirmée sur les deux critères.**
+
+- **Signal positif à noter** : `effet-projecteur` obtient la **meilleure
+  rétention TikTok du labo à ce jour (42,3 %)**, et surtout **c'est la
+  1ʳᵉ vidéo du labo à ne pas montrer le décrochage sévère à 0:01** — 74 %
+  de l'audience reste au-delà de la première seconde, contre 40-64 % sur
+  les 5 autres vidéos testées. Combiné à l'observation faite sur
+  `procrastination-2` (le changement de recipe d'ouverture n'a rien changé
+  au pattern), ça renforce l'idée que le décrochage est lié au **contenu
+  ou au rythme narratif** plutôt qu'à un choix de caméra/transition
+  spécifique — `effet-projecteur` a un rythme plus posé (33,62s, 8 plans,
+  contre des scripts plus denses ailleurs). Hypothèse à creuser plus tard,
+  pas dans le cadre du labo actuel.
+- **YouTube** : 688 vues (×2,1 la médiane), bon résultat mais courbe plate
+  après 48h, cohérent avec le reste du catalogue (rien d'exceptionnel côté
+  longévité).
+- **Prochaine action** : relever `rejet-social-2` (test #7, publié le
+  2026-07-25 sur TikTok ~20h30, autres réseaux à confirmer) — c'est le
+  dernier test avant le bilan du labo (test #8 restant).
+
+### Effet projecteur (`effet-projecteur`) — relevé +7j (2026-07-25, publié 2026-07-18)
+
+⚠️ Correction : ce test avait été noté comme publié le 2026-07-25 par
+erreur — les captures confirment une publication le 2026-07-18 sur les 4
+réseaux. Le relevé ci-dessous est donc à +7 jours, pas +72h.
+
+Publication : FB 18/07 12h30 · TikTok 18/07 20h00 · IG 18/07 18h31 · YT 18/07 (heure non capturée).
+
+| Réseau | Vues | Rétention | Interactions | Abonnés | Note |
+|---|---:|---:|---|---:|---|
+| YouTube | 688 (méd. 328, ×2,1) | 44,6 % (15s/33,62s) | 235 vues engagées | +1 | 🟢 bon score, mais plus aucune croissance après 48h (0 vue sur les dernières 48h au moment du relevé) |
+| TikTok | 264 | **42,3 %** (14,21s/33,62s) | 25 likes, 1 com, 6 saves, 0 partage — engagement 12,1 % | 0 | 🟢🟢 **meilleure rétention TikTok du labo à ce jour**, et **74 % restants à 0:01** — 1ʳᵉ vidéo labo à ne PAS montrer le décrochage sévère observé sur les 5 autres |
+| Facebook | 237 (spect. 224) | 11,9 % (4s/33,62s) | 5 interactions | 0 | 🟠 fourchette basse habituelle, 86,3% de la portée hors abonnés |
+| Instagram | 120 (couv. 119) | 14,9 % (5s/33,62s) | 2 (1 like, 1 save) | 0 | 🟡 correct pour ce canal |
