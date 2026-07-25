@@ -104,7 +104,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
-| 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — ✅ publié (2026-07-25), relevé en attente. 1ᵉʳ script à changer la recette d'ouverture TikTok (`zoom-in`+`static_noise`+`glitch` au lieu du trio `punch-head`+`flash_reverse`+`shake`, décision du 2026-07-23) — premier point de données sur le changement à surveiller. Voir [procrastination-2.md](procrastination-2.md) |
+| 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — **✅✅✅ CONFIRMÉ, meilleur résultat du labo** (publié 2026-07-24, relevé +19-20h : rétention YT 58,8%, 1 200 vues, +5 abonnés). Détail §6-7 |
 | 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — ✅ publié (2026-07-25). **Ne pas relever avant le cap des 72h** (2026-07-28) : la question testée est justement la tenue dans la durée, un relevé anticipé n'y répondrait pas. Voir [effet-projecteur.md](effet-projecteur.md) |
 
 ### 25 % — tester un format
@@ -201,6 +201,19 @@ Publication : FB 13h31 · YT ~13h30 · IG 18h31 · TikTok ~20h00.
 | TikTok | 249 | 23,75 % (8,4s/35,37s) | 14 likes, 1 save, **0 partage**, 0 commentaire | 0 | ⚠️⚠️⚠️ **« arrêté à 0:01 » — 4ᵉ vidéo consécutive avec ce même décrochage** (`bdnf2`, `intestin-cerveau-2`, `dopamine-2`, `verite-illusoire`). Détail de la courbe : 64 % restants à 0:01, 50 % à 0:02, 44 % à 0:03 — le décrochage est réel mais un peu moins brutal que sur `dopamine-2` (54 % à 0:02). **0 partage TikTok** malgré le CTA dédié (« partage à quelqu'un qui répète encore ce mythe ») |
 | Facebook | 216 (spect. 202) | 17,0 % (6s/35,37s) | 2 réactions, 0 partage | 0 | 🟡 entre `bdnf2` (10,3 %) et `intestin-cerveau-2` (20,4 %), sous le seuil fort |
 | Instagram | 40 (couv. 31) | 17,0 % (6s/35,37s) | 0 interaction | 0 | 🔴 nettement sous les lectures précédentes (120-163 vues) — canal faible confirmé, aucune traction sur ce format non plus |
+
+---
+
+### Procrastination (`procrastination-2`) — relevé ~+19-20h (2026-07-25, publié 2026-07-24)
+
+Publication : FB 12h27 · YT ~13h · IG 18h25 · TikTok ~20h00 (heures non confirmées explicitement, déduites des captures).
+
+| Réseau | Vues | Rétention | Interactions | Abonnés | Note |
+|---|---:|---:|---|---:|---|
+| YouTube | **1 200** (méd. 328, +598 vs habitude) | **58,8 %** (17s/28,92s) | 327 vues engagées | **+5** | 🟢🟢🟢 **meilleur score de rétention de tout le labo** (devant `intestin-cerveau-2` 45%), 2× les vues habituelles, engagement spectateurs 25,1%/74,9% |
+| TikTok | 253 | 22,5 % (6,52s/28,92s) | 25 likes, 5 saves, 0 com/partage — engagement 11,9 % (bien > baseline 5,5 %) | 0 | ⚠️⚠️⚠️⚠️⚠️ **« arrêté à 0:01 » — 5ᵉ vidéo consécutive**, ET **1ʳᵉ avec la nouvelle recette d'ouverture** (`zoom-in`+`static_noise`+`glitch`). Magnitude quasi identique à `dopamine-2` (54% restants à 0:02 dans les deux cas) — la nouvelle recette n'a rien changé au pattern |
+| Facebook | 19 (spect. 7) | ~52 % (15s/28,92s) — échantillon trop petit pour être fiable | 1 réaction | 0 | 🟡 N trop faible (19 vues) pour tirer une conclusion |
+| Instagram | 62 (couv. 56) | ~12 % (3,44s/28,92s estimé) | 0 interaction | 0 | 🟡 meilleur nombre de vues IG du labo à ce jour, mais toujours 0 interaction |
 
 ---
 
@@ -367,3 +380,38 @@ définie dans le critère de succès.
   « développer les prometteurs ». Ensuite, test #6 (effet projecteur, suite)
   nécessite d'abord de publier l'`effet-projecteur` original (jamais encore
   publié, seulement rendu) avant de pouvoir mesurer une tenue à 72h.
+
+### 2026-07-25 — Procrastination : hypothèse confirmée, meilleur résultat retention YT du labo — et signal fort sur le pattern TikTok
+
+**Verdict test #5** (réécrire l'accroche fait passer la rétention YT de
+8,5 % à > 15 %) : seuil = rétention YT ≥ 15 %. Résultat : **58,8 %**, très
+largement au-dessus du seuil et **le meilleur score de rétention YouTube de
+tout le labo à ce jour** (devant `intestin-cerveau-2` à ~45 %). Vues YT
+1 200, 2× la performance habituelle, +5 abonnés. **✅✅✅ Hypothèse
+confirmée de façon décisive.**
+
+- **À reproduire** : la technique de tension narrative (négation sans
+  révéler la cause avant l'intervention d'un chercheur nommé) — déjà vue
+  sur `bdnf2` — est maintenant confirmée 2/2 comme le levier de rétention
+  le plus fiable du catalogue. À généraliser sur les prochains scripts,
+  labo et roadmap.
+- **🚨 Signal important sur le pattern TikTok** : `procrastination-2` est
+  la 1ʳᵉ vidéo avec la nouvelle recette d'ouverture (`zoom-in`+
+  `static_noise`+`glitch`, décidée le 2026-07-23 pour remplacer le trio
+  `punch-head`+`flash_reverse`+`shake`). Résultat : **le décrochage à
+  0:01 est toujours là**, avec une magnitude quasi identique à
+  `dopamine-2` (54 % restants à 0:02 dans les deux cas, ancienne ET
+  nouvelle recette). **Conclusion révisée** : le trio d'ouverture n'était
+  probablement pas la vraie cause du pattern — c'est plus probablement un
+  comportement structurel de l'audience TikTok de ce compte sur ce format
+  de vidéo (durée, rythme, ton), pas un problème de recipe visuelle
+  spécifique. Ne pas continuer à changer la recette d'ouverture sur cette
+  seule base ; si le sujet reste à creuser, il faudra une hypothèse
+  différente (ex. durée totale, densité de coupes, personnage lui-même).
+- **Facebook** : 19 vues seulement, échantillon trop petit pour être
+  interprété.
+- **Instagram** : 62 vues, meilleur chiffre IG du labo, mais 0 interaction
+  — pas de changement de diagnostic sur ce canal.
+- **Prochaine action** : relever `rejet-social-2` (test #7, déjà scripté et
+  masterisé) après publication. `effet-projecteur` (test #6) reste en
+  attente de son cap des 72h (2026-07-28).

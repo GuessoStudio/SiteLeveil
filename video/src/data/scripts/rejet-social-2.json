@@ -18,19 +18,786 @@
     "burst": false
   },
   "scenes": [
-    {"duration":3.02,"keyword":"SUR « VU »","keywordFx":"glitch","subtitle":"Ton message reste sur « vu ».","pose":"cross","emotion":"peur","mode":"emotions","accent":"stress","camera":"zoom-in","position":"center","transition":"static_noise","fx":"tunnel_vision"},
-    {"duration":1.51,"keyword":"TROIS HEURES","subtitle":"Depuis trois heures.","pose":"cross","emotion":"tristesse","mode":"emotions","accent":"stress","camera":"static","position":"center","fx":"tunnel_vision"},
-    {"duration":1.51,"keyword":"TU RAFRAÎCHIS ENCORE","subtitle":"Tu rafraîchis encore.","pose":"point","emotion":"surcharge","mode":"emotions","accent":"stress","camera":"cine","position":"center","transition":"color_shift","fx":"rumination_loop"},
-    {"duration":2.80,"keyword":"COMME UNE BRÛLURE","keywordFx":"shake","subtitle":"Le rejet social allume les mêmes zones cérébrales qu'une brûlure.","pose":"cross","emotion":"peur","mode":"neuro","accent":"stress","camera":"punch-head","transition":"flash_reverse","fx":"empathy_pulse","icon":"flame","burst":"head","position":"center"},
-    {"duration":2.34,"keyword":"PAS UNE IMAGE","subtitle":"Littéralement. Pas une image. Une vraie douleur, mesurée en laboratoire.","pose":"point","emotion":"focus","mode":"neuro","accent":"stress","camera":"cine","fx":"attention_spotlight","icon":"eye","position":"left"},
-    {"duration":4.35,"keyword":"LE JEU DE BALLE VIRTUEL","subtitle":"Des chercheurs ont fait jouer des participants à un jeu de balle virtuel,","pose":"think","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"cine","fx":"social_network","icon":"users","position":"center"},
-    {"duration":2.88,"keyword":"PUIS EXCLU","subtitle":"truqué pour qu'à un moment, les deux autres joueurs les excluent.","pose":"shrug","emotion":"tristesse","mode":"neuro","accent":"stress","camera":"cine","transition":"zoom_smash","fx":"tunnel_vision","sfx":"tape_stop","icon":"target","position":"right"},
-    {"duration":2.12,"keyword":"NAOMI EISENBERGER","subtitle":"Naomi Eisenberger, de l'université UCLA,","credit":"Naomi Eisenberger · UCLA","pose":"think","emotion":"focus","mode":"neuro","accent":"stress","camera":"cine","fx":"attention_spotlight","icon":"eye","position":"left"},
-    {"duration":2.54,"keyword":"OBSERVE LEUR CERVEAU","subtitle":"a observé leur cerveau pendant l'exclusion.","pose":"open","emotion":"focus","mode":"neuro","accent":"stress","camera":"cine","fx":"brain_highlight_head","icon":"brain","position":"center"},
-    {"duration":3.36,"keyword":"MÊME ZONE QUE LA DOULEUR","keywordFx":"shake","subtitle":"Le cortex cingulaire antérieur s'activait, la même zone qu'en cas de douleur physique.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","transition":"color_shift","fx":"empathy_pulse","icon":"brain","position":"right"},
-    {"duration":3.62,"keyword":"PAS DE DIFFÉRENCE","subtitle":"Ton cerveau ne fait pas vraiment la différence entre une coupure et un rejet.","pose":"point","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","fx":"synapse_fire","icon":"lightbulb","position":"left"},
-    {"duration":3.36,"keyword":"PAS DE LA FAIBLESSE","subtitle":"Alors si un rejet te fait mal, ce n'est pas de la faiblesse.","pose":"open","emotion":"eveil","mode":"eveil","accent":"eveil","camera":"cine","fx":"reset_breath","icon":"heart","position":"center"},
-    {"duration":1.03,"keyword":"DE LA BIOLOGIE","subtitle":"C'est de la biologie.","pose":"cross","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"cine","transition":"blackout","fx":"gratitude_glow","icon":"brain","burst":"head","position":"center"},
-    {"duration":1.30,"keyword":"L'ARTICLE COMPLET","subtitle":"L'article complet est sur leveilmental.fr.","pose":"wave","emotion":"joie","mode":"eveil","accent":"eveil","camera":"punch-head","transition":"blackout","fx":"gratitude_glow","icon":"brain","burst":"head","position":"center"}
+    {
+      "duration": 3.02,
+      "keyword": "SUR « VU »",
+      "keywordFx": "glitch",
+      "subtitle": "Ton message reste sur « vu ».",
+      "pose": "cross",
+      "emotion": "peur",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "zoom-in",
+      "position": "center",
+      "transition": "static_noise",
+      "fx": "tunnel_vision"
+    },
+    {
+      "duration": 1.51,
+      "keyword": "TROIS HEURES",
+      "subtitle": "Depuis trois heures.",
+      "pose": "cross",
+      "emotion": "tristesse",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "static",
+      "position": "center",
+      "fx": "tunnel_vision"
+    },
+    {
+      "duration": 1.51,
+      "keyword": "TU RAFRAÎCHIS ENCORE",
+      "subtitle": "Tu rafraîchis encore.",
+      "pose": "point",
+      "emotion": "surcharge",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift",
+      "fx": "rumination_loop"
+    },
+    {
+      "duration": 2.8,
+      "keyword": "COMME UNE BRÛLURE",
+      "keywordFx": "shake",
+      "subtitle": "Le rejet social allume les mêmes zones cérébrales qu'une brûlure.",
+      "pose": "cross",
+      "emotion": "peur",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "punch-head",
+      "transition": "flash_reverse",
+      "fx": "empathy_pulse",
+      "icon": "flame",
+      "burst": "head",
+      "position": "center"
+    },
+    {
+      "duration": 2.34,
+      "keyword": "PAS UNE IMAGE",
+      "subtitle": "Littéralement. Pas une image. Une vraie douleur, mesurée en laboratoire.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "fx": "attention_spotlight",
+      "icon": "eye",
+      "position": "left"
+    },
+    {
+      "duration": 4.35,
+      "keyword": "LE JEU DE BALLE VIRTUEL",
+      "subtitle": "Des chercheurs ont fait jouer des participants à un jeu de balle virtuel,",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "fx": "social_network",
+      "icon": "users",
+      "position": "center"
+    },
+    {
+      "duration": 2.88,
+      "keyword": "PUIS EXCLU",
+      "subtitle": "truqué pour qu'à un moment, les deux autres joueurs les excluent.",
+      "pose": "shrug",
+      "emotion": "tristesse",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "transition": "zoom_smash",
+      "fx": "tunnel_vision",
+      "sfx": "tape_stop",
+      "icon": "target",
+      "position": "right"
+    },
+    {
+      "duration": 2.12,
+      "keyword": "NAOMI EISENBERGER",
+      "subtitle": "Naomi Eisenberger, de l'université UCLA,",
+      "credit": "Naomi Eisenberger · UCLA",
+      "pose": "think",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "fx": "attention_spotlight",
+      "icon": "eye",
+      "position": "left"
+    },
+    {
+      "duration": 2.54,
+      "keyword": "OBSERVE LEUR CERVEAU",
+      "subtitle": "a observé leur cerveau pendant l'exclusion.",
+      "pose": "open",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "fx": "brain_highlight_head",
+      "icon": "brain",
+      "position": "center"
+    },
+    {
+      "duration": 3.36,
+      "keyword": "MÊME ZONE QUE LA DOULEUR",
+      "keywordFx": "shake",
+      "subtitle": "Le cortex cingulaire antérieur s'activait, la même zone qu'en cas de douleur physique.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "color_shift",
+      "fx": "empathy_pulse",
+      "icon": "brain",
+      "position": "right"
+    },
+    {
+      "duration": 3.62,
+      "keyword": "PAS DE DIFFÉRENCE",
+      "subtitle": "Ton cerveau ne fait pas vraiment la différence entre une coupure et un rejet.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "fx": "synapse_fire",
+      "icon": "lightbulb",
+      "position": "left"
+    },
+    {
+      "duration": 3.36,
+      "keyword": "PAS DE LA FAIBLESSE",
+      "subtitle": "Alors si un rejet te fait mal, ce n'est pas de la faiblesse.",
+      "pose": "open",
+      "emotion": "eveil",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "fx": "reset_breath",
+      "icon": "heart",
+      "position": "center"
+    },
+    {
+      "duration": 1.03,
+      "keyword": "DE LA BIOLOGIE",
+      "subtitle": "C'est de la biologie.",
+      "pose": "cross",
+      "emotion": "fierte",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "brain",
+      "burst": "head",
+      "position": "center"
+    },
+    {
+      "duration": 1.3,
+      "keyword": "L'ARTICLE COMPLET",
+      "subtitle": "L'article complet est sur leveilmental.fr.",
+      "pose": "wave",
+      "emotion": "joie",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "brain",
+      "burst": "head",
+      "position": "center"
+    }
+  ],
+  "words": [
+    {
+      "w": "Ton",
+      "start": 0.0,
+      "end": 0.1
+    },
+    {
+      "w": "message",
+      "start": 0.1,
+      "end": 0.32
+    },
+    {
+      "w": "reste",
+      "start": 0.32,
+      "end": 0.58
+    },
+    {
+      "w": "sur",
+      "start": 0.58,
+      "end": 0.656
+    },
+    {
+      "w": "«",
+      "start": 0.656,
+      "end": 0.732
+    },
+    {
+      "w": "vu",
+      "start": 0.732,
+      "end": 0.808
+    },
+    {
+      "w": "».",
+      "start": 0.808,
+      "end": 0.884
+    },
+    {
+      "w": "Depuis",
+      "start": 0.96,
+      "end": 1.28
+    },
+    {
+      "w": "trois",
+      "start": 1.28,
+      "end": 1.64
+    },
+    {
+      "w": "heures.",
+      "start": 1.64,
+      "end": 1.92
+    },
+    {
+      "w": "Tu",
+      "start": 2.08,
+      "end": 2.16
+    },
+    {
+      "w": "rafraîchis",
+      "start": 2.16,
+      "end": 2.37
+    },
+    {
+      "w": "encore.",
+      "start": 2.58,
+      "end": 2.84
+    },
+    {
+      "w": "Le",
+      "start": 3.34,
+      "end": 3.46
+    },
+    {
+      "w": "rejet",
+      "start": 3.46,
+      "end": 3.7
+    },
+    {
+      "w": "social",
+      "start": 3.7,
+      "end": 3.9
+    },
+    {
+      "w": "allume",
+      "start": 3.9,
+      "end": 4.4
+    },
+    {
+      "w": "les",
+      "start": 4.4,
+      "end": 4.54
+    },
+    {
+      "w": "mêmes",
+      "start": 4.54,
+      "end": 4.7
+    },
+    {
+      "w": "zones",
+      "start": 4.7,
+      "end": 4.92
+    },
+    {
+      "w": "cérébrales",
+      "start": 4.92,
+      "end": 5.36
+    },
+    {
+      "w": "qu'une",
+      "start": 5.36,
+      "end": 5.47
+    },
+    {
+      "w": "brûlure.",
+      "start": 5.58,
+      "end": 5.92
+    },
+    {
+      "w": "Littéralement.",
+      "start": 6.34,
+      "end": 6.78
+    },
+    {
+      "w": "Pas",
+      "start": 7.04,
+      "end": 7.14
+    },
+    {
+      "w": "une",
+      "start": 7.14,
+      "end": 7.3
+    },
+    {
+      "w": "image.",
+      "start": 7.3,
+      "end": 7.62
+    },
+    {
+      "w": "Une",
+      "start": 8.02,
+      "end": 8.18
+    },
+    {
+      "w": "vraie",
+      "start": 8.18,
+      "end": 8.5
+    },
+    {
+      "w": "douleur,",
+      "start": 8.5,
+      "end": 8.92
+    },
+    {
+      "w": "mesurée",
+      "start": 8.92,
+      "end": 9.4
+    },
+    {
+      "w": "en",
+      "start": 9.4,
+      "end": 9.52
+    },
+    {
+      "w": "laboratoire.",
+      "start": 9.52,
+      "end": 10.04
+    },
+    {
+      "w": "Des",
+      "start": 10.6,
+      "end": 10.76
+    },
+    {
+      "w": "chercheurs",
+      "start": 10.76,
+      "end": 11.16
+    },
+    {
+      "w": "ont",
+      "start": 11.16,
+      "end": 11.34
+    },
+    {
+      "w": "fait",
+      "start": 11.34,
+      "end": 11.5
+    },
+    {
+      "w": "jouer",
+      "start": 11.5,
+      "end": 11.64
+    },
+    {
+      "w": "des",
+      "start": 11.64,
+      "end": 11.8
+    },
+    {
+      "w": "participants",
+      "start": 11.8,
+      "end": 12.22
+    },
+    {
+      "w": "à",
+      "start": 12.22,
+      "end": 12.38
+    },
+    {
+      "w": "un",
+      "start": 12.38,
+      "end": 12.44
+    },
+    {
+      "w": "jeu",
+      "start": 12.44,
+      "end": 12.56
+    },
+    {
+      "w": "de",
+      "start": 12.56,
+      "end": 12.68
+    },
+    {
+      "w": "balle",
+      "start": 12.68,
+      "end": 12.9
+    },
+    {
+      "w": "virtuel,",
+      "start": 12.9,
+      "end": 13.313
+    },
+    {
+      "w": "truqué",
+      "start": 13.313,
+      "end": 13.727
+    },
+    {
+      "w": "pour",
+      "start": 14.14,
+      "end": 14.26
+    },
+    {
+      "w": "qu'à",
+      "start": 14.26,
+      "end": 14.32
+    },
+    {
+      "w": "un",
+      "start": 14.38,
+      "end": 14.48
+    },
+    {
+      "w": "moment,",
+      "start": 14.48,
+      "end": 14.74
+    },
+    {
+      "w": "les",
+      "start": 15.12,
+      "end": 15.2
+    },
+    {
+      "w": "deux",
+      "start": 15.2,
+      "end": 15.34
+    },
+    {
+      "w": "autres",
+      "start": 15.34,
+      "end": 15.52
+    },
+    {
+      "w": "joueurs",
+      "start": 15.52,
+      "end": 15.82
+    },
+    {
+      "w": "les",
+      "start": 15.82,
+      "end": 15.94
+    },
+    {
+      "w": "excluent.",
+      "start": 15.94,
+      "end": 16.39
+    },
+    {
+      "w": "Naomi",
+      "start": 16.84,
+      "end": 17.16
+    },
+    {
+      "w": "Eisenberger,",
+      "start": 17.16,
+      "end": 17.51
+    },
+    {
+      "w": "de",
+      "start": 17.86,
+      "end": 18.04
+    },
+    {
+      "w": "l'université",
+      "start": 18.04,
+      "end": 18.41
+    },
+    {
+      "w": "UCLA,",
+      "start": 18.78,
+      "end": 19.18
+    },
+    {
+      "w": "a",
+      "start": 19.18,
+      "end": 19.7
+    },
+    {
+      "w": "observé",
+      "start": 19.7,
+      "end": 20.1
+    },
+    {
+      "w": "leur",
+      "start": 20.1,
+      "end": 20.247
+    },
+    {
+      "w": "cerveau",
+      "start": 20.247,
+      "end": 20.393
+    },
+    {
+      "w": "pendant",
+      "start": 20.54,
+      "end": 20.74
+    },
+    {
+      "w": "l'exclusion.",
+      "start": 20.74,
+      "end": 21.14
+    },
+    {
+      "w": "Le",
+      "start": 21.54,
+      "end": 21.62
+    },
+    {
+      "w": "cortex",
+      "start": 21.62,
+      "end": 21.86
+    },
+    {
+      "w": "cingulaire",
+      "start": 21.86,
+      "end": 22.13
+    },
+    {
+      "w": "antérieur",
+      "start": 22.4,
+      "end": 22.72
+    },
+    {
+      "w": "s'activait,",
+      "start": 22.72,
+      "end": 23.13
+    },
+    {
+      "w": "la",
+      "start": 23.54,
+      "end": 23.66
+    },
+    {
+      "w": "même",
+      "start": 23.66,
+      "end": 23.86
+    },
+    {
+      "w": "zone",
+      "start": 23.86,
+      "end": 24.24
+    },
+    {
+      "w": "qu'en",
+      "start": 24.24,
+      "end": 24.42
+    },
+    {
+      "w": "cas",
+      "start": 24.6,
+      "end": 24.76
+    },
+    {
+      "w": "de",
+      "start": 24.76,
+      "end": 24.88
+    },
+    {
+      "w": "douleur",
+      "start": 24.88,
+      "end": 25.18
+    },
+    {
+      "w": "physique.",
+      "start": 25.18,
+      "end": 25.5
+    },
+    {
+      "w": "Ton",
+      "start": 25.92,
+      "end": 26.02
+    },
+    {
+      "w": "cerveau",
+      "start": 26.02,
+      "end": 26.3
+    },
+    {
+      "w": "ne",
+      "start": 26.3,
+      "end": 26.4
+    },
+    {
+      "w": "fait",
+      "start": 26.4,
+      "end": 26.5
+    },
+    {
+      "w": "pas",
+      "start": 26.5,
+      "end": 26.64
+    },
+    {
+      "w": "vraiment",
+      "start": 26.64,
+      "end": 26.84
+    },
+    {
+      "w": "la",
+      "start": 26.84,
+      "end": 26.98
+    },
+    {
+      "w": "différence",
+      "start": 26.98,
+      "end": 27.32
+    },
+    {
+      "w": "entre",
+      "start": 27.32,
+      "end": 27.68
+    },
+    {
+      "w": "une",
+      "start": 27.68,
+      "end": 27.84
+    },
+    {
+      "w": "coupure",
+      "start": 27.84,
+      "end": 28.28
+    },
+    {
+      "w": "et",
+      "start": 28.28,
+      "end": 28.5
+    },
+    {
+      "w": "un",
+      "start": 28.5,
+      "end": 28.68
+    },
+    {
+      "w": "rejet.",
+      "start": 28.68,
+      "end": 29.0
+    },
+    {
+      "w": "Alors",
+      "start": 29.0,
+      "end": 29.7
+    },
+    {
+      "w": "si",
+      "start": 29.7,
+      "end": 29.96
+    },
+    {
+      "w": "un",
+      "start": 29.96,
+      "end": 30.06
+    },
+    {
+      "w": "rejet",
+      "start": 30.06,
+      "end": 30.36
+    },
+    {
+      "w": "te",
+      "start": 30.36,
+      "end": 30.36
+    },
+    {
+      "w": "fait",
+      "start": 30.36,
+      "end": 30.56
+    },
+    {
+      "w": "mal,",
+      "start": 30.56,
+      "end": 30.86
+    },
+    {
+      "w": "ce",
+      "start": 31.1,
+      "end": 31.2
+    },
+    {
+      "w": "n'est",
+      "start": 31.2,
+      "end": 31.28
+    },
+    {
+      "w": "pas",
+      "start": 31.36,
+      "end": 31.5
+    },
+    {
+      "w": "de",
+      "start": 31.5,
+      "end": 31.6
+    },
+    {
+      "w": "la",
+      "start": 31.6,
+      "end": 31.68
+    },
+    {
+      "w": "faiblesse.",
+      "start": 31.68,
+      "end": 32.14
+    },
+    {
+      "w": "C'est",
+      "start": 32.14,
+      "end": 32.35
+    },
+    {
+      "w": "de",
+      "start": 32.56,
+      "end": 32.66
+    },
+    {
+      "w": "la",
+      "start": 32.66,
+      "end": 32.76
+    },
+    {
+      "w": "biologie.",
+      "start": 32.76,
+      "end": 33.36
+    },
+    {
+      "w": "L'article",
+      "start": 33.36,
+      "end": 33.64
+    },
+    {
+      "w": "complet",
+      "start": 33.92,
+      "end": 34.26
+    },
+    {
+      "w": "est",
+      "start": 34.26,
+      "end": 34.26
+    },
+    {
+      "w": "sur",
+      "start": 34.26,
+      "end": 34.52
+    },
+    {
+      "w": "leveilmental.fr.",
+      "start": 34.52,
+      "end": 34.82
+    }
   ]
 }

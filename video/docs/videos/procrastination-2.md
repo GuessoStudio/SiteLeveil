@@ -65,7 +65,23 @@
 - [x] Sous-titres vérifiés
 - [x] Pack réseaux (FB/IG/TikTok/YouTube)
 - [x] Publié (2026-07-25 — heure exacte à confirmer pour le relevé)
-- [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6
+- [x] Relevé +19-20h dans `mesure-14-jours.md` §6 (2026-07-25)
+- [ ] Relevés +72h / +7j dans `mesure-14-jours.md` §6
+
+## ✅ Verdict — relevé +19-20h (2026-07-25)
+
+**✅✅✅ Hypothèse confirmée de façon décisive — meilleur score de
+rétention YouTube de tout le labo.** Rétention YT 58,8 % (17s/28,92s, seuil
+15 %), 1 200 vues (2× la moyenne habituelle), +5 abonnés. La tension
+narrative de l'accroche (négation sans révéler, confirmée 2/2 avec `bdnf2`)
+est le levier de rétention le plus fiable observé à ce jour. TikTok :
+22,5 % de rétention, engagement 11,9 % (bien au-dessus de la baseline), mais
+toujours « arrêté à 0:01 » — **avec la nouvelle recette d'ouverture, à
+magnitude quasi identique à l'ancienne recette sur `dopamine-2`**, ce qui
+remet en question l'hypothèse que le trio d'ouverture était la cause du
+pattern. Facebook : échantillon trop petit (19 vues). Instagram : meilleur
+chiffre du labo (62 vues) mais toujours 0 interaction. Détail complet dans
+`mesure-14-jours.md` §6-7 (entrée 2026-07-25).
 
 ## ⚠️ Notes
 
