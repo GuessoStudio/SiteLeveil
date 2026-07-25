@@ -1,0 +1,25 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "bdnf2.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {"pose":"idle","emotion":"calme","mode":"eveil","position":"center","camera":"cine","fx":"none","accent":"eveil","burst":false},
+  "scenes": [
+    {"duration":3.48,"keyword":"ENCORE ET ENCORE","keywordFx":"shake","subtitle":"Tu as essayé de changer. Encore et encore. Et rien n'a tenu.","pose":"cross","emotion":"fatigue","mode":"emotions","accent":"stress","camera":"punch-head","position":"center","transition":"flash_reverse","fx":"attention_spotlight","burst":"head"},
+    {"duration":2.34,"keyword":"PAS UN MANQUE DE VOLONTÉ","subtitle":"Ce n'est pas parce que tu ne le veux pas assez.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift","fx":"reset_breath"},
+    {"duration":5.74,"keyword":"LE BDNF","subtitle":"Ce signal, c'est une protéine que ton cerveau fabrique pour renforcer ses connexions : le BDNF.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift","fx":"synapse_fire","icon":"link"},
+    {"duration":4.32,"keyword":"LA SCIENCE","subtitle":"Carl Cotman, de l'université de Californie à Irvine, l'a démontré le premier.","pose":"point","emotion":"insight","mode":"neuro","accent":"neuro","camera":"cine","position":"left","transition":"color_shift","fx":"brain_highlight_head","icon":"eye","credit":"Carl Cotman · UC Irvine"},
+    {"duration":1.44,"keyword":"JARDIN MENTAL","subtitle":"Imagine un jardin mental :","pose":"open","emotion":"calme","mode":"eveil","accent":"growth","camera":"cine","position":"center","transition":"color_shift","fx":"reset_breath","icon":"leaf"},
+    {"duration":2.52,"keyword":"UN CHEMIN","subtitle":"chaque pensée, chaque habitude trace un chemin.","pose":"point","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"right","fx":"momentum_trail","icon":"leaf"},
+    {"duration":2.52,"keyword":"RENFORCÉ","subtitle":"Le BDNF rend ce chemin plus praticable.","pose":"open","emotion":"insight","mode":"eveil","accent":"growth","camera":"cine","position":"center","fx":"neuroplasticity","icon":"brain","burst":"head"},
+    {"duration":3.58,"keyword":"PAS L'INTENTION","keywordFx":"glitch","subtitle":"Mais il ne répond pas à l'intention.","pose":"shrug","emotion":"confusion","mode":"neuro","accent":"stress","camera":"cine","position":"center","transition":"zoom_smash","fx":"cognitive_overload","sfx":"tape_stop","icon":"spiral"},
+    {"duration":3.72,"keyword":"LA RÉPÉTITION","subtitle":"Il répond à la répétition : bouger, apprendre, dormir, s'exposer à l'effort.","pose":"point","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"left","transition":"color_shift","fx":"habit_chain","icon":"target","burst":"head"},
+    {"duration":2.36,"keyword":"PAS FORCER","subtitle":"Changer, ce n'est pas forcer ton cerveau.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","fx":"none"},
+    {"duration":2.70,"keyword":"SE RECÂBLER","subtitle":"C'est créer les conditions pour qu'il se recâble.","pose":"open","emotion":"eveil","mode":"eveil","accent":"eveil","camera":"cine","position":"center","fx":"neuroplasticity","icon":"spiral","burst":"head"},
+    {"duration":4.40,"keyword":"ENTRAÎNE-LE","keywordFx":"shake","subtitle":"Garde cette vidéo si tu veux entraîner ton cerveau, pas seulement le motiver.","pose":"wave","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"punch-head","position":"center","transition":"blackout","fx":"gratitude_glow","icon":"bolt","burst":"head"}
+  ]
+}

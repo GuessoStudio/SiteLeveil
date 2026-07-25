@@ -1,0 +1,35 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "dopamine-2.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {"duration":2.68,"keyword":"100 MILLISECONDES","keywordFx":"shake","subtitle":"Ton cerveau libère de la dopamine en 100 millisecondes.","pose":"point","emotion":"focus","mode":"neuro","accent":"neuro","camera":"punch-head","transition":"flash_reverse","fx":"dopamine_molecules","icon":"bolt","burst":"head","position":"center"},
+    {"duration":1.46,"keyword":"PAS POUR ÇA","subtitle":"Mais pas pour la raison que tu crois.","pose":"shrug","emotion":"confusion","mode":"neuro","accent":"neuro","camera":"cine","fx":"dopamine_molecules","icon":"eye","position":"left"},
+    {"duration":1.97,"keyword":"PAS LE PLAISIR","keywordFx":"shake","subtitle":"La dopamine n'est pas l'hormone du plaisir.","pose":"cross","emotion":"confusion","mode":"neuro","accent":"neuro","camera":"punch-head","transition":"flash_reverse","fx":"dopamine_molecules","icon":"bolt","burst":"head","position":"center"},
+    {"duration":1.40,"keyword":"L'ANTICIPATION DU PLAISIR","keywordFx":"shake","subtitle":"C'est l'hormone de l'anticipation du plaisir.","pose":"point","emotion":"insight","mode":"neuro","accent":"neuro","camera":"cine","fx":"dopamine_molecules","icon":"target","position":"left"},
+    {"duration":3.50,"keyword":"WOLFRAM SCHULTZ","subtitle":"Le neuroscientifique Wolfram Schultz, de l'université de Cambridge,","credit":"Wolfram Schultz · Université de Cambridge","pose":"think","emotion":"focus","mode":"neuro","accent":"neuro","camera":"cine","fx":"attention_spotlight","icon":"eye","position":"center"},
+    {"duration":4.06,"keyword":"NEURONES À DOPAMINE","subtitle":"a enregistré l'activité de neurones à dopamine chez des singes, pendant une tâche simple.","pose":"open","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"cine","fx":"synapse_fire","icon":"brain","position":"left"},
+    {"duration":3.46,"keyword":"IL S'ATTENDAIT À...","subtitle":"Il s'attendait à voir la dopamine monter au moment de la récompense.","pose":"think","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"cine","fx":"goal_beacon","icon":"target","position":"right"},
+    {"duration":3.34,"keyword":"MAIS AVANT","keywordFx":"shake","subtitle":"Mais elle montait avant. Au moment où le singe anticipait la récompense.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","transition":"zoom_smash","fx":"goal_beacon","sfx":"tape_stop","icon":"bolt","burst":"head","position":"center"},
+    {"duration":3.07,"keyword":"ELLE SIGNALE L'ATTENTE","subtitle":"La dopamine ne signale pas le plaisir. Elle signale l'attente.","pose":"point","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","transition":"color_shift","fx":"synapse_fire","icon":"lightbulb","position":"left"},
+    {"duration":2.85,"keyword":"UN LIKE, UN MAIL","subtitle":"C'est pour ça qu'un like, une notification, un mail,","pose":"open","emotion":"focus","mode":"eveil","accent":"dopamine","camera":"cine","fx":"dopamine_molecules","icon":"bolt","position":"center"},
+    {"duration":3.98,"keyword":"PLUS QUE LE LIRE","subtitle":"te fait vérifier ton téléphone plus que le fait de le lire.","pose":"cross","emotion":"surcharge","mode":"eveil","accent":"dopamine","camera":"cine","fx":"habit_chain","icon":"link","position":"right"},
+    {"duration":3.65,"keyword":"L'ATTENTE, PAS LA RÉCOMPENSE","subtitle":"Ce n'est pas la récompense qui t'accroche. C'est l'attente d'une récompense.","pose":"open","emotion":"eveil","mode":"eveil","accent":"eveil","camera":"cine","transition":"color_shift","fx":"synapse_fire","icon":"lightbulb","position":"center"},
+    {"duration":1.66,"keyword":"L'ARTICLE COMPLET","subtitle":"L'article complet est sur leveilmental.fr.","pose":"wave","emotion":"joie","mode":"eveil","accent":"eveil","camera":"punch-head","transition":"blackout","fx":"gratitude_glow","icon":"brain","burst":"head","position":"center"}
+  ]
+}

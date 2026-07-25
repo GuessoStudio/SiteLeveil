@@ -10,6 +10,8 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 📖 Guide de production A→Z (workflow, recettes, feuille de route) : [GUIDE.md](GUIDE.md)
 🧭 Feuille de route éditoriale (formule gagnante, 4 séries, pipeline dédupliqué) : [roadmap-editoriale.md](roadmap-editoriale.md)
 📜 Tous les scripts (texte parlé, prêts à lire) en un seul endroit : [SCRIPTS.md](SCRIPTS.md)
+🧪 Protocole de mesure Metricool + labo 14 jours (baseline, seuils, journal des relevés) : [mesure-14-jours.md](mesure-14-jours.md)
+📥 Proposition en attente — hook différencié par plateforme (à trancher après le bilan du labo) : [proposition-hook-par-plateforme.md](proposition-hook-par-plateforme.md)
 
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
 |---|---|---|---|---|---|---|---|
@@ -27,6 +29,11 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | dopamine-schultz | La dopamine n'est pas l'hormone du plaisir | Neurosciences | 35,00s | 🎙️💬 (karaoké Whisper fait — rendu à faire) | — | — | [fiche](dopamine-schultz.md) |
 | procrastination | Tu ne procrastines pas par paresse | Psychologie | 27,09s | 🎙️💬 (karaoké Whisper fait, pack réseaux livré — rendu à faire) | — | — | [fiche](procrastination.md) |
 | effet-projecteur | Personne ne te regarde autant que tu le crois | Psycho sociale | 33,62s | 🎙️ (script revu + voix off masterisée + durées calées — karaoké/rendu à faire) | — | — | [fiche](effet-projecteur.md) |
+| bdnf2 | BDNF #2 — test hook émotionnel (labo 14 jours #1) | Neurosciences | 39,09s | 🚀 publié (2026-07-20) — ✅ rétention 32,5% confirmée | 346 (YT) | 32,5% (YT) | [fiche](bdnf2.md) |
+| intestin-cerveau-2 | Sérotonine (intestin) #2 — test durée <30s (labo 14 jours #2) | Neuro / Psycho | 29,36s | 🚀 publié (2026-07-21) — ✅✅ meilleur résultat du labo | 1 408 (YT) | ~45% (YT) | [fiche](intestin-cerveau-2.md) |
+| dopamine-2 | Dopamine #2 — test hook chiffre/corps (labo 14 jours #3) | Neurosciences | 37,09s | 🚀 publié (2026-07-22) — ❌ seuil vues YT non atteint (269/600) | 269 (YT) | 37,8% (YT) | [fiche](dopamine-2.md) |
+| verite-illusoire | Effet de vérité illusoire — mini-test en ouverture (labo 14 jours #4) | Psychologie | 35,37s | 🚀 publié (2026-07-23) — ❌ 0 partage TikTok / ✅ rétention, 🟢 1 200 vues YT | 1 200 (YT) | 42,3% (YT) | [fiche](verite-illusoire.md) |
+| procrastination-2 | Procrastination — réécriture de l'accroche (labo 14 jours #5) | Psychologie | 28,92s | 🎬 (rendu local fait — sous-titres/pack réseaux/publication restants) | — | — | [fiche](procrastination-2.md) |
 
 ---
 

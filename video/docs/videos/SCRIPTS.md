@@ -175,6 +175,103 @@ l'enregistrement de la voix off).
 
 ---
 
+## 9. BDNF #2 — test hook émotionnel (labo 14 jours)
+
+- **Slug** : `bdnf2` · **Test** : labo 14 jours #1 (`mesure-14-jours.md` §4) · **Pilier** : Neurosciences
+- **Chercheur cité** : Carl Cotman · Université de Californie à Irvine
+- **Hypothèse** : un hook plus émotionnel élargit la portée sans perdre la rétention
+- **Durée voix off** : 39,09 s · **Statut** : ✅ publiée (2026-07-20) — rétention YT 32,5% confirmée
+- **Fiche** : [bdnf2.md](bdnf2.md) — seul le hook change vs `bdnf` (scènes 3-13 identiques à l'original)
+
+> Tu as essayé de changer. Encore et encore. Et rien n'a tenu.
+> Ce n'est pas parce que tu ne le veux pas assez.
+> Ce signal, c'est une protéine que ton cerveau fabrique pour renforcer ses connexions : le BDNF.
+> Carl Cotman, de l'université de Californie à Irvine, l'a démontré le premier.
+> Imagine un jardin mental :
+> chaque pensée, chaque habitude trace un chemin.
+> Le BDNF rend ce chemin plus praticable.
+> Mais il ne répond pas à l'intention.
+> Il répond à la répétition : bouger, apprendre, dormir, s'exposer à l'effort.
+> Changer, ce n'est pas forcer ton cerveau.
+> C'est créer les conditions pour qu'il se recâble.
+> Garde cette vidéo si tu veux entraîner ton cerveau, pas seulement le motiver.
+
+---
+
+## 10. Sérotonine (intestin) #2 — test durée <30s (labo 14 jours)
+
+- **Slug** : `intestin-cerveau-2` · **Test** : labo 14 jours #2 (`mesure-14-jours.md` §4) · **Pilier** : Neuro / Psycho
+- **Hypothèse** : réduire la durée sous 30s fait passer la rétention YT au-dessus de 20%
+- **Durée voix off** : 29,36 s · **Statut** : ✅✅ publiée (2026-07-21) — meilleur résultat du labo (1 408 vues YT, ~45% rétention, +6 abonnés)
+- **Fiche** : [intestin-cerveau-2.md](intestin-cerveau-2.md) — restructuration 15→8 plans (durée elle-même est la variable testée)
+- ⚠️ **Texte narré non reconstitué ici** (perdu avec l'incident du 2026-07-24, non présent dans les sessions précédentes conservées) — le texte exact reste disponible dans les sous-titres karaoké de `out/intestin-cerveau-2.mp4` déjà publié si besoin de le retranscrire.
+
+---
+
+## 11. Dopamine #2 — hook chiffre/corps (labo 14 jours)
+
+- **Slug** : `dopamine-2` · **Test** : labo 14 jours #3 (`mesure-14-jours.md` §4) · **Pilier** : Neurosciences
+- **Chercheur cité** : Wolfram Schultz · Université de Cambridge
+- **Hypothèse** : un hook chiffre/corps débloque la distribution YouTube
+- **Durée voix off** : 37,09 s · **Statut** : 🚀 publiée (2026-07-22) — ❌ seuil vues YT non atteint (269/600), rétention forte (37,8%)
+- **Fiche** : [dopamine-2.md](dopamine-2.md) — seul le hook change vs `dopamine-schultz`, plus une correction de justesse scientifique (« l'hormone du manque » → « l'hormone de l'anticipation du plaisir »)
+
+> Ton cerveau libère de la dopamine en 100 millisecondes.
+> Mais pas pour la raison que tu crois.
+> Le neuroscientifique Wolfram Schultz, de l'université de Cambridge,
+> a enregistré l'activité de neurones à dopamine chez des singes, pendant une tâche simple.
+> Il s'attendait à voir la dopamine monter au moment de la récompense.
+> Mais elle montait avant. Au moment où le singe anticipait la récompense.
+> La dopamine ne signale pas le plaisir. Elle signale l'attente.
+> C'est l'hormone de l'anticipation du plaisir.
+> C'est pour ça qu'un like, une notification, un mail,
+> te fait vérifier ton téléphone plus que le fait de le lire.
+> Ce n'est pas la récompense qui t'accroche. C'est l'attente d'une récompense.
+> L'article complet est sur leveilmental.fr.
+
+---
+
+## 12. Effet de vérité illusoire — mini-test en ouverture (labo 14 jours)
+
+- **Slug** : `verite-illusoire` · **Test** : labo 14 jours #4 (`mesure-14-jours.md` §4) · **Pilier** : Psychologie · **Série** : LE PIÈGE
+- **Chercheuse citée** : Lisa Fazio · Université Vanderbilt
+- **Hypothèse** : commencer par un mini-test augmente rétention et partages
+- **Durée voix off** : 35,37 s · **Statut** : 🚀 publiée (2026-07-23) — ❌ 0 partage TikTok / ✅ rétention, 🟢🟢 1 200 vues YT (2ᵉ meilleur score du labo)
+- **Fiche** : [verite-illusoire.md](verite-illusoire.md) — 1er script du catalogue en format question/mini-test
+
+> Vrai ou faux : le mur de Chine se voit depuis l'espace ?
+> Réfléchis deux secondes.
+> C'est faux. Aucun mur n'est visible à l'œil nu depuis l'espace.
+> Mais si on te l'avait répété trois fois, tu l'aurais peut-être cru vrai.
+> La psychologue Lisa Fazio, de l'université Vanderbilt,
+> a montré que répéter une fausse information augmente ta confiance qu'elle est vraie.
+> Même quand tu connais la bonne réponse.
+> Ton cerveau confond la familiarité d'une phrase avec sa véracité.
+> Plus tu l'entends, plus elle te semble vraie, peu importe si elle l'est.
+> C'est pour ça qu'une fausse info répétée sur les réseaux finit par sonner vraie.
+> La solution n'est pas de tout retenir. C'est de vérifier avant de partager.
+> Partage cette vidéo à quelqu'un qui répète encore ce mythe.
+
+---
+
+## 13. Procrastination — réécriture de l'accroche (labo 14 jours)
+
+- **Slug** : `procrastination-2` · **Test** : labo 14 jours #5 (`mesure-14-jours.md` §4) · **Pilier** : Psychologie
+- **Chercheur cité** : Tim Pychyl · Université Carleton
+- **Hypothèse** : réécrire uniquement les 3 premières secondes fait passer la rétention YT de 8,5 % à > 15 %
+- **Durée voix off** : 28,92 s · **Statut** : 🎬 rendu local fait — sous-titres/pack réseaux/publication restants
+- **Fiche** : [procrastination-2.md](procrastination-2.md) — seule l'accroche change vs `procrastination` ; 1er script à changer la recette d'ouverture TikTok
+
+> Tu repousses encore à demain. Et encore. Ce n'est pas de la paresse.
+> Le psychologue Tim Pychyl, de l'université Carleton, étudie la procrastination depuis plus de vingt ans.
+> Sa conclusion : ce n'est pas un problème de gestion du temps. C'est un problème de régulation émotionnelle.
+> Une tâche t'ennuie, te stresse, ou te fait douter de toi ?
+> Ton cerveau cherche un soulagement immédiat. Et il le trouve. Ailleurs. Tout de suite.
+> Repousser la tâche calme l'émotion sur le moment. Pas le problème.
+> L'article complet est sur leveilmental.fr.
+
+---
+
 ## Prochains scripts (Top 6 restants)
 
 Voir [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeline-dédupliqué) pour
