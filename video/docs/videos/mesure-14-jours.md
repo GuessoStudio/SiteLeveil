@@ -111,7 +111,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
-| 7 | Rejet social (nouveau hook/scène concrète) | Le problème est créatif : une scène concrète fait passer l'engagement TikTok de 1,6 % à > 5 % | Engagement TikTok ≥ 5 % |
+| 7 | Rejet social (nouveau hook/scène concrète) | Le problème est créatif : une scène concrète fait passer l'engagement TikTok de 1,6 % à > 5 % | Engagement TikTok ≥ 5 % — ✅ script + voix off calée (`rejet-social-2`, 35,74 s, 14 plans), karaoké/rendu restants. Continue la nouvelle recette d'ouverture TikTok (`zoom-in`+`static_noise`+`glitch`). Voir [rejet-social-2.md](rejet-social-2.md) |
 | 8 | Format quiz / expérience mentale (sujet validé) | Un mini-quiz augmente commentaires et complétion | Commentaires > médiane sur ≥ 2 réseaux |
 
 ---

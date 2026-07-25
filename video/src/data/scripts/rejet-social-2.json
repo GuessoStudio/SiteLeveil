@@ -1,0 +1,36 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "rejet-social-2.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {"duration":3.02,"keyword":"SUR « VU »","keywordFx":"glitch","subtitle":"Ton message reste sur « vu ».","pose":"cross","emotion":"peur","mode":"emotions","accent":"stress","camera":"zoom-in","position":"center","transition":"static_noise","fx":"tunnel_vision"},
+    {"duration":1.51,"keyword":"TROIS HEURES","subtitle":"Depuis trois heures.","pose":"cross","emotion":"tristesse","mode":"emotions","accent":"stress","camera":"static","position":"center","fx":"tunnel_vision"},
+    {"duration":1.51,"keyword":"TU RAFRAÎCHIS ENCORE","subtitle":"Tu rafraîchis encore.","pose":"point","emotion":"surcharge","mode":"emotions","accent":"stress","camera":"cine","position":"center","transition":"color_shift","fx":"rumination_loop"},
+    {"duration":2.80,"keyword":"COMME UNE BRÛLURE","keywordFx":"shake","subtitle":"Le rejet social allume les mêmes zones cérébrales qu'une brûlure.","pose":"cross","emotion":"peur","mode":"neuro","accent":"stress","camera":"punch-head","transition":"flash_reverse","fx":"empathy_pulse","icon":"flame","burst":"head","position":"center"},
+    {"duration":2.34,"keyword":"PAS UNE IMAGE","subtitle":"Littéralement. Pas une image. Une vraie douleur, mesurée en laboratoire.","pose":"point","emotion":"focus","mode":"neuro","accent":"stress","camera":"cine","fx":"attention_spotlight","icon":"eye","position":"left"},
+    {"duration":4.35,"keyword":"LE JEU DE BALLE VIRTUEL","subtitle":"Des chercheurs ont fait jouer des participants à un jeu de balle virtuel,","pose":"think","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"cine","fx":"social_network","icon":"users","position":"center"},
+    {"duration":2.88,"keyword":"PUIS EXCLU","subtitle":"truqué pour qu'à un moment, les deux autres joueurs les excluent.","pose":"shrug","emotion":"tristesse","mode":"neuro","accent":"stress","camera":"cine","transition":"zoom_smash","fx":"tunnel_vision","sfx":"tape_stop","icon":"target","position":"right"},
+    {"duration":2.12,"keyword":"NAOMI EISENBERGER","subtitle":"Naomi Eisenberger, de l'université UCLA,","credit":"Naomi Eisenberger · UCLA","pose":"think","emotion":"focus","mode":"neuro","accent":"stress","camera":"cine","fx":"attention_spotlight","icon":"eye","position":"left"},
+    {"duration":2.54,"keyword":"OBSERVE LEUR CERVEAU","subtitle":"a observé leur cerveau pendant l'exclusion.","pose":"open","emotion":"focus","mode":"neuro","accent":"stress","camera":"cine","fx":"brain_highlight_head","icon":"brain","position":"center"},
+    {"duration":3.36,"keyword":"MÊME ZONE QUE LA DOULEUR","keywordFx":"shake","subtitle":"Le cortex cingulaire antérieur s'activait, la même zone qu'en cas de douleur physique.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","transition":"color_shift","fx":"empathy_pulse","icon":"brain","position":"right"},
+    {"duration":3.62,"keyword":"PAS DE DIFFÉRENCE","subtitle":"Ton cerveau ne fait pas vraiment la différence entre une coupure et un rejet.","pose":"point","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","fx":"synapse_fire","icon":"lightbulb","position":"left"},
+    {"duration":3.36,"keyword":"PAS DE LA FAIBLESSE","subtitle":"Alors si un rejet te fait mal, ce n'est pas de la faiblesse.","pose":"open","emotion":"eveil","mode":"eveil","accent":"eveil","camera":"cine","fx":"reset_breath","icon":"heart","position":"center"},
+    {"duration":1.03,"keyword":"DE LA BIOLOGIE","subtitle":"C'est de la biologie.","pose":"cross","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"cine","transition":"blackout","fx":"gratitude_glow","icon":"brain","burst":"head","position":"center"},
+    {"duration":1.30,"keyword":"L'ARTICLE COMPLET","subtitle":"L'article complet est sur leveilmental.fr.","pose":"wave","emotion":"joie","mode":"eveil","accent":"eveil","camera":"punch-head","transition":"blackout","fx":"gratitude_glow","icon":"brain","burst":"head","position":"center"}
+  ]
+}

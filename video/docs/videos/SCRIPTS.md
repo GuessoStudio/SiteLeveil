@@ -272,6 +272,29 @@ l'enregistrement de la voix off).
 
 ---
 
+## 14. Rejet social — nouveau hook en scène concrète (labo 14 jours)
+
+- **Slug** : `rejet-social-2` · **Test** : labo 14 jours #7 (`mesure-14-jours.md` §4) · **Pilier** : Psychologie sociale
+- **Chercheuse citée** : Naomi Eisenberger · UCLA
+- **Hypothèse** : une scène concrète en ouverture fait passer l'engagement TikTok de 1,6 % à > 5 %
+- **Durée voix off** : 35,74 s · **Statut** : 🎙️ voix off masterisée + durées calées — karaoké/rendu à faire
+- **Fiche** : [rejet-social-2.md](rejet-social-2.md) — seule l'accroche change vs `rejet-social` ; continue la nouvelle recette d'ouverture TikTok
+
+> Ton message reste sur « vu ». Depuis trois heures. Tu rafraîchis encore.
+> Le rejet social allume les mêmes zones cérébrales qu'une brûlure.
+> Littéralement. Pas une image. Une vraie douleur, mesurée en laboratoire.
+> Des chercheurs ont fait jouer des participants à un jeu de balle virtuel,
+> truqué pour qu'à un moment, les deux autres joueurs les excluent.
+> Naomi Eisenberger, de l'université UCLA,
+> a observé leur cerveau pendant l'exclusion.
+> Le cortex cingulaire antérieur s'activait, la même zone qu'en cas de douleur physique.
+> Ton cerveau ne fait pas vraiment la différence entre une coupure et un rejet.
+> Alors si un rejet te fait mal, ce n'est pas de la faiblesse.
+> C'est de la biologie.
+> L'article complet est sur leveilmental.fr.
+
+---
+
 ## Prochains scripts (Top 6 restants)
 
 Voir [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeline-dédupliqué) pour

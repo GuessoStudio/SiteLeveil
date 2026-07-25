@@ -48,6 +48,8 @@
     "cover:verite": "remotion still src/Root.tsx Cover out/verite-illusoire-cover.png --props=src/data/covers/verite-illusoire.cover.json",
     "render:procrastination2": "remotion render src/Root.tsx Habitudes out/procrastination-2.mp4 --props=src/data/scripts/procrastination-2.json",
     "cover:procrastination2": "remotion still src/Root.tsx Cover out/procrastination-2-cover.png --props=src/data/covers/procrastination-2.cover.json",
+    "render:rejet2": "remotion render src/Root.tsx Habitudes out/rejet-social-2.mp4 --props=src/data/scripts/rejet-social-2.json",
+    "cover:rejet2": "remotion still src/Root.tsx Cover out/rejet-social-2-cover.png --props=src/data/covers/rejet-social-2.cover.json",
     "render:demo": "remotion render src/Root.tsx Habitudes out/demo-features.mp4 --props=src/data/scripts/demo-features.json",
     "words:meditation": "py scripts/transcribe.py public/Méditation.mp3 --script src/data/scripts/meditation.json",
     "words:burnout": "py scripts/transcribe.py public/Burn-out.mp3 --script src/data/scripts/burnout.json",
@@ -68,6 +70,7 @@
     "words:dopamine2": "py scripts/transcribe.py public/dopamine-2.mp3 --script src/data/scripts/dopamine-2.json",
     "words:verite": "py scripts/transcribe.py public/verite-illusoire.mp3 --script src/data/scripts/verite-illusoire.json",
     "words:procrastination2": "py scripts/transcribe.py public/procrastination-2.mp3 --script src/data/scripts/procrastination-2.json",
+    "words:rejet2": "py scripts/transcribe.py public/rejet-social-2.mp3 --script src/data/scripts/rejet-social-2.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },
