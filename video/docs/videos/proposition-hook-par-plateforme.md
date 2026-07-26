@@ -74,3 +74,47 @@ Ces éléments n'ont pas encore été formalisés dans `.claude/rules/repurposin
       maintenant » seulement) / ne pas adopter
 - [ ] Si adopté : définir un nouveau protocole de test dédié avant
       généralisation (ne pas basculer tous les scripts d'un coup)
+
+---
+
+## Outil en attente : Sandcastles MCP (analytics natives dans Claude)
+
+**D'où ça vient** : repéré le 2026-07-26 dans une vidéo de démo (JB Roy,
+TikTok/Instagram), recherché ensuite pour vérification.
+
+**Ce que c'est** : MCP (`sandcastles-ai/sandcastles`, GitHub, ~4 200 ⭐,
+licence MIT) qui donne à Claude un accès direct aux analytics natives
+Instagram, TikTok et YouTube Shorts — analyse de vidéo, formats les plus
+performants, suggestions de prochaine vidéo, récap de chaîne. Détail :
+[Sandcastles MCP for Claude (Hypd)](https://www.stayhypd.com/blog/sandcastles-mcp-claude).
+
+**Pourquoi c'est potentiellement pertinent ici** : `mesure-14-jours.md` §5
+note explicitement que Metricool ne donne ni la rétention TikTok, ni
+l'attribution d'abonnés par vidéo sur IG/TikTok, ni les visites de profil —
+ces 3 champs sont relevés à la main via captures d'écran à chaque mesure.
+Si Sandcastles lit vraiment ces données nativement, ça supprimerait cette
+étape manuelle pour tous les relevés futurs.
+
+**Pourquoi attendre la fin du labo** : même raisonnement que la
+proposition ci-dessus — introduire un nouvel outil de mesure en cours de
+labo risque de rendre les relevés incomparables entre le début et la fin
+du protocole (méthode de collecte différente = donnée différente).
+Vérification de sécurité aussi à faire avant de connecter un compte réel :
+permissions OAuth demandées, ce que l'outil peut faire au-delà de la
+lecture (poster, modifier), pas trouvées dans la recherche du 2026-07-26.
+
+**Décision écartée dans le même lot** : Blotato (outil de publication
+automatique multi-plateformes, ~29$/mois, par Sabrina Ramonov) — écarté
+plus fermement, pas juste différé, car il retire le contrôle manuel par
+plateforme (FB sans lien, IG 5 hashtags, TikTok sans emoji) qui est au
+cœur du process actuel. À reconsidérer seulement si le temps de
+publication manuelle devient un vrai goulot d'étranglement.
+
+### Checklist Sandcastles (au bilan du labo)
+
+- [ ] Vérifier les permissions OAuth exactes demandées par l'outil avant
+      toute connexion à un compte réel
+- [ ] Tester en lecture seule sur un compte si possible avant d'envisager
+      un remplacement du process manuel de `mesure-14-jours.md` §5
+- [ ] Comparer les chiffres qu'il remonte à un relevé manuel existant pour
+      vérifier la fiabilité avant de lui faire confiance seul
