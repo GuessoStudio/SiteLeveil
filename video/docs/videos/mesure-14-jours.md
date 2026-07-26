@@ -105,7 +105,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
 | 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — **✅✅✅ CONFIRMÉ, meilleur résultat du labo** (publié 2026-07-24, relevé +19-20h : rétention YT 58,8%, 1 200 vues, +5 abonnés). Détail §6-7 |
-| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — **❌ ÉCHEC** (publié 2026-07-18, relevé +7j le 2026-07-25 : +1 abonné cumulé seulement, courbes de vues plates dès 24-48h sur les 4 réseaux). Détail §6-7 |
+| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — baseline connue : l'original `effet-projecteur` (publié 2026-07-18) fait 688 vues YT / 44,6% rétention / +1 abonné cumulé sur 7j (détail §6). **La vidéo « suite » (`effet-projecteur-2`) reste à écrire/publier** pour pouvoir comparer et statuer sur le test. Voir [effet-projecteur-2.md](effet-projecteur-2.md) |
 
 ### 25 % — tester un format
 
@@ -412,33 +412,32 @@ confirmée de façon décisive.**
   interprété.
 - **Instagram** : 62 vues, meilleur chiffre IG du labo, mais 0 interaction
   — pas de changement de diagnostic sur ce canal.
-### 2026-07-25 — Effet projecteur : hypothèse infirmée, mais 1ʳᵉ vidéo labo sans décrochage TikTok à 0:01
+### 2026-07-25 — Effet projecteur (original) : baseline établie, pas encore un verdict de test
 
-**Verdict test #6** (le sujet tient au-delà de 72h et convertit en
-abonnés) : seuil = +3 abonnés cumulés **et** tenue à 72h. Résultat : **+1
-abonné cumulé** (YouTube seul, 0 sur les 3 autres réseaux) sur 7 jours
-complets — largement sous le seuil. Les 4 courbes de vues s'aplatissent
-dans les 24-48 premières heures, sans signe de tenue prolongée
-particulière par rapport aux autres vidéos du labo. **❌ Hypothèse
-infirmée sur les deux critères.**
+**Correction** : les stats relevées sont celles de la vidéo **originale**
+`effet-projecteur` (Top 6 éditorial, publiée 2026-07-18), pas d'une vidéo
+labo. Le test #6 (« le sujet tient au-delà de 72h et convertit en
+abonnés ») compare l'original à une **suite** (`effet-projecteur-2`,
+encore à écrire) — pas de verdict possible tant que la suite n'existe pas.
+Ce relevé sert de **baseline de référence** pour la comparaison à venir.
 
+- **Baseline (original, 7j)** : 688 vues YT (×2,1 médiane), 44,6 %
+  rétention YT, +1 abonné cumulé sur les 4 réseaux, courbes de vues plates
+  dès 24-48h sur tous les réseaux.
 - **Signal positif à noter** : `effet-projecteur` obtient la **meilleure
   rétention TikTok du labo à ce jour (42,3 %)**, et surtout **c'est la
-  1ʳᵉ vidéo du labo à ne pas montrer le décrochage sévère à 0:01** — 74 %
-  de l'audience reste au-delà de la première seconde, contre 40-64 % sur
-  les 5 autres vidéos testées. Combiné à l'observation faite sur
+  seule vidéo à ne pas montrer le décrochage sévère à 0:01** — 74 % de
+  l'audience reste au-delà de la première seconde, contre 40-64 % sur les
+  5 vidéos labo testées. Combiné à l'observation faite sur
   `procrastination-2` (le changement de recipe d'ouverture n'a rien changé
   au pattern), ça renforce l'idée que le décrochage est lié au **contenu
   ou au rythme narratif** plutôt qu'à un choix de caméra/transition
-  spécifique — `effet-projecteur` a un rythme plus posé (33,62s, 8 plans,
-  contre des scripts plus denses ailleurs). Hypothèse à creuser plus tard,
-  pas dans le cadre du labo actuel.
-- **YouTube** : 688 vues (×2,1 la médiane), bon résultat mais courbe plate
-  après 48h, cohérent avec le reste du catalogue (rien d'exceptionnel côté
-  longévité).
-- **Prochaine action** : relever `rejet-social-2` (test #7, publié le
-  2026-07-25 sur TikTok ~20h30, autres réseaux à confirmer) — c'est le
-  dernier test avant le bilan du labo (test #8 restant).
+  spécifique — `effet-projecteur` a un rythme plus posé (33,62s, 8 plans).
+  Hypothèse à creuser plus tard, pas dans le cadre du labo actuel.
+- **Prochaine action** : écrire et publier `effet-projecteur-2` (la
+  « suite ») pour pouvoir comparer à cette baseline et statuer sur le test
+  #6. En parallèle, relever `rejet-social-2` (test #7, publié le
+  2026-07-25 sur TikTok ~20h30, autres réseaux à confirmer).
 
 ### Effet projecteur (`effet-projecteur`) — relevé +7j (2026-07-25, publié 2026-07-18)
 

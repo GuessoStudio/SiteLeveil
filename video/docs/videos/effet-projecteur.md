@@ -58,14 +58,22 @@ des choix justes, gardés sans modification.
 - [x] Publié (2026-07-18 — FB 12h30 · IG 18h31 · TikTok 20h00 · YT heure non capturée)
 - [x] Relevé +7j dans `mesure-14-jours.md` §6 (2026-07-25)
 
-## ✅ Verdict — relevé +7j (2026-07-25)
+## 📊 Baseline — relevé +7j (2026-07-25)
 
-**❌ Hypothèse infirmée.** +1 abonné cumulé (seuil +3), courbes de vues
-plates dès 24-48h sur les 4 réseaux — pas de tenue prolongée particulière.
-Signal positif : meilleure rétention TikTok du labo (42,3 %) et **seule
-vidéo labo sans le décrochage sévère à 0:01** (74 % restants à 0:01, contre
-40-64 % ailleurs) — suggère que le pattern TikTok est lié au contenu/rythme
-plutôt qu'au recipe visuel. Détail complet dans `mesure-14-jours.md` §6-7.
+Cette vidéo sert de **référence** pour le test labo #6 : la comparaison se
+fait contre `effet-projecteur-2` (la « suite »), pas de verdict sur cette
+seule vidéo. Chiffres de référence : 688 vues YT (×2,1 médiane), 44,6 %
+rétention YT, +1 abonné cumulé sur 7j (tous réseaux confondus), courbes de
+vues plates dès 24-48h. Signal notable : meilleure rétention TikTok du
+labo (42,3 %) et seule vidéo à ne pas montrer le décrochage sévère à 0:01
+(74 % restants à 0:01, contre 40-64 % ailleurs). Détail complet dans
+`mesure-14-jours.md` §6-7.
+
+## 🔁 Suite du test labo #6
+
+Voir [effet-projecteur-2.md](effet-projecteur-2.md) — la vidéo « suite »
+reste à écrire/publier pour pouvoir comparer à cette baseline et statuer
+sur l'hypothèse (+3 abonnés cumulés et tenue à 72h).
 
 ## ⚠️ Notes
 
