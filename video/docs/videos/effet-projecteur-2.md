@@ -53,14 +53,14 @@ Recette d'ouverture : `zoom-in`+`static_noise`+`glitch` (continuité avec
 - [x] Script écrit et validé (chercheurs nommés : Kenneth Savitsky & Thomas Gilovich · Université Cornell)
 - [x] Voix off reçue + masterisée (-15,85 → -14,67 LUFS, GUIDE.md §4.1)
 - [x] Durées calées sur le mp3 réel (silencedetect, GUIDE.md §4.2)
-- [ ] Karaoké frame-perfect (Whisper local, `npm run words:projecteur2`)
-- [ ] Rendu MP4 (`npm run render:projecteur2`)
-- [ ] Couverture générée (`npm run cover:projecteur2`)
-- [ ] Sous-titres vérifiés
-- [ ] Pack réseaux (FB/IG/TikTok/YouTube)
-- [ ] Publié
+- [x] Karaoké frame-perfect (Whisper local, `npm run words:projecteur2`)
+- [x] Rendu MP4 (`npm run render:projecteur2`)
+- [x] Couverture générée (`npm run cover:projecteur2`)
+- [x] Pack réseaux (FB/IG/TikTok/YouTube)
+- [x] Publié (2026-07-26, dimanche — créneaux habituels)
 - [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6 — comparer à
-      la baseline de l'original (688 vues YT / 44,6% / +1 abonné/7j)
+      la baseline de l'original (688 vues YT / 44,6% / +1 abonné/7j).
+      Prochain point : 2026-07-27 ~9h
 
 ## ⚠️ Notes
 
