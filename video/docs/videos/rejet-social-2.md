@@ -53,14 +53,25 @@
 - [x] Script écrit et validé (1 seule chercheuse nommée : Naomi Eisenberger · UCLA)
 - [x] Voix off reçue + masterisée (-16,42 → -14,51 LUFS, GUIDE.md §4.1)
 - [x] Durées calées sur le mp3 réel (silencedetect, GUIDE.md §4.2)
-- [ ] Karaoké frame-perfect (Whisper local, `npm run words:rejet2`)
-- [ ] Rendu MP4 (`npm run render:rejet2`)
-- [ ] Couverture générée (`npm run cover:rejet2`)
-- [ ] Sous-titres vérifiés
-- [ ] Pack réseaux (FB/IG/TikTok/YouTube)
-- [ ] Publié
-- [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6 — vérifier
-      spécifiquement l'**engagement TikTok** (seuil ≥5 %)
+- [x] Karaoké frame-perfect (Whisper local, `npm run words:rejet2`)
+- [x] Rendu MP4 (`npm run render:rejet2`)
+- [x] Couverture générée (`npm run cover:rejet2`)
+- [x] Pack réseaux (FB/IG/TikTok/YouTube)
+- [x] Publié (2026-07-25 — FB 16h28 · IG 18h31 · TikTok ~20h30 · YT heure non capturée)
+- [x] Relevé +19-20h dans `mesure-14-jours.md` §6 (2026-07-25)
+- [ ] Relevés +72h / +7j dans `mesure-14-jours.md` §6
+
+## ✅ Verdict — relevé +19-20h (2026-07-25)
+
+**✅ Hypothèse confirmée.** Engagement TikTok 5,44 % (11 likes + 2 saves /
+239 vues), au-dessus du seuil (5 %) et ×3,4 la baseline (1,6 %). Rétention
+TikTok précoce solide (69 % à 0:01, 51 % à 0:02) — pas de décrochage
+sévère, cohérent avec `effet-projecteur` (74 % à 0:01), ce qui renforce
+l'hypothèse que le pattern de décrochage tient au contenu/hook plutôt
+qu'au recipe caméra/transition. YouTube : 751 vues (2ᵉ meilleur score du
+labo), +1 abonné. Facebook : échantillon trop petit (4 vues). Instagram :
+123 vues, fourchette basse habituelle. Détail complet dans
+`mesure-14-jours.md` §6-7.
 
 ## ⚠️ Notes
 

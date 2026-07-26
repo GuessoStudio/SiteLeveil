@@ -18,14 +18,654 @@
     "burst": false
   },
   "scenes": [
-    {"duration":2.18,"keyword":"TOUT LE MONDE VOIT ?","keywordFx":"glitch","subtitle":"Tu crois que tout le monde voit que tu stresses quand tu parles ?","pose":"cross","emotion":"peur","mode":"emotions","accent":"stress","camera":"zoom-in","position":"center","transition":"static_noise","fx":"tunnel_vision"},
-    {"duration":0.73,"keyword":"FAUX","keywordFx":"shake","subtitle":"Faux.","pose":"point","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift"},
-    {"duration":5.58,"keyword":"L'EXPÉRIENCE","subtitle":"Dans une expérience, des étudiants ont pris la parole, puis estimé à quel point leur nervosité s'était vue.","pose":"think","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"cine","position":"left","fx":"social_network","icon":"users"},
-    {"duration":3.23,"keyword":"PLUS NERVEUX QU'EN RÉALITÉ","subtitle":"Ils se jugeaient plus nerveux que ne les jugeaient les observateurs.","credit":"Kenneth Savitsky & Thomas Gilovich · Université Cornell","pose":"open","emotion":"insight","mode":"neuro","accent":"neuro","camera":"cine","position":"center","fx":"attention_spotlight","icon":"eye"},
-    {"duration":4.70,"keyword":"ILLUSION DE TRANSPARENCE","keywordFx":"shake","subtitle":"C'est l'illusion de transparence : comme tu ressens chaque tremblement, tu imagines qu'il saute aux yeux.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","transition":"color_shift","fx":"synapse_fire","icon":"lightbulb"},
-    {"duration":3.53,"keyword":"MOINS FORTE QUE LA TIENNE","subtitle":"Mais l'impression des autres est souvent bien plus faible que la tienne.","pose":"point","emotion":"calme","mode":"eveil","accent":"eveil","camera":"cine","position":"right","fx":"reset_breath","icon":"eye"},
-    {"duration":4.70,"keyword":"NE PARS PAS DE LÀ","subtitle":"Alors si ta voix tremble, ne pars pas du principe que tout le monde l'a remarqué.","pose":"open","emotion":"eveil","mode":"eveil","accent":"eveil","camera":"cine","position":"left","fx":"reset_breath","icon":"heart"},
-    {"duration":3.23,"keyword":"MOINS VISIBLE QUE TU NE LE CROIS","subtitle":"Continue. Ton stress est souvent moins visible que tu ne le crois.","pose":"wave","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"cine","position":"center","fx":"gratitude_glow","icon":"bolt"},
-    {"duration":1.47,"keyword":"L'ARTICLE COMPLET","subtitle":"L'article complet est sur leveilmental.fr.","pose":"wave","emotion":"joie","mode":"eveil","accent":"eveil","camera":"punch-head","transition":"blackout","fx":"gratitude_glow","icon":"brain","burst":"head","position":"center"}
+    {
+      "duration": 2.18,
+      "keyword": "TOUT LE MONDE VOIT ?",
+      "keywordFx": "glitch",
+      "subtitle": "Tu crois que tout le monde voit que tu stresses quand tu parles ?",
+      "pose": "cross",
+      "emotion": "peur",
+      "mode": "emotions",
+      "accent": "stress",
+      "camera": "zoom-in",
+      "position": "center",
+      "transition": "static_noise",
+      "fx": "tunnel_vision"
+    },
+    {
+      "duration": 0.73,
+      "keyword": "FAUX",
+      "keywordFx": "shake",
+      "subtitle": "Faux.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift"
+    },
+    {
+      "duration": 5.58,
+      "keyword": "L'EXPÉRIENCE",
+      "subtitle": "Dans une expérience, des étudiants ont pris la parole, puis estimé à quel point leur nervosité s'était vue.",
+      "pose": "think",
+      "emotion": "reflexion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "left",
+      "fx": "social_network",
+      "icon": "users"
+    },
+    {
+      "duration": 3.23,
+      "keyword": "PLUS NERVEUX QU'EN RÉALITÉ",
+      "subtitle": "Ils se jugeaient plus nerveux que ne les jugeaient les observateurs.",
+      "credit": "Kenneth Savitsky & Thomas Gilovich · Université Cornell",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "center",
+      "fx": "attention_spotlight",
+      "icon": "eye"
+    },
+    {
+      "duration": 4.7,
+      "keyword": "ILLUSION DE TRANSPARENCE",
+      "keywordFx": "shake",
+      "subtitle": "C'est l'illusion de transparence : comme tu ressens chaque tremblement, tu imagines qu'il saute aux yeux.",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "transition": "color_shift",
+      "fx": "synapse_fire",
+      "icon": "lightbulb"
+    },
+    {
+      "duration": 3.53,
+      "keyword": "MOINS FORTE QUE LA TIENNE",
+      "subtitle": "Mais l'impression des autres est souvent bien plus faible que la tienne.",
+      "pose": "point",
+      "emotion": "calme",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "right",
+      "fx": "reset_breath",
+      "icon": "eye"
+    },
+    {
+      "duration": 4.7,
+      "keyword": "NE PARS PAS DE LÀ",
+      "subtitle": "Alors si ta voix tremble, ne pars pas du principe que tout le monde l'a remarqué.",
+      "pose": "open",
+      "emotion": "eveil",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "left",
+      "fx": "reset_breath",
+      "icon": "heart"
+    },
+    {
+      "duration": 3.23,
+      "keyword": "MOINS VISIBLE QUE TU NE LE CROIS",
+      "subtitle": "Continue. Ton stress est souvent moins visible que tu ne le crois.",
+      "pose": "wave",
+      "emotion": "fierte",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "fx": "gratitude_glow",
+      "icon": "bolt"
+    },
+    {
+      "duration": 1.47,
+      "keyword": "L'ARTICLE COMPLET",
+      "subtitle": "L'article complet est sur leveilmental.fr.",
+      "pose": "wave",
+      "emotion": "joie",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "brain",
+      "burst": "head",
+      "position": "center"
+    }
+  ],
+  "words": [
+    {
+      "w": "Tu",
+      "start": 0.0,
+      "end": 0.16
+    },
+    {
+      "w": "crois",
+      "start": 0.16,
+      "end": 0.32
+    },
+    {
+      "w": "que",
+      "start": 0.32,
+      "end": 0.44
+    },
+    {
+      "w": "tout",
+      "start": 0.44,
+      "end": 0.56
+    },
+    {
+      "w": "le",
+      "start": 0.56,
+      "end": 0.64
+    },
+    {
+      "w": "monde",
+      "start": 0.64,
+      "end": 0.74
+    },
+    {
+      "w": "voit",
+      "start": 0.74,
+      "end": 0.92
+    },
+    {
+      "w": "que",
+      "start": 0.92,
+      "end": 0.99
+    },
+    {
+      "w": "tu",
+      "start": 1.06,
+      "end": 1.18
+    },
+    {
+      "w": "stresses",
+      "start": 1.18,
+      "end": 1.46
+    },
+    {
+      "w": "quand",
+      "start": 1.46,
+      "end": 1.48
+    },
+    {
+      "w": "tu",
+      "start": 1.48,
+      "end": 1.62
+    },
+    {
+      "w": "parles",
+      "start": 1.62,
+      "end": 1.92
+    },
+    {
+      "w": "?",
+      "start": 1.92,
+      "end": 2.32
+    },
+    {
+      "w": "Faux.",
+      "start": 2.32,
+      "end": 2.67
+    },
+    {
+      "w": "Dans",
+      "start": 3.02,
+      "end": 3.18
+    },
+    {
+      "w": "une",
+      "start": 3.18,
+      "end": 3.34
+    },
+    {
+      "w": "expérience,",
+      "start": 3.34,
+      "end": 3.8
+    },
+    {
+      "w": "des",
+      "start": 4.14,
+      "end": 4.24
+    },
+    {
+      "w": "étudiants",
+      "start": 4.24,
+      "end": 4.56
+    },
+    {
+      "w": "ont",
+      "start": 4.56,
+      "end": 4.7
+    },
+    {
+      "w": "pris",
+      "start": 4.7,
+      "end": 4.78
+    },
+    {
+      "w": "la",
+      "start": 4.78,
+      "end": 4.9
+    },
+    {
+      "w": "parole,",
+      "start": 4.9,
+      "end": 5.2
+    },
+    {
+      "w": "puis",
+      "start": 5.42,
+      "end": 5.56
+    },
+    {
+      "w": "estimé",
+      "start": 5.56,
+      "end": 5.75
+    },
+    {
+      "w": "à",
+      "start": 5.94,
+      "end": 6.04
+    },
+    {
+      "w": "quel",
+      "start": 6.04,
+      "end": 6.12
+    },
+    {
+      "w": "point",
+      "start": 6.12,
+      "end": 6.32
+    },
+    {
+      "w": "leur",
+      "start": 6.32,
+      "end": 6.46
+    },
+    {
+      "w": "nervosité",
+      "start": 6.46,
+      "end": 7.02
+    },
+    {
+      "w": "s'était",
+      "start": 7.02,
+      "end": 7.13
+    },
+    {
+      "w": "vue.",
+      "start": 7.24,
+      "end": 7.48
+    },
+    {
+      "w": "Ils",
+      "start": 7.72,
+      "end": 7.86
+    },
+    {
+      "w": "se",
+      "start": 7.86,
+      "end": 8.02
+    },
+    {
+      "w": "jugeaient",
+      "start": 8.02,
+      "end": 8.14
+    },
+    {
+      "w": "plus",
+      "start": 8.26,
+      "end": 8.44
+    },
+    {
+      "w": "nerveux",
+      "start": 8.44,
+      "end": 8.76
+    },
+    {
+      "w": "que",
+      "start": 8.76,
+      "end": 8.88
+    },
+    {
+      "w": "ne",
+      "start": 9.0,
+      "end": 9.04
+    },
+    {
+      "w": "les",
+      "start": 9.04,
+      "end": 9.16
+    },
+    {
+      "w": "jugeaient",
+      "start": 9.16,
+      "end": 9.3
+    },
+    {
+      "w": "les",
+      "start": 9.44,
+      "end": 9.54
+    },
+    {
+      "w": "observateurs.",
+      "start": 9.54,
+      "end": 10.1
+    },
+    {
+      "w": "C'est",
+      "start": 10.1,
+      "end": 10.78
+    },
+    {
+      "w": "l'illusion",
+      "start": 10.78,
+      "end": 11.46
+    },
+    {
+      "w": "de",
+      "start": 12.14,
+      "end": 12.3
+    },
+    {
+      "w": "transparence",
+      "start": 12.3,
+      "end": 12.98
+    },
+    {
+      "w": ":",
+      "start": 12.98,
+      "end": 13.18
+    },
+    {
+      "w": "comme",
+      "start": 13.38,
+      "end": 13.54
+    },
+    {
+      "w": "tu",
+      "start": 13.54,
+      "end": 13.66
+    },
+    {
+      "w": "ressens",
+      "start": 13.66,
+      "end": 13.94
+    },
+    {
+      "w": "chaque",
+      "start": 13.94,
+      "end": 14.16
+    },
+    {
+      "w": "tremblement,",
+      "start": 14.16,
+      "end": 14.68
+    },
+    {
+      "w": "tu",
+      "start": 14.94,
+      "end": 14.98
+    },
+    {
+      "w": "imagines",
+      "start": 14.98,
+      "end": 15.36
+    },
+    {
+      "w": "qu'il",
+      "start": 15.36,
+      "end": 15.48
+    },
+    {
+      "w": "saute",
+      "start": 15.48,
+      "end": 15.6
+    },
+    {
+      "w": "aux",
+      "start": 15.72,
+      "end": 15.86
+    },
+    {
+      "w": "yeux.",
+      "start": 15.86,
+      "end": 16.06
+    },
+    {
+      "w": "Mais",
+      "start": 16.48,
+      "end": 16.64
+    },
+    {
+      "w": "l'impression",
+      "start": 16.64,
+      "end": 16.78
+    },
+    {
+      "w": "des",
+      "start": 16.92,
+      "end": 17.16
+    },
+    {
+      "w": "autres",
+      "start": 17.16,
+      "end": 17.36
+    },
+    {
+      "w": "est",
+      "start": 17.36,
+      "end": 17.58
+    },
+    {
+      "w": "souvent",
+      "start": 17.58,
+      "end": 17.92
+    },
+    {
+      "w": "bien",
+      "start": 17.92,
+      "end": 18.3
+    },
+    {
+      "w": "plus",
+      "start": 18.3,
+      "end": 18.56
+    },
+    {
+      "w": "faible",
+      "start": 18.56,
+      "end": 18.76
+    },
+    {
+      "w": "que",
+      "start": 18.76,
+      "end": 18.9
+    },
+    {
+      "w": "la",
+      "start": 18.9,
+      "end": 19.02
+    },
+    {
+      "w": "tienne.",
+      "start": 19.02,
+      "end": 19.66
+    },
+    {
+      "w": "Alors",
+      "start": 19.78,
+      "end": 19.9
+    },
+    {
+      "w": "si",
+      "start": 19.9,
+      "end": 20.06
+    },
+    {
+      "w": "ta",
+      "start": 20.06,
+      "end": 20.18
+    },
+    {
+      "w": "voix",
+      "start": 20.18,
+      "end": 20.28
+    },
+    {
+      "w": "tremble,",
+      "start": 20.28,
+      "end": 20.7
+    },
+    {
+      "w": "ne",
+      "start": 21.04,
+      "end": 21.22
+    },
+    {
+      "w": "pars",
+      "start": 21.22,
+      "end": 21.38
+    },
+    {
+      "w": "pas",
+      "start": 21.38,
+      "end": 21.5
+    },
+    {
+      "w": "du",
+      "start": 21.5,
+      "end": 21.6
+    },
+    {
+      "w": "principe",
+      "start": 21.6,
+      "end": 21.84
+    },
+    {
+      "w": "que",
+      "start": 21.84,
+      "end": 22.02
+    },
+    {
+      "w": "tout",
+      "start": 22.02,
+      "end": 22.12
+    },
+    {
+      "w": "le",
+      "start": 22.12,
+      "end": 22.18
+    },
+    {
+      "w": "monde",
+      "start": 22.18,
+      "end": 22.26
+    },
+    {
+      "w": "l'a",
+      "start": 22.26,
+      "end": 22.33
+    },
+    {
+      "w": "remarqué.",
+      "start": 22.4,
+      "end": 22.8
+    },
+    {
+      "w": "Continue.",
+      "start": 23.26,
+      "end": 23.58
+    },
+    {
+      "w": "Ton",
+      "start": 24.22,
+      "end": 24.28
+    },
+    {
+      "w": "stress",
+      "start": 24.28,
+      "end": 24.54
+    },
+    {
+      "w": "est",
+      "start": 24.54,
+      "end": 24.78
+    },
+    {
+      "w": "souvent",
+      "start": 24.78,
+      "end": 24.98
+    },
+    {
+      "w": "moins",
+      "start": 24.98,
+      "end": 25.22
+    },
+    {
+      "w": "visible",
+      "start": 25.22,
+      "end": 25.48
+    },
+    {
+      "w": "que",
+      "start": 25.48,
+      "end": 25.64
+    },
+    {
+      "w": "tu",
+      "start": 25.64,
+      "end": 25.74
+    },
+    {
+      "w": "ne",
+      "start": 25.74,
+      "end": 25.82
+    },
+    {
+      "w": "le",
+      "start": 25.82,
+      "end": 25.92
+    },
+    {
+      "w": "crois.",
+      "start": 25.92,
+      "end": 26.1
+    },
+    {
+      "w": "L'article",
+      "start": 26.1,
+      "end": 26.58
+    },
+    {
+      "w": "complet",
+      "start": 27.06,
+      "end": 27.42
+    },
+    {
+      "w": "est",
+      "start": 27.42,
+      "end": 27.42
+    },
+    {
+      "w": "sur",
+      "start": 27.42,
+      "end": 27.9
+    },
+    {
+      "w": "leveilmental.fr.",
+      "start": 27.9,
+      "end": 28.2
+    }
   ]
 }

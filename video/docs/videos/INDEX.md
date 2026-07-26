@@ -35,7 +35,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | dopamine-2 | Dopamine #2 — test hook chiffre/corps (labo 14 jours #3) | Neurosciences | 37,09s | 🚀 publié (2026-07-22) — ❌ seuil vues YT non atteint (269/600) | 269 (YT) | 37,8% (YT) | [fiche](dopamine-2.md) |
 | verite-illusoire | Effet de vérité illusoire — mini-test en ouverture (labo 14 jours #4) | Psychologie | 35,37s | 🚀 publié (2026-07-23) — ❌ 0 partage TikTok / ✅ rétention, 🟢 1 200 vues YT | 1 200 (YT) | 42,3% (YT) | [fiche](verite-illusoire.md) |
 | procrastination-2 | Procrastination — réécriture de l'accroche (labo 14 jours #5) | Psychologie | 28,92s | 🚀 publié (2026-07-24) — ✅✅✅ meilleur résultat rétention YT du labo | 1 200 (YT) | 58,8% (YT) | [fiche](procrastination-2.md) |
-| rejet-social-2 | Rejet social — nouveau hook en scène concrète (labo 14 jours #7) | Psycho sociale | 35,74s | 🎙️ (voix off masterisée + durées calées — karaoké/rendu à faire) | — | — | [fiche](rejet-social-2.md) |
+| rejet-social-2 | Rejet social — nouveau hook en scène concrète (labo 14 jours #7) | Psycho sociale | 35,74s | 🚀 publié (2026-07-25) — ✅ engagement TikTok 5,44% (seuil 5%) confirmé | 751 (YT) | 30,8% (YT) | [fiche](rejet-social-2.md) |
 
 ---
 

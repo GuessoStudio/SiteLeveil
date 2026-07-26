@@ -111,7 +111,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
-| 7 | Rejet social (nouveau hook/scène concrète) | Le problème est créatif : une scène concrète fait passer l'engagement TikTok de 1,6 % à > 5 % | Engagement TikTok ≥ 5 % — ✅ script + voix off calée (`rejet-social-2`, 35,74 s, 14 plans), karaoké/rendu restants. Continue la nouvelle recette d'ouverture TikTok (`zoom-in`+`static_noise`+`glitch`). Voir [rejet-social-2.md](rejet-social-2.md) |
+| 7 | Rejet social (nouveau hook/scène concrète) | Le problème est créatif : une scène concrète fait passer l'engagement TikTok de 1,6 % à > 5 % | Engagement TikTok ≥ 5 % — **✅ CONFIRMÉ** (publié 2026-07-25, relevé +19-20h : engagement TikTok 5,44%, ×3,4 la baseline 1,6%). Détail §6-7 |
 | 8 | Format quiz / expérience mentale (sujet validé) | Un mini-quiz augmente commentaires et complétion | Commentaires > médiane sur ≥ 2 réseaux |
 
 ---
@@ -438,6 +438,42 @@ Ce relevé sert de **baseline de référence** pour la comparaison à venir.
   « suite ») pour pouvoir comparer à cette baseline et statuer sur le test
   #6. En parallèle, relever `rejet-social-2` (test #7, publié le
   2026-07-25 sur TikTok ~20h30, autres réseaux à confirmer).
+
+### Rejet social — nouveau hook (`rejet-social-2`) — relevé ~+19-20h (2026-07-25, publié 2026-07-25)
+
+Publication : FB 16h28 · IG 18h31 · TikTok ~20h30 · YT heure non capturée.
+
+| Réseau | Vues | Rétention | Interactions | Abonnés | Note |
+|---|---:|---:|---|---:|---|
+| YouTube | **751** (méd. 328, +161 vs habitude) | 30,8 % (11s/35,74s) | 304 vues engagées | +1 | 🟢 2ᵉ meilleur nombre de vues du labo (après `procrastination-2`), 37,3%/62,7% engagement spectateurs |
+| TikTok | 239 | 16,4 % (5,88s/35,74s) | 11 likes, 2 saves, 0 com/partage — **engagement 5,44 %** | 0 | ✅ **au-dessus du seuil test (5%)**, ×3,4 la baseline (1,6%). Rétention 69% à 0:01, 51% à 0:02 — pas de décrochage sévère (cohérent avec `effet-projecteur`, 74% à 0:01) |
+| Facebook | 4 (spect. 2) | — | 1 réaction | 0 | 🔴 échantillon bien trop petit (4 vues) pour être interprété |
+| Instagram | 123 (couv. 115) | 8,4 % (3s/35,74s) | 1 like | 0 | 🟡 fourchette basse habituelle |
+
+### 2026-07-25 — Rejet social : hypothèse confirmée
+
+**Verdict test #7** (une scène concrète en ouverture fait passer
+l'engagement TikTok de 1,6 % à > 5 %) : seuil = engagement TikTok ≥ 5 %.
+Résultat : **5,44 %** (11 likes + 2 saves / 239 vues) — au-dessus du seuil,
+×3,4 la baseline. **✅ Hypothèse confirmée.**
+
+- **À reproduire** : remplacer une affirmation scientifique abstraite en
+  ouverture par une scène concrète et vécue (ici : le rejet numérique du
+  « vu » sans réponse) fonctionne pour l'engagement TikTok, en plus d'être
+  déjà un bon levier de rétention repéré ailleurs.
+- **Confirmation croisée avec `effet-projecteur`** : les deux vidéos qui
+  n'utilisent pas une accroche de type « affirmation scientifique choc »
+  montrent une rétention TikTok précoce nettement meilleure (69-74 % à
+  0:01) que les vidéos avec hook plus dense (`bdnf2`, `dopamine-2`,
+  `verite-illusoire`, `procrastination-2`, ~50-54 %). Ça continue de
+  pointer vers le contenu/rythme plutôt que le recipe caméra/transition
+  comme cause du pattern de décrochage.
+- **YouTube** : très bon résultat (751 vues, 2ᵉ du labo), sans lien
+  évident avec la variable testée (engagement TikTok) — signal positif
+  supplémentaire, pas le critère du test.
+- **Prochaine action** : test #8 (format quiz/expérience mentale) reste le
+  seul test non lancé. Après son relevé, bilan complet du labo 14 jours et
+  décision sur `proposition-hook-par-plateforme.md`.
 
 ### Effet projecteur (`effet-projecteur`) — relevé +7j (2026-07-25, publié 2026-07-18)
 
