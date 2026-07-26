@@ -105,7 +105,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
 | 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — **✅✅✅ CONFIRMÉ, meilleur résultat du labo** (publié 2026-07-24, relevé +19-20h : rétention YT 58,8%, 1 200 vues, +5 abonnés). Détail §6-7 |
-| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — baseline connue : l'original `effet-projecteur` (publié 2026-07-18) fait 688 vues YT / 44,6% rétention / +1 abonné cumulé sur 7j (détail §6). **La vidéo « suite » (`effet-projecteur-2`) reste à écrire/publier** pour pouvoir comparer et statuer sur le test. Voir [effet-projecteur-2.md](effet-projecteur-2.md) |
+| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — baseline connue : l'original `effet-projecteur` (publié 2026-07-18) fait 688 vues YT / 44,6% rétention / +1 abonné cumulé sur 7j (détail §6). ✅ script + voix off calée (`effet-projecteur-2`, 29,35 s, 9 plans, contenu neuf sur l'illusion de transparence), karaoké/rendu restants. Voir [effet-projecteur-2.md](effet-projecteur-2.md) |
 
 ### 25 % — tester un format
 

@@ -295,6 +295,25 @@ l'enregistrement de la voix off).
 
 ---
 
+## 15. Effet projecteur — la suite (labo 14 jours)
+
+- **Slug** : `effet-projecteur-2` · **Test** : labo 14 jours #6 (`mesure-14-jours.md` §4) · **Pilier** : Psychologie sociale
+- **Chercheurs cités** : Kenneth Savitsky & Thomas Gilovich · Université Cornell
+- **Hypothèse** : le sujet effet projecteur tient au-delà de 72h et convertit en abonnés (testé via un vrai contenu de suite, pas une réécriture de hook)
+- **Durée voix off** : 29,35 s · **Statut** : 🎙️ voix off masterisée + durées calées — karaoké/rendu à faire
+- **Fiche** : [effet-projecteur-2.md](effet-projecteur-2.md) — contenu neuf (illusion de transparence), à comparer à la baseline de `effet-projecteur`
+
+> Tu crois que tout le monde voit que tu stresses quand tu parles ? Faux.
+> Dans une expérience, des étudiants ont pris la parole, puis estimé à quel point leur nervosité s'était vue.
+> Ils se jugeaient plus nerveux que ne les jugeaient les observateurs.
+> C'est l'illusion de transparence : comme tu ressens chaque tremblement, tu imagines qu'il saute aux yeux.
+> Mais l'impression des autres est souvent bien plus faible que la tienne.
+> Alors si ta voix tremble, ne pars pas du principe que tout le monde l'a remarqué.
+> Continue. Ton stress est souvent moins visible que tu ne le crois.
+> L'article complet est sur leveilmental.fr.
+
+---
+
 ## Prochains scripts (Top 6 restants)
 
 Voir [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeline-dédupliqué) pour
