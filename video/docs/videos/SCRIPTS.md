@@ -314,6 +314,21 @@ l'enregistrement de la voix off).
 
 ---
 
+## 16. Pensée critique — format quiz (labo 14 jours)
+
+- **Slug** : `pensee-critique-2` · **Test** : labo 14 jours #8 (dernier test) (`mesure-14-jours.md` §4) · **Pilier** : Psychologie / Neurosciences
+- **Chercheur cité** : Dan Kahan · Université de Yale
+- **Hypothèse** : un mini-quiz en ouverture augmente les commentaires et la complétion
+- **Durée voix off** : 43,44 s · **Statut** : 🎙️ voix off masterisée + durées calées — karaoké/rendu à faire
+- **Fiche** : [pensee-critique-2.md](pensee-critique-2.md) — sujet = meilleur performer du catalogue (1 383 vues YT, +9 abonnés), seule l'accroche passe en format quiz
+
+> Petit test : plus tu es intelligent, moins tu tombes dans les fake news. Vrai ou faux ? Faux. Ce qui te protège vraiment, ce n'est pas le QI : c'est la capacité à t'arrêter avant de juger.
+> Parce que ton cerveau ne cherche pas la vérité. Il cherche ce qui confirme ce que tu crois déjà. C'est le biais de confirmation. Tu vois une info qui va dans ton sens ? Tu la crois plus vite. Tu vois une info qui te contredit ? Tu la rejettes plus vite. C'est le dialogue de sourds.
+> Dan Kahan, à l'université de Yale, a prouvé que notre intelligence sert souvent à justifier nos croyances. La vraie pensée critique commence avec une question simple : Est-ce vrai… et comment je le sais ? Avant de partager. Avant de réagir. Avant de juger.
+> Penser clairement, ce n'est pas avoir toujours raison. Commente BIAIS pour recevoir la méthode.
+
+---
+
 ## Prochains scripts (Top 6 restants)
 
 Voir [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeline-dédupliqué) pour

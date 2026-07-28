@@ -112,7 +112,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
 | 7 | Rejet social (nouveau hook/scène concrète) | Le problème est créatif : une scène concrète fait passer l'engagement TikTok de 1,6 % à > 5 % | Engagement TikTok ≥ 5 % — **✅ CONFIRMÉ** (publié 2026-07-25, relevé +19-20h : engagement TikTok 5,44%, ×3,4 la baseline 1,6%). Détail §6-7 |
-| 8 | Format quiz / expérience mentale (sujet validé) | Un mini-quiz augmente commentaires et complétion | Commentaires > médiane sur ≥ 2 réseaux |
+| 8 | Format quiz / expérience mentale (sujet validé) | Un mini-quiz augmente commentaires et complétion | Commentaires > médiane sur ≥ 2 réseaux — ✅ script + voix off calée (`pensee-critique-2`, 43,44 s, 12 plans, sujet = meilleur performer du catalogue). Voir [pensee-critique-2.md](pensee-critique-2.md) |
 
 ---
 

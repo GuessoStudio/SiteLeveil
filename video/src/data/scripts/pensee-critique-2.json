@@ -1,0 +1,25 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "pensee-critique-2.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {"pose":"idle","emotion":"calme","mode":"eveil","position":"center","camera":"cine","fx":"none","accent":"eveil","burst":false},
+  "scenes": [
+    {"duration":4.76,"keyword":"VRAI OU FAUX ?","keywordFx":"glitch","subtitle":"Petit test : plus tu es intelligent, moins tu tombes dans les fake news. Vrai ou faux ?","pose":"shrug","emotion":"confusion","mode":"neuro","accent":"neuro","camera":"zoom-in","position":"center","transition":"static_noise","fx":"attention_spotlight"},
+    {"duration":0.40,"keyword":"FAUX","keywordFx":"shake","subtitle":"Faux.","pose":"point","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift"},
+    {"duration":5.47,"keyword":"PAS LE QI","subtitle":"Ce qui te protège vraiment, ce n'est pas le QI : c'est la capacité à t'arrêter avant de juger.","pose":"cross","emotion":"focus","mode":"neuro","accent":"neuro","camera":"cine","position":"right","fx":"reset_breath"},
+    {"duration":5.47,"keyword":"LA VÉRITÉ ?","subtitle":"Parce que ton cerveau ne cherche pas la vérité. Il cherche ce qui confirme ce que tu crois déjà.","pose":"shrug","emotion":"confusion","mode":"emotions","accent":"emotions","camera":"cine","position":"left","transition":"color_shift","fx":"rumination_loop"},
+    {"duration":5.77,"keyword":"BIAIS COGNITIF","keywordFx":"glitch","subtitle":"C'est le biais de confirmation. Tu vois une info qui va dans ton sens ? Tu la crois plus vite.","pose":"point","emotion":"insight","mode":"neuro","accent":"dopamine","camera":"cine","position":"center","split":{"left":"DANS TON SENS","right":"TU LA CROIS"}},
+    {"duration":5.16,"keyword":"LE REFUS","subtitle":"Tu vois une info qui te contredit ? Tu la rejettes plus vite. C'est le dialogue de sourds.","pose":"cross","emotion":"surcharge","mode":"neuro","accent":"stress","camera":"cine","position":"right","transition":"zoom_smash","split":{"left":"TE CONTREDIT","right":"TU REJETTES"},"fx":"cognitive_overload"},
+    {"duration":4.86,"keyword":"LA SCIENCE","subtitle":"Dan Kahan, à l'université de Yale, a prouvé que notre intelligence sert souvent à justifier nos croyances.","pose":"think","emotion":"focus","mode":"neuro","accent":"neuro","camera":"cine","position":"left","icon":"eye","credit":"Dan Kahan · Université de Yale"},
+    {"duration":4.86,"keyword":"PENSÉE CRITIQUE","subtitle":"La vraie pensée critique commence avec une question simple : Est-ce vrai… et comment je le sais ?","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift","fx":"synapse_fire","icon":"lightbulb"},
+    {"duration":0.91,"keyword":"1. PARTAGER","subtitle":"Avant de partager.","pose":"point","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"center","icon":"link"},
+    {"duration":0.91,"keyword":"2. RÉAGIR","subtitle":"Avant de réagir.","pose":"shrug","emotion":"confusion","mode":"eveil","accent":"growth","camera":"cine","position":"center","icon":"bolt"},
+    {"duration":0.91,"keyword":"3. JUGER","subtitle":"Avant de juger.","pose":"cross","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"center","icon":"target"},
+    {"duration":3.96,"keyword":"BIAIS","keywordFx":"shake","subtitle":"Penser clairement, ce n'est pas avoir toujours raison. Commente BIAIS pour recevoir la méthode.","pose":"wave","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"punch-head","position":"center","transition":"blackout","fx":"gratitude_glow","icon":"brain"}
+  ]
+}
