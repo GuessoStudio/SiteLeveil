@@ -58,9 +58,21 @@ Recette d'ouverture : `zoom-in`+`static_noise`+`glitch` (continuité avec
 - [x] Couverture générée (`npm run cover:projecteur2`)
 - [x] Pack réseaux (FB/IG/TikTok/YouTube)
 - [x] Publié (2026-07-26, dimanche — créneaux habituels)
-- [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6 — comparer à
-      la baseline de l'original (688 vues YT / 44,6% / +1 abonné/7j).
-      Prochain point : 2026-07-27 ~9h
+- [x] Relevé +19-20h dans `mesure-14-jours.md` §6 (2026-07-27)
+- [ ] Relevés +72h / +7j dans `mesure-14-jours.md` §6
+
+## ✅ Verdict — relevé +19-20h (2026-07-27)
+
+**✅ Hypothèse confirmée.** Abonnés cumulés (original + suite) = +1 + +4 =
+**+5**, au-dessus du seuil (+3). YouTube : 969 vues (×2,95 médiane, +18%
+vs autres Shorts), 40,9 % rétention, +3 abonnés. TikTok : 271 vues, 37,9 %
+rétention, 67 % restants à 0:01 (pas de décrochage sévère — 3ᵉ vidéo à
+confirmer ce pattern après `effet-projecteur` et `rejet-social-2`).
+Facebook : échantillon trop petit (5 vues). Instagram : 104 vues,
+fourchette basse. Sur la « tenue à 72h » : lecture qualitative — le sujet
+garde de l'attrait 8 jours après l'original malgré son propre plateau à
+48h. Relevé +72h/+7j encore à faire pour ce point spécifiquement. Détail
+complet dans `mesure-14-jours.md` §6-7.
 
 ## ⚠️ Notes
 

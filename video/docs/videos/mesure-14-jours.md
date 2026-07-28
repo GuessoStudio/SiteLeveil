@@ -105,7 +105,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
 | 5 | Procrastination (ré-écriture) | Réécrire **uniquement les 3 premières secondes** fait passer la rétention de 8,5 % à > 15 % | Rétention YT ≥ 15 % — **✅✅✅ CONFIRMÉ, meilleur résultat du labo** (publié 2026-07-24, relevé +19-20h : rétention YT 58,8%, 1 200 vues, +5 abonnés). Détail §6-7 |
-| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — baseline connue : l'original `effet-projecteur` (publié 2026-07-18) fait 688 vues YT / 44,6% rétention / +1 abonné cumulé sur 7j (détail §6). ✅ script + voix off calée (`effet-projecteur-2`, 29,35 s, 9 plans, contenu neuf sur l'illusion de transparence), karaoké/rendu restants. Voir [effet-projecteur-2.md](effet-projecteur-2.md) |
+| 6 | Effet projecteur (suite) | Le sujet tient au-delà de 72 h et convertit en abonnés | +3 abo cumulés **et** tenue à 72 h — **✅ CONFIRMÉ** (suite publiée 2026-07-26, relevé +19-20h : +5 abonnés cumulés [original +1, suite +4], 969 vues YT ×2,95 médiane). Détail §6-7 |
 
 ### 25 % — tester un format
 
@@ -474,6 +474,42 @@ Résultat : **5,44 %** (11 likes + 2 saves / 239 vues) — au-dessus du seuil,
 - **Prochaine action** : test #8 (format quiz/expérience mentale) reste le
   seul test non lancé. Après son relevé, bilan complet du labo 14 jours et
   décision sur `proposition-hook-par-plateforme.md`.
+
+### Effet projecteur — la suite (`effet-projecteur-2`) — relevé ~+19-20h (2026-07-27, publié 2026-07-26)
+
+Publication : FB 12h30 · YT heure non capturée · IG 18h31 · TikTok heure non capturée.
+
+| Réseau | Vues | Rétention | Interactions | Abonnés | Note |
+|---|---:|---:|---|---:|---|
+| YouTube | **969** (méd. 328, ×2,95, +149 vs habitude) | 40,9 % (12s/29,35s) | 393 vues engagées | **+3** | 🟢🟢 2× les vues habituelles, +18% vs autres Shorts, 37,9%/62,1% engagement spectateurs |
+| TikTok | 271 | 37,9 % (11,11s/29,35s) | 11 likes, 1 save, 0 com/partage — engagement 4,4% | +1 | 🟢 67% restants à 0:01 — dans le groupe des bonnes rétentions précoces (avec `effet-projecteur` 74% et `rejet-social-2` 69%), pas de décrochage sévère |
+| Facebook | 5 (spect. 3) | — | 1 réaction | 0 | échantillon bien trop petit pour être interprété |
+| Instagram | 104 (couv. 98) | 13,6 % (4s/29,35s) | 3 (2 likes, 1 save) | 0 | fourchette basse habituelle |
+
+### 2026-07-27 — Effet projecteur (suite) : hypothèse confirmée, labo à 7/8
+
+**Verdict test #6** (le sujet tient au-delà de 72h et convertit en
+abonnés) : seuil = +3 abonnés cumulés (original + suite) **et** tenue à
+72h. Abonnés cumulés : +1 (original, sur 7j) + +4 (suite : YT +3, TikTok
++1) = **+5**, au-dessus du seuil. **✅ Hypothèse confirmée** sur le critère
+chiffré. Sur la tenue à 72h : lecture qualitative plutôt que stricte —
+l'original avait déjà arrêté de croître après 48h, mais une suite publiée
+8 jours plus tard performe très bien (×2,95 la médiane), ce qui montre que
+le **sujet** garde de l'attrait au-delà de la durée de vie d'une seule
+vidéo. Relevé à +72h d'`effet-projecteur-2` lui-même encore à faire pour
+compléter ce point.
+
+- **À reproduire** : produire une « suite » sur un sujet déjà publié quand
+  il a bien marché est une stratégie de contenu viable — pas besoin
+  d'attendre un nouveau sujet à chaque fois.
+- **3ᵉ confirmation sur le pattern TikTok** : `effet-projecteur-2` (67% à
+  0:01) rejoint `effet-projecteur` (74%) et `rejet-social-2` (69%) dans le
+  groupe des bonnes rétentions précoces, malgré des recipes d'ouverture
+  différentes entre les trois. Continue de pointer vers le contenu/rythme
+  plutôt que la recette caméra comme facteur déterminant.
+- **Labo à 7/8 tests tranchés** : reste uniquement le test #8
+  (`pensee-critique-2`, format quiz). Une fois relevé, bilan complet du
+  labo 14 jours.
 
 ### Effet projecteur (`effet-projecteur`) — relevé +7j (2026-07-25, publié 2026-07-18)
 
