@@ -118,3 +118,26 @@ publication manuelle devient un vrai goulot d'étranglement.
       un remplacement du process manuel de `mesure-14-jours.md` §5
 - [ ] Comparer les chiffres qu'il remonte à un relevé manuel existant pour
       vérifier la fiabilité avant de lui faire confiance seul
+
+### Test Metricool API fait le 2026-07-28 (avant même Sandcastles)
+
+En préparant le relevé de `pensee-critique-2`, test direct des champs
+Metricool listés comme disponibles pour la rétention TikTok/Instagram, sur
+`effet-projecteur-2` et `rejet-social-2` (déjà publiées, chiffres connus
+par capture manuelle) :
+
+- **Fonctionne** (chiffres cohérents avec les captures manuelles) :
+  Instagram vues + durée moyenne de vue + `reelsViewRate` (% ayant regardé
+  plus de 3s — nouvelle métrique, jamais suivie avant) ; Facebook vues +
+  durée moyenne de vue ; TikTok vues/likes/commentaires/partages bruts.
+- **Ne fonctionne pas** (champ listé dans l'API mais retourne `null`) :
+  TikTok `fullVideoWatchedRate`, temps de visionnage, sources de trafic
+  (Pour toi/Following/recherche) ; Instagram `retention` (%moyen regardé,
+  distinct de `reelsViewRate`). YouTube : tous les champs vidéo marqués
+  « Deprecated » côté API Metricool, Studio reste seul fiable.
+
+**Conclusion** : Metricool réduit un peu la charge de capture manuelle
+(IG/FB) mais ne remplace pas les captures TikTok (rétention + sources) ni
+YouTube Studio. Si Sandcastles promet la rétention TikTok native, il
+faudra vérifier que lui y arrive là où l'API Metricool standard échoue —
+sinon le gain est plus limité que prévu.
