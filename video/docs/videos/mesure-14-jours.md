@@ -112,7 +112,7 @@ IG/YouTube : historique Metricool trop court → utiliser ce motif comme proxy.
 | # | Sujet | Hypothèse unique | Seuil de réussite |
 |---|---|---|---|
 | 7 | Rejet social (nouveau hook/scène concrète) | Le problème est créatif : une scène concrète fait passer l'engagement TikTok de 1,6 % à > 5 % | Engagement TikTok ≥ 5 % — **✅ CONFIRMÉ** (publié 2026-07-25, relevé +19-20h : engagement TikTok 5,44%, ×3,4 la baseline 1,6%). Détail §6-7 |
-| 8 | Format quiz / expérience mentale (sujet validé) | Un mini-quiz augmente commentaires et complétion | Commentaires > médiane sur ≥ 2 réseaux — ✅ script + voix off calée (`pensee-critique-2`, 43,44 s, 12 plans, sujet = meilleur performer du catalogue). Voir [pensee-critique-2.md](pensee-critique-2.md) |
+| 8 | Format quiz / expérience mentale (sujet validé) | Un mini-quiz augmente commentaires et complétion | Commentaires > médiane sur ≥ 2 réseaux — **❌ ÉCHEC** (publié 2026-07-28, relevé +19-20h : **0 commentaire sur les 4 réseaux** malgré 2 appels explicites). Rétention YT 45,4 % correcte. Détail §6-7 |
 
 ---
 
@@ -511,6 +511,39 @@ compléter ce point.
   (`pensee-critique-2`, format quiz). Une fois relevé, bilan complet du
   labo 14 jours.
 
+### Pensée critique — format quiz (`pensee-critique-2`) — relevé ~+19-20h (2026-07-29, publié 2026-07-28)
+
+Publication : FB 12h30 · YT ~13h30 · IG 18h31 · TikTok 18h00.
+Chiffres IG/TikTok recoupés avec l'API Metricool (cohérents aux captures).
+
+| Réseau | Vues | Rétention | **Commentaires** | Autres interactions | Abonnés | Note |
+|---|---:|---:|---:|---|---:|---|
+| YouTube | 436 (méd. 328) | **45,4 %** (19s/43,44s) | **0** | 12 likes, 231 vues engagées, 52,1 % ont continué à regarder | **+3** | 🟢 4ᵉ meilleure rétention du labo ; **2,5 % du trafic via recherche YouTube** — le plus haut du catalogue |
+| TikTok | 261 (Metricool : 257) | 23,3 % (10,01s/43,44s) | **0** | 19 likes, 3 saves, 0 partage — engagement 8,4 % | +1 | 69 % restants à 0:01 (groupe « bonne rétention précoce »), 99,2 % flux Pour toi |
+| Instagram | 122 (couv. 111) | 26,5 % (`reelsViewRate`), 4,6 s moy. | **0** | 3 likes, 1 save, 0 partage | 0 | fourchette habituelle |
+| Facebook | 10 (spect. 5) | 11,4 % (5s/43,44s) | **0** | 1 réaction | 0 | 🔴 échantillon trop petit — voir alerte FB ci-dessous |
+
+### 2026-07-29 — Pensée critique (quiz) : hypothèse infirmée — le labo est complet (8/8)
+
+**Verdict test #8** (un mini-quiz augmente commentaires et complétion) :
+seuil = commentaires > médiane sur ≥ 2 réseaux. Résultat : **0 commentaire
+sur les 4 réseaux**, alors que la vidéo contenait **deux** appels explicites
+(le quiz « Vrai ou faux ? » en ouverture + « Commente BIAIS » en clôture).
+La médiane historique des commentaires étant elle-même à 0, le seuil n'est
+franchi nulle part. **❌ Hypothèse infirmée sans ambiguïté.**
+
+- **Le reste de la vidéo est pourtant bon** : 45,4 % de rétention YT (4ᵉ
+  du labo), +3 abonnés, engagement TikTok 8,4 %. Ce n'est pas un échec de
+  contenu, c'est un échec du **mécanisme d'engagement** spécifiquement.
+- **Signal secondaire intéressant** : 2,5 % du trafic YouTube vient de la
+  **recherche** (contre 0-2 % ailleurs), le plus haut du catalogue — le
+  format question/quiz semble mieux matcher des requêtes réelles. À
+  creuser côté titres SEO plutôt que côté engagement.
+- **⚠️ Alerte Facebook** : la portée s'est effondrée depuis le 2026-07-25
+  (218-241 vues jusqu'au 23/07 → 4, 5, 10 vues ensuite). Ce n'est pas lié
+  au contenu (3 vidéos différentes concernées) — à investiguer côté compte
+  (portée organique, changement d'algorithme, ou problème de publication).
+
 ### Effet projecteur (`effet-projecteur`) — relevé +7j (2026-07-25, publié 2026-07-18)
 
 ⚠️ Correction : ce test avait été noté comme publié le 2026-07-25 par
@@ -525,3 +558,118 @@ Publication : FB 18/07 12h30 · TikTok 18/07 20h00 · IG 18/07 18h31 · YT 18/07
 | TikTok | 264 | **42,3 %** (14,21s/33,62s) | 25 likes, 1 com, 6 saves, 0 partage — engagement 12,1 % | 0 | 🟢🟢 **meilleure rétention TikTok du labo à ce jour**, et **74 % restants à 0:01** — 1ʳᵉ vidéo labo à ne PAS montrer le décrochage sévère observé sur les 5 autres |
 | Facebook | 237 (spect. 224) | 11,9 % (4s/33,62s) | 5 interactions | 0 | 🟠 fourchette basse habituelle, 86,3% de la portée hors abonnés |
 | Instagram | 120 (couv. 119) | 14,9 % (5s/33,62s) | 2 (1 like, 1 save) | 0 | 🟡 correct pour ce canal |
+
+---
+
+## 8. BILAN DU LABO 14 JOURS (2026-07-29)
+
+> Les 8 tests sont tranchés. Ce qui suit remplace les hypothèses de la §4
+> par ce qui est **établi** — à appliquer sur les scripts suivants.
+
+### 8.1 Résultats bruts
+
+| # | Test | Critère | Verdict |
+|---|---|---|---|
+| 1 | BDNF #2 — hook émotionnel | Rétention YT ≥ 18 % + vues > médiane | ✅ 32,5 % / 346 vues |
+| 2 | Sérotonine — durée < 30 s | Rétention YT ≥ 20 % | ✅✅ ~45 % / 1 408 vues / +6 abo |
+| 3 | Dopamine #2 — hook chiffre/corps | Vues YT ≥ 600 | ❌ 269 vues |
+| 4 | Vérité illusoire — mini-test | Partages TikTok ≥ 2 + rétention ≥ 20 % | ❌ 0 partage (rétention ✅) |
+| 5 | Procrastination — réécriture accroche | Rétention YT ≥ 15 % | ✅✅✅ **58,8 %** (record) |
+| 6 | Effet projecteur — suite | +3 abo cumulés + tenue 72 h | ✅ +5 abo cumulés |
+| 7 | Rejet social — scène concrète | Engagement TikTok ≥ 5 % | ✅ 5,44 % (×3,4 baseline) |
+| 8 | Pensée critique — quiz | Commentaires > médiane sur ≥ 2 réseaux | ❌ 0 commentaire partout |
+
+**5 confirmés / 3 infirmés.**
+
+### 8.2 Ce qui est ÉTABLI (à appliquer)
+
+**1. La tension narrative est le levier de rétention n°1 — confirmé 2/2.**
+Structure : affirmation supposée → négation sans révéler → révélation
+différée via un chercheur nommé. Résultats : `procrastination-2` 58,8 %,
+`bdnf2` 32,5 % (vs 8,5 % et 18 % pour leurs originaux). **C'est le seul
+levier qui a produit un doublement de rétention.** À systématiser.
+
+**2. Couper sous 30 s double la rétention — confirmé 1/1, effet massif.**
+`intestin-cerveau-2` : ~45 % de rétention et 1 408 vues (vs 17 % / 1 119
+pour l'original de 35 s). Un seul point de données, mais le plus gros
+écart vues+rétention simultané du labo. À retester pour confirmer.
+
+**3. Une « suite » sur un sujet qui a marché fonctionne — confirmé 1/1.**
+`effet-projecteur-2` : 969 vues (×2,95 la médiane), +3 abo, publiée 8
+jours après l'original. Pas besoin d'un sujet neuf à chaque fois.
+
+**4. Une scène concrète vécue bat une affirmation scientifique en
+ouverture, pour l'engagement TikTok — confirmé 1/1.** `rejet-social-2` :
+engagement 5,44 % vs 1,6 % pour l'original. (« Ton message reste sur vu.
+Depuis trois heures. » plutôt que « Le rejet social allume les mêmes
+zones cérébrales. »)
+
+### 8.3 Ce qui est ÉCARTÉ (ne plus investir dessus)
+
+**1. Le hook ne pilote PAS la distribution.** Test #3 : hook chiffre/corps
+travaillé → 269 vues, sous la médiane du sujet lui-même. Les vues YT du
+labo vont de 269 à 1 408 **sans corrélation avec la qualité du hook**. Le
+hook pilote la rétention, pas la portée. Arrêter de traiter les deux
+comme un même levier.
+
+**2. Les CTA d'engagement ne produisent pas d'engagement — 0/2, net.**
+- Test #4 : CTA de partage explicite → **0 partage TikTok**
+- Test #8 : quiz + 2 appels au commentaire → **0 commentaire, 4 réseaux**
+
+C'est le résultat le plus tranché du labo. Demander une action à cette
+audience ne la produit pas. Les interactions qui arrivent (likes, saves)
+arrivent **spontanément**, pas sur commande. **Recommandation : arrêter
+les CTA « commente MOT » et « partage à quelqu'un »** — ils occupent 3-4 s
+de fin de vidéo pour zéro retour mesurable. Réinvestir ce temps en
+contenu ou en signature de marque.
+
+**3. Le recipe visuel d'ouverture n'explique pas le décrochage TikTok.**
+Le trio `punch-head`+`flash_reverse`+`shake` avait été soupçonné (3/3
+décrochages à 0:01). Changement testé sur `procrastination-2`
+(`zoom-in`+`static_noise`+`glitch`) : **décrochage identique**. Ce qui
+sépare réellement les vidéos, c'est autre chose (voir 8.4).
+
+### 8.4 Le pattern TikTok 0:01 — lecture corrigée
+
+Toutes les vidéos affichent « la plupart ont arrêté à 0:01 », mais la
+**magnitude** se sépare nettement en deux groupes :
+
+| Groupe | % restants à 0:01 | Vidéos |
+|---|---|---|
+| 🟢 Bon | 67-74 % | `effet-projecteur` 74, `rejet-social-2` 69, `pensee-critique-2` 69, `effet-projecteur-2` 67 |
+| 🟠 Faible | 50-64 % | `verite-illusoire` 64, `dopamine-2` ~54, `procrastination-2` ~50 |
+
+Ce qui distingue le groupe 🟢 : une **première seconde à faible densité
+verbale** — une phrase courte et concrète, pas une affirmation dense à
+décoder. Hypothèse à tester si le sujet est repris plus tard : ce n'est
+ni la caméra ni la transition, c'est **le nombre de mots dans la première
+seconde**.
+
+### 8.5 État des canaux
+
+- **YouTube** : le seul canal qui convertit (jusqu'à +6 abo/vidéo) et le
+  seul avec une distribution variable exploitable. C'est là que se joue
+  la croissance. Priorité absolue.
+- **TikTok** : audience stable (240-270 vues quasi systématiques), bon
+  engagement en likes/saves, **zéro conversion en abonnés ou partages**.
+  Canal de présence, pas de croissance.
+- **Instagram** : 40-127 vues, interactions quasi nulles. Aucun test n'a
+  bougé ce canal. Diagnostic inchangé depuis la baseline.
+- **⚠️ Facebook** : **effondrement à partir du 2026-07-25** — 218-241
+  vues jusqu'au 23/07, puis 4, 5, 10 vues. Trois vidéos différentes
+  touchées → ce n'est pas le contenu. **À investiguer en priorité** avant
+  de tirer la moindre conclusion FB.
+
+### 8.6 Décisions à prendre maintenant
+
+- [ ] **Trancher la proposition « hook différencié par plateforme »**
+      ([proposition-hook-par-plateforme.md](proposition-hook-par-plateforme.md)).
+      Élément de décision nouveau : le labo montre que le hook pilote la
+      rétention mais pas la distribution, et que les CTA d'engagement ne
+      marchent pas — deux piliers de cette proposition sont donc fragilisés.
+- [ ] **Statuer sur Sandcastles MCP** (même fichier). Le test API Metricool
+      du 2026-07-28 a montré que la rétention TikTok reste inaccessible par
+      l'API standard — vérifier si Sandcastles fait mieux.
+- [ ] **Investiguer l'effondrement Facebook** (portée /20 depuis le 25/07).
+- [ ] **Décider de la cadence post-labo** : la roadmap prévoit un retour à
+      2-3 vidéos/semaine (§3) après les 4/semaine du labo.

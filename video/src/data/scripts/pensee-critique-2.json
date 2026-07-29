@@ -7,19 +7,946 @@
   "ambience": "dark_drone",
   "ambienceVolume": 1.1,
   "karaoke": true,
-  "defaults": {"pose":"idle","emotion":"calme","mode":"eveil","position":"center","camera":"cine","fx":"none","accent":"eveil","burst":false},
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "eveil",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "eveil",
+    "burst": false
+  },
   "scenes": [
-    {"duration":4.76,"keyword":"VRAI OU FAUX ?","keywordFx":"glitch","subtitle":"Petit test : plus tu es intelligent, moins tu tombes dans les fake news. Vrai ou faux ?","pose":"shrug","emotion":"confusion","mode":"neuro","accent":"neuro","camera":"zoom-in","position":"center","transition":"static_noise","fx":"attention_spotlight"},
-    {"duration":0.40,"keyword":"FAUX","keywordFx":"shake","subtitle":"Faux.","pose":"point","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift"},
-    {"duration":5.47,"keyword":"PAS LE QI","subtitle":"Ce qui te protège vraiment, ce n'est pas le QI : c'est la capacité à t'arrêter avant de juger.","pose":"cross","emotion":"focus","mode":"neuro","accent":"neuro","camera":"cine","position":"right","fx":"reset_breath"},
-    {"duration":5.47,"keyword":"LA VÉRITÉ ?","subtitle":"Parce que ton cerveau ne cherche pas la vérité. Il cherche ce qui confirme ce que tu crois déjà.","pose":"shrug","emotion":"confusion","mode":"emotions","accent":"emotions","camera":"cine","position":"left","transition":"color_shift","fx":"rumination_loop"},
-    {"duration":5.77,"keyword":"BIAIS COGNITIF","keywordFx":"glitch","subtitle":"C'est le biais de confirmation. Tu vois une info qui va dans ton sens ? Tu la crois plus vite.","pose":"point","emotion":"insight","mode":"neuro","accent":"dopamine","camera":"cine","position":"center","split":{"left":"DANS TON SENS","right":"TU LA CROIS"}},
-    {"duration":5.16,"keyword":"LE REFUS","subtitle":"Tu vois une info qui te contredit ? Tu la rejettes plus vite. C'est le dialogue de sourds.","pose":"cross","emotion":"surcharge","mode":"neuro","accent":"stress","camera":"cine","position":"right","transition":"zoom_smash","split":{"left":"TE CONTREDIT","right":"TU REJETTES"},"fx":"cognitive_overload"},
-    {"duration":4.86,"keyword":"LA SCIENCE","subtitle":"Dan Kahan, à l'université de Yale, a prouvé que notre intelligence sert souvent à justifier nos croyances.","pose":"think","emotion":"focus","mode":"neuro","accent":"neuro","camera":"cine","position":"left","icon":"eye","credit":"Dan Kahan · Université de Yale"},
-    {"duration":4.86,"keyword":"PENSÉE CRITIQUE","subtitle":"La vraie pensée critique commence avec une question simple : Est-ce vrai… et comment je le sais ?","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift","fx":"synapse_fire","icon":"lightbulb"},
-    {"duration":0.91,"keyword":"1. PARTAGER","subtitle":"Avant de partager.","pose":"point","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"center","icon":"link"},
-    {"duration":0.91,"keyword":"2. RÉAGIR","subtitle":"Avant de réagir.","pose":"shrug","emotion":"confusion","mode":"eveil","accent":"growth","camera":"cine","position":"center","icon":"bolt"},
-    {"duration":0.91,"keyword":"3. JUGER","subtitle":"Avant de juger.","pose":"cross","emotion":"focus","mode":"eveil","accent":"growth","camera":"cine","position":"center","icon":"target"},
-    {"duration":3.96,"keyword":"BIAIS","keywordFx":"shake","subtitle":"Penser clairement, ce n'est pas avoir toujours raison. Commente BIAIS pour recevoir la méthode.","pose":"wave","emotion":"fierte","mode":"eveil","accent":"eveil","camera":"punch-head","position":"center","transition":"blackout","fx":"gratitude_glow","icon":"brain"}
+    {
+      "duration": 4.76,
+      "keyword": "VRAI OU FAUX ?",
+      "keywordFx": "glitch",
+      "subtitle": "Petit test : plus tu es intelligent, moins tu tombes dans les fake news. Vrai ou faux ?",
+      "pose": "shrug",
+      "emotion": "confusion",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "zoom-in",
+      "position": "center",
+      "transition": "static_noise",
+      "fx": "attention_spotlight"
+    },
+    {
+      "duration": 0.4,
+      "keyword": "FAUX",
+      "keywordFx": "shake",
+      "subtitle": "Faux.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift"
+    },
+    {
+      "duration": 5.47,
+      "keyword": "PAS LE QI",
+      "subtitle": "Ce qui te protège vraiment, ce n'est pas le QI : c'est la capacité à t'arrêter avant de juger.",
+      "pose": "cross",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "right",
+      "fx": "reset_breath"
+    },
+    {
+      "duration": 5.47,
+      "keyword": "LA VÉRITÉ ?",
+      "subtitle": "Parce que ton cerveau ne cherche pas la vérité. Il cherche ce qui confirme ce que tu crois déjà.",
+      "pose": "shrug",
+      "emotion": "confusion",
+      "mode": "emotions",
+      "accent": "emotions",
+      "camera": "cine",
+      "position": "left",
+      "transition": "color_shift",
+      "fx": "rumination_loop"
+    },
+    {
+      "duration": 5.77,
+      "keyword": "BIAIS COGNITIF",
+      "keywordFx": "glitch",
+      "subtitle": "C'est le biais de confirmation. Tu vois une info qui va dans ton sens ? Tu la crois plus vite.",
+      "pose": "point",
+      "emotion": "insight",
+      "mode": "neuro",
+      "accent": "dopamine",
+      "camera": "cine",
+      "position": "center",
+      "split": {
+        "left": "DANS TON SENS",
+        "right": "TU LA CROIS"
+      }
+    },
+    {
+      "duration": 5.16,
+      "keyword": "LE REFUS",
+      "subtitle": "Tu vois une info qui te contredit ? Tu la rejettes plus vite. C'est le dialogue de sourds.",
+      "pose": "cross",
+      "emotion": "surcharge",
+      "mode": "neuro",
+      "accent": "stress",
+      "camera": "cine",
+      "position": "right",
+      "transition": "zoom_smash",
+      "split": {
+        "left": "TE CONTREDIT",
+        "right": "TU REJETTES"
+      },
+      "fx": "cognitive_overload"
+    },
+    {
+      "duration": 4.86,
+      "keyword": "LA SCIENCE",
+      "subtitle": "Dan Kahan, à l'université de Yale, a prouvé que notre intelligence sert souvent à justifier nos croyances.",
+      "pose": "think",
+      "emotion": "focus",
+      "mode": "neuro",
+      "accent": "neuro",
+      "camera": "cine",
+      "position": "left",
+      "icon": "eye",
+      "credit": "Dan Kahan · Université de Yale"
+    },
+    {
+      "duration": 4.86,
+      "keyword": "PENSÉE CRITIQUE",
+      "subtitle": "La vraie pensée critique commence avec une question simple : Est-ce vrai… et comment je le sais ?",
+      "pose": "open",
+      "emotion": "insight",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "cine",
+      "position": "center",
+      "transition": "color_shift",
+      "fx": "synapse_fire",
+      "icon": "lightbulb"
+    },
+    {
+      "duration": 0.91,
+      "keyword": "1. PARTAGER",
+      "subtitle": "Avant de partager.",
+      "pose": "point",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "center",
+      "icon": "link"
+    },
+    {
+      "duration": 0.91,
+      "keyword": "2. RÉAGIR",
+      "subtitle": "Avant de réagir.",
+      "pose": "shrug",
+      "emotion": "confusion",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "center",
+      "icon": "bolt"
+    },
+    {
+      "duration": 0.91,
+      "keyword": "3. JUGER",
+      "subtitle": "Avant de juger.",
+      "pose": "cross",
+      "emotion": "focus",
+      "mode": "eveil",
+      "accent": "growth",
+      "camera": "cine",
+      "position": "center",
+      "icon": "target"
+    },
+    {
+      "duration": 3.96,
+      "keyword": "BIAIS",
+      "keywordFx": "shake",
+      "subtitle": "Penser clairement, ce n'est pas avoir toujours raison. Commente BIAIS pour recevoir la méthode.",
+      "pose": "wave",
+      "emotion": "fierte",
+      "mode": "eveil",
+      "accent": "eveil",
+      "camera": "punch-head",
+      "position": "center",
+      "transition": "blackout",
+      "fx": "gratitude_glow",
+      "icon": "brain"
+    }
+  ],
+  "words": [
+    {
+      "w": "Petit",
+      "start": 0.0,
+      "end": 0.26
+    },
+    {
+      "w": "test",
+      "start": 0.26,
+      "end": 0.6
+    },
+    {
+      "w": ":",
+      "start": 0.6,
+      "end": 0.83
+    },
+    {
+      "w": "plus",
+      "start": 1.06,
+      "end": 1.18
+    },
+    {
+      "w": "tu",
+      "start": 1.18,
+      "end": 1.3
+    },
+    {
+      "w": "es",
+      "start": 1.3,
+      "end": 1.4
+    },
+    {
+      "w": "intelligent,",
+      "start": 1.4,
+      "end": 1.84
+    },
+    {
+      "w": "moins",
+      "start": 2.16,
+      "end": 2.26
+    },
+    {
+      "w": "tu",
+      "start": 2.26,
+      "end": 2.4
+    },
+    {
+      "w": "tombes",
+      "start": 2.4,
+      "end": 2.54
+    },
+    {
+      "w": "dans",
+      "start": 2.54,
+      "end": 2.68
+    },
+    {
+      "w": "les",
+      "start": 2.68,
+      "end": 2.747
+    },
+    {
+      "w": "fake",
+      "start": 2.747,
+      "end": 2.813
+    },
+    {
+      "w": "news.",
+      "start": 2.88,
+      "end": 3.2
+    },
+    {
+      "w": "Vrai",
+      "start": 3.66,
+      "end": 3.96
+    },
+    {
+      "w": "ou",
+      "start": 3.96,
+      "end": 4.1
+    },
+    {
+      "w": "faux",
+      "start": 4.1,
+      "end": 4.32
+    },
+    {
+      "w": "?",
+      "start": 4.32,
+      "end": 4.68
+    },
+    {
+      "w": "Faux.",
+      "start": 5.3,
+      "end": 5.54
+    },
+    {
+      "w": "Ce",
+      "start": 5.84,
+      "end": 5.84
+    },
+    {
+      "w": "qui",
+      "start": 5.84,
+      "end": 5.96
+    },
+    {
+      "w": "te",
+      "start": 5.96,
+      "end": 6.08
+    },
+    {
+      "w": "protège",
+      "start": 6.08,
+      "end": 6.42
+    },
+    {
+      "w": "vraiment,",
+      "start": 6.42,
+      "end": 6.78
+    },
+    {
+      "w": "ce",
+      "start": 6.78,
+      "end": 7.12
+    },
+    {
+      "w": "n'est",
+      "start": 7.12,
+      "end": 7.16
+    },
+    {
+      "w": "pas",
+      "start": 7.2,
+      "end": 7.32
+    },
+    {
+      "w": "le",
+      "start": 7.32,
+      "end": 7.46
+    },
+    {
+      "w": "QI",
+      "start": 7.46,
+      "end": 7.64
+    },
+    {
+      "w": ":",
+      "start": 7.64,
+      "end": 7.82
+    },
+    {
+      "w": "c'est",
+      "start": 7.82,
+      "end": 8.0
+    },
+    {
+      "w": "la",
+      "start": 8.18,
+      "end": 8.3
+    },
+    {
+      "w": "capacité",
+      "start": 8.3,
+      "end": 8.9
+    },
+    {
+      "w": "à",
+      "start": 8.9,
+      "end": 9.08
+    },
+    {
+      "w": "t'arrêter",
+      "start": 9.08,
+      "end": 9.24
+    },
+    {
+      "w": "avant",
+      "start": 9.4,
+      "end": 9.88
+    },
+    {
+      "w": "de",
+      "start": 9.88,
+      "end": 10.12
+    },
+    {
+      "w": "juger.",
+      "start": 10.12,
+      "end": 10.48
+    },
+    {
+      "w": "Parce",
+      "start": 10.84,
+      "end": 10.98
+    },
+    {
+      "w": "que",
+      "start": 10.98,
+      "end": 11.1
+    },
+    {
+      "w": "ton",
+      "start": 11.1,
+      "end": 11.2
+    },
+    {
+      "w": "cerveau",
+      "start": 11.2,
+      "end": 11.66
+    },
+    {
+      "w": "ne",
+      "start": 11.66,
+      "end": 11.9
+    },
+    {
+      "w": "cherche",
+      "start": 11.9,
+      "end": 12.04
+    },
+    {
+      "w": "pas",
+      "start": 12.04,
+      "end": 12.22
+    },
+    {
+      "w": "la",
+      "start": 12.22,
+      "end": 12.34
+    },
+    {
+      "w": "vérité.",
+      "start": 12.34,
+      "end": 12.78
+    },
+    {
+      "w": "Il",
+      "start": 13.24,
+      "end": 13.38
+    },
+    {
+      "w": "cherche",
+      "start": 13.38,
+      "end": 13.6
+    },
+    {
+      "w": "ce",
+      "start": 13.6,
+      "end": 13.82
+    },
+    {
+      "w": "qui",
+      "start": 13.82,
+      "end": 13.92
+    },
+    {
+      "w": "confirme",
+      "start": 13.92,
+      "end": 14.4
+    },
+    {
+      "w": "ce",
+      "start": 14.4,
+      "end": 14.52
+    },
+    {
+      "w": "que",
+      "start": 14.52,
+      "end": 14.62
+    },
+    {
+      "w": "tu",
+      "start": 14.62,
+      "end": 14.72
+    },
+    {
+      "w": "crois",
+      "start": 14.72,
+      "end": 14.94
+    },
+    {
+      "w": "déjà.",
+      "start": 14.94,
+      "end": 15.22
+    },
+    {
+      "w": "C'est",
+      "start": 15.22,
+      "end": 15.52
+    },
+    {
+      "w": "le",
+      "start": 15.82,
+      "end": 15.92
+    },
+    {
+      "w": "biais",
+      "start": 15.92,
+      "end": 16.08
+    },
+    {
+      "w": "de",
+      "start": 16.08,
+      "end": 16.18
+    },
+    {
+      "w": "confirmation.",
+      "start": 16.18,
+      "end": 16.46
+    },
+    {
+      "w": "Tu",
+      "start": 17.08,
+      "end": 17.2
+    },
+    {
+      "w": "vois",
+      "start": 17.2,
+      "end": 17.34
+    },
+    {
+      "w": "une",
+      "start": 17.34,
+      "end": 17.44
+    },
+    {
+      "w": "info",
+      "start": 17.44,
+      "end": 17.6
+    },
+    {
+      "w": "qui",
+      "start": 17.6,
+      "end": 17.76
+    },
+    {
+      "w": "va",
+      "start": 17.76,
+      "end": 17.84
+    },
+    {
+      "w": "dans",
+      "start": 17.92,
+      "end": 18.04
+    },
+    {
+      "w": "ton",
+      "start": 18.04,
+      "end": 18.14
+    },
+    {
+      "w": "sens",
+      "start": 18.14,
+      "end": 18.54
+    },
+    {
+      "w": "?",
+      "start": 18.54,
+      "end": 18.82
+    },
+    {
+      "w": "Tu",
+      "start": 18.82,
+      "end": 18.94
+    },
+    {
+      "w": "la",
+      "start": 18.94,
+      "end": 19.06
+    },
+    {
+      "w": "crois",
+      "start": 19.06,
+      "end": 19.2
+    },
+    {
+      "w": "plus",
+      "start": 19.2,
+      "end": 19.38
+    },
+    {
+      "w": "vite.",
+      "start": 19.38,
+      "end": 19.6
+    },
+    {
+      "w": "Tu",
+      "start": 20.0,
+      "end": 20.12
+    },
+    {
+      "w": "vois",
+      "start": 20.12,
+      "end": 20.28
+    },
+    {
+      "w": "une",
+      "start": 20.28,
+      "end": 20.4
+    },
+    {
+      "w": "info",
+      "start": 20.4,
+      "end": 20.54
+    },
+    {
+      "w": "qui",
+      "start": 20.54,
+      "end": 20.7
+    },
+    {
+      "w": "te",
+      "start": 20.7,
+      "end": 20.82
+    },
+    {
+      "w": "contredit",
+      "start": 20.82,
+      "end": 21.16
+    },
+    {
+      "w": "?",
+      "start": 21.16,
+      "end": 21.7
+    },
+    {
+      "w": "Tu",
+      "start": 21.7,
+      "end": 21.86
+    },
+    {
+      "w": "la",
+      "start": 21.86,
+      "end": 22.02
+    },
+    {
+      "w": "rejettes",
+      "start": 22.02,
+      "end": 22.36
+    },
+    {
+      "w": "plus",
+      "start": 22.36,
+      "end": 22.54
+    },
+    {
+      "w": "vite.",
+      "start": 22.54,
+      "end": 22.74
+    },
+    {
+      "w": "C'est",
+      "start": 22.74,
+      "end": 22.99
+    },
+    {
+      "w": "le",
+      "start": 23.24,
+      "end": 23.36
+    },
+    {
+      "w": "dialogue",
+      "start": 23.36,
+      "end": 23.6
+    },
+    {
+      "w": "de",
+      "start": 23.6,
+      "end": 23.8
+    },
+    {
+      "w": "sourds.",
+      "start": 23.8,
+      "end": 24.29
+    },
+    {
+      "w": "Dan",
+      "start": 24.78,
+      "end": 25.1
+    },
+    {
+      "w": "Kahan,",
+      "start": 25.1,
+      "end": 25.29
+    },
+    {
+      "w": "à",
+      "start": 25.48,
+      "end": 25.72
+    },
+    {
+      "w": "l'université",
+      "start": 25.72,
+      "end": 25.99
+    },
+    {
+      "w": "de",
+      "start": 26.26,
+      "end": 26.42
+    },
+    {
+      "w": "Yale,",
+      "start": 26.42,
+      "end": 26.56
+    },
+    {
+      "w": "a",
+      "start": 26.7,
+      "end": 27.04
+    },
+    {
+      "w": "prouvé",
+      "start": 27.04,
+      "end": 27.4
+    },
+    {
+      "w": "que",
+      "start": 27.4,
+      "end": 27.68
+    },
+    {
+      "w": "notre",
+      "start": 27.68,
+      "end": 27.78
+    },
+    {
+      "w": "intelligence",
+      "start": 27.78,
+      "end": 28.3
+    },
+    {
+      "w": "sert",
+      "start": 28.3,
+      "end": 28.66
+    },
+    {
+      "w": "souvent",
+      "start": 28.66,
+      "end": 29.0
+    },
+    {
+      "w": "à",
+      "start": 29.0,
+      "end": 29.12
+    },
+    {
+      "w": "justifier",
+      "start": 29.12,
+      "end": 29.46
+    },
+    {
+      "w": "nos",
+      "start": 29.46,
+      "end": 29.56
+    },
+    {
+      "w": "croyances.",
+      "start": 29.56,
+      "end": 30.06
+    },
+    {
+      "w": "La",
+      "start": 30.56,
+      "end": 30.64
+    },
+    {
+      "w": "vraie",
+      "start": 30.64,
+      "end": 30.88
+    },
+    {
+      "w": "pensée",
+      "start": 30.88,
+      "end": 31.14
+    },
+    {
+      "w": "critique",
+      "start": 31.14,
+      "end": 31.46
+    },
+    {
+      "w": "commence",
+      "start": 31.46,
+      "end": 31.94
+    },
+    {
+      "w": "avec",
+      "start": 31.94,
+      "end": 32.24
+    },
+    {
+      "w": "une",
+      "start": 32.24,
+      "end": 32.38
+    },
+    {
+      "w": "question",
+      "start": 32.38,
+      "end": 32.58
+    },
+    {
+      "w": "simple",
+      "start": 32.58,
+      "end": 33.04
+    },
+    {
+      "w": ":",
+      "start": 33.64,
+      "end": 34.08
+    },
+    {
+      "w": "Est-ce",
+      "start": 34.08,
+      "end": 34.08
+    },
+    {
+      "w": "vrai…",
+      "start": 34.08,
+      "end": 34.08
+    },
+    {
+      "w": "et",
+      "start": 34.08,
+      "end": 34.12
+    },
+    {
+      "w": "comment",
+      "start": 34.12,
+      "end": 34.4
+    },
+    {
+      "w": "je",
+      "start": 34.4,
+      "end": 34.6
+    },
+    {
+      "w": "le",
+      "start": 34.6,
+      "end": 34.74
+    },
+    {
+      "w": "sais",
+      "start": 34.74,
+      "end": 34.92
+    },
+    {
+      "w": "?",
+      "start": 34.92,
+      "end": 35.46
+    },
+    {
+      "w": "Avant",
+      "start": 35.46,
+      "end": 35.62
+    },
+    {
+      "w": "de",
+      "start": 35.62,
+      "end": 35.76
+    },
+    {
+      "w": "partager.",
+      "start": 35.76,
+      "end": 36.12
+    },
+    {
+      "w": "Avant",
+      "start": 36.58,
+      "end": 36.66
+    },
+    {
+      "w": "de",
+      "start": 36.66,
+      "end": 36.88
+    },
+    {
+      "w": "réagir.",
+      "start": 36.88,
+      "end": 37.58
+    },
+    {
+      "w": "Avant",
+      "start": 37.7,
+      "end": 37.84
+    },
+    {
+      "w": "de",
+      "start": 37.84,
+      "end": 38.06
+    },
+    {
+      "w": "juger.",
+      "start": 38.06,
+      "end": 38.46
+    },
+    {
+      "w": "Penser",
+      "start": 38.46,
+      "end": 38.88
+    },
+    {
+      "w": "clairement,",
+      "start": 39.3,
+      "end": 39.74
+    },
+    {
+      "w": "ce",
+      "start": 40.08,
+      "end": 40.16
+    },
+    {
+      "w": "n'est",
+      "start": 40.16,
+      "end": 40.25
+    },
+    {
+      "w": "pas",
+      "start": 40.34,
+      "end": 40.46
+    },
+    {
+      "w": "avoir",
+      "start": 40.46,
+      "end": 40.66
+    },
+    {
+      "w": "toujours",
+      "start": 40.66,
+      "end": 40.9
+    },
+    {
+      "w": "raison.",
+      "start": 40.9,
+      "end": 41.28
+    },
+    {
+      "w": "Commente",
+      "start": 41.28,
+      "end": 41.6
+    },
+    {
+      "w": "BIAIS",
+      "start": 41.92,
+      "end": 42.18
+    },
+    {
+      "w": "pour",
+      "start": 42.18,
+      "end": 42.46
+    },
+    {
+      "w": "recevoir",
+      "start": 42.46,
+      "end": 42.88
+    },
+    {
+      "w": "la",
+      "start": 42.88,
+      "end": 42.98
+    },
+    {
+      "w": "méthode.",
+      "start": 42.98,
+      "end": 43.32
+    }
   ]
 }

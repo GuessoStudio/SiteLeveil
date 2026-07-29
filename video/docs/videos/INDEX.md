@@ -11,6 +11,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 🧭 Feuille de route éditoriale (formule gagnante, 4 séries, pipeline dédupliqué) : [roadmap-editoriale.md](roadmap-editoriale.md)
 📜 Tous les scripts (texte parlé, prêts à lire) en un seul endroit : [SCRIPTS.md](SCRIPTS.md)
 🧪 Protocole de mesure Metricool + labo 14 jours (baseline, seuils, journal des relevés) : [mesure-14-jours.md](mesure-14-jours.md)
+🏁 **BILAN DU LABO (8/8 tests tranchés, 2026-07-29)** — ce qui est établi / écarté : [mesure-14-jours.md §8](mesure-14-jours.md#8-bilan-du-labo-14-jours-2026-07-29)
 📥 Proposition en attente — hook différencié par plateforme (à trancher après le bilan du labo) : [proposition-hook-par-plateforme.md](proposition-hook-par-plateforme.md)
 
 | Slug | Sujet | Pilier | Durée | Statut | Vues | Rétention | Fiche |
@@ -30,7 +31,7 @@ Statut : 📝 script · 🎙️ voix · 🎬 rendu · 🔊 sons · 💬 sous-tit
 | procrastination | Tu ne procrastines pas par paresse | Psychologie | 27,09s | 🎙️💬 (karaoké Whisper fait, pack réseaux livré — rendu à faire) | — | — | [fiche](procrastination.md) |
 | effet-projecteur | Personne ne te regarde autant que tu le crois | Psycho sociale | 33,62s | 🚀 publié (2026-07-18) — baseline du test labo #6 (suite à écrire) | 688 (YT) | 44,6% (YT) | [fiche](effet-projecteur.md) |
 | effet-projecteur-2 | Effet projecteur — la suite (labo 14 jours #6) | Psycho sociale | 29,35s | 🚀 publié (2026-07-26) — ✅ +5 abonnés cumulés (seuil +3) confirmé | 969 (YT) | 40,9% (YT) | [fiche](effet-projecteur-2.md) |
-| pensee-critique-2 | Pensée critique — format quiz (labo 14 jours #8) | Psycho / Neuro | 43,44s | 🎙️ (voix off masterisée + durées calées — karaoké/rendu à faire) | — | — | [fiche](pensee-critique-2.md) |
+| pensee-critique-2 | Pensée critique — format quiz (labo 14 jours #8) | Psycho / Neuro | 43,44s | 🚀 publié (2026-07-28) — ❌ 0 commentaire (seuil non atteint), rétention 45,4% OK | 436 (YT) | 45,4% (YT) | [fiche](pensee-critique-2.md) |
 | bdnf2 | BDNF #2 — test hook émotionnel (labo 14 jours #1) | Neurosciences | 39,09s | 🚀 publié (2026-07-20) — ✅ rétention 32,5% confirmée | 346 (YT) | 32,5% (YT) | [fiche](bdnf2.md) |
 | intestin-cerveau-2 | Sérotonine (intestin) #2 — test durée <30s (labo 14 jours #2) | Neuro / Psycho | 29,36s | 🚀 publié (2026-07-21) — ✅✅ meilleur résultat du labo | 1 408 (YT) | ~45% (YT) | [fiche](intestin-cerveau-2.md) |
 | dopamine-2 | Dopamine #2 — test hook chiffre/corps (labo 14 jours #3) | Neurosciences | 37,09s | 🚀 publié (2026-07-22) — ❌ seuil vues YT non atteint (269/600) | 269 (YT) | 37,8% (YT) | [fiche](dopamine-2.md) |

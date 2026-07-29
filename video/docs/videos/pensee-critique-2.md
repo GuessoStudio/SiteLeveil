@@ -56,14 +56,32 @@
 - [x] Script écrit et validé (1 seul chercheur nommé : Dan Kahan · Université de Yale)
 - [x] Voix off reçue + masterisée (-18,60 → -15,05 LUFS, GUIDE.md §4.1)
 - [x] Durées calées sur le mp3 réel (silencedetect, GUIDE.md §4.2)
-- [ ] Karaoké frame-perfect (Whisper local, `npm run words:pensee2`)
-- [ ] Rendu MP4 (`npm run render:pensee2`)
-- [ ] Couverture générée (`npm run cover:pensee2`)
-- [ ] Sous-titres vérifiés
-- [ ] Pack réseaux (FB/IG/TikTok/YouTube)
-- [ ] Publié
-- [ ] Relevés +24h / +72h / +7j dans `mesure-14-jours.md` §6 — vérifier
-      spécifiquement les **commentaires** sur ≥ 2 réseaux (seuil = médiane)
+- [x] Karaoké frame-perfect (Whisper local, `npm run words:pensee2`)
+- [x] Rendu MP4 (`npm run render:pensee2`)
+- [x] Couverture générée (`npm run cover:pensee2`)
+- [x] Pack réseaux (FB/IG/TikTok/YouTube)
+- [x] Publié (2026-07-28 — FB 12h30 · YT ~13h30 · TikTok 18h00 · IG 18h31)
+- [x] Relevé +19-20h dans `mesure-14-jours.md` §6 (2026-07-29)
+- [ ] Relevés +72h / +7j dans `mesure-14-jours.md` §6
+
+## ✅ Verdict — relevé +19-20h (2026-07-29)
+
+**❌ Hypothèse infirmée sans ambiguïté.** **0 commentaire sur les 4
+réseaux**, malgré deux appels explicites (quiz en ouverture + « Commente
+BIAIS » en clôture). La médiane historique des commentaires étant à 0, le
+seuil n'est franchi nulle part.
+
+Le reste de la vidéo est pourtant solide : YouTube 436 vues, **45,4 % de
+rétention** (4ᵉ du labo), +3 abonnés ; TikTok 261 vues, engagement 8,4 %,
+69 % restants à 0:01 ; Instagram 122 vues, 26,5 % de view rate. **C'est
+un échec du mécanisme d'engagement, pas du contenu.**
+
+Signal secondaire notable : **2,5 % du trafic YouTube vient de la
+recherche** — le plus haut du catalogue. Le format question semble mieux
+matcher des requêtes réelles ; à creuser côté titres SEO.
+
+Ce test clôt le labo 14 jours (8/8). Bilan complet dans
+`mesure-14-jours.md` §8.
 
 ## ⚠️ Notes
 
