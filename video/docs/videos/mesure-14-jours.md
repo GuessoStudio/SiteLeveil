@@ -701,11 +701,21 @@ petit échantillon).
    `intestin-cerveau-2` et `dopamine-2` étaient aussi des #2 sans être
    touchées → ce serait un effet cumulatif, pas immédiat.
 
-**Vérification à faire (accès admin requis, hors de portée de Claude)** :
-Facebook → Suite Business / Espace pro → **« Statut du compte »**. Meta y
-affiche toute restriction de portée ou signalement de contenu. Vide =
-algorithmique, peut revenir seul. Avertissement = cause identifiée et
-corrigeable.
+**Vérification faite le 2026-07-29** (Statut de la Page, admin Facebook) :
+
+- « La Page ne rencontre aucun problème »
+- Standards de la communauté : **aucune infraction**
+- Statut du compte : **aucune restriction**
+- Fonctionnalités supplémentaires → **Recommandations : Actif**
+
+**→ Cause tranchée : c'est algorithmique.** Aucune sanction formelle,
+l'éligibilité aux recommandations est intacte — Facebook a simplement
+cessé de pousser les Reels. Rien à corriger, rien à contester.
+
+*Nuance* : ce panneau affiche les sanctions formelles, pas les démotions
+de classement. Une démotion « contenu répétitif » n'y apparaîtrait jamais.
+L'hypothèse 2 n'est donc pas formellement exclue, seulement invisible
+depuis l'admin.
 
 **Implication stratégique** : ne pas réinvestir sur Facebook tant que ce
 point n'est pas levé. Le canal représentait ~219 vues/vidéo sans jamais
@@ -722,10 +732,13 @@ change pas la trajectoire de croissance, qui se joue sur YouTube.
 - [ ] **Statuer sur Sandcastles MCP** (même fichier). Le test API Metricool
       du 2026-07-28 a montré que la rétention TikTok reste inaccessible par
       l'API standard — vérifier si Sandcastles fait mieux.
-- [x] ~~**Investiguer l'effondrement Facebook**~~ → fait le 2026-07-29,
-      diagnostic complet en §8.7. Mécanisme identifié (coupure des
-      recommandations le 24/07). **Reste 1 action utilisateur** : vérifier
-      « Statut du compte » dans l'espace pro Facebook.
+- [x] ~~**Investiguer l'effondrement Facebook**~~ → **clos le 2026-07-29**,
+      diagnostic complet en §8.7. Mécanisme : coupure des recommandations
+      le 24/07. Cause : algorithmique (admin vérifié — aucune sanction,
+      Recommandations toujours actives). Rien à corriger. **Décision :
+      continuer à publier sur FB (coût nul, contenu déjà produit) mais ne
+      plus le compter comme canal de croissance** — ~219 vues/vidéo
+      pendant un mois pour 0 abonné généré.
 - [x] ~~**Chantier conversion §7 roadmap**~~ (bio + épingles) → fait le
       2026-07-29 sur TikTok / Instagram / YouTube. Facebook volontairement
       exclu tant que la portée est coupée. Épingles choisies sur données :
