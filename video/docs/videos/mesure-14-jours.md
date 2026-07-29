@@ -655,10 +655,62 @@ seconde**.
   Canal de présence, pas de croissance.
 - **Instagram** : 40-127 vues, interactions quasi nulles. Aucun test n'a
   bougé ce canal. Diagnostic inchangé depuis la baseline.
-- **⚠️ Facebook** : **effondrement à partir du 2026-07-25** — 218-241
-  vues jusqu'au 23/07, puis 4, 5, 10 vues. Trois vidéos différentes
-  touchées → ce n'est pas le contenu. **À investiguer en priorité** avant
-  de tirer la moindre conclusion FB.
+- **⚠️ Facebook** : **coupure des recommandations le 2026-07-24** —
+  diagnostic complet en §8.7 ci-dessous.
+
+### 8.7 Facebook — diagnostic de la coupure du 2026-07-24
+
+**Investigation menée le 2026-07-29** via l'API Metricool (vues Reels sur
+30/06 → 28/07) croisée avec la répartition du temps de visionnage des
+captures.
+
+**Constat chiffré** :
+
+| Période | Vues/vidéo | Médiane |
+|---|---|---:|
+| 30/06 → 23/07 (16 vidéos) | 149-261 | **~219** |
+| 24/07 → 28/07 (4 vidéos) | 3-18 | **~6** |
+
+Division par ~36, sans transition. (Deux creux isolés avant : 14/07 à 0
+vue et 15/07 à 19 vues, tous deux suivis d'un retour à la normale.)
+
+**Mécanisme identifié** — répartition du temps de visionnage :
+
+| Vidéo | Date | Recommandations | Followers |
+|---|---|---:|---:|
+| dopamine-2 | 22/07 | 67,6 % | 32,4 % |
+| verite-illusoire | 23/07 | **93,1 %** | 6,9 % |
+| procrastination-2 | 24/07 | **4,0 %** ⚠️ | 96,0 % |
+| rejet-social-2 | 25/07 | 0,9 % | 99,1 % |
+| effet-projecteur-2 | 26/07 | 0,5 % | 99,5 % |
+| pensee-critique-2 | 28/07 | 6,3 % | 93,7 % |
+
+**Facebook a cessé de servir les Reels aux non-abonnés à partir du
+24/07.** La portée est retombée à la seule base d'abonnés (~9), ce qui
+explique exactement les 3-18 vues. Ce n'est ni le contenu (4 sujets
+différents), ni l'horaire (créneaux variables dans les deux périodes), ni
+la qualité (rétention FB parfois meilleure après la coupure, effet de
+petit échantillon).
+
+**Causes possibles, non tranchées** :
+1. Changement algorithmique côté Meta.
+2. Signal « contenu non original » : à partir du 24/07 les publications
+   sont des versions #2 de vidéos déjà présentes sur la page
+   (`procrastination-2` vs `procrastination` publiée 7 j avant, etc.).
+   Meta démote les contenus jugés répétitifs. **Mais** `bdnf2`,
+   `intestin-cerveau-2` et `dopamine-2` étaient aussi des #2 sans être
+   touchées → ce serait un effet cumulatif, pas immédiat.
+
+**Vérification à faire (accès admin requis, hors de portée de Claude)** :
+Facebook → Suite Business / Espace pro → **« Statut du compte »**. Meta y
+affiche toute restriction de portée ou signalement de contenu. Vide =
+algorithmique, peut revenir seul. Avertissement = cause identifiée et
+corrigeable.
+
+**Implication stratégique** : ne pas réinvestir sur Facebook tant que ce
+point n'est pas levé. Le canal représentait ~219 vues/vidéo sans jamais
+générer un seul abonné sur toute la période mesurée — sa disparition ne
+change pas la trajectoire de croissance, qui se joue sur YouTube.
 
 ### 8.6 Décisions à prendre maintenant
 
@@ -670,6 +722,14 @@ seconde**.
 - [ ] **Statuer sur Sandcastles MCP** (même fichier). Le test API Metricool
       du 2026-07-28 a montré que la rétention TikTok reste inaccessible par
       l'API standard — vérifier si Sandcastles fait mieux.
-- [ ] **Investiguer l'effondrement Facebook** (portée /20 depuis le 25/07).
+- [x] ~~**Investiguer l'effondrement Facebook**~~ → fait le 2026-07-29,
+      diagnostic complet en §8.7. Mécanisme identifié (coupure des
+      recommandations le 24/07). **Reste 1 action utilisateur** : vérifier
+      « Statut du compte » dans l'espace pro Facebook.
+- [x] ~~**Chantier conversion §7 roadmap**~~ (bio + épingles) → fait le
+      2026-07-29 sur TikTok / Instagram / YouTube. Facebook volontairement
+      exclu tant que la portée est coupée. Épingles choisies sur données :
+      `pensee-critique` (+9 abo), `intestin-cerveau-2` (+6 abo, 1 408 vues),
+      `procrastination-2` (58,8 % rétention).
 - [ ] **Décider de la cadence post-labo** : la roadmap prévoit un retour à
       2-3 vidéos/semaine (§3) après les 4/semaine du labo.
