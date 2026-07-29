@@ -594,6 +594,24 @@ levier qui a produit un doublement de rétention.** À systématiser.
 pour l'original de 35 s). Un seul point de données, mais le plus gros
 écart vues+rétention simultané du labo. À retester pour confirmer.
 
+> **📏 RÈGLE DE CALIBRAGE (2026-07-29) — comment tenir les 30 s**
+>
+> La durée n'était connue qu'après enregistrement du WAV, donc trop tard
+> pour corriger (`pensee-critique-2` : 43 s découverts après coup).
+> Débit mesuré sur les enregistrements réels :
+>
+> | Vidéo | Mots | Durée | Débit |
+> |---|---:|---:|---:|
+> | procrastination-2 | ~88 | 28,92 s | 183 mots/min |
+> | effet-projecteur-2 | ~105 | 29,35 s | 215 mots/min |
+> | pensee-critique-2 | ~150 | 43,44 s | 207 mots/min |
+>
+> **≈ 195 mots/minute → viser ~90 mots pour 28 s.
+> Au-delà de 100 mots, le script dépassera 30 s.**
+>
+> Chaque script livré doit être accompagné de son compte de mots et de sa
+> durée estimée, **avant** enregistrement.
+
 **3. Une « suite » sur un sujet qui a marché fonctionne — confirmé 1/1.**
 `effet-projecteur-2` : 969 vues (×2,95 la médiane), +3 abo, publiée 8
 jours après l'original. Pas besoin d'un sujet neuf à chaque fois.
@@ -729,9 +747,14 @@ change pas la trajectoire de croissance, qui se joue sur YouTube.
       Élément de décision nouveau : le labo montre que le hook pilote la
       rétention mais pas la distribution, et que les CTA d'engagement ne
       marchent pas — deux piliers de cette proposition sont donc fragilisés.
-- [ ] **Statuer sur Sandcastles MCP** (même fichier). Le test API Metricool
-      du 2026-07-28 a montré que la rétention TikTok reste inaccessible par
-      l'API standard — vérifier si Sandcastles fait mieux.
+- [x] ~~**Statuer sur Sandcastles MCP**~~ → **ÉCARTÉ le 2026-07-29**.
+      Recherche complète dans
+      [proposition-hook-par-plateforme.md](proposition-hook-par-plateforme.md).
+      C'est un SaaS payant (39 $/mois) de recherche de contenu viral, pas
+      un outil d'analytics propre — il ne résout pas le manque de rétention
+      TikTok, et sa logique « remixer les outliers » va contre le
+      positionnement éditorial. Le dépôt GitHub montré dans la vidéo
+      d'origine n'existe pas (3 projets homonymes sans rapport).
 - [x] ~~**Investiguer l'effondrement Facebook**~~ → **clos le 2026-07-29**,
       diagnostic complet en §8.7. Mécanisme : coupure des recommandations
       le 24/07. Cause : algorithmique (admin vérifié — aucune sanction,

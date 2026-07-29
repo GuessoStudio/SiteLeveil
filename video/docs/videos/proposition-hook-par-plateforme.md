@@ -110,14 +110,144 @@ plateforme (FB sans lien, IG 5 hashtags, TikTok sans emoji) qui est au
 cœur du process actuel. À reconsidérer seulement si le temps de
 publication manuelle devient un vrai goulot d'étranglement.
 
-### Checklist Sandcastles (au bilan du labo)
+### ❌ Sandcastles — DÉCISION : ÉCARTÉ (2026-07-29)
 
-- [ ] Vérifier les permissions OAuth exactes demandées par l'outil avant
-      toute connexion à un compte réel
-- [ ] Tester en lecture seule sur un compte si possible avant d'envisager
-      un remplacement du process manuel de `mesure-14-jours.md` §5
-- [ ] Comparer les chiffres qu'il remonte à un relevé manuel existant pour
-      vérifier la fiabilité avant de lui faire confiance seul
+Recherche approfondie menée le 2026-07-29. Conclusion : **ne pas adopter.**
+
+**Ce que c'est réellement** : [sandcastles.ai](https://www.sandcastles.ai/)
+est un **SaaS payant de recherche de contenu viral et d'écriture de
+scripts** (analyser les vidéos des autres, extraire hooks/formats/
+transcriptions, générer des scripts « avec des frameworks éprouvés »).
+Ce n'est pas un outil d'analytics de ses propres comptes : la connexion
+de comptes est optionnelle et secondaire (3 chaînes sur le plan Pro,
+rafraîchies toutes les 12 h).
+
+**Prix** : Pro 39 $/mois (annuel, MCP inclus) · Visionary 79 $ · Titan
+399 $. Essai gratuit 7 jours. ≈ 430 €/an.
+
+**⚠️ La source d'origine était trompeuse.** La vidéo de découverte
+(JB Roy, TikTok) montrait `github.com/sandcastles-ai/sandcastles` avec
+« ★ 4 200 · 6 skills · MIT », donnant l'impression d'un projet
+open-source gratuit. Vérification faite, **ce dépôt n'existe pas**. Trois
+projets homonymes existent :
+
+| Nom | Nature | Rapport réseaux sociaux |
+|---|---|---|
+| sandcastles.ai | SaaS payant 39 $/mois (le vrai produit) | ✅ |
+| [mattpocock/sandcastle](https://github.com/mattpocock/sandcastle) | TypeScript, agents de code en sandbox, 7,1 k ⭐ MIT | ❌ aucun |
+| [gizmax/Sandcastle](https://github.com/gizmax/Sandcastle) | Python, orchestrateur d'agents IA | ❌ aucun |
+
+**Pourquoi c'est écarté** (3 raisons, par ordre d'importance) :
+
+1. **Ça ne résout pas le point de friction.** Le besoin était la rétention
+   TikTok + l'attribution d'abonnés, absentes de Metricool (test API du
+   2026-07-28, champs `null`). Aucune source ne confirme que Sandcastles
+   les fournit — et la limite est côté API TikTok, qu'aucun tiers ne peut
+   contourner.
+2. **La proposition de valeur va contre le positionnement.** « Remixer les
+   outliers viraux des top channels » est l'inverse de la ligne éditoriale
+   (chercheur nommé, institution citée, mythes déconstruits, ton
+   professeur).
+3. **Le labo a déjà produit mieux.** 14 jours de tests ont donné une
+   connaissance de l'audience réelle (tension narrative à 58,8 % de
+   rétention, inutilité des CTA d'engagement, quota fixe TikTok) qu'aucun
+   classement générique de hooks n'aurait fournie.
+
+**Si réexamen un jour** : 7 jours d'essai gratuit, à n'engager que si le
+besoin devient la *recherche concurrentielle* (et non l'analytics propre).
+
+### ❌ Blotato — DÉCISION : ÉCARTÉ (2026-07-26, confirmé)
+
+Voir plus haut. Auto-publication multi-plateformes ~29 $/mois : retire le
+contrôle manuel par plateforme (FB sans lien, IG 5 hashtags, TikTok sans
+emoji) qui est au cœur du process. À reconsidérer seulement si le temps
+de publication devient un vrai goulot.
+
+---
+
+## Revue d'outils « aide à l'écriture de script » (2026-07-29)
+
+Recherche demandée : un outil peut-il aider à écrire les scripts Reels/Shorts ?
+**Réponse : non, rien à acheter ni à installer.** Détail ci-dessous.
+
+### ❌ Analyseurs de script avant publication
+
+[Contextify](https://contextify.ca/short-form-video-analyzer) (gratuit,
+2 analyses/jour) · [Tikalyzer](https://tikalyzer.com/script-analyzer) ·
+[HookScan](https://hookscan.com/) · [ViralMint](https://viralmint.net/tools/hook-analysis/).
+Contextify note sur 5 axes : hook 30 %, clarté 25 %, rythme 20 %,
+sauvegarde 15 %, SEO 10 %.
+
+**Écartés, 3 raisons :**
+1. **Anglais uniquement** — aucun ne confirme le support du français.
+2. Contextify analyse un **fichier vidéo**, pas un texte → n'aide pas en
+   amont de l'enregistrement.
+3. Entraînés sur des patterns viraux génériques : la formule maison
+   (tension narrative + chercheur nommé) y serait probablement mal notée
+   alors qu'elle produit le record du catalogue (58,8 % sur
+   `procrastination-2`).
+
+### 🟡 Prompteurs avec estimation de durée
+
+[teleprompteur.fr](https://www.teleprompteur.fr/) (français, estime la
+durée selon la vitesse) · [ToolAct](https://toolact.com/fr/teleprompter) ·
+Scripted.video. Catégorie réellement utile, mais rendue superflue par la
+règle de calibrage ci-dessous.
+
+### ✅ CE QUI EST RETENU — règle de calibrage maison
+
+Le vrai besoin était : **connaître la durée avant d'enregistrer**, pour
+tenir le seuil des 30 s (validé par le test labo #2 : passer sous 30 s
+double la rétention). Jusqu'ici la durée n'était connue qu'après upload
+du WAV — trop tard (`pensee-critique-2` : 43 s découverts après coup).
+
+Débit mesuré sur les enregistrements réels :
+
+| Vidéo | Mots | Durée | Débit |
+|---|---:|---:|---:|
+| procrastination-2 | ~88 | 28,92 s | 183 mots/min |
+| effet-projecteur-2 | ~105 | 29,35 s | 215 mots/min |
+| pensee-critique-2 | ~150 | 43,44 s | 207 mots/min |
+
+**→ Règle : ~195 mots/minute, soit ≈ 90 mots pour 28 secondes.**
+**Au-delà de 100 mots, le script dépassera 30 s.**
+
+**Application** : à partir du 2026-07-29, chaque script livré est
+accompagné de son compte de mots et de sa durée estimée. Aucun outil
+externe nécessaire.
+
+### 🔵 Piste ouverte (hors script) — MCP YouTube Analytics
+
+Trouvé pendant la même recherche, sans rapport avec l'écriture :
+[pauling-ai/youtube-mcp-server](https://github.com/pauling-ai/youtube-mcp-server)
+(MIT) et [dogfrogfog/youtube-analytics-mcp](https://github.com/dogfrogfog/youtube-analytics-mcp)
+exposent l'**API YouTube Analytics** — dont les **courbes de rétention
+d'audience**, sources de trafic, abonnés gagnés : exactement ce qui est
+capturé à la main aujourd'hui, sur le seul canal qui convertit.
+
+Avantage clé de sécurité : identifiants **Google Cloud personnels**, tout
+tourne en local, aucune donnée chez un tiers (l'inverse de Sandcastles).
+
+⚠️ **Deux réserves avant d'y toucher** :
+1. 13 ⭐ / 17 forks — projet quasi non audité, alors qu'il recevrait un
+   accès OAuth propriétaire à la chaîne.
+2. Pas en lecture seule : inclut upload, suppression, miniatures,
+   commentaires.
+   **Parade** : le projet Google Cloud étant créé par l'utilisateur, il
+   suffit de n'activer que **YouTube Analytics API** (scope
+   `yt-analytics.readonly`) sans les scopes d'écriture de la Data API —
+   le MCP devient alors physiquement incapable de publier ou supprimer.
+
+**Statut : à tester quand une heure est disponible.** Chantier technique
+(projet Google Cloud + OAuth + install Python), pas prioritaire.
+
+### ❌ TikTok — aucune solution, définitif
+
+Les MCP TikTok trouvés (viral.app, SociaVault) lisent des **profils
+publics** (stats, transcriptions, vidéos récentes), pas la rétention
+privée d'un compte. Cohérent avec le test API Metricool du 2026-07-28 :
+**TikTok n'expose pas la rétention via API.** Aucun outil ne peut la
+fabriquer. La capture manuelle TikTok Studio reste la seule voie.
 
 ### Test Metricool API fait le 2026-07-28 (avant même Sandcastles)
 

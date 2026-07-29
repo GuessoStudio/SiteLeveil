@@ -98,5 +98,9 @@ Suite du pipeline → [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeli
 | La lumière du matin règle ton sommeil | *(à sourcer)* | Neuro | lumiere-naturelle-cerveau ✅ |
 
 **À appliquer sur tous les prochains scripts** (acquis du labo §8.2) :
-tension narrative en ouverture · viser moins de 30 s · pas de CTA
-d'engagement (« commente MOT » / « partage ») · 1 chercheur nommé.
+tension narrative en ouverture · **≈ 90 mots pour tenir sous 30 s**
+(règle de calibrage, ~195 mots/min mesurés) · pas de CTA d'engagement
+(« commente MOT » / « partage ») · 1 chercheur nommé.
+
+> 📏 Compte de mots + durée estimée à donner **avec chaque script**, avant
+> enregistrement. Au-delà de 100 mots → dépassement des 30 s garanti.
