@@ -767,5 +767,17 @@ change pas la trajectoire de croissance, qui se joue sur YouTube.
       exclu tant que la portée est coupée. Épingles choisies sur données :
       `pensee-critique` (+9 abo), `intestin-cerveau-2` (+6 abo, 1 408 vues),
       `procrastination-2` (58,8 % rétention).
-- [ ] **Décider de la cadence post-labo** : la roadmap prévoit un retour à
-      2-3 vidéos/semaine (§3) après les 4/semaine du labo.
+- [x] ~~**Décider de la cadence post-labo**~~ → **4 à 7 vidéos/semaine**
+      (décision utilisateur du 2026-07-29, au-dessus des 2-3 prévus par la
+      roadmap §3). ⚠️ Trois points de vigilance actés : le pipeline ne
+      contient que 12 sujets (~2 semaines à 7/sem, à élargir) ; la coupure
+      Facebook du 24/07 est survenue au 5ᵉ jour d'une publication
+      quasi-quotidienne de versions #2 (corrélation non prouvée, à
+      surveiller sur YT/IG) ; la charge manuelle par vidéo devient une
+      routine quotidienne.
+- [ ] **Élargir le pipeline** avant d'atteindre la cadence haute — 12
+      sujets restants seulement.
+- [ ] **Rotation des familles de hooks** lancée → protocole dans
+      [hooks-protocole.md](hooks-protocole.md). Document explicitement
+      provisoire : l'hypothèse « boucle ouverte » repose sur **une seule
+      paire A/B propre**, à ne pas traiter comme acquise.
