@@ -1,0 +1,34 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "attention-fragmentee.mp3",
+  "audioVolume": 1,
+  "ambience": "dark_drone",
+  "ambienceVolume": 1.1,
+  "karaoke": true,
+  "defaults": {
+    "pose": "idle",
+    "emotion": "calme",
+    "mode": "neuro",
+    "position": "center",
+    "camera": "cine",
+    "fx": "none",
+    "accent": "neuro",
+    "burst": false
+  },
+  "scenes": [
+    {"duration":2.31,"keyword":"DEUX SECONDES ?","keywordFx":"glitch","subtitle":"Tu réponds « deux secondes » à un message ?","pose":"point","emotion":"focus","mode":"emotions","accent":"stress","camera":"zoom-in","position":"center","transition":"static_noise","fx":"tunnel_vision"},
+    {"duration":2.11,"keyword":"BIEN PLUS","keywordFx":"shake","subtitle":"Tu perds souvent bien plus que deux secondes.","pose":"cross","emotion":"confusion","mode":"emotions","accent":"stress","camera":"cine","position":"center","transition":"color_shift"},
+    {"duration":5.48,"keyword":"LA SCIENCE","subtitle":"La chercheuse Gloria Mark, à l'université de Californie à Irvine, a étudié les interruptions au travail.","credit":"Gloria Mark · UC Irvine","pose":"think","emotion":"reflexion","mode":"neuro","accent":"neuro","camera":"cine","position":"left","fx":"attention_spotlight","icon":"eye"},
+    {"duration":3.56,"keyword":"23 MINUTES","keywordFx":"shake","subtitle":"Après une interruption, il faut environ 23 minutes pour revenir à la tâche d'origine.","pose":"open","emotion":"surcharge","mode":"neuro","accent":"stress","camera":"cine","position":"center","icon":"clock","burst":"head"},
+    {"duration":1.37,"keyword":"PAS UNE PAUSE","subtitle":"Pas 23 minutes de pause.","pose":"shrug","emotion":"confusion","mode":"neuro","accent":"neuro","camera":"static","position":"right"},
+    {"duration":3.76,"keyword":"AVANT DE RETROUVER","subtitle":"23 minutes avant de retrouver ce que tu faisais.","pose":"point","emotion":"insight","mode":"neuro","accent":"neuro","camera":"cine","position":"left","transition":"color_shift","fx":"goal_beacon","icon":"target"},
+    {"duration":2.95,"keyword":"RECONSTRUIRE LE FIL","keywordFx":"glitch","subtitle":"Entre les deux, ton cerveau part ailleurs et doit reconstruire le fil.","pose":"cross","emotion":"surcharge","mode":"neuro","accent":"stress","camera":"cine","position":"right","transition":"zoom_smash","fx":"cognitive_overload","sfx":"tape_stop"},
+    {"duration":1.78,"keyword":"PAS TA CONCENTRATION","subtitle":"Ta concentration n'est pas forcément faible.","pose":"open","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"color_shift"},
+    {"duration":2.41,"keyword":"TROP DE REPRISES","subtitle":"On lui impose trop de reprises.","pose":"point","emotion":"focus","mode":"eveil","accent":"eveil","camera":"cine","position":"left","fx":"habit_chain","icon":"link"},
+    {"duration":2.08,"keyword":"PAS TON CERVEAU","keywordFx":"shake","subtitle":"Le vrai problème, ce n'est pas ton cerveau.","pose":"cross","emotion":"insight","mode":"eveil","accent":"eveil","camera":"cine","position":"center"},
+    {"duration":0.75,"keyword":"TON ENVIRONNEMENT","keywordFx":"shake","subtitle":"C'est ton environnement.","pose":"open","emotion":"eveil","mode":"eveil","accent":"growth","camera":"punch-head","position":"center","transition":"color_shift","fx":"identity_shift","burst":"head"},
+    {"duration":1.30,"keyword":"L'ÉVEIL MENTAL","subtitle":"L'article complet est sur leveilmental.fr.","pose":"wave","emotion":"joie","mode":"eveil","accent":"eveil","camera":"cine","position":"center","transition":"blackout","fx":"gratitude_glow","icon":"link"}
+  ]
+}

@@ -329,6 +329,25 @@ l'enregistrement de la voix off).
 
 ---
 
+## 17. Attention fragmentée — 23 minutes pour revenir
+
+- **Slug** : `attention-fragmentee` · **Pilier** : Dév. perso / Neurosciences · **Série** : LE PIÈGE
+- **Chercheuse citée** : Gloria Mark · UC Irvine
+- **Famille de hook** : **Identity Call** — 1ʳᵉ de la rotation ([hooks-protocole.md](hooks-protocole.md))
+- **Durée voix off** : 29,86 s · **100 mots** · **Statut** : 🎙️ voix off masterisée + durées calées — karaoké/rendu à faire
+- **Fiche** : [attention-fragmentee.md](attention-fragmentee.md) — 1ʳᵉ vidéo post-labo, sous les 30 s
+
+> Tu réponds « deux secondes » à un message ? Tu perds souvent bien plus que deux secondes.
+> La chercheuse Gloria Mark, à l'université de Californie à Irvine, a étudié les interruptions au travail.
+> Après une interruption, il faut environ 23 minutes pour revenir à la tâche d'origine.
+> Pas 23 minutes de pause. 23 minutes avant de retrouver ce que tu faisais.
+> Entre les deux, ton cerveau part ailleurs et doit reconstruire le fil.
+> Ta concentration n'est pas forcément faible. On lui impose trop de reprises.
+> Le vrai problème, ce n'est pas ton cerveau. C'est ton environnement.
+> L'article complet est sur leveilmental.fr.
+
+---
+
 ## Prochains scripts (Top 6 restants)
 
 Voir [roadmap-editoriale.md §5](roadmap-editoriale.md#5-pipeline-dédupliqué) pour

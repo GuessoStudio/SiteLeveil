@@ -58,6 +58,7 @@ disponible (labo : +18-20 h ; antérieures : baseline 30 j du 2026-07-19).
 
 | Slug | Sujet | Pilier | Durée | Statut | Fiche |
 |---|---|---|---|---:|---|
+| attention-fragmentee | 23 minutes pour revenir après une interruption | Dev perso / Neuro | **29,86s** | 🎙️ voix off masterisée + durées calées — karaoké/rendu à faire · **hook : Identity Call** (rotation #1) | [fiche](attention-fragmentee.md) |
 | habitudes-court | Le mythe des 21 jours | Neuro / Dev perso | 30s | 🔊 voix+sons OK — SFX et sous-titres en attente | [fiche](habitudes-court.md) |
 | biais-cognitifs | Ton cerveau a un bug (ancrage + confirmation) | Psychologie | 32s | 🔊 voix+sons OK — sous-titres en attente | [fiche](biais-cognitifs.md) |
 

@@ -54,6 +54,8 @@
     "cover:projecteur2": "remotion still src/Root.tsx Cover out/effet-projecteur-2-cover.png --props=src/data/covers/effet-projecteur-2.cover.json",
     "render:pensee2": "remotion render src/Root.tsx Habitudes out/pensee-critique-2.mp4 --props=src/data/scripts/pensee-critique-2.json",
     "cover:pensee2": "remotion still src/Root.tsx Cover out/pensee-critique-2-cover.png --props=src/data/covers/pensee-critique-2.cover.json",
+    "render:attention": "remotion render src/Root.tsx Habitudes out/attention-fragmentee.mp4 --props=src/data/scripts/attention-fragmentee.json",
+    "cover:attention": "remotion still src/Root.tsx Cover out/attention-fragmentee-cover.png --props=src/data/covers/attention-fragmentee.cover.json",
     "render:demo": "remotion render src/Root.tsx Habitudes out/demo-features.mp4 --props=src/data/scripts/demo-features.json",
     "words:meditation": "py scripts/transcribe.py public/Méditation.mp3 --script src/data/scripts/meditation.json",
     "words:burnout": "py scripts/transcribe.py public/Burn-out.mp3 --script src/data/scripts/burnout.json",
@@ -77,6 +79,7 @@
     "words:rejet2": "py scripts/transcribe.py public/rejet-social-2.mp3 --script src/data/scripts/rejet-social-2.json",
     "words:projecteur2": "py scripts/transcribe.py public/effet-projecteur-2.mp3 --script src/data/scripts/effet-projecteur-2.json",
     "words:pensee2": "py scripts/transcribe.py public/pensee-critique-2.mp3 --script src/data/scripts/pensee-critique-2.json",
+    "words:attention": "py scripts/transcribe.py public/attention-fragmentee.mp3 --script src/data/scripts/attention-fragmentee.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
     "ensure": "remotion browser ensure"
   },
