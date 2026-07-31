@@ -81,7 +81,10 @@
     "words:pensee2": "py scripts/transcribe.py public/pensee-critique-2.mp3 --script src/data/scripts/pensee-critique-2.json",
     "words:attention": "py scripts/transcribe.py public/attention-fragmentee.mp3 --script src/data/scripts/attention-fragmentee.json",
     "smoke": "remotion render src/Root.tsx Smoke out/smoke.mp4",
-    "ensure": "remotion browser ensure"
+    "ensure": "remotion browser ensure",
+    "render:liking": "remotion render src/Root.tsx Habitudes out/liking-gap.mp4 --props=src/data/scripts/liking-gap.json",
+    "cover:liking": "remotion still src/Root.tsx Cover out/liking-gap-cover.png --props=src/data/covers/liking-gap.cover.json",
+    "words:liking": "py scripts/transcribe.py public/liking-gap.wav --script src/data/scripts/liking-gap.json"
   },
   "dependencies": {
     "@remotion/cli": "4.0.290",
