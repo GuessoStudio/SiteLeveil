@@ -1,5 +1,36 @@
 # Labo 7 jours — la veine « psychologie sociale »
 
+> ## 🛑 SUSPENDU LE 2026-07-31, LE JOUR MÊME DE SA RÉDACTION
+>
+> Une recherche approfondie commandée juste après a invalidé deux
+> fondations de ce protocole. Ne pas le lancer en l'état.
+>
+> **1. Le design est trop faible.** Comparer 7 vidéos neuves à 9 vidéos
+> historiques laisse le temps comme variable confondue. Le plan correct
+> est un test **apparié randomisé** : 12 paires (affectif / cognitif)
+> publiées dans des conditions identiques, ordre tiré au sort dans
+> chaque paire, décision au test des signes (10 victoires sur 12 →
+> p ≈ 0,039) **et** un gain médian d'au moins 30 % des vues.
+>
+> **2. L'ordre des priorités était faux.** Tant que la question de la
+> distribution TikTok n'est pas tranchée, un test de contenu peut être
+> entièrement masqué. Et la complétion (10,1 %) est un levier plus
+> proche que le choix du sujet.
+>
+> **3. La littérature ne soutient pas l'hypothèse affectif > cognitif.**
+> L'étude la plus proche (#EduTok, *Health Education Journal*, 2024,
+> 400 vidéos) se contredit elle-même : son résumé annonce une portée
+> supérieure pour la santé mentale, son tableau donne une médiane de
+> 6 230 vues contre 23 450 pour les autres sujets, non significatif
+> (p = 0,08).
+>
+> Le contenu ci-dessous reste utile pour ses **7 sujets sourcés**, qui
+> alimentent le pipeline. Le protocole, lui, est remplacé.
+>
+> → Séquence retenue : `programme-tests.md`
+
+*(protocole d'origine ci-dessous, conservé pour mémoire)*
+
 > Écrit le 2026-07-31. **Protocole, pas conclusion.** Lire §5 avant de
 > croire quoi que ce soit de ce qui en sortira.
 

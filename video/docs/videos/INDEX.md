@@ -18,7 +18,8 @@ Vue d'ensemble de la production. Une ligne par vidéo ; fiche détaillée dans
 📜 Tous les scripts (texte parlé) : [SCRIPTS.md](SCRIPTS.md)
 🧪 Protocole de mesure + journal des relevés : [mesure-14-jours.md](mesure-14-jours.md)
 🏁 **BILAN DU LABO — 8/8 tests tranchés** (ce qui est établi / écarté) : [mesure-14-jours.md §8](mesure-14-jours.md#8-bilan-du-labo-14-jours-2026-07-29)
-🧪 **LABO 7 JOURS EN COURS — veine psychologie sociale** : [labo-7-jours-psycho-sociale.md](labo-7-jours-psycho-sociale.md)
+🧭 **PROGRAMME DE TESTS — séquence en cours** : [programme-tests.md](programme-tests.md)
+🛑 Labo 7 jours psycho sociale — *suspendu le 31/07, design invalidé ; les 7 sujets restent valables* : [labo-7-jours-psycho-sociale.md](labo-7-jours-psycho-sociale.md)
 🪝 Protocole hooks — typologie et rotation *(hypothèse en cours de test, non figée)* : [hooks-protocole.md](hooks-protocole.md)
 📥 Décisions en attente (hook par plateforme · Sandcastles MCP) : [proposition-hook-par-plateforme.md](proposition-hook-par-plateforme.md)
 
@@ -80,8 +81,25 @@ Les 21 vidéos publiées font **244 à 306 vues TikTok**, sans exception, quels
 que soient le sujet, le hook, la durée ou le format. Aucune n'a percé, aucune
 n'a échoué. À comparer à YouTube où l'écart va de 7 à 1 408 vues.
 
-→ TikTok sert un quota fixe et ne récompense pas la qualité du contenu.
-Cohérent avec le bilan §8.5 : **canal de présence, pas de croissance.**
+⚠️ **Correction du 2026-07-31.** La version précédente concluait « TikTok sert
+un quota fixe et ne récompense pas la qualité ». C'était une conclusion causale
+sans fondement. Aucune documentation TikTok ne décrit de palier à 200-300 vues,
+et les articles sur la « 200-view jail » ne publient ni protocole ni groupe
+témoin.
+
+Ce qui est **observé** : 21 vidéos entre 244 et 306 vues, amplitude 62 vues.
+Ce qui est **vérifié** : la part de trafic « Pour toi » est de **99,2 %** sur
+`attention-fragmentee`. Une publication exclue des recommandations afficherait
+une part proche de zéro → **les vidéos sont bien recommandées**, simplement
+servies à très peu de monde.
+
+Hypothèse la plus cohérente, **non démontrée** : lot initial réduit, et
+complétion insuffisante (10,1 %) pour déclencher l'élargissement. TikTok
+confirme pondérer le temps de visionnage et le taux de fin, sans publier de
+seuil.
+
+À faire avant toute conclusion : TikTok Studio → **Account check**, et
+vérifier l'éligibilité « Pour toi » publication par publication.
 
 ---
 
