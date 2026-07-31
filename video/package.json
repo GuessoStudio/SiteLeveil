@@ -85,7 +85,8 @@
     "render:liking": "node scripts/validate-script.mjs liking-gap && remotion render src/Root.tsx Habitudes out/liking-gap.mp4 --props=src/data/scripts/liking-gap.json",
     "cover:liking": "node scripts/validate-script.mjs liking-gap && remotion still src/Root.tsx Cover out/liking-gap-cover.png --props=src/data/covers/liking-gap.cover.json",
     "words:liking": "py scripts/transcribe.py public/liking-gap.wav --script src/data/scripts/liking-gap.json",
-    "check": "node scripts/validate-script.mjs"
+    "check": "node scripts/validate-script.mjs",
+    "master": "node scripts/master.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.290",

@@ -73,23 +73,49 @@ Objectif : **un script JSON + un mp3 → une vidéo publiable.**
 ### 4.1 Mastering (avant tout calage)
 
 Les prises brutes varient énormément en niveau (vu en pratique : -19 LUFS à -55 LUFS
-selon le micro/la voix). Toujours mesurer et normaliser AVANT de détecter les silences :
+selon le micro/la voix). Toujours mesurer et normaliser AVANT de détecter les silences.
+
+**Une seule commande fait tout** (mastering + relevé des silences) :
+
+```bash
+npm run master <slug>
+# si le WAV n'a pas le nom du slug :
+npm run master <slug> -- --in "le liking gap.wav"
+```
+
+Elle produit `public/<slug>.mp3` masterisé, affiche les segments de parole avec
+les coupes conseillées, et écrit `out/<slug>.calibration.json`.
+
+> **ffmpeg est déjà là.** Le script utilise le binaire livré par Remotion
+> (`node_modules/@remotion/compositor-*/ffmpeg.exe`), celui que `npx remotion
+> ffmpeg` appelle. Build réduit mais complet pour nos besoins : `loudnorm`,
+> `silencedetect`, `atrim`, `atempo`, `libmp3lame`. **Rien à installer**, ni
+> `winget`, ni `ffmpeg-static`.
+
+Réglages appliqués : **-14 LUFS**, **TP -2 dB** (et non -1,5 : l'encodage MP3
+ajoute ~1,7 dB de dépassement inter-échantillon, à -1,5 le fichier final sort
+à +0,2 dB et peut saturer), 48 kHz mono 64 kb/s.
+
+<details><summary>Équivalent manuel (si besoin de sortir du script)</summary>
 
 ```bash
 # 1. Mesurer le niveau brut
 npx remotion ffmpeg -i public/<Nom>.mp3 -af loudnorm=print_format=json -f null - 2>&1 | grep -iE "input_i|input_tp|input_thresh"
 
-# 2. Masteriser à -14 LUFS (standard voix-off, marge avant clipping)
-npx remotion ffmpeg -y -i public/<Nom>.mp3 -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 44100 -c:a libmp3lame -b:a 160k /tmp/norm.mp3
-
-# 3. Remplacer le fichier public/ par la version masterisée
-cp /tmp/norm.mp3 public/<Nom>.mp3
+# 2. Masteriser (2e passe avec les valeurs mesurées injectées)
+npx remotion ffmpeg -y -i public/<Nom>.wav -af loudnorm=I=-14:TP=-2:LRA=11:measured_I=...:measured_TP=...:measured_LRA=...:measured_thresh=...:offset=...:linear=true -ar 48000 -ac 1 -c:a libmp3lame -b:a 64k public/<Nom>.mp3
 ```
+</details>
 
 Avec une voix masterisée à -14 LUFS, `audioVolume` reste à **1.0** dans le script
 (plus besoin de deviner un gain 2,5–3,7 sur une voix mal nivelée).
 
 ### 4.2 Détection de silence adaptative (pas un seuil fixe)
+
+> Fait automatiquement par `npm run master`. Cette section documente la méthode
+> sous-jacente. ⚠️ La détection tourne sur le **WAV source**, jamais sur le MP3 :
+> l'encodage avec perte lisse les micro-pauses et fait fusionner des segments
+> (constaté sur `liking-gap` : la pause de 0,150 s à 8,35 s disparaît du MP3).
 
 Un seuil fixe (`-38dB`) ne marche pas sur toutes les voix. Mesurer le seuil réel
 du fichier masterisé via `loudnorm` (`input_thresh`), puis l'utiliser :
