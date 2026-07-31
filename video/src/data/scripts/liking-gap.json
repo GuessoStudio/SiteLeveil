@@ -104,7 +104,10 @@
       "accent": "social",
       "camera": "static",
       "position": "center",
-      "split": { "left": "CE QU'IL RESSENT", "right": "CE QUE TU CROIS" }
+      "split": {
+        "left": "CE QU'IL RESSENT",
+        "right": "CE QUE TU CROIS"
+      }
     },
     {
       "duration": 3.95,
@@ -151,7 +154,7 @@
       "subtitle": "Leurs signaux positifs, tu les remarques moins.",
       "pose": "shrug",
       "emotion": "confusion",
-      "mode": "social",
+      "mode": "neuro",
       "accent": "social",
       "camera": "static",
       "position": "left"
@@ -182,6 +185,513 @@
       "transition": "color_shift",
       "fx": "identity_shift",
       "burst": "head"
+    }
+  ],
+  "words": [
+    {
+      "w": "Tu",
+      "start": 0.0,
+      "end": 0.16
+    },
+    {
+      "w": "sors",
+      "start": 0.16,
+      "end": 0.34
+    },
+    {
+      "w": "d'une",
+      "start": 0.34,
+      "end": 0.42
+    },
+    {
+      "w": "conversation.",
+      "start": 0.5,
+      "end": 0.84
+    },
+    {
+      "w": "Ton",
+      "start": 1.48,
+      "end": 1.6
+    },
+    {
+      "w": "cerveau",
+      "start": 1.6,
+      "end": 1.9
+    },
+    {
+      "w": "repasse",
+      "start": 1.9,
+      "end": 2.24
+    },
+    {
+      "w": "tout",
+      "start": 2.24,
+      "end": 2.46
+    },
+    {
+      "w": ":",
+      "start": 2.46,
+      "end": 2.62
+    },
+    {
+      "w": "«",
+      "start": 2.62,
+      "end": 2.78
+    },
+    {
+      "w": "J'ai",
+      "start": 2.78,
+      "end": 2.94
+    },
+    {
+      "w": "trop",
+      "start": 3.1,
+      "end": 3.22
+    },
+    {
+      "w": "parlé.",
+      "start": 3.22,
+      "end": 3.62
+    },
+    {
+      "w": "J'étais",
+      "start": 3.62,
+      "end": 3.85
+    },
+    {
+      "w": "gênant.",
+      "start": 4.08,
+      "end": 4.46
+    },
+    {
+      "w": "»",
+      "start": 4.46,
+      "end": 4.7
+    },
+    {
+      "w": "Pourtant,",
+      "start": 4.94,
+      "end": 5.32
+    },
+    {
+      "w": "tu",
+      "start": 5.64,
+      "end": 5.7
+    },
+    {
+      "w": "laisses",
+      "start": 5.7,
+      "end": 5.86
+    },
+    {
+      "w": "souvent",
+      "start": 5.86,
+      "end": 6.08
+    },
+    {
+      "w": "une",
+      "start": 6.08,
+      "end": 6.24
+    },
+    {
+      "w": "meilleure",
+      "start": 6.24,
+      "end": 6.52
+    },
+    {
+      "w": "impression",
+      "start": 6.52,
+      "end": 6.78
+    },
+    {
+      "w": "que",
+      "start": 6.78,
+      "end": 6.98
+    },
+    {
+      "w": "tu",
+      "start": 6.98,
+      "end": 7.08
+    },
+    {
+      "w": "ne",
+      "start": 7.08,
+      "end": 7.16
+    },
+    {
+      "w": "le",
+      "start": 7.16,
+      "end": 7.28
+    },
+    {
+      "w": "crois.",
+      "start": 7.28,
+      "end": 7.44
+    },
+    {
+      "w": "La",
+      "start": 7.74,
+      "end": 7.82
+    },
+    {
+      "w": "psychologue",
+      "start": 7.82,
+      "end": 8.28
+    },
+    {
+      "w": "Erica",
+      "start": 8.28,
+      "end": 8.607
+    },
+    {
+      "w": "Boothby,",
+      "start": 8.607,
+      "end": 8.933
+    },
+    {
+      "w": "à",
+      "start": 9.26,
+      "end": 9.64
+    },
+    {
+      "w": "l'université",
+      "start": 9.64,
+      "end": 9.92
+    },
+    {
+      "w": "Cornell,",
+      "start": 10.2,
+      "end": 10.56
+    },
+    {
+      "w": "a",
+      "start": 10.56,
+      "end": 10.88
+    },
+    {
+      "w": "fait",
+      "start": 10.88,
+      "end": 10.98
+    },
+    {
+      "w": "discuter",
+      "start": 10.98,
+      "end": 11.32
+    },
+    {
+      "w": "des",
+      "start": 11.32,
+      "end": 11.5
+    },
+    {
+      "w": "inconnus.",
+      "start": 11.5,
+      "end": 11.92
+    },
+    {
+      "w": "Après",
+      "start": 12.06,
+      "end": 12.24
+    },
+    {
+      "w": "l'échange,",
+      "start": 12.24,
+      "end": 12.61
+    },
+    {
+      "w": "chacun",
+      "start": 12.98,
+      "end": 13.14
+    },
+    {
+      "w": "disait",
+      "start": 13.14,
+      "end": 13.5
+    },
+    {
+      "w": "combien",
+      "start": 13.5,
+      "end": 13.72
+    },
+    {
+      "w": "il",
+      "start": 13.72,
+      "end": 13.8
+    },
+    {
+      "w": "avait",
+      "start": 13.88,
+      "end": 14.06
+    },
+    {
+      "w": "aimé",
+      "start": 14.06,
+      "end": 14.28
+    },
+    {
+      "w": "l'autre.",
+      "start": 14.28,
+      "end": 14.44
+    },
+    {
+      "w": "Et",
+      "start": 14.6,
+      "end": 14.96
+    },
+    {
+      "w": "combien",
+      "start": 14.96,
+      "end": 15.24
+    },
+    {
+      "w": "il",
+      "start": 15.24,
+      "end": 15.42
+    },
+    {
+      "w": "pensait",
+      "start": 15.42,
+      "end": 15.6
+    },
+    {
+      "w": "être",
+      "start": 15.78,
+      "end": 15.92
+    },
+    {
+      "w": "apprécié.",
+      "start": 15.92,
+      "end": 16.51
+    },
+    {
+      "w": "Systématiquement,",
+      "start": 17.1,
+      "end": 17.54
+    },
+    {
+      "w": "les",
+      "start": 17.92,
+      "end": 18.02
+    },
+    {
+      "w": "participants",
+      "start": 18.02,
+      "end": 18.42
+    },
+    {
+      "w": "sous-estimaient",
+      "start": 18.42,
+      "end": 18.74
+    },
+    {
+      "w": "l'impression",
+      "start": 18.74,
+      "end": 19.06
+    },
+    {
+      "w": "qu'ils",
+      "start": 19.06,
+      "end": 19.38
+    },
+    {
+      "w": "avaient",
+      "start": 19.7,
+      "end": 19.92
+    },
+    {
+      "w": "laissée.",
+      "start": 19.92,
+      "end": 20.2
+    },
+    {
+      "w": "C'est",
+      "start": 20.2,
+      "end": 20.48
+    },
+    {
+      "w": "le",
+      "start": 20.76,
+      "end": 20.9
+    },
+    {
+      "w": "liking",
+      "start": 20.9,
+      "end": 21.04
+    },
+    {
+      "w": "gap.",
+      "start": 21.18,
+      "end": 21.52
+    },
+    {
+      "w": "Pourquoi",
+      "start": 21.92,
+      "end": 21.92
+    },
+    {
+      "w": "?",
+      "start": 21.92,
+      "end": 22.36
+    },
+    {
+      "w": "Tu",
+      "start": 22.36,
+      "end": 22.42
+    },
+    {
+      "w": "entends",
+      "start": 22.42,
+      "end": 22.68
+    },
+    {
+      "w": "chaque",
+      "start": 22.68,
+      "end": 22.94
+    },
+    {
+      "w": "doute",
+      "start": 22.94,
+      "end": 23.16
+    },
+    {
+      "w": "dans",
+      "start": 23.16,
+      "end": 23.38
+    },
+    {
+      "w": "ta",
+      "start": 23.38,
+      "end": 23.52
+    },
+    {
+      "w": "tête.",
+      "start": 23.52,
+      "end": 23.8
+    },
+    {
+      "w": "Leurs",
+      "start": 23.8,
+      "end": 24.18
+    },
+    {
+      "w": "signaux",
+      "start": 24.18,
+      "end": 24.56
+    },
+    {
+      "w": "positifs,",
+      "start": 24.56,
+      "end": 24.94
+    },
+    {
+      "w": "tu",
+      "start": 25.32,
+      "end": 25.44
+    },
+    {
+      "w": "les",
+      "start": 25.44,
+      "end": 25.58
+    },
+    {
+      "w": "remarques",
+      "start": 25.58,
+      "end": 25.88
+    },
+    {
+      "w": "moins.",
+      "start": 25.88,
+      "end": 26.1
+    },
+    {
+      "w": "Chez",
+      "start": 26.46,
+      "end": 26.62
+    },
+    {
+      "w": "des",
+      "start": 26.62,
+      "end": 26.74
+    },
+    {
+      "w": "colocataires,",
+      "start": 26.74,
+      "end": 27.32
+    },
+    {
+      "w": "l'écart",
+      "start": 27.32,
+      "end": 27.57
+    },
+    {
+      "w": "a",
+      "start": 27.57,
+      "end": 27.82
+    },
+    {
+      "w": "persisté",
+      "start": 27.82,
+      "end": 28.07
+    },
+    {
+      "w": "des",
+      "start": 28.07,
+      "end": 28.32
+    },
+    {
+      "w": "mois.",
+      "start": 28.32,
+      "end": 28.57
+    },
+    {
+      "w": "Ce",
+      "start": 28.82,
+      "end": 29.26
+    },
+    {
+      "w": "moment",
+      "start": 29.26,
+      "end": 29.5
+    },
+    {
+      "w": "gênant",
+      "start": 29.5,
+      "end": 30.02
+    },
+    {
+      "w": "?",
+      "start": 30.02,
+      "end": 30.07
+    },
+    {
+      "w": "Il",
+      "start": 30.12,
+      "end": 30.16
+    },
+    {
+      "w": "l'était",
+      "start": 30.16,
+      "end": 30.307
+    },
+    {
+      "w": "peut-être",
+      "start": 30.307,
+      "end": 30.453
+    },
+    {
+      "w": "surtout",
+      "start": 30.6,
+      "end": 30.82
+    },
+    {
+      "w": "pour",
+      "start": 30.82,
+      "end": 31.08
+    },
+    {
+      "w": "toi.",
+      "start": 31.08,
+      "end": 31.22
     }
   ]
 }
