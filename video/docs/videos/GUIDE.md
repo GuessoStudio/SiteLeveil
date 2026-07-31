@@ -131,6 +131,31 @@ npx remotion ffmpeg -i public/<Nom>.mp3 -af silencedetect=noise=-26dB:d=0.25 -f 
 `silencedetect` — vient du skill officiel `remotion-dev/skills`, installé dans
 `video/.agents/skills/remotion-best-practices/rules/silence-detection.md`.)
 
+### 4.2 bis — Calage automatique des plans
+
+`npm run v calibrate <slug>` fait le découpage à votre place. Il lui faut
+`src/data/scripts/<slug>.txt` : le texte parlé, **une ligne par plan**.
+
+Enchaînement complet, dans l'ordre :
+
+```bash
+npm run v master     <slug>   # MP3 masterisé + relevé des silences
+npm run v transcribe <slug>   # mots datés (Whisper) → calage EXACT
+npm run v calibrate  <slug>   # out/<slug>.draft.json avec les durées
+```
+
+Sans l'étape `transcribe`, le calibrage bascule en mode **proportionnel** :
+il suppose un débit constant. Mesuré sur `liking-gap`, il se trompe sur 6 plans
+sur 13, parce qu'une phrase appuyée (« J'ai trop parlé », 3 mots en 1,6 s) prend
+deux fois le temps que le débit moyen prévoit. **Toujours faire `transcribe`.**
+
+En mode exact, le calage a été comparé plan par plan à un découpage fait à la
+main sur `liking-gap` : identique sur 11 plans, **meilleur sur 2** (le manuel
+retardait deux coupes d'environ 1 s), et 0,13 s d'écart sur le dernier.
+
+Il reste à ajouter la direction artistique dans le draft — poses, couleurs, FX,
+mots-clés — puis à copier le résultat dans `src/data/scripts/<slug>.json`.
+
 ### 4.3 Construire les plans
 
 1. Chaque **fin de silence** = début d'une phrase → `duration` = intervalle
@@ -178,6 +203,25 @@ npx remotion ffmpeg -i public/<Nom>.mp3 -af silencedetect=noise=-26dB:d=0.25 -f 
       Ex. `"credit": "Tang, Hölzel & Posner · Nature Reviews Neuroscience"`.
 - [x] **SplitScreen** — champ `split: { "left": "...", "right": "..." }`.
       Ex. `"split": { "left": "Mythe", "right": "Réalité" }`.
+
+### Commandes — une seule entrée pour tout
+
+```bash
+npm run v                     # aide
+npm run v list                # tous les scripts, plans, durées, état
+npm run v master     <slug>   # mastering + silences
+npm run v transcribe <slug>   # mots datés (avant calibrate)
+npm run v calibrate  <slug>   # durées des plans
+npm run v check      <slug>   # validation contre les registres du moteur
+npm run v words      <slug>   # karaoké frame-perfect
+npm run v render     <slug>   # MP4  (validation automatique avant)
+npm run v cover      <slug>   # miniature
+npm run v all        <slug>   # check + words + render + cover
+```
+
+Plus rien à ajouter dans `package.json` pour une nouvelle vidéo. Les anciennes
+entrées (`render:liking`, `cover:pensee2`…) restent valables, mais on n'en crée
+plus : `v` lit le slug en argument.
 
 ### Tier 2 — productivité / autonomie
 - [x] **Karaoké intégré** — flag `"karaoke": true` (haut niveau du script). Sous-titres

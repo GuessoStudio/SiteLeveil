@@ -46,7 +46,7 @@
       "fx": "rumination_loop"
     },
     {
-      "duration": 2.81,
+      "duration": 2.05,
       "keyword": "J'AI TROP PARLÉ",
       "keywordFx": "shake",
       "subtitle": "« J'ai trop parlé. J'étais gênant. »",
@@ -59,7 +59,7 @@
       "fx": "spotlight_pressure"
     },
     {
-      "duration": 2.92,
+      "duration": 2.87,
       "keyword": "POURTANT",
       "subtitle": "Pourtant, tu laisses souvent une meilleure impression que tu ne le crois.",
       "pose": "open",
@@ -71,7 +71,7 @@
       "transition": "color_shift"
     },
     {
-      "duration": 3.56,
+      "duration": 4.37,
       "keyword": "LA SCIENCE",
       "subtitle": "La psychologue Erica Boothby, à l'université Cornell, a fait discuter des inconnus.",
       "credit": "Erica Boothby · Université Cornell",
@@ -190,7 +190,7 @@
   "words": [
     {
       "w": "Tu",
-      "start": 0.0,
+      "start": 0,
       "end": 0.16
     },
     {

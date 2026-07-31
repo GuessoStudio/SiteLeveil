@@ -2,3 +2,6 @@ node_modules/
 out/
 .remotion/
 __pycache__/
+out/*.words.json
+out/*.draft.json
+out/*.calibration.json
