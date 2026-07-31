@@ -67,7 +67,11 @@ Ces éléments n'ont pas encore été formalisés dans `.claude/rules/repurposin
 
 ## Checklist de décision (au bilan du labo)
 
-- [ ] Les 8 tests du labo sont mesurés et tranchés (`mesure-14-jours.md` §4/§7)
+- [x] ~~Les 8 tests du labo sont mesurés et tranchés~~ → **fait le 2026-07-29**,
+      bilan complet en `mesure-14-jours.md` §8. ⚠️ Deux résultats fragilisent
+      cette proposition : le hook pilote la rétention mais **pas** la
+      distribution (test #3), et les CTA d'engagement ne produisent **aucun**
+      engagement (0/2, tests #4 et #8).
 - [ ] Comparer le gain potentiel de la différenciation par plateforme au
       coût de production (×4 sur le hook)
 - [ ] Décider : adopter intégralement / adopter partiellement (items « dès
