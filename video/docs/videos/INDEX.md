@@ -18,6 +18,7 @@ Vue d'ensemble de la production. Une ligne par vidéo ; fiche détaillée dans
 📜 Tous les scripts (texte parlé) : [SCRIPTS.md](SCRIPTS.md)
 🧪 Protocole de mesure + journal des relevés : [mesure-14-jours.md](mesure-14-jours.md)
 🏁 **BILAN DU LABO — 8/8 tests tranchés** (ce qui est établi / écarté) : [mesure-14-jours.md §8](mesure-14-jours.md#8-bilan-du-labo-14-jours-2026-07-29)
+🧪 **LABO 7 JOURS EN COURS — veine psychologie sociale** : [labo-7-jours-psycho-sociale.md](labo-7-jours-psycho-sociale.md)
 🪝 Protocole hooks — typologie et rotation *(hypothèse en cours de test, non figée)* : [hooks-protocole.md](hooks-protocole.md)
 📥 Décisions en attente (hook par plateforme · Sandcastles MCP) : [proposition-hook-par-plateforme.md](proposition-hook-par-plateforme.md)
 
