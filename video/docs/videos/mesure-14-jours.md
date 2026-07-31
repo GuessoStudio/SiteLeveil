@@ -561,6 +561,53 @@ Publication : FB 18/07 12h30 · TikTok 18/07 20h00 · IG 18/07 18h31 · YT 18/07
 
 ---
 
+### Attention fragmentée (`attention-fragmentee`) — relevé ~+20h (2026-07-31, publié 2026-07-30)
+
+**Première vidéo POST-LABO.** Plus un test d'hypothèse : entrée dans le
+protocole de rotation des hooks (`hooks-protocole.md`).
+
+- **Famille de hook : Identity Call** — rotation #1/5, 1ʳᵉ vidéo de la famille
+- Recette d'ouverture volontairement identique aux 4 précédentes
+  (`zoom-in` + `static_noise` + `glitch`) pour isoler la famille de hook
+- **Deuxième variable changée (non prévue)** : Instagram publié à **12:00**
+  au lieu de 18:30 (créneau suggéré par Meta). Voir la réserve plus bas.
+- Durée 29,86 s · 100 mots · 1ʳᵉ application de la règle de calibrage
+
+Publication : IG 30/07 12:00 · FB 30/07 12:33 · TikTok + YT 30/07.
+
+| Réseau | Vues | Rétention | Interactions | Abonnés | Note |
+|---|---:|---:|---|---:|---|
+| YouTube | 694 | 40,7 % (0:12) | 316 vues engagées, 6 likes · 43,9 % ont continué | +1 | 🟡 **7ᵉ/10 en rétention** — milieu de tableau. Sources : Flux Shorts 96,8 %, **Recherche 0,7 %** |
+| TikTok | 263 | **34,9 %** (10,41s/29,86s) — **73 % à 0:01** | 22 likes, 0 com, 0 partage, 2 saves — engagement 9,1 % | 0 | 🟢 3ᵉ meilleure rétention TikTok, 2ᵉ meilleur 0:01 du catalogue. Pour toi 99,2 % |
+| Instagram | **134** | **44,9 %** de view rate (>3s) · 8,03 s moy. | 2 (2 likes) · couverture 116 | 0 | 🟢🟢 **meilleur score Instagram du catalogue** — mais 2 variables ont bougé |
+| Facebook | **242** (spect. 220) | 13,4 % (4s) | 2 interactions · 15 min 32 s cumulés | 0 | 🟢 **RETOUR À LA NORMALE** — recommandations 90,6 % (vs 0,5-6,3 % pendant la coupure) |
+
+**Trois lectures, par ordre de solidité :**
+
+1. **🟢 Facebook est sorti de la coupure** — factuel, pas une interprétation.
+   242 vues contre 3-18 du 24 au 28/07, recommandations remontées à 90,6 %.
+   Voir l'épilogue §8.7. C'est le seul résultat certain de ce relevé.
+
+2. **🟡 Instagram bondit, cause indéterminée.** View rate 44,9 % contre
+   ~26 % sur les 3 précédentes ; durée moyenne doublée (8,03 s vs 3,3-4,6 s).
+   **Attribution impossible** : l'horaire (12:00) et la famille de hook
+   (Identity Call) ont changé sur la même vidéo. Confond assumé. Il faudra
+   le bloc de 5-7 vidéos à horaire constant pour trancher.
+
+3. **🟠 TikTok 0:01 à 73 %** — proche du record (`effet-projecteur`, 74 %).
+   Cohérent avec l'hypothèse « faible densité verbale à la 1ʳᵉ seconde »
+   (`hooks-protocole.md` §4), mais **n=1 sur la famille Identity Call**.
+   Le protocole impose de ne rien conclure avant 4 vidéos par famille, et
+   de considérer tout écart < 10 points comme du bruit (variance observée :
+   30 % à 59 % sur des vidéos comparables). **Aucune conclusion ici.**
+
+**Contre-signal à consigner** : la part **Recherche YouTube tombe à 0,7 %**
+alors que `pensee-critique-2` (titre en question) faisait 2,5 %. L'idée
+« titre formulé comme une requête ⇒ plus de trafic recherche » ne tient
+pas sur ce point de données. À re-tester avant d'en faire une règle.
+
+---
+
 ## 8. BILAN DU LABO 14 JOURS (2026-07-29)
 
 > Les 8 tests sont tranchés. Ce qui suit remplace les hypothèses de la §4
@@ -734,6 +781,25 @@ cessé de pousser les Reels. Rien à corriger, rien à contester.
 de classement. Une démotion « contenu répétitif » n'y apparaîtrait jamais.
 L'hypothèse 2 n'est donc pas formellement exclue, seulement invisible
 depuis l'admin.
+
+### ✅ ÉPILOGUE — Facebook revenu à la normale le 2026-07-30
+
+| Période | Vues/vidéo | Recommandations |
+|---|---:|---:|
+| 30/06 → 23/07 | 149-261 | 67-93 % |
+| 24/07 → 28/07 | 3-18 | 0,5-6,3 % |
+| **30/07** (`attention-fragmentee`) | **242** | **90,6 %** |
+
+**La coupure aura duré 5 jours et s'est résolue seule.** Aucune action
+n'a été entreprise, aucune n'était nécessaire. Le diagnostic du 29/07
+(cause algorithmique, pas sanction) est confirmé rétroactivement, et
+l'indicateur admin « Recommandations : Actif » était fiable.
+
+**Enseignement pour la suite** : une chute brutale de portée Facebook
+peut être transitoire. Ne pas surréagir, vérifier le statut du compte,
+attendre quelques jours avant de conclure. La décision de sortir FB des
+canaux de croissance reste valable pour une autre raison (0 abonné généré
+sur ~219 vues/vidéo pendant un mois), pas à cause de cet épisode.
 
 **Implication stratégique** : ne pas réinvestir sur Facebook tant que ce
 point n'est pas levé. Le canal représentait ~219 vues/vidéo sans jamais

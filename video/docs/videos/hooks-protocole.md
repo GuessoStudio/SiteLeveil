@@ -102,6 +102,23 @@ famille. Et même là, un écart de moins de 10 points de rétention entre
 deux familles ne devrait pas être considéré comme significatif vu la
 variance observée (30 % à 59 % sur des vidéos comparables).
 
+### Journal de rotation
+
+Une ligne par vidéo post-labo. **Aucune moyenne de famille tant qu'une
+colonne n'atteint pas 4 lignes.**
+
+| # | Publié | Vidéo | Famille | Rét. YT | Rét. TT | TT 0:01 | IG view rate |
+|---:|---|---|---|---:|---:|---:|---:|
+| 1 | 30/07 | attention-fragmentee | **Identity Call** | 40,7 % | 34,9 % | 73 % | 44,9 % ⚠️ |
+| 2 | — | — | *(à venir)* | | | | |
+
+⚠️ *`attention-fragmentee` : l'horaire Instagram a changé (12:00 vs 18:30)
+sur la même vidéo. La colonne IG view rate n'est pas exploitable pour
+juger la famille de hook.*
+
+Décompte par famille : Identity Call 1/4 · Boucle ouverte 0/4 ·
+Contradiction 0/4 · Scène concrète 0/4 · Chiffre choc 0/4.
+
 ---
 
 ## 5. Ce qui invaliderait tout ça

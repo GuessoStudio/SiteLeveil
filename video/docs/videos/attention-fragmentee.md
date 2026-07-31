@@ -70,14 +70,37 @@ Corrections appliquées à la version utilisateur avant enregistrement :
 - [x] Script écrit et validé (1 seule chercheuse nommée : Gloria Mark · UC Irvine)
 - [x] Voix off reçue + masterisée (-18,12 → -14,84 LUFS, GUIDE.md §4.1)
 - [x] Durées calées sur le mp3 réel (silencedetect, GUIDE.md §4.2)
-- [ ] Karaoké frame-perfect (Whisper local, `npm run words:attention`)
-- [ ] Rendu MP4 (`npm run render:attention`)
-- [ ] Couverture générée (`npm run cover:attention`)
-- [ ] Sous-titres vérifiés
-- [ ] Pack réseaux (FB/IG/TikTok/YouTube)
-- [ ] Publié
-- [ ] Relevés dans `mesure-14-jours.md` §6 — noter la **famille de hook
-      (Identity Call)** pour la rotation
+- [x] Karaoké frame-perfect (Whisper local, `npm run words:attention`)
+- [x] Rendu MP4 (`npm run render:attention`)
+- [x] Couverture générée (`npm run cover:attention`)
+- [x] Sous-titres vérifiés
+- [x] Pack réseaux (FB/IG/TikTok/YouTube)
+- [x] **Publié le 2026-07-30** (IG 12:00 · FB 12:33 · TikTok + YT)
+- [x] Relevés dans `mesure-14-jours.md` §6 — famille **Identity Call**
+      consignée pour la rotation
+
+## Résultats (+20 h, relevé 2026-07-31)
+
+| Réseau | Vues | Rétention | Interactions | Abonnés |
+|---|---:|---:|---|---:|
+| YouTube | 694 | 40,7 % (0:12) | 316 vues engagées, 6 likes | +1 |
+| TikTok | 263 | 34,9 % · **73 % à 0:01** | 22 likes, 2 saves (9,1 %) | 0 |
+| Instagram | **134** | **44,9 %** view rate · 8,03 s | 2 likes | 0 |
+| Facebook | 242 | 4 s moy. | 2 | 0 |
+
+**Ce qu'on retient :**
+
+- 🟢 **Facebook est ressorti de la coupure du 24/07** (242 vues,
+  recommandations 90,6 %). Résolution spontanée en 5 jours, sans action.
+- 🟢 **Meilleur score Instagram du catalogue** (44,9 % de view rate contre
+  ~26 % habituels, durée moyenne doublée). ⚠️ **Cause indéterminée** :
+  l'horaire (12:00 au lieu de 18:30) et la famille de hook ont changé
+  ensemble. Confond assumé — ne pas attribuer.
+- 🟠 TikTok à 73 % à 0:01 (2ᵉ du catalogue) et 34,9 % de rétention (3ᵉ).
+  Encourageant, mais **n=1** : rien à conclure avant 4 vidéos Identity Call.
+- 🟡 YouTube au milieu de tableau (7ᵉ/10 en rétention).
+- ⚠️ Recherche YouTube à 0,7 % (contre 2,5 % sur `pensee-critique-2`) —
+  contredit l'idée qu'un titre en forme de requête attire la recherche.
 
 ## ⚠️ Notes
 
@@ -92,7 +115,8 @@ Corrections appliquées à la version utilisateur avant enregistrement :
 
 ## 🔁 Prochaine itération
 
-- Karaoké, rendu, couverture, pack réseaux, publication.
-- Au relevé : consigner la famille **Identity Call** dans le suivi de
-  rotation. Ne rien conclure avant 4 vidéos de cette famille
-  (`hooks-protocole.md` §4).
+- **Instagram** : refaire 4 à 6 publications à 12:00 en changeant *rien
+  d'autre*, pour savoir si le bond de view rate vient de l'horaire.
+- **Rotation hooks** : 3 vidéos Identity Call restantes avant tout bilan
+  de famille (`hooks-protocole.md` §4).
+- Relevé +72 h / +7 j — jamais fait sur aucune vidéo du labo.

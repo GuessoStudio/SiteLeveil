@@ -3,8 +3,13 @@
 Vue d'ensemble de la production. Une ligne par vidéo ; fiche détaillée dans
 `docs/videos/<slug>.md`. Mettre à jour à chaque publication.
 
-> Dernier nettoyage : **2026-07-29**. Dates de publication et vues TikTok
+> Dernier nettoyage : **2026-07-31**. Dates de publication et vues TikTok
 > vérifiées via l'API Metricool (source : posts TikTok 01/06 → 29/07).
+>
+> ⚠️ **Deux chantiers ouverts** : (1) Instagram — bond de view rate à
+> 44,9 % sur `attention-fragmentee`, cause indéterminée (horaire 12:00
+> **et** hook changés ensemble) → refaire 4-6 pubs à 12:00 sans rien
+> changer d'autre. (2) Pipeline à 11 sujets, soit ~2 semaines à 7/semaine.
 
 📅 Heures de publication par réseau : [horaires-publication.md](horaires-publication.md)
 📚 Catalogue du moteur (poses, FX, SFX, caméras, composants…) : [catalogue.md](catalogue.md)
@@ -18,13 +23,14 @@ Vue d'ensemble de la production. Une ligne par vidéo ; fiche détaillée dans
 
 ---
 
-## Vidéos publiées (20)
+## Vidéos publiées (21)
 
 Ordre chronologique inverse. `Vues YT` / `Rét. YT` = relevé le plus récent
 disponible (labo : +18-20 h ; antérieures : baseline 30 j du 2026-07-19).
 
 | Publié | Slug | Sujet | Pilier | Durée | Vues YT | Rét. YT | Vues TT | Labo | Fiche |
 |---|---|---|---|---:|---:|---:|---:|---|---|
+| 30/07 | attention-fragmentee | 23 min pour revenir après une interruption | Dev perso / Neuro | 29,86s | 694 | 40,7 % | 263 | post-labo · hook *Identity Call* | [fiche](attention-fragmentee.md) |
 | 28/07 | pensee-critique-2 | Pensée critique — format quiz | Psycho / Neuro | 43,44s | 436 | 45,4 % | 257 | #8 ❌ | [fiche](pensee-critique-2.md) |
 | 26/07 | effet-projecteur-2 | Effet projecteur — la suite | Psycho sociale | 29,35s | 969 | 40,9 % | 280 | #6 ✅ | [fiche](effet-projecteur-2.md) |
 | 25/07 | rejet-social-2 | Rejet social — scène concrète | Psycho sociale | 35,74s | 751 | 30,8 % | 254 | #7 ✅ | [fiche](rejet-social-2.md) |
@@ -58,7 +64,6 @@ disponible (labo : +18-20 h ; antérieures : baseline 30 j du 2026-07-19).
 
 | Slug | Sujet | Pilier | Durée | Statut | Fiche |
 |---|---|---|---|---:|---|
-| attention-fragmentee | 23 minutes pour revenir après une interruption | Dev perso / Neuro | **29,86s** | 🎙️ voix off masterisée + durées calées — karaoké/rendu à faire · **hook : Identity Call** (rotation #1) | [fiche](attention-fragmentee.md) |
 | habitudes-court | Le mythe des 21 jours | Neuro / Dev perso | 30s | 🔊 voix+sons OK — SFX et sous-titres en attente | [fiche](habitudes-court.md) |
 | biais-cognitifs | Ton cerveau a un bug (ancrage + confirmation) | Psychologie | 32s | 🔊 voix+sons OK — sous-titres en attente | [fiche](biais-cognitifs.md) |
 
@@ -70,7 +75,7 @@ disponible (labo : +18-20 h ; antérieures : baseline 30 j du 2026-07-19).
 
 ## Observation transverse — TikTok distribue à plat
 
-Les 20 vidéos publiées font **244 à 306 vues TikTok**, sans exception, quels
+Les 21 vidéos publiées font **244 à 306 vues TikTok**, sans exception, quels
 que soient le sujet, le hook, la durée ou le format. Aucune n'a percé, aucune
 n'a échoué. À comparer à YouTube où l'écart va de 7 à 1 408 vues.
 
