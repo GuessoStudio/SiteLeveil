@@ -34,6 +34,12 @@ Procédure correcte pour intégrer un repo externe :
 1. Copier uniquement les fichiers nécessaires manuellement dans le projet
 2. Ou `git clone` hors du dossier projet, puis copier les fichiers
 
+## ⚠️ Deuxième projet dans ce dépôt : les vidéos
+`video/` contient **Le Petit Éveillé**, le moteur de vidéos verticales
+(Remotion) pour TikTok / Reels / Shorts / Facebook. Projet distinct du site.
+→ Toute demande vidéo (script, rendu, stats, pack réseaux) : lire
+`video/CLAUDE.md` en premier. Ne pas appliquer les règles du blog aux vidéos.
+
 ## Ne pas lire sauf si demandé
 node_modules/ .git/ dist/ claude-seo/ claude-blog/
 Pour règles articles → .claude/rules/articles.md
