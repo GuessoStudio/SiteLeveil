@@ -25,6 +25,21 @@
 > lisent tous les deux nativement. Pour repasser en MP3, installer un
 > ffmpeg complet (`winget install Gyan.FFmpeg`) et réencoder.
 
+## ⚠️ Le JSON ne correspond pas au MP4 publié
+
+`out/liking-gap.mp4` a été rendu le **31/07 à 11:30**. Les durées des plans
+3, 4 et 5 ont été corrigées **après**, à 15:30 (2,81 / 2,92 / 3,56 →
+**2,05 / 2,87 / 4,37**), suite au calage automatique qui a montré que deux
+coupes arrivaient ~1 s trop tard.
+
+**Le MP4 en ligne contient donc l'ancien découpage.** Volontaire : re-rendre
+imposerait de supprimer et reposter la vidéo, donc de perdre les vues déjà
+acquises, pour un décalage visuel d'une seconde sur deux plans. La voix, les
+sous-titres et le message sont identiques.
+
+Le JSON garde les valeurs corrigées : si la vidéo est un jour re-rendue
+(reprise, format différent), c'est la bonne version qui sortira.
+
 ## Specs
 
 - Durée réelle : **31,36 s** (voix off) · Plans : **13** · 1080×1920 @30fps
