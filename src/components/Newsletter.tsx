@@ -18,7 +18,7 @@ const handleBrevoSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   form.submit()
   form.target = ''
   // Rediriger vers la page de remerciement
-  window.location.href = '/merci-inscription'
+  window.location.href = '/merci-inscription/'
 }
 
 const BrevoForm = () => (

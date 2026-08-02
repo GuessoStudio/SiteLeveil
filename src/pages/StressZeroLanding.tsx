@@ -312,7 +312,7 @@ const StressZeroLanding = () => {
                             <span>•</span>
                             <Link to="/politique-confidentialite" className="hover:underline">Politique de confidentialité</Link>
                             <span>•</span>
-                            <Link to="/contact" className="hover:underline">Contact</Link>
+                            <Link to="/contact/" className="hover:underline">Contact</Link>
                         </div>
                     </div>
                 </footer>

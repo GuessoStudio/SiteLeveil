@@ -608,7 +608,7 @@ const Resources = () => {
               Contactez-nous pour suggérer de nouvelles ressources ou poser vos questions
             </p>
             <a
-              href="/contact"
+              href="/contact/"
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
             >
               Nous contacter

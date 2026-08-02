@@ -223,7 +223,7 @@ const HydroMindDeleteAccount: React.FC = () => {
                                 </a>
                                 {' '}|{' '}
                                 <a
-                                    href="/hydromind/privacy-policy"
+                                    href="/hydromind/privacy-policy/"
                                     className="text-blue-600 dark:text-blue-400 hover:underline"
                                 >
                                     Politique de confidentialité
@@ -235,7 +235,7 @@ const HydroMindDeleteAccount: React.FC = () => {
                     {/* Actions */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                         <a
-                            href="/hydromind/privacy-policy"
+                            href="/hydromind/privacy-policy/"
                             className="inline-block px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 font-semibold rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-center"
                         >
                             Politique de confidentialité

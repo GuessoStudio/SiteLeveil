@@ -144,8 +144,11 @@ export default function SEO({
       : null;
 
   // ✅ Default Breadcrumb (uniquement si pas de jsonLd custom)
+  // Jamais sur la home : un BreadcrumbList à 2 niveaux dont le niveau 2 pointe
+  // vers la home elle-même est auto-référentiel et invalide pour Google.
+  // La page racine n'a pas besoin de fil d'Ariane.
   const breadcrumbLd =
-    !hasCustomJsonLd
+    !hasCustomJsonLd && !isHome
       ? {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",

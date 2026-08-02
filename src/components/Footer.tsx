@@ -88,7 +88,7 @@ const Footer = () => {
               {[
                 { name: 'Neuro-Journal', href: '/neuro-journal/onboarding' },
                 { name: 'Livre Stress Zéro', href: '/stress-zero/' },
-                { name: 'Test Big Five', href: '/test-personnalite-big-five' },
+                { name: 'Test Big Five', href: '/test-personnalite-big-five/' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
@@ -115,7 +115,7 @@ const Footer = () => {
                 { name: 'Blog', href: '/blog/' },
                 { name: 'À propos', href: '/a-propos/' },
                 { name: 'Ressources', href: '/ressources/' },
-                { name: 'Contact', href: '/contact' },
+                { name: 'Contact', href: '/contact/' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
@@ -138,10 +138,10 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {[
-                { name: 'Mentions légales', href: '/legal#mentions' },
-                { name: 'Confidentialité', href: '/legal#privacy' },
-                { name: 'Cookies', href: '/legal#cookies' },
-                { name: 'CGU', href: '/legal#terms' },
+                { name: 'Mentions légales', href: '/legal/#mentions' },
+                { name: 'Confidentialité', href: '/legal/#privacy' },
+                { name: 'Cookies', href: '/legal/#cookies' },
+                { name: 'CGU', href: '/legal/#terms' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link

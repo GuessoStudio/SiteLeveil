@@ -9,5 +9,21 @@
 /blog/empathie-neurones-miroirs  /blog/empathie-neurones-miroirs-connexion-humaine/  301!
 /blog/empathie-neurones-miroirs/ /blog/empathie-neurones-miroirs-connexion-humaine/  301!
 
-# ─── SPA fallback — DOIT être la dernière règle ──────────────────────────────
-/*    /index.html   200
+# ─── Routes applicatives non pré-rendues — fallback SPA en 200 ───────────────
+# Ces routes sont volontairement exclues du pré-rendu SSG
+# (vite.config.ts → ssgOptions.includedRoutes). Elles n'ont donc pas de fichier
+# statique et dépendent du fallback. Sans ces règles, le catch-all 404 ci-dessous
+# leur ferait renvoyer un statut 404 alors qu'elles s'affichent normalement.
+# Règles non forcées : si un fichier statique existe, il gagne malgré tout.
+/neuro-journal/*  /index.html   200
+/admin/*          /index.html   200
+/habit-tracker    /index.html   200
+/habit-tracker/*  /index.html   200
+/og-test          /index.html   200
+
+# ─── Catch-all — DOIT être la dernière règle ─────────────────────────────────
+# 404 (et non 200) : une URL inexistante doit renvoyer un vrai code 404, sinon
+# Google indexe chaque faute de frappe et chaque lien mort comme un doublon de
+# la page d'accueil (soft 404). Le HTML servi reste index.html, le routeur React
+# affiche alors la page NotFound (src/pages/NotFound.tsx).
+/*    /index.html   404

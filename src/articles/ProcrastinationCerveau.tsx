@@ -500,7 +500,7 @@ export default function ProcrastinationCerveau() {
               Utilisez notre Habit Tracker pour implémenter ces stratégies anti-procrastination et mesurer scientifiquement vos progrès vers une productivité optimale.
             </p>
             <Link 
-              to="/habit-tracker" 
+              to="/habit-tracker/" 
               className="inline-flex items-center bg-white text-rose-600 px-6 py-3 rounded-lg font-semibold hover:bg-rose-50 transition-colors"
             >
               Commencer la transformation
