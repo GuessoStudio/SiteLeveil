@@ -438,7 +438,7 @@ export default function SyndromeImposteur() {
 
           <div className="not-prose my-6 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
             <p className="text-blue-800 dark:text-blue-200 font-medium">
-              💡 <strong>Astuce technologique :</strong> Utilise notre <Link to="/habit-tracker" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Habit Tracker</Link> pour automatiser le suivi de tes victoires quotidiennes et visualiser l'évolution de ta confiance sur le long terme.
+              💡 <strong>Astuce technologique :</strong> Utilise notre <Link to="/habit-tracker/" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Habit Tracker</Link> pour automatiser le suivi de tes victoires quotidiennes et visualiser l'évolution de ta confiance sur le long terme.
             </p>
           </div>
 
@@ -687,7 +687,7 @@ export default function SyndromeImposteur() {
                 </div>
               </Link>
               
-              <Link to="/habit-tracker" className="group block p-6 bg-gradient-to-br from-purple-500 to-violet-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
+              <Link to="/habit-tracker/" className="group block p-6 bg-gradient-to-br from-purple-500 to-violet-600 text-white rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden no-underline">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">

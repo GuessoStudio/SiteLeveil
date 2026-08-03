@@ -1,7 +1,7 @@
 // src/pages/SleepCalculator.tsx
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { calculateBedtime, SleepCalculation } from '../utils/sleepCalculator';
 import { useGA4Sleep } from '../hooks/useGA4Sleep';
 import SleepForm, { SleepFormData } from '../components/calculator/SleepForm';
@@ -69,52 +69,44 @@ const SleepCalculator: React.FC = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Calculateur de Sommeil - Heure Idéale pour Se Coucher | L'Éveil</title>
-                <meta
-                    name="description"
-                    content="Découvre ton heure de coucher optimale basée sur les cycles de sommeil de 90 min. Calcul gratuit personnalisé. Résultats instantanés."
-                />
-                <meta
-                    name="keywords"
-                    content="calculateur sommeil, heure coucher, cycles sommeil, sommeil optimal, insomnie, bien dormir"
-                />
-                <link rel="canonical" href="https://leveilmental.fr/calculateur-sommeil/" />
-
-                {/* Open Graph */}
-                <meta property="og:title" content="Calculateur de Sommeil Gratuit - L'Éveil" />
-                <meta property="og:description" content="Trouve ton heure de coucher optimale en 30 secondes" />
-                <meta property="og:url" content="https://leveilmental.fr/calculateur-sommeil/" />
-                <meta property="og:type" content="website" />
-                <meta property="og:image" content="https://leveilmental.fr/images/og-default.webp" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Calculateur de Sommeil - L'Éveil" />
-                <meta name="twitter:image" content="https://leveilmental.fr/images/og-default.webp" />
-
-                {/* Schema Markup */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
+            {/* Composant SEO et non <Helmet> brut : Helmet n'est pas sérialisé
+                pendant le build SSG, la page servait donc le title, la description
+                et le canonical génériques du template, sans aucun JSON-LD. */}
+            <SEO
+                title="Calculateur de sommeil : votre heure de coucher idéale"
+                description="Découvre ton heure de coucher optimale basée sur les cycles de sommeil de 90 min. Calcul gratuit personnalisé. Résultats instantanés."
+                path="/calculateur-sommeil/"
+                image="/images/og-default.webp"
+                type="website"
+                category="Neurosciences"
+                jsonLd={[
+                    {
                         '@context': 'https://schema.org',
                         '@type': 'WebApplication',
                         name: 'Calculateur de Sommeil',
                         description: 'Calcule ton heure de coucher idéale basée sur les cycles de sommeil',
                         url: 'https://leveilmental.fr/calculateur-sommeil/',
                         applicationCategory: 'HealthApplication',
+                        // Pas d'aggregateRating : le site ne collecte aucun avis
+                        // utilisateur. Publier une note inventée expose à une action
+                        // manuelle Google (avis non sourcés / auto-attribués).
                         offers: {
                             '@type': 'Offer',
                             price: '0',
                             priceCurrency: 'EUR',
                         },
-                        aggregateRating: {
-                            '@type': 'AggregateRating',
-                            ratingValue: '4.8',
-                            reviewCount: '342',
-                        },
-                    })}
-                </script>
-            </Helmet>
+                    },
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://leveilmental.fr' },
+                            { '@type': 'ListItem', position: 2, name: 'Ressources', item: 'https://leveilmental.fr/ressources/' },
+                            { '@type': 'ListItem', position: 3, name: 'Calculateur de sommeil', item: 'https://leveilmental.fr/calculateur-sommeil/' },
+                        ],
+                    },
+                ]}
+            />
 
             <div className="min-h-screen bg-gradient-to-b from-sleep-bg to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 py-12 px-4">
                 <div className="max-w-4xl mx-auto">

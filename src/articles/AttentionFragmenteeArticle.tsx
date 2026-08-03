@@ -472,7 +472,7 @@ export default function AttentionFragmenteeArticle() {
               Utilisez notre Habit Tracker pour implémenter ces 8 stratégies et mesurer objectivement l'amélioration de votre concentration.
             </p>
             <Link 
-              to="/habit-tracker" 
+              to="/habit-tracker/" 
               className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
             >
               Démarrer l'entraînement

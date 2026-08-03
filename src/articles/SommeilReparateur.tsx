@@ -540,7 +540,7 @@ export default function SommeilReparateur() {
               À quelle heure devriez-vous vous coucher pour vous réveiller frais et reposé ? Notre calculateur scientifique basé sur les cycles de 90 minutes vous donne l'heure exacte selon votre réveil. Optimisez votre récupération dès cette nuit !
             </p>
             <a
-              href="/calculateur-sommeil"
+              href="/calculateur-sommeil/"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-lg"
             >
               🧮 Calculer Mon Heure de Coucher Optimale →
@@ -779,7 +779,7 @@ export default function SommeilReparateur() {
                   Utilisez notre calculateur intelligent pour découvrir vos heures optimales de coucher et de réveil. Basé sur les cycles de 90 minutes et votre chronotype. Résultats personnalisés instantanés.
                 </p>
                 <a
-                  href="/calculateur-sommeil"
+                  href="/calculateur-sommeil/"
                   className="inline-flex items-center bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-50 transition-all hover:scale-105 shadow-lg"
                 >
                   🧮 Accéder au Calculateur Gratuit →
@@ -849,7 +849,7 @@ export default function SommeilReparateur() {
                         <h4 class="font-bold text-xl mb-3">✅ Merci ! Votre guide arrive dans quelques instants</h4>
                         <p class="mb-4 text-blue-700">Vérifiez votre boîte mail (et vos spams si besoin)</p>
                         <a 
-                          href="/calculateur-sommeil" 
+                          href="/calculateur-sommeil/" 
                           class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
                         >
                           🧮 Utilisez le Calculateur Sommeil
@@ -993,7 +993,7 @@ export default function SommeilReparateur() {
                 Plasticité synaptique
               </Link>
               <span className="text-neutral-400">•</span>
-              <Link to="/calculateur-sommeil" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <Link to="/calculateur-sommeil/" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                 Calculateur de sommeil
               </Link>
               <span className="text-neutral-400">•</span>

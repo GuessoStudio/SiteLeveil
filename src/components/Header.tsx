@@ -19,7 +19,7 @@ const Header = () => {
     { name: 'Blog', href: '/blog/' },
     { name: 'À propos', href: '/a-propos/' },
     { name: 'Ressources', href: '/ressources/' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact', href: '/contact/' }
   ]
 
   // Détection du scroll pour animer le header

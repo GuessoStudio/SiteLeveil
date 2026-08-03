@@ -1,20 +1,21 @@
 // src/pages/HydroMindDeleteAccount.tsx
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 
 const HydroMindDeleteAccount: React.FC = () => {
     return (
         <>
-            <Helmet>
-                <title>Suppression de compte HydroMind | L'Éveil Mental</title>
-                <meta
-                    name="description"
-                    content="Comment supprimer votre compte HydroMind et toutes vos données personnelles. Deux méthodes disponibles : via l'application ou par email."
-                />
-                <meta name="robots" content="noindex, follow" />
-                <link rel="canonical" href="https://leveilmental.fr/hydromind/delete-account/" />
-            </Helmet>
+            {/* Composant SEO et non <Helmet> brut : Helmet n'est pas sérialisé
+                pendant le build SSG, donc le noindex demandé ici n'atteignait
+                jamais Google. */}
+            <SEO
+                title="Suppression de compte HydroMind"
+                description="Comment supprimer votre compte HydroMind et toutes vos données personnelles. Deux méthodes disponibles : via l'application ou par email."
+                path="/hydromind/delete-account/"
+                type="website"
+                noindex
+            />
 
             <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800 py-16 px-4">
                 <div className="max-w-4xl mx-auto">
@@ -223,7 +224,7 @@ const HydroMindDeleteAccount: React.FC = () => {
                                 </a>
                                 {' '}|{' '}
                                 <a
-                                    href="/hydromind/privacy-policy"
+                                    href="/hydromind/privacy-policy/"
                                     className="text-blue-600 dark:text-blue-400 hover:underline"
                                 >
                                     Politique de confidentialité
@@ -235,7 +236,7 @@ const HydroMindDeleteAccount: React.FC = () => {
                     {/* Actions */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                         <a
-                            href="/hydromind/privacy-policy"
+                            href="/hydromind/privacy-policy/"
                             className="inline-block px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 font-semibold rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-center"
                         >
                             Politique de confidentialité

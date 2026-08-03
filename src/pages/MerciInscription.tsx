@@ -1,10 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle, BookOpen, Download, ArrowRight } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const MerciInscription = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-neutral-900 dark:to-neutral-800 flex items-center justify-center px-4 py-20">
+      {/* Page de confirmation post-inscription : aucune valeur en recherche,
+          et elle ne doit pas apparaître dans les résultats. noindex explicite. */}
+      <SEO
+        title="Merci pour votre inscription"
+        description="Confirmation d'inscription à la newsletter L'Éveil Mental."
+        path="/merci-inscription/"
+        type="website"
+        noindex
+      />
       <div className="max-w-lg w-full text-center">
 
         {/* Icône succès */}

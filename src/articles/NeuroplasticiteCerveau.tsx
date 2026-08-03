@@ -421,7 +421,7 @@ export default function NeuroplasticiteCerveau() {
               Utilisez notre Habit Tracker scientifique pour suivre vos pratiques d'optimisation cérébrale et mesurer vos progrès sur la durée.
             </p>
             <Link
-              to="/habit-tracker"
+              to="/habit-tracker/"
               className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
             >
               Démarrer le suivi gratuit →

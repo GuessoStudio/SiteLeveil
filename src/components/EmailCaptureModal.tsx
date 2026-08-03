@@ -37,7 +37,7 @@ const BrevoForm = ({ resourceFile }: BrevoFormProps) => {
     form.target = ''
 
     // 3. Rediriger vers la page de remerciement
-    window.location.href = '/merci-inscription'
+    window.location.href = '/merci-inscription/'
   }
 
   return (

@@ -1,20 +1,21 @@
 // src/pages/HydroMindPrivacy.tsx
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 
 const HydroMindPrivacy: React.FC = () => {
     return (
         <>
-            <Helmet>
-                <title>Politique de Confidentialité - HydroMind | L'Éveil</title>
-                <meta
-                    name="description"
-                    content="Politique de confidentialité de l'application HydroMind. Découvrez comment nous protégeons vos données personnelles conformément au RGPD."
-                />
-                <meta name="robots" content="noindex, follow" />
-                <link rel="canonical" href="https://leveilmental.fr/hydromind/privacy-policy/" />
-            </Helmet>
+            {/* Composant SEO et non <Helmet> brut : Helmet n'est pas sérialisé
+                pendant le build SSG, donc le noindex demandé ici n'atteignait
+                jamais Google. */}
+            <SEO
+                title="Politique de confidentialité HydroMind"
+                description="Politique de confidentialité de l'application HydroMind. Découvrez comment nous protégeons vos données personnelles conformément au RGPD."
+                path="/hydromind/privacy-policy/"
+                type="website"
+                noindex
+            />
 
             <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800 py-16 px-4">
                 <div className="max-w-4xl mx-auto">

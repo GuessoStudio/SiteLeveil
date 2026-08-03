@@ -482,7 +482,7 @@ export default function RuminationMentale() {
               Utilisez notre Habit Tracker pour suivre vos pratiques anti-rumination et mesurer l'amélioration de votre bien-être mental.
             </p>
             <Link 
-              to="/habit-tracker" 
+              to="/habit-tracker/" 
               className="inline-flex items-center bg-white text-rose-600 px-6 py-3 rounded-lg font-semibold hover:bg-rose-50 transition-colors"
             >
               Démarrer le suivi

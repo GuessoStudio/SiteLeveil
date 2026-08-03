@@ -47,11 +47,40 @@ Usage commercial (entraînement) : leveilmental.fr/contact
   > IBS fNIRS Wang 2022 (dlPFC droit/gauche, OFC, TPJ), r=−0,28 burnout Kluger 2023 (K=10, N=3858), d=0,85 autonomie Weinstein & Itzchakov 2025 — Relations Humaines, 13 min
 - Mindset de croissance — le guide complet de Carol Dweck : https://leveilmental.fr/blog/mindset-de-croissance-psychologie-dweck/
   > Pe↑ EEG Moser 2011 (Michigan State), d=0,05 méta-analyse Macnamara & Burgoyne 2023 (97 672 élèves), nuance stress Goran & Jiang 2025 — Psychologie, 12 min
-
 - Routine matinale scientifique — protocoles validés par les neurosciences : https://leveilmental.fr/blog/routine-matinale-scientifique-cerveau/
   > Cortisol awakening response, lumière bleue, thermogenèse et 6 pratiques fondées sur les preuves — Développement Personnel, 12 min
 - Cortisol et stress chronique — cerveau et mémoire : https://leveilmental.fr/blog/cortisol-stress-chronique-cerveau-memoire/
   > Axe HPA, hippocampe, cortex préfrontal et 7 stratégies de régulation du cortisol — Neurosciences, 13 min
+- Régulation émotionnelle : 8 techniques validées par la psychologie (2026) : https://leveilmental.fr/blog/regulation-emotionnelle-techniques-psychologie/
+  > 8 techniques classées par efficacité selon 306 études. Modèle de Gross, circuit amygdale-CPF, affect labeling — Psychologie, 12 min
+- Résoudre un conflit : mécanismes cérébraux et 6 méthodes validées par la psychologie sociale : https://leveilmental.fr/blog/resoudre-un-conflit-methodes-psychologie/
+  > Fenêtre d'inhibition de 20 min, 4 Cavaliers de Gottman, méthode Harvard. 6 méthodes validées par la psychologie sociale — Relations Humaines, 12 min
+- Objectifs SMART : ce que les neurosciences disent vraiment de la méthode : https://leveilmental.fr/blog/objectifs-smart-methode-neurosciences/
+  > Objectifs SMART décryptés par les neurosciences : pourquoi la spécificité active le cortex préfrontal, les plans si/alors validés sur 94 études — Développement Personnel, 13 min
+- Formation des habitudes dans le cerveau : ce que disent les neurosciences : https://leveilmental.fr/blog/formation-habitudes-cerveau-neurosciences/
+  > Le circuit du striatum, le transfert dorsomédial vers dorsolatéral, le mythe des 21 jours et 3 leviers validés pour les changer — Développement Personnel, 14 min
+- Concentration profonde : ce que les neurosciences révèlent sur le deep work : https://leveilmental.fr/blog/concentration-profonde-deep-work-neurosciences/
+  > Le mécanisme cérébral DMN/DAN, le mythe des 23 minutes, l'attention résiduelle de Leroy et 4 leviers validés pour retrouver le focus — Développement Personnel, 13 min
+- Biais cognitifs : la liste des 12 plus courants (et comment les contrer) : https://leveilmental.fr/blog/biais-cognitifs-liste-psychologie/
+  > Les 12 biais cognitifs les plus courants avec leur origine expérimentale (Kahneman, Tversky, Wason) — Psychologie, 15 min
+- Anxiété : les mécanismes neurologiques et 10 solutions validées par la science : https://leveilmental.fr/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/
+  > Circuits amygdale-BNST-mPFC, hypoconnectivité préfrontale, et 10 solutions classées par niveau de preuve — Psychologie, 15 min
+- Burn-out : les signaux neurobiologiques dans le cerveau et 7 étapes de récupération : https://leveilmental.fr/blog/burn-out-signaux-neurobiologiques-recuperation/
+  > Profil fronto-limbique, mythe du cortisol toujours élevé, réversibilité partielle et 7 étapes de récupération — Psychologie, 14 min
+- Méditation et cerveau : ses effets prouvés par l'IRMf (protocole 8 semaines) : https://leveilmental.fr/blog/meditation-effets-cerveau/
+  > Ce que l'IRMf montre vraiment sur la matière grise, l'attention et ses limites. Protocole MBSR 8 semaines expliqué — Neurosciences, 14 min
+- Axe intestin-cerveau : comment votre microbiote influence votre humeur : https://leveilmental.fr/blog/axe-intestin-cerveau-microbiote-humeur/
+  > Les 4 voies de communication microbiote-cerveau, ce que prouvent vraiment les études humaines et 5 leviers pour le soutenir — Neurosciences, 14 min
+- Résilience psychologique : les 5 piliers neurobiologiques pour rebondir : https://leveilmental.fr/blog/resilience-psychologique-developper/
+  > Comment la développer avec un vrai cadre neurobiologique. Circuit préfrontal-amygdale, récupération du cortisol et 5 piliers validés — Développement Personnel, 14 min
+- Intelligence sociale : 7 compétences relationnelles clés (Daniel Goleman) : https://leveilmental.fr/blog/intelligence-sociale-competences-relationnelles/
+  > Les 7 compétences relationnelles clés du cadre de Daniel Goleman, ce que le cerveau social valide vraiment et comment les développer — Relations Humaines, 13 min
+- Influence sociale et conformisme : Asch, Milgram et la pression sociale : https://leveilmental.fr/blog/influence-sociale-conformisme/
+  > Ce que révèlent Asch et Milgram, pourquoi on cède à la pression sociale du groupe et ce que fait vraiment le cerveau — Relations Humaines, 13 min
+- Pensée critique : développer son jugement selon la psychologie cognitive : https://leveilmental.fr/blog/pensee-critique-developper/
+  > Comment développer son jugement selon la psychologie cognitive, pourquoi notre raisonnement est biaisé et ce qui aide vraiment à mieux penser — Psychologie, 13 min
+- Communication interpersonnelle : le guide complet (neurosciences et psychologie) : https://leveilmental.fr/blog/guide-communication-interpersonnelle/
+  > Écoute, empathie, CNV, gestion des conflits et intelligence sociale, expliqués par la science — Relations Humaines, 14 min
 
 ## Pages
 - Accueil : https://leveilmental.fr/

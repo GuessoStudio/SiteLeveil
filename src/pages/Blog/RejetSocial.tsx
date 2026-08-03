@@ -834,7 +834,7 @@ export default function RejetSocial() {
                                 <Link to="/a-propos/" className="px-4 py-2 bg-white dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors border border-indigo-200 dark:border-indigo-800">
                                     En savoir plus
                                 </Link>
-                                <Link to="/contact" className="px-4 py-2 bg-transparent text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold hover:bg-indigo-100/50 transition-colors border border-transparent hover:border-indigo-200">
+                                <Link to="/contact/" className="px-4 py-2 bg-transparent text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold hover:bg-indigo-100/50 transition-colors border border-transparent hover:border-indigo-200">
                                     Contact
                                 </Link>
                             </div>

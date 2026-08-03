@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { ArrowRight, RotateCcw, Check, Brain, Activity, Heart, Users, Shield, Download, Lock } from 'lucide-react';
 import { QUESTIONS, INTERPRETATIONS, type Question, type Trait } from '../data/bigFiveQuestions';
 import EmailCaptureModal from '../components/EmailCaptureModal';
@@ -228,18 +228,30 @@ export default function BigFiveTest() {
         "numberOfQuestions": 30
     };
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://leveilmental.fr" },
+            { "@type": "ListItem", position: 2, name: "Ressources", item: "https://leveilmental.fr/ressources/" },
+            { "@type": "ListItem", position: 3, name: "Test Big Five", item: "https://leveilmental.fr/test-personnalite-big-five/" }
+        ]
+    };
+
     return (
         <div className="min-h-screen pt-24 pb-12 px-4 bg-sand-50 dark:bg-neutral-900 transition-colors duration-300">
-            <Helmet>
-                <title>Test Big Five Gratuit | Analyse Personnalité Scientifique</title>
-                <meta name="description" content="Découvrez votre profil psychologique avec le test Big Five (OCEAN). 30 questions, résultats immédiats, 100% gratuit, validé scientifiquement." />
-                <link rel="canonical" href="https://leveilmental.fr/test-personnalite-big-five/" />
-                <meta property="og:image" content="https://leveilmental.fr/images/resources/big-five-cover.webp" />
-                <meta property="og:title" content="Mon Profil Big Five - Test de Personnalité" />
-                <meta property="og:description" content="Découvrez vos 5 traits de personnalité majeurs avec ce test scientifique gratuit." />
-                <meta property="og:type" content="website" />
-                <script type="application/ld+json">{JSON.stringify(quizSchema)}</script>
-            </Helmet>
+            {/* Passe par le composant SEO (et non <Helmet> brut) : react-helmet-async
+                ne sérialise pas ses balises pendant le build SSG, la page servait donc
+                le title/description génériques du template à Google. */}
+            <SEO
+                title="Test Big Five gratuit : analyse de personnalité"
+                description="Découvrez votre profil psychologique avec le test Big Five (OCEAN). 30 questions, résultats immédiats, 100% gratuit, validé scientifiquement."
+                path="/test-personnalite-big-five/"
+                image="/images/resources/big-five-cover.webp"
+                type="website"
+                category="Psychologie"
+                jsonLd={[quizSchema, breadcrumbSchema]}
+            />
 
             <div className="max-w-3xl mx-auto">
 

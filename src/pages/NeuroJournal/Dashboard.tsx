@@ -163,7 +163,7 @@ const Dashboard = () => {
                                 {/* Simulated "No Result" state */}
                                 <div className="w-full bg-gray-50 dark:bg-neutral-900/50 rounded-xl p-4 border border-dashed border-gray-300 dark:border-neutral-700">
                                     <p className="text-xs text-gray-600 dark:text-neutral-300 mb-3">Test non passé</p>
-                                    <Link to="/test-personnalite-big-five" className="block">
+                                    <Link to="/test-personnalite-big-five/" className="block">
                                         <button className="w-full py-2 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-600 rounded-lg text-sm font-semibold hover:border-indigo-500 hover:text-indigo-600 transition-colors">
                                             Passer le test
                                         </button>
@@ -183,7 +183,7 @@ const Dashboard = () => {
 
                                 <div className="w-full bg-gray-50 dark:bg-neutral-900/50 rounded-xl p-4 border border-dashed border-gray-300 dark:border-neutral-700">
                                     <p className="text-xs text-gray-600 dark:text-neutral-300 mb-3">Outil disponible</p>
-                                    <Link to="/habit-tracker" className="block">
+                                    <Link to="/habit-tracker/" className="block">
                                         <button className="w-full py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors shadow-sm">
                                             Ouvrir le Tracker
                                         </button>
