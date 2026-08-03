@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Download, BookOpen, Video, Smartphone, Filter, Search, Star, Clock, Users, Brain } from 'lucide-react'
 import EmailCaptureModal from '../components/EmailCaptureModal'
+import SEO from '../components/SEO'
 
 const Resources = () => {
   const navigate = useNavigate()
@@ -399,7 +400,12 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen py-20">
-      {/* SEO et Header similaires au code original... */}
+      <SEO
+        title="Ressources : e-books, guides et outils gratuits"
+        description="E-books, guides pratiques, outils et méditations fondés sur les neurosciences pour accélérer votre développement personnel. Ressources gratuites."
+        path="/ressources/"
+        type="website"
+      />
 
       <div className="container mx-auto px-4">
         {/* Header */}

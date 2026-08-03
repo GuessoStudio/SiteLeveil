@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { CheckCircle } from 'lucide-react';
 // import { useDeferredAnalytics } from '../hooks/useDeferredAnalytics'; // Disabled due to mobile crash
 import { Link } from 'react-router-dom';
@@ -37,36 +37,18 @@ const StressZeroLanding = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Stress Zéro, Finances héros - Retrouvez la Sérénité Financière en 30 Jours | L'Éveil</title>
-                <meta name="description" content="67% des Français perdent le sommeil à cause de l'argent. Méthode testée 30 jours pour retrouver la sérénité financière. Sans culpabilisation." />
-                <meta name="keywords" content="stress financier, anxiété argent, insomnie financière, gérer son budget, inflation 2025, bien-être financier" />
-                <link rel="canonical" href="https://leveilmental.fr/stress-zero/" />
-
-                {/* Preconnect to external domains */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link rel="dns-prefetch" href="https://formspree.io" />
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
-                {/* Open Graph */}
-                <meta property="og:title" content="Stress Zéro, Finances héros - Retrouvez la Sérénité Financière" />
-                <meta property="og:description" content="67% des Français perdent le sommeil à cause de l'argent. Découvrez la méthode qui rend vos nuits sereines en 30 jours." />
-                <meta property="og:image" content="https://leveilmental.fr/stress-zero/og-cover.webp" />
-                <meta property="og:url" content="https://leveilmental.fr/stress-zero/" />
-                <meta property="og:type" content="website" />
-
-                {/* Twitter Card */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Stress Zéro, Finances héros" />
-                <meta name="twitter:description" content="67% des Français perdent le sommeil à cause de l'argent. Méthode testée 30 jours." />
-                <meta name="twitter:image" content="https://leveilmental.fr/stress-zero/og-cover.webp" />
-
-                {/* JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify(jsonLd)}
-                </script>
-            </Helmet>
+            {/* Composant SEO et non <Helmet> brut : Helmet n'est pas sérialisé
+                pendant le build SSG, la page servait donc le title, la description
+                et le canonical génériques du template, sans aucun JSON-LD. */}
+            <SEO
+                title="Stress Zéro, Finances héros : la sérénité financière en 30 jours"
+                description="67% des Français perdent le sommeil à cause de l'argent. Méthode testée 30 jours pour retrouver la sérénité financière. Sans culpabilisation."
+                path="/stress-zero/"
+                image="/stress-zero/og-cover.webp"
+                type="website"
+                category="Développement Personnel"
+                jsonLd={jsonLd}
+            />
 
             <div className="bg-gradient-to-b from-[#1a3a4a] via-[#2C5F7C] to-[#5a9ec4] min-h-screen">
 

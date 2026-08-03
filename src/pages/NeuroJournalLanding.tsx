@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import {
     Brain, Moon, Zap, Utensils, BarChart2, Shield, Activity,
@@ -23,45 +23,17 @@ const NeuroJournalLanding = () => {
                 "price": "0",
                 "priceCurrency": "EUR"
             },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "147",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
+            // Pas d'aggregateRating : le site ne collecte aucun avis utilisateur.
+            // Publier une note inventée expose à une action manuelle Google
+            // (avis non sourcés / auto-attribués).
             "author": {
                 "@type": "Organization",
                 "name": "L'Éveil Mental",
                 "url": "https://leveilmental.fr"
             },
         },
-        {
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "Comment utiliser le NeuroJournal en 2 minutes",
-            "totalTime": "PT2M",
-            "step": [
-                {
-                    "@type": "HowToStep",
-                    "position": 1,
-                    "name": "Note tes données quotidiennes",
-                    "text": "Chaque soir, prends 30 secondes pour enregistrer ton niveau d'humeur, ta qualité de sommeil et ton niveau d'énergie."
-                },
-                {
-                    "@type": "HowToStep",
-                    "position": 2,
-                    "name": "Visualise tes patterns",
-                    "text": "Consulte ton tableau de bord personnel pour voir les graphiques de corrélation entre ton sommeil et ton humeur."
-                },
-                {
-                    "@type": "HowToStep",
-                    "position": 3,
-                    "name": "Reçois des insights personnalisés",
-                    "text": "Après 7 à 14 jours de suivi, l'algorithme génère des recommandations basées sur les neurosciences pour améliorer ton bien-être."
-                }
-            ]
-        },
+        // Le schema HowTo a été retiré : Google l'a déprécié en septembre 2023
+        // (plus aucun rich result), et il est interdit par les règles du projet.
         {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -112,25 +84,18 @@ const NeuroJournalLanding = () => {
 
     return (
         <>
-            <Helmet>
-                <title>NeuroJournal - Mood Tracker Français Basé sur les Neurosciences | Gratuit</title>
-                <meta name="title" content="NeuroJournal - Mood Tracker Français Basé sur les Neurosciences | Gratuit" />
-                <meta name="description" content="Suivez votre humeur, sommeil et énergie avec le NeuroJournal. Insights IA basés sur les neurosciences. 100% gratuit, privé et sans inscription." />
-                <meta name="keywords" content="journal humeur, mood tracker français, suivi bien-être mental, tracking sommeil, application santé mentale gratuite, neurosciences" />
-                <link rel="canonical" href="https://leveilmental.fr/neuro-journal/" />
-
-                {/* Open Graph */}
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://leveilmental.fr/neuro-journal/" />
-                <meta property="og:title" content="NeuroJournal - Comprends Ton Cerveau en 2 Minutes Par Jour" />
-                <meta property="og:description" content="Le seul mood tracker français avec insights IA basés sur les neurosciences. Gratuit, privé, scientifique." />
-                <meta property="og:image" content="https://leveilmental.fr/images/resources/neuro-journal-cover.webp" />
-
-                {/* JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify(jsonLd)}
-                </script>
-            </Helmet>
+            {/* Composant SEO et non <Helmet> brut : Helmet n'est pas sérialisé
+                pendant le build SSG, la page servait donc le title, la description
+                et le canonical génériques du template, sans aucun JSON-LD. */}
+            <SEO
+                title="NeuroJournal : mood tracker français basé sur les neurosciences"
+                description="Suivez votre humeur, sommeil et énergie avec le NeuroJournal. Insights IA basés sur les neurosciences. 100% gratuit, privé et sans inscription."
+                path="/neuro-journal/"
+                image="/images/resources/neuro-journal-cover.webp"
+                type="website"
+                category="Neurosciences"
+                jsonLd={jsonLd}
+            />
 
             <div className="bg-[#FDFBF7] dark:bg-neutral-900 pb-20">
 

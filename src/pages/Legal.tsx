@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/SEO'
 import { Shield, Eye, Cookie, FileText } from 'lucide-react'
 
 const Legal = () => {
@@ -13,11 +13,15 @@ const Legal = () => {
 
   return (
     <>
-    <Helmet>
-      <title>Mentions légales & Politique de confidentialité | L'Éveil Mental</title>
-      <meta name="robots" content="noindex, follow" />
-      <link rel="canonical" href="https://leveilmental.fr/legal/" />
-    </Helmet>
+    {/* Composant SEO et non <Helmet> brut : Helmet n'est pas sérialisé pendant
+        le build SSG, donc le noindex demandé ici n'atteignait jamais Google. */}
+    <SEO
+      title="Mentions légales et politique de confidentialité"
+      description="Mentions légales, politique de confidentialité, cookies et conditions générales d'utilisation du site L'Éveil Mental."
+      path="/legal/"
+      type="website"
+      noindex
+    />
     <div className="min-h-screen py-8">
       <div className="container mx-auto px-4">
         {/* Header */}

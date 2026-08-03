@@ -1,9 +1,18 @@
 import React from 'react'
 import { Mail, Clock, Heart, ArrowRight } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const Contact = () => {
   return (
     <div className="min-h-screen py-8">
+      {/* La page n'avait aucune balise SEO : elle servait le title, la description
+          et le canonical génériques du template à Google. */}
+      <SEO
+        title="Contact"
+        description="Une question sur la psychologie ou les neurosciences ? Écrivez à Guesso, fondateur de L'Éveil Mental. Chaque email est lu personnellement, réponse sous 24-48h."
+        path="/contact/"
+        type="website"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

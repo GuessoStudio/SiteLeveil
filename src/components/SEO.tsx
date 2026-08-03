@@ -12,6 +12,7 @@ type SEOProps = {
   tags?: string[];
   category?: string; // ✅ NEW
   isHome?: boolean;
+  noindex?: boolean;
   jsonLd?: any[];
 };
 
@@ -73,6 +74,7 @@ export default function SEO({
   tags,
   category,
   isHome = false,
+  noindex = false,
   jsonLd,
 }: SEOProps) {
   const safePath = cleanPath(path);
@@ -178,6 +180,9 @@ export default function SEO({
         puis retire le marqueur. Sans ça, toutes les pages servent le title du template. */}
     <meta name="ssg:title" content={pageTitle} />
     <link rel="canonical" href={url} />
+    {/* robots hors Helmet : rendu dans Helmet, la balise n'était pas sérialisée
+        au SSG, donc un noindex demandé par une page n'atteignait jamais Google. */}
+    <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:type" content={isHome ? "website" : type} />
     <meta property="og:title" content={title} />
@@ -228,7 +233,6 @@ export default function SEO({
       <title>{pageTitle}</title>
       <link rel="canonical" href={url} />
       <meta name="description" content={description} />
-      <meta name="robots" content="index,follow" />
 
 
       {/* Article specific */}
