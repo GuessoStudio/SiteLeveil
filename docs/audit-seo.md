@@ -1,9 +1,20 @@
 # Audit SEO complet — leveilmental.fr
 Réalisé le 1er août 2026 · Données : Search Console (90j), GA4 (90j), URL Inspection, crawl technique, analyse de 36 articles, JSON-LD, clustering.
+**Chiffres de trafic corrigés le 4 août 2026** — voir l'encadré méthodologique ci-dessous.
 
 ## Score de santé global : 61/100
 
-Site jeune (946 impressions / 1 clic / 90j, 119 sessions organiques), aucun problème d'indexation, base technique globalement saine. Le vrai enjeu n'est pas technique mais éditorial : une partie du corpus (les 2 articles les plus anciens, dont le plus gros potentiel de trafic) date d'avant l'adoption stricte du Template V2 et n'a pas les blocs GEO/E-E-A-T qui font le reste du site.
+Site jeune mais en croissance nette (3 399 impressions / 88 clics / 90j, CTR 2,59 %, 119 sessions organiques GA4), aucun problème d'indexation, base technique globalement saine. Les impressions passent d'environ 20 à 80-100 par jour à partir du 8 juillet 2026. Le vrai enjeu n'est pas technique mais éditorial : une partie du corpus (les 2 articles les plus anciens, dont le plus gros potentiel de trafic) date d'avant l'adoption stricte du Template V2 et n'a pas les blocs GEO/E-E-A-T qui font le reste du site.
+
+> ### ⚠️ Piège méthodologique — ne pas refaire cette erreur
+> La première version de cet audit annonçait **946 impressions et 1 clic**. C'était faux : ces chiffres venaient d'une requête API avec la dimension `query`, or **Google anonymise les requêtes rares** et supprime purement et simplement ces lignes de la réponse. 87 des 88 clics du site proviennent de requêtes que Google refuse de nommer.
+>
+> | Méthode | Clics | Impressions |
+> |---|---|---|
+> | Sans dimension `query` (vrais totaux) | **88** | **3 399** |
+> | Avec dimension `query` | 1 | 1 138 |
+>
+> **Règle : pour les totaux du site, interroger l'API sans la dimension `query`** (par `date` ou `page`). La dimension `query` ne sert qu'à analyser les mots-clés nommés, jamais à mesurer le volume réel.
 
 ---
 
@@ -12,7 +23,7 @@ Site jeune (946 impressions / 1 clic / 90j, 119 sessions organiques), aucun prob
 1. **Soft-404 site-wide** — toute URL invalide renvoie HTTP 200 avec le contenu de la homepage (`public/_redirects` ligne 13 : `/* /index.html 200`). Risque d'indexation de milliers d'URLs erronées comme doublons de la home.
 2. **Régression trailing-slash sur 3 liens du footer** (`Footer.tsx`) — `/contact`, `/habit-tracker`, `/test-personnalite-big-five` sans `/` final → 301 sur *toutes* les pages du site. C'est exactement le bug qui avait déjà généré une vague de "pages avec redirection" en Search Console.
 3. **`/test-personnalite-big-five/` sert 0 JSON-LD et des meta génériques** — la page utilise `<Helmet>` brut au lieu du composant `SEO.tsx`, donc son contenu SEO n'est jamais sérialisé au SSG (même bug déjà corrigé pour les articles, non appliqué ici). Page à fort potentiel (outil interactif) invisible pour Google.
-4. **`neuroplasticite-cerveau` (625 impressions, position 42) et `surmonter-rejet-social` (position 14,5) n'ont ni Quick Answer Block, ni StatBlocks, ni section "À retenir"** — les 2 articles pré-Template V2, confirmés indépendamment par 3 audits différents (contenu, GEO, technique).
+4. **`neuroplasticite-cerveau` (836 impressions, position 40,2, CTR 0,4 %) et `surmonter-rejet-social` (position 8,9) n'ont ni Quick Answer Block, ni StatBlocks, ni section "À retenir"** — les 2 articles pré-Template V2, confirmés indépendamment par 3 audits différents (contenu, GEO, technique).
 5. **`llms.txt` obsolète** — 15 articles sur 36 absents, dont `biais-cognitifs-liste-psychologie` (grosse page en impressions).
 
 ## Top 5 quick wins
@@ -27,15 +38,37 @@ Site jeune (946 impressions / 1 clic / 90j, 119 sessions organiques), aucun prob
 
 ## 1. Recherche & performance (Search Console + GA4, 90 jours)
 
-- 946 impressions, 1 clic, CTR moyen 0,11%, 114 requêtes distinctes
+- **3 399 impressions, 88 clics, CTR 2,59 %, position moyenne 19,5**, 48 pages actives
 - GA4 : 119 sessions organiques, 105 utilisateurs
+- Tendance nettement haussière depuis le 8 juillet 2026 (20 → 80-100 impressions/jour)
 - Sitemap propre, 0 erreur/warning, 46 URLs. Le "0 indexé" affiché par le rapport Sitemaps de GSC est un faux négatif — 6 pages clés vérifiées via l'API d'inspection sont bien "Submitted and indexed"
 
-**Opportunité n°1 par volume** : *"neuroplasticite apprentissage"* — 625 impressions (66% du total du site), position 42, sur `/blog/neuroplasticite-cerveau/`.
+### Répartition réelle par page (dimension `page`, 90 jours)
 
-**Quick win position 11-20** : *"rejet social"* — position 14,5, 10 impressions, sur `/blog/surmonter-rejet-social/`. Seul quick win avec un volume qui vaut le coup (terme générique, pas de longue traîne).
+| Page | Clics | Impr. | CTR | Position |
+|---|---|---|---|---|
+| `bdnf-augmenter-naturellement-neurosciences` | **38** | 549 | 6,9 % | 11,7 |
+| `surmonter-rejet-social` | 6 | 130 | 4,6 % | 8,9 |
+| `biais-cognitifs-liste-psychologie` | 5 | **393** | 1,3 % | 22,1 |
+| `formation-habitudes-cerveau-neurosciences` | 5 | 159 | 3,1 % | 6,8 |
+| `influence-sociale-conformisme` | 4 | 79 | 5,1 % | 9,9 |
+| `neuroplasticite-cerveau` | 3 | **836** | **0,4 %** | **40,2** |
+| `neurotransmetteurs-humeur-cerveau` | 3 | 196 | 1,5 % | 13,8 |
+| `meditation-effets-cerveau` | 3 | 51 | 5,9 % | 16,8 |
 
-**Anomalie** : `biais-cognitifs-liste-psychologie` capte des impressions sur ~20 variantes de "biais cognitif" — les variantes précises rankent en position 2 (dissonance cognitive, biais de confirmation) mais le terme générique large est en position 37-59.
+**BDNF porte le site à lui seul** : 38 des 88 clics, soit 43 % du total. C'est aussi la page au taux de rebond le plus élevé (69 % selon GA4) et celle qui contient le passage le plus jargonneux (voir section 4) — le levier le plus rentable du site.
+
+**Trois pages concentrent 51 % des impressions** : neuroplasticité (836), BDNF (549), biais cognitifs (393).
+
+**Opportunité n°1, confirmée** : `neuroplasticite-cerveau` — 836 impressions (24 % du site) pour 3 clics, position 40,2, CTR 0,4 %. Le plus gros écart du site entre visibilité et captation. La requête `"neuroplasticite apprentissage"` pèse à elle seule 801 impressions avec 0 clic.
+
+**Gisement n°2** : `biais-cognitifs-liste-psychologie` — 393 impressions, position 22,1, CTR 1,3 %. Les variantes précises rankent en position 2 (dissonance cognitive, biais de confirmation) mais le terme générique large reste en position 37-59.
+
+**`surmonter-rejet-social` est moins critique qu'estimé initialement** : au niveau page elle est à **position 8,9 avec 4,6 % de CTR**, donc déjà en page 1. Le "position 14,5" de la première version venait de la vue par requête, biaisée par l'anonymisation.
+
+### Signal à exploiter : bien classé, mais sur des termes sans volume
+
+Plusieurs articles occupent d'excellentes positions pour très peu d'impressions : `routine-matinale-scientifique-cerveau` (position 5,6 / 28 impressions), `methode-acr-repondre-aux-bonnes-nouvelles` (5,3 / 12), `confiance-en-soi-durable` (5,9 / 30), `cortisol-stress-chronique-cerveau-memoire` (5,9 / 48). Ce n'est pas un problème de qualité mais de **choix de sujet** : ces pages gagnent des mots-clés que personne ne cherche. À corriger en amont pour les prochains articles (valider le volume de recherche avant d'écrire), pas en retravaillant ces pages.
 
 **Qualité du trafic (GA4)** : meilleure page trafic = BDNF (42 sessions, 69% rebond) ; meilleur engagement = régulation émotionnelle (83,3%, seulement 6 sessions) ; **page d'accueil à 100% de rebond / 0% d'engagement** sur ses 4 sessions organiques — anormal, à creuser.
 
@@ -103,7 +136,7 @@ Score qualité contenu estimé par page (méthode : structure Template V2, sourc
 
 **`biais-cognitifs-liste-psychologie` vs "biais cognitif"** : le SERP est dominé par des pages glossaire/encyclopédiques (Wikipédia, fiches terminologiques). Le H1 actuel ("liste des 12 plus courants et comment les contrer") signale un listicle-solution, pas une définition-référence. Le contenu de définition existe déjà dans la page mais n'est pas visible au niveau title/H1/snippet. **Fix ciblé sur l'en-tête, pas une réécriture complète.**
 
-**`neuroplasticite-cerveau` vs "neuroplasticite apprentissage"** : le SERP concurrent cadre systématiquement autour de l'entité "apprentissage" (pédagogie, mnémotechniques, apprentissage moteur). Le H1 actuel ("reprogrammer son cerveau après 25 ans") est un angle développement personnel adulte — le mot "apprentissage" apparaît 25 fois dans le corps mais jamais dans le title/H1/meta/Quick Answer. **Mismatch d'angle à plus fort enjeu que le Cas 1 vu le volume (625 impressions).**
+**`neuroplasticite-cerveau` vs "neuroplasticite apprentissage"** : le SERP concurrent cadre systématiquement autour de l'entité "apprentissage" (pédagogie, mnémotechniques, apprentissage moteur). Le H1 actuel ("reprogrammer son cerveau après 25 ans") est un angle développement personnel adulte — le mot "apprentissage" apparaît 25 fois dans le corps mais jamais dans le title/H1/meta/Quick Answer. **Mismatch d'angle à plus fort enjeu que le Cas 1 vu le volume (836 impressions, 24 % du site).**
 
 Confirmation croisée avec l'audit clustering : le maillage interne de `neuroplasticite-cerveau` est déjà excellent (12 liens entrants, bloc "articles connexes" structuré) — **le maillage n'est pas le facteur limitant ici**, contrairement à l'hypothèse de départ. Le problème est le framing éditorial + le sourcing faible.
 
@@ -133,28 +166,34 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 
 ## Roadmap priorisée
 
-### Phase 0 — Corrections techniques rapides (cette semaine, ~2h de travail)
-- [ ] `_redirects` : `200` → `404` sur la règle catch-all + composant 404 React avec noindex
-- [ ] Corriger les 3 liens du footer (`/contact/`, `/habit-tracker/`, `/test-personnalite-big-five/`)
-- [ ] Migrer `BigFiveTest.tsx` vers le composant `SEO.tsx`
-- [ ] Corriger le `BreadcrumbList` invalide de la home
-- [ ] Régénérer `llms.txt` avec les 15 articles manquants
+> **Repriorisée le 4 août 2026** après correction des chiffres de trafic. Trois changements : BDNF passe en Phase 1 (elle génère 43 % des clics du site), biais cognitifs remonte devant rejet social (393 impressions contre 130), et rejet social redescend en Phase 2 (déjà en position 8,9, donc pas un cas bloqué).
 
-### Phase 1 — Les 2 pages prioritaires (1-2 semaines)
-**`surmonter-rejet-social`** (quick win position 14,5) :
-- [ ] Ajouter Quick Answer Block + 3 StatBlocks + section "À retenir" (Template V2 complet)
-- [ ] Créer et intégrer une image de couverture (actuellement absente)
-- [ ] Corriger dates JSON-LD en ISO 8601 complet
+### ✅ Phase 0 — Corrections techniques rapides — FAIT, déployé le 3 août 2026
+- [x] `_redirects` : catch-all en `404` + whitelist des routes applicatives non pré-rendues
+- [x] Corriger les liens sans trailing slash — 26 liens dans 15 fichiers (pas 3 : la cause racine était la liste de routes incomplète de `validate-links.mjs`)
+- [x] Migrer `BigFiveTest.tsx` vers le composant `SEO.tsx`
+- [x] Corriger le `BreadcrumbList` auto-référentiel de la home
+- [x] Régénérer `llms.txt` avec les 15 articles manquants
+- [x] **Hors périmètre initial** : 9 autres pages servaient aussi le title générique (`<Helmet>` brut non sérialisé au SSG) — toutes migrées, `noindex` réellement appliqué sur `legal`, `merci-inscription` et les 2 pages HydroMind, retrait d'un schema `HowTo` interdit et de 2 `aggregateRating` inventés
 
-**`neuroplasticite-cerveau`** (625 impressions, position 42, plus gros potentiel) :
+### Phase 1 — Les 2 leviers à plus fort rendement (1-2 semaines)
+
+**`bdnf-augmenter-naturellement-neurosciences`** — 43 % des clics du site (38/88), CTR 6,9 %, mais 69 % de rebond :
+- [ ] Réécrire le paragraphe jargon situé juste après le Quick Answer (TrkB, cascade de signalisation, MAPK/ERK, PI3K/Akt, apoptose) : 1 terme technique par paragraphe maximum, définition en une phrase simple, analogie obligatoire
+- [ ] Auditer le reste de l'article avec la même grille (22 % des phrases dépassent 30 mots, le pire score du corpus)
+- C'est le meilleur rapport effort/gain du site : la page capte déjà l'audience, elle la perd à la lecture
+
+**`neuroplasticite-cerveau`** — 836 impressions (24 % du site) pour 3 clics, position 40,2, CTR 0,4 % :
 - [ ] Ajouter Quick Answer Block avec "apprentissage" dans les 50 premiers mots + 3 StatBlocks + "À retenir"
 - [ ] Ajouter un H2 dédié "Neuroplasticité et apprentissage : comment le cerveau apprend-il et retient-il mieux ?"
+- [ ] Réviser title et meta description pour y faire apparaître "apprentissage" (le SERP concurrent cadre systématiquement sur cette entité, le H1 actuel parle de "reprogrammer son cerveau après 25 ans")
 - [ ] Renforcer le sourcing (1 seul lien DOI actuellement) + ajouter un chercheur spécifique apprentissage/mémoire
-- [ ] Réviser meta description pour y faire apparaître "apprentissage"
 - [ ] Corriger le `wordCount` du schema (annonce 3500, réalité ~2762)
 - [ ] Ne pas retravailler le maillage interne — déjà solide (12 liens entrants)
 
-### Phase 2 — `biais-cognitifs-liste-psychologie` (2-3 semaines)
+### Phase 2 — Gisement n°2 et finitions (2-3 semaines)
+
+**`biais-cognitifs-liste-psychologie`** — 393 impressions, position 22,1, CTR 1,3 % :
 - [ ] Retitrer pour faire apparaître "définition" avant "liste" (title + H1 + meta)
 - [ ] Repositionner la définition existante dans les 50-80 premiers mots visibles
 - [ ] Étoffer chaque item de 68 à 150-200 mots (définition → mécanisme → exemple → contre-mesure)
@@ -162,12 +201,21 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 - [ ] Ajouter la dissonance cognitive comme 13e biais
 - [ ] Ajouter un bloc "articles connexes" structuré + obtenir les 5-7 liens entrants identifiés depuis les articles du cluster
 
+**`surmonter-rejet-social`** — déjà position 8,9 / CTR 4,6 %, donc consolidation et non sauvetage :
+- [ ] Ajouter Quick Answer Block + 3 StatBlocks + section "À retenir" (Template V2 complet)
+- [ ] Créer et intégrer une image de couverture (actuellement absente)
+- [ ] Corriger dates JSON-LD en ISO 8601 complet
+
 ### Phase 3 — Dette de contenu généralisée (1 mois)
 - [ ] Auditer les ~15-20 autres articles pour détecter d'autres survivants pré-Template V2
-- [ ] Réécrire le passage jargon de `bdnf-augmenter-naturellement-neurosciences` (TrkB/MAPK/PI3K/apoptose) — cause probable du 69% de rebond
 - [ ] Renforcer le sourcing de `resilience-psychologique-developper` (2 chercheurs seulement)
 - [ ] Lier les 4 pages "plancher" depuis leurs voisines de cluster
 - [ ] Harmoniser `jobTitle` (virgule, pas tiret) et dates ISO 8601 sur tout le corpus
+
+### Phase 3 bis — Choix des sujets (à appliquer dès le prochain article)
+Plusieurs articles rankent excellemment sur des termes sans volume (`routine-matinale` position 5,6 pour 28 impressions, `methode-acr` 5,3 pour 12, `confiance-en-soi` 5,9 pour 30). Le problème est en amont de l'écriture.
+- [ ] Valider le volume de recherche du mot-clé principal **avant** de rédiger
+- [ ] Ne pas retravailler les articles concernés : ils font leur travail, c'est la cible qui était mal choisie
 
 ### Phase 4 — Renforcement autorité / GEO (continu)
 - [ ] Ajouter la chaîne YouTube au `sameAs` du schema Person/Organization
