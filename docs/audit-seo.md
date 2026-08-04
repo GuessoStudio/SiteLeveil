@@ -175,6 +175,33 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 - [ ] Automatiser la génération de `llms.txt` depuis `blog-articles.ts`
 - [ ] Resserrer les réponses FAQ trop longues (jusqu'à 93 mots) vers la cible 40-60 mots
 
+### ⏰ Suivi en cours — vérification d'indexation entre le 8 et le 11 août 2026
+
+**Phase 0 déployée le 3 août 2026** (merge `fix/seo-phase-0` → `main`, commit `e666caf`).
+**Indexation demandée manuellement dans Search Console le 4 août 2026** pour 4 URLs.
+
+Compter 4 à 7 jours de recrawl, puis vérifier via l'API d'inspection d'URL (statut quasi en direct, contrairement au rapport "Indexation des pages" qui a 2-3 jours de retard) :
+
+```bash
+SCRIPTS="/c/Users/sofie/.claude/plugins/cache/agricidaniel-seo/claude-seo/1.9.6/scripts"
+py "$SCRIPTS/gsc_inspect.py" --batch urls.txt --site-url "https://leveilmental.fr/" --json
+```
+
+⚠️ La propriété est de type **préfixe URL** (`https://leveilmental.fr/`), pas `sc-domain:`.
+
+| URL | État avant correction | Attendu |
+|---|---|---|
+| `/contact/` | Explorée, non indexée | passe indexée |
+| `/calculateur-sommeil/` | Découverte, non indexée | passe indexée |
+| `/test-personnalite-big-five/` | indexée, titre générique | titre corrigé |
+| `/neuro-journal/` | — | indexée |
+| `/hydromind/privacy-policy/` | indexée malgré `noindex` demandé | sort de l'index |
+| Rapport "Page avec redirection" | 8 pages (3 → 8 depuis mai) | cesse de grimper |
+
+**Ne pas chercher à ramener "Page avec redirection" à zéro** : une URL sans slash final redirigera toujours vers la version avec slash, c'est le comportement normal. Le rapport est informatif, les versions canoniques sont bien indexées. Relancer la validation GSC échouera (c'est ce qui s'est produit le 25/07). Ce qui compte est qu'aucun lien interne n'y pointe plus, désormais garanti par `npm run validate:links`.
+
+**Si `/contact/` et `/calculateur-sommeil/` sont toujours non indexées après le 11 août**, le titre générique n'était pas la seule cause : creuser côté qualité de contenu (pages jugées trop pauvres pour mériter l'index).
+
 ### Phase 5 — Non bloquant
 - [ ] CSP : migrer `unsafe-inline`/`unsafe-eval` vers des nonces
 - [ ] Vérifier le rendu SSR du lien vers `/calculateur-sommeil/` sur `/ressources/`
