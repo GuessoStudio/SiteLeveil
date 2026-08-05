@@ -283,18 +283,18 @@ export default function BdnfAugmenterNaturellement() {
           </p>
 
           <p>
-            Le problème : la plupart des modes de vie modernes — sédentarité, stress chronique, manque de sommeil, alimentation ultra-transformée — suppriment activement la production de BDNF. La bonne nouvelle : les neurosciences ont identifié avec précision les comportements qui l'augmentent, certains de façon spectaculaire en quelques semaines seulement.
+            Le problème : nos modes de vie modernes freinent activement la production de BDNF. La sédentarité, le stress chronique, le manque de sommeil et l'alimentation ultra-transformée jouent tous contre nous. La bonne nouvelle : les neurosciences ont identifié précisément les comportements qui l'augmentent. Certains produisent des effets visibles en quelques semaines seulement.
           </p>
 
           {/* Section 1 : Définition */}
           <h2 id="definition-bdnf">Qu'est-ce que le BDNF ? Définition et rôle neurobiologique</h2>
 
           <p>
-            Le BDNF (Brain-Derived Neurotrophic Factor) est une neurotropine — une famille de protéines qui soutiennent la croissance, la différenciation et la survie des neurones. Découvert en 1982 par Yves-Alain Barde et Hans Thoenen (Université de Bâle, Suisse), le BDNF appartient à la famille des NGF (Nerve Growth Factors) et constitue le facteur de croissance neurotrophe le plus abondant dans le cerveau adulte.
+            Le BDNF, pour Brain-Derived Neurotrophic Factor, est une protéine que le cerveau fabrique lui-même. Son rôle : nourrir les neurones, les aider à se développer et les maintenir en vie. On peut le voir comme un engrais naturel pour le cerveau. C'est le plus abondant de sa catégorie chez l'adulte. Il a été découvert en 1982 par Yves-Alain Barde et Hans Thoenen (Université de Bâle, Suisse), deux chercheurs qui cherchaient ce qui pousse les cellules nerveuses à grandir.
           </p>
 
           <p>
-            Le BDNF agit en se liant au récepteur TrkB (Tropomyosin receptor kinase B) à la surface des neurones. Cette liaison déclenche une cascade de signalisation intracellulaire qui active les voies MAPK/ERK et PI3K/Akt — deux circuits moléculaires fondamentaux pour la plasticité synaptique, la consolidation mémorielle et la protection contre l'apoptose neuronale.
+            Pour agir, le BDNF doit se fixer sur le neurone, un peu comme une clé entre dans une serrure. Cette serrure porte un nom : le récepteur TrkB. Quand la clé tourne, elle déclenche une réaction en chaîne à l'intérieur du neurone. Cette réaction produit trois effets. Elle renforce les connexions entre neurones. Elle aide à transformer un souvenir récent en souvenir durable. Et elle empêche le neurone de mourir prématurément. C'est pour cette raison qu'un cerveau riche en BDNF apprend plus vite et oublie moins.
           </p>
 
           {/* StatBlock 1 */}
@@ -315,17 +315,17 @@ export default function BdnfAugmenterNaturellement() {
           <h3>Le BDNF et la potentialisation synaptique à long terme (LTP)</h3>
 
           <p>
-            L'un des rôles les plus étudiés du BDNF est sa contribution à la potentialisation à long terme (LTP), le mécanisme cellulaire de l'apprentissage et de la mémoire. Les travaux de Roberto Malinow (University of California, San Diego) ont démontré que le BDNF facilite l'insertion des récepteurs AMPA dans les synapses actives — renforçant ainsi physiquement et durablement les connexions entre neurones sollicités ensemble.
+            Le BDNF est au cœur d'un phénomène appelé potentialisation à long terme : quand deux neurones s'activent ensemble de façon répétée, leur connexion se renforce durablement. C'est la base biologique de l'apprentissage. Roberto Malinow (University of California, San Diego) a montré comment le BDNF accélère ce renforcement, en aidant le neurone à installer davantage de points de réception du signal. Concrètement, c'est ce qui fait qu'un morceau de piano répété devient de plus en plus facile, jusqu'à sortir sans y penser.
           </p>
 
           <p>
-            Sans BDNF suffisant, la LTP ne peut pas se consolider efficacement. C'est pourquoi les individus présentant des polymorphismes du gène BDNF (notamment la variante Val66Met, présente chez environ 30% de la population caucasienne) ont en moyenne une mémoire épisodique moins performante et un hippocampe légèrement plus petit, comme l'a documenté Michael Egan (NIMH) en 2003.
+            Sans BDNF en quantité suffisante, ce renforcement se fait mal. Environ une personne sur trois d'origine européenne porte une variante du gène BDNF (appelée Val66Met) qui en réduit l'efficacité. Michael Egan et son équipe (National Institute of Mental Health, États-Unis) l'ont documenté en 2003. Ces personnes retiennent en moyenne un peu moins bien les souvenirs du quotidien. Leur hippocampe, la zone du cerveau dédiée à la mémoire, est aussi légèrement plus petit. Une moyenne statistique n'est pas une fatalité personnelle : le mode de vie garde la main.
           </p>
 
           <h3>BDNF, neurogenèse et hippocampe</h3>
 
           <p>
-            L'hippocampe — siège de la mémoire épisodique et de l'orientation spatiale — est la région cérébrale la plus dépendante du BDNF. C'est également l'une des seules zones où la neurogenèse adulte est documentée chez l'humain. Peter Eriksson (Sahlgrenska University Hospital, Suède) et Fred Gage (Salk Institute) ont démontré en 1998 que de nouveaux neurones continuent de se former dans le gyrus denté de l'hippocampe adulte, et que le BDNF en est le principal régulateur.
+            L'hippocampe est la structure qui fabrique nos souvenirs et nous permet de nous repérer dans l'espace. C'est aussi la région du cerveau qui dépend le plus du BDNF. Et c'est l'une des rares où le cerveau adulte continue de produire de nouveaux neurones. Peter Eriksson (Sahlgrenska University Hospital, Suède) et Fred Gage (Salk Institute, États-Unis) l'ont prouvé en 1998. Leur découverte a mis fin à une idée reçue tenace : celle d'un stock de neurones fixé à la naissance, qui ne ferait que diminuer. Le BDNF est le principal chef d'orchestre de cette production.
           </p>
 
           <p>
