@@ -20,6 +20,7 @@ const staticRoutes = [
   { path: "/a-propos/", lastmod: today },
   { path: "/ressources/", lastmod: today },
   { path: "/contact/", lastmod: today },
+  { path: "/methodologie/", lastmod: today },
   { path: "/test-personnalite-big-five/", lastmod: today },
   { path: "/neuro-journal/", lastmod: today },
   { path: "/stress-zero/", lastmod: today },

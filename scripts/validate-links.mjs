@@ -32,6 +32,7 @@ const ROUTES = [
   "ressources",
   "contact",
   "legal",
+  "methodologie",
   "stress-zero",
   "calculateur-sommeil",
   "test-personnalite-big-five",

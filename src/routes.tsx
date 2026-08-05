@@ -40,6 +40,7 @@ export const routes: RouteRecord[] = [
       { path: 'ressources', lazy: lazyPage(() => import('./pages/Resources')) },
       { path: 'contact', lazy: lazyPage(() => import('./pages/Contact')) },
       { path: 'legal', lazy: lazyPage(() => import('./pages/Legal')) },
+      { path: 'methodologie', lazy: lazyPage(() => import('./pages/Methodologie')) },
 
       // Outils & landing pages
       { path: 'stress-zero', lazy: lazyPage(() => import('./pages/StressZeroLanding')) },

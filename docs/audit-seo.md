@@ -250,6 +250,23 @@ py "$SCRIPTS/gsc_inspect.py" --batch urls.txt --site-url "https://leveilmental.f
 
 **Si `/contact/` et `/calculateur-sommeil/` sont toujours non indexées après le 11 août**, le titre générique n'était pas la seule cause : creuser côté qualité de contenu (pages jugées trop pauvres pour mériter l'index).
 
+### ⏰ Second point de mesure — vers le 19 août 2026 (effet de la Phase 1)
+
+Les deux articles de la Phase 1 ont été retravaillés et déployés le **5 août 2026**. Laisser environ deux semaines avant de conclure quoi que ce soit.
+
+| Page | Métrique à surveiller | Point de départ | Où regarder |
+|---|---|---|---|
+| `bdnf-augmenter-naturellement-neurosciences` | taux de rebond | **69 %** | GA4 |
+| | temps d'engagement | 31 % engagement | GA4 |
+| `neuroplasticite-cerveau` | position moyenne | **40,2** | Search Console |
+| | CTR | **0,4 %** | Search Console |
+| | clics | 3 sur 90 j | Search Console |
+
+**Attention aux fausses conclusions :**
+- BDNF n'a **pas** de changement de title ni de structure : aucun effet attendu sur la position ou les impressions. Le seul signal pertinent est le comportement du lecteur (rebond, engagement) dans GA4.
+- Neuroplasticité a changé de title, de H1 et de meta : l'effet attendu est sur la position et le CTR. Un repositionnement depuis la page 4 prend souvent 4 à 8 semaines, donc à deux semaines on cherche une **tendance**, pas un résultat final.
+- Indexation redemandée le 5 août pour `neuroplasticite-cerveau` uniquement (BDNF n'en avait pas besoin, ses signaux de classement n'ont pas bougé).
+
 ### Phase 5 — Non bloquant
 - [ ] CSP : migrer `unsafe-inline`/`unsafe-eval` vers des nonces
 - [ ] Vérifier le rendu SSR du lien vers `/calculateur-sommeil/` sur `/ressources/`

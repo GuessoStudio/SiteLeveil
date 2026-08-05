@@ -1019,7 +1019,7 @@ export default function SommeilReparateur() {
                 </p>
               </div>
               <Link
-                to="/methodologie"
+                to="/methodologie/"
                 className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium group"
               >
                 En savoir plus sur notre méthodologie scientifique

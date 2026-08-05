@@ -673,7 +673,7 @@ export default function NeuroplasticiteCerveau() {
                 </p>
               </div>
               <Link
-                to="/methodologie"
+                to="/methodologie/"
                 className="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium group"
               >
                 En savoir plus sur notre méthodologie scientifique

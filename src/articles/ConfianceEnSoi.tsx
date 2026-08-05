@@ -723,7 +723,7 @@ export default function ConfianceEnSoi() {
                 </p>
               </div>
               <Link
-                to="/methodologie"
+                to="/methodologie/"
                 className="inline-flex items-center text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium group"
               >
                 En savoir plus sur notre méthodologie scientifique
