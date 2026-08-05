@@ -329,7 +329,7 @@ export default function BdnfAugmenterNaturellement() {
           </p>
 
           <p>
-            Conséquence directe : des niveaux chroniquement bas de BDNF sont associés à une réduction mesurable du volume hippocampique, observée dans la dépression, le trouble de stress post-traumatique (TSPT) et la maladie d'Alzheimer.
+            Conséquence directe : quand le BDNF reste bas trop longtemps, l'hippocampe rétrécit de façon mesurable. On observe ce phénomène dans la dépression, le trouble de stress post-traumatique et la maladie d'Alzheimer.
           </p>
 
           {/* Section 2 : Causes */}
@@ -342,7 +342,7 @@ export default function BdnfAugmenterNaturellement() {
           <h3>Le stress chronique et le cortisol</h3>
 
           <p>
-            Le cortisol — hormone principale du stress — est l'antagoniste biologique du BDNF. Les travaux de Bruce McEwen (Rockefeller University) ont montré que l'exposition prolongée au cortisol réduit directement l'expression du gène BDNF dans l'hippocampe via des mécanismes épigénétiques, notamment la méthylation du promoteur du gène BDNF. Cette suppression est dose-dépendante : plus le cortisol est élevé et prolongé, plus la chute de BDNF est profonde.
+            Le cortisol, la principale hormone du stress, est l'ennemi direct du BDNF. Bruce McEwen (Rockefeller University, États-Unis) a montré qu'un stress prolongé fait chuter la production de BDNF dans l'hippocampe. Le cortisol agit comme un interrupteur : il vient éteindre le gène qui fabrique le BDNF. Et l'effet suit la dose. Plus le stress dure et plus il est intense, plus la chute est profonde.
           </p>
 
           {/* StatBlock 2 */}
@@ -367,7 +367,7 @@ export default function BdnfAugmenterNaturellement() {
           </p>
 
           <p>
-            La restriction de sommeil chronique (moins de 6 heures par nuit) réduit le BDNF sérique de 20 à 30% selon Goel et al. (University of Pennsylvania). L'alimentation ultra-transformée, riche en sucres raffinés et acides gras trans, agit via l'inflammation systémique qu'elle provoque et la résistance à l'insuline qui perturbe les voies IGF-1/BDNF, étroitement couplées.
+            Dormir moins de 6 heures par nuit de façon chronique réduit le BDNF sanguin de 20 à 30 %, selon les travaux menés à l'University of Pennsylvania (États-Unis). L'alimentation ultra-transformée agit autrement. Riche en sucres raffinés et en graisses trans, elle entretient une inflammation permanente dans l'organisme et dérègle la gestion du sucre dans le sang. Or ces deux mécanismes freinent directement la production de BDNF.
           </p>
 
           {/* Section 3 : 8 méthodes */}
@@ -376,11 +376,11 @@ export default function BdnfAugmenterNaturellement() {
           <h3>1. L'exercice aérobie : le stimulant BDNF le plus puissant</h3>
 
           <p>
-            L'exercice physique — en particulier l'exercice aérobie d'intensité modérée — est de loin la méthode la plus efficace et la mieux documentée pour augmenter le BDNF. Carl Cotman et Nicole Berchtold (UCI) ont publié en 2002 une étude fondatrice montrant que 30 minutes de course à 60-70% de la fréquence cardiaque maximale augmentent le BDNF hippocampique de 200 à 300% — données obtenues dans des études sur rongeurs ; le BDNF hippocampique n'étant pas mesurable directement chez l'humain, les études humaines reposent sur le BDNF sérique comme proxy. Des résultats significatifs ont été confirmés chez l'humain par ces mesures sanguines.
+            L'exercice physique est de loin la méthode la plus efficace pour augmenter le BDNF, et la mieux documentée. L'endurance à intensité modérée arrive en tête. Carl Cotman et Nicole Berchtold (University of California, Irvine, États-Unis) ont publié en 2002 l'étude fondatrice du domaine. Trente minutes de course à 60-70 % de la fréquence cardiaque maximale suffisent à augmenter le BDNF de 200 à 300 % dans l'hippocampe. Une précision honnête s'impose. Ces chiffres viennent d'études sur rongeurs. Chez l'humain, on ne sait pas mesurer le BDNF directement dans le cerveau : les études passent par une prise de sang. Elles confirment bien une hausse, mais moins spectaculaire.
           </p>
 
           <p>
-            Le mécanisme passe par plusieurs voies simultanées : l'augmentation du débit sanguin cérébral, la libération d'IGF-1 musculaire qui traverse la barrière hémato-encéphalique, et la sécrétion d'irisine — dont le lien avec le BDNF hippocampique a été démontré par Wrann et al. (Harvard, <em>Cell Metabolism</em>, 2013) — qui stimule directement l'expression du gène BDNF dans l'hippocampe.
+            Plusieurs mécanismes agissent en même temps. L'exercice augmente le débit sanguin dans le cerveau. Les muscles libèrent aussi des messagers chimiques capables de franchir la barrière qui protège le cerveau. L'un d'eux, l'irisine, stimule directement la fabrication de BDNF dans l'hippocampe. Christiane Wrann (Harvard, États-Unis) l'a démontré en 2013 dans la revue <em>Cell Metabolism</em>.
           </p>
 
           <div className="not-prose my-6 bg-neutral-100 dark:bg-neutral-800/50 p-5 rounded-lg">
@@ -396,27 +396,27 @@ export default function BdnfAugmenterNaturellement() {
           <h3>2. Le jeûne intermittent : activation via la restriction calorique</h3>
 
           <p>
-            Mark Mattson (National Institute on Aging, NIH) a consacré 30 ans de recherche aux effets neuroprotecteurs du jeûne. Ses travaux montrent que la restriction calorique intermittente active les voies SIRT1 et AMPK, qui à leur tour stimulent l'expression du gène BDNF dans l'hippocampe. En condition de jeûne léger, le cerveau passe progressivement à l'utilisation des corps cétoniques — un carburant alternatif qui favorise directement la production de BDNF et l'autophagie neuronale.
+            Mark Mattson (National Institute on Aging, États-Unis) a consacré trente ans de recherche aux effets du jeûne sur le cerveau. Ses travaux montrent que le jeûne intermittent déclenche des mécanismes de réparation cellulaire, qui stimulent à leur tour la production de BDNF dans l'hippocampe. Quand le jeûne se prolonge un peu, le cerveau change de carburant. Il se met à brûler des corps cétoniques, fabriqués à partir des graisses. Ce carburant de secours favorise directement la production de BDNF.
           </p>
 
           <p>
-            Les protocoles les plus étudiés sont le 16/8 (16 heures de jeûne, 8 heures de fenêtre alimentaire) et le 5:2 (alimentation normale 5 jours, restriction à 500-600 kcal 2 jours non consécutifs). Une augmentation de BDNF sérique de 30 à 50% après 8 semaines de pratique régulière du 16/8 est documentée chez l'humain — toutefois, l'essentiel des preuves sur les mécanismes BDNF/jeûne provient de modèles animaux ; les études humaines restent préliminaires et les effets sur le BDNF cérébral ne sont pas directement mesurables.
+            Deux protocoles dominent la recherche. Le 16/8 consiste à jeûner 16 heures et à manger sur une fenêtre de 8 heures. Le 5:2 alterne 5 jours d'alimentation normale et 2 jours non consécutifs limités à 500-600 kcal. Chez l'humain, on mesure une hausse du BDNF sanguin de 30 à 50 % après 8 semaines de 16/8 régulier. Là encore, prudence. L'essentiel des preuves sur le mécanisme vient d'études animales, et les recherches humaines restent préliminaires.
           </p>
 
           <h3>3. Le sommeil profond : la fenêtre de synthèse du BDNF</h3>
 
           <p>
-            Le sommeil n'est pas simplement une période de repos neuronal — c'est une fenêtre métabolique active de synthèse protéique, dont la production de BDNF. Les phases de sommeil lent profond (stades N3, ondes delta) correspondent aux pics de sécrétion de BDNF et d'hormone de croissance (GH). Matthew Walker (University of California, Berkeley) a documenté que la privation de sommeil profond réduit spécifiquement les niveaux de BDNF sérique de 30 à 40%, indépendamment de la durée totale de sommeil.
+            Le sommeil n'est pas une simple mise en veille. C'est une phase où le cerveau travaille activement à fabriquer des protéines, dont le BDNF. Les pics de production ont lieu pendant le sommeil lent profond, la phase la plus réparatrice de la nuit. Matthew Walker (University of California, Berkeley, États-Unis) a montré que priver quelqu'un de sommeil profond fait chuter son BDNF sanguin de 30 à 40 %. Et cela reste vrai même quand la durée totale de sommeil ne change pas.
           </p>
 
           <p>
-            Optimiser l'architecture du sommeil — régularité des horaires, obscurité totale, température de chambre entre 17 et 19°C, absence d'alcool et d'écrans avant le coucher — est aussi important pour le BDNF que l'exercice physique.
+            Soigner la qualité de son sommeil compte donc autant que le sport pour le BDNF. Les leviers sont simples : des horaires réguliers, une obscurité totale, une chambre entre 17 et 19 °C, ni alcool ni écrans avant le coucher.
           </p>
 
           <h3>4. L'exposition à la lumière naturelle</h3>
 
           <p>
-            La lumière naturelle matinale — en particulier la lumière à haute intensité (supérieure à 1000 lux) — stimule la production de BDNF via plusieurs voies : régulation du rythme circadien, activation de la sérotonine (précurseur indirect du BDNF), et modulation de l'axe HPA qui régule le cortisol. Les travaux de Huang et al. (Fudan University, 2014) ont montré que l'exposition à la lumière vive le matin augmente les niveaux de BDNF dans le noyau suprachiasmatique et l'hippocampe. La sérotonine est l'un des <Link to="/blog/neurotransmetteurs-humeur-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">neurotransmetteurs qui contrôlent l'humeur</Link>, aux côtés de la dopamine et de la noradrénaline.
+            La lumière du matin stimule la production de BDNF, à condition qu'elle soit intense. Au-delà de 1000 lux, une intensité qu'on ne trouve qu'en extérieur, même par temps couvert. Elle agit par trois voies. Elle remet l'horloge interne à l'heure. Elle active la sérotonine, l'un des <Link to="/blog/neurotransmetteurs-humeur-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">neurotransmetteurs qui contrôlent l'humeur</Link>, aux côtés de la dopamine et de la noradrénaline. Et elle régule la sécrétion de cortisol, l'hormone du stress qui bloque le BDNF. Une équipe de la Fudan University (Chine) a mesuré cette hausse en 2014 après une exposition matinale à la lumière vive.
           </p>
 
           <div className="not-prose my-6 bg-neutral-100 dark:bg-neutral-800/50 p-5 rounded-lg">
@@ -431,13 +431,13 @@ export default function BdnfAugmenterNaturellement() {
           <h3>5. La méditation et la pleine conscience</h3>
 
           <p>
-            Plusieurs études d'imagerie cérébrale et de biologie moléculaire confirment que la méditation régulière augmente le BDNF. Une étude publiée dans <em>Frontiers in Psychiatry</em> (2019) a mesuré une augmentation de 25% du BDNF sérique chez des pratiquants méditant 30 minutes par jour pendant 8 semaines. Le mécanisme principal passe par la réduction du cortisol (antagoniste du BDNF) et l'activation des ondes gamma dans le cortex préfrontal — un pattern électrophysiologique associé à des niveaux élevés de BDNF selon les travaux de Richard Davidson (University of Wisconsin-Madison).
+            Plusieurs études d'imagerie cérébrale confirment que la méditation régulière augmente le BDNF. Une recherche publiée dans <em>Frontiers in Psychiatry</em> en 2019 a mesuré une hausse de 25 % du BDNF sanguin chez des personnes méditant 30 minutes par jour pendant 8 semaines. Le mécanisme est double. La méditation fait baisser le cortisol, qui bloque le BDNF. Elle favorise aussi un rythme électrique particulier dans le cortex préfrontal, la zone du raisonnement, associé à des niveaux élevés de BDNF. C'est ce qu'a documenté Richard Davidson (University of Wisconsin-Madison, États-Unis), pionnier de l'étude du cerveau des méditants expérimentés.
           </p>
 
           <h3>6. L'exposition au froid (cryostimulation)</h3>
 
           <p>
-            Les douches froides et l'immersion en eau froide activent le système nerveux sympathique via les récepteurs du froid (TRP channels), déclenchant une cascade neuroendocrine qui inclut la libération de noradrénaline dans le locus coeruleus. La noradrénaline est un puissant stimulant de l'expression du gène BDNF dans le cortex et l'hippocampe. Shevchuk (Virginia Commonwealth University, 2008) a proposé ce mécanisme pour expliquer les effets antidépresseurs documentés des bains froids, effets qui s'expliquent en partie par l'augmentation de BDNF.
+            Les douches froides et les bains glacés déclenchent une réaction d'alerte dans tout le corps. Des capteurs de froid situés dans la peau provoquent la libération de noradrénaline, un messager chimique du cerveau. Or la noradrénaline stimule fortement la production de BDNF dans le cortex et l'hippocampe. Nikolai Shevchuk (Virginia Commonwealth University, États-Unis) a proposé ce mécanisme en 2008 pour expliquer les effets antidépresseurs observés après les bains froids.
           </p>
 
           {/* StatBlock 3 */}
@@ -458,21 +458,21 @@ export default function BdnfAugmenterNaturellement() {
           <h3>7. Les aliments neuroprotecteurs</h3>
 
           <p>
-            Plusieurs composés alimentaires agissent directement sur les voies de signalisation du BDNF. La curcumine — principe actif du curcuma — est le mieux documenté : des essais cliniques ont montré une augmentation de 20 à 30% du BDNF sérique après 8 semaines de supplémentation à doses thérapeutiques (500 à 1000 mg de curcumine biodisponible). La curcumine active directement le promoteur du gène BDNF via les facteurs de transcription CREB et NF-κB.
+            Certains composés alimentaires agissent directement sur le BDNF. La curcumine, le principe actif du curcuma, est le mieux documenté. Des essais cliniques montrent une hausse de 20 à 30 % du BDNF sanguin après 8 semaines de supplémentation, à des doses de 500 à 1000 mg de curcumine biodisponible. Elle agit en actionnant directement l'interrupteur qui commande le gène du BDNF.
           </p>
 
           <p>
-            Les acides gras oméga-3 DHA (présents dans les poissons gras, les graines de chia et de lin) sont des composants structuraux essentiels des membranes neuronales. Fernando Gomez-Pinilla (University of California, Los Angeles) a démontré dans plusieurs études que la supplémentation en DHA augmente l'expression du gène BDNF dans l'hippocampe et améliore les performances cognitives. Les flavonoïdes des myrtilles (anthocyanes) traversent la barrière hémato-encéphalique et activent directement les récepteurs TrkB.
+            Les oméga-3 de type DHA, présents dans les poissons gras et les graines de chia et de lin, entrent dans la composition même de l'enveloppe des neurones. Fernando Gomez-Pinilla (University of California, Los Angeles, États-Unis) a montré à plusieurs reprises qu'en consommer davantage augmente la production de BDNF dans l'hippocampe et améliore les performances cognitives. Les pigments qui colorent les myrtilles franchissent eux aussi la barrière du cerveau, et viennent activer la serrure TrkB évoquée plus haut.
           </p>
 
           <h3>8. L'apprentissage actif et la nouveauté cognitive</h3>
 
           <p>
-            Le cerveau ne produit du BDNF qu'en réponse à des défis cognitifs réels. L'exposition à la nouveauté, l'apprentissage de compétences complexes (une nouvelle langue, un instrument de musique, un sport technique) et les environnements enrichis stimulent durablement l'expression du BDNF dans les régions frontales et hippocampiques. Les travaux de Marian Diamond (University of California, Berkeley) ont montré que les animaux élevés en environnement enrichi présentent un cortex plus épais, plus vascularisé et des niveaux de BDNF significativement plus élevés.
+            Le cerveau ne produit du BDNF que face à un vrai défi. La nouveauté, l'apprentissage d'une compétence exigeante et un environnement stimulant augmentent durablement sa production. Apprendre une langue, un instrument ou un sport technique fonctionne particulièrement bien. Marian Diamond (University of California, Berkeley, États-Unis) l'a montré chez l'animal. Ceux qui grandissent dans un environnement riche développent un cortex plus épais, mieux irrigué, et bien plus de BDNF.
           </p>
 
           <p>
-            Implication pratique : éviter les activités purement répétitives et introduire régulièrement des apprentissages à la limite des capacités actuelles (principe de "progressive overload" cognitif). La difficulté est la condition nécessaire à la libération de BDNF.
+            En pratique : éviter les activités purement répétitives et s'imposer régulièrement des apprentissages un peu au-dessus de son niveau actuel. La difficulté n'est pas un effet secondaire désagréable, c'est la condition même de la libération de BDNF.
           </p>
 
           {/* Section À retenir */}
@@ -544,11 +544,11 @@ export default function BdnfAugmenterNaturellement() {
           <h2 id="aller-plus-loin">Pour approfondir</h2>
 
           <p>
-            Le BDNF est l'un des mécanismes centraux qui explique pourquoi{" "}
+            Le BDNF explique en grande partie pourquoi{" "}
             <Link to="/blog/neuroplasticite-cerveau/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               la neuroplasticité cérébrale reste active tout au long de la vie
             </Link>{" "}
-            — y compris après 25 ans, contrairement aux croyances populaires. La neurogenèse hippocampique stimulée par le BDNF est également un pilier essentiel de{" "}
+            , y compris après 25 ans, contrairement à ce qu'on croit souvent. La fabrication de nouveaux neurones, stimulée par le BDNF, dépend aussi étroitement de{" "}
             <Link to="/blog/sommeil-reparateur-7-strategies-validees/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               l'optimisation du sommeil réparateur
             </Link>
@@ -556,7 +556,7 @@ export default function BdnfAugmenterNaturellement() {
           </p>
 
           <p>
-            Sur le plan comportemental, la sédentarité et le stress chronique — deux suppresseurs majeurs du BDNF — sont souvent liés à des patterns de{" "}
+            Sur le plan des habitudes, la sédentarité et le stress chronique sont les deux grands ennemis du BDNF. Ils vont souvent de pair avec des mécanismes de{" "}
             <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-indigo-600 dark:text-indigo-400 hover:underline">
               procrastination dont les mécanismes neuroscientifiques
             </Link>{" "}
