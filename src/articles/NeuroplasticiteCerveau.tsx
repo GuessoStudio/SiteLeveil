@@ -2,7 +2,7 @@
 // Article optimisé SEO 2025-2026 avec schemas JSON-LD complets
 // Optimisé pour : Featured Snippets, Rich Results, E-E-A-T
 // Auteur : Guesso | L'Éveil Mental
-// Dernière mise à jour : 23 janvier 2025
+// Dernière mise à jour : 5 août 2026 (recentrage sur l'apprentissage, Template V2)
 
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
@@ -11,11 +11,11 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "neuroplasticite-cerveau",
-  title: "Neuroplasticité : Comment Reprogrammer Son Cerveau Après 25 Ans",
-  description: "Découvrez les mécanismes scientifiques de la neuroplasticité et 7 stratégies concrètes pour optimiser la plasticité de votre cerveau à tout âge. Guide complet basé sur les neurosciences.",
+  title: "Neuroplasticité et apprentissage : comment le cerveau apprend à tout âge",
+  description: "Comment la neuroplasticité permet d'apprendre à tout âge : mécanismes cérébraux, rôle du sommeil et 7 stratégies validées par les neurosciences.",
   cover: "/images/articles/neuroplasticite-cover",
   datePublished: "2024-01-12T08:00:00+01:00",
-  dateModified: "2025-01-23T10:30:00+01:00",
+  dateModified: "2026-08-05T09:00:00+02:00",
   tags: ["neuroplasticité", "cerveau", "neurosciences", "apprentissage", "développement personnel"],
   author: {
     "@type": "Person",
@@ -24,8 +24,8 @@ const meta = {
   },
   category: "Neurosciences",
   readingTime: "15 min",
-  version: "1.0",
-  verifiedDate: "Janvier 2025",
+  version: "2.0",
+  verifiedDate: "Août 2026",
 };
 
 // ==================== FAQ DATA (enrichie pour featured snippets) ====================
@@ -130,7 +130,7 @@ export default function NeuroplasticiteCerveau() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3500
+    wordCount: 2900
   };
 
   // Schema Breadcrumb (fil d'Ariane 4 niveaux)
@@ -260,6 +260,11 @@ export default function NeuroplasticiteCerveau() {
             </div>
           </div>
 
+          {/* Signal de fraîcheur (GEO) */}
+          <div className="text-xs text-neutral-500 dark:text-neutral-500 mt-2 mb-6">
+            Version {meta.version} — {meta.verifiedDate} | Sources vérifiées juillet-août 2026
+          </div>
+
           {/* Image de couverture */}
           {meta.cover && (
             <div className="rounded-xl overflow-hidden shadow-lg">
@@ -281,11 +286,37 @@ export default function NeuroplasticiteCerveau() {
 
           {/* Introduction (lead) */}
           <p className="lead">
-            "Après 25 ans, le cerveau ne change plus." Cette croyance, longtemps répandue en neurosciences, s'est révélée être l'une des plus grandes erreurs scientifiques du 20ème siècle. Aujourd'hui, nous savons que votre cerveau conserve une capacité d'adaptation remarquable jusqu'à un âge très avancé — une propriété appelée neuroplasticité.
+            "Après 25 ans, le cerveau ne change plus." Cette croyance, longtemps répandue en neurosciences, s'est révélée être l'une des plus grandes erreurs scientifiques du 20ème siècle. Aujourd'hui, nous savons que le cerveau garde toute sa vie la capacité de se remodeler quand il apprend. Cette propriété porte un nom : la neuroplasticité.
           </p>
 
+          {/* QUICK ANSWER BLOCK — dans les 200 premiers mots */}
+          <div className="not-prose my-8 bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border-l-4 border-emerald-500">
+            <p className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide mb-2">Réponse rapide</p>
+            <p className="text-emerald-800 dark:text-emerald-200 text-sm leading-relaxed">
+              <strong>En bref :</strong> la neuroplasticité est ce qui rend l'apprentissage possible à tout âge. Chaque fois que vous apprenez, les connexions entre vos neurones se renforcent physiquement. Cette capacité ralentit avec les années mais ne disparaît jamais. Trois leviers la stimulent le plus : la répétition espacée dans le temps, l'exercice physique et le sommeil profond.
+            </p>
+            <p className="text-emerald-700 dark:text-emerald-300 text-xs mt-2">
+              <strong>Sources :</strong> Merzenich, University of California San Francisco ; Maguire, University College London, <em>PNAS</em>, 2000 ; Draganski, University of Regensburg, <em>Nature</em>, 2004.
+            </p>
+          </div>
+
+          {/* StatBlock chauffeurs de taxi londoniens */}
+          <div className="not-prose my-6 bg-teal-50 dark:bg-teal-950/30 p-5 rounded-lg border border-teal-200 dark:border-teal-800">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl font-black text-teal-600 dark:text-teal-400 leading-none">4 ans</div>
+              <div>
+                <p className="text-sm font-semibold text-teal-900 dark:text-teal-100">
+                  d'apprentissage intensif suffisent à faire grossir l'hippocampe, la zone de la mémoire : c'est ce qu'on observe chez les chauffeurs de taxi londoniens qui mémorisent 25 000 rues
+                </p>
+                <p className="text-xs text-teal-600 dark:text-teal-400 mt-1">
+                  Maguire et al., University College London, <em>PNAS</em>, 2000 — DOI : 10.1073/pnas.070039597
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Section 1 */}
-          <h2 id="definition">Qu'est-ce que la neuroplasticité : définition scientifique</h2>
+          <h2 id="definition">Qu'est-ce que la neuroplasticité ?</h2>
 
           <p>
             La neuroplasticité, ou plasticité cérébrale, désigne la capacité du système nerveux à modifier ses connexions et sa structure en réponse à l'expérience et à l'apprentissage. Cette propriété fondamentale s'exprime à plusieurs niveaux : synaptique (modification des connexions entre neurones), structural (formation de nouvelles dendrites et axones) et fonctionnel (réorganisation des cartes cérébrales).
@@ -305,7 +336,7 @@ export default function NeuroplasticiteCerveau() {
             </p>
           </div>
 
-          <h2 id="mecanismes">Les mécanismes cellulaires de la plasticité</h2>
+          <h2 id="mecanismes">Que se passe-t-il dans le cerveau quand on apprend ?</h2>
 
           <h3>La potentialisation à long terme (LTP)</h3>
 
@@ -327,7 +358,21 @@ export default function NeuroplasticiteCerveau() {
             Des études montrent que les personnes avec des niveaux élevés de BDNF présentent une meilleure mémoire, une capacité d'apprentissage supérieure et un risque réduit de maladies neurodégénératives. C'est pourquoi stimuler la production de BDNF constitue un objectif central dans toute stratégie d'optimisation de la neuroplasticité.
           </p>
 
-          <h2 id="strategies">7 stratégies scientifiquement validées pour optimiser la neuroplasticité</h2>
+          <h2 id="apprentissage">Comment la neuroplasticité permet-elle d'apprendre à tout âge ?</h2>
+
+          <p>
+            Apprendre, c'est modifier physiquement son cerveau. À chaque nouvelle compétence, les connexions entre neurones sollicités se renforcent, et de nouvelles se créent. C'est exactement ce que décrivent les deux mécanismes ci-dessus : la potentialisation à long terme construit la trace, le BDNF lui donne les moyens de tenir.
+          </p>
+
+          <p>
+            Cette capacité ne s'arrête pas à un âge donné. Elle devient simplement plus lente et plus exigeante. Là où l'enfant apprend une langue par simple exposition, l'adulte doit y mettre de l'intention, de la répétition et de la régularité. Michael Merzenich (University of California, San Francisco), pionnier de ce champ de recherche, a montré que le cerveau adulte se réorganise encore massivement, à condition que la tâche demande une attention réelle.
+          </p>
+
+          <p>
+            C'est la nuance décisive : la neuroplasticité ne se déclenche pas par la simple exposition passive. Regarder une vidéo ne remodèle rien. Il faut de la difficulté, de l'erreur et de la correction. C'est pourquoi les trois leviers les mieux documentés pour apprendre à tout âge sont l'espacement des révisions, l'exercice physique et le sommeil profond, qui rejoue et consolide ce qui a été appris dans la journée.
+          </p>
+
+          <h2 id="strategies">Quelles stratégies stimulent réellement la neuroplasticité ?</h2>
 
           <h3>1. L'apprentissage par espacement (spaced repetition)</h3>
 
@@ -428,7 +473,7 @@ export default function NeuroplasticiteCerveau() {
             </Link>
           </div>
 
-          <h2 id="periodes">Périodes critiques vs périodes sensibles</h2>
+          <h2 id="periodes">Existe-t-il un âge limite pour apprendre ?</h2>
 
           <p>
             La distinction entre périodes critiques (fenêtres temporelles fermées après lesquelles certains apprentissages deviennent impossibles) et périodes sensibles (plasticité réduite mais persistante) est fondamentale. Contrairement aux périodes critiques du développement précoce — comme l'acquisition du langage maternel avant 7 ans — la plasticité adulte reste accessible mais nécessite des stimuli plus intenses et répétés.
@@ -438,7 +483,7 @@ export default function NeuroplasticiteCerveau() {
             Michael Merzenich a démontré de manière révolutionnaire que même des capacités considérées comme "perdues" après certains âges peuvent être partiellement récupérées par un entraînement adapté, intensif et prolongé. Son travail sur la perception auditive chez les personnes malentendantes a ouvert la voie à de nombreuses applications thérapeutiques.
           </p>
 
-          <h2 id="applications">Applications thérapeutiques de la neuroplasticité</h2>
+          <h2 id="applications">Comment la neuroplasticité est-elle utilisée en médecine ?</h2>
 
           <h3>Récupération post-AVC</h3>
 
@@ -460,7 +505,7 @@ export default function NeuroplasticiteCerveau() {
             Ces changements fonctionnels s'accompagnent de modifications structurelles mesurables : augmentation du volume hippocampique, renforcement de la connectivité préfrontale, normalisation de l'activité amygdalienne. La neuroplasticité est ainsi au cœur de l'efficacité thérapeutique psychologique.
           </p>
 
-          <h2 id="limites">Limites et idées fausses sur la neuroplasticité</h2>
+          <h2 id="limites">Quelles sont les idées fausses sur la neuroplasticité ?</h2>
 
           <p>
             La neuroplasticité n'est pas illimitée. Certaines fonctions restent largement déterminées par la génétique et le développement précoce — on ne peut pas "reprogrammer" complètement son cerveau à volonté. De plus, tous les changements cérébraux ne sont pas bénéfiques : la plasticité peut aussi sous-tendre des conditions pathologiques comme la douleur chronique, les addictions ou le syndrome de stress post-traumatique.
@@ -480,7 +525,7 @@ export default function NeuroplasticiteCerveau() {
             </p>
           </div>
 
-          <h2 id="futur">Perspectives futures de la recherche</h2>
+          <h2 id="futur">Que reste-t-il à découvrir sur la plasticité cérébrale ?</h2>
 
           <p>
             Les nouvelles technologies comme l'optogénétique (contrôle de neurones spécifiques par la lumière) et les interfaces cerveau-machine ouvrent des perspectives révolutionnaires pour stimuler sélectivement la neuroplasticité. La stimulation magnétique transcranienne (TMS) permet déjà de moduler l'excitabilité de régions cérébrales spécifiques de manière non-invasive.
@@ -505,6 +550,20 @@ export default function NeuroplasticiteCerveau() {
             : croire que ses capacités peuvent progresser n'est pas une simple posture mentale, c'est le reflet d'un cerveau qui se reconfigure réellement avec l'effort.
           </p>
 
+          {/* À RETENIR — encadré résumé pour featured snippet */}
+          <h2 id="a-retenir">À retenir</h2>
+
+          <div className="not-prose my-8 bg-amber-50 dark:bg-amber-950/30 p-6 rounded-lg border-l-4 border-amber-500">
+            <ul className="space-y-3 text-sm text-amber-900 dark:text-amber-100">
+              <li><strong>Apprendre modifie physiquement le cerveau.</strong> Les connexions entre neurones sollicités ensemble se renforcent durablement.</li>
+              <li><strong>Il n'y a pas d'âge limite.</strong> La neuroplasticité ralentit avec les années mais ne disparaît jamais. Elle demande simplement plus d'intention et de répétition.</li>
+              <li><strong>L'exposition passive ne suffit pas.</strong> Sans difficulté, sans erreur et sans correction, le cerveau ne se remodèle pas. Regarder une vidéo ne change rien.</li>
+              <li><strong>Trois leviers dominent :</strong> la répétition espacée dans le temps, l'exercice physique régulier et le sommeil profond, qui consolide ce qui a été appris dans la journée.</li>
+              <li><strong>Le stress chronique travaille contre vous.</strong> Un cortisol élevé en continu réduit le BDNF, la protéine qui rend la plasticité possible.</li>
+              <li><strong>Les effets se mesurent en mois, pas en jours.</strong> Les changements visibles à l'imagerie cérébrale demandent 2 à 3 mois de pratique régulière.</li>
+            </ul>
+          </div>
+
           {/* FAQ enrichie */}
           <h2 id="faq">Questions Fréquentes sur la Neuroplasticité</h2>
 
@@ -520,6 +579,36 @@ export default function NeuroplasticiteCerveau() {
               </details>
             ))}
           </div>
+
+          {/* Sources scientifiques */}
+          <h2 id="sources">Sources scientifiques</h2>
+
+          <ol className="text-sm space-y-2">
+            <li>
+              Maguire, E. A. et al. (2000). Navigation-related structural change in the hippocampi of taxi drivers. <em>PNAS</em>, 97(8), 4398-4403.{" "}
+              <a href="https://doi.org/10.1073/pnas.070039597" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">DOI : 10.1073/pnas.070039597</a>
+            </li>
+            <li>
+              Draganski, B. et al. (2004). Neuroplasticity: changes in grey matter induced by training. <em>Nature</em>, 427, 311-312.{" "}
+              <a href="https://doi.org/10.1038/427311a" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">DOI : 10.1038/427311a</a>
+            </li>
+            <li>
+              Bliss, T. V. P. &amp; Lømo, T. (1973). Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit. <em>The Journal of Physiology</em>, 232(2), 331-356.{" "}
+              <a href="https://doi.org/10.1113/jphysiol.1973.sp010273" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">DOI : 10.1113/jphysiol.1973.sp010273</a>
+            </li>
+            <li>
+              Merzenich, M. M. — travaux sur la réorganisation corticale chez l'adulte, University of California, San Francisco.
+            </li>
+            <li>
+              Taub, E. — thérapie par contrainte induite et récupération post-AVC, University of Alabama at Birmingham.
+            </li>
+            <li>
+              McEwen, B. S. — effets du stress chronique sur l'hippocampe et le cortex préfrontal, Rockefeller University.
+            </li>
+            <li>
+              Ebbinghaus, H. (1885). <em>Über das Gedächtnis</em> — travaux fondateurs sur la courbe de l'oubli et la répétition espacée.
+            </li>
+          </ol>
 
           {/* Navigation articles connexes */}
           <div className="not-prose my-12 p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-700">
