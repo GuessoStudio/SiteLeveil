@@ -419,7 +419,7 @@ export default function AnxieteMecanismes() {
             La réévaluation cognitive, c'est modifier consciemment l'interprétation d'une situation menaçante. C'est l'une des <Link to="/blog/regulation-emotionnelle-techniques-psychologie/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">techniques de régulation émotionnelle les plus efficaces</Link>. Elle recrute le cortex préfrontal dorsolatéral (dlPFC), qui envoie un signal descendant à l'amygdale pour moduler la réponse émotionnelle.
           </p>
           <p>
-            <strong>En pratique :</strong> face à une pensée anxieuse (« cette réunion va être une catastrophe »), reformule-la en termes factuels (« j'ai déjà présenté 20 fois sans problème, les chances que ça se passe bien sont élevées »). Ce n'est pas de la « pensée positive » : c'est un recadrage basé sur les faits.
+            <strong>En pratique :</strong> face à une pensée anxieuse (« cette réunion va être une catastrophe »), reformule-la en termes factuels (« j'ai déjà présenté 20 fois sans problème, les chances que ça se passe bien sont élevées »). Ce n'est pas de la « pensée positive » : c'est un recadrage basé sur les faits. La catastrophisation fonctionne comme les autres <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">biais cognitifs</Link> : une erreur de jugement systématique, prévisible, et donc réductible avec la bonne méthode.
           </p>
 
           <h3>4. Respiration lente et cohérence cardiaque</h3>

@@ -331,7 +331,7 @@ export default function ObjectifsSmart() {
 
           <h3>La spécificité et le cortex préfrontal</h3>
           <p>
-            Le <strong>cortex préfrontal</strong> est la partie du cerveau située juste derrière le front. C'est ton centre de planification : il garde en mémoire tes intentions, compare la situation actuelle à la situation visée, et organise les actions pour combler l'écart.
+            Le <strong>cortex préfrontal</strong> est la partie du cerveau située juste derrière le front. C'est ton centre de planification : il garde en mémoire tes intentions, compare la situation actuelle à la situation visée, et organise les actions pour combler l'écart. C'est aussi lui qui se fait piéger par le biais de planification, l'un des <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">biais cognitifs les plus documentés</Link> : nous sous-estimons presque toujours le temps nécessaire, même en connaissant nos retards passés.
           </p>
           <p>
             Quand ton objectif est vague (« être en meilleure forme »), le cortex préfrontal n'a pas de critère clair pour mesurer l'écart. Il ne sait pas quand la tâche est accomplie. Quand l'objectif est précis (« faire 30 minutes de marche après le déjeuner »), il dispose d'une cible nette. Il peut planifier, suivre la progression et ajuster. C'est exactement la fonction que la procrastination met en échec, comme l'explique l'article sur <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-amber-600 dark:text-amber-400 underline underline-offset-2">les mécanismes cérébraux de la procrastination</Link>.

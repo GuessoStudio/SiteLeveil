@@ -307,7 +307,7 @@ export default function BurnOut() {
             Commençons par ce que tu ressens. Les symptômes cognitifs du burn-out sont les plus tangibles : difficultés de concentration, oublis, lenteur à traiter l'information, difficulté à décider, fatigue mentale rapide. Tu relis trois fois le même e-mail sans le comprendre. Tu cherches tes mots. Tu te sens « au ralenti ».
           </p>
           <p>
-            Ces symptômes ne sont pas imaginaires : ils reflètent la surcharge des circuits de contrôle du cortex préfrontal, la région à l'avant du cerveau qui gère la concentration, la planification et la décision. Bonne nouvelle : ces symptômes cognitifs récupèrent en grande partie avec le repos et la prise en charge.
+            Ces symptômes ne sont pas imaginaires : ils reflètent la surcharge des circuits de contrôle du cortex préfrontal, la région à l'avant du cerveau qui gère la concentration, la planification et la décision. Bonne nouvelle : ces symptômes cognitifs récupèrent en grande partie avec le repos et la prise en charge. Reste un obstacle : le biais d'optimisme, qui figure parmi les <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">biais cognitifs les plus répandus</Link>, nous fait croire que l'épuisement n'arrive qu'aux autres, jusqu'au moment où il est trop tard.
           </p>
 
           <h3>Le profil fronto-limbique perturbé</h3>

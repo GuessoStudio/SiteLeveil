@@ -332,7 +332,7 @@ export default function RuminationMentale() {
           <h3>Dysfonctionnements cognitifs mesurables</h3>
           
           <p>
-            Les recherches de Koster et De Raedt (Université de Gand) démontrent que la rumination réduit significativement la flexibilité cognitive, la mémoire de travail et les capacités d'attention sélective, créant un biais attentionnel vers les informations négatives.
+            Les recherches de Koster et De Raedt (Université de Gand) démontrent que la rumination réduit significativement la flexibilité cognitive, la mémoire de travail et les capacités d'attention sélective, créant un biais attentionnel vers les informations négatives. C'est le biais de confirmation appliqué à soi-même, l'un des <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">biais cognitifs les plus tenaces</Link> : l'esprit ne retient que ce qui valide le jugement négatif qu'il porte déjà.
           </p>
 
           <h2>Les 7 stratégies scientifiquement validées anti-rumination</h2>

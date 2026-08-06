@@ -2,7 +2,7 @@
 // Article optimisé SEO 2026 avec schemas JSON-LD complets
 // Optimisé pour : Featured Snippets, Rich Results, E-E-A-T, GEO
 // Auteur : Guesso | L'Éveil Mental
-// Dernière mise à jour : 22 juin 2026
+// Dernière mise à jour : 5 août 2026 (13e biais, items étoffés, institutions)
 
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
@@ -11,11 +11,11 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "biais-cognitifs-liste-psychologie",
-  title: "Biais cognitifs : la liste des 12 plus courants (et comment les contrer)",
-  description: "Biais cognitifs : la liste des 12 plus courants, leur origine expérimentale (Kahneman, Tversky, Wason), le mécanisme Système 1 et comment les réduire.",
+  title: "Biais cognitif : définition, liste des 13 plus courants et comment les contrer",
+  description: "Biais cognitif : définition, les 13 plus courants avec leur origine expérimentale (Kahneman, Tversky, Wason) et les stratégies validées pour les réduire.",
   cover: "/images/articles/biais-cognitifs-liste-psychologie-cover",
   datePublished: "2026-06-22T08:00:00+01:00",
-  dateModified: "2026-06-22T08:00:00+01:00",
+  dateModified: "2026-08-05T11:00:00+02:00",
   tags: ["biais cognitifs", "biais de confirmation", "heuristiques", "Système 1 Système 2", "Kahneman", "psychologie cognitive", "prise de décision", "débiaisage"],
   author: {
     "@type": "Person",
@@ -24,8 +24,8 @@ const meta = {
   },
   category: "Psychologie",
   readingTime: "15 min",
-  version: "1.0",
-  verifiedDate: "Juin 2026"
+  version: "2.0",
+  verifiedDate: "Août 2026"
 };
 
 // ==================== FAQ DATA ====================
@@ -37,7 +37,7 @@ const faqData = [
   },
   {
     question: "Quels sont les principaux biais cognitifs ?",
-    answer: "Les plus courants sont le biais de confirmation, l'ancrage, les heuristiques de disponibilité et de représentativité, l'aversion à la perte, l'effet de cadrage, l'excès de confiance, l'effet de halo, le biais des survivants, le biais rétrospectif, l'effet Dunning-Kruger et le biais d'optimisme. La plupart découlent du même mécanisme rapide."
+    answer: "Les plus courants sont le biais de confirmation, l'ancrage, les heuristiques de disponibilité et de représentativité, l'aversion à la perte, l'effet de cadrage, l'excès de confiance, l'effet de halo, le biais des survivants, le biais rétrospectif, l'effet Dunning-Kruger, le biais d'optimisme et la dissonance cognitive. La plupart découlent du même mécanisme rapide."
   },
   {
     question: "Quelle est la différence entre un biais cognitif et une distorsion cognitive ?",
@@ -129,7 +129,7 @@ export default function BiaisCognitifs() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2850
+    wordCount: 3900
   };
 
   const schemaBreadcrumb = {
@@ -147,9 +147,9 @@ export default function BiaisCognitifs() {
   const schemaItemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Les 12 biais cognitifs les plus courants",
-    description: "Liste des 12 biais cognitifs les plus répandus avec leur origine expérimentale et leur mécanisme",
-    numberOfItems: 12,
+    name: "Les 13 biais cognitifs les plus courants",
+    description: "Liste des 13 biais cognitifs les plus répandus avec leur origine expérimentale et leur mécanisme",
+    numberOfItems: 13,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Biais de confirmation", description: "Tendance à privilégier les informations qui confirment ses croyances (Peter Wason, 1960)." },
       { "@type": "ListItem", position: 2, name: "Ancrage", description: "Une première valeur arbitraire influence de façon disproportionnée l'estimation finale (Tversky & Kahneman, 1974)." },
@@ -162,7 +162,8 @@ export default function BiaisCognitifs() {
       { "@type": "ListItem", position: 9, name: "Biais des survivants", description: "Ne regarder que les cas qui ont réussi en ignorant ceux qui ont échoué (Abraham Wald, 1943)." },
       { "@type": "ListItem", position: 10, name: "Biais rétrospectif", description: "Croire après coup qu'on avait prévu un événement (Baruch Fischhoff, 1975)." },
       { "@type": "ListItem", position: 11, name: "Effet Dunning-Kruger", description: "Les moins compétents surestiment leur niveau, faute de pouvoir mesurer leur incompétence (Dunning & Kruger, 1999)." },
-      { "@type": "ListItem", position: 12, name: "Biais d'optimisme", description: "Se croire moins exposé que les autres aux événements négatifs (Neil Weinstein, 1980)." }
+      { "@type": "ListItem", position: 12, name: "Biais d'optimisme", description: "Se croire moins exposé que les autres aux événements négatifs (Neil Weinstein, 1980)." },
+      { "@type": "ListItem", position: 13, name: "Dissonance cognitive", description: "Ajuster ses croyances plutôt que son comportement quand les deux se contredisent (Leon Festinger, 1957)." }
     ]
   };
 
@@ -220,7 +221,7 @@ export default function BiaisCognitifs() {
 
         {/* H1 */}
         <h1 className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-neutral-100 leading-tight mb-3">
-          Biais cognitifs : la liste des 12 plus courants (et comment les contrer)
+          Biais cognitif : définition, liste des 13 plus courants et comment les contrer
         </h1>
 
         {/* Signal fraîcheur */}
@@ -232,7 +233,7 @@ export default function BiaisCognitifs() {
         <div className="not-prose my-8 bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border-l-4 border-emerald-500">
           <p className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide mb-2">Réponse rapide</p>
           <p className="text-emerald-800 dark:text-emerald-200 text-sm leading-relaxed">
-            <strong>En bref :</strong> Un biais cognitif est une erreur systématique et prévisible de jugement, produite par les raccourcis mentaux du cerveau (les heuristiques). Les 12 plus courants, du biais de confirmation à l'effet Dunning-Kruger, découlent presque tous du même mécanisme rapide décrit par Kahneman. On ne les supprime pas, mais on peut les réduire.
+            <strong>En bref :</strong> Un biais cognitif est une erreur systématique et prévisible de jugement, produite par les raccourcis mentaux du cerveau (les heuristiques). Les 13 plus courants, du biais de confirmation à la dissonance cognitive, découlent presque tous du même mécanisme rapide décrit par Kahneman. On ne les supprime pas, mais on peut les réduire.
           </p>
           <p className="text-emerald-700 dark:text-emerald-300 text-xs mt-2">
             <strong>Sources :</strong> Tversky &amp; Kahneman, <em>Science</em>, 1974 ; De Martino et al., <em>Science</em>, 2006 ; Swaryandini et al., <em>Nature Human Behaviour</em>, 2025.
@@ -276,7 +277,7 @@ export default function BiaisCognitifs() {
             Ce ne sont pas des erreurs d'inattention. Ce sont des <strong>biais cognitifs</strong> : des déformations systématiques du jugement, partagées par tous les humains, y compris les experts. Il en existe plus de deux cents répertoriés. La plupart des listes en ligne les alignent côte à côte comme s'ils étaient indépendants. Ils ne le sont pas.
           </p>
           <p>
-            Cet article fait ce qu'aucune liste française ne fait : donner pour chacun des 12 biais les plus courants son origine expérimentale précise (qui l'a découvert, quand), expliquer le mécanisme cérébral commun qui les produit, et montrer, preuves à l'appui, qu'on peut les réduire.
+            Cet article fait ce qu'aucune liste française ne fait : donner pour chacun des 13 biais les plus courants son origine expérimentale précise (qui l'a découvert, quand), expliquer le mécanisme cérébral commun qui les produit, et montrer, preuves à l'appui, qu'on peut les réduire.
           </p>
 
           {/* H2 — Définition */}
@@ -342,71 +343,140 @@ export default function BiaisCognitifs() {
             Dans une synthèse de 2022, les chercheurs Stefano Palminteri et Maël Lebreton ont réuni des résultats montrant que des biais comme l'optimisme et la confirmation apparaissent dès l'apprentissage par essai-erreur le plus élémentaire, et qu'on les retrouve aussi bien chez l'humain que chez l'animal. Autrement dit, certains biais ne sont pas des défauts de raisonnement « de haut niveau » : ils sont gravés dans la façon même dont le cerveau apprend. Voilà pourquoi ils sont si difficiles à éliminer.
           </p>
 
-          {/* H2 — Les 12 biais */}
-          <h2>Quels sont les 12 biais cognitifs les plus courants ?</h2>
+          {/* H2 — Les 13 biais */}
+          <h2>Quels sont les 13 biais cognitifs les plus courants ?</h2>
           <p>
-            Voici les 12 biais les plus répandus, chacun avec son origine expérimentale, un exemple concret et un moyen de le repérer. Ils sont classés du plus universel au plus spécifique.
+            Voici les 13 biais les plus répandus. Pour chacun : d'où il vient et sur quelle expérience il repose, ce qu'il produit concrètement dans la vie quotidienne, et comment le repérer chez soi. Ils sont classés du plus universel au plus spécifique.
           </p>
 
           <h3>1. Le biais de confirmation (Wason, 1960)</h3>
           <p>
-            C'est la tendance à chercher et retenir les informations qui confirment ce qu'on croit déjà, en ignorant celles qui le contredisent. Formalisé par le psychologue Peter Wason en 1960. Exemple : tu penses qu'un collègue est désorganisé, et tu ne remarques que ses oublis, jamais ses réussites. Pour le contrer : cherche activement ce qui pourrait te donner tort.
+            C'est la tendance à chercher et à retenir ce qui confirme nos croyances, tout en écartant ce qui les contredit. Le psychologue Peter Wason (University College London, Royaume-Uni) l'a mis en évidence en 1960 avec une expérience restée célèbre. Il présentait la suite 2, 4, 6 et demandait de deviner la règle. Presque tous les participants testaient uniquement des suites validant leur hypothèse. Très peu essayaient de la contredire, alors que c'était le seul moyen de trouver la bonne réponse.
           </p>
 
-          <h3>2. L'ancrage (Tversky &amp; Kahneman, 1974)</h3>
           <p>
-            Une première valeur, même arbitraire, influence de façon disproportionnée notre estimation finale. Exemple : un article affiché à 200 euros puis soldé à 120 paraît une affaire, parce que 200 sert d'ancre, même si l'objet en vaut 80. Pour le contrer : avant de négocier ou d'estimer, fixe ta propre référence d'abord.
+            Au quotidien, ça donne ceci : vous pensez qu'un collègue est désorganisé, et vous ne remarquez plus que ses oublis. Ses réussites passent inaperçues ou sont mises sur le compte de la chance. Le biais se nourrit tout seul. Pour le contrer, inversez la question : au lieu de chercher ce qui vous donne raison, cherchez délibérément ce qui pourrait vous donner tort.
           </p>
 
-          <h3>3. L'heuristique de disponibilité (Tversky &amp; Kahneman, 1974)</h3>
+
+          <h3>2. L'ancrage (Tversky et Kahneman, 1974)</h3>
           <p>
-            On estime la fréquence d'un événement par la facilité avec laquelle des exemples nous viennent à l'esprit. Exemple : après un reportage sur un crash, on surestime le danger de l'avion, alors qu'il est plus sûr que la voiture. Pour le contrer : cherche les vrais chiffres, pas l'exemple le plus marquant.
+            Une première valeur, même absurde, influence toutes nos estimations suivantes. Amos Tversky et Daniel Kahneman (Hebrew University of Jerusalem, Israël) l'ont démontré en 1974 dans une expérience troublante. Ils faisaient tourner une roue truquée devant les participants, puis leur demandaient d'estimer le pourcentage de pays africains membres de l'ONU. Ceux qui avaient vu un grand nombre donnaient des estimations bien plus élevées. Un chiffre tiré au hasard, sans rapport avec la question, suffisait à déplacer leur jugement.
           </p>
 
-          <h3>4. L'heuristique de représentativité (Tversky &amp; Kahneman, 1974)</h3>
           <p>
-            On juge la probabilité d'une chose par sa ressemblance à un prototype, en oubliant les statistiques de base. Exemple : décrit comme timide et méticuleux, quelqu'un sera jugé « bibliothécaire » plutôt qu'« agriculteur », alors que les agriculteurs sont bien plus nombreux. Pour le contrer : reviens toujours aux fréquences réelles.
+            Vous le vivez à chaque solde : un article affiché à 200 euros puis barré à 120 paraît une bonne affaire, même si l'objet en vaut 80. Le 200 sert d'ancre, et tout se juge par rapport à lui. Même chose en négociation salariale, où le premier chiffre énoncé cadre toute la discussion. Pour le contrer, fixez votre propre référence avant d'entrer dans l'échange, et notez-la par écrit.
           </p>
 
-          <h3>5. L'aversion à la perte (Kahneman &amp; Tversky, 1979)</h3>
+
+          <h3>3. L'heuristique de disponibilité (Tversky et Kahneman, 1974)</h3>
           <p>
-            Une perte fait psychologiquement plus mal qu'un gain équivalent ne fait plaisir. Issu de la théorie des perspectives. Exemple : on garde une action qui chute pour ne pas « acter » la perte, ou un abonnement inutile pour ne pas « perdre » ce qu'on a payé. Pour le contrer : raisonne sur la situation présente, pas sur ce que tu as déjà engagé.
+            Nous estimons la fréquence d'un événement à la facilité avec laquelle des exemples nous viennent en tête. Plus un souvenir est accessible, plus l'événement paraît probable. Tversky et Kahneman ont montré que ce raccourci trompe systématiquement, parce que la mémoire ne classe pas les faits selon leur fréquence réelle, mais selon leur charge émotionnelle et leur récence.
           </p>
 
-          <h3>6. L'effet de cadrage (Tversky &amp; Kahneman, 1981)</h3>
           <p>
-            La façon de présenter une option, en gains ou en pertes, change la décision, même si l'information est identique. Exemple : un yaourt « 90 % sans matière grasse » séduit plus que « 10 % de matière grasse ». C'est le biais étudié par De Martino dans le cerveau. Pour le contrer : reformule l'option dans l'autre sens et compare.
+            D'où ce phénomène bien connu : après un reportage sur un crash aérien, on surestime le danger de l'avion, alors qu'il reste bien plus sûr que la voiture. Les accidents de la route tuent infiniment plus, mais ils ne font pas la une. Même mécanisme quand un fait divers vous fait surestimer la criminalité de votre quartier. Pour le contrer, cherchez les chiffres réels avant de vous fier à l'exemple qui vous a marqué.
           </p>
 
-          <h3>7. L'excès de confiance (Fischhoff, Slovic &amp; Lichtenstein, 1977)</h3>
+
+          <h3>4. L'heuristique de représentativité (Tversky et Kahneman, 1974)</h3>
           <p>
-            On surestime la justesse de ses propres jugements et la précision de ses connaissances. Exemple : se dire « sûr à 90 % » d'une réponse qui s'avère fausse une fois sur deux. Ce biais touche fortement les experts. Pour le contrer : demande-toi sur quoi repose réellement ta certitude, et envisage l'erreur.
+            Nous jugeons la probabilité d'une chose à sa ressemblance avec un portrait-type, en oubliant les statistiques de base. Le cerveau compare au stéréotype et néglige les nombres. Tversky et Kahneman l'ont illustré avec un cas devenu classique en psychologie : la description d'un homme timide, ordonné et attaché au détail.
           </p>
+
+          <p>
+            Demandez si cet homme est plutôt bibliothécaire ou agriculteur : la majorité répond bibliothécaire, parce que la description colle au stéréotype. Or les agriculteurs sont bien plus nombreux dans la population. Même en collant mal au portrait, ils restent statistiquement plus probables. C'est le même mécanisme qui fait juger un candidat sur son allure plutôt que sur son parcours. Pour le contrer, posez-vous d'abord la question du nombre, avant même de regarder le portrait.
+          </p>
+
+
+          <h3>5. L'aversion à la perte (Kahneman et Tversky, 1979)</h3>
+          <p>
+            Perdre 50 euros fait plus mal que gagner 50 euros ne fait plaisir. L'écart est net : la douleur d'une perte pèse environ deux fois plus lourd que le plaisir d'un gain équivalent. Daniel Kahneman (Princeton University, États-Unis) et Amos Tversky (Stanford University, États-Unis) en ont fait le cœur de leur théorie des perspectives, publiée en 1979. Ces travaux ont valu à Kahneman le prix Nobel d'économie en 2002.
+          </p>
+
+          <p>
+            Concrètement, c'est ce qui vous fait garder une action qui chute, pour ne pas acter la perte. Ou conserver un abonnement dont vous ne vous servez plus, parce que vous avez déjà payé. Ou rester dans un projet qui échoue, au motif que vous y avez consacré deux ans. Pour le contrer, raisonnez sur la situation présente : si vous découvriez cette option aujourd'hui, sans aucun historique, la choisiriez-vous ?
+          </p>
+
+
+          <h3>6. L'effet de cadrage (Tversky et Kahneman, 1981)</h3>
+          <p>
+            La façon de présenter une information change la décision, même quand le contenu est rigoureusement identique. Formuler en gains ou en pertes suffit à inverser un choix. Tversky et Kahneman l'ont démontré en 1981 avec un problème de santé publique : selon que le même programme était décrit en vies sauvées ou en vies perdues, les participants basculaient d'une option à l'autre.
+          </p>
+
+          <p>
+            Vous le croisez chaque semaine au supermarché : un yaourt « 90 % sans matière grasse » se vend mieux que le même « 10 % de matière grasse ». Un traitement « efficace dans 70 % des cas » rassure davantage qu'un traitement qui « échoue dans 30 % des cas ». Pour le contrer, reformulez l'information dans l'autre sens avant de trancher. Si votre décision change, c'est le cadrage qui décidait à votre place.
+          </p>
+
+
+          <h3>7. L'excès de confiance (Fischhoff, Slovic et Lichtenstein, 1977)</h3>
+          <p>
+            Nous surestimons la justesse de nos jugements et la précision de nos connaissances. Baruch Fischhoff (Carnegie Mellon University, États-Unis) et Paul Slovic (University of Oregon, États-Unis) l'ont mesuré en 1977 en demandant aux participants d'évaluer leur propre certitude. Quand ces derniers se déclaraient sûrs à 100 %, ils se trompaient encore dans une proportion notable des cas.
+          </p>
+
+          <p>
+            Le plus troublant est que l'expertise ne protège pas. Elle aggrave souvent le phénomène, parce que le spécialiste a de bonnes raisons de se croire fiable. Vous le voyez chez le professionnel qui tranche en trente secondes, et chez vous quand vous estimez qu'une tâche prendra deux heures alors qu'elle en prendra six. Pour le contrer, ne demandez pas « suis-je sûr ? » mais « sur quoi repose exactement ma certitude ? ».
+          </p>
+
 
           <h3>8. L'effet de halo (Thorndike, 1920)</h3>
           <p>
-            Une impression globale, souvent liée à l'apparence, déteint sur le jugement de traits précis. Décrit par Edward Thorndike chez des officiers évaluant leurs soldats. Exemple : on prête plus de compétence et d'honnêteté à une personne séduisante. Pour le contrer : évalue chaque critère séparément, sans te laisser guider par l'impression d'ensemble.
+            Une impression d'ensemble déteint sur le jugement de traits précis et pourtant indépendants. Le psychologue Edward Thorndike (Columbia University, États-Unis) l'a décrit en 1920 en observant des officiers qui notaient leurs soldats. Ceux qu'ils trouvaient beaux ou bien bâtis étaient aussi jugés plus intelligents, plus loyaux et plus compétents, sans aucune raison objective de l'être.
           </p>
+
+          <p>
+            Un siècle plus tard, le mécanisme est intact. On prête plus de compétence à une personne séduisante, plus d'honnêteté à qui parle avec assurance, plus de sérieux à un document bien mis en page. En entretien d'embauche, une poignée de main ferme peut colorer l'évaluation entière. Pour le contrer, évaluez chaque critère séparément et par écrit, avant de vous faire une opinion globale. L'ordre compte : l'impression d'ensemble contamine les détails, jamais l'inverse.
+          </p>
+
 
           <h3>9. Le biais des survivants (Wald, 1943)</h3>
           <p>
-            On ne regarde que les cas qui ont « survécu » à une sélection, en ignorant ceux qui ont échoué. Illustré par le statisticien Abraham Wald, qui conseilla de blinder les avions là où les appareils revenus n'étaient pas touchés, car ceux touchés à ces endroits ne revenaient pas. Exemple : étudier seulement les start-ups qui ont réussi. Pour le contrer : cherche les cas absents, ceux qui ont disparu.
+            Nous ne regardons que les cas ayant franchi une sélection, en oubliant ceux qui ont disparu. Le statisticien Abraham Wald (Columbia University, États-Unis) l'a illustré en 1943, pendant la Seconde Guerre mondiale. L'armée américaine voulait blinder les zones les plus criblées d'impacts sur les bombardiers revenus. Wald démontra l'inverse : il fallait blinder les zones intactes. Les avions touchés à ces endroits-là n'étaient jamais rentrés.
           </p>
+
+          <p>
+            C'est sans doute le biais le plus coûteux dans la vie professionnelle. On étudie les start-ups qui ont réussi pour en tirer des recettes, en ignorant les milliers qui ont appliqué les mêmes recettes et ont échoué. On lit les biographies de milliardaires ayant quitté l'université, jamais celles de ceux qui sont partis sans rien construire. Pour le contrer, demandez-vous systématiquement qui manque à l'échantillon.
+          </p>
+
 
           <h3>10. Le biais rétrospectif (Fischhoff, 1975)</h3>
           <p>
-            Après coup, on croit qu'on « avait toujours su » qu'un événement arriverait. Décrit par Baruch Fischhoff. Exemple : une fois le résultat d'un match connu, il paraît évident, alors qu'il était incertain avant. Ce biais nous empêche d'apprendre de nos erreurs. Pour le contrer : note tes prédictions avant l'événement, et relis-les après.
+            Une fois le résultat connu, il paraît évident, et l'on croit sincèrement l'avoir toujours su. Baruch Fischhoff (Carnegie Mellon University, États-Unis) l'a démontré en 1975 : interrogés après un événement, les participants se souvenaient d'avoir annoncé des probabilités bien plus élevées qu'ils ne l'avaient réellement fait avant.
           </p>
 
-          <h3>11. L'effet Dunning-Kruger (Dunning &amp; Kruger, 1999)</h3>
           <p>
-            Les personnes les moins compétentes dans un domaine surestiment leur niveau, car il leur manque justement les compétences pour mesurer leur incompétence. Exemple : un débutant sûr de lui après une heure sur un sujet complexe. À l'inverse, les experts doutent davantage. C'est un cousin de l'<Link to="/blog/syndrome-imposteur-solutions/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">opposé du syndrome de l'imposteur</Link>. Pour le contrer : cherche le feedback de plus compétents que toi.
+            Le score d'un match paraît logique une fois connu, alors qu'il était incertain la veille. Une crise économique semble annoncée dès qu'elle est passée. Ce biais est toxique pour une raison précise : il vous empêche d'apprendre de vos erreurs. Si vous croyez avoir su, vous ne cherchez pas ce qui vous a échappé. Pour le contrer, notez vos prédictions par écrit, avec leur date, avant de connaître l'issue. Relisez-les ensuite sans les arranger.
           </p>
+
+
+          <h3>11. L'effet Dunning-Kruger (Dunning et Kruger, 1999)</h3>
+          <p>
+            Les personnes les moins compétentes dans un domaine surestiment leur niveau, parce qu'il leur manque justement les compétences permettant d'évaluer leur incompétence. David Dunning et Justin Kruger (Cornell University, États-Unis) l'ont établi en 1999 : les participants situés dans le quart inférieur d'un test se croyaient au-dessus de la moyenne.
+          </p>
+
+          <p>
+            À l'inverse, les plus compétents se sous-estiment, parce qu'ils mesurent l'étendue de ce qu'ils ignorent. Vous le reconnaîtrez chez le débutant catégorique après une heure de lecture, et chez l'expert qui multiplie les nuances. C'est le miroir du <Link to="/blog/syndrome-imposteur-solutions/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">syndrome de l'imposteur</Link>. Une précision honnête : l'ampleur réelle de cet effet est débattue, une partie du phénomène s'expliquant par des artefacts statistiques. Pour le contrer, cherchez le retour de plus compétents que vous.
+          </p>
+
 
           <h3>12. Le biais d'optimisme (Weinstein, 1980)</h3>
           <p>
-            On se croit moins exposé que les autres aux événements négatifs (maladie, accident, divorce) et plus susceptible de vivre des événements positifs. Décrit par Neil Weinstein. Exemple : « les retards de chantier, ça n'arrive qu'aux autres ». Utile pour la motivation, dangereux pour la planification. Pour le contrer : base tes prévisions sur des cas comparables réels, pas sur ton ressenti.
+            Nous nous croyons moins exposés que les autres aux événements négatifs, et plus susceptibles de vivre les positifs. Neil Weinstein (Rutgers University, États-Unis) l'a mesuré en 1980 : la majorité des étudiants interrogés estimaient courir moins de risques que leurs camarades de divorcer, de tomber malades ou d'être licenciés. Statistiquement impossible, puisqu'ils ne peuvent pas tous être en dessous de la moyenne.
           </p>
+
+          <p>
+            C'est ce qui fait dire que les retards de chantier n'arrivent qu'aux autres, ou sous-estimer de moitié le temps nécessaire à un projet. Ce biais a une utilité réelle : il soutient la motivation et protège du découragement. Il devient dangereux dès qu'il s'agit de planifier ou d'évaluer un risque. Pour le contrer, appuyez vos prévisions sur des cas comparables documentés, jamais sur votre ressenti du moment.
+          </p>
+
+          <h3>13. La dissonance cognitive (Festinger, 1957)</h3>
+          <p>
+            C'est l'inconfort ressenti quand nos actes contredisent nos convictions. Pour faire cesser cette tension, le cerveau ne change presque jamais le comportement : il ajuste la croyance. Leon Festinger (Stanford University, États-Unis) a formalisé cette théorie en 1957, après avoir observé un groupe annonçant la fin du monde. Quand la date prévue passa sans catastrophe, ses membres ne renoncèrent pas : ils conclurent que leur foi avait sauvé la planète.
+          </p>
+
+          <p>
+            Le mécanisme opère en permanence à petite échelle. Un fumeur informé des risques se persuade qu'il fume moins que les autres. Quelqu'un qui vient d'acheter une voiture chère lui découvre soudain toutes les qualités. Plus l'engagement a coûté cher, plus la justification est vigoureuse. Pour le contrer, méfiez-vous des raisons qui apparaissent après la décision et jamais avant. Ce sont rarement des raisons : ce sont des réparations.
+          </p>
+
 
           {/* H2 — Réduire */}
           <h2>Peut-on réduire ses biais cognitifs ?</h2>
@@ -488,9 +558,9 @@ export default function BiaisCognitifs() {
           {/* CTA Lead Magnet */}
           <div className="not-prose my-10 bg-violet-50 dark:bg-violet-950/30 p-6 rounded-xl border border-violet-200 dark:border-violet-800 text-center">
             <p className="text-xs font-bold text-violet-600 dark:text-violet-400 uppercase tracking-wide mb-2">Ressource gratuite</p>
-            <p className="text-lg font-bold text-violet-900 dark:text-violet-100 mb-2">Fiche des 12 biais cognitifs + le réflexe anti-biais</p>
+            <p className="text-lg font-bold text-violet-900 dark:text-violet-100 mb-2">Fiche des 13 biais cognitifs + le réflexe anti-biais</p>
             <p className="text-sm text-violet-700 dark:text-violet-300 mb-4">
-              Une fiche A4 à imprimer : les 12 biais avec leur définition et leur origine, plus les 4 questions du réflexe anti-biais à se poser avant toute décision importante.
+              Une fiche A4 à imprimer : les 13 biais avec leur définition et leur origine, plus les 4 questions du réflexe anti-biais à se poser avant toute décision importante.
             </p>
             <a
               href="/Downloads/biais-cognitifs-liste-psychologie-guide.pdf"
@@ -498,6 +568,38 @@ export default function BiaisCognitifs() {
             >
               Télécharger la fiche biais cognitifs (PDF gratuit)
             </a>
+          </div>
+
+          {/* Bloc articles connexes — cluster "biais cognitifs et jugement" */}
+          <div className="not-prose my-12 p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-700">
+            <h3 className="text-lg font-semibold mb-3 text-neutral-900 dark:text-neutral-100">
+              Continuer sur le raisonnement et le jugement
+            </h3>
+            <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+              Les biais ne s'expliquent pas seuls. Voici les articles qui en éclairent les prolongements.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/blog/pensee-critique-developper/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">Développer sa pensée critique</Link>
+                <span className="text-neutral-500 dark:text-neutral-400"> — la discipline qui permet de repérer ses propres raccourcis avant qu'ils ne décident à votre place.</span>
+              </li>
+              <li>
+                <Link to="/blog/influence-sociale-conformisme/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">Influence sociale et conformisme</Link>
+                <span className="text-neutral-500 dark:text-neutral-400"> — quand le biais ne vient plus de vous, mais du groupe qui vous entoure.</span>
+              </li>
+              <li>
+                <Link to="/blog/syndrome-imposteur-solutions/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">Le syndrome de l'imposteur</Link>
+                <span className="text-neutral-500 dark:text-neutral-400"> — le miroir de l'effet Dunning-Kruger : douter d'autant plus qu'on est compétent.</span>
+              </li>
+              <li>
+                <Link to="/blog/mindset-de-croissance-psychologie-dweck/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">L'état d'esprit de croissance</Link>
+                <span className="text-neutral-500 dark:text-neutral-400"> — comment une croyance sur soi oriente la lecture de chaque échec.</span>
+              </li>
+              <li>
+                <Link to="/blog/rumination-mentale-pensees-obsessionnelles/" className="text-violet-600 dark:text-violet-400 hover:underline font-medium">La rumination mentale</Link>
+                <span className="text-neutral-500 dark:text-neutral-400"> — ce que devient le biais de confirmation quand il tourne en boucle sur soi-même.</span>
+              </li>
+            </ul>
           </div>
 
           {/* Sources scientifiques */}
@@ -517,6 +619,9 @@ export default function BiaisCognitifs() {
             </li>
             <li>
               [5] Kahneman D. &amp; Tversky A. — <em>Prospect Theory: An Analysis of Decision under Risk</em> — <em>Econometrica</em>, vol. 47(2), 1979 — DOI : <a href="https://doi.org/10.2307/1914185" className="underline" target="_blank" rel="noopener noreferrer">10.2307/1914185</a>
+            </li>
+            <li>
+              [6] Festinger L. — <em>A Theory of Cognitive Dissonance</em> — Stanford University Press, 1957.
             </li>
           </ol>
 
