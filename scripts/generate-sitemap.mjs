@@ -56,6 +56,7 @@ const articles = [
   { path: "/blog/formation-habitudes-cerveau-neurosciences/",        file: "src/articles/FormationHabitudes.tsx" },
   { path: "/blog/concentration-profonde-deep-work-neurosciences/",   file: "src/articles/ConcentrationProfonde.tsx" },
   { path: "/blog/biais-cognitifs-liste-psychologie/",                file: "src/articles/BiaisCognitifs.tsx" },
+  { path: "/blog/dissonance-cognitive-definition-exemples/",         file: "src/articles/DissonanceCognitive.tsx" },
   { path: "/blog/anxiete-mecanismes-neurologiques-solutions-scientifiques/", file: "src/articles/AnxieteMecanismes.tsx" },
   { path: "/blog/burn-out-signaux-neurobiologiques-recuperation/", file: "src/articles/BurnOut.tsx" },
   { path: "/blog/meditation-effets-cerveau/",                       file: "src/articles/MeditationEffetsCerveau.tsx" },

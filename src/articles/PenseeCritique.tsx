@@ -284,7 +284,7 @@ export default function PenseeCritique() {
             C'est le premier malentendu à lever. Être intelligent ne protège pas des erreurs de jugement. Le psychologue Keith Stanovich (University of Toronto, Canada) a forgé un mot pour ce décalage : la <strong>dysrationalité</strong>, soit l'incapacité à penser rationnellement malgré une intelligence suffisante. On peut avoir un QI élevé et tomber en plein dans ses biais.
           </p>
           <p>
-            L'image utile : le QI, c'est la puissance du moteur ; la pensée critique, c'est la qualité de la conduite. Un moteur puissant mal conduit finit dans le fossé. C'est pourquoi des experts brillants défendent parfois des idées fausses avec une belle assurance : leur intelligence sert à mieux justifier leurs erreurs, pas à les corriger.
+            L'image utile : le QI, c'est la puissance du moteur ; la pensée critique, c'est la qualité de la conduite. Un moteur puissant mal conduit finit dans le fossé. C'est pourquoi des experts brillants défendent parfois des idées fausses avec une belle assurance : leur intelligence sert à mieux justifier leurs erreurs, pas à les corriger. C'est le mécanisme de la <Link to="/blog/dissonance-cognitive-definition-exemples/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">dissonance cognitive</Link> : quand l'acte est posé, le raisonnement se met à son service au lieu de l'examiner.
           </p>
 
           <h3>Trois choses distinctes : raisonner mieux, détecter le faux, résister à ses biais</h3>

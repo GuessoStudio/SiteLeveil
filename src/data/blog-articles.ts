@@ -400,5 +400,16 @@ export const articles: ArticleData[] = [
         image: "/images/articles/guide-communication-interpersonnelle-cover",
         slug: "guide-communication-interpersonnelle",
         featured: true
+    },
+    {
+        id: 37,
+        title: "Dissonance cognitive : définition, mécanisme et exemples concrets",
+        excerpt: "Dissonance cognitive : définition claire, ce qui se passe dans la tête, 5 exemples du quotidien et les 4 façons dont le cerveau fait taire le malaise.",
+        category: "Psychologie",
+        readTime: 12,
+        date: "2026-08-07",
+        image: "/images/articles/dissonance-cognitive-definition-exemples-cover",
+        slug: "dissonance-cognitive-definition-exemples",
+        featured: false
     }
 ];

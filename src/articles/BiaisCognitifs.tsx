@@ -474,7 +474,7 @@ export default function BiaisCognitifs() {
           </p>
 
           <p>
-            Le mécanisme opère en permanence à petite échelle. Un fumeur informé des risques se persuade qu'il fume moins que les autres. Quelqu'un qui vient d'acheter une voiture chère lui découvre soudain toutes les qualités. Plus l'engagement a coûté cher, plus la justification est vigoureuse. Pour le contrer, méfiez-vous des raisons qui apparaissent après la décision et jamais avant. Ce sont rarement des raisons : ce sont des réparations.
+            Le mécanisme opère en permanence à petite échelle, au point de mériter <Link to="/blog/dissonance-cognitive-definition-exemples/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">son propre article détaillé</Link>. Un fumeur informé des risques se persuade qu'il fume moins que les autres. Quelqu'un qui vient d'acheter une voiture chère lui découvre soudain toutes les qualités. Plus l'engagement a coûté cher, plus la justification est vigoureuse. Pour le contrer, méfiez-vous des raisons qui apparaissent après la décision et jamais avant. Ce sont rarement des raisons : ce sont des réparations.
           </p>
 
 

@@ -39,6 +39,7 @@ export const articlesBySlug: Record<string, LazyExoticComponent<ComponentType>> 
   "formation-habitudes-cerveau-neurosciences": lazy(() => import("../articles/FormationHabitudes")),
   "concentration-profonde-deep-work-neurosciences": lazy(() => import("../articles/ConcentrationProfonde")),
   "biais-cognitifs-liste-psychologie": lazy(() => import("../articles/BiaisCognitifs")),
+  "dissonance-cognitive-definition-exemples": lazy(() => import("../articles/DissonanceCognitive")),
   "anxiete-mecanismes-neurologiques-solutions-scientifiques": lazy(() => import("../articles/AnxieteMecanismes")),
   "burn-out-signaux-neurobiologiques-recuperation": lazy(() => import("../articles/BurnOut")),
   "meditation-effets-cerveau": lazy(() => import("../articles/MeditationEffetsCerveau")),

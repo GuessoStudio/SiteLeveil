@@ -32,6 +32,7 @@ const ARTICLE_SLUGS = [
   'formation-habitudes-cerveau-neurosciences',
   'concentration-profonde-deep-work-neurosciences',
   'biais-cognitifs-liste-psychologie',
+  'dissonance-cognitive-definition-exemples',
   'anxiete-mecanismes-neurologiques-solutions-scientifiques',
   'burn-out-signaux-neurobiologiques-recuperation',
   'meditation-effets-cerveau',
