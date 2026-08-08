@@ -296,4 +296,36 @@ Les deux articles de la Phase 1 ont été retravaillés et déployés le **5 ao�
 ### Phase 5 — Non bloquant
 - [ ] CSP : migrer `unsafe-inline`/`unsafe-eval` vers des nonces
 - [ ] Vérifier le rendu SSR du lien vers `/calculateur-sommeil/` sur `/ressources/`
-- [ ] Comprendre pourquoi la page d'accueil a 100% de rebond sur son trafic organique
+- [x] ~~Comprendre pourquoi la page d'accueil a 100% de rebond~~ → **question close le 7 août 2026, voir ci-dessous**
+
+#### ✅ Page d'accueil : le 100 % de rebond n'est pas un problème technique
+
+Diagnostic mené au navigateur réel (agent-browser, desktop 1440px et iPhone 14) :
+
+| Mesure | Desktop | Mobile |
+|---|---|---|
+| TTFB | 12,5 ms | 8,6 ms |
+| FCP / LCP | 844 ms | 628 ms |
+| **CLS** | **0** | **0** |
+
+**Trois hypothèses écartées par la mesure** : le CLS est nul (aucun décalage de mise en page), les performances sont excellentes, et GA4 fonctionne parfaitement (requête `page_view` en 204, `seg=1` observé sur les envois suivants). Le rendu mobile est impeccable, capture à l'appui.
+
+**Conclusion : sur 4 sessions organiques, 100 % de rebond et 0 % d'engagement relèvent du bruit statistique.** Quatre visiteurs ne constituent pas un signal. Ne pas y consacrer d'effort supplémentaire tant que le volume n'a pas augmenté.
+
+#### 🔧 Découverte annexe : l'hydratation React est cassée
+
+Le seul vrai défaut trouvé, sans lien avec le rebond :
+
+| Page | Erreurs React |
+|---|---|
+| Accueil desktop | 24 (#418 ×22, #423 ×2) |
+| **Accueil mobile** | **65 (#418 ×60, #423 ×5)** |
+| `/blog/` | 28 |
+| `/a-propos/` | 14 |
+| Article dissonance cognitive | 1 |
+
+`#423` signifie que React **jette le HTML pré-généré et refait le rendu côté client**. Le SSG est produit correctement puis partiellement gâché au chargement. Le volume d'erreurs **dépend du viewport** (24 desktop contre 65 mobile sur la même page), ce qui est la piste principale.
+
+Déjà éliminés par vérification du code : `ThemeContext` (correct), `useInView` (bascule seulement des classes CSS), `srcSet` des ArticleCard (chaînes statiques), `new Date()` de `DailyQuote` (dans un `useEffect`).
+
+**Priorité basse** : aucun impact SEO (le HTML servi à Google est complet et correct) ni sur les Core Web Vitals (excellents). Trouver le composant fautif exige un build SSG non minifié — `npm run dev` ne reproduit pas le problème, Vite servant une SPA client sans SSR.
