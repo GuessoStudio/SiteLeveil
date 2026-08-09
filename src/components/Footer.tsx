@@ -19,7 +19,7 @@ const socialItems = [
   { href: 'https://www.facebook.com/profile.php?id=61572902135677', ariaLabel: 'Facebook', tooltip: 'Facebook', icon: <Facebook size={20} />, color: '#1877F2' },
   { href: 'https://x.com/leveilmental', ariaLabel: 'X / Twitter', tooltip: 'X', icon: <XIcon />, color: '#000000' },
   { href: 'https://www.tiktok.com/@leveil_mental', ariaLabel: 'TikTok', tooltip: 'TikTok', icon: <TikTokIcon />, color: '#010101' },
-  { href: 'mailto:leveilmental@gmail.com', ariaLabel: 'Email', tooltip: 'Email', icon: <Mail size={20} />, color: '#C9953A' },
+  { href: 'mailto:contact@leveilmental.fr', ariaLabel: 'Email', tooltip: 'Email', icon: <Mail size={20} />, color: '#C9953A' },
 ]
 
 const Footer = () => {

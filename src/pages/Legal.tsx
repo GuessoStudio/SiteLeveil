@@ -72,7 +72,7 @@ const Legal = () => {
                     <div className="space-y-2">
                       <p><strong>Nom :</strong> Guesso</p>
                       <p><strong>Nature :</strong> Site personnel / Blog éducatif</p>
-                      <p><strong>Email :</strong> <a href="mailto:leveilmental@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline">leveilmental@gmail.com</a></p>
+                      <p><strong>Email :</strong> <a href="mailto:contact@leveilmental.fr" className="text-indigo-600 dark:text-indigo-400 hover:underline">contact@leveilmental.fr</a></p>
                     </div>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-4 italic">
                       L'Éveil Mental est un projet personnel dédié au partage de connaissances en psychologie et neurosciences.

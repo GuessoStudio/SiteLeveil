@@ -204,10 +204,10 @@ const HydroMindPrivacy: React.FC = () => {
                                     </strong>{' '}
                                     Vous pouvez demander une copie complète de vos données au format JSON en contactant{' '}
                                     <a
-                                        href="mailto:leveilmental@gmail.com"
+                                        href="mailto:contact@leveilmental.fr"
                                         className="text-blue-600 dark:text-blue-400 hover:underline"
                                     >
-                                        leveilmental@gmail.com
+                                        contact@leveilmental.fr
                                     </a>
                                     . Nous vous fournirons le fichier sous 30 jours maximum.
                                 </li>
@@ -235,10 +235,10 @@ const HydroMindPrivacy: React.FC = () => {
                                     vous êtes parent ou tuteur légal et découvrez que votre enfant de moins de 13 ans
                                     utilise l'application, contactez-nous immédiatement à{' '}
                                     <a
-                                        href="mailto:leveilmental@gmail.com"
+                                        href="mailto:contact@leveilmental.fr"
                                         className="text-blue-600 dark:text-blue-400 hover:underline"
                                     >
-                                        leveilmental@gmail.com
+                                        contact@leveilmental.fr
                                     </a>{' '}
                                     pour que nous supprimions son compte.
                                 </li>
@@ -266,10 +266,10 @@ const HydroMindPrivacy: React.FC = () => {
                                 <p className="text-neutral-900 dark:text-white font-semibold">
                                     📧 Email :{' '}
                                     <a
-                                        href="mailto:leveilmental@gmail.com"
+                                        href="mailto:contact@leveilmental.fr"
                                         className="text-blue-600 dark:text-blue-400 hover:underline"
                                     >
-                                        leveilmental@gmail.com
+                                        contact@leveilmental.fr
                                     </a>
                                 </p>
                                 <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">

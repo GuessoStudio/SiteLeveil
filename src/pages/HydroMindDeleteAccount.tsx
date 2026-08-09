@@ -93,10 +93,10 @@ const HydroMindDeleteAccount: React.FC = () => {
                                     <>
                                         Envoyez un email à{' '}
                                         <a
-                                            href="mailto:leveilmental@gmail.com?subject=Suppression%20de%20compte%20HydroMind"
+                                            href="mailto:contact@leveilmental.fr?subject=Suppression%20de%20compte%20HydroMind"
                                             className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
                                         >
-                                            leveilmental@gmail.com
+                                            contact@leveilmental.fr
                                         </a>
                                     </>,
                                     <>Objet : <strong>Suppression de compte HydroMind</strong></>,
@@ -114,7 +114,7 @@ const HydroMindDeleteAccount: React.FC = () => {
                             </ol>
                             <div className="mt-5">
                                 <a
-                                    href="mailto:leveilmental@gmail.com?subject=Suppression%20de%20compte%20HydroMind"
+                                    href="mailto:contact@leveilmental.fr?subject=Suppression%20de%20compte%20HydroMind"
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
                                 >
                                     <span>✉️</span>
@@ -198,10 +198,10 @@ const HydroMindDeleteAccount: React.FC = () => {
                                 <p className="text-neutral-900 dark:text-white font-semibold">
                                     📧 Email :{' '}
                                     <a
-                                        href="mailto:leveilmental@gmail.com"
+                                        href="mailto:contact@leveilmental.fr"
                                         className="text-blue-600 dark:text-blue-400 hover:underline"
                                     >
-                                        leveilmental@gmail.com
+                                        contact@leveilmental.fr
                                     </a>
                                 </p>
                                 <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">

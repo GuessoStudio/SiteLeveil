@@ -35,11 +35,11 @@ const Contact = () => {
               La manière la plus simple et rapide de me joindre. Je lis personnellement chaque email et réponds sous 24-48h.
             </p>
             <a
-              href="mailto:leveilmental@gmail.com?subject=Contact depuis leveilmental.fr"
+              href="mailto:contact@leveilmental.fr?subject=Contact depuis leveilmental.fr"
               className="inline-flex items-center gap-3 bg-sand-50 text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-50 transition-all transform hover:scale-105 shadow-lg"
             >
               <Mail className="w-6 h-6" />
-              leveilmental@gmail.com
+              contact@leveilmental.fr
             </a>
             <p className="text-indigo-200 text-sm mt-6">
               Cliquez pour ouvrir votre application email
