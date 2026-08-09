@@ -65,7 +65,7 @@ const faqData = [
   },
   {
     question: "Y a-t-il des limites au mindset de croissance ?",
-    answer: "Oui. Goran et Jiang (Temple University, 2025) montrent que face à une forte accumulation d'événements stressants, l'effet du growth mindset sur la satisfaction de vie s'atténue. La méta-analyse de Macnamara et Burgoyne (2023) confirme aussi un effet faible sur les notes scolaires. Le mindset de croissance est réel — mais pas une solution universelle."
+    answer: "Oui. Rahma Goran et Xu Jiang (2025) montrent que face à une accumulation d'événements stressants, l'effet du mindset de croissance sur la satisfaction de vie s'atténue. La méta-analyse de Macnamara et Burgoyne (2023) confirme aussi un effet faible sur les notes scolaires. Le mindset de croissance est réel — mais pas une solution universelle."
   },
   {
     question: "Quel est le lien entre mindset de croissance et neuroplasticité ?",
@@ -318,7 +318,7 @@ export default function MindsetDeCroissance() {
             Elle a formalisé deux positions opposées. Le <strong>mindset fixe</strong> — ou fixed mindset : la conviction que l'intelligence est innée, stable, et qu'on ne peut pas vraiment la changer. Le <strong>mindset de croissance</strong> : la conviction que l'intelligence est malléable, qu'elle se développe par l'effort, les bonnes stratégies et l'apprentissage.
           </p>
           <p>
-            Ces deux positions ne sont pas conscientes. Ce sont des "théories implicites" — des croyances automatiques qui pilotent les comportements sans qu'on s'en rende compte, à la manière des <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">biais cognitifs qui déforment nos jugements</Link>. C'est précisément pourquoi elles ont autant d'impact.
+            Ces deux positions ne sont pas conscientes. Ce sont des croyances automatiques, qui pilotent les comportements sans qu'on s'en rende compte. Elles fonctionnent comme les <Link to="/blog/biais-cognitifs-liste-psychologie/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">biais cognitifs qui déforment nos jugements</Link>. C'est précisément pour ça qu'elles pèsent autant.
           </p>
 
           <h3>L'expérience fondatrice — l'éloge qui fragilise</h3>
@@ -343,13 +343,17 @@ export default function MindsetDeCroissance() {
 
           <h3>Les erreurs vues par le cerveau — l'étude EEG de Jason Moser</h3>
           <p>
-            Le psychologue Jason Moser (Michigan State University, États-Unis) s'est posé une question simple : est-ce que les personnes à mindset de croissance traitent vraiment les erreurs différemment dans leur cerveau ? Pour le savoir, son équipe a placé des électrodes sur la tête de 25 participants pendant qu'ils réalisaient une tâche cognitive.
+            Le psychologue Jason Moser (Michigan State University, États-Unis) s'est posé une question simple. Les personnes à mindset de croissance traitent-elles vraiment les erreurs différemment dans leur cerveau ? Pour le savoir, son équipe a placé des électrodes sur la tête de 25 participants pendant une tâche cognitive.
           </p>
           <p>
-            Les chercheurs mesurent deux signaux électriques précis. Le premier, appelé ERN (Error-Related Negativity), est une réaction automatique que tout le monde produit dans les 100 millisecondes après une erreur — le cerveau la détecte avant même qu'on en soit conscient. Le second, appelé Pe (Error Positivity), est différent : il reflète l'attention consciente qu'on accorde à l'erreur après l'avoir faite.
+            Les chercheurs mesurent deux signaux électriques. Le premier est une alarme automatique : le cerveau repère l'erreur en un dixième de seconde, avant même qu'on en ait conscience. Le second arrive juste après. C'est celui de l'attention volontaire, le moment où l'on se penche sur ce qui vient de rater. C'est ce second signal qui intéressait Moser.
           </p>
           <p>
-            Résultat : les personnes à mindset de croissance montraient une activité Pe nettement plus forte. En clair — leur cerveau allouait plus d'attention à l'erreur pour en tirer des informations utiles. Et elles faisaient effectivement moins d'erreurs par la suite. Note : cette étude pilote portait sur 25 participants — des travaux ultérieurs ont confirmé la direction de l'effet sur des échantillons plus larges.
+            Résultat : les personnes à mindset de croissance montraient une réaction d'attention nettement plus forte après l'erreur. Autrement dit, leur cerveau s'y attardait davantage pour en tirer quelque chose. Et elles faisaient effectivement moins d'erreurs ensuite.
+          </p>
+
+          <p>
+            Une précision honnête s'impose ici, car elle change la lecture. Cette étude portait sur 25 participants seulement. Et surtout, une équipe menée par Janssen a repris la question en 2021 avec une méthode plus stricte. En corrigeant un chevauchement technique entre deux signaux du cerveau, la différence entre les deux mindsets disparaît. Leur article s'intitule d'ailleurs <em>Back to the drawing board ?</em>, ce qui résume bien leur conclusion. Le mécanisme cérébral reste donc une piste, pas une preuve établie.
           </p>
 
           {/* StatBlock 2 — indigo */}
@@ -369,7 +373,7 @@ export default function MindsetDeCroissance() {
 
           <h3>Le cortex cingulaire antérieur et le cortex préfrontal</h3>
           <p>
-            Deux structures cérébrales jouent un rôle central dans ce phénomène. Le <strong>cortex cingulaire antérieur</strong> — une zone située à l'avant du cerveau, entre les deux hémisphères — est le système de détection des erreurs du cerveau. Il génère ce signal ERN automatique quelques millisecondes après chaque faute.
+            Deux structures cérébrales jouent un rôle central. La première est le <strong>cortex cingulaire antérieur</strong>, une zone située à l'avant du cerveau, entre les deux hémisphères. C'est le détecteur d'erreurs. Il déclenche l'alarme automatique quelques millisecondes après chaque faute, sans qu'on ait rien demandé.
           </p>
           <p>
             Le <strong>cortex préfrontal</strong> — la zone la plus "récente" du cerveau en termes d'évolution, juste derrière le front — décide ensuite quoi faire de cette information. Planifier une correction ? Changer de stratégie ? Abandonner ? Cette décision est influencée directement par le mindset.
@@ -384,7 +388,7 @@ export default function MindsetDeCroissance() {
           {/* H2 — Méta-analyse */}
           <h2>Le growth mindset fonctionne-t-il vraiment ? Ce que dit la méta-analyse</h2>
           <p>
-            C'est l'angle que la plupart des articles de vulgarisation évitent — et c'est précisément celui qui est le plus utile. En 2023, Brooke Macnamara et Alexander Burgoyne (Case Western Reserve University et Georgia Institute of Technology, États-Unis) ont publié dans le <em>Psychological Bulletin</em> la méta-analyse la plus rigoureuse jamais réalisée sur les interventions growth mindset. Résultat : l'image est plus nuancée que ce que les partisans du concept laissent entendre.
+            C'est l'angle que la plupart des articles de vulgarisation évitent, et c'est justement le plus utile. En 2023, Brooke Macnamara et Alexander Burgoyne (Case Western Reserve University et Georgia Institute of Technology, États-Unis) ont rassemblé toutes les études sérieuses sur le sujet pour les analyser ensemble. C'est ce qu'on appelle une méta-analyse. La leur, publiée dans le <em>Psychological Bulletin</em>, est la plus rigoureuse à ce jour. Son résultat est plus nuancé que ce que les partisans du concept laissent entendre.
           </p>
 
           {/* StatBlock 3 — indigo */}
@@ -404,10 +408,10 @@ export default function MindsetDeCroissance() {
 
           <h3>Ce que la méta-analyse dit vraiment</h3>
           <p>
-            Un effet de d=0,05 sur la performance scolaire est statistiquement réel, mais très faible. En langage concret : si tu prends deux groupes d'élèves identiques et que tu donnes une intervention growth mindset à l'un, la différence de notes sera à peine perceptible dans la plupart des cas.
+            L'effet sur les notes existe, mais il est très faible. Concrètement : prends deux groupes d'élèves identiques, fais travailler l'un sur son mindset, et la différence de résultats sera à peine perceptible. Le constat repose sur près de 100 000 élèves, ce qui le rend difficile à contester.
           </p>
           <p>
-            Mais l'histoire ne s'arrête pas là. Macnamara et Burgoyne identifient des conditions modératrices importantes. Les effets sont plus forts : pour les élèves issus de milieux socio-économiques défavorisés, dans les contextes à risque élevé (précarité, discriminations), et quand l'intervention est fidèlement mise en oeuvre par des enseignants formés. La qualité de l'implémentation compte autant que le contenu.
+            Mais l'histoire ne s'arrête pas là. Les deux chercheurs repèrent des situations où l'effet est nettement plus fort. C'est le cas chez les élèves de milieux défavorisés, dans les contextes de précarité ou de discrimination, et quand des enseignants formés appliquent vraiment la méthode. La façon dont on met la chose en pratique compte donc autant que le contenu lui-même.
           </p>
           <p>
             Et les effets sur le <em>bien-être psychologique</em> — mesurés par Wang W. et al. sur 1 142 adolescents en 2025 — sont nettement plus robustes que sur les notes. Le mindset de croissance semble aider davantage à persévérer et à se sentir mieux qu'à produire des performances scolaires immédiates.
@@ -415,13 +419,13 @@ export default function MindsetDeCroissance() {
 
           <h3>La limite sous pression intense — l'étude de 2025</h3>
           <p>
-            Laila Goran et Yong Jiang (Temple University, Pennsylvanie, États-Unis) ont publié en 2025 dans la revue <em>Healthcare</em> une étude sur un angle rarement exploré : que se passe-t-il quand le stress est chroniquement élevé ?
+            Rahma Goran et Xu Jiang ont publié en 2025, dans la revue <em>Healthcare</em>, une étude sur un angle rarement exploré. Que se passe-t-il quand le stress reste élevé en permanence ?
           </p>
           <p>
-            Résultat : face à une accumulation d'événements stressants importants, l'effet direct du growth mindset sur la satisfaction de vie s'atténue de façon mesurable. Ce n'est pas que le mindset de croissance ne fonctionne plus — c'est que la pression intense mobilise tellement de ressources cognitives qu'elle laisse peu de place pour activer les bénéfices de cette croyance.
+            Résultat : quand les événements stressants s'accumulent, l'effet du mindset de croissance sur la satisfaction de vie s'atténue nettement. Ce n'est pas qu'il cesse de fonctionner. C'est que la pression mobilise tellement de ressources mentales qu'il ne reste plus grand-chose pour en tirer parti.
           </p>
           <p>
-            Ce résultat est important pour ne pas tomber dans un piège courant : penser que si les résultats ne viennent pas, c'est que la personne "n'a pas assez le bon mindset". Parfois, l'environnement — le stress, la précarité, les discriminations — est l'obstacle principal. Le mindset de croissance est un levier réel, mais pas dans n'importe quelle condition.
+            Ce résultat évite un piège courant. Celui de penser que si les résultats ne viennent pas, c'est que la personne n'a pas assez travaillé son mindset. Parfois, l'environnement — le stress, la précarité, les discriminations — est l'obstacle principal. Le mindset de croissance est un levier réel, mais pas dans n'importe quelle condition.
           </p>
 
           {/* H2 — Techniques */}
@@ -446,7 +450,7 @@ export default function MindsetDeCroissance() {
             Une fois par semaine, prends dix minutes pour noter une erreur ou un échec de la semaine. Pas pour te flageller — pour extraire l'information. Deux questions suffisent : qu'est-ce qui s'est passé exactement ? Et qu'est-ce que j'en apprends pour la prochaine fois ?
           </p>
           <p>
-            Cette pratique systématise le signal Pe que Moser a observé dans le cerveau des personnes à growth mindset : accorder de l'attention consciente à l'erreur après l'avoir faite. Sur le papier, l'effet est identique : tu encodes l'erreur comme une source d'information plutôt qu'une menace identitaire.
+            Cette pratique reproduit volontairement ce que Moser observait dans le cerveau : s'attarder consciemment sur l'erreur au lieu de la fuir. Que le mécanisme cérébral soit confirmé ou non, le principe reste valable. Tu traites l'erreur comme une information plutôt que comme un verdict sur toi-même.
           </p>
 
           <h3>3. Valoriser le processus, pas le résultat</h3>
@@ -454,7 +458,7 @@ export default function MindsetDeCroissance() {
             Dans tes conversations avec toi-même et avec les autres, orienter l'attention vers l'effort, la méthode, la progression — pas vers le résultat final. "J'ai mis en place une nouvelle approche" plutôt que "j'ai réussi". "Tu as bien persévéré" plutôt que "tu es fort".
           </p>
           <p>
-            Ce changement de focalisation crée une résistance plus grande face aux inévitables mauvais résultats. Si ton identité est liée à ta méthode plutôt qu'à tes résultats, un échec ne remet pas en question ton identité entière. C'est exactement pourquoi la façon de <Link to="/blog/objectifs-smart-methode-neurosciences/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">fixer ses objectifs SMART selon les neurosciences</Link> compte autant : un objectif vécu comme un défi d'apprentissage protège l'estime de soi mieux qu'une cible tout ou rien.
+            Ce changement de focalisation crée une résistance plus grande face aux inévitables mauvais résultats. Si ton identité est liée à ta méthode plutôt qu'à tes résultats, un échec ne remet pas en question ton identité entière. C'est exactement pourquoi la façon de <Link to="/blog/objectifs-smart-methode-neurosciences/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">fixer ses objectifs SMART selon les neurosciences</Link> compte autant : un objectif vécu comme un défi d'apprentissage protège mieux l'estime de soi. Une cible en tout ou rien, elle, expose à l'échec sec.
           </p>
 
           <h3>4. Chercher le feedback difficile</h3>
@@ -482,7 +486,7 @@ export default function MindsetDeCroissance() {
             Le mindset fixe est un terrain fertile pour deux phénomènes psychologiques bien documentés. Les comprendre ensemble permet de mieux agir sur chacun.
           </p>
           <p>
-            Le <Link to="/blog/syndrome-imposteur-solutions/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">syndrome de l'imposteur — cette conviction persistante de ne pas mériter ses succès</Link> — est alimenté directement par la croyance que l'intelligence est fixe. Si tu penses que le talent est inné, chaque réussite soulève une question : "est-ce que j'ai vraiment ce talent, ou est-ce que les gens vont finir par voir que non ?" L'imposteur et le mindset fixe partagent la même peur fondamentale : être "démasqué".
+            Le <Link to="/blog/syndrome-imposteur-solutions/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">syndrome de l'imposteur — cette conviction persistante de ne pas mériter ses succès</Link> — est alimenté directement par la croyance que l'intelligence est fixe. Si tu penses que le talent est inné, chaque réussite soulève la même question. Ai-je vraiment ce talent, ou les autres vont-ils finir par voir que non ? Le syndrome de l'imposteur et le mindset fixe partagent cette peur : celle d'être démasqué.
           </p>
           <p>
             La procrastination suit le même mécanisme. Quand on a un mindset fixe, commencer une tâche difficile comporte un risque réel : découvrir qu'on n'est "pas assez intelligent" pour la réussir. L'évitement devient alors une stratégie de protection identitaire. Si je ne commence pas, je ne peux pas échouer. Ce schéma est au coeur de ce que la recherche a documenté sur <Link to="/blog/procrastination-cerveau-agir-neurosciences/" className="text-violet-600 dark:text-violet-400 underline underline-offset-2">la procrastination vue par les neurosciences</Link>.
@@ -496,10 +500,10 @@ export default function MindsetDeCroissance() {
           <div className="not-prose my-6 bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg border border-neutral-200 dark:border-neutral-700">
             <ul className="space-y-2 text-sm text-neutral-800 dark:text-neutral-200">
               <li>✅ <strong>Deux croyances opposées :</strong> mindset fixe (intelligence innée, figée) vs mindset de croissance (intelligence malléable, développable par l'effort) — Dweck, Stanford, 30 ans de recherche</li>
-              <li>✅ <strong>Preuve neurologique :</strong> les personnes à growth mindset montrent une activité cérébrale Pe plus forte après une erreur — leur cerveau alloue plus d'attention à l'apprentissage — Moser et al., Michigan State, 2011</li>
+              <li>⚠️ <strong>Piste neurologique, pas preuve :</strong> Moser (Michigan State, 2011) observait une attention cérébrale accrue après l'erreur chez les mindsets de croissance, mais Janssen (2021) ne retrouve plus cette différence avec une méthode plus stricte</li>
               <li>✅ <strong>Bien-être documenté :</strong> le growth mindset prédit le bien-être psychologique via la persévérance et l'engagement — lien fort confirmé sur 1 142 adolescents — Wang W. et al., BMC Psychology, 2025</li>
               <li>⚠️ <strong>Limites réelles :</strong> effet faible sur les notes scolaires (d=0,05 après correction du biais, 97 672 élèves) — plus fort pour les populations défavorisées et quand l'intervention est bien mise en oeuvre — Macnamara &amp; Burgoyne, 2023</li>
-              <li>⚠️ <strong>Sous forte pression :</strong> face à une accumulation d'événements stressants, l'effet direct s'atténue — le mindset de croissance n'est pas une solution universelle — Goran &amp; Jiang, Temple University, 2025</li>
+              <li>⚠️ <strong>Sous forte pression :</strong> quand les événements stressants s'accumulent, l'effet s'atténue nettement. Le mindset de croissance n'est pas une solution universelle (Goran et Jiang, 2025)</li>
               <li>🔑 <strong>Commencer par :</strong> ajouter "encore" à chaque limite que tu t'imposes ("je ne suis pas encore capable de X") — la pratique la plus simple et la mieux documentée pour démarrer le changement</li>
             </ul>
           </div>
@@ -546,13 +550,16 @@ export default function MindsetDeCroissance() {
               [4] Moser J.S., Schroder H.S., Heeter C., Moran T.P., Lee Y.H. — <em>Mind your errors: Evidence for a neural mechanism linking growth mindset to adaptive post-error adjustments</em> — <em>Psychological Science</em>, 22(12), 1484-1489, 2011 — DOI : <a href="https://doi.org/10.1177/0956797611419520" className="underline" target="_blank" rel="noopener noreferrer">10.1177/0956797611419520</a>
             </li>
             <li>
-              [5] Macnamara B.N., Burgoyne A.P. — <em>Do growth mindset interventions impact students' academic achievement? A systematic review and meta-analysis with recommendations for best practices</em> — <em>Psychological Bulletin</em>, 149(3-4), 133-173, 2023 — DOI : <a href="https://doi.org/10.1037/bul0000352" className="underline" target="_blank" rel="noopener noreferrer">10.1037/bul0000352</a>
+              [5] Janssen L. et al. — <em>Neural correlates of error-monitoring and mindset: Back to the drawing board?</em> — <em>PLOS ONE</em>, 16(7), 2021 — DOI : <a href="https://doi.org/10.1371/journal.pone.0254322" className="underline" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0254322</a>
             </li>
             <li>
-              [6] Wang W., Liu X., Zhang Y., Li C. — <em>The influence of growth mindset on psychological well-being among college students: The mediating roles of grit and academic engagement</em> — <em>BMC Psychology</em>, 13, 467, nov. 2025 — DOI : <a href="https://doi.org/10.1186/s40359-025-03609-9" className="underline" target="_blank" rel="noopener noreferrer">10.1186/s40359-025-03609-9</a>
+              [6] Macnamara B.N., Burgoyne A.P. — <em>Do growth mindset interventions impact students' academic achievement? A systematic review and meta-analysis with recommendations for best practices</em> — <em>Psychological Bulletin</em>, 149(3-4), 133-173, 2023 — DOI : <a href="https://doi.org/10.1037/bul0000352" className="underline" target="_blank" rel="noopener noreferrer">10.1037/bul0000352</a>
             </li>
             <li>
-              [7] Goran L., Jiang Y. — <em>Growth mindset, stress, and life satisfaction: A moderated mediation model</em> — <em>Healthcare (Basel)</em>, 13(22), 2985, 2025 — DOI : <a href="https://doi.org/10.3390/healthcare13222985" className="underline" target="_blank" rel="noopener noreferrer">10.3390/healthcare13222985</a>
+              [7] Wang W. et al. — <em>The relationship between growth mindset and adolescent psychological well-being: the parallel mediating roles of grit and learning engagement</em> — <em>BMC Psychology</em>, 2025 — DOI : <a href="https://doi.org/10.1186/s40359-025-03609-9" className="underline" target="_blank" rel="noopener noreferrer">10.1186/s40359-025-03609-9</a>
+            </li>
+            <li>
+              [8] Goran R.F., Jiang X. — <em>From growth mindsets to life satisfaction: Examining the role of cognitive reappraisal and stressful life events</em> — <em>Healthcare (Basel)</em>, 13(22), 2985, 2025 — DOI : <a href="https://doi.org/10.3390/healthcare13222985" className="underline" target="_blank" rel="noopener noreferrer">10.3390/healthcare13222985</a>
             </li>
           </ol>
 
