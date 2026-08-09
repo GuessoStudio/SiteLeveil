@@ -212,31 +212,16 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 - [ ] Lier les 4 pages "plancher" depuis leurs voisines de cluster
 - [ ] Harmoniser `jobTitle` (virgule, pas tiret) et dates ISO 8601 sur tout le corpus
 
-#### 🔧 À FAIRE — `mindset-de-croissance-psychologie-dweck` (identifié le 7 août 2026)
+#### ✅ FAIT — `mindset-de-croissance-psychologie-dweck` (corrigé le 9 août 2026)
 
-**1. Corriger le titre de la source [6]** — priorité, c'est le seul point de crédibilité.
-Le titre cité ne correspond pas à l'étude réellement publiée :
+Quatre erreurs de sourçage corrigées, toutes vérifiées indépendamment :
 
-- ❌ actuel : *"The influence of growth mindset on psychological well-being among **college students**: The mediating roles of grit and **academic** engagement"*
-- ✅ réel : *"The relationship between growth mindset and **adolescent** psychological well-being: the parallel mediating roles of grit and **learning** engagement"*
+1. **Moser (2011)** : l'article affirmait que des travaux ultérieurs avaient *confirmé* le résultat EEG. C'était l'inverse. Janssen et al. (2021), *Back to the drawing board?*, ne retrouvent plus la différence après correction du chevauchement stimulus-réponse. Passage réécrit en « piste, pas preuve », nuance reprise dans « À retenir », étude ajoutée en source.
+2. **Wang et al.** : titre cité faux (« college students » au lieu d'« adolescent »).
+3. **Goran & Jiang** : prénoms inventés (Laila et Yong au lieu de Rahma F. et Xu), titre faux, affiliation Temple University jamais vérifiée et donc retirée.
+4. **Vulgarisation** : plus aucune phrase au-dessus de 30 mots (la plus longue en faisait 45), `d=0,05` traduit en langage courant, « théories implicites », ERN et Pe expliqués ou retirés, méta-analyse définie à sa première apparition.
 
-Le corps de l'article dit correctement "1 142 adolescents", mais la bibliographie parle d'étudiants. DOI `10.1186/s40359-025-03609-9` valide. Vérifier au passage le volume/pages annoncés (`13, 467`), non confirmés.
-
-**1 bis. Corriger aussi la source [7] Goran & Jiang** — trois erreurs, repérées le 7 août :
-- Initiales fausses : "Goran L., Jiang Y." → les auteurs réels sont **Rahma F. Goran** et **Xu Jiang**
-- Titre faux : *"Growth mindset, stress, and life satisfaction: A moderated mediation model"* → le vrai titre est *"From growth mindsets to life satisfaction: Examining the role of cognitive reappraisal and stressful life events"*
-- L'affiliation "Temple University" citée dans la FAQ n'est **pas vérifiée**
-
-Le DOI et le fond (l'effet s'atténue sous stress) sont corrects, seule la référence est mal rédigée.
-
-**2. Vulgarisation façon BDNF** — sur 43 paragraphes du corps :
-- 10 contiennent une phrase de plus de 30 mots
-- 14 contiennent du jargon non expliqué : ERN, Pe, méta-analyse, biais de publication, médiation modérée, grit, réévaluation cognitive
-- 32 tirets longs à remplacer
-
-**3. Nuance à ajouter sur Moser (2011)** — le résultat sur l'onde Pe serait contesté par Janssen et al. (2021), qui ne retrouvent plus la différence après correction du chevauchement stimulus-réponse. **Non vérifié à ce jour** : vérifier avant d'écrire quoi que ce soit.
-
-**Alertes de fact-check écartées après vérification** (ne pas y revenir) : le β=0,66 signalé n'existe pas dans l'article, et le DOI Goran & Jiang `10.3390/healthcare13222985` est valide (*Healthcare* 2025, 13, 2985, Rahma F. Goran et Xu Jiang). La mention "Illinois avant Columbia" est déjà présente ligne 315.
+Alertes du fact-check externe écartées après vérification : le β=0,66 signalé n'existait pas dans l'article, et le DOI Goran & Jiang est valide.
 
 ### Phase 3 bis — Choix des sujets (à appliquer dès le prochain article)
 Plusieurs articles rankent excellemment sur des termes sans volume (`routine-matinale` position 5,6 pour 28 impressions, `methode-acr` 5,3 pour 12, `confiance-en-soi` 5,9 pour 30). Le problème est en amont de l'écriture.
