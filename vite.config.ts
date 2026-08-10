@@ -99,14 +99,23 @@ export default defineConfig(({ isSsrBuild }) => ({
       // ce swap, TOUTES les pages servent le title + description génériques du template
       // index.html à Googlebot → signaux de duplication massifs sur ~50 URLs
       // (GSC « Explorée, non indexée » + « Page en double sans URL canonique »).
-      // Le composant SEO émet un marqueur ssg:title par page ; og:description (hors
-      // Helmet) porte déjà la description par page. On recopie les deux dans le <head>
-      // du template, puis on retire le marqueur.
-      const titleMatch = html.match(/<meta name="ssg:title" content="([^"]*)"\s*\/?>/)
-      if (titleMatch) {
-        html = html
-          .replace(/<title>[^<]*<\/title>/, () => `<title>${titleMatch[1]}</title>`)
-          .replace(titleMatch[0], '')
+      //
+      // ⚠️ RÈGLE : ne lire ici que des balises qui RESTENT dans le HTML, jamais en
+      // retirer une. Ce hook s'exécute après le rendu React ; toute balise supprimée
+      // décale le DOM par rapport à l'arbre que React réhydrate → hydratation en échec
+      // et bascule de la racine entière en rendu client. C'est précisément ce que
+      // faisait l'ancien marqueur <meta name="ssg:title">, recopié PUIS supprimé.
+      //
+      // On reconstruit donc le <title> depuis og:title, qui reste en place. Le suffixe
+      // reproduit `pageTitle` de SEO.tsx : `${title} • ${SITE_NAME}`, sauf sur la home
+      // (prop isHome, passée uniquement par src/pages/Home.tsx — donc route '/').
+      // og:description porte déjà la description par page.
+      const SITE_NAME = "L'Éveil Mental" // doit rester synchronisé avec SEO.tsx
+      const isHome = route === '/' || route === ''
+      const ogTitleMatch = html.match(/property="og:title" content="([^"]*)"/)
+      if (ogTitleMatch) {
+        const pageTitle = isHome ? ogTitleMatch[1] : `${ogTitleMatch[1]} • ${SITE_NAME}`
+        html = html.replace(/<title>[^<]*<\/title>/, () => `<title>${pageTitle}</title>`)
       }
       const descMatch = html.match(/property="og:description" content="([^"]*)"/)
       if (descMatch) {

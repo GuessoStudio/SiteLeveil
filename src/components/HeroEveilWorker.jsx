@@ -213,80 +213,14 @@ export default function HeroEveilWorker() {
       className="relative w-full overflow-hidden font-body hero-root"
       style={{ backgroundColor: "#0d0500" }}
     >
-      {/* dangerouslySetInnerHTML : evite que React n'echappe les quotes (') en
-          &#x27; dans le contenu du <style>. Un <style> est un "raw text element"
-          (les entites n'y sont pas decodees), donc l'echappement casserait le CSS
-          cote parsing critique (Beasties/postcss au build SSG). */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        .font-display { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
-        .font-body { font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif; }
-        .ts-soft { text-shadow: 0 1px 8px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5); }
-        .ts-strong { text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.6); }
-        .btn-primary { box-shadow: 0 4px 28px -8px rgba(201, 149, 58, 0.6); }
-        .btn-primary:hover { box-shadow: 0 8px 40px -8px rgba(201, 149, 58, 0.95); }
-        .focus-ring:focus { outline: none; }
-        .focus-ring:focus-visible {
-          outline: 3px solid #C9953A;
-          outline-offset: 4px;
-        }
-
-        /* Layout responsive en CSS (pas en JS) : le pre-rendu SSG et le client
-           rendent le meme HTML, le bon layout est choisi par le viewport reel.
-           Evite la bascule desktop->mobile a l'hydratation (cause du CLS).
-           Breakpoint mobile = <1024px (base) ; desktop = >=1024px (.lg). */
-        .hero-root { height: 100svh; min-height: 600px; }
-        .hero-overlay { background: radial-gradient(ellipse 80% 50% at 50% 32%, transparent 0%, rgba(13,5,0,0.5) 100%); }
-        .hero-inner { align-items: flex-end; justify-content: center; padding-left: clamp(1.5rem,6vw,2rem); padding-right: clamp(1.5rem,6vw,2rem); padding-bottom: 4rem; padding-top: 58vh; }
-        .hero-text { max-width: calc(100vw - 3rem); text-align: center; }
-        .hero-wordwrap { display: flex; justify-content: center; }
-        .hero-word { display: inline-block; }
-        .hero-rotating { right: 0; text-align: center; }
-        .hero-para { margin-left: auto; margin-right: auto; }
-        .hero-btns { align-items: center; justify-content: center; }
-        .hero-scroll { display: none; }
-        @media (min-width: 1024px) {
-          .hero-root { height: 100vh; min-height: 100vh; }
-          .hero-overlay { background: radial-gradient(ellipse 70% 60% at 78% 50%, transparent 0%, rgba(13,5,0,0.5) 100%); }
-          .hero-inner { align-items: center; justify-content: flex-start; padding-left: clamp(1.5rem,6vw,8rem); padding-right: clamp(1.5rem,8vw,10rem); padding-bottom: 0; padding-top: 0; }
-          .hero-text { max-width: min(50rem, calc(100vw - 3rem)); text-align: left; }
-          .hero-wordwrap { display: block; }
-          .hero-word { display: block; }
-          .hero-rotating { right: auto; text-align: left; }
-          .hero-para { margin-left: 0; margin-right: 0; }
-          .hero-btns { align-items: stretch; justify-content: flex-start; }
-          .hero-scroll { display: flex; }
-        }
-
-        /* Animations d'entrée en CSS (remplacent framer-motion). Les éléments
-           critiques LCP (h1, mot rotatif, paragraphes) n'ont AUCUNE animation
-           d'entrée : ils sont peints immédiatement. Seuls le badge et les boutons
-           font un léger fondu montant. */
-        @keyframes heroFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-        .hero-anim-badge { animation: heroFadeUp 0.6s ease-out 0.4s both; }
-        .hero-anim-btns  { animation: heroFadeUp 0.6s ease-out 0.7s both; }
-
-        /* Mot rotatif : 2 couches (entrante + sortante) qui glissent verticalement,
-           rendu très proche du ressort framer d'origine. overflow:hidden clippe. */
-        @keyframes heroWordIn  { from { opacity: 0; transform: translateY(80%); }  to { opacity: 1; transform: translateY(0); } }
-        @keyframes heroWordOut { from { opacity: 1; transform: translateY(0); }    to { opacity: 0; transform: translateY(-80%); } }
-        .hero-word-in  { animation: heroWordIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
-        .hero-word-out { animation: heroWordOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) both; }
-
-        /* Indicateur de scroll (desktop only) : boucle CSS remplaçant framer. */
-        @keyframes heroScrollDot {
-          0%   { transform: translateY(0) scale(1.4); box-shadow: 0 0 16px rgba(201,149,58,1); }
-          10%  { transform: translateY(0) scale(1);   box-shadow: 0 0 10px rgba(201,149,58,0.8); }
-          60%  { transform: translateY(40px) scale(1); box-shadow: 0 0 10px rgba(201,149,58,0.8); }
-          100% { transform: translateY(0) scale(1);   box-shadow: 0 0 10px rgba(201,149,58,0.8); }
-        }
-        .hero-scroll-dot { animation: heroScrollDot 3.2s ease-in-out infinite; }
-
-        @media (prefers-reduced-motion: reduce) {
-          * { transition-duration: 0.01ms !important; }
-          .hero-anim-badge, .hero-anim-btns,
-          .hero-word-in, .hero-word-out, .hero-scroll-dot { animation: none !important; }
-        }
-      ` }} />
+      {/* Le CSS du hero vit dans src/index.css (section HERO).
+          Ne PAS le remettre en <style> inline ici : beasties (critical CSS,
+          lance par vite-react-ssg au SSG) absorbe les <style> du body dans le
+          <head>. Le HTML servi perdait donc l'element que React attend a cet
+          endroit -> "Expected server HTML to contain a matching <style> in
+          <div>" -> hydratation en echec et bascule de la racine en rendu
+          client. Depuis index.css, beasties inline le critique dans le <head>
+          sans rien retirer de l'arbre React. */}
 
       <div className="absolute inset-0 z-0" style={{ backgroundColor: "#0d0500" }} />
 

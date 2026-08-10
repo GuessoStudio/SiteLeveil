@@ -31,7 +31,17 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const isActive = (path: string) => location.pathname === path
+  // Comparaison insensible au slash final — sinon hydratation en échec.
+  // Au pré-rendu SSG, react-router voit `/a-propos` ; dans le navigateur, l'URL
+  // servie par Netlify (dirStyle nested) est `/a-propos/`. Une égalité stricte
+  // rendait donc le lien actif côté client seulement : le <div> conditionnel de
+  // la barre active n'existait que d'un côté → « Expected server HTML to contain
+  // a matching <div> » → la racine entière repassait en rendu client sur toutes
+  // les pages listées dans la navigation (/blog/, /a-propos/, /ressources/…).
+  // La home n'était pas touchée ('/' identique des deux côtés), ni les articles
+  // (aucune entrée de nav ne correspond à leur URL).
+  const stripSlash = (p: string) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p)
+  const isActive = (path: string) => stripSlash(location.pathname) === stripSlash(path)
 
   return (
     <>

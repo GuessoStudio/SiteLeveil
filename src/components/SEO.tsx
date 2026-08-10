@@ -175,10 +175,13 @@ export default function SEO({
     <>
     {/* Balises rendues hors Helmet — sérialisées correctement par vite-react-ssg.
         react-helmet-async ne propage pas les bonnes props pendant le build SSG. */}
-    {/* Marqueur title pour le SSG : <title> ne peut pas être rendu dans le body,
-        onPageRendered (vite.config.ts) recopie ce contenu dans le <title> du head
-        puis retire le marqueur. Sans ça, toutes les pages servent le title du template. */}
-    <meta name="ssg:title" content={pageTitle} />
+    {/* ⚠️ Ne JAMAIS ajouter ici une balise que le build retire ensuite du HTML.
+        Un marqueur <meta name="ssg:title"> vivait à cet emplacement et était
+        supprimé par onPageRendered (vite.config.ts) après le rendu React. Le HTML
+        servi n'avait donc plus le 1er enfant que React attendait → « Expected server
+        HTML to contain a matching <meta> in <div> » → hydratation en échec, et la
+        racine entière repassait en rendu client sur TOUTES les pages du site.
+        Le <title> du SSG se reconstruit désormais depuis og:title, qui reste en place. */}
     <link rel="canonical" href={url} />
     {/* robots hors Helmet : rendu dans Helmet, la balise n'était pas sérialisée
         au SSG, donc un noindex demandé par une page n'atteignait jamais Google. */}
