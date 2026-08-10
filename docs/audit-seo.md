@@ -297,20 +297,28 @@ Diagnostic mené au navigateur réel (agent-browser, desktop 1440px et iPhone 14
 
 **Conclusion : sur 4 sessions organiques, 100 % de rebond et 0 % d'engagement relèvent du bruit statistique.** Quatre visiteurs ne constituent pas un signal. Ne pas y consacrer d'effort supplémentaire tant que le volume n'a pas augmenté.
 
-#### 🔧 Découverte annexe : l'hydratation React est cassée
+#### ✅ Découverte annexe : l'hydratation React était cassée (corrigé le 9 août 2026, commit 5cc0b39)
 
-Le seul vrai défaut trouvé, sans lien avec le rebond :
+Le seul vrai défaut trouvé, sans lien avec le rebond. React jetait le HTML pré-généré pour refaire le rendu côté client (`#423`) sur la quasi-totalité du site : le bénéfice du SSG sur la peinture initiale était annulé.
 
-| Page | Erreurs React |
-|---|---|
-| Accueil desktop | 24 (#418 ×22, #423 ×2) |
-| **Accueil mobile** | **65 (#418 ×60, #423 ×5)** |
-| `/blog/` | 28 |
-| `/a-propos/` | 14 |
-| Article dissonance cognitive | 1 |
+| Page | Avant | Après |
+|---|---|---|
+| Accueil desktop | 24 (#418 ×22, #423 ×2) | **0** |
+| Accueil mobile | 65 (#418 ×60, #423 ×5) | **0** |
+| `/blog/` | 28 | **0** |
+| `/a-propos/` | 14 | **0** |
+| Article | 1 | **0** |
 
-`#423` signifie que React **jette le HTML pré-généré et refait le rendu côté client**. Le SSG est produit correctement puis partiellement gâché au chargement. Le volume d'erreurs **dépend du viewport** (24 desktop contre 65 mobile sur la même page), ce qui est la piste principale.
+Également vérifiés à 0 : `/ressources/`, `/contact/`, `/methodologie/`, `/calculateur-sommeil/`.
 
-Déjà éliminés par vérification du code : `ThemeContext` (correct), `useInView` (bascule seulement des classes CSS), `srcSet` des ArticleCard (chaînes statiques), `new Date()` de `DailyQuote` (dans un `useEffect`).
+**Trois causes, dont deux relèvent du même piège : modifier le HTML APRÈS le rendu React.**
 
-**Priorité basse** : aucun impact SEO (le HTML servi à Google est complet et correct) ni sur les Core Web Vitals (excellents). Trouver le composant fautif exige un build SSG non minifié — `npm run dev` ne reproduit pas le problème, Vite servant une SPA client sans SSR.
+1. **Marqueur `ssg:title`** (toutes les pages). `SEO.tsx` le rendait en premier enfant de son fragment ; `onPageRendered` le recopiait dans le `<title>` puis **le supprimait du HTML**. React attendait un `<meta>` là où le HTML servi commençait par un `<link>`. Le `<title>` se reconstruit désormais depuis `og:title`, qui reste en place. Les 62 titres et descriptions générés sont inchangés, vérifié par comparaison avant/après.
+2. **`<style>` inline du hero** (accueil). `beasties`, qui produit le CSS critique au SSG, absorbait cet élément dans le `<head>`. Les 51 règles sont passées dans `src/index.css`, en fin de fichier donc après `@layer utilities` : même priorité qu'avant.
+3. **Slash final du lien de nav actif** (`/blog/`, `/a-propos/`, `/ressources/`, `/contact/`, `/methodologie/`). `Header.tsx` comparait `location.pathname` à la lettre : au pré-rendu react-router voit `/a-propos`, le navigateur reçoit `/a-propos/` de Netlify. Le `<div>` conditionnel de la barre active n'existait donc que côté client. Effet de bord positif : `aria-current="page"` est enfin présent dès le HTML pré-rendu, il en était absent.
+
+La piste « ça dépend du viewport » suivie jusqu'ici était **trompeuse** : le volume d'erreurs variait avec la largeur, mais aucune des trois causes n'était liée au viewport. C'était un artefact du nombre d'éléments rendus.
+
+**Règle à retenir** : ne jamais retirer du HTML une balise présente dans l'arbre React, et ne mettre aucun `<style>` inline dans un composant. Le CSS va dans `index.css`, beasties en inline le critique tout seul.
+
+**Méthode de diagnostic réutilisable** : `npm run dev` ne reproduit rien (Vite y sert une SPA client sans SSR). Deux approches ont fonctionné, via Chrome piloté en CDP : (a) `npx vite-react-ssg build --mode development` pour obtenir les messages React en clair — attention, le flag `--outDir` est ignoré et `dist` est écrasé ; (b) plus rapide et sans rebuild, comparer la séquence de balises du HTML servi à celle du DOM après hydratation — le premier écart désigne le composant fautif.
