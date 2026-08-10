@@ -201,10 +201,23 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 - [ ] Ajouter la dissonance cognitive comme 13e biais
 - [ ] Ajouter un bloc "articles connexes" structuré + obtenir les 5-7 liens entrants identifiés depuis les articles du cluster
 
-**`surmonter-rejet-social`** — déjà position 8,9 / CTR 4,6 %, donc consolidation et non sauvetage :
-- [ ] Ajouter Quick Answer Block + 3 StatBlocks + section "À retenir" (Template V2 complet)
-- [x] ~~Créer une image de couverture~~ — **erreur de l'audit** : `rejet-social-cover.webp` existe et répond en 200 en production. Rien à faire.
-- [ ] Corriger dates JSON-LD en ISO 8601 complet
+#### ✅ FAIT — `surmonter-rejet-social` (10 août 2026, commit 5a622d4)
+
+Page déjà position 8,9 / CTR 4,6 %, donc consolidation et non sauvetage. Mais le fact-check a trouvé bien plus qu'un manque de blocs.
+
+**Correction factuelle majeure.** L'article répétait, en intro, en FAQ et dans l'encadré de synthèse, que le rejet active « exactement les mêmes zones cérébrales que la douleur physique » et que le cerveau « ne fait aucune distinction » entre être frappé et être rejeté. Cette affirmation repose sur Eisenberger (UCLA, *Science*, 2003), étude fondatrice mais menée sur **13 participants**. En 2020, Mwilambwe-Tshilobo & Spreng (McGill) ont réanalysé **53 études / 1 817 participants** : aucune activation fiable du cortex cingulaire antérieur dorsal, moins d'une étude sur sept y trouvant un pic. Ce qui ressort de façon fiable, ce sont les régions de la rumination.
+
+L'article ne bascule pas dans l'inverse pour autant : le mécanisme partagé reste établi au niveau **comportemental et pharmacologique** (DeWall et al., 2010 : trois semaines de paracétamol font baisser la douleur sociale rapportée, un placebo non). C'est cet argument qui remplace la localisation cérébrale contestée.
+
+Le bloc « statistique hero » annonçait un vague « l'ostracisme au travail est fréquent / de nombreux employés », sans chiffre ni source vérifiable. Remplacé par Zadro, Williams & Richardson (2004).
+
+**Template V2 appliqué** : Quick Answer ajouté, 3 StatBlocks sourcés là où il n'y en avait **aucun**, « À retenir » promu en H2 et rectifié, 4 H2 sur 6 reformulés en questions directes, signal de fraîcheur, dates ISO 8601, 9 sources numérotées avec DOI contre 6 sans aucun lien.
+
+**Deux incohérences que l'audit n'avait pas vues** : `wordCount` annonçait 4200 pour 2616 mots réels (corrigé à 2600), `readingTime` 14 min pour ~12 min réelles. Même famille d'erreur que neuroplasticité (3500 annoncés / 2762 réels) — à vérifier systématiquement sur les autres articles.
+
+**Erreur de l'audit corrigée** : l'image de couverture n'était pas absente, `rejet-social-cover.webp` existe et répond en 200.
+
+**Reste ouvert, décision éditoriale** : à 2 616 mots l'article est court pour son sujet et sa position. L'étoffer est un chantier séparé, non entrepris. complet
 
 ### Phase 3 — Dette de contenu généralisée (1 mois)
 - [ ] Auditer les ~15-20 autres articles pour détecter d'autres survivants pré-Template V2
