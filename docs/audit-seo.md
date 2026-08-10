@@ -31,7 +31,7 @@ Site jeune mais en croissance nette (3 399 impressions / 88 clics / 90j, CTR 2,5
 1. Corriger les 3 liens footer (5 min, `Footer.tsx`)
 2. `_redirects` : `200` → `404` sur la règle catch-all (5 min)
 3. Régénérer `llms.txt` avec les 15 articles manquants
-4. Ajouter une image de couverture à `surmonter-rejet-social` (actuellement 0 image — violation directe de la règle WebP + alt 80 car.)
+4. ~~Ajouter une image de couverture à `surmonter-rejet-social`~~ — **erreur de l'audit**, l'image existe (vérifié le 10 août 2026)
 5. Retitrer `biais-cognitifs-liste-psychologie` pour faire apparaître "définition" avant "liste" (fix SXO à fort effet, ~15 min)
 
 ---
@@ -203,7 +203,7 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 
 **`surmonter-rejet-social`** — déjà position 8,9 / CTR 4,6 %, donc consolidation et non sauvetage :
 - [ ] Ajouter Quick Answer Block + 3 StatBlocks + section "À retenir" (Template V2 complet)
-- [ ] Créer et intégrer une image de couverture (actuellement absente)
+- [x] ~~Créer une image de couverture~~ — **erreur de l'audit** : `rejet-social-cover.webp` existe et répond en 200 en production. Rien à faire.
 - [ ] Corriger dates JSON-LD en ISO 8601 complet
 
 ### Phase 3 — Dette de contenu généralisée (1 mois)
@@ -234,32 +234,23 @@ Plusieurs articles rankent excellemment sur des termes sans volume (`routine-mat
 - [ ] Automatiser la génération de `llms.txt` depuis `blog-articles.ts`
 - [ ] Resserrer les réponses FAQ trop longues (jusqu'à 93 mots) vers la cible 40-60 mots
 
-### ⏰ Suivi en cours — vérification d'indexation entre le 8 et le 11 août 2026
+### ✅ Vérification d'indexation faite le 10 août 2026
 
-**Phase 0 déployée le 3 août 2026** (merge `fix/seo-phase-0` → `main`, commit `e666caf`).
-**Indexation demandée manuellement dans Search Console le 4 août 2026** pour 4 URLs.
+**Phase 0 déployée le 3 août 2026** (`e666caf`), indexation demandée manuellement le 4 août. Résultat mesuré via l'API d'inspection d'URL :
 
-Compter 4 à 7 jours de recrawl, puis vérifier via l'API d'inspection d'URL (statut quasi en direct, contrairement au rapport "Indexation des pages" qui a 2-3 jours de retard) :
-
-```bash
-SCRIPTS="/c/Users/sofie/.claude/plugins/cache/agricidaniel-seo/claude-seo/1.9.6/scripts"
-py "$SCRIPTS/gsc_inspect.py" --batch urls.txt --site-url "https://leveilmental.fr/" --json
-```
-
-⚠️ La propriété est de type **préfixe URL** (`https://leveilmental.fr/`), pas `sc-domain:`.
-
-| URL | État avant correction | Attendu |
+| URL | État au 3 août | État au 10 août |
 |---|---|---|
-| `/contact/` | Explorée, non indexée | passe indexée |
-| `/calculateur-sommeil/` | Découverte, non indexée | passe indexée |
-| `/test-personnalite-big-five/` | indexée, titre générique | titre corrigé |
-| `/neuro-journal/` | — | indexée |
-| `/hydromind/privacy-policy/` | indexée malgré `noindex` demandé | sort de l'index |
-| Rapport "Page avec redirection" | 8 pages (3 → 8 depuis mai) | cesse de grimper |
+| `/contact/` | Explorée, non indexée | ✅ **Submitted and indexed** |
+| `/calculateur-sommeil/` | Découverte, non indexée | ✅ **Submitted and indexed** |
+| `/test-personnalite-big-five/` | indexée | ✅ reste indexée |
+| `/neuro-journal/` | — | ✅ indexée |
+| `/hydromind/privacy-policy/` | indexée malgré noindex | ⏳ toujours indexée |
 
-**Ne pas chercher à ramener "Page avec redirection" à zéro** : une URL sans slash final redirigera toujours vers la version avec slash, c'est le comportement normal. Le rapport est informatif, les versions canoniques sont bien indexées. Relancer la validation GSC échouera (c'est ce qui s'est produit le 25/07). Ce qui compte est qu'aucun lien interne n'y pointe plus, désormais garanti par `npm run validate:links`.
+**La Phase 0 a produit l'effet attendu.** Les deux pages bloquées sont passées à l'index en moins d'une semaine.
 
-**Si `/contact/` et `/calculateur-sommeil/` sont toujours non indexées après le 11 août**, le titre générique n'était pas la seule cause : creuser côté qualité de contenu (pages jugées trop pauvres pour mériter l'index).
+Le cas `hydromind` n'est pas un défaut : le `noindex` est correctement servi en production (vérifié en HTTP) et l'URL ne figure plus dans le sitemap. Google ne l'a simplement **pas recrawlée depuis le 20 mai 2026**. Elle sortira au prochain passage. Pour accélérer : demander l'indexation de cette URL dans Search Console, ce qui déclenche un recrawl qui verra le `noindex`.
+
+**Canonical : rien à corriger.** Le composant SEO rend `rel=canonical` dans le `<body>` et non le `<head>`, ce qui aurait pu être un problème. Vérification faite : Google détecte le bon canonical sur toutes les pages testées (`google_canonical` = `user_canonical`). Googlebot exécute le JS et react-helmet-async injecte la balise dans le `<head>` au rendu. Ne pas y consacrer d'effort.
 
 ### ⏰ Second point de mesure — vers le 19 août 2026 (effet de la Phase 1)
 
