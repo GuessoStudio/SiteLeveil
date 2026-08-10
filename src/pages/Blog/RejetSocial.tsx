@@ -5,21 +5,23 @@ import SEO from "../../components/SEO";
 const meta = {
     slug: "surmonter-rejet-social",
     title: "Rejet social : ce que les neurosciences révèlent sur la douleur sociale (et comment reprogrammer le cerveau)",
-    description: "Découvrez les mécanismes neuroscientifiques du rejet social (amygdale, cortex préfrontal) et 7 stratégies issues d'approches validées (TCC, pleine conscience, etc.) pour mieux réguler la douleur sociale. Les résultats varient selon les personnes et l'intensité de la pratique.",
+    description: "Le rejet social fait-il vraiment mal comme une blessure ? Ce que montrent les neurosciences en 2026, ce que la recherche récente nuance, et 7 stratégies validées pour mieux réguler la douleur sociale.",
     cover: "/images/articles/rejet-social-cover.webp",
-    datePublished: "2024-01-15",
-    dateModified: "2025-12-17",
+    datePublished: "2024-01-15T08:00:00+01:00",
+    dateModified: "2026-08-10T08:00:00+02:00",
     tags: ["rejet social", "neurosciences", "amygdale", "neuroplasticité"],
     author: { name: "Guesso" },
     category: "Neurosciences",
-    readingTime: "14 min",
+    readingTime: "12 min",
+    version: "2.0",
+    verifiedDate: "Août 2026",
 };
 
 // FAQ Data extracted for cleanliness
 const faqData = [
     {
         question: "Le rejet social est-il vraiment comparable à la douleur physique ?",
-        answer: "Oui. Les études par IRMf d'Eisenberger (2003) démontrent que l'insula antérieure dorsale et le cortex cingulaire antérieur dorsal — les mêmes régions activées par la douleur physique — s'activent lors de l'exclusion sociale. Le cerveau ne fait pas de distinction entre douleur sociale et douleur physique."
+        answer: "En partie. Un antidouleur courant, le paracétamol, réduit la douleur du rejet : DeWall et son équipe l'ont montré en 2010 sur trois semaines. Il existe donc bien un mécanisme commun. En revanche, l'idée que le cerveau activerait exactement les mêmes zones vient d'une étude de 2003 sur 13 personnes, que la réanalyse de 53 études publiée en 2020 ne confirme pas."
     },
     {
         question: "Combien de temps faut-il pour se remettre d'un rejet social ?",
@@ -117,7 +119,7 @@ export default function RejetSocial() {
         keywords: meta.tags.join(", "),
         inLanguage: "fr-FR",
         articleSection: meta.category,
-        wordCount: 4200
+        wordCount: 2600
     };
 
     // 5. BreadcrumbList (4 niveaux)
@@ -258,7 +260,44 @@ export default function RejetSocial() {
                             </span>
                         ))}
                     </div>
+                    {/* Signal de fraîcheur (GEO) */}
+                    <div className="text-xs text-neutral-500 dark:text-neutral-500 mt-6">
+                        Version {meta.version} — {meta.verifiedDate} | Sources vérifiées août 2026
+                    </div>
                 </header>
+
+                {/* QUICK ANSWER BLOCK — dans les 200 premiers mots */}
+                <div className="not-prose my-8 bg-emerald-50 dark:bg-emerald-950/30 p-6 rounded-lg border-l-4 border-emerald-500">
+                    <p className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide mb-2">Réponse rapide</p>
+                    <p className="text-emerald-800 dark:text-emerald-200 text-sm leading-relaxed">
+                        <strong>En bref :</strong> le rejet social provoque une souffrance réelle et mesurable,
+                        pas une simple contrariété. Un antidouleur courant réduit d'ailleurs cette souffrance,
+                        preuve d'un mécanisme partagé avec la douleur physique. En revanche, l'idée répandue que
+                        le cerveau activerait « exactement les mêmes zones » est aujourd'hui contestée : la plus
+                        grande analyse disponible ne retrouve pas ce résultat.
+                    </p>
+                    <p className="text-emerald-700 dark:text-emerald-300 text-xs mt-2">
+                        <strong>Sources :</strong> Eisenberger, UCLA, <em>Science</em>, 2003 ; DeWall et al., <em>Psychological Science</em>, 2010 ;
+                        Mwilambwe-Tshilobo &amp; Spreng, <em>NeuroImage</em>, 2020.
+                    </p>
+                </div>
+
+                {/* StatBlock — la méta-analyse qui nuance le consensus */}
+                <div className="not-prose my-6 bg-teal-50 dark:bg-teal-950/30 p-5 rounded-lg border border-teal-200 dark:border-teal-800">
+                    <div className="flex items-start gap-4">
+                        <div className="text-3xl font-black text-teal-600 dark:text-teal-400 leading-none">1&nbsp;817</div>
+                        <div>
+                            <p className="text-sm font-semibold text-teal-900 dark:text-teal-100">
+                                participants, répartis sur 53 études, ont été réanalysés ensemble en 2020. Résultat :
+                                aucune activation fiable de la zone cérébrale de la douleur physique lors d'une exclusion sociale.
+                                Moins d'une étude sur sept y trouvait un pic d'activité.
+                            </p>
+                            <p className="text-xs text-teal-600 dark:text-teal-400 mt-1">
+                                Mwilambwe-Tshilobo L. &amp; Spreng R.N., McGill University, <em>NeuroImage</em>, 2020 — DOI : 10.1016/j.neuroimage.2020.117666
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 {/* ============================================ */}
                 {/* STATISTIQUE HERO VISUELLE (ULTRA SAFE) */}
@@ -268,14 +307,15 @@ export default function RejetSocial() {
                     <div className="absolute inset-0 opacity-20 bg-[url('/images/noise.png')]"></div> {/* Texture noise optionnelle */}
                     <div className="relative p-8 md:p-12 text-white text-center">
                         <div className="text-2xl md:text-4xl font-bold mb-6 font-serif tracking-wide">
-                            "L'ostracisme au travail est fréquent"
+                            Être exclu par un ordinateur suffit à faire mal
                         </div>
                         <p className="text-lg md:text-xl mb-6 font-light max-w-2xl mx-auto opacity-90">
-                            De nombreux employés rapportent en avoir déjà fait l'expérience,
-                            avec des impacts mesurables sur la santé mentale et les performances.
+                            Des participants à qui on avait dit clairement qu'ils jouaient contre une machine,
+                            et non contre des humains, ont quand même vu chuter leur sentiment d'appartenance,
+                            de contrôle et leur estime de soi. Le cerveau réagit avant de raisonner.
                         </p>
                         <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-xs md:text-sm font-medium tracking-wider uppercase">
-                            Études sur l'ostracisme organisationnel (Williams, 2007)
+                            Zadro, Williams &amp; Richardson, 2004
                         </div>
                     </div>
                 </div>
@@ -285,24 +325,39 @@ export default function RejetSocial() {
                 {/* ============================================ */}
                 <p className="lead text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light mb-8">
                     Ce regard détourné dans l'open space. Cette invitation de groupe dont vous êtes exclu.
-                    Ces messages laissés sans réponse. Le rejet social n'est pas "juste dans votre tête" —
-                    c'est une réponse neurobiologique mesurable qui active les <strong className="font-semibold text-rose-600 dark:text-rose-400">mêmes circuits cérébraux que la douleur physique</strong>.
+                    Ces messages laissés sans réponse. Le rejet social n'est pas "juste dans votre tête" :
+                    c'est une <strong className="font-semibold text-rose-600 dark:text-rose-400">réponse biologique mesurable</strong>,
+                    que le corps traite comme une véritable blessure.
                 </p>
 
                 <p>
-                    En 2003, la neuroscientifique <strong>Naomi Eisenberger</strong> de UCLA a scanné le cerveau de personnes
-                    subissant une exclusion sociale. Résultat stupéfiant : l'insula antérieure dorsale et
-                    le cortex cingulaire antérieur — les régions de la <em>douleur physique</em> —
-                    s'illuminaient exactement comme lors d'une brûlure ou d'un choc. Le cerveau ne fait
-                    littéralement <strong>aucune distinction</strong> entre être frappé et être rejeté.
+                    La preuve la plus frappante ne vient pas d'un scanner, mais d'une boîte de médicaments.
+                    En 2010, une équipe menée par <strong>Nathan DeWall</strong> (University of Kentucky, États-Unis)
+                    a donné du paracétamol à des volontaires pendant trois semaines. Un simple antidouleur,
+                    celui qu'on prend pour un mal de tête. Chaque soir, ils notaient à quel point ils s'étaient
+                    sentis blessés dans leurs relations. Chez ceux qui prenaient le médicament, cette souffrance
+                    a diminué. Pas chez ceux qui recevaient un placebo.
                 </p>
 
                 <p>
-                    Dans cet article basé sur un corpus de recherches en neurosciences et psychologie,
-                    vous allez découvrir les mécanismes cérébraux exacts du rejet social, et surtout
-                    les <strong>7 stratégies issues d'approches validées</strong> pour reprogrammer ces circuits.
-                    La neuroplasticité permet des changements progressifs selon les protocoles validés
-                    et l'intensité de la pratique.
+                    Autrement dit : la douleur du rejet répond à un antidouleur. Il y a donc bien quelque chose
+                    de commun entre les deux souffrances.
+                </p>
+
+                <p>
+                    Reste une nuance que la plupart des articles sur le sujet passent sous silence, et elle est
+                    importante. On lit partout que le rejet activerait <em>exactement</em> les mêmes zones du
+                    cerveau qu'une brûlure. Cette idée vient d'une étude de 2003 devenue célèbre. Elle portait
+                    sur <strong>13 personnes</strong>. En 2020, deux chercheurs de l'université McGill ont
+                    rassemblé 53 études sur la question, soit 1 817 participants, et n'ont pas retrouvé ce
+                    résultat. Le mécanisme partagé existe, mais sa localisation précise dans le cerveau reste
+                    une question ouverte.
+                </p>
+
+                <p>
+                    Cet article part de ce que la recherche établit vraiment, puis présente
+                    <strong> 7 stratégies issues d'approches validées</strong> pour mieux réguler cette douleur.
+                    Les résultats varient selon les personnes et l'intensité de la pratique.
                 </p>
 
                 {/* ============================================ */}
@@ -315,11 +370,11 @@ export default function RejetSocial() {
                     <ol className="space-y-4">
                         {[
                             { id: "#definition", title: "Qu'est-ce que le rejet social : définition neuroscientifique" },
-                            { id: "#mecanismes", title: "Les mécanismes cérébraux du rejet social" },
-                            { id: "#types", title: "Les différentes formes de rejet social" },
-                            { id: "#consequences", title: "Impact du rejet sur le cerveau et le corps" },
+                            { id: "#mecanismes", title: "Que se passe-t-il dans le cerveau lors d'un rejet ?" },
+                            { id: "#types", title: "Quelles sont les différentes formes de rejet social ?" },
+                            { id: "#consequences", title: "Quelles conséquences le rejet a-t-il sur la santé ?" },
                             { id: "#strategies", title: "Les 7 stratégies issues d'approches validées" },
-                            { id: "#neuroplasticite", title: "Neuroplasticité et espoir : la croissance post-traumatique" },
+                            { id: "#neuroplasticite", title: "Peut-on se reconstruire après un rejet ?" },
                             { id: "#faq", title: "Questions fréquentes" }
                         ].map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3 group">
@@ -364,18 +419,25 @@ export default function RejetSocial() {
                 </h2>
 
                 <p>
-                    Le rejet social est l'expérience d'être exclu, ignoré ou marginalisé par un groupe social.
-                    Cette exclusion active <strong>l'insula antérieure dorsale et le cortex cingulaire antérieur
-                        dorsal</strong>, les mêmes régions cérébrales impliquées dans la douleur physique. Le cerveau
-                    traite le rejet social comme une menace à la survie.
+                    Le rejet social, c'est l'expérience d'être exclu, ignoré ou mis à l'écart par un groupe.
+                    Le cerveau le traite comme une menace pour la survie, pas comme une simple contrariété.
+                    Et cette souffrance se mesure.
                 </p>
 
                 <p>
-                    Cette découverte révolutionnaire provient des travaux de <strong>Naomi Eisenberger</strong>
-                    (UCLA) et <strong>Matthew Lieberman</strong> publiés dans <em>Science</em> en 2003.
-                    Leur étude par imagerie cérébrale fonctionnelle (IRMf) a démontré que lorsque des participants
-                    étaient exclus d'un jeu informatique simple, les mêmes zones s'activaient que lors d'une
-                    douleur thermique appliquée sur leur bras.
+                    La démonstration la plus nette tient en une expérience simple. En 2010, l'équipe de
+                    <strong> Nathan DeWall</strong> (University of Kentucky, États-Unis) a donné du paracétamol
+                    à des volontaires pendant trois semaines. Leur sentiment d'être blessé dans leurs relations
+                    a baissé. Le groupe placebo n'a rien vu changer. Un antidouleur ordinaire agit donc sur
+                    la douleur sociale.
+                </p>
+
+                <p>
+                    L'origine de cette idée remonte à 2003 et aux travaux de <strong>Naomi Eisenberger</strong>
+                    et <strong>Matthew Lieberman</strong> (UCLA), publiés dans <em>Science</em>. Leur scanner
+                    montrait que l'exclusion allumait les régions associées à la douleur physique. Prudence
+                    toutefois : ils avaient étudié 13 personnes, et une réanalyse de 53 études parue en 2020
+                    n'a pas confirmé ce point précis (voir plus bas).
                 </p>
 
                 <h3>Le besoin d'appartenance : un impératif évolutif</h3>
@@ -428,7 +490,7 @@ export default function RejetSocial() {
                 {/* H2 #2 : MÉCANISMES NEUROSCIENTIFIQUES */}
                 {/* ============================================ */}
                 <h2 id="mecanismes" className="text-2xl md:text-3xl font-bold mt-16 mb-8 text-neutral-900 dark:text-white flex items-center gap-3">
-                    <span className="text-rose-600">2.</span> Les mécanismes cérébraux
+                    <span className="text-rose-600">2.</span> Que se passe-t-il dans le cerveau lors d'un rejet ?
                 </h2>
 
                 <p>
@@ -497,20 +559,32 @@ export default function RejetSocial() {
                     cette zone déclenche un <em>stress anticipatoire</em> — même en l'absence de menace réelle.
                 </p>
 
-                <h3>L'insula antérieure : la zone de la "douleur sociale"</h3>
+                <h3>La "douleur sociale" : ce qui est établi et ce qui ne l'est pas</h3>
 
                 <p>
-                    L'<strong>insula antérieure dorsale</strong> est une région fascinante : elle traite à la fois
-                    la douleur physique ET la douleur sociale. C'est cette région qui explique pourquoi
-                    le rejet "fait <em>littéralement</em> mal".
+                    C'est le point le plus mal expliqué du sujet, et il mérite qu'on prenne le temps.
+                    En 2003, <strong>Naomi Eisenberger</strong> (UCLA, États-Unis) a fait jouer des volontaires
+                    à un jeu de balle virtuel appelé Cyberball. Au bout d'un moment, les autres joueurs cessaient
+                    de leur envoyer la balle. Pendant ce temps, un scanner enregistrait leur activité cérébrale.
                 </p>
 
                 <p>
-                    Dans l'étude emblématique d'Eisenberger, les participants jouaient à un jeu informatique
-                    appelé "Cyberball" où une balle virtuelle était lancée entre joueurs. Quand les participants
-                    étaient progressivement exclus du jeu (les autres joueurs arrêtaient de leur lancer la balle),
-                    l'IRMf montrait une activation massive de l'insula antérieure — <strong>proportionnelle
-                        à l'intensité de la détresse émotionnelle rapportée</strong>.
+                    Les zones qui s'allumaient étaient celles qu'on associe à la douleur physique. D'où la formule
+                    devenue célèbre : le rejet ferait littéralement mal. Le hic, c'est que l'étude portait
+                    sur <strong>13 personnes</strong>, ce qui est très peu.
+                </p>
+
+                <p>
+                    En 2020, deux chercheurs de l'université McGill (Canada) ont voulu vérifier. Ils ont rassemblé
+                    53 études utilisant ce même jeu et réanalysé l'ensemble d'un coup. Le résultat n'a pas tenu :
+                    la fameuse zone de la douleur ne ressort pas de façon fiable. Ce qui ressort, ce sont plutôt
+                    les régions que le cerveau mobilise quand on rumine et qu'on repense à soi.
+                </p>
+
+                <p>
+                    Que faut-il en conclure ? Que la souffrance est réelle, ça personne ne le conteste.
+                    Mais l'image du cerveau qui confondrait un rejet et une brûlure est une simplification.
+                    Ce qui se joue ressemble davantage à une machine à ressasser qui s'emballe.
                 </p>
 
                 <p>
@@ -535,11 +609,28 @@ export default function RejetSocial() {
                     </p>
                 </div>
 
+                {/* StatBlock — l'essai paracétamol */}
+                <div className="not-prose my-6 bg-indigo-50 dark:bg-indigo-950/30 p-5 rounded-lg border border-indigo-200 dark:border-indigo-800">
+                    <div className="flex items-start gap-4">
+                        <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400 leading-none">3&nbsp;sem.</div>
+                        <div>
+                            <p className="text-sm font-semibold text-indigo-900 dark:text-indigo-100">
+                                de paracétamol quotidien ont suffi à faire baisser la douleur sociale rapportée chaque soir
+                                par les participants. Le groupe placebo, lui, n'a rien vu changer. C'est l'argument le plus
+                                solide en faveur d'un mécanisme commun aux deux douleurs.
+                            </p>
+                            <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                                DeWall C.N. et al., University of Kentucky, <em>Psychological Science</em>, 21(7), 2010 — DOI : 10.1177/0956797610374741
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 {/* ============================================ */}
                 {/* H2 #3 : LES DIFFÉRENTES FORMES DE REJET */}
                 {/* ============================================ */}
                 <h2 id="types" className="text-2xl md:text-3xl font-bold mt-16 mb-8 text-neutral-900 dark:text-white flex items-center gap-3">
-                    <span className="text-rose-600">3.</span> Les différentes formes de rejet social
+                    <span className="text-rose-600">3.</span> Quelles sont les différentes formes de rejet social ?
                 </h2>
 
                 <p>
@@ -562,13 +653,31 @@ export default function RejetSocial() {
                 {/* H2 #4 : CONSÉQUENCES SUR LE CERVEAU ET LE CORPS */}
                 {/* ============================================ */}
                 <h2 id="consequences" className="text-2xl md:text-3xl font-bold mt-16 mb-8 text-neutral-900 dark:text-white flex items-center gap-3">
-                    <span className="text-rose-600">4.</span> Impact du rejet sur le cerveau et le corps
+                    <span className="text-rose-600">4.</span> Quelles conséquences le rejet a-t-il sur la santé ?
                 </h2>
 
                 <p>
                     Au-delà de la douleur immédiate, le rejet social déclenche une
                     <strong>cascade physiologique</strong> destinée à gérer la crise.
                 </p>
+
+                {/* StatBlock — mortalité et isolement durable */}
+                <div className="not-prose my-6 bg-indigo-50 dark:bg-indigo-950/30 p-5 rounded-lg border border-indigo-200 dark:border-indigo-800">
+                    <div className="flex items-start gap-4">
+                        <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400 leading-none">+29&nbsp;%</div>
+                        <div>
+                            <p className="text-sm font-semibold text-indigo-900 dark:text-indigo-100">
+                                de risque de mourir plus tôt chez les personnes socialement isolées. Le chiffre vient
+                                du regroupement de 70 études. Attention à ce qu'il dit exactement : il porte sur
+                                l'isolement installé dans la durée, pas sur un rejet ponctuel. C'est l'enjeu du rejet
+                                répété, celui qui finit par couper des autres.
+                            </p>
+                            <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                                Holt-Lunstad J. et al., Brigham Young University, <em>Perspectives on Psychological Science</em>, 10(2), 2015 — DOI : 10.1177/1745691614568352
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>La cascade hormonale et l'inflammation</h3>
 
@@ -677,7 +786,7 @@ export default function RejetSocial() {
                 {/* H2 #6 : NEUROPLASTICITÉ ET CROISSANCE (Celle d'avant "Transformer le rejet") */}
                 {/* ============================================ */}
                 <h2 id="neuroplasticite" className="text-2xl md:text-3xl font-bold mt-16 mb-8 text-neutral-900 dark:text-white flex items-center gap-3">
-                    <span className="text-rose-600">6.</span> Neuroplasticité et espoir : la croissance post-traumatique
+                    <span className="text-rose-600">6.</span> Peut-on se reconstruire après un rejet ?
                 </h2>
 
                 <p>
@@ -696,14 +805,15 @@ export default function RejetSocial() {
                 {/* ENCADRÉ "À RETENIR" */}
                 {/* ============================================ */}
                 <div className="not-prose my-16 bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-950/30 dark:to-pink-950/30 p-8 rounded-2xl border-l-4 border-rose-500 shadow-sm">
-                    <h3 className="text-xl font-bold text-rose-900 dark:text-rose-100 mb-6 flex items-center gap-2">
-                        💡 L'essentiel à retenir
-                    </h3>
+                    <h2 className="text-xl font-bold text-rose-900 dark:text-rose-100 mb-6 flex items-center gap-2">
+                        💡 À retenir
+                    </h2>
                     <ul className="space-y-4 text-rose-800 dark:text-rose-200">
                         <li className="flex items-start gap-3">
                             <span className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-200 dark:bg-rose-800 flex items-center justify-center text-rose-700 dark:text-rose-100 font-bold text-xs mt-0.5">✓</span>
-                            <span><strong>Le rejet social active les mêmes zones cérébrales que la douleur physique</strong>
-                                (insula antérieure, cortex cingulaire antérieur — étude Eisenberger 2003)</span>
+                            <span><strong>La douleur du rejet répond à un antidouleur</strong> : trois semaines de
+                                paracétamol la font baisser, un placebo non (DeWall et al., 2010). Le mécanisme
+                                partagé avec la douleur physique est donc réel</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-200 dark:bg-rose-800 flex items-center justify-center text-rose-700 dark:text-rose-100 font-bold text-xs mt-0.5">✓</span>
@@ -712,8 +822,9 @@ export default function RejetSocial() {
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-200 dark:bg-rose-800 flex items-center justify-center text-rose-700 dark:text-rose-100 font-bold text-xs mt-0.5">✓</span>
-                            <span><strong>L'ostracisme au travail touche de nombreux employés</strong> —
-                                ce n'est pas une faiblesse personnelle mais une expérience répandue</span>
+                            <span><strong>Le cerveau réagit avant de raisonner</strong> : savoir qu'on est exclu
+                                par une machine, et non par des humains, n'empêche pas la chute du sentiment
+                                d'appartenance et de l'estime de soi (Zadro, Williams et Richardson, 2004)</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-200 dark:bg-rose-800 flex items-center justify-center text-rose-700 dark:text-rose-100 font-bold text-xs mt-0.5">✓</span>
@@ -770,12 +881,15 @@ export default function RejetSocial() {
                     </h2>
                     <ul className="text-sm space-y-4 text-neutral-600 dark:text-neutral-400">
                         {[
-                            "Eisenberger, N.I., Lieberman, M.D., Williams, K.D. (2003). Does Rejection Hurt? An fMRI Study of Social Exclusion. Science, 302(5643), 290-292.",
-                            "Slavich, G.M., Irwin, M.R. (2014). From Stress to Inflammation and Major Depressive Disorder: A Social Signal Transduction Theory of Depression. Psychological Bulletin, 140(3), 774-815.",
-                            "Lieberman, M. D., et al. (2007). Putting feelings into words: affect labeling disrupts amygdala activity in response to affective stimuli. Psychological Science.",
-                            "Tillfors, M., Furmark, T., Marteinsdottir, I., et al. (2001). Cerebral blood flow in subjects with social phobia during stressful speaking tasks. Psychiatry Research: Neuroimaging, 106(2), 85-97.",
-                            "DeWall, C.N., Macdonald, G., Webster, G.D., et al. (2010). Acetaminophen reduces social pain: Behavioral and neural evidence. Psychological Science, 21(7), 931-937.",
-                            "Williams, K.D. (2007). Ostracism. Annual Review of Psychology, 58, 425-452."
+                            "[1] Eisenberger, N.I., Lieberman, M.D., Williams, K.D. (2003). Does Rejection Hurt? An fMRI Study of Social Exclusion. Science, 302(5643), 290-292. DOI : 10.1126/science.1089134 — étude fondatrice, 13 participants.",
+                            "[2] Mwilambwe-Tshilobo, L., Spreng, R.N. (2020). Social exclusion reliably engages the default network: A meta-analysis of Cyberball. NeuroImage, 227, 117666. DOI : 10.1016/j.neuroimage.2020.117666 — 53 études, 1 817 participants ; ne retrouve pas l'activation du cortex cingulaire antérieur dorsal.",
+                            "[3] DeWall, C.N., MacDonald, G., Webster, G.D., et al. (2010). Acetaminophen reduces social pain: Behavioral and neural evidence. Psychological Science, 21(7), 931-937. DOI : 10.1177/0956797610374741",
+                            "[4] Zadro, L., Williams, K.D., Richardson, R. (2004). How low can you go? Ostracism by a computer is sufficient to lower self-reported levels of belonging, control, self-esteem, and meaningful existence. Journal of Experimental Social Psychology, 40(4), 560-567. DOI : 10.1016/j.jesp.2003.10.006",
+                            "[5] Williams, K.D. (2007). Ostracism. Annual Review of Psychology, 58, 425-452. DOI : 10.1146/annurev.psych.58.110405.085641",
+                            "[6] Holt-Lunstad, J., Smith, T.B., Baker, M., Harris, T., Stephenson, D. (2015). Loneliness and Social Isolation as Risk Factors for Mortality: A Meta-Analytic Review. Perspectives on Psychological Science, 10(2), 227-237. DOI : 10.1177/1745691614568352 — 70 études.",
+                            "[7] Slavich, G.M., Irwin, M.R. (2014). From Stress to Inflammation and Major Depressive Disorder: A Social Signal Transduction Theory of Depression. Psychological Bulletin, 140(3), 774-815. DOI : 10.1037/a0035302",
+                            "[8] Lieberman, M.D., et al. (2007). Putting feelings into words: affect labeling disrupts amygdala activity in response to affective stimuli. Psychological Science, 18(5), 421-428. DOI : 10.1111/j.1467-9280.2007.01916.x",
+                            "[9] Tillfors, M., Furmark, T., Marteinsdottir, I., et al. (2001). Cerebral blood flow in subjects with social phobia during stressful speaking tasks. Psychiatry Research: Neuroimaging, 106(2), 85-97. DOI : 10.1016/S0925-4927(00)00089-4"
                         ].map((source, i) => (
                             <li key={i} className="flex gap-3">
                                 <span className="text-neutral-400 select-none">•</span>
