@@ -107,7 +107,9 @@ Ils redeviennent prioritaires **uniquement** si leurs impressions décollent.
 
 **Découverts le 11 août 2026 en balayant la roadmap. Petits, rapides, mais deux d'entre eux sont des fuites SEO réelles.**
 
-### 4.1 — Routes applicatives crawlables et indexables 🔴
+### 4.1 — Routes applicatives crawlables et indexables 🔴 CONFIRMÉ EN PRODUCTION
+
+> **Mise à jour du 11 août, export GSC Performances** : ce n'est plus une hypothèse. `/neuro-journal/onboarding` enregistre **3 impressions à la position 6,67** sur les 3 derniers mois. Google a déjà indexé une route applicative et la fait remonter en page 1. À traiter en premier.
 
 `/neuro-journal/onboarding` et `/neuro-journal/dashboard` sont liés **depuis le HTML pré-rendu** de `/ressources/` (champ `webAppUrl`, `src/pages/Resources.tsx:45`). Or ces routes :
 
@@ -135,6 +137,28 @@ Correctif : rendre le lien dans le HTML statique, ajouter le slash final, et **�
 ### 4.4 — `jobTitle` incohérent dans le schema Person 🟢
 
 19 articles déclarent `"Fondateur — L'Éveil Mental"` (tiret long) contre 17 en `"Fondateur, L'Éveil Mental"` (virgule), et 1 sans `jobTitle`. La règle projet proscrit le tiret long : harmoniser sur la **virgule** partout.
+
+---
+
+## 💰 Lot 4 bis — Réécrire les titres des pages déjà en page 1
+
+**Identifié le 11 août 2026 dans l'export GSC Performances. Meilleur rapport effort/gain découvert à ce jour, devant le Lot 1.**
+
+Cinq pages sont **déjà en page 1** de Google et ne récoltent **aucun clic** :
+
+| Page | Position | Impressions | Clics |
+|---|---|---|---|
+| `mindset-de-croissance-psychologie-dweck` | **8,2** | 65 | 0 |
+| `communication-non-violente-cnv` | **7,9** | 55 | 0 |
+| `rumination-mentale-pensees-obsessionnelles` | **6,6** | 36 | 0 |
+| `plasticite-synaptique-apprentissage-cerveau` | **9,2** | 24 | 0 |
+| `resoudre-un-conflit-methodes-psychologie` | **9,1** | 22 | 0 |
+
+Environ **240 impressions en page 1 sans un seul clic**. Ce n'est pas un problème de classement, donc ni le contenu ni le maillage ne sont en cause : c'est l'extrait affiché dans le SERP qui n'accroche pas. Le travail porte uniquement sur le `title` et la `description` du `meta`, sans toucher au corps de l'article.
+
+À comparer avec ce qui marche : `bdnf` obtient **7,08 % de CTR** à la position 13,1, et `influence-sociale-conformisme` **5,32 %** à la position 9,6. Un CTR de 5 % sur ces 240 impressions représenterait une douzaine de clics, soit +13 % de trafic pour quelques heures de travail.
+
+⚠️ Ne pas toucher au corps de ces articles, et surtout pas à `rumination-mentale` ni aux autres du Lot 3 : le Lot 3 dit de ne pas les **retravailler éditorialement**, ce qui reste vrai. Réécrire un title n'est pas la même chose et se justifie ici par la position déjà acquise.
 
 ---
 
@@ -168,6 +192,45 @@ Le script qui a produit ces tableaux croise ce que chaque TSX **déclare** avec 
 ⚠️ **Piège rencontré, à ne pas répéter.** La première version détectait les StatBlocks par leur couleur (`bg-teal-50`, `bg-indigo-50`) et annonçait 13 articles non conformes. Faux : les StatBlocks utilisent aussi rose, sky, violet. La signature fiable est **`text-3xl font-black`**, conformément à `.claude/rules/template-v2.md`. Même piège pour le Quick Answer, à chercher sur « Réponse rapide » **ou** « En bref ».
 
 Vérifier un détecteur sur un article connu conforme avant de tirer la moindre conclusion d'un audit automatique.
+
+---
+
+## 📈 Lecture de l'export GSC Performances du 11 août 2026
+
+À relire avant toute décision fondée sur la « position moyenne » : elle est trompeuse sur ce site.
+
+### La position moyenne s'est effondrée de 7 à 40 — et c'est un effet de structure
+
+| | Impressions | Position moyenne | CTR |
+|---|---|---|---|
+| Avec `neuroplasticite-cerveau` | 3 982 | **22,2** | 2,39 % |
+| **Sans** `neuroplasticite-cerveau` | 2 890 | **14,8** | **3,18 %** |
+
+Cette seule page pèse **27 % des impressions du site à la position 41,9**. Elle tire la moyenne de 14,8 à 22,2. Le reste du site se porte bien. **Ne jamais conclure à une régression à partir de la position moyenne globale sans avoir retiré cette page.**
+
+### La requête qui concentre le problème
+
+`neuroplasticite apprentissage` : **1 008 impressions, 0 clic, position 43,6**. Soit **25 % de toutes les impressions du site**, pour zéro retour.
+
+Réalisme nécessaire : la position 43 est en page 5. Aucun Quick Answer Block ne fait passer de la page 5 à la page 1. La refonte du 5 août se mesure le 19 ; si l'aiguille ne bouge pas, il faudra admettre que ce mot-clé demande autre chose (autorité, liens entrants, ou un contenu nettement supérieur aux concurrents installés) et arbitrer entre investir lourdement ou viser des requêtes plus accessibles.
+
+### Appareils
+
+| | Clics | Impressions | CTR | Position |
+|---|---|---|---|---|
+| Ordinateur | 45 | 2 726 | 1,65 % | 27,7 |
+| Mobile | 43 | 1 092 | **3,94 %** | **11,0** |
+| Tablette | 7 | 44 | 15,91 % | 8,57 |
+
+Le mobile convertit **2,4 fois mieux** que le desktop. L'écart de position vient encore de la requête neuroplasticité, majoritairement desktop.
+
+### Piste internationale, non exploitée
+
+Les États-Unis pèsent **336 impressions pour 1 clic**, le Canada 148 pour 1. Des requêtes allemandes remontent sur BDNF (`bdnf erhöhen`, position 91), ainsi que `protein bdnf` (38 impressions, position 38,8) et `brain derived neurotrophic factor` (4 impressions, position 52,8). Le sujet BDNF attire hors francophonie sans que rien ne soit prévu pour ces visiteurs. À creuser un jour, pas maintenant.
+
+### Le paradoxe des biais cognitifs, chiffré
+
+Requêtes précises en **position 2** : `biais de confirmation`, `effet dunning kruger`, `distorsion cognitive`, `aversion à la perte`, `biais cognitif def`, `les différents biais cognitifs`. Mais le terme générique `biais cognitifs` est en **position 61** avec 54 impressions, et `biais cognitif` en position 41 avec 52 impressions. La refonte de la Phase 2 vise exactement cet écart : à mesurer vers le 20-25 août.
 
 ---
 
