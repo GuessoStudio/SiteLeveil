@@ -21,7 +21,7 @@ Dans Search Console → Inspection de l'URL → coller l'URL → « Demander une
 
 ⚠️ Google plafonne à une dizaine de demandes par jour et par propriété. **Étaler sur deux jours**, en commençant par le groupe A.
 
-### Groupe A — priorité (jour 1)
+### ✅ Groupe A — DEMANDÉ le 11 août 2026
 
 Les deux pages que Google ne connaît **pas du tout**, puis les plus stratégiques.
 
@@ -38,7 +38,7 @@ https://leveilmental.fr/blog/empathie-neurones-miroirs-connexion-humaine/
 
 `axe-intestin-cerveau-microbiote-humeur` est **inconnu de Google** alors qu'il est publié depuis le 5 juillet et présent dans le sitemap. `/methodologie/` a été créée début août, même situation. `/blog/` est la page de liste du blog, dernier crawl le 24 mai : la faire réindexer aide Google à redécouvrir tous les articles qu'elle liste.
 
-### Groupe B — jour 2
+### Groupe B — à demander le 12 août 2026
 
 ```
 https://leveilmental.fr/blog/ecoute-active-technique-carl-rogers/
