@@ -72,6 +72,36 @@ https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles/
 | `/blog/empathie-neurones-miroirs-connexion-humaine/` | 25 mai | Explorée, non indexée |
 | `/blog/procrastination-cerveau-agir-neurosciences/` | 14 juin | Explorée, non indexée |
 
+## ✅ Les autres catégories du rapport, élucidées le 11 août 2026
+
+Listes obtenues depuis l'interface GSC (l'API ne sait pas énumérer par état). **Aucune ne demande de correction.** Consigné pour éviter qu'on réenquête.
+
+### « Page avec redirection » — 8 pages, validation en échec
+
+Les 8 sont les variantes **sans slash final** : `/contact`, `/ressources`, `/test-personnalite-big-five`, `/blog/neuroplasticite-cerveau`, `/blog/neuro-dopamine-routine`, `/blog/surmonter-rejet-social`, `/blog/communication-non-violente-cnv`, `/blog/confiance-en-soi-durable`.
+
+C'est le comportement attendu et déjà documenté : une URL sans slash redirigera toujours. **La validation échouera systématiquement, ne pas la relancer.**
+
+### « Erreur liée à des redirections » — 4 pages : problème historique, déjà résolu
+
+`/blog/routine-matinale-scientifique-cerveau`, `/blog/empathie-neurones-miroirs-connexion-humaine`, `/blog/systeme-limbique-cerveau-emotionnel`, `/blog/bdnf-augmenter-naturellement-neurosciences` (tous sans slash).
+
+Derniers crawls : **17 avril à 17 mai 2026**, donc avant le correctif du 12 juin (`e17143c`, élimination des chaînes 301). Testé le 11 août : les quatre résolvent désormais en **un seul saut vers un 200**. Il n'y a plus de chaîne. Rien à corriger, Google n'a simplement pas recrawlé.
+
+### « Explorée, actuellement non indexée » — 18 pages = 14 réelles + 4 doublons
+
+Le compteur de 18 additionne les variantes avec et sans slash de la même page (`attention-fragmentee` apparaît deux fois, `sommeil-reparateur` aussi). Les **14 pages réelles** sont celles listées plus haut. Aucune URL hors sitemap n'est concernée : le doute est levé.
+
+### « Détectée, actuellement non indexée » — 2 pages
+
+`/blog/axe-intestin-cerveau-microbiote-humeur/` et `/methodologie/`, toutes deux « Sans objet » en date de crawl : Google les a détectées via le sitemap mais **ne les a jamais explorées**. Ce sont exactement les deux URL du groupe A ci-dessus.
+
+### « Exclue par la balise noindex » — 3 pages
+
+`/legal`, `/legal/` et `/mentions-legales`. Le `noindex` sur `/legal/` est **volontaire** (rendu par le composant SEO). `/mentions-legales` renvoie aujourd'hui un vrai **404** depuis la Phase 0 ; le `noindex` vu par Google datait du 11 juillet, quand le catch-all servait encore un 200.
+
+❓ **Question ouverte, pas un bug** : est-il souhaitable que `/legal/` soit en `noindex` ? Beaucoup de sites laissent leurs mentions légales indexables, c'est un signal de sérieux pour Google. À arbitrer.
+
 ## Point de contrôle
 
 **Revérifier vers le 20-25 août 2026.** Compter 4 à 7 jours après la demande pour le recrawl, puis quelques jours pour la décision d'indexation.
