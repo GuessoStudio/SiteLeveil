@@ -179,27 +179,27 @@ Liens à ajouter vers cette page depuis : `objectifs-smart-methode-neurosciences
 ### Phase 1 — Les 2 leviers à plus fort rendement (1-2 semaines)
 
 **`bdnf-augmenter-naturellement-neurosciences`** — 43 % des clics du site (38/88), CTR 6,9 %, mais 69 % de rebond :
-- [ ] Réécrire le paragraphe jargon situé juste après le Quick Answer (TrkB, cascade de signalisation, MAPK/ERK, PI3K/Akt, apoptose) : 1 terme technique par paragraphe maximum, définition en une phrase simple, analogie obligatoire
-- [ ] Auditer le reste de l'article avec la même grille (22 % des phrases dépassent 30 mots, le pire score du corpus)
+- [x] ~~Réécrire le paragraphe jargon situé juste après le Quick Answer (TrkB, cascade de signalisation, MAPK/ERK, PI3K/Akt, apoptose) : 1 terme technique par paragraphe maximum, définition en une phrase simple, analogie obligatoire~~ (fait — TrkB est désormais expliqué par une analogie clé/serrure, MAPK/ERK, PI3K/Akt et apoptose retirés)
+- [x] ~~Auditer le reste de l'article avec la même grille (22 % des phrases dépassent 30 mots, le pire score du corpus)~~ (fait — 7 % des phrases dépassent 30 mots, contre 22 % avant)
 - C'est le meilleur rapport effort/gain du site : la page capte déjà l'audience, elle la perd à la lecture
 
 **`neuroplasticite-cerveau`** — 836 impressions (24 % du site) pour 3 clics, position 40,2, CTR 0,4 % :
-- [ ] Ajouter Quick Answer Block avec "apprentissage" dans les 50 premiers mots + 3 StatBlocks + "À retenir"
-- [ ] Ajouter un H2 dédié "Neuroplasticité et apprentissage : comment le cerveau apprend-il et retient-il mieux ?"
-- [ ] Réviser title et meta description pour y faire apparaître "apprentissage" (le SERP concurrent cadre systématiquement sur cette entité, le H1 actuel parle de "reprogrammer son cerveau après 25 ans")
-- [ ] Renforcer le sourcing (1 seul lien DOI actuellement) + ajouter un chercheur spécifique apprentissage/mémoire
-- [ ] Corriger le `wordCount` du schema (annonce 3500, réalité ~2762)
+- [~] Quick Answer et « À retenir » ajoutés ; **il manque encore 2 StatBlocks sur 3** → `release.md` lot 2
+- [x] ~~Ajouter un H2 dédié "Neuroplasticité et apprentissage : comment le cerveau apprend-il et retient-il mieux ?"~~ (fait)
+- [x] ~~Réviser title et meta description pour y faire apparaître "apprentissage" (le SERP concurrent cadre systématiquement sur cette entité, le H1 actuel parle de "reprogrammer son cerveau après 25 ans")~~ (fait)
+- [x] ~~Renforcer le sourcing (1 seul lien DOI actuellement) + ajouter un chercheur spécifique apprentissage/mémoire~~ (fait — 3 liens DOI)
+- [x] ~~Corriger le `wordCount` du schema (annonce 3500, réalité ~2762)~~ (fait — 2900)
 - [ ] Ne pas retravailler le maillage interne — déjà solide (12 liens entrants)
 
 ### Phase 2 — Gisement n°2 et finitions (2-3 semaines)
 
 **`biais-cognitifs-liste-psychologie`** — 393 impressions, position 22,1, CTR 1,3 % :
-- [ ] Retitrer pour faire apparaître "définition" avant "liste" (title + H1 + meta)
-- [ ] Repositionner la définition existante dans les 50-80 premiers mots visibles
-- [ ] Étoffer chaque item de 68 à 150-200 mots (définition → mécanisme → exemple → contre-mesure)
-- [ ] Ajouter institution + pays pour Kahneman, Tversky, Fischhoff, Dunning-Kruger
-- [ ] Ajouter la dissonance cognitive comme 13e biais
-- [ ] Ajouter un bloc "articles connexes" structuré + obtenir les 5-7 liens entrants identifiés depuis les articles du cluster
+- [x] ~~Retitrer pour faire apparaître "définition" avant "liste" (title + H1 + meta)~~ (fait)
+- [x] ~~Repositionner la définition existante dans les 50-80 premiers mots visibles~~ (fait)
+- [x] ~~Étoffer chaque item de 68 à 150-200 mots (définition → mécanisme → exemple → contre-mesure)~~ (fait)
+- [x] ~~Ajouter institution + pays pour Kahneman, Tversky, Fischhoff, Dunning-Kruger~~ (fait)
+- [x] ~~Ajouter la dissonance cognitive comme 13e biais~~ (fait)
+- [x] ~~Ajouter un bloc "articles connexes" structuré + obtenir les 5-7 liens entrants identifiés depuis les articles du cluster~~ (fait)
 
 #### ✅ FAIT — `surmonter-rejet-social` (10 août 2026, commit 5a622d4)
 
@@ -220,10 +220,10 @@ Le bloc « statistique hero » annonçait un vague « l'ostracisme au travail es
 **Reste ouvert, décision éditoriale** : à 2 616 mots l'article est court pour son sujet et sa position. L'étoffer est un chantier séparé, non entrepris. complet
 
 ### Phase 3 — Dette de contenu généralisée (1 mois)
-- [ ] Auditer les ~15-20 autres articles pour détecter d'autres survivants pré-Template V2
+- [x] ~~Auditer les ~15-20 autres articles pour détecter d'autres survivants pré-Template V2~~ (fait le 11 août 2026 — 26/37 conformes, 11 non conformes dont 9 sans Quick Answer ; suite dans `release.md`)
 - [ ] Renforcer le sourcing de `resilience-psychologique-developper` (2 chercheurs seulement)
 - [ ] Lier les 4 pages "plancher" depuis leurs voisines de cluster
-- [ ] Harmoniser `jobTitle` (virgule, pas tiret) et dates ISO 8601 sur tout le corpus
+- [~] Dates ISO 8601 : **fait, 37/37**. `jobTitle` : **encore incohérent**, 19 articles au tiret contre 17 à la virgule → `release.md` lot 4
 
 #### ✅ FAIT — `mindset-de-croissance-psychologie-dweck` (corrigé le 9 août 2026)
 

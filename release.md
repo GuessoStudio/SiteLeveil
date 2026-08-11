@@ -103,6 +103,64 @@ Ils redeviennent prioritaires **uniquement** si leurs impressions décollent.
 
 ---
 
+## ⚠️ Lot 4 — Correctifs techniques ciblés
+
+**Découverts le 11 août 2026 en balayant la roadmap. Petits, rapides, mais deux d'entre eux sont des fuites SEO réelles.**
+
+### 4.1 — Routes applicatives crawlables et indexables 🔴
+
+`/neuro-journal/onboarding` et `/neuro-journal/dashboard` sont liés **depuis le HTML pré-rendu** de `/ressources/` (champ `webAppUrl`, `src/pages/Resources.tsx:45`). Or ces routes :
+
+- répondent **HTTP 200** en production,
+- servent `<meta name="robots" content="index,follow">`,
+- ne sont **pas** bloquées dans `robots.txt`,
+- sont exclues du pré-rendu (`ssgOptions.includedRoutes`), donc renvoient la coquille SPA avec le title générique.
+
+Google peut donc suivre ces liens et indexer des pages d'application vides. Vérifié aujourd'hui : `/neuro-journal/dashboard` est encore **« URL is unknown to Google »**. La fenêtre est ouverte, autant fermer avant qu'il ne la découvre.
+
+Correctif : passer ces routes en `noindex` (le composant SEO accepte la prop `noindex` depuis la Phase 0), ou les retirer de `robots.txt`, ou supprimer le lien public. Le plus propre est le `noindex`, la page restant accessible aux utilisateurs.
+
+### 4.2 — Le lien vers `/calculateur-sommeil/` est absent du HTML de `/ressources/` 🟠
+
+Confirmé en production : **0 occurrence** de `calculateur-sommeil` dans `/ressources/`. Le lien n'existe que côté JS. La page est bien indexée par ailleurs, mais elle ne reçoit aucun jus de lien depuis la page qui devrait la porter.
+
+Second défaut sur la même ligne : `src/pages/Resources.tsx:366` déclare `webAppUrl: "/calculateur-sommeil"` **sans slash final** → 301 même une fois rendu côté client. `npm run validate:links` ne l'attrape pas, car il ne contrôle que les props `to=` et pas les champs de données.
+
+Correctif : rendre le lien dans le HTML statique, ajouter le slash final, et **étendre `validate-links.mjs` aux champs `webAppUrl`/`downloadUrl`** pour que le garde-fou couvre ce cas.
+
+### 4.3 — `llms.txt` : 1 article manquant 🟢
+
+36 des 37 articles y figurent. Il manque `dissonance-cognitive-definition-exemples`, publié pendant cette session. À régénérer — voir aussi le lot 5, qui propose de l'automatiser pour de bon.
+
+### 4.4 — `jobTitle` incohérent dans le schema Person 🟢
+
+19 articles déclarent `"Fondateur — L'Éveil Mental"` (tiret long) contre 17 en `"Fondateur, L'Éveil Mental"` (virgule), et 1 sans `jobTitle`. La règle projet proscrit le tiret long : harmoniser sur la **virgule** partout.
+
+---
+
+## 🤖 Lot 5 — GEO et autorité (Phase 4 de l'audit)
+
+**Non urgent, mais c'est le socle de la citabilité par les IA.**
+
+- **80 réponses FAQ sur 309 (26 %) dépassent 60 mots**, la cible étant 40-60. La plus longue fait **122 mots** (`confiance-en-soi-durable`). Les plus concernés : `empathie-neurones-miroirs` (10), `confiance-en-soi-durable` (8), `sommeil-reparateur` (8), `systeme-limbique` (8). Une réponse trop longue est moins extractible en citation.
+- **Chaîne YouTube absente du `sameAs`** des schemas Person et Organization (`src/components/SEO.tsx`) : aucune mention de YouTube dans tout le code. Signal d'autorité gratuit.
+- **Automatiser `llms.txt`** depuis `src/data/blog-articles.ts`, en `prebuild`. Supprime définitivement la dérive du lot 4.3.
+- **Envisager d'embarquer les Shorts** sur les articles correspondants (le moteur vidéo vit dans le dépôt `PetitEveille`).
+
+---
+
+## 🔒 Lot 6 — Non bloquant (Phase 5)
+
+- CSP : migrer `unsafe-inline` / `unsafe-eval` vers des nonces (`netlify.toml`). Aucun impact SEO, uniquement du durcissement.
+
+---
+
+## 🗑️ Ménage
+
+`ACTION-PLAN.md` et `FULL-AUDIT-REPORT.md` datent du **24 avril 2026** et sont périmés : leurs points « critiques » (URL auteur en `/about`, cover en `.jpg` sur neuroplasticité) sont résolus depuis. Ils entrent en conflit avec `docs/audit-seo.md`, seule source à jour. À archiver ou supprimer pour éviter qu'un futur audit reparte de données fausses.
+
+---
+
 ## 🧰 Méthode d'audit (réutilisable)
 
 Le script qui a produit ces tableaux croise ce que chaque TSX **déclare** avec ce que le HTML pré-rendu **contient** : `C:\Users\sofie\AppData\Local\Temp\claude\...\scratchpad\audit_corpus.py` (session `a320b979`). À rapatrier dans `scripts/` s'il doit resservir.
@@ -110,6 +168,20 @@ Le script qui a produit ces tableaux croise ce que chaque TSX **déclare** avec 
 ⚠️ **Piège rencontré, à ne pas répéter.** La première version détectait les StatBlocks par leur couleur (`bg-teal-50`, `bg-indigo-50`) et annonçait 13 articles non conformes. Faux : les StatBlocks utilisent aussi rose, sky, violet. La signature fiable est **`text-3xl font-black`**, conformément à `.claude/rules/template-v2.md`. Même piège pour le Quick Answer, à chercher sur « Réponse rapide » **ou** « En bref ».
 
 Vérifier un détecteur sur un article connu conforme avant de tirer la moindre conclusion d'un audit automatique.
+
+---
+
+## ⏰ Échéance de mesure — 19 août 2026
+
+Effet de la Phase 1, déployée le 5 août. Ne rien retravailler avant.
+
+| Page | Métrique | Point de départ |
+|---|---|---|
+| bdnf-augmenter-naturellement-neurosciences | taux de rebond | 69 % (GA4) |
+| neuroplasticite-cerveau | position | 40,2 → **42,1 au 11 août** |
+| neuroplasticite-cerveau | CTR | 0,4 % |
+
+BDNF n'a eu aucun changement de title ni de structure : l'effet attendu porte sur le comportement de lecture, pas sur la position. Neuroplasticité a changé de title, H1 et meta : l'effet attendu est sur la position et le CTR, avec 4 à 8 semaines de délai habituel depuis la page 4. À deux semaines, on cherche une tendance, pas un verdict.
 
 ---
 
