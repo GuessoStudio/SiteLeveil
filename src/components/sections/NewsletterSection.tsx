@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Gift, Mail, CheckCircle, Loader2 } from 'lucide-react'
+import { trackLead } from '../../lib/analytics'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -27,6 +28,9 @@ export default function NewsletterSection() {
 
       if (!res.ok) throw new Error()
       setStatus('success')
+      // Inscription réellement confirmée par la fonction Netlify. Pas de
+      // navigation derrière, donc pas besoin d'attendre le callback GA4.
+      trackLead('newsletter_section', { form_name: 'section_newsletter' })
     } catch {
       setStatus('error')
     }

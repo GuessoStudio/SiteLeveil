@@ -1,5 +1,6 @@
 import React from 'react'
 import { X } from 'lucide-react'
+import { trackLead } from '../lib/analytics'
 
 interface EmailCaptureModalProps {
   isOpen: boolean
@@ -36,8 +37,15 @@ const BrevoForm = ({ resourceFile }: BrevoFormProps) => {
     form.submit()
     form.target = ''
 
-    // 3. Rediriger vers la page de remerciement
-    window.location.href = '/merci-inscription/'
+    // 3. Mesurer PUIS rediriger. L'ordre compte : la redirection détruit la
+    //    page, donc on laisse à GA4 le temps d'envoyer l'événement. `trackLead`
+    //    rappelle au plus tard après son timeout, la redirection a donc lieu
+    //    même si gtag.js n'est pas encore chargé.
+    trackLead(
+      'modal_lead_magnet',
+      { form_name: 'modal_brevo', resource: pdfUrl.split('/').pop() || 'inconnu' },
+      () => { window.location.href = '/merci-inscription/' },
+    )
   }
 
   return (
