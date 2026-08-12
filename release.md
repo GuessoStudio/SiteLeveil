@@ -5,6 +5,77 @@ Une fois un lot livré, le déplacer vers `docs/audit-seo.md` avec le hash de co
 
 ---
 
+## 🎯 Lot 0 — Capturer les emails sur les articles à fort trafic
+
+**Décidé le 12 août 2026. Approche mixte retenue. Priorité la plus haute du fichier : c'est la moitié de l'objectif du site.**
+
+### Le constat
+
+Le site poursuit deux buts, le trafic **et** la newsletter. Le second n'a presque aucun moyen d'être atteint :
+
+- **19 articles sur 37** proposent leur lead magnet en **téléchargement direct**, par un simple `<a href="/Downloads/....pdf">`. Le lecteur prend le guide et repart, sans laisser d'email.
+- **Aucun des 37 articles** n'intègre de formulaire d'inscription (`NewsletterSection` n'est monté que sur la page d'accueil).
+- Le composant qui capture les emails, `EmailCaptureModal`, existe et **fonctionne** — mais il n'est branché que sur `/ressources/` et `/test-personnalite-big-five/`, deux pages qui totalisent **98 impressions sur 90 jours**.
+
+Autrement dit : là où le trafic arrive, on offre le cadeau sans rien demander ; là où on demande l'email, il n'y a personne.
+
+Chiffre qui résume tout : **dernier inscrit le 7 mai 2026**. Trois mois sans la moindre inscription. Brevo a fini par désactiver automatiquement la clé API pour inutilisation le 7 août, ce qui a cassé en prime le formulaire de la page d'accueil. Le bug n'était que le symptôme.
+
+### Ce qui a été décidé
+
+**Approche mixte.** Demander l'email uniquement sur les articles à fort trafic, laisser l'accès libre ailleurs. Cela permet de mesurer l'effet du gate avant de généraliser, plutôt que de l'imposer partout d'un coup.
+
+Articles concernés, choisis sur les impressions réelles (90 j) :
+
+| Article | Clics | Impressions |
+|---|---|---|
+| `bdnf-augmenter-naturellement-neurosciences` | 39 | 551 |
+| `biais-cognitifs-liste-psychologie` | 7 | 489 |
+| `surmonter-rejet-social` | 6 | 149 |
+| `formation-habitudes-cerveau-neurosciences` | 5 | 182 |
+| `influence-sociale-conformisme` | 5 | 94 |
+
+### Mise en œuvre
+
+Remplacer le `<a href>` direct par l'ouverture d'`EmailCaptureModal`, en lui passant le PDF via sa prop `resourceFile` — le composant gère déjà l'enchaînement téléchargement puis redirection vers `/merci-inscription/`.
+
+Le tracking `generate_lead` étant en place depuis le 11 août (commit `1a243c0`), l'effet sera mesurable article par article dans GA4.
+
+⚠️ **Prérequis avant de livrer ce lot** : la capture d'email doit fonctionner. Voir le lot 0 bis.
+
+### Point de mesure
+
+Deux à trois semaines après la livraison, comparer le nombre de `generate_lead` par article. Si le gate ne convertit pas sur BDNF — la page la plus lue du site — c'est le lead magnet lui-même qu'il faudra revoir, pas le mécanisme.
+
+---
+
+## 🔴 Lot 0 bis — Débloquer Brevo (prérequis, action manuelle)
+
+**Constaté le 12 août 2026.**
+
+Deux verrous se sont succédé sur la fonction `/.netlify/functions/subscribe` :
+
+1. **Clé API désactivée** — Brevo l'a coupée automatiquement le 7 août après trois mois sans utilisation. ✅ Réactivée par Guesso le 12 août.
+2. **Restriction par IP autorisée** — Brevo répond alors :
+   `We have detected you are using an unrecognised IP address 3.141.43.194`
+
+⚠️ **Ne pas ajouter cette IP à la liste blanche.** Les fonctions Netlify tournent sur AWS Lambda, dont les IP changent à chaque invocation. Autoriser une IP fixe fonctionnerait quelques minutes puis casserait au prochain appel.
+
+**Correctif** : désactiver entièrement la restriction d'IP sur https://app.brevo.com/security/authorised_ips
+
+**Vérification** :
+
+```bash
+curl -s -X POST "https://leveilmental.fr/.netlify/functions/subscribe" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","prenom":"Test"}'
+# attendu : {"success":true}
+```
+
+À surveiller : la clé se désactivera de nouveau après trois mois d'inactivité. Le lot 0 est justement ce qui doit empêcher ce scénario de se reproduire.
+
+---
+
 ## 🔧 Lot 1 — Correctif de masse : `wordCount` et `readingTime`
 
 **Décidé le 11 août 2026. Priorité haute : meilleur rapport effort/gain restant.**
