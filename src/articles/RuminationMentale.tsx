@@ -4,8 +4,8 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "rumination-mentale-pensees-obsessionnelles",
-  title: "Rumination mentale : comprendre et libérer son esprit des pensées obsessionnelles",
-  description: "Découvrez les mécanismes neuroscientifiques de la rumination et 7 stratégies validées scientifiquement pour briser le cycle des pensées répétitives et retrouver la paix mentale.",
+  title: "Rumination mentale : 7 stratégies pour arrêter de ressasser",
+  description: "Rumination mentale : pourquoi le cerveau tourne en boucle sur les mêmes pensées, et 7 stratégies validées pour interrompre le cycle sans lutter contre lui.",
   cover: "/images/articles/rumination-cover",
   datePublished: "2025-08-29T08:00:00+01:00",
   dateModified: "2025-08-29T08:00:00+01:00",

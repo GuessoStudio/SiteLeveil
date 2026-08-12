@@ -10,8 +10,8 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "resoudre-un-conflit-methodes-psychologie",
-  title: "Résoudre un conflit : mécanismes cérébraux et 6 méthodes validées par la psychologie sociale",
-  description: "Résoudre un conflit efficacement : fenêtre d'inhibition de 20 min, 4 Cavaliers de Gottman, méthode Harvard. 6 méthodes validées par la psychologie sociale.",
+  title: "Résoudre un conflit : 6 méthodes validées par la science",
+  description: "Résoudre un conflit : la fenêtre de 20 minutes où le cerveau ne peut plus raisonner, les 4 Cavaliers de Gottman, et 6 méthodes validées par la recherche.",
   cover: "/images/articles/resoudre-un-conflit-methodes-psychologie-cover",
   datePublished: "2026-06-09T08:00:00+01:00",
   dateModified: "2026-06-09T08:00:00+01:00",

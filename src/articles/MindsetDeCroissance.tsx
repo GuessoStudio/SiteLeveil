@@ -11,8 +11,8 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "mindset-de-croissance-psychologie-dweck",
-  title: "Mindset de croissance : le guide complet de Carol Dweck",
-  description: "Mindset de croissance selon Carol Dweck : mécanismes cérébraux, méta-analyse 97 672 sujets, nuance de stress. Guide scientifique avec limites incluses.",
+  title: "Mindset de croissance : la théorie de Dweck et ses limites",
+  description: "Mindset de croissance : ce que la théorie de Carol Dweck établit vraiment, ce que la recherche récente conteste, et comment l'appliquer sans illusion.",
   cover: "/images/articles/mindset-de-croissance-psychologie-dweck-cover",
   datePublished: "2026-05-12T08:00:00+01:00",
   dateModified: "2026-05-12T08:00:00+01:00",

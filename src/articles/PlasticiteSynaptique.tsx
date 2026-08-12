@@ -11,8 +11,8 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "plasticite-synaptique-apprentissage-cerveau",
-  title: "Plasticité synaptique : LTP, mémoire et 5 méthodes validées",
-  description: "La plasticité synaptique est le mécanisme par lequel le cerveau renforce ses connexions pour apprendre. LTP, LTD, données humaines et 5 stratégies validées.",
+  title: "Plasticité synaptique : mémoire et 5 méthodes validées",
+  description: "Plasticité synaptique : comment le cerveau renforce ses connexions pour apprendre et retenir durablement, et 5 méthodes validées pour la stimuler au quotidien.",
   cover: "/images/articles/plasticite-synaptique-apprentissage-cerveau-cover",
   datePublished: "2026-04-13T08:00:00+01:00",
   dateModified: "2026-04-14T08:00:00+01:00",

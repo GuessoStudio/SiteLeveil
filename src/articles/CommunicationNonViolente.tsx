@@ -11,8 +11,8 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "communication-non-violente-cnv",
-  title: "Communication Non-Violente (CNV) : les 4 étapes OSBD",
-  description: "Communication non violente : 4 étapes OSBD, RCT 2025 sur empathie et PTSD, tableau CNV vs assertivité. Guide scientifique complet avec limites incluses.",
+  title: "Communication non violente : les 4 étapes, avec exemples",
+  description: "Communication non violente : les 4 étapes de Rosenberg expliquées par l'exemple, ce que la recherche valide, et les erreurs qui font échouer la méthode.",
   cover: "/images/articles/communication-non-violente-cnv-cover",
   datePublished: "2026-05-07T08:00:00+01:00",
   dateModified: "2026-05-07T08:00:00+01:00",
