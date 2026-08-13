@@ -15,7 +15,9 @@ Vérifié : ces pages servent aujourd'hui un title unique et correct en producti
 
 **Explication concurrente écartée** — celle du contenu trop mince. Parmi les 14 figurent `sommeil-reparateur` (4 849 mots, le plus long article du site), `cortisol-stress-chronique` (3 503) et `plasticite-synaptique` (3 385), tous pleinement conformes au Template V2. Le facteur commun est la date de crawl, pas la qualité éditoriale.
 
-## Ce qu'il faut faire
+## ✅ Fait — les 16 URL ont été soumises les 11 et 12 août 2026
+
+## Ce qu'il fallait faire
 
 Dans Search Console → Inspection de l'URL → coller l'URL → « Demander une indexation ».
 
@@ -38,7 +40,7 @@ https://leveilmental.fr/blog/empathie-neurones-miroirs-connexion-humaine/
 
 `axe-intestin-cerveau-microbiote-humeur` est **inconnu de Google** alors qu'il est publié depuis le 5 juillet et présent dans le sitemap. `/methodologie/` a été créée début août, même situation. `/blog/` est la page de liste du blog, dernier crawl le 24 mai : la faire réindexer aide Google à redécouvrir tous les articles qu'elle liste.
 
-### Groupe B — à demander le 12 août 2026
+### ✅ Groupe B — DEMANDÉ le 12 août 2026
 
 ```
 https://leveilmental.fr/blog/ecoute-active-technique-carl-rogers/

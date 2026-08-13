@@ -49,6 +49,35 @@ Deux à trois semaines après la livraison, comparer le nombre de `generate_lead
 
 ---
 
+## ✉️ Lot 0 ter — Reprendre le design de l'email de bienvenue
+
+**Décidé le 12 août 2026.**
+
+L'automatisation active (#2) envoie un email au HTML volontairement sobre : texte, un bouton doré, un pied de page. Fonctionnel, mais sans identité.
+
+L'**Automatisation #1**, désactivée le 12 août parce qu'inopérante, contenait un email **nettement mieux conçu** : logo L'ÉVEIL en en-tête, visuel de cerveau, bouton, et une rangée d'icônes sociales (Facebook, X, Instagram, TikTok). Elle n'a jamais rien envoyé en 123 jours à cause de deux défauts :
+
+- **aucun expéditeur défini** (le champ était vide, bordé de rouge)
+- `{{contact.FIRSTNAME}}` au lieu de `{{contact.PRENOM}}`, l'attribut réellement rempli par `netlify/functions/subscribe.ts`
+
+Elle pointait en outre vers le guide BDNF, pas vers les 21 déclencheurs.
+
+### À faire
+
+Récupérer le design de #1 dans le message de #2, en corrigeant :
+
+1. `{{contact.FIRSTNAME}}` → `{{contact.PRENOM}}`
+2. lien BDNF → `https://leveilmental.fr/resources/21-declencheurs-mentaux-pour-reussir.pdf`
+3. expéditeur : `Guesso <contact@leveilmental.fr>`
+
+Puis supprimer définitivement l'Automatisation #1 pour ne pas la réactiver par mégarde.
+
+### Ce qu'il ne faut pas en attendre
+
+Un email plus riche **n'améliore pas mécaniquement la délivrabilité** — un message très chargé en images avec peu de texte peut même desservir. Le gain réel est ailleurs : une identité visuelle reconnaissable augmente l'engagement (ouvertures, clics, réponses), et c'est **l'engagement** qui construit la réputation d'expéditeur. C'est un pari sur la marque, pas un correctif technique.
+
+---
+
 ## 🔴 Lot 0 bis — Débloquer Brevo (prérequis, action manuelle)
 
 **Constaté le 12 août 2026.**
