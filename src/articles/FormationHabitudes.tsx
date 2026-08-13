@@ -483,7 +483,7 @@ export default function FormationHabitudes() {
             <p className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wide mb-2">Ressource gratuite</p>
             <p className="text-lg font-bold text-amber-900 dark:text-amber-100 mb-2">Fiche Changer une Habitude : le protocole en 4 étapes</p>
             <p className="text-sm text-amber-700 dark:text-amber-300 mb-4">
-              Une fiche A4 à imprimer : repérer le signal, agir sur le contexte, empiler sur un déclencheur stable, ajouter de la friction. Le tout fondé sur le circuit du striatum, en une page.
+              Une fiche A4 à imprimer : repérer le signal, agir sur le contexte, empiler sur un déclencheur stable, ajouter de la friction. Le tout fondé sur le circuit du striatum, en une page. Vous recevrez aussi le guide « 21 déclencheurs mentaux » par email.
             </p>
             <button
               type="button"

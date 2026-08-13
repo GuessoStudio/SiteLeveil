@@ -566,7 +566,7 @@ export default function BiaisCognitifs() {
             <p className="text-xs font-bold text-violet-600 dark:text-violet-400 uppercase tracking-wide mb-2">Ressource gratuite</p>
             <p className="text-lg font-bold text-violet-900 dark:text-violet-100 mb-2">Fiche des 13 biais cognitifs + le réflexe anti-biais</p>
             <p className="text-sm text-violet-700 dark:text-violet-300 mb-4">
-              Une fiche A4 à imprimer : les 13 biais avec leur définition et leur origine, plus les 4 questions du réflexe anti-biais à se poser avant toute décision importante.
+              Une fiche A4 à imprimer : les 13 biais avec leur définition et leur origine, plus les 4 questions du réflexe anti-biais à se poser avant toute décision importante. Vous recevrez aussi le guide « 21 déclencheurs mentaux » par email.
             </p>
             <button
               type="button"

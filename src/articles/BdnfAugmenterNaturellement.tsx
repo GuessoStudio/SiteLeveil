@@ -579,14 +579,14 @@ export default function BdnfAugmenterNaturellement() {
             </h3>
             <p className="text-indigo-100 text-sm mb-6">
               Les leviers validés pour stimuler naturellement votre BDNF, avec les protocoles
-              et les sources. Plus, chaque semaine, un mécanisme neurologique décrypté.
+              et les sources. Vous recevrez aussi le guide « 21 déclencheurs mentaux » par email.
             </p>
             <button
               type="button"
               onClick={() => setLeadModalOpen(true)}
               className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded-lg hover:bg-indigo-50 transition-colors text-sm"
             >
-              Recevoir le guide BDNF (PDF gratuit)
+              Télécharger le guide BDNF (PDF gratuit)
             </button>
           </div>
 

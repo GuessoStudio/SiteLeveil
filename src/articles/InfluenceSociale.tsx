@@ -431,7 +431,7 @@ export default function InfluenceSociale() {
             <p className="text-xs font-bold text-violet-600 dark:text-violet-400 uppercase tracking-wide mb-2">Ressource gratuite</p>
             <p className="text-lg font-bold text-violet-900 dark:text-violet-100 mb-2">Checklist : résister à la pression sociale en 5 leviers</p>
             <p className="text-sm text-violet-700 dark:text-violet-300 mb-4">
-              Une fiche A4 à imprimer : les 5 leviers pour reprendre la main face au groupe, le mécanisme psychologique de chacun et une phrase-clé à se dire dans le feu de l'action.
+              Une fiche A4 à imprimer : les 5 leviers pour reprendre la main face au groupe, le mécanisme psychologique de chacun et une phrase-clé à se dire dans le feu de l'action. Vous recevrez aussi le guide « 21 déclencheurs mentaux » par email.
             </p>
             <button
               type="button"
