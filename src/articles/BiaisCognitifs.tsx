@@ -4,8 +4,10 @@
 // Auteur : Guesso | L'Éveil Mental
 // Dernière mise à jour : 5 août 2026 (13e biais, items étoffés, institutions)
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import EmailCaptureModal from "../components/EmailCaptureModal";
 
 // ==================== MÉTADONNÉES ====================
 
@@ -68,6 +70,10 @@ const faqData = [
 // ==================== COMPOSANT ====================
 
 export default function BiaisCognitifs() {
+  // Capture d'email avant livraison du lead magnet. useState(false) est
+  // deterministe : meme valeur au rendu SSG et au premier rendu client, donc
+  // pas de mismatch d'hydratation.
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
@@ -562,13 +568,20 @@ export default function BiaisCognitifs() {
             <p className="text-sm text-violet-700 dark:text-violet-300 mb-4">
               Une fiche A4 à imprimer : les 13 biais avec leur définition et leur origine, plus les 4 questions du réflexe anti-biais à se poser avant toute décision importante.
             </p>
-            <a
-              href="/Downloads/biais-cognitifs-liste-psychologie-guide.pdf"
+            <button
+              type="button"
+              onClick={() => setLeadModalOpen(true)}
               className="inline-block bg-violet-600 hover:bg-violet-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche biais cognitifs (PDF gratuit)
-            </a>
+            </button>
           </div>
+
+          <EmailCaptureModal
+            isOpen={leadModalOpen}
+            onClose={() => setLeadModalOpen(false)}
+            resourceFile="/Downloads/biais-cognitifs-liste-psychologie-guide.pdf"
+          />
 
           {/* Bloc articles connexes — cluster "biais cognitifs et jugement" */}
           <div className="not-prose my-12 p-6 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-700">

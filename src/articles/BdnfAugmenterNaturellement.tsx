@@ -4,8 +4,10 @@
 // Auteur : Guesso | L'Éveil Mental
 // Dernière mise à jour : 11 avril 2026
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import EmailCaptureModal from "../components/EmailCaptureModal";
 
 // ==================== MÉTADONNÉES ====================
 
@@ -68,6 +70,9 @@ const faqData = [
 // ==================== COMPOSANT ====================
 
 export default function BdnfAugmenterNaturellement() {
+  // Capture d'email avant livraison du guide BDNF. useState(false) est
+  // deterministe : meme valeur au rendu SSG et au premier rendu client.
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
@@ -570,18 +575,26 @@ export default function BdnfAugmenterNaturellement() {
           {/* CTA */}
           <div className="not-prose my-10 bg-indigo-600 dark:bg-indigo-700 p-8 rounded-xl text-center">
             <h3 className="text-xl font-bold text-white mb-3">
-              Recevez nos analyses neuroscientifiques
+              Le guide complet du BDNF
             </h3>
             <p className="text-indigo-100 text-sm mb-6">
-              Chaque semaine, un mécanisme neurologique décrypté avec ses applications pratiques validées.
+              Les leviers validés pour stimuler naturellement votre BDNF, avec les protocoles
+              et les sources. Plus, chaque semaine, un mécanisme neurologique décrypté.
             </p>
-            <Link
-              to="/ressources/"
+            <button
+              type="button"
+              onClick={() => setLeadModalOpen(true)}
               className="inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded-lg hover:bg-indigo-50 transition-colors text-sm"
             >
-              Accéder aux ressources gratuites
-            </Link>
+              Recevoir le guide BDNF (PDF gratuit)
+            </button>
           </div>
+
+          <EmailCaptureModal
+            isOpen={leadModalOpen}
+            onClose={() => setLeadModalOpen(false)}
+            resourceFile="/Downloads/bdnf-guide-scientifique-leveilmental.pdf"
+          />
 
           {/* Sources scientifiques */}
           <h2 id="sources">Sources scientifiques</h2>

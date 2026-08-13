@@ -4,8 +4,10 @@
 // Auteur : Guesso | L'Éveil Mental
 // Dernière mise à jour : 19 juin 2026
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import EmailCaptureModal from "../components/EmailCaptureModal";
 
 // ==================== MÉTADONNÉES ====================
 
@@ -68,6 +70,10 @@ const faqData = [
 // ==================== COMPOSANT ====================
 
 export default function FormationHabitudes() {
+  // Capture d'email avant livraison du lead magnet. useState(false) est
+  // deterministe : meme valeur au rendu SSG et au premier rendu client, donc
+  // pas de mismatch d'hydratation.
+  const [leadModalOpen, setLeadModalOpen] = useState(false);
   const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
   const url = `${site}/blog/${meta.slug}/`;
   const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
@@ -479,13 +485,20 @@ export default function FormationHabitudes() {
             <p className="text-sm text-amber-700 dark:text-amber-300 mb-4">
               Une fiche A4 à imprimer : repérer le signal, agir sur le contexte, empiler sur un déclencheur stable, ajouter de la friction. Le tout fondé sur le circuit du striatum, en une page.
             </p>
-            <a
-              href="/Downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
+            <button
+              type="button"
+              onClick={() => setLeadModalOpen(true)}
               className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-colors"
             >
               Télécharger la fiche habitude (PDF gratuit)
-            </a>
+            </button>
           </div>
+
+          <EmailCaptureModal
+            isOpen={leadModalOpen}
+            onClose={() => setLeadModalOpen(false)}
+            resourceFile="/Downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
+          />
 
           {/* Sources scientifiques */}
           <h2>Sources scientifiques</h2>
