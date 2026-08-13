@@ -13,13 +13,20 @@ BDNF a demandé un traitement à part : son CTA ne proposait aucun guide, il ren
 
 Vérifié après build : zéro erreur d'hydratation sur les quatre pages, et le formulaire Brevo absent du HTML pré-rendu tant que la modale est fermée.
 
-### ⚠️ Deux points restés ouverts
+### ✅ Liste cible vérifiée le 12 août 2026
 
-**1. Vérifier la liste cible du formulaire Brevo.** `EmailCaptureModal` poste vers `sibforms.com`, pas vers la fonction Netlify. Si ce formulaire n'écrit pas dans la **liste #6**, l'automatisation de bienvenue ne se déclenchera pas et les inscrits ne recevront rien. À contrôler dans Brevo → Marketing → Formulaires.
+`EmailCaptureModal` poste vers le formulaire Brevo `sibforms.com` et non vers la fonction Netlify — il fallait donc s'assurer qu'il écrit dans la bonne liste. **C'est le cas** : le formulaire « bnf » est rattaché à **Newsletter L'Éveil Mental - #6**, celle-là même qui déclenche l'automatisation de bienvenue (confirmé par son compteur de 4 contacts, identique au total du CRM).
 
-Correctif de fond possible : faire poster la modale vers `/.netlify/functions/subscribe` comme le fait `NewsletterSection`. Cela garantirait la liste, supprimerait l'ouverture d'un onglet `_blank`, et unifierait les deux parcours.
+Les deux parcours convergent donc :
 
-**2. `surmonter-rejet-social` n'a aucun lead magnet.** L'article était dans la cible (6 clics, 149 impressions) mais aucun PDF ne lui correspond dans `Downloads/` ni `resources/`. Il faudrait en créer un avant de pouvoir fermer cet article.
+- **page d'accueil** → fonction Netlify → API Brevo → liste #6 → email de bienvenue
+- **article** → modale → formulaire Brevo → liste #6 → email de bienvenue
+
+Refactoriser la modale vers `/.netlify/functions/subscribe` n'apporterait plus qu'un gain cosmétique (supprimer l'ouverture d'un onglet `_blank`). Non prioritaire.
+
+### ⚠️ Un point resté ouvert
+
+**`surmonter-rejet-social` n'a aucun lead magnet.** L'article était dans la cible (6 clics, 149 impressions) mais aucun PDF ne lui correspond dans `Downloads/` ni `resources/`. Il faudrait en créer un avant de pouvoir fermer cet article.
 
 ### Reste à décider plus tard
 
