@@ -5,7 +5,29 @@ Une fois un lot livré, le déplacer vers `docs/audit-seo.md` avec le hash de co
 
 ---
 
-## 🎯 Lot 0 — Capturer les emails sur les articles à fort trafic
+## ✅ Lot 0 — FAIT le 12 août 2026 (commit `c9428b6`)
+
+Quatre articles livrent désormais leur lead magnet **contre email**, via `EmailCaptureModal` : `bdnf-augmenter-naturellement-neurosciences`, `biais-cognitifs-liste-psychologie`, `formation-habitudes-cerveau-neurosciences`, `influence-sociale-conformisme`.
+
+BDNF a demandé un traitement à part : son CTA ne proposait aucun guide, il renvoyait vers `/ressources/`. Il livre maintenant le guide BDNF directement, ce qui supprime une étape sur l'article le plus lu du site.
+
+Vérifié après build : zéro erreur d'hydratation sur les quatre pages, et le formulaire Brevo absent du HTML pré-rendu tant que la modale est fermée.
+
+### ⚠️ Deux points restés ouverts
+
+**1. Vérifier la liste cible du formulaire Brevo.** `EmailCaptureModal` poste vers `sibforms.com`, pas vers la fonction Netlify. Si ce formulaire n'écrit pas dans la **liste #6**, l'automatisation de bienvenue ne se déclenchera pas et les inscrits ne recevront rien. À contrôler dans Brevo → Marketing → Formulaires.
+
+Correctif de fond possible : faire poster la modale vers `/.netlify/functions/subscribe` comme le fait `NewsletterSection`. Cela garantirait la liste, supprimerait l'ouverture d'un onglet `_blank`, et unifierait les deux parcours.
+
+**2. `surmonter-rejet-social` n'a aucun lead magnet.** L'article était dans la cible (6 clics, 149 impressions) mais aucun PDF ne lui correspond dans `Downloads/` ni `resources/`. Il faudrait en créer un avant de pouvoir fermer cet article.
+
+### Reste à décider plus tard
+
+Les 15 autres articles conservent leur téléchargement libre. Mesurer d'abord `generate_lead` par article sur deux à trois semaines : si le gate ne convertit pas sur BDNF, la page la plus lue du site, c'est le lead magnet lui-même qu'il faudra revoir, pas le mécanisme.
+
+---
+
+## 📌 Contexte d'origine du lot 0
 
 **Décidé le 12 août 2026. Approche mixte retenue. Priorité la plus haute du fichier : c'est la moitié de l'objectif du site.**
 
