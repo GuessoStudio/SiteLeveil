@@ -130,7 +130,7 @@ export default function ConfianceEnSoi() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3200
+    wordCount: 3500
   };
 
   // Schema Breadcrumb (fil d'Ariane 4 niveaux)

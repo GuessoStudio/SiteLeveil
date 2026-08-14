@@ -23,7 +23,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Psychologie",
-  readingTime: "15 min",
+  readingTime: "13 min",
   version: "1.0",
   verifiedDate: "Juin 2026"
 };
@@ -129,7 +129,7 @@ export default function AnxieteMecanismes() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3200
+    wordCount: 3100
   };
 
   const schemaBreadcrumb = {

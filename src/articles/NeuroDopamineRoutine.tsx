@@ -125,7 +125,7 @@ export default function NeuroDopamineRoutine() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 4500
+    wordCount: 3800
   };
 
   const schemaBreadcrumb = {

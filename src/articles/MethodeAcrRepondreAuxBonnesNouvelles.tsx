@@ -12,7 +12,7 @@ const meta = {
   datePublished: "2025-08-30T08:00:00+01:00",
   dateModified: "2025-08-30T08:00:00+01:00",
   category: "Relations Humaines",
-  readingTime: "10 min",
+  readingTime: "6 min",
   date: "2025-08-30",
   author: {
     "@type": "Person",
@@ -123,7 +123,7 @@ export default function MethodeAcrRepondreAuxBonnesNouvelles() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2100
+    wordCount: 1500
   };
 
   const schemaBreadcrumb = {

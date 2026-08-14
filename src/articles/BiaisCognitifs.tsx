@@ -135,7 +135,7 @@ export default function BiaisCognitifs() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3900
+    wordCount: 3800
   };
 
   const schemaBreadcrumb = {

@@ -25,7 +25,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Développement Personnel",
-  readingTime: "14 min",
+  readingTime: "11 min",
   version: "1.0",
   verifiedDate: "Juin 2026"
 };

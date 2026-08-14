@@ -23,7 +23,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Neurosciences",
-  readingTime: "15 min",
+  readingTime: "12 min",
   version: "2.0",
   verifiedDate: "Août 2026",
 };

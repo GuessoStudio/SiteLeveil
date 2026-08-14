@@ -128,7 +128,7 @@ export default function ResoudreUnConflit() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2800
+    wordCount: 3000
   };
 
   const schemaBreadcrumb = {

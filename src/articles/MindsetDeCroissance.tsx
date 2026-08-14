@@ -137,7 +137,7 @@ export default function MindsetDeCroissance() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2800
+    wordCount: 3100
   };
 
   const schemaBreadcrumb = {

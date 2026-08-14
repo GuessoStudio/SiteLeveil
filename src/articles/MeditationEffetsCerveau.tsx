@@ -23,7 +23,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Neurosciences",
-  readingTime: "14 min",
+  readingTime: "11 min",
   version: "1.0",
   verifiedDate: "Juillet 2026"
 };
@@ -133,7 +133,7 @@ export default function MeditationEffetsCerveau() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2650
+    wordCount: 2900
   };
 
   const schemaBreadcrumb = {

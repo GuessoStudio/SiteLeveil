@@ -16,7 +16,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Psychologie",
-  readingTime: "13 min",
+  readingTime: "7 min",
   version: "1.0",
   verifiedDate: "Août 2025"
 };
@@ -120,7 +120,7 @@ export default function ProcrastinationCerveau() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3200
+    wordCount: 1900
   };
 
   const schemaBreadcrumb = {

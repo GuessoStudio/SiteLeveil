@@ -130,7 +130,7 @@ export default function PlasticiteSynaptique() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 4100
+    wordCount: 3400
   };
 
   const schemaBreadcrumb = {

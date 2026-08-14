@@ -23,7 +23,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Neurosciences",
-  readingTime: "15 min",
+  readingTime: "14 min",
   version: "1.0",
   verifiedDate: "Avril 2026"
 };
@@ -138,7 +138,7 @@ export default function CortisolStressChronique() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 4200
+    wordCount: 3500
   };
 
   const schemaBreadcrumb = {

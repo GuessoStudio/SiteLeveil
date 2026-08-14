@@ -12,7 +12,7 @@ const meta = {
     tags: ["rejet social", "neurosciences", "amygdale", "neuroplasticité"],
     author: { name: "Guesso" },
     category: "Neurosciences",
-    readingTime: "12 min",
+    readingTime: "10 min",
     version: "2.0",
     verifiedDate: "Août 2026",
 };

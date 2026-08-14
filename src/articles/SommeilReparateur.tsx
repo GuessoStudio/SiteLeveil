@@ -25,7 +25,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Neurosciences",
-  readingTime: "14 min",
+  readingTime: "19 min",
 };
 
 // ==================== FAQ DATA (enrichie pour featured snippets) ====================
@@ -130,7 +130,7 @@ export default function SommeilReparateur() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3500
+    wordCount: 4800
   };
 
   // Schema Breadcrumb (4 niveaux)

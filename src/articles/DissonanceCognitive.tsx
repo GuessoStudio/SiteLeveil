@@ -23,7 +23,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Psychologie",
-  readingTime: "12 min",
+  readingTime: "11 min",
   version: "1.0",
   verifiedDate: "Août 2026"
 };

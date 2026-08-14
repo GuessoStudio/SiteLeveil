@@ -107,7 +107,7 @@ export default function SystemeLimbique() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3900
+    wordCount: 3200
   };
 
   const schemaBreadcrumb = {

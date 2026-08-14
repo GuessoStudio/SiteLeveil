@@ -25,7 +25,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Relations Humaines",
-  readingTime: "13 min",
+  readingTime: "9 min",
   version: "1.0",
   verifiedDate: "Juillet 2026"
 };

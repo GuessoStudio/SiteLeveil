@@ -20,7 +20,7 @@ export const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Psychologie",
-  readingTime: "10 min",
+  readingTime: "6 min",
   version: "1.0",
   verifiedDate: "Septembre 2025"
 };
@@ -124,7 +124,7 @@ export default function SyndromeImposteur() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2400
+    wordCount: 1600
   };
 
   const schemaBreadcrumb = {

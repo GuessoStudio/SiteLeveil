@@ -138,7 +138,7 @@ export default function EmpathieNeuronesMiroirs() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3900
+    wordCount: 3600
   };
 
   const schemaBreadcrumb = {

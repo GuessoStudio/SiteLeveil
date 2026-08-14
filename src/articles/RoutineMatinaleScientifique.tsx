@@ -23,7 +23,7 @@ const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Développement Personnel",
-  readingTime: "13 min",
+  readingTime: "12 min",
   version: "1.0",
   verifiedDate: "Mai 2026"
 };
@@ -129,7 +129,7 @@ export default function RoutineMatinaleScientifique() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 2500
+    wordCount: 3000
   };
 
   const schemaBreadcrumb = {

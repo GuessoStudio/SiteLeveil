@@ -18,7 +18,7 @@ export const meta = {
     "url": "https://leveilmental.fr/a-propos/"
   },
   category: "Neurosciences",
-  readingTime: "14 min",
+  readingTime: "9 min",
   version: "1.0",
   verifiedDate: "Septembre 2025"
 };
@@ -122,7 +122,7 @@ export default function LumiereNaturelle() {
     keywords: meta.tags.join(", "),
     inLanguage: "fr-FR",
     articleSection: meta.category,
-    wordCount: 3600
+    wordCount: 2300
   };
 
   const schemaBreadcrumb = {
