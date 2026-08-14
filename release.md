@@ -336,9 +336,45 @@ Ces pages ne reçoivent presque personne. Les réécrire coûterait des heures d
 
 ---
 
-## 🗑️ Ménage
+## ✅ Ménage — FAIT le 14 août 2026
 
-`ACTION-PLAN.md` et `FULL-AUDIT-REPORT.md` datent du **24 avril 2026** et sont périmés : leurs points « critiques » (URL auteur en `/about`, cover en `.jpg` sur neuroplasticité) sont résolus depuis. Ils entrent en conflit avec `docs/audit-seo.md`, seule source à jour. À archiver ou supprimer pour éviter qu'un futur audit reparte de données fausses.
+`ACTION-PLAN.md` (291 lignes) et `FULL-AUDIT-REPORT.md` (340 lignes), datés du 24 avril 2026, ont été supprimés. Les 21 points ont été revérifiés un par un contre le code avant suppression : tous les 🔴 CRITIQUE et 🟠 HIGH étaient résolus, et les chiffres de cadrage étaient devenus faux (15 articles annoncés contre 36 réels, 24 URLs au sitemap contre 47). Le risque n'était pas de perdre ces fichiers, mais qu'un futur audit reparte de leurs données.
+
+Le doublon `stress-zero/` à la racine a été supprimé aussi : `public/stress-zero/` est plus récent d'un jour, contient les optimisations (polices non bloquantes, CSS inliné) et est le seul des deux à atteindre `dist/`. La copie racine n'était référencée ni par `vite.config.ts`, ni par `netlify.toml`, ni par `package.json`.
+
+Les 4 points encore valides ont été extraits ci-dessous avant suppression.
+
+---
+
+## 🔬 Lot 7 — Rescapés de l'audit d'avril
+
+### 7.1 — Wrann et al. 2013 présenté comme humain (rigueur scientifique)
+
+`src/articles/PlasticiteSynaptique.tsx` ligne 565 :
+
+> Wrann et al. (2013, *Cell Metabolism*) ont identifié le mécanisme exact […] L'effet est mesurable après 20 à 30 minutes d'effort aérobie modéré et reste maximal dans les 1 à 2 heures suivant l'exercice
+
+Wrann 2013 est une **étude sur souris**. Le passage en tire un protocole humain chiffré sans le signaler. La liste des sources du même article qualifie pourtant bien Hayashi-Takagi (« Études sur souris ») : l'omission est isolée, pas systémique.
+
+Contredit `.claude/rules/articles.md` : « Jamais présenter des données animales comme humaines sans précision ».
+
+Correctif : soit qualifier (« démontré chez la souris ; les protocoles humains rapportent des durées comparables »), soit adosser le timing à une source humaine — Ferris et al., 2007, *Medicine & Science in Sports & Exercise*.
+
+### 7.2 — H1 de la page d'accueil tronqué
+
+Le `<h1>` de `src/components/HeroEveilWorker.jsx` ligne 251 contient exactement `Éveillez votre`, et rien d'autre. Le mot tournant (`POTENTIEL`…) vit dans une `<div>` sœur, hors du H1. Vérifié dans le HTML pré-rendu : Google lit `Éveillez votre`, un fragment sans complément ni mot-clé.
+
+L'audit d'avril décrivait à tort une concaténation `ÉveillezvotrePOTENTIEL` — le diagnostic était faux, le problème est réel mais différent.
+
+Correctif : mettre le texte complet dans le H1 via un `<span class="sr-only">`, en laissant l'animation au visuel.
+
+### 7.3 — `/blog/` sans JSON-LD
+
+`src/pages/Blog.tsx` ne passe aucun `jsonLd` au composant SEO. La page catalogue n'a ni `CollectionPage` ni `ItemList`. La page d'accueil, elle, est couverte (`isHome` déclenche WebSite + Organization dans `SEO.tsx`).
+
+### 7.4 — Bio `/a-propos` sous les 500 mots
+
+394 mots dans le HTML pré-rendu. Meta description et `schemaPerson` sont en place depuis avril ; seule la longueur reste courte pour une page auteur, qui est le socle E-E-A-T du site.
 
 ---
 

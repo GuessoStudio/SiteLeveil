@@ -6,7 +6,7 @@
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",
     "images": "node scripts/generate-image-variants.mjs",
-    "prebuild": "npm run validate:links && npm run validate:llms && npm run validate:inbound && npm run sitemap && npm run images",
+    "prebuild": "npm run validate:links && npm run validate:llms && npm run validate:assets && npm run validate:inbound && npm run sitemap && npm run images",
     "dev": "vite",
     "build": "tsc && vite-react-ssg build && node scripts/optimize-html.mjs",
     "preview": "vite preview",
@@ -16,7 +16,8 @@
     "validate:article": "npx tsx scripts/validate-article.ts",
     "validate:links": "node scripts/validate-links.mjs",
     "validate:llms": "node scripts/validate-llms.mjs",
-    "validate:inbound": "node scripts/validate-inbound-links.mjs"
+    "validate:inbound": "node scripts/validate-inbound-links.mjs",
+    "validate:assets": "node scripts/validate-assets.mjs"
   },
   "dependencies": {
     "@netlify/functions": "^4.2.2",

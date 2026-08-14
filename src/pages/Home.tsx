@@ -30,7 +30,7 @@ const Home = () => {
         title="L'Éveil Mental | Neurosciences, Psychologie & Développement Personnel"
         description="Neurosciences et psychologie appliquées : articles scientifiques, outils pratiques et protocoles validés pour comprendre votre cerveau et transformer votre vie. Sources peer-reviewed."
         path="/"
-        image="/images/og-default.jpg"
+        image="/images/og-default.webp"
       />
 
       {/* Hero — pas de fade-in, premier élément visible */}

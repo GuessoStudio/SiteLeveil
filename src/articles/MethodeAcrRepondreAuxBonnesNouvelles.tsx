@@ -8,7 +8,7 @@ const meta = {
   slug: "methode-acr-repondre-aux-bonnes-nouvelles",
   title: "La méthode ACR : répondre aux bonnes nouvelles pour renforcer les relations",
   description: "Découvrez comment la réponse active-constructive (ACR) transforme votre façon de célébrer les bonnes nouvelles et renforce durablement vos liens interpersonnels.",
-  cover: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-cover",
+  cover: "/images/articles/methode-acr-repondre-aux-bonnes-nouvelles-og-1200x630",
   datePublished: "2025-08-30T08:00:00+01:00",
   dateModified: "2025-08-30T08:00:00+01:00",
   category: "Relations Humaines",

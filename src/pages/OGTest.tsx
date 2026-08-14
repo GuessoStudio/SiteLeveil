@@ -116,7 +116,7 @@ const OGTest = () => {
                   className="w-full h-auto"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement
-                    target.src = '/images/og-default.jpg'
+                    target.src = '/images/og-default.webp'
                   }}
                 />
               </div>

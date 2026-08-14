@@ -44,7 +44,7 @@ const StressZeroLanding = () => {
                 title="Stress Zéro, Finances héros : la sérénité financière en 30 jours"
                 description="67% des Français perdent le sommeil à cause de l'argent. Méthode testée 30 jours pour retrouver la sérénité financière. Sans culpabilisation."
                 path="/stress-zero/"
-                image="/stress-zero/og-cover.webp"
+                image="/images/og-cover.webp"
                 type="website"
                 category="Développement Personnel"
                 jsonLd={jsonLd}
