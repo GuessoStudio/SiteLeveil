@@ -134,7 +134,11 @@ curl -s -X POST "https://leveilmental.fr/.netlify/functions/subscribe" \
 
 ---
 
-## 🔧 Lot 1 — Correctif de masse : `wordCount` et `readingTime`
+## ✅ Lot 1 — FAIT le 14 août 2026 (commit `cee4c33`)
+
+31 `wordCount` et 37 `readingTime` alignés sur la longueur réelle du HTML pré-rendu. Base de lecture retenue : 250 mots/minute. Le script relancé après build ne trouve plus aucun écart.
+
+### Contexte d'origine
 
 **Décidé le 11 août 2026. Priorité haute : meilleur rapport effort/gain restant.**
 
@@ -232,7 +236,13 @@ Ils redeviennent prioritaires **uniquement** si leurs impressions décollent.
 
 ---
 
-## ⚠️ Lot 4 — Correctifs techniques ciblés
+## ✅ Lot 4 — FAIT le 14 août 2026 (commit `f9147a5`)
+
+Routes Neuro-Journal en `noindex`, outils de `/ressources/` transformés en vrais `<Link>` (le lien vers `/calculateur-sommeil/` est enfin dans le HTML), slash final sur 4 `webAppUrl` et 7 liens, `llms.txt` à 37/37, `jobTitle` unifié sur 37 fichiers.
+
+⚠️ Angle mort découvert : `validate:links` exclut `/neuro-journal/` (constante `CLIENT_ONLY`) et ne contrôle pas les champs de données comme `webAppUrl`. À étendre pour éviter la prochaine dérive.
+
+### Contexte d'origine
 
 **Découverts le 11 août 2026 en balayant la roadmap. Petits, rapides, mais deux d'entre eux sont des fuites SEO réelles.**
 
@@ -269,7 +279,11 @@ Correctif : rendre le lien dans le HTML statique, ajouter le slash final, et **�
 
 ---
 
-## 💰 Lot 4 bis — Réécrire les titres des pages déjà en page 1
+## ✅ Lot 4 bis — FAIT le 12 août 2026 (commit `39fe06e`)
+
+Les 5 titres réécrits. Deux étaient tronqués par Google (92 et 81 caractères), deux contenaient des sigles opaques (OSBD, LTP). Effet mesurable attendu vers le 20-25 août.
+
+### Contexte d'origine
 
 **Identifié le 11 août 2026 dans l'export GSC Performances. Meilleur rapport effort/gain découvert à ce jour, devant le Lot 1.**
 
@@ -291,7 +305,21 @@ Environ **240 impressions en page 1 sans un seul clic**. Ce n'est pas un problè
 
 ---
 
-## 🤖 Lot 5 — GEO et autorité (Phase 4 de l'audit)
+## 🟡 Lot 5 — GEO et autorité (partiellement fait)
+
+**✅ Fait le 14 août :**
+- YouTube ajouté au `sameAs`, et le `sameAs` propagé aux 36 articles (commit `185927e`). Il n'existait que sur la page d'accueil, qui pèse 45 impressions sur 90 jours contre plusieurs milliers pour les articles.
+- 24 réponses FAQ resserrées sur les 5 articles à fort trafic (commit `0a6b913`). Plus aucune réponse au-dessus de 60 mots sur les pages qui reçoivent des visiteurs.
+
+**⏸️ Reporté volontairement : 56 réponses FAQ sur 13 articles à moins de 40 impressions.**
+
+Ces pages ne reçoivent presque personne. Les réécrire coûterait des heures de travail éditorial et ferait courir un risque d'erreur factuelle — comme celle trouvée sur Mindset — pour un gain nul aujourd'hui. C'est pourtant là que se trouvent les pires : `confiance-en-soi` a une réponse de 122 mots pour 18 impressions, `sommeil-reparateur` en a 8 au-dessus de 84 mots pour 4 impressions.
+
+**Condition de reprise** : plusieurs de ces pages font partie des 16 demandes d'indexation des 11-12 août. Si le recrawl leur amène du trafic, elles redeviennent prioritaires. À réévaluer après le point du 20-25 août.
+
+**Reste aussi à faire :**
+- Automatiser `llms.txt` depuis `blog-articles.ts` en `prebuild`, pour qu'il ne redérive plus
+- Envisager d'embarquer les Shorts sur les articles correspondants
 
 **Non urgent, mais c'est le socle de la citabilité par les IA.**
 
