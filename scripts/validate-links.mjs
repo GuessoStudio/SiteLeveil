@@ -53,6 +53,16 @@ const OFFENDING = new RegExp(
 // Capture la valeur de to="...", href="...", href:'...' (simple/double quote).
 const LINK_ATTR = /\b(?:to|href)\s*[=:]\s*["']([^"']+)["']/g;
 
+// Champs de DONNÉES pointant vers une route interne : webAppUrl dans
+// src/pages/Resources.tsx, par exemple.
+//
+// ⚠️ Angle mort corrigé le 14 août 2026. Le garde-fou ne contrôlait que `to=`
+// et `href=`, donc 4 des 5 `webAppUrl` ont pu rester sans slash final pendant
+// des mois sans déclencher la moindre alerte — dont celui du calculateur de
+// sommeil. Ces valeurs finissent bien dans un <Link to={…}> ou un navigate(),
+// et produisent donc le même 301 qu'un lien écrit en dur.
+const DATA_ATTR = /\b(?:webAppUrl|downloadUrl|externalUrl)\s*[=:]\s*["']([^"']+)["']/g;
+
 // Liens construits en template literal : to={`/blog/${slug}`} (cartes, recherche).
 // On ne vise QUE to=/href= (pas path={…}, normalisé par SEO.tsx cleanPath()).
 // Fautif si le template ne se termine pas par "/" juste avant le backtick fermant.
@@ -101,6 +111,22 @@ for (const file of walk(SRC)) {
           fixed,
         });
       }
+    }
+    // Champs de données (webAppUrl…). Les routes applicatives sont incluses
+    // ici : même si elles ne 301 pas, un chemin sans slash y crée une seconde
+    // URL pour le même contenu dans le HTML pré-rendu de toutes les pages.
+    for (const m of line.matchAll(DATA_ATTR)) {
+      const raw = m[1];
+      if (!raw.startsWith("/") || raw.startsWith("//")) continue;
+      const [pathname, suffix] = splitPath(raw);
+      if (/\.[a-z0-9]{2,5}$/i.test(pathname)) continue; // fichier : PDF, image…
+      if (pathname.endsWith("/")) continue;
+      offenders.push({
+        file: path.relative(ROOT, file),
+        line: idx + 1,
+        raw,
+        fixed: `${pathname}/${suffix}`,
+      });
     }
     // Template literals : fautif si pas de "/" avant le backtick fermant.
     for (const m of line.matchAll(LINK_TEMPLATE)) {
