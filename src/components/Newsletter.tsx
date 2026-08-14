@@ -136,7 +136,7 @@ const Newsletter = () => {
               Rejoignez notre communauté d'esprits curieux
             </h2>
             <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
-              Une newsletter hebdomadaire + votre guide gratuit "21 déclencheurs mentaux pour réussir" immédiatement
+              Une newsletter hebdomadaire + votre guide gratuit "21 déclencheurs mentaux" immédiatement
             </p>
           </div>
 

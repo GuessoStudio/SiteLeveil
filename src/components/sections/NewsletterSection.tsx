@@ -54,7 +54,7 @@ export default function NewsletterSection() {
             </h2>
             <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
               Une newsletter hebdomadaire + votre guide gratuit
-              «&nbsp;21 déclencheurs mentaux pour réussir&nbsp;» immédiatement
+              «&nbsp;21 déclencheurs mentaux&nbsp;» immédiatement
             </p>
           </div>
 
@@ -63,11 +63,19 @@ export default function NewsletterSection() {
             {status === 'success' ? (
               <div className="text-center py-6">
                 <CheckCircle className="w-14 h-14 text-emerald-500 mx-auto mb-4" />
-                <p className="text-lg font-semibold text-neutral-900 dark:text-white mb-1">
+                <p className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
                   Bienvenue&nbsp;!
                 </p>
-                <p className="text-neutral-500 dark:text-neutral-400">
-                  Vérifie ta boîte mail&nbsp;📬
+                <p className="text-neutral-600 dark:text-neutral-300 mb-3">
+                  Ton guide arrive dans quelques instants.
+                </p>
+                {/* Le domaine emet depuis peu : sans reputation etablie, le premier
+                    message atterrit parfois en indesirables. Le dire evite un inscrit
+                    qui croit avoir ete oublie, et le « non indesirable » ameliore la
+                    delivrabilite des envois suivants. */}
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                  Rien reçu&nbsp;? Regarde dans tes spams, et marque le message
+                  comme «&nbsp;non indésirable&nbsp;» pour recevoir les prochains.
                 </p>
               </div>
             ) : (
