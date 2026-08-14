@@ -2,6 +2,26 @@ import React from 'react'
 import { X } from 'lucide-react'
 import { trackLead } from '../lib/analytics'
 
+/**
+ * Modale de capture d'email avant livraison d'un lead magnet.
+ *
+ * ⚠️ Le balisage n'utilise plus les classes `sib-*` de Brevo. Elles étaient
+ * copiées du formulaire hébergé, mais leur feuille de style
+ * (https://sibforms.com/forms/end-form/build/sib-styles.css) ne s'applique
+ * jamais sur le site : vérifié le 12 août 2026, le style calculé de
+ * `.sib-hide-loader-icon` valait `display:block` au lieu de `none`. Résultat,
+ * le bouton s'affichait comme un carré bleu avec le spinner de chargement
+ * apparent, et les champs sans aucune mise en forme. Sur les 4 articles à fort
+ * trafic qui ouvrent cette modale, c'était directement de la conversion perdue.
+ *
+ * Le formulaire est donc habillé avec le design system du site (Tailwind,
+ * compatible thème sombre). Ce qui doit rester intact pour que Brevo continue
+ * de recevoir les inscriptions :
+ *   - l'URL `action` (formulaire « bnf », rattaché à la liste #6)
+ *   - les noms de champs `EMAIL` et `PRENOM`
+ *   - les champs cachés `email_address_check` (anti-spam), `locale`, `html_type`
+ */
+
 interface EmailCaptureModalProps {
   isOpen: boolean
   onClose: () => void
@@ -12,16 +32,23 @@ interface EmailCaptureModalProps {
 
 const BDNF_PDF = 'https://leveilmental.fr/downloads/bdnf-guide-scientifique-leveilmental.pdf'
 
-interface BrevoFormProps {
-  resourceFile?: string
-}
+// Formulaire « bnf » → liste « Newsletter L'Éveil Mental - #6 », celle qui
+// déclenche l'automatisation de bienvenue. Ne pas changer sans vérifier la liste.
+const BREVO_ACTION =
+  'https://0764bcde.sibforms.com/serve/MUIFACGVBDTe_S8OQSTD1PkL5uV9wX8LmfJYLbCEv4_lBylWBBrMO51gqYB9fPS6rf5TP2RTQeTUBvhmMJ1ZoUxfOD9z__lFHogoB5vfJgFWDBIK6415y5nVBSM6y72WkTsi_j-_gQ7DZp14QCWzK6HJoPBj3-sdQ9SDSOywoieCpS3i3Gy2hDfC48U-_aRC_Albn2rufaNPsFZEqw=='
 
-const BrevoForm = ({ resourceFile }: BrevoFormProps) => {
+const champ =
+  'w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 ' +
+  'bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white ' +
+  'placeholder:text-neutral-400 dark:placeholder:text-neutral-500 ' +
+  'focus:outline-none focus:ring-2 focus:ring-amber-500 transition'
+
+const BrevoForm = ({ resourceFile }: { resourceFile?: string }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
 
-    // 1. Déclencher le téléchargement PDF (ressource spécifique ou guide BDNF par défaut)
+    // 1. Déclencher le téléchargement du PDF (ressource ciblée, ou guide BDNF)
     const pdfUrl = resourceFile || BDNF_PDF
     if (pdfUrl) {
       const link = document.createElement('a')
@@ -49,103 +76,69 @@ const BrevoForm = ({ resourceFile }: BrevoFormProps) => {
   }
 
   return (
-    <div className="sib-form" style={{ textAlign: 'center', backgroundColor: '#eff2f7' }}>
-      <div id="sib-form-container-modal" className="sib-form-container">
-        <div
-          className="sib-container--large sib-container--vertical"
-          style={{ textAlign: 'center', backgroundColor: 'rgba(255,255,255,1)', maxWidth: '540px', borderRadius: '3px', borderWidth: '1px', borderColor: '#C0CCD9', borderStyle: 'solid', margin: '0 auto' }}
+    <form
+      method="POST"
+      action={BREVO_ACTION}
+      onSubmit={handleSubmit}
+      noValidate
+      className="space-y-5"
+    >
+      <div>
+        <label
+          htmlFor="EMAIL-modal"
+          className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5"
         >
-          <form
-            id="sib-form-modal"
-            method="POST"
-            action="https://0764bcde.sibforms.com/serve/MUIFACGVBDTe_S8OQSTD1PkL5uV9wX8LmfJYLbCEv4_lBylWBBrMO51gqYB9fPS6rf5TP2RTQeTUBvhmMJ1ZoUxfOD9z__lFHogoB5vfJgFWDBIK6415y5nVBSM6y72WkTsi_j-_gQ7DZp14QCWzK6HJoPBj3-sdQ9SDSOywoieCpS3i3Gy2hDfC48U-_aRC_Albn2rufaNPsFZEqw=="
-            onSubmit={handleSubmit}
-          >
-            <div style={{ padding: '16px 0' }}>
-              <div className="sib-form-block" style={{ fontSize: '32px', textAlign: 'left', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
-                <p>Rejoindre L'Éveil Mental</p>
-              </div>
-            </div>
-
-            <div style={{ padding: '16px 0' }}>
-              <div className="sib-form-block" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
-                <div className="sib-text-form-block">
-                  <p>Reçois chaque semaine un article scientifique sur neurosciences et psychologie</p>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ padding: '16px 0' }}>
-              <div className="sib-input sib-form-block">
-                <div className="form__entry entry_block">
-                  <div className="form__label-row">
-                    <label
-                      className="entry__label"
-                      style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }}
-                      htmlFor="EMAIL-modal"
-                      data-required="*"
-                    >
-                      Veuillez renseigner votre adresse email pour vous inscrire
-                    </label>
-                    <div className="entry__field">
-                      <input className="input" type="text" id="EMAIL-modal" name="EMAIL" autoComplete="off" placeholder="EMAIL" data-required="true" required />
-                    </div>
-                  </div>
-                  <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }} />
-                  <label className="entry__specification" style={{ fontSize: '12px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#8390A4' }}>
-                    Veuillez renseigner votre adresse email pour vous inscrire. Ex. : abc@xyz.com
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ padding: '16px 0' }}>
-              <div className="sib-input sib-form-block">
-                <div className="form__entry entry_block">
-                  <div className="form__label-row">
-                    <label
-                      className="entry__label"
-                      style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }}
-                      htmlFor="PRENOM-modal"
-                      data-required="*"
-                    >
-                      Entrez votre PRENOM
-                    </label>
-                    <div className="entry__field">
-                      <input className="input" maxLength={200} type="text" id="PRENOM-modal" name="PRENOM" autoComplete="off" placeholder="PRENOM" data-required="true" required />
-                    </div>
-                  </div>
-                  <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }} />
-                  <label className="entry__specification" style={{ fontSize: '12px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#8390A4' }}>
-                    Personnalisez ce texte d'aide facultatif avant de publier votre formulaire.
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ padding: '16px 0' }}>
-              <div className="sib-form-block" style={{ textAlign: 'center' }}>
-                <button
-                  className="sib-form-block__button sib-form-block__button-with-loader"
-                  style={{ fontSize: '16px', textAlign: 'center', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#FFFFFF', backgroundColor: '#4f46e5', borderRadius: '3px', border: 'none' }}
-                  form="sib-form-modal"
-                  type="submit"
-                >
-                  <svg className="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                    <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                  </svg>
-                  {resourceFile ? 'Télécharger gratuitement' : "Je rejoins L'Éveil Mental"}
-                </button>
-              </div>
-            </div>
-
-            <input type="text" name="email_address_check" value="" className="input--hidden" readOnly />
-            <input type="hidden" name="locale" value="fr" />
-            <input type="hidden" name="html_type" value="simple" />
-          </form>
-        </div>
+          Email
+        </label>
+        <input
+          id="EMAIL-modal"
+          name="EMAIL"
+          type="email"
+          required
+          autoComplete="email"
+          placeholder="votre@email.com"
+          className={champ}
+        />
       </div>
-    </div>
+
+      <div>
+        <label
+          htmlFor="PRENOM-modal"
+          className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1.5"
+        >
+          Prénom
+        </label>
+        <input
+          id="PRENOM-modal"
+          name="PRENOM"
+          type="text"
+          required
+          maxLength={200}
+          autoComplete="given-name"
+          placeholder="Votre prénom"
+          className={champ}
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="w-full py-3 rounded-xl font-semibold text-white
+                   bg-[#C9953A] hover:bg-[#E8B84B] transition-colors duration-200
+                   flex items-center justify-center gap-2"
+      >
+        {resourceFile ? 'Télécharger gratuitement' : "Je rejoins L'Éveil Mental"}
+      </button>
+
+      <p className="text-xs text-center text-neutral-400 dark:text-neutral-500">
+        Pas de spam. Désabonnement en 1 clic.
+      </p>
+
+      {/* Champs attendus par Brevo — ne pas retirer.
+          `email_address_check` est son piège à robots : il doit rester vide. */}
+      <input type="text" name="email_address_check" defaultValue="" className="hidden" readOnly />
+      <input type="hidden" name="locale" value="fr" />
+      <input type="hidden" name="html_type" value="simple" />
+    </form>
   )
 }
 
@@ -158,13 +151,21 @@ const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ isOpen, onClose, 
         <div className="flex justify-end p-3">
           <button
             onClick={onClose}
-            className="text-neutral-400 hover:text-neutral-600 transition-colors"
+            className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 transition-colors"
             aria-label="Fermer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="px-2 pb-4">
+
+        <div className="px-6 pb-8">
+          <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">
+            Rejoindre L'Éveil Mental
+          </h2>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
+            Reçois chaque semaine un article scientifique sur les neurosciences et la psychologie.
+          </p>
+
           <BrevoForm resourceFile={resourceFile} />
         </div>
       </div>

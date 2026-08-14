@@ -89,10 +89,10 @@
        above-the-fold est injecté sur la home uniquement par onPageRendered
        (vite.config.ts) pour ne pas charger ces polices sur les articles. -->
 
-  <!-- Brevo Newsletter Form -->
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css"></noscript>
-  <!-- Brevo form styles: lazy-loaded to avoid render-blocking -->
+  <!-- La feuille de style Brevo a ete retiree le 12 aout 2026 : elle ne
+       s'appliquait pas (style calcule de .sib-hide-loader-icon = block au lieu
+       de none), ce qui affichait le formulaire de la modale sans mise en forme.
+       EmailCaptureModal utilise desormais le design system du site. -->
   <script>
     // Load Brevo fonts only when newsletter form is in viewport
     if ('IntersectionObserver' in window) {
