@@ -1,6 +1,6 @@
 // src/pages/Resources.tsx
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Download, BookOpen, Video, Smartphone, Filter, Search, Star, Clock, Users, Brain } from 'lucide-react'
 import EmailCaptureModal from '../components/EmailCaptureModal'
 import SEO from '../components/SEO'
@@ -28,7 +28,7 @@ const Resources = () => {
       image: "/images/resources/big-five-cover.webp",
       free: true,
       isWebApp: true,
-      webAppUrl: "/test-personnalite-big-five",
+      webAppUrl: "/test-personnalite-big-five/",
       featured: true
     },
     {
@@ -42,7 +42,7 @@ const Resources = () => {
       image: "/images/resources/neuro-journal-cover.webp", // Fallback needed if not exists, but code handles it with Icon
       free: true,
       isWebApp: true,
-      webAppUrl: "/neuro-journal/onboarding",
+      webAppUrl: "/neuro-journal/onboarding/",
       featured: true
     },
     {
@@ -84,7 +84,7 @@ const Resources = () => {
       image: "/images/resources/habit-tracker-cover.webp",
       free: true,
       isWebApp: true,
-      webAppUrl: "/habit-tracker"
+      webAppUrl: "/habit-tracker/"
     },
     {
       id: 3,
@@ -363,7 +363,7 @@ const Resources = () => {
       image: "/images/resources/calculator-sleep.webp",
       free: true,
       isWebApp: true,
-      webAppUrl: "/calculateur-sommeil"
+      webAppUrl: "/calculateur-sommeil/"
     }
   ]
 
@@ -574,22 +574,26 @@ const Resources = () => {
                     </div>
                   </div>
 
-                  <button
-                    onClick={() => handleDownloadClick(resource)}
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
-                  >
-                    {resource.isWebApp ? (
-                      <>
-                        <Smartphone className="w-5 h-5" />
-                        Accéder à l'outil
-                      </>
-                    ) : (
-                      <>
-                        <Download className="w-5 h-5" />
-                        Télécharger gratuitement
-                      </>
-                    )}
-                  </button>
+                  {resource.isWebApp && resource.webAppUrl ? (
+                    /* Vrai <a href> : un <button onClick={navigate}> n'existe pas dans le
+                       HTML pre-rendu, Google ne peut donc pas suivre le lien. C'est ce qui
+                       privait /calculateur-sommeil/ de tout lien entrant depuis cette page. */
+                    <Link
+                      to={resource.webAppUrl}
+                      className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Smartphone className="w-5 h-5" />
+                      Accéder à l'outil
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleDownloadClick(resource)}
+                      className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Download className="w-5 h-5" />
+                      Télécharger gratuitement
+                    </button>
+                  )}
                 </div>
               </div>
             )

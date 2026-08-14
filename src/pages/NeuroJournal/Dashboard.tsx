@@ -7,6 +7,7 @@ import { generatePDFReport } from '../../lib/pdf-generator';
 import InsightCard from '../../components/neuro-journal/InsightCard';
 import WeeklyChart from '../../components/neuro-journal/charts/WeeklyChart';
 import CalendarHeatmap from '../../components/neuro-journal/charts/CalendarHeatmap';
+import SEO from '../../components/SEO';
 
 const Dashboard = () => {
     const { stats, entries, favorites, readingProgress } = useNeuroJournal();
@@ -22,6 +23,10 @@ const Dashboard = () => {
 
     return (
         <div className="space-y-6 animate-fadeIn pb-20">
+            {/* Page applicative : utile aux visiteurs, sans interet pour la recherche.
+                Elle est liee depuis le Footer, donc presente dans le HTML pre-rendu
+                des 57 pages — Google l'avait deja indexee. */}
+            <SEO title="Neuro-Journal — tableau de bord" path="/neuro-journal/dashboard/" noindex />
             {/* Header Dates & Tabs */}
             <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
@@ -92,7 +97,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            <Link to="/neuro-journal/checkin" className="block w-full sm:w-auto">
+                            <Link to="/neuro-journal/checkin/" className="block w-full sm:w-auto">
                                 <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md shadow-indigo-200 dark:shadow-none hover:bg-indigo-700 transition-colors w-full">
                                     Ajouter une entrée
                                 </button>

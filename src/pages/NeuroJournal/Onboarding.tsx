@@ -1,16 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Brain, Moon, Battery, ShieldCheck, ArrowRight } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 const Onboarding = () => {
     const navigate = useNavigate();
 
     const handleStart = () => {
-        navigate('/neuro-journal/dashboard');
+        navigate('/neuro-journal/dashboard/');
     };
 
     return (
         <div className="flex flex-col h-full min-h-[80vh] justify-between py-6">
+            {/* Page applicative : utile aux visiteurs, sans interet pour la recherche.
+                Elle est liee depuis le Footer, donc presente dans le HTML pre-rendu
+                des 57 pages — Google l'avait deja indexee. */}
+            <SEO title="Neuro-Journal — démarrage" path="/neuro-journal/onboarding/" noindex />
             <div className="space-y-8">
                 <div className="text-center space-y-4">
                     <div className="inline-block p-4 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl mb-2">

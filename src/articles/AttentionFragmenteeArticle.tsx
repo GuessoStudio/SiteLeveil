@@ -72,7 +72,7 @@ export default function AttentionFragmenteeArticle() {
     "@id": `${site}/a-propos/#person`,
     name: "Guesso",
     url: `${site}/a-propos/`,
-    jobTitle: "Fondateur — L'Éveil Mental",
+    jobTitle: "Fondateur, L'Éveil Mental",
     worksFor: { "@id": `${site}#organization` }
   };
 

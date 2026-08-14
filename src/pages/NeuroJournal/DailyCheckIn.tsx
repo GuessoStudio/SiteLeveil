@@ -8,6 +8,7 @@ import SleepInput from '../../components/neuro-journal/inputs/SleepInput';
 import EnergyInput from '../../components/neuro-journal/inputs/EnergyInput';
 
 import TagInput from '../../components/neuro-journal/inputs/TagInput';
+import SEO from '../../components/SEO';
 
 const TOTAL_STEPS = 6;
 
@@ -73,6 +74,10 @@ const DailyCheckIn = () => {
     if (isComplete) {
         return (
             <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6 animate-fadeIn">
+                {/* Page applicative : utile aux visiteurs, sans interet pour la recherche.
+                    Elle est liee depuis le Footer, donc presente dans le HTML pre-rendu
+                    des 57 pages — Google l'avait deja indexee. */}
+                <SEO title="Neuro-Journal — check-in du jour" path="/neuro-journal/checkin/" noindex />
                 <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 mb-4 animate-bounce">
                     <CheckCircle className="w-10 h-10" />
                 </div>
@@ -92,7 +97,7 @@ const DailyCheckIn = () => {
                 </div>
 
                 <button
-                    onClick={() => navigate('/neuro-journal/dashboard')}
+                    onClick={() => navigate('/neuro-journal/dashboard/')}
                     className="mt-8 px-8 py-3 bg-indigo-600 text-white rounded-xl font-bold shadow-lg hover:bg-indigo-700 transition-all w-full md:w-auto"
                 >
                     Retour au Dashboard

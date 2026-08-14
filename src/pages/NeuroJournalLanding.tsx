@@ -117,7 +117,7 @@ const NeuroJournalLanding = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                            <Link to="/neuro-journal/dashboard">
+                            <Link to="/neuro-journal/dashboard/">
                                 <button className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2">
                                     Commencer Mon Suivi Gratuit <ArrowRight className="w-5 h-5" />
                                 </button>
@@ -450,7 +450,7 @@ const NeuroJournalLanding = () => {
                         </p>
 
                         <div className="flex flex-col items-center gap-6">
-                            <Link to="/neuro-journal/dashboard">
+                            <Link to="/neuro-journal/dashboard/">
                                 <button className="px-10 py-5 bg-indigo-600 text-white rounded-2xl font-bold text-xl hover:bg-indigo-700 hover:scale-105 transition-all shadow-xl shadow-indigo-200 dark:shadow-none">
                                     Lancer Mon NeuroJournal
                                 </button>

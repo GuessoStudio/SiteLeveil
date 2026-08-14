@@ -129,7 +129,7 @@ const Header = () => {
 
               {/* Special Link: Mon Espace (Neuro-Journal) */}
               <Link
-                to="/neuro-journal/dashboard"
+                to="/neuro-journal/dashboard/"
                 className="ml-4 px-4 py-2 rounded-full bg-indigo-600 text-white font-medium text-sm
                              hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg
                              flex items-center gap-2 transform hover:-translate-y-0.5"
@@ -235,7 +235,7 @@ const Header = () => {
 
                 {/* Mobile Special Link */}
                 <Link
-                  to="/neuro-journal/dashboard"
+                  to="/neuro-journal/dashboard/"
                   onClick={() => setIsMenuOpen(false)}
                   className="px-3 py-3 rounded-lg text-sm font-bold text-indigo-600 dark:text-indigo-400 
                                  bg-indigo-50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900/40

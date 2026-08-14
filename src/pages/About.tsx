@@ -14,7 +14,7 @@ const About = () => {
       name: "Guesso",
       url: `${site}/a-propos/`,
       image: `${site}/images/guesso-silhouette.webp`,
-      jobTitle: "Fondateur — L'Éveil Mental",
+      jobTitle: "Fondateur, L'Éveil Mental",
       description: "Fondateur de L'Éveil Mental, média francophone de vulgarisation en neurosciences et psychologie. Traduit les études peer-reviewed en applications pratiques, sans jargon ni promesses miracles.",
       knowsAbout: [
         "Neurosciences",
