@@ -33,11 +33,11 @@ const meta = {
 const faqData = [
   {
     question: "Quel est le vrai rôle de la sérotonine dans l'humeur ?",
-    answer: "La sérotonine est un stabilisateur de l'humeur, pas une \"hormone du bonheur.\" Elle régule les cycles veille-sommeil, l'appétit, la tolérance à la douleur et l'impulsivité. Environ 90 % de la sérotonine du corps est produite dans l'intestin. La sérotonine cérébrale, produite dans les noyaux du raphé, agit sur la régulation émotionnelle. Son absence provoque irritabilité et instabilité, pas simplement une baisse de bonheur."
+    answer: "La sérotonine stabilise l'humeur, elle n'est pas une \"hormone du bonheur\". Elle régule le sommeil, l'appétit, la tolérance à la douleur et l'impulsivité. Environ 90 % de celle du corps vient de l'intestin ; la sérotonine cérébrale, elle, naît dans les noyaux du raphé. Son manque provoque irritabilité et instabilité."
   },
   {
     question: "Pourquoi dit-on que la dopamine est le neurotransmetteur du plaisir — est-ce vrai ?",
-    answer: "Non, c'est inexact. La dopamine est le neurotransmetteur de l'anticipation et de la motivation. Schott et al. (Université de Magdebourg, 2008) ont montré que le pic de dopamine survient avant l'obtention d'une récompense, pas au moment de la ressentir. Le plaisir ressenti lui-même implique principalement les circuits opioïdes endogènes. La confusion vient d'une simplification excessive dans la vulgarisation des années 1990-2000."
+    answer: "Non. La dopamine est le neurotransmetteur de l'anticipation, pas du plaisir. Schott et al. (Université de Magdebourg, 2008) ont montré que son pic survient avant la récompense, pas au moment où on la savoure. Le plaisir lui-même relève des circuits opioïdes endogènes."
   },
   {
     question: "Le \"déséquilibre chimique\" explique-t-il vraiment la dépression ?",
@@ -45,11 +45,11 @@ const faqData = [
   },
   {
     question: "Quelle est la différence entre un neurotransmetteur et une hormone ?",
-    answer: "Un neurotransmetteur est libéré par un neurone et agit localement sur le neurone voisin, en quelques millisecondes, au niveau d'une synapse. Une hormone est sécrétée par une glande et voyage dans le sang pour agir sur des organes éloignés, en quelques minutes à quelques heures. Certaines molécules jouent les deux rôles : la dopamine et la noradrénaline sont neurotransmetteurs dans le cerveau et hormones dans d'autres organes."
+    answer: "Un neurotransmetteur est libéré par un neurone et agit sur son voisin immédiat, en quelques millisecondes. Une hormone est sécrétée par une glande, voyage dans le sang et agit à distance, en quelques minutes ou heures. La dopamine et la noradrénaline jouent les deux rôles selon l'organe."
   },
   {
     question: "Comment le GABA réduit-il l'anxiété concrètement ?",
-    answer: "Le GABA se fixe sur les récepteurs GABA-A des neurones, ouvrant des canaux à chlorure. L'entrée du chlorure hyperpolarise le neurone, le rendant moins susceptible de s'activer. Le niveau d'excitation global du cerveau diminue. C'est ce mécanisme que les benzodiazépines amplifient. Kaur et al. (PGIMER, 2024) ont confirmé que la downregulation du GABA est causalement liée à l'anxiété, dans des études humaines et animales."
+    answer: "Le GABA ouvre des canaux à chlorure sur les récepteurs GABA-A. L'entrée de chlorure rend le neurone plus difficile à activer, et l'excitation globale du cerveau baisse. C'est ce mécanisme qu'amplifient les benzodiazépines. Kaur et al. (PGIMER, 2024) ont relié causalement sa baisse à l'anxiété."
   },
   {
     question: "Pourquoi les antidépresseurs prennent-ils des semaines avant d'agir ?",
@@ -61,7 +61,7 @@ const faqData = [
   },
   {
     question: "Comment les neurotransmetteurs interagissent-ils entre eux ?",
-    answer: "Les neurotransmetteurs s'influencent mutuellement en permanence. La sérotonine module la dopamine via des projections sur l'aire tegmentale ventrale. Le GABA et le glutamate forment un équilibre inhibition/excitation fondamental. La noradrénaline amplifie les effets du cortisol en stress. Ces interactions expliquent pourquoi les modèles simplifiés \"une molécule = un état d'humeur\" sont insuffisants : l'humeur est le résultat d'un équilibre dynamique entre plusieurs systèmes."
+    answer: "Ils s'influencent en permanence. La sérotonine module la dopamine via l'aire tegmentale ventrale. Le GABA et le glutamate forment l'équilibre inhibition/excitation. La noradrénaline amplifie le cortisol sous stress. D'où l'insuffisance du modèle \"une molécule, une humeur\" : l'humeur naît d'un équilibre entre systèmes."
   },
   {
     question: "Peut-on avoir un déficit de dopamine sans maladie neurologique ?",

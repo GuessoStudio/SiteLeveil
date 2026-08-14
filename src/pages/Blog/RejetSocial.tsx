@@ -21,7 +21,7 @@ const meta = {
 const faqData = [
     {
         question: "Le rejet social est-il vraiment comparable à la douleur physique ?",
-        answer: "En partie. Un antidouleur courant, le paracétamol, réduit la douleur du rejet : DeWall et son équipe l'ont montré en 2010 sur trois semaines. Il existe donc bien un mécanisme commun. En revanche, l'idée que le cerveau activerait exactement les mêmes zones vient d'une étude de 2003 sur 13 personnes, que la réanalyse de 53 études publiée en 2020 ne confirme pas."
+        answer: "En partie. Le paracétamol, un antidouleur courant, réduit la douleur du rejet : DeWall et son équipe l'ont montré en 2010. Un mécanisme commun existe donc. Mais l'idée que le cerveau activerait exactement les mêmes zones vient d'une étude de 2003 sur 13 personnes, que la réanalyse de 53 études parue en 2020 ne confirme pas."
     },
     {
         question: "Combien de temps faut-il pour se remettre d'un rejet social ?",

@@ -39,31 +39,31 @@ const faqData = [
   },
   {
     question: "Quel exercice physique augmente le BDNF le plus efficacement ?",
-    answer: "L'exercice aérobie d'intensité modérée à élevée est le stimulant de BDNF le plus puissant connu. 30 à 45 minutes de course, de vélo ou de natation à 60-70% de la fréquence cardiaque maximale augmentent les niveaux de BDNF sanguin de 200 à 300% selon les études de Cotman (UCI). L'effet persiste plusieurs heures après l'effort. Le HIIT (High-Intensity Interval Training) offre des résultats comparables en moins de temps."
+    answer: "L'aérobie modérée à intense est le stimulant le plus puissant connu. 30 à 45 minutes de course, de vélo ou de natation à 60-70 % de la fréquence cardiaque maximale augmentent le BDNF sanguin de 200 à 300 % (Cotman, UCI). L'effet persiste plusieurs heures. Le HIIT fait aussi bien en moins de temps."
   },
   {
     question: "Le jeûne intermittent augmente-t-il vraiment le BDNF ?",
-    answer: "Oui. Les travaux de Mark Mattson (NIH) montrent que le jeûne intermittent (16/8 ou 5:2) augmente l'expression du gène BDNF dans l'hippocampe jusqu'à 400% chez l'animal et produit des effets significatifs chez l'humain. Le mécanisme passe par l'activation de la cétose légère et la réduction de l'insuline, qui libèrent des signaux pro-BDNF dans les cellules gliales. Les effets apparaissent après 2 à 4 semaines de pratique régulière."
+    answer: "Oui. Mark Mattson (NIH) montre que le jeûne 16/8 ou 5:2 augmente l'expression du gène BDNF dans l'hippocampe jusqu'à 400 % chez l'animal, avec des effets réels chez l'humain. Le mécanisme passe par une cétose légère et la baisse de l'insuline. Les effets apparaissent après 2 à 4 semaines."
   },
   {
     question: "Quels aliments augmentent le BDNF naturellement ?",
-    answer: "La curcumine (curcuma) est l'aliment le plus étudié : elle augmente l'expression du BDNF de 20-30% selon des études humaines. Les oméga-3 DHA (poissons gras, graines de lin) sont essentiels à la fluidité membranaire des neurones et à la signalisation BDNF. Les flavonoïdes des myrtilles traversent la barrière hémato-encéphalique et stimulent directement la production de BDNF. Le magnésium et le zinc, cofacteurs enzymatiques, sont également nécessaires à la synthèse protéique du BDNF."
+    answer: "La curcumine est la plus étudiée : elle augmente l'expression du BDNF de 20 à 30 % chez l'humain. Les oméga-3 DHA des poissons gras conditionnent sa signalisation. Les flavonoïdes des myrtilles franchissent la barrière hémato-encéphalique et en stimulent la production. Le magnésium et le zinc sont nécessaires à sa synthèse."
   },
   {
     question: "Combien de temps faut-il pour augmenter son taux de BDNF ?",
-    answer: "Les effets aigus de l'exercice sur le BDNF sont mesurables dans les 30 minutes suivant une séance. Les augmentations durables des niveaux basaux de BDNF nécessitent 4 à 8 semaines d'entraînement régulier (3-5 séances par semaine). Pour le jeûne intermittent ou les changements alimentaires, les études observent des modifications d'expression génique après 2 à 4 semaines. La combinaison exercice + nutrition + sommeil de qualité donne les résultats les plus rapides."
+    answer: "L'effet immédiat de l'exercice se mesure dans les 30 minutes. Élever durablement le niveau de base demande 4 à 8 semaines d'entraînement, à raison de 3 à 5 séances par semaine. Pour le jeûne ou l'alimentation, comptez 2 à 4 semaines. Combiner exercice, nutrition et sommeil accélère nettement les résultats."
   },
   {
     question: "Quelle est la relation entre BDNF et dépression ?",
-    answer: "La 'neurotrophic hypothesis of depression' proposée par Ronald Duman (Yale) établit un lien direct : les personnes dépressives présentent des taux de BDNF hippocampique 30 à 50% inférieurs à la moyenne. Le stress chronique supprime l'expression du gène BDNF via le cortisol, réduisant le volume de l'hippocampe. Les antidépresseurs ISRS fonctionnent partiellement en restaurant les niveaux de BDNF. L'exercice physique produit un effet antidépresseur similaire précisément par ce mécanisme neurotrophe."
+    answer: "Ronald Duman (Yale) a établi le lien : les personnes dépressives ont un BDNF hippocampique inférieur de 30 à 50 %. Le stress chronique supprime l'expression du gène via le cortisol et réduit le volume de l'hippocampe. Les antidépresseurs ISRS agissent en partie en le restaurant, et l'exercice physique aussi."
   },
   {
     question: "Le sommeil influence-t-il la production de BDNF ?",
-    answer: "Oui, de manière significative. La phase de sommeil profond (sommeil lent profond, stades N3) est la période de pic de sécrétion de BDNF et d'hormone de croissance. Une nuit de privation totale de sommeil réduit les niveaux de BDNF sérique de 30 à 40%. Inversement, une nuit de récupération après restriction de sommeil produit un rebond compensatoire de BDNF. Maintenir 7 à 9 heures de sommeil de qualité est donc aussi important que l'exercice pour maintenir des niveaux optimaux."
+    answer: "Oui, nettement. Le sommeil lent profond, stade N3, est le pic de sécrétion du BDNF. Une nuit blanche fait chuter le BDNF sérique de 30 à 40 %, et une nuit de récupération produit un rebond compensatoire. Dormir 7 à 9 heures compte donc autant que s'entraîner."
   },
   {
     question: "La méditation augmente-t-elle le BDNF ?",
-    answer: "Plusieurs études d'imagerie et de biologie moléculaire confirment que la méditation régulière augmente le BDNF. Une étude de 2019 publiée dans Frontiers in Psychiatry a montré une augmentation de 25% du BDNF sérique chez des méditants pratiquant 30 minutes par jour pendant 8 semaines. Le mécanisme passe par la réduction du cortisol (qui supprime le BDNF), l'activation du cortex préfrontal et l'augmentation de la cohérence des ondes gamma. Le yoga et la cohérence cardiaque produisent des effets similaires."
+    answer: "Oui. Une étude parue en 2019 dans Frontiers in Psychiatry mesure 25 % de BDNF sérique en plus chez des méditants pratiquant 30 minutes par jour pendant 8 semaines. Le mécanisme passe surtout par la baisse du cortisol, qui supprime le BDNF. Le yoga produit des effets voisins."
   }
 ];
 

@@ -45,11 +45,11 @@ const faqData = [
   },
   {
     question: "Quels sont les effets neurologiques de l'écoute active ?",
-    answer: "Wang S. et al. (Shanghai Normal University, 2022) ont mesuré par fNIRS hyperscanning une synchronisation inter-cérébrale significative dans le dlPFC (droit et gauche), l'OFC et le TPJ droit lors d'une écoute active de qualité. Ce couplage cérébral entre locuteur et auditeur indique une forme de résonance neuronale qui dépasse la simple compréhension du contenu verbal — et qui améliore les émotions négatives de l'orateur."
+    answer: "Wang S. et al. (Shanghai Normal University, 2022) ont mesuré une synchronisation entre les cerveaux du locuteur et de l'auditeur, dans le dlPFC, l'OFC et le TPJ droit. Ce couplage dépasse la simple compréhension des mots : il apaise aussi les émotions négatives de celui qui parle."
   },
   {
     question: "L'écoute active fonctionne-t-elle par écrit ou uniquement en face-à-face ?",
-    answer: "Les données fNIRS (Wang et al., 2022) portent sur des dyades en face-à-face. Les techniques de reformulation et de question ouverte fonctionnent aussi par écrit, mais avec des limites : le silence actif et les signaux non verbaux (contact visuel, posture) sont absents. En messagerie, la reformulation écrite reste efficace — les effets sur l'IBS en contexte écrit ne sont pas encore documentés."
+    answer: "Les données de Wang et al. (2022) portent sur des échanges en face-à-face. Reformulation et questions ouvertes fonctionnent aussi par écrit, mais le silence actif et les signaux non verbaux disparaissent. Les effets sur la synchronisation cérébrale à l'écrit ne sont pas encore documentés."
   },
   {
     question: "Écoute active et empathie : est-ce la même chose ?",
@@ -61,15 +61,15 @@ const faqData = [
   },
   {
     question: "L'écoute active est-elle efficace avec un enfant ?",
-    answer: "Oui, avec des adaptations. La reformulation miroir fonctionne très bien avec les enfants dès 5-6 ans. Le reflet émotionnel — 'tu as l'air triste' — aide les enfants à nommer leurs états intérieurs, une compétence qu'ils développent encore. Les questions ouvertes doivent être courtes et concrètes. Les effets sont particulièrement documentés pour réduire les crises émotionnelles et renforcer la relation parent-enfant."
+    answer: "Oui, avec des adaptations. La reformulation miroir fonctionne dès 5-6 ans. Le reflet émotionnel, du type 'tu as l'air triste', aide l'enfant à nommer ce qu'il ressent. Les questions ouvertes doivent rester courtes et concrètes. L'effet est documenté sur les crises émotionnelles."
   },
   {
     question: "Quels sont les obstacles les plus fréquents à l'écoute active ?",
-    answer: "Trois obstacles principaux : (1) le mode résolution de problème — on cherche à répondre avant que l'autre ait fini de parler ; (2) le biais de confirmation — on filtre ce qu'on entend selon ses croyances préexistantes ; (3) la charge cognitive — écouter activement demande un effort mental soutenu qui se dégrade rapidement sous stress ou fatigue. Itzchakov et al. (2023) confirment que ce dernier obstacle est sous-estimé."
+    answer: "Trois surtout. Le mode résolution de problème : on prépare sa réponse avant que l'autre ait fini. Le biais de confirmation : on filtre selon ses croyances. Et la charge cognitive : écouter demande un effort qui s'effondre sous stress ou fatigue. Itzchakov et al. (2023) jugent ce dernier sous-estimé."
   },
   {
     question: "La synchronisation cérébrale (IBS) prouve-t-elle l'efficacité de l'écoute active ?",
-    answer: "L'IBS documente un corrélat neurologique de la qualité d'écoute — pas une preuve causale directe d'efficacité comportementale. Wang et al. (2022) montrent une association entre écoute active et couplage dans le dlPFC (droit et gauche), l'OFC et le TPJ droit, ce qui suggère une résonance cérébrale réelle. Mais l'IBS est une mesure physiologique intermédiaire : elle indique une synchronisation, pas un résultat pratique garanti."
+    answer: "Non, elle en documente un corrélat, pas une preuve. Wang et al. (2022) montrent une association entre écoute active et couplage du dlPFC, de l'OFC et du TPJ droit. Mais c'est une mesure intermédiaire : elle indique une synchronisation, pas un résultat concret garanti."
   }
 ];
 

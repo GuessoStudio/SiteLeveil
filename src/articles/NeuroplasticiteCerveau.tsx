@@ -33,27 +33,27 @@ const meta = {
 const faqData = [
   {
     question: "À partir de quel âge la neuroplasticité diminue-t-elle vraiment ?",
-    answer: "Contrairement à l'idée reçue selon laquelle le cerveau se fige après 25 ans, la neuroplasticité décline progressivement avec l'âge mais ne disparaît jamais complètement. Des études de neuroimagerie montrent qu'elle reste significative jusqu'à 70-80 ans, particulièrement si elle est stimulée par l'apprentissage continu et l'exercice physique régulier. Michael Merzenich, pionnier de la recherche sur la plasticité cérébrale, a démontré que même à un âge avancé, le cerveau conserve une capacité d'adaptation remarquable lorsqu'il est correctement sollicité."
+    answer: "Le cerveau ne se fige pas à 25 ans. La neuroplasticité décline progressivement, mais ne disparaît jamais : l'imagerie montre qu'elle reste significative jusqu'à 70-80 ans, surtout si l'apprentissage et l'exercice physique la stimulent. Michael Merzenich, pionnier du domaine, a montré qu'un cerveau âgé garde une réelle capacité d'adaptation quand on le sollicite."
   },
   {
     question: "Combien de temps faut-il pour observer des changements cérébraux mesurables ?",
-    answer: "Les changements synaptiques au niveau cellulaire commencent en quelques minutes après une nouvelle expérience d'apprentissage. Cependant, les modifications structurales mesurables par imagerie cérébrale (IRM) nécessitent généralement 2 à 3 mois d'entraînement régulier et intensif. Par exemple, l'étude célèbre sur les chauffeurs de taxi londoniens a montré une augmentation du volume de l'hippocampe après plusieurs années de navigation spatiale intensive. La constance et la répétition sont essentielles pour consolider ces changements neurologiques."
+    answer: "Les changements synaptiques débutent en quelques minutes. Mais les modifications visibles à l'IRM demandent 2 à 3 mois d'entraînement régulier. L'étude des chauffeurs de taxi londoniens a montré un hippocampe élargi après plusieurs années de navigation intensive. C'est la répétition qui consolide, pas l'effort ponctuel."
   },
   {
     question: "Peut-on vraiment créer de nouveaux neurones à l'âge adulte ?",
-    answer: "La neurogenèse adulte, soit la création de nouveaux neurones, existe bel et bien chez l'humain, principalement dans l'hippocampe, une région cruciale pour la mémoire et l'apprentissage. Toutefois, son ampleur fait encore débat dans la communauté scientifique. Elle reste relativement limitée comparée aux changements de connectivité entre les neurones existants (synaptogenèse), qui constituent le mécanisme principal de la neuroplasticité adulte. L'exercice physique aérobie, le sommeil de qualité et la réduction du stress chronique sont les facteurs les plus efficaces pour favoriser la neurogenèse."
+    answer: "Oui, mais moins qu'on ne le croit. La neurogenèse adulte existe, surtout dans l'hippocampe, et son ampleur fait encore débat. Elle reste limitée face à la synaptogenèse, la création de connexions entre neurones existants, qui est le vrai moteur de la plasticité adulte. L'exercice aérobie, le sommeil et la baisse du stress chronique la favorisent."
   },
   {
     question: "Les jeux cérébraux et applications d'entraînement mental améliorent-ils vraiment le cerveau ?",
-    answer: "Les jeux cérébraux peuvent effectivement améliorer les capacités cognitives spécifiques qu'ils entraînent, comme la mémoire de travail ou l'attention sélective. Cependant, la recherche scientifique montre que le transfert de ces améliorations vers d'autres domaines cognitifs ou vers la vie quotidienne reste limité. Une méta-analyse de 2017 a révélé que les activités physiques régulières, l'apprentissage de compétences réelles complexes (comme un instrument de musique ou une langue étrangère), et les interactions sociales enrichissantes sont significativement plus efficaces pour stimuler la neuroplasticité globale que les exercices cérébraux isolés."
+    answer: "Ils améliorent surtout ce qu'ils entraînent, comme la mémoire de travail. Une méta-analyse de 2017 montre que le transfert vers d'autres capacités, ou vers la vie quotidienne, reste faible. L'activité physique, l'apprentissage d'une compétence réelle comme un instrument ou une langue, et les échanges sociaux stimulent bien davantage la plasticité globale."
   },
   {
     question: "Quelles sont les activités les plus efficaces pour stimuler la neuroplasticité ?",
-    answer: "Les activités combinant nouveauté, complexité et engagement actif sont les plus efficaces. L'apprentissage d'une nouvelle langue étrangère sollicite simultanément plusieurs régions cérébrales et renforce la connectivité. L'exercice physique aérobie (30 minutes, 3-5 fois par semaine) augmente le BDNF, une protéine essentielle à la plasticité neuronale. La méditation de pleine conscience modifie structuralement le cortex préfrontal et l'hippocampe. L'apprentissage musical, particulièrement avant 7 ans mais aussi à l'âge adulte, produit des changements mesurables dans les aires auditives et motrices. Enfin, le sommeil de qualité (7-9 heures) consolide les apprentissages et facilite la réorganisation synaptique."
+    answer: "Celles qui combinent nouveauté, complexité et engagement actif. Apprendre une langue mobilise plusieurs régions à la fois. L'exercice aérobie, 30 minutes trois à cinq fois par semaine, augmente le BDNF, protéine clé de la plasticité. La méditation modifie le cortex préfrontal et l'hippocampe. Et 7 à 9 heures de sommeil consolident chaque apprentissage."
   },
   {
     question: "La neuroplasticité peut-elle aider dans la récupération après un AVC ?",
-    answer: "Absolument. La neuroplasticité joue un rôle crucial dans la récupération post-AVC. La thérapie par contrainte induite, développée par Edward Taub, exploite ce mécanisme en forçant l'utilisation intensive du membre affecté, ce qui stimule la réorganisation des aires motrices cérébrales. Les résultats sont particulièrement significatifs dans les 3 à 6 mois suivant l'AVC, période de plasticité accrue. Même après cette fenêtre critique, un entraînement répétitif et progressif permet encore des améliorations substantielles. La combinaison de rééducation intensive, de stimulation cognitive et d'exercice physique adapté maximise les chances de récupération fonctionnelle."
+    answer: "Oui, c'est même central. La thérapie par contrainte induite, développée par Edward Taub, force l'usage du membre atteint et pousse le cerveau à réorganiser ses aires motrices. Les gains sont les plus nets dans les 3 à 6 mois suivant l'AVC, mais un entraînement progressif produit encore des progrès au-delà."
   },
   {
     question: "Quelle est la différence entre neuroplasticité et neurogénèse ?",
