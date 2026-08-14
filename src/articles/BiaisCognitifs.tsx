@@ -580,6 +580,7 @@ export default function BiaisCognitifs() {
           <EmailCaptureModal
             isOpen={leadModalOpen}
             onClose={() => setLeadModalOpen(false)}
+            resourceTitle="Fiche des 13 biais cognitifs"
             resourceFile="/Downloads/biais-cognitifs-liste-psychologie-guide.pdf"
           />
 

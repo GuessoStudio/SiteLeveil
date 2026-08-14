@@ -593,6 +593,7 @@ export default function BdnfAugmenterNaturellement() {
           <EmailCaptureModal
             isOpen={leadModalOpen}
             onClose={() => setLeadModalOpen(false)}
+            resourceTitle="Le guide complet du BDNF"
             resourceFile="/Downloads/bdnf-guide-scientifique-leveilmental.pdf"
           />
 

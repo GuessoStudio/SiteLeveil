@@ -445,6 +445,7 @@ export default function InfluenceSociale() {
           <EmailCaptureModal
             isOpen={leadModalOpen}
             onClose={() => setLeadModalOpen(false)}
+            resourceTitle="Checklist anti-pression sociale"
             resourceFile="/Downloads/influence-sociale-conformisme-checklist.pdf"
           />
 

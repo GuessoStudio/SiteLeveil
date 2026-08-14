@@ -497,6 +497,7 @@ export default function FormationHabitudes() {
           <EmailCaptureModal
             isOpen={leadModalOpen}
             onClose={() => setLeadModalOpen(false)}
+            resourceTitle="Fiche Changer une Habitude"
             resourceFile="/Downloads/formation-habitudes-cerveau-neurosciences-guide.pdf"
           />
 

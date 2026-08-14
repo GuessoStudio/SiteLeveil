@@ -142,7 +142,7 @@ const BrevoForm = ({ resourceFile }: { resourceFile?: string }) => {
   )
 }
 
-const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ isOpen, onClose, resourceFile }) => {
+const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ isOpen, onClose, resourceFile, resourceTitle }) => {
   if (!isOpen) return null
 
   return (
@@ -159,11 +159,16 @@ const EmailCaptureModal: React.FC<EmailCaptureModalProps> = ({ isOpen, onClose, 
         </div>
 
         <div className="px-6 pb-8">
+          {/* Le titre reprend la ressource demandee. Sans cela, quelqu'un qui
+              clique sur « Télécharger la fiche » se voyait proposer un abonnement
+              a la newsletter : l'intention affichee ne correspondait pas a la sienne. */}
           <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">
-            Rejoindre L'Éveil Mental
+            {resourceTitle || "Rejoindre L'Éveil Mental"}
           </h2>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
-            Reçois chaque semaine un article scientifique sur les neurosciences et la psychologie.
+            {resourceTitle
+              ? "Indique ton email pour la recevoir. Tu seras aussi inscrit à la newsletter : un article scientifique par semaine, rien d'autre."
+              : "Reçois chaque semaine un article scientifique sur les neurosciences et la psychologie."}
           </p>
 
           <BrevoForm resourceFile={resourceFile} />
