@@ -116,6 +116,9 @@ export default function SEO({
       "https://www.facebook.com/profile.php?id=61572902135677",
       "https://x.com/leveilmental",
       "https://www.tiktok.com/@leveil_mental",
+      // Forme canonique par identifiant de chaine, donnee par YouTube : sans
+      // accent et stable meme si le handle @Léveil-Mental-Fr change un jour.
+      "https://www.youtube.com/channel/UCY4QemAG2QM2NsiofwgKjIQ",
     ],
   };
 

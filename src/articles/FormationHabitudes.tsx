@@ -96,6 +96,13 @@ export default function FormationHabitudes() {
     "@type": "Organization",
     "@id": `${site}#organization`,
     name: "L'Éveil Mental",
+    sameAs: [
+      "https://www.instagram.com/leveil.officiel/",
+      "https://www.facebook.com/profile.php?id=61572902135677",
+      "https://x.com/leveilmental",
+      "https://www.tiktok.com/@leveil_mental",
+      "https://www.youtube.com/channel/UCY4QemAG2QM2NsiofwgKjIQ"
+    ],
     url: site,
     logo: {
       "@type": "ImageObject",
