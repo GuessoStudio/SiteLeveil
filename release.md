@@ -393,6 +393,45 @@ Les 4 garde-fous du prebuild passent après ces changements (`validate:links`, `
 
 ---
 
+## 📚 Lot 8 — Consolidation de tous les fichiers roadmap (15 août 2026)
+
+Passage en revue de tous les `.md` du dépôt pour ne laisser aucune tâche orpheline dans un fichier annexe. Résultat : 4 points réels, dont 3 mineurs déjà repérés et 1 plus substantiel.
+
+### 8.1 — 4 pages piliers jamais créées
+
+`docs/strategie-seo-v2.md` section 7 prévoyait 4 hubs thématiques après les 24 premiers articles — jamais réalisés. Vérifié : absents de `src/routes.tsx`.
+
+| Page pilier | Mot-clé cible | Volume | Rôle |
+|---|---|---|---|
+| Guide Neurosciences | `neurosciences cerveau` | 2100/mois | Hub vers le cluster Neurosciences |
+| Guide Psychologie | `psychologie appliquée` | 1800/mois | Hub vers le cluster Psychologie |
+| Guide Relations | `communication interpersonnelle` | 1400/mois | Hub vers le cluster Relations Humaines |
+| Guide Développement Personnel | `développement personnel scientifique` | 3200/mois | Hub vers le cluster Développement Personnel |
+
+Le reste du calendrier de `strategie-seo-v2.md` (24 articles, avril-septembre 2026) est **entièrement terminé** — vérifié un par un contre `src/data/blog-articles.ts`, les 24 slugs y figurent. Les volumes de recherche datent de mars 2026 : à revérifier avant de lancer la rédaction, ne pas les prendre pour argent comptant huit mois plus tard.
+
+### 8.2 — Sourcing court sur `resilience-psychologique-developper`
+
+Seulement 2 chercheurs cités (`docs/audit-seo.md` Phase 3). Standard du site : 2-3 minimum avec institution.
+
+### 8.3 — 4 pages sous-liées
+
+`meditation-effets-cerveau`, `axe-intestin-cerveau-microbiote-humeur`, `resilience-psychologique-developper`, `pensee-critique-developper` : 3 liens entrants chacune, toutes publiées fin juin/juillet 2026. Normal pour du contenu récent, mais à renforcer depuis leurs voisines de cluster.
+
+### 8.4 — `/legal/` en noindex : décision jamais tranchée
+
+`docs/indexation-a-demander.md` : le `noindex` sur `/legal/` était volontaire à l'origine, mais beaucoup de sites laissent leurs mentions légales indexables (signal de sérieux pour Google). Pas un bug, une question éditoriale ouverte.
+
+### Fichiers identifiés comme morts pendant cette revue
+
+- `docs/STRATEGIE_4_PILIERS_V2_MARS_2026.md` — doublon quasi identique de `docs/strategie-seo-v2.md`
+- `docs/article-neurotransmetteurs-draft.md` — brouillon de `neurotransmetteurs-humeur-cerveau`, publié depuis longtemps
+- `docs/articles-specs.md` — vide (0 ligne), non référencé
+
+À supprimer sur confirmation explicite — pas fait automatiquement, ce sont des fichiers de contenu, pas des artefacts de build.
+
+---
+
 ## 🧰 Méthode d'audit (réutilisable)
 
 Le script qui a produit ces tableaux croise ce que chaque TSX **déclare** avec ce que le HTML pré-rendu **contient** : `C:\Users\sofie\AppData\Local\Temp\claude\...\scratchpad\audit_corpus.py` (session `a320b979`). À rapatrier dans `scripts/` s'il doit resservir.
