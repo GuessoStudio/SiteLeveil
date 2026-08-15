@@ -561,10 +561,10 @@ export default function PlasticiteSynaptique() {
           </p>
 
           <p>
-            <a href="https://doi.org/10.1016/j.cmet.2013.09.008" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
+            Chez la souris, <a href="https://doi.org/10.1016/j.cmet.2013.09.008" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               Wrann et al. (2013, <em>Cell Metabolism</em>)
             </a>{" "}
-            ont identifié le mécanisme exact : l'exercice active la voie PGC-1α → FNDC5 → BDNF dans l'hippocampe. L'effet est mesurable après 20 à 30 minutes d'effort aérobie modéré et reste maximal dans les 1 à 2 heures suivant l'exercice — ce qui fait de l'entraînement matinal un levier particulièrement efficace avant une session d'apprentissage. Notre article sur les{" "}
+            ont identifié le mécanisme moléculaire précis : l'exercice active la voie PGC-1α → FNDC5 → BDNF dans l'hippocampe. Chez l'humain, Ferris et al. (2007, <em>Medicine & Science in Sports & Exercise</em>) montrent que l'intensité de l'effort est déterminante : sur un protocole de 30 minutes, aucune hausse du BDNF sanguin n'apparaît en dessous du seuil aérobie, alors qu'un effort légèrement au-dessus de ce seuil produit une hausse de 13 %, et un effort maximal jusqu'à 30 %. L'intensité compte donc au moins autant que la durée. Notre article sur les{" "}
             <Link to="/blog/bdnf-augmenter-naturellement-neurosciences/" className="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200">
               8 méthodes scientifiques pour augmenter le BDNF
             </Link>{" "}

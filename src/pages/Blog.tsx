@@ -106,12 +106,34 @@ const Blog = () => {
     return filtered;
   }, [activeFilter, searchQuery]);
 
+  const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
+  const schemaCollection = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${site}/blog/#collectionpage`,
+    name: "Blog L'Éveil Mental",
+    description: "Articles scientifiques sur la psychologie cognitive, les neurosciences appliquées et le développement personnel.",
+    url: `${site}/blog/`,
+    isPartOf: { "@type": "WebSite", name: "L'Éveil Mental", url: site },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: articles.length,
+      itemListElement: articles.map((a, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${site}/blog/${a.slug}/`,
+        name: a.title,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen py-8 bg-sand-50 dark:bg-neutral-900">
       <SEO
         title="Blog — Psychologie, Neurosciences & Développement Personnel"
         description="Explorez nos articles scientifiques sur la psychologie cognitive, les neurosciences appliquées et le développement personnel. Contenus basés sur des études peer-reviewed, accessibles à tous."
         path="/blog"
+        jsonLd={[schemaCollection]}
       />
       <div className="container mx-auto px-4">
         {/* Header */}

@@ -243,12 +243,15 @@ export default function HeroEveilWorker() {
             </span>
           </div>
 
-          {/* Pas d'animation : peint dès le pré-rendu (chemin LCP). */}
+          {/* Pas d'animation : peint dès le pré-rendu (chemin LCP).
+              Le mot qui tourne (POTENTIEL, CERVEAU...) vit dans un bloc frère hors du <h1>
+              pour l'animation visuelle — sans le span sr-only ci-dessous, Google et les
+              lecteurs d'écran ne liraient que "Éveillez votre", un H1 sans complément. */}
           <h1
             className="font-display italic font-light text-white leading-[1.05] ts-strong"
             style={{ fontSize: "clamp(2.5rem, 5.5vw, 6.25rem)" }}
           >
-            Éveillez votre
+            Éveillez votre <span className="sr-only">{ROTATING_WORDS[0]}</span>
           </h1>
 
           <div className="mt-2 mb-4 lg:mb-8 hero-wordwrap">
