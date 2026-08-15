@@ -332,7 +332,13 @@ Ces pages ne reçoivent presque personne. Les réécrire coûterait des heures d
 
 ## 🔒 Lot 6 — Non bloquant (Phase 5)
 
-- CSP : migrer `unsafe-inline` / `unsafe-eval` vers des nonces (`netlify.toml`). Aucun impact SEO, uniquement du durcissement.
+- **CSP : migrer `unsafe-inline` / `unsafe-eval` vers des nonces.**
+
+  État actuel (`netlify.toml`) : `script-src 'self' 'unsafe-inline' 'unsafe-eval' https:`. Ça autorise n'importe quel script inline ou généré dynamiquement à s'exécuter — une bonne partie de la protection XSS du CSP est neutralisée.
+
+  Le correctif propre : un nonce (jeton aléatoire) généré à chaque requête, attaché à chaque `<script>` légitime ; le CSP n'autorise que les scripts portant ce jeton. Non trivial avec `vite-react-ssg` : il faut générer le nonce au moment de la construction de chaque page statique et l'injecter dans le HTML pré-rendu, ce qui touche `vite.config.ts` et le pipeline de build.
+
+  Aucun impact SEO, aucun impact fonctionnel actuel — c'est du durcissement pur contre une éventuelle faille XSS future (dépendance compromise, formulaire mal filtré). Pas de raison de le prioriser tant qu'aucun incident ou audit externe ne l'exige.
 
 ---
 
