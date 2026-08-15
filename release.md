@@ -346,7 +346,7 @@ Les 4 points encore valides ont été extraits ci-dessous avant suppression.
 
 ---
 
-## 🔬 Lot 7 — Rescapés de l'audit d'avril
+## ✅ Lot 7 — FAIT le 15 août 2026 (commit `aafdb96`)
 
 ### 7.1 — Wrann et al. 2013 présenté comme humain (rigueur scientifique)
 
@@ -375,6 +375,15 @@ Correctif : mettre le texte complet dans le H1 via un `<span class="sr-only">`, 
 ### 7.4 — Bio `/a-propos` sous les 500 mots
 
 394 mots dans le HTML pré-rendu. Meta description et `schemaPerson` sont en place depuis avril ; seule la longueur reste courte pour une page auteur, qui est le socle E-E-A-T du site.
+
+### Résultat des 4 correctifs (vérifié dans `dist/` après build)
+
+- **7.1** : Wrann qualifié « chez la souris » ; timing humain réattribué à Ferris et al. (2007, *Medicine & Science in Sports & Exercise*) — effet dépendant de l'intensité (aucune hausse sous le seuil aérobie, +13 % juste au-dessus, +30 % à l'effort maximal), donnée plus riche que ce qui était écrit.
+- **7.2** : H1 accueil rend désormais `Éveillez votre POTENTIEL` (span sr-only), sans toucher à l'animation ni au LCP.
+- **7.3** : `/blog/` a maintenant un schema `CollectionPage` + `ItemList` des 38 articles.
+- **7.4** : bio à 517 mots, étoffée avec le vrai processus éditorial (vérification humain/animal, journal, proportions des chiffres) plutôt que du remplissage.
+
+Les 4 garde-fous du prebuild passent après ces changements (`validate:links`, `validate:llms`, `validate:assets`, `validate:inbound`).
 
 ---
 
