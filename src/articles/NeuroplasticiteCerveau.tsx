@@ -365,6 +365,21 @@ export default function NeuroplasticiteCerveau() {
             Des études montrent que les personnes avec des niveaux élevés de BDNF présentent une meilleure mémoire, une capacité d'apprentissage supérieure et un risque réduit de maladies neurodégénératives. C'est pourquoi stimuler la production de BDNF constitue un objectif central dans toute stratégie d'optimisation de la neuroplasticité.
           </p>
 
+          {/* StatBlock Ferris 2007 — BDNF et intensite de l'effort */}
+          <div className="not-prose my-6 bg-indigo-50 dark:bg-indigo-950/30 p-5 rounded-lg border border-indigo-200 dark:border-indigo-800">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400 leading-none">+30&nbsp;%</div>
+              <div>
+                <p className="text-sm font-semibold text-indigo-900 dark:text-indigo-100">
+                  de BDNF sanguin en plus mesuré après un effort aérobie maximal chez l'humain — aucune hausse n'apparaît en dessous du seuil aérobie, c'est l'intensité de l'effort qui compte, pas seulement sa durée
+                </p>
+                <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                  Ferris, Williams &amp; Shen, <em>Medicine &amp; Science in Sports &amp; Exercise</em>, 2007, 39(4), 728-734
+                </p>
+              </div>
+            </div>
+          </div>
+
           <h2 id="apprentissage">Comment la neuroplasticité permet-elle d'apprendre à tout âge ?</h2>
 
           <p>
@@ -397,10 +412,10 @@ export default function NeuroplasticiteCerveau() {
               📊 Données Scientifiques
             </h4>
             <p className="text-emerald-800 dark:text-emerald-200 text-sm mb-3">
-              Une méta-analyse de 2008 (Cepeda et al., Psychological Bulletin) portant sur 317 expériences a confirmé que la répétition espacée produit une rétention 200% supérieure à l'apprentissage massé sur le long terme.
+              Une méta-analyse portant sur 317 expériences confirme que la répétition espacée produit systématiquement une meilleure rétention à long terme que l'apprentissage massé (bachotage). Un suivi expérimental mené ensuite sur plus de 1 350 personnes a montré que l'intervalle optimal entre deux révisions dépend du temps qu'on veut garder l'information en mémoire.
             </p>
             <p className="text-emerald-700 dark:text-emerald-300 text-xs italic">
-              Source : Cepeda, N. J., et al. (2008). "Spacing effects in learning: A temporal ridgeline of optimal retention." Psychological Bulletin, 134(2), 223-246.
+              Sources : Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). "Distributed practice in verbal recall tasks." Psychological Bulletin, 132(3), 354-380 ; Cepeda, N. J., et al. (2008). "Spacing effects in learning: A temporal ridgeline of optimal retention." Psychological Science, 19, 1095-1102.
             </p>
           </div>
 
@@ -417,8 +432,23 @@ export default function NeuroplasticiteCerveau() {
           <h3>3. La méditation et la pleine conscience</h3>
 
           <p>
-            Les neurosciences contemplatives ont révélé que la méditation produit des changements structurels mesurables dans le cerveau. Sara Lazar (Harvard) a montré qu'après seulement 8 semaines de pratique quotidienne, on observe une augmentation de la densité de matière grise dans le cortex préfrontal et l'hippocampe, ainsi qu'une réduction dans l'amygdale (centre de la peur et du stress).
+            Les neurosciences contemplatives ont révélé que la méditation produit des changements structurels mesurables dans le cerveau. Sara Lazar (Harvard Medical School) et son équipe ont montré qu'après seulement 8 semaines d'un programme de méditation de pleine conscience (MBSR), on observe une augmentation de la densité de matière grise dans l'hippocampe, une région clé de la mémoire et de l'apprentissage.
           </p>
+
+          {/* StatBlock Holzel 2011 — meditation et matiere grise */}
+          <div className="not-prose my-6 bg-indigo-50 dark:bg-indigo-950/30 p-5 rounded-lg border border-indigo-200 dark:border-indigo-800">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl font-black text-indigo-600 dark:text-indigo-400 leading-none">8 sem.</div>
+              <div>
+                <p className="text-sm font-semibold text-indigo-900 dark:text-indigo-100">
+                  de méditation de pleine conscience (MBSR) suffisent à produire une augmentation mesurable de la matière grise dans l'hippocampe, détectée par IRM avant/après
+                </p>
+                <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                  Hölzel et al., Harvard Medical School, <em>Psychiatry Research: Neuroimaging</em>, 2011, 191(1), 36-43
+                </p>
+              </div>
+            </div>
+          </div>
 
           <p>
             <strong>Application pratique :</strong> Commencez par 10 minutes de méditation quotidienne focalisée sur la respiration. Progressez graduellement vers 20-30 minutes. Les applications comme Headspace ou Petit Bambou offrent des programmes structurés pour débutants.
