@@ -24,9 +24,11 @@ Les deux parcours convergent donc :
 
 Refactoriser la modale vers `/.netlify/functions/subscribe` n'apporterait plus qu'un gain cosmétique (supprimer l'ouverture d'un onglet `_blank`). Non prioritaire.
 
-### ⚠️ Un point resté ouvert
+### ✅ Point résolu le 17 août 2026 (commit `884f798`)
 
-**`surmonter-rejet-social` n'a aucun lead magnet.** L'article était dans la cible (6 clics, 149 impressions) mais aucun PDF ne lui correspond dans `Downloads/` ni `resources/`. Il faudrait en créer un avant de pouvoir fermer cet article.
+`surmonter-rejet-social` a maintenant son guide (fiche 7 stratégies) et son gating `EmailCaptureModal`, même pattern que les 4 autres articles de ce lot. Bug trouvé au passage : le CTA final utilisait encore `action="YOUR_MAILCHIMP_URL_HERE"`, un placeholder jamais remplacé — le formulaire était mort depuis toujours.
+
+⚠️ **Action manuelle restante** : le fichier `.html` du guide est prêt (`public/Downloads/surmonter-rejet-social-guide.html`), mais pas encore converti en `.pdf`. Ouvrir le HTML dans Chrome → Imprimer → Enregistrer en PDF (indication dans le fichier lui-même) → déposer sous `surmonter-rejet-social-guide.pdf` dans `public/Downloads/`. Le bouton de téléchargement pointe vers ce fichier et échouera tant qu'il n'existe pas.
 
 ### Reste à décider plus tard
 
