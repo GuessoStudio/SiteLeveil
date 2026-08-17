@@ -104,9 +104,21 @@ Le compteur de 18 additionne les variantes avec et sans slash de la même page (
 
 ❓ **Question ouverte, pas un bug** : est-il souhaitable que `/legal/` soit en `noindex` ? Beaucoup de sites laissent leurs mentions légales indexables, c'est un signal de sérieux pour Google. À arbitrer.
 
-## Point de contrôle
+## ✅ Point de contrôle — RÉSOLU le 17 août 2026, en avance sur l'échéance
 
-**Revérifier vers le 20-25 août 2026.** Compter 4 à 7 jours après la demande pour le recrawl, puis quelques jours pour la décision d'indexation.
+Le 16 août, Google a envoyé une notification "Échec de certaines corrections" sur le groupe de 19 URLs de ce rapport (3 en "Échec", 16 en "En cours de traitement"). Avant de conclure quoi que ce soit, vérification directe via l'API d'inspection d'URL (`gsc_inspect.py`) plutôt que de se fier au rapport groupé — leçon déjà apprise sur ce projet (le rapport de couverture GSC a déjà affiché des états périmés par le passé).
+
+**8 URLs inspectées individuellement (les 3 "Échec" + un échantillon de 5 parmi les 16 "En cours") : 8/8 sont en réalité `Submitted and indexed`, verdict PASS**, toutes crawlées entre le 11 et le 13 août 2026 — exactement la fenêtre suivant les demandes d'indexation des 11-12 août.
+
+**Conclusion : le rapport de validation groupé de GSC est désynchronisé de la réalité, ce n'est pas un problème du site.** Les demandes d'indexation ont fonctionné. Ne pas re-soumettre ces URLs à l'indexation — elles le sont déjà, un nouveau cycle de validation ne ferait que repartir de zéro pour rien.
+
+URLs vérifiées individuellement (toutes PASS) : `cortisol-stress-chronique-cerveau-memoire/`, `axe-intestin-cerveau-microbiote-humeur/`, `/blog/`, `plasticite-synaptique-apprentissage-cerveau/`, `systeme-limbique-cerveau-emotionnel/`, `ecoute-active-technique-carl-rogers/`, `confiance-en-soi-durable/`, `procrastination-cerveau-agir-neurosciences/`.
+
+Les 11 URLs restantes du rapport n'ont pas été vérifiées individuellement (même schéma attendu, pas de raison de suspecter un cas différent) : `sommeil-reparateur-7-strategies-validees/`, `empathie-neurones-miroirs-connexion-humaine/`, `communication-non-violente-cnv/`, `attention-fragmentee-concentration-numerique/`, `syndrome-imposteur-solutions/`, `lumiere-naturelle-cerveau-sommeil-sante-mentale/`, `methode-acr-repondre-aux-bonnes-nouvelles/`, `/habit-tracker`.
+
+### Point de contrôle initial (archivé)
+
+Revérifier vers le 20-25 août 2026. Compter 4 à 7 jours après la demande pour le recrawl, puis quelques jours pour la décision d'indexation.
 
 Commande de vérification :
 
