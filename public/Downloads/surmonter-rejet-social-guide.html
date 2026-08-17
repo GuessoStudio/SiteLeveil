@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>7 Stratégies pour Surmonter le Rejet Social — L'Éveil Mental</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+
+    @page { size: A4 portrait; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .print-hint {
+      font-family: 'Inter', monospace;
+      font-size: 12px;
+      color: #888;
+      background: #111;
+      text-align: center;
+      padding: 10px;
+    }
+    @media print { .print-hint { display: none; } }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #09071D;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #09071D;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 11mm 13mm 9mm;
+    }
+
+    .page-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(9,7,29,0.80) 0%, transparent 100%),
+        linear-gradient(180deg,
+          rgba(9,7,29,0.0)  0%,
+          rgba(9,7,29,0.30) 25%,
+          rgba(9,7,29,0.60) 40%,
+          rgba(9,7,29,0.70) 65%,
+          rgba(9,7,29,0.35) 85%,
+          rgba(9,7,29,0.0)  100%
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 0;
+    }
+
+    /* HEADER */
+    .header { flex-shrink: 0; }
+
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5mm;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+    }
+
+    .brand-dot {
+      width: 2mm;
+      height: 2mm;
+      border-radius: 50%;
+      background: #7C6FF7;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 7pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7C6FF7;
+    }
+
+    .brand-url {
+      font-size: 6pt;
+      color: rgba(124,111,247,0.45);
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .h-rule {
+      height: 1px;
+      background: linear-gradient(90deg, #7C6FF7 0%, rgba(124,111,247,0.06) 100%);
+      margin-bottom: 3.5mm;
+    }
+
+    .eyebrow {
+      font-size: 6pt;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(124,111,247,0.7);
+      margin-bottom: 1.5mm;
+    }
+
+    .main-title {
+      font-size: 18pt;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      color: #fff;
+      margin-bottom: 1.5mm;
+    }
+
+    .main-title .accent { color: #7C6FF7; }
+
+    .subtitle {
+      font-size: 6.5pt;
+      color: #7A7499;
+      line-height: 1.5;
+    }
+
+    .subtitle strong {
+      color: #A89FF5;
+      font-weight: 600;
+    }
+
+    .h-rule-light {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(124,111,247,0.2) 0%, transparent 100%);
+      margin-top: 3mm;
+    }
+
+    /* GRID 2 COLONNES, 7 CARTES */
+    .grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.6mm;
+      padding: 3mm 0 2mm;
+      min-height: 0;
+    }
+
+    .card {
+      background: rgba(9,7,29,0.65);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(124,111,247,0.22);
+      border-radius: 2.5mm;
+      padding: 3mm 3.5mm 2.5mm;
+      display: flex;
+      flex-direction: column;
+      gap: 1mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0.75mm;
+      background: linear-gradient(180deg, #7C6FF7 0%, rgba(124,111,247,0.25) 100%);
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-num {
+      font-size: 7pt;
+      font-weight: 900;
+      color: rgba(124,111,247,0.45);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .card-phase {
+      font-size: 4.6pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(124,111,247,0.6);
+      background: rgba(124,111,247,0.1);
+      padding: 0.5mm 1.5mm;
+      border-radius: 10mm;
+    }
+
+    .card-name {
+      font-size: 8.3pt;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+
+    .card-sci {
+      font-size: 6pt;
+      color: #C0BAE0;
+      line-height: 1.5;
+    }
+
+    .card-sci strong { color: #A89FF5; font-weight: 600; }
+
+    .card-app {
+      font-size: 6pt;
+      color: #C0BAE0;
+      line-height: 1.5;
+      font-style: italic;
+      background: rgba(255,255,255,0.03);
+      border-radius: 1.5mm;
+      padding: 1.3mm 2mm;
+      margin-top: 0.3mm;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* 7e carte : bonus / synthese visuelle */
+    .card-bonus {
+      justify-content: center;
+      align-items: flex-start;
+      background: rgba(124,111,247,0.08);
+    }
+
+    .bonus-label {
+      font-size: 4.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #7C6FF7;
+      margin-bottom: 1mm;
+    }
+
+    .bonus-text {
+      font-size: 6.3pt;
+      color: #E0DCF5;
+      line-height: 1.55;
+    }
+
+    /* FOOTER */
+    .footer { flex-shrink: 0; }
+
+    .footer-rule {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(124,111,247,0.2) 0%, transparent 100%);
+      margin-bottom: 2.5mm;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5mm;
+      align-items: start;
+    }
+
+    .rappel-box {
+      background: rgba(9,7,29,0.6);
+      border: 1px solid rgba(124,111,247,0.22);
+      border-radius: 2mm;
+      padding: 2.5mm 3mm;
+    }
+
+    .box-label {
+      font-size: 5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #7C6FF7;
+      margin-bottom: 1.5mm;
+    }
+
+    .rappel-text {
+      font-size: 6pt;
+      color: #A8A3C7;
+      line-height: 1.6;
+    }
+
+    .rappel-text strong { color: #E0DCF5; font-weight: 700; }
+
+    .circuit-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+
+    .circuit-flow {
+      display: flex;
+      align-items: center;
+      gap: 1.5mm;
+      flex-wrap: wrap;
+    }
+
+    .c-node {
+      font-size: 5.5pt;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(124,111,247,0.15);
+      border: 1px solid rgba(124,111,247,0.3);
+      padding: 1mm 2mm;
+      border-radius: 10mm;
+      white-space: nowrap;
+    }
+
+    .c-arrow {
+      font-size: 7pt;
+      color: rgba(124,111,247,0.6);
+    }
+
+    .circuit-sub {
+      font-size: 5.5pt;
+      color: #5E597A;
+      line-height: 1.5;
+    }
+
+    .source-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2mm;
+    }
+
+    .source-text {
+      font-size: 5.5pt;
+      color: rgba(124,111,247,0.35);
+      letter-spacing: 0.3px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <p class="print-hint">
+    Chrome : Imprimer → Enregistrer en PDF | Papier : A4 | Marges : Aucune | Cocher "Graphiques d'arrière-plan"
+  </p>
+
+  <div class="page">
+    <img class="page-bg" src="../images/articles/rejet-social-cover.webp" alt="">
+    <div class="page-inner">
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="top-row">
+          <div class="brand">
+            <div class="brand-dot"></div>
+            <span class="brand-name">L'Éveil Mental</span>
+          </div>
+          <span class="brand-url">leveilmental.fr</span>
+        </div>
+        <div class="h-rule"></div>
+        <div class="eyebrow">Fiche de référence · Neurosciences</div>
+        <h1 class="main-title">7 stratégies pour<br><span class="accent">surmonter le rejet social</span></h1>
+        <p class="subtitle">Reprogrammer l'amygdale, calmer la douleur sociale · <strong>Lieberman, Beck, Kross, Neff, Linville, Jia Jiang</strong> · Neurosciences et psychologie</p>
+        <div class="h-rule-light"></div>
+      </header>
+
+      <!-- GRID 7 CARTES -->
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">01</span>
+            <span class="card-phase">Immédiat</span>
+          </div>
+          <div class="card-name">Étiquetage émotionnel</div>
+          <div class="card-sci"><strong>Lieberman, UCLA</strong> — nommer précisément son émotion diminue l'activité de l'amygdale et active le cortex préfrontal ventrolatéral.</div>
+          <div class="card-app">Ne dites pas "ça va". Écrivez exactement ce que vous ressentez : "je ressens de l'humiliation dans ma poitrine".</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">02</span>
+            <span class="card-phase">Immédiat</span>
+          </div>
+          <div class="card-name">Restructuration cognitive</div>
+          <div class="card-sci"><strong>Aaron Beck</strong> — combattre les pensées automatiques force le cerveau rationnel à examiner les preuves, calmant le système d'alarme.</div>
+          <div class="card-app">Notez la pensée "je suis nul" et cherchez 3 preuves concrètes du contraire dans votre passé.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">03</span>
+            <span class="card-phase">Court terme</span>
+          </div>
+          <div class="card-name">Distanciation temporelle</div>
+          <div class="card-sci"><strong>Ethan Kross, Michigan</strong> — se projeter dans le futur réduit l'activation des circuits de douleur sociale.</div>
+          <div class="card-app">Imaginez-vous dans 1 an. Ce rejet aura-t-il encore la même importance ? Probablement pas.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">04</span>
+            <span class="card-phase">Court terme</span>
+          </div>
+          <div class="card-name">Autocompassion</div>
+          <div class="card-sci"><strong>Kristin Neff, UT Austin</strong> — la bienveillance envers soi active le système ocytocique d'apaisement, contrairement à l'autocritique.</div>
+          <div class="card-app">Parlez-vous comme à un ami cher : "c'est difficile, c'est normal d'avoir mal, mais je suis là pour toi".</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">05</span>
+            <span class="card-phase">Prévention</span>
+          </div>
+          <div class="card-name">Diversifier ses liens</div>
+          <div class="card-sci"><strong>Patricia Linville, Yale</strong> — la complexité de soi (plusieurs rôles sociaux) protège contre la dépression liée au rejet.</div>
+          <div class="card-app">Rejeté au travail ? Investissez plus de temps dans votre club de sport ou votre famille cette semaine.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">06</span>
+            <span class="card-phase">Prévention</span>
+          </div>
+          <div class="card-name">Affirmation des valeurs</div>
+          <div class="card-sci">Écrire 15 minutes sur ses valeurs fondamentales avant un stress social réduit significativement l'élévation du cortisol.</div>
+          <div class="card-app">Listez vos 3 valeurs principales et écrivez en 2 lignes pourquoi elles comptent pour vous.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-num">07</span>
+            <span class="card-phase">Prévention</span>
+          </div>
+          <div class="card-name">Exposition graduelle</div>
+          <div class="card-sci"><strong>Protocole Jia Jiang</strong> — s'exposer volontairement à de petits rejets désensibilise l'amygdale par extinction de la peur.</div>
+          <div class="card-app">Demandez des choses simples et respectueuses pour vous habituer à entendre "non", sans vous mettre en danger.</div>
+        </div>
+
+        <div class="card card-bonus">
+          <div class="bonus-label">À retenir</div>
+          <div class="bonus-text">La douleur du rejet répond à un antidouleur classique (paracétamol, DeWall et al. 2010) : le mécanisme partagé avec la douleur physique est réel — même si sa localisation cérébrale exacte fait encore débat scientifique.</div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-rule"></div>
+        <div class="footer-grid">
+
+          <div class="rappel-box">
+            <div class="box-label">Rappel clé</div>
+            <p class="rappel-text">
+              <strong>Stratégies 1-2</strong> : agir <strong>immédiatement</strong> après le rejet, pour calmer l'amygdale avant qu'elle ne s'emballe.<br>
+              <strong>Stratégies 3-7</strong> : consolider sur la durée — régulation, résilience et prévention des rejets futurs.
+            </p>
+          </div>
+
+          <div class="circuit-col">
+            <div class="box-label">Circuit neurologique</div>
+            <div class="circuit-flow">
+              <span class="c-node">Amygdale</span>
+              <span class="c-arrow">→</span>
+              <span class="c-node">Étiquetage + TCC</span>
+              <span class="c-arrow">→</span>
+              <span class="c-node">CPF actif</span>
+            </div>
+            <p class="circuit-sub">L'étiquetage émotionnel diminue mesurablement l'activité amygdalienne.<br>Lieberman et al., <em>Psychological Science</em>, 2007</p>
+          </div>
+
+        </div>
+        <div class="source-row">
+          <span class="source-text">leveilmental.fr/blog/surmonter-rejet-social</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>

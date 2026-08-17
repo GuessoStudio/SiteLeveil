@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../../components/SEO";
+import EmailCaptureModal from "../../components/EmailCaptureModal";
 
 // Define meta outside component for static reference if needed, but utilized inside for dynamic values
 const meta = {
@@ -54,6 +56,9 @@ const faqData = [
 ];
 
 export default function RejetSocial() {
+    // Capture d'email avant livraison du guide. useState(false) est correct :
+    // le composant se monte au chargement de la page, la modale doit être fermée par défaut.
+    const [leadModalOpen, setLeadModalOpen] = useState(false);
     const site = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://leveilmental.fr";
     const url = `${site}/blog/${meta.slug}/`;
     const og = `${site}/og?title=${encodeURIComponent(meta.title)}&tag=${encodeURIComponent(meta.category)}`;
@@ -998,29 +1003,28 @@ export default function RejetSocial() {
                             Ne laissez plus le rejet dicter vos émotions
                         </h3>
                         <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-                            Rejoignez la newsletter L'Éveil Mental. Recevez chaque semaine nos outils pratiques et insights neuroscientifiques
-                            pour transformer votre cerveau et retrouver la sérénité.
+                            Recevez la fiche des 7 stratégies en PDF, prête à garder sous la main la prochaine
+                            fois que ça fait mal. Vous rejoignez aussi la newsletter L'Éveil Mental.
                         </p>
-                        {/* ACTION PLACEHOLDER - TO BE REPLACED BY USER */}
-                        <form action="YOUR_MAILCHIMP_URL_HERE" method="post" target="_blank" className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                            <input
-                                type="email"
-                                placeholder="Votre email..."
-                                className="flex-1 px-5 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-4 focus:ring-rose-500/30"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                className="bg-rose-600 px-8 py-4 rounded-xl font-bold text-white hover:bg-rose-500 transition-colors shadow-lg shadow-rose-900/20 whitespace-nowrap"
-                            >
-                                Rejoindre
-                            </button>
-                        </form>
+                        <button
+                            type="button"
+                            onClick={() => setLeadModalOpen(true)}
+                            className="inline-block bg-rose-600 px-8 py-4 rounded-xl font-bold text-white hover:bg-rose-500 transition-colors shadow-lg shadow-rose-900/20"
+                        >
+                            Télécharger la fiche (PDF gratuit)
+                        </button>
                         <p className="text-xs text-gray-500 mt-6">
                             100% gratuit. Désabonnement en 1 clic. Pas de spam.
                         </p>
                     </div>
                 </div>
+
+                <EmailCaptureModal
+                    isOpen={leadModalOpen}
+                    onClose={() => setLeadModalOpen(false)}
+                    resourceTitle="7 stratégies pour surmonter le rejet social"
+                    resourceFile="/Downloads/surmonter-rejet-social-guide.pdf"
+                />
 
             </article>
         </>
