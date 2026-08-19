@@ -114,7 +114,44 @@ Le 16 août, Google a envoyé une notification "Échec de certaines corrections"
 
 URLs vérifiées individuellement (toutes PASS) : `cortisol-stress-chronique-cerveau-memoire/`, `axe-intestin-cerveau-microbiote-humeur/`, `/blog/`, `plasticite-synaptique-apprentissage-cerveau/`, `systeme-limbique-cerveau-emotionnel/`, `ecoute-active-technique-carl-rogers/`, `confiance-en-soi-durable/`, `procrastination-cerveau-agir-neurosciences/`.
 
-Les 11 URLs restantes du rapport n'ont pas été vérifiées individuellement (même schéma attendu, pas de raison de suspecter un cas différent) : `sommeil-reparateur-7-strategies-validees/`, `empathie-neurones-miroirs-connexion-humaine/`, `communication-non-violente-cnv/`, `attention-fragmentee-concentration-numerique/`, `syndrome-imposteur-solutions/`, `lumiere-naturelle-cerveau-sommeil-sante-mentale/`, `methode-acr-repondre-aux-bonnes-nouvelles/`, `/habit-tracker`.
+Les 11 URLs restantes du rapport n'ont pas été vérifiées individuellement à ce moment-là (même schéma attendu, pas de raison de suspecter un cas différent) : `sommeil-reparateur-7-strategies-validees/`, `empathie-neurones-miroirs-connexion-humaine/`, `communication-non-violente-cnv/`, `attention-fragmentee-concentration-numerique/`, `syndrome-imposteur-solutions/`, `lumiere-naturelle-cerveau-sommeil-sante-mentale/`, `methode-acr-repondre-aux-bonnes-nouvelles/`, `/habit-tracker`.
+
+## ✅ Suite du 17-19 août 2026 — analyse complète des 23 pages "non indexées"
+
+Une notification Google du 16 août ("Échec de certaines corrections") a poussé à revérifier. Répartition exacte des 23 pages non indexées par motif (5 motifs, total 23) :
+
+| Motif | Pages | Statut vérifié |
+|---|---|---|
+| Page avec redirection | 8 | ✅ Normal — variantes sans slash qui redirigent correctement. Affichera toujours "échec" par construction, ce n'est pas la bonne URL à indexer. |
+| Explorée, non indexée | 7 | 6 réellement en attente de recrawl, 1 (`methode-acr-repondre-aux-bonnes-nouvelles/`) déjà indexée malgré l'étiquette. Détail ci-dessous. |
+| Erreur liée à des redirections | 4 | ✅ Résolu depuis le 12 juin, Google revalide juste son ancien constat. |
+| Exclue par noindex | 3 | `/legal`, `/legal/`, `/mentions-legales` — volontaire (question ouverte du `/legal/` indexable ou non, toujours pas tranchée). |
+| Page en double sans URL canonique | 1 | ✅ Résolu — voir ci-dessous. |
+| Détectée, non indexée | 0 | ✅ Résolu, confirmé par vérification directe. |
+
+### Les 7 "Explorée, actuellement non indexée" (lot précis obtenu le 17 août)
+
+```
+https://leveilmental.fr/habit-tracker
+https://leveilmental.fr/blog/sommeil-reparateur-7-strategies-validees
+https://leveilmental.fr/blog/empathie-neurones-miroirs-connexion-humaine/
+https://leveilmental.fr/blog/communication-non-violente-cnv/
+https://leveilmental.fr/blog/attention-fragmentee-concentration-numerique
+https://leveilmental.fr/blog/syndrome-imposteur-solutions/
+https://leveilmental.fr/blog/methode-acr-repondre-aux-bonnes-nouvelles/
+```
+
+Vérification individuelle : 6 sont réellement `Crawled - currently not indexed`, avec des dates de dernier crawl (avril-juin) **antérieures aux demandes d'indexation des 11-12 août** — alors que ces 6 pages faisaient partie de ce lot. La demande n'a donc pas atteint tout le monde (quota Google ~10/jour sur 16 URLs soumises en 2 jours). Le 7ᵉ (`methode-acr`) est en réalité `Submitted and indexed`, crawlé le 12 août — même décalage de rapport que d'habitude.
+
+**Cas particulier `habit-tracker`** : en plus d'être non recrawlé depuis le 12 juin, son dernier crawl montrait un conflit de canonical (Google avait choisi la version sans slash). Vérifié en profondeur : **aucun bug actuel**. Le canonical servi en production est correct (`/habit-tracker/`), la redirection 301 fonctionne, et la source de l'ancien lien sans slash est `src/pages/Resources_BACKUP.tsx` — un fichier mort, jamais importé ni routé. Artefact d'un crawl obsolète, rien à corriger côté code.
+
+➡️ **Guesso a redemandé l'indexation de ces 6 URLs le 17-18 août.** Prochain point : revérifier vers le 24-26 août.
+
+### Page en double sans URL canonique — résolu
+
+URL concernée : `https://leveilmental.fr/blog/plasticite-synaptique-apprentissage-cerveau` (sans slash final). Dernier crawl Google : **17 avril 2026** — le plus ancien de toute l'analyse, antérieur à toutes les corrections faites sur le site depuis. Google avait alors choisi `https://leveilmental.fr/` (la home) comme canonical, probablement faute de signal clair à l'époque.
+
+Vérifié en production : la redirection 301 fonctionne (`/blog/plasticite-synaptique-apprentissage-cerveau` → `.../cerveau/`), aucun lien interne actuel ne pointe vers la version sans slash. La vraie page (avec slash) est déjà confirmée indexée (voir plus haut, vérifiée le 17 août). **Pas un bug — juste une entrée obsolète que Google n'a pas recroisée depuis avril.**
 
 ### Point de contrôle initial (archivé)
 

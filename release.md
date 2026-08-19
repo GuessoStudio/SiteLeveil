@@ -483,17 +483,22 @@ Requêtes précises en **position 2** : `biais de confirmation`, `effet dunning 
 
 ---
 
-## ⏰ Échéance de mesure — 19 août 2026
+## ⏳ Échéance de mesure du 19 août 2026 — RELEVÉE, inconclusive, on attend encore
 
-Effet de la Phase 1, déployée le 5 août. Ne rien retravailler avant.
+Effet de la Phase 1, déployée le 5 août. Données réelles interrogées via l'API le 19 août (GSC 5-19 août, GA4 5-18 août) — pas d'estimation.
 
-| Page | Métrique | Point de départ |
-|---|---|---|
-| bdnf-augmenter-naturellement-neurosciences | taux de rebond | 69 % (GA4) |
-| neuroplasticite-cerveau | position | 40,2 → **42,1 au 11 août** |
-| neuroplasticite-cerveau | CTR | 0,4 % |
+| Page | Métrique | Point de départ | Le 19 août |
+|---|---|---|---|
+| bdnf-augmenter-naturellement-neurosciences | taux de rebond | 69 % (GA4) | **1 seule session organique en 14 jours** — échantillon inexploitable |
+| neuroplasticite-cerveau | position | 40,2 → 42,1 au 11 août | **44,7** |
+| neuroplasticite-cerveau | CTR | 0,4 % | **0 %** (0 clic / 402 impressions) |
 
-BDNF n'a eu aucun changement de title ni de structure : l'effet attendu porte sur le comportement de lecture, pas sur la position. Neuroplasticité a changé de title, H1 et meta : l'effet attendu est sur la position et le CTR, avec 4 à 8 semaines de délai habituel depuis la page 4. À deux semaines, on cherche une tendance, pas un verdict.
+**Aucune conclusion à tirer aujourd'hui, dans un sens ou dans l'autre.**
+
+- **BDNF** : le vrai problème n'est pas le taux de rebond (inexploitable à n=1), c'est l'effondrement du volume. Cette page portait 43 % des clics du site (38/88 sur 90 jours) ; sur les 14 derniers jours elle n'a quasiment plus de trafic organique. À surveiller, mais un échantillon aussi faible peut aussi bien être du bruit — ne pas réagir dessus sans un second point de mesure.
+- **Neuroplasticité** : légèrement pire sur le papier (position et CTR en baisse), mais on est exactement à 2 semaines depuis le déploiement du 5 août, et la règle posée par ce fichier lui-même est claire : un repositionnement depuis la page 4 prend souvent 4 à 8 semaines, donc à 2 semaines on cherche une tendance, pas un verdict. Cohérent avec du bruit normal sur une page coincée en page 4-5.
+
+**Décision : ne rien retravailler sur ces deux pages.** Revérifier dans 2-3 semaines (autour du 2-9 septembre) avec un volume de données plus exploitable, notamment pour BDNF où le vrai signal manquant est le volume de sessions, pas encore mesurable ici.
 
 ---
 
