@@ -11,11 +11,11 @@ import SEO from "../components/SEO";
 
 const meta = {
   slug: "burn-out-signaux-neurobiologiques-recuperation",
-  title: "Burn-out : les signaux neurobiologiques dans le cerveau et 7 étapes de récupération",
-  description: "Burn-out et cerveau : profil fronto-limbique, mythe du cortisol toujours élevé, réversibilité partielle et 7 étapes de récupération. Guide 2026 avec sources.",
+  title: "Burn-out et cerveau : signaux, phases et 7 étapes pour en sortir",
+  description: "Cerveau « grillé » après un burn-out ? L'imagerie montre une récupération possible. Signaux neurobiologiques, phases et 7 étapes validées pour en sortir.",
   cover: "/images/articles/burn-out-signaux-neurobiologiques-recuperation-cover",
   datePublished: "2026-07-01T08:00:00+01:00",
-  dateModified: "2026-07-01T08:00:00+01:00",
+  dateModified: "2026-10-22T08:00:00+01:00",
   tags: ["burn-out", "épuisement professionnel", "burnout cerveau", "cortisol burnout", "récupération burn-out", "cortex préfrontal", "neurosciences", "santé mentale travail"],
   author: {
     "@type": "Person",
@@ -222,7 +222,7 @@ export default function BurnOut() {
 
         {/* H1 */}
         <h1 className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-neutral-100 leading-tight mb-3">
-          Burn-out : les signaux neurobiologiques dans le cerveau et 7 étapes de récupération
+          Burn-out et cerveau : signaux, phases et 7 étapes pour en sortir
         </h1>
 
         {/* Signal fraîcheur */}

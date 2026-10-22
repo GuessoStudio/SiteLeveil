@@ -315,8 +315,8 @@ export const articles: ArticleData[] = [
     },
     {
         id: 29,
-        title: "Burn-out : les signaux neurobiologiques dans le cerveau et 7 étapes de récupération",
-        excerpt: "Burn-out et cerveau : profil fronto-limbique, mythe du cortisol toujours élevé, réversibilité partielle et 7 étapes de récupération. Guide 2026 avec sources.",
+        title: "Burn-out et cerveau : signaux, phases et 7 étapes pour en sortir",
+        excerpt: "Cerveau « grillé » après un burn-out ? L'imagerie montre une récupération possible. Signaux neurobiologiques, phases et 7 étapes validées pour en sortir.",
         category: "Psychologie",
         readTime: 14,
         date: "2026-07-01",
