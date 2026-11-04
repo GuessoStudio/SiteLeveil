@@ -13,8 +13,8 @@ export interface ArticleData {
 export const articles: ArticleData[] = [
     {
         id: 1,
-        title: "Rejet social : ce que les neurosciences révèlent sur la douleur sociale",
-        excerpt: "Découvrez les mécanismes neuroscientifiques du rejet et 7 stratégies issues d'approches validées pour reprogrammer votre cerveau.",
+        title: "Rejet social : conséquences sur le cerveau et 7 stratégies validées",
+        excerpt: "Le rejet social fait-il aussi mal qu'une blessure physique ? Ses vraies conséquences sur le cerveau, ce que la recherche nuance, et 7 stratégies validées.",
         category: "Neurosciences",
         readTime: 14,
         date: "2025-12-17",

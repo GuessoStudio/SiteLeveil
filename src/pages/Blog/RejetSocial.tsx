@@ -6,11 +6,11 @@ import EmailCaptureModal from "../../components/EmailCaptureModal";
 // Define meta outside component for static reference if needed, but utilized inside for dynamic values
 const meta = {
     slug: "surmonter-rejet-social",
-    title: "Rejet social : ce que les neurosciences révèlent sur la douleur sociale (et comment reprogrammer le cerveau)",
-    description: "Le rejet social fait-il vraiment mal comme une blessure ? Ce que montrent les neurosciences en 2026, ce que la recherche récente nuance, et 7 stratégies validées pour mieux réguler la douleur sociale.",
+    title: "Rejet social : conséquences sur le cerveau et 7 stratégies validées",
+    description: "Le rejet social fait-il aussi mal qu'une blessure physique ? Ses vraies conséquences sur le cerveau, ce que la recherche nuance, et 7 stratégies validées.",
     cover: "/images/articles/rejet-social-cover.webp",
     datePublished: "2024-01-15T08:00:00+01:00",
-    dateModified: "2026-08-10T08:00:00+02:00",
+    dateModified: "2026-10-22T08:00:00+02:00",
     tags: ["rejet social", "neurosciences", "amygdale", "neuroplasticité"],
     author: { name: "Guesso" },
     category: "Neurosciences",
@@ -217,10 +217,7 @@ export default function RejetSocial() {
 
                     {/* H1 unique */}
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight tracking-tight">
-                        Rejet social : ce que les neurosciences révèlent sur la douleur sociale
-                        <span className="block text-xl sm:text-2xl mt-3 font-normal text-neutral-600 dark:text-neutral-400">
-                            (et comment reprogrammer le cerveau)
-                        </span>
+                        Rejet social : conséquences sur le cerveau et 7 stratégies validées
                     </h1>
 
                     {/* Sous-titre / Chapô */}
